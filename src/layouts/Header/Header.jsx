@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import Logo from "../../assets/Brand/gbsLogoHighRes.png";
+import Logo from "assets/Brand/gbsLogoHighRes.png";
 import { FiUser, FiShoppingCart } from "react-icons/fi";
 import { RiMenu3Fill } from "react-icons/ri";
 
