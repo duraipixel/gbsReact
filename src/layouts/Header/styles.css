@@ -1,0 +1,33 @@
+.header-div {
+  width: 100%;
+  height: 94px;
+  background: #f1000a;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo{
+  cursor: pointer;
+}
+.nav-search {
+  width: 879px;
+  height: 45px;
+  padding: 0 1rem;
+  background: #ffffff;
+  border: transparent;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8d8d8d;
+  outline: 1px transparent;
+}
+.nav-link-div {
+  font-size: 1rem;
+  color: #ffffff;
+  display: flex;
+  gap: 2rem;
+}
+.nav-link-div div{
+  cursor: pointer;
+}
