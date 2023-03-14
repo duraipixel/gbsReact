@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <HomeProductsSlider/>
+      <HomeProductsSlider />
     </div>
   );
 };

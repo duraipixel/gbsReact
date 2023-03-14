@@ -3,13 +3,18 @@
 @import url("slick-carousel/slick/slick.css");
 @import url("slick-carousel/slick/slick-theme.css");
 
+:root {
+  --accent-color: #f1000a;
+  --white-color: #ffffff;
+  --grey-color: #8d8d8d;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
 }
-.font-size-1_5rem{
+.font-size-1_5rem {
   font-size: 1.5rem;
 }
 .flex-d-row {

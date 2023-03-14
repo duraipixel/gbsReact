@@ -1,0 +1,22 @@
+.poster-image {
+  position: relative;
+}
+.poster-content {
+  position: absolute;
+  top: 8rem;
+  margin-left: 5rem;
+  color: white;
+  max-width: 603px;
+  line-height: 4rem;
+}
+.btn-cta {
+  padding: 12px, 22px, 12px, 22px;
+  background: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 2px;
+}
+
+.btn-cta:hover {
+  background-color: var(--white-color);
+  color: var(--accent-color);
+}
