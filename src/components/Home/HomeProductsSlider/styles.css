@@ -20,3 +20,50 @@
   background-color: var(--white-color);
   color: var(--accent-color);
 }
+
+/* Slick Slider */
+.slick-slider {
+  position: relative;
+}
+.slick-dots {
+  position: absolute;
+  bottom: 2rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: transparent;
+}
+
+.slick-dots li{
+    text-align: center;
+    margin: 0px !important;
+    width: 20px !important;
+    height: 7px !important;
+    transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active{
+    width: 40px !important;
+    transition: all 0.3s ease;
+}
+
+.slick-dots li button{
+    padding: 0px !important;
+    background: var(--grey-color) !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 10px !important;
+    opacity: 1 !important;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.slick-dots li button:before{
+    display: none !important;
+}
+
+.slick-dots li.slick-active button{
+    width: 35px !important;
+    background: var(--white-color) !important;
+    transition: all 0.3s ease;
+}
