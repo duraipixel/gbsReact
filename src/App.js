@@ -1,10 +1,17 @@
-import './App.css';
-import HomePage from './pages/HomePage';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import CartPage from "pages/CartPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<CartPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
