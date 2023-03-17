@@ -19,8 +19,11 @@ footer .footer-text1 {
   line-height: 24px;
   font-weight: 300;
 }
-
+Link{
+  text-decoration: none;
+}
 footer .footer-text1 a {
+  text-decoration: none;
   color: var(--white-color);
 }
 
@@ -60,12 +63,6 @@ footer .list-group .list-group-item a {
   margin-top: 1rem;
 }
 
-/* footer .list-group .list-group-item a:hover {
-  background: var(--white-color);
-  color: var(--white-color);
-  border-color: var(--white-color);
-} */
-
 footer .footer-links {
   display: flex;
   align-items: flex-start;
@@ -77,12 +74,6 @@ footer .footer-links a {
   width: 100%;
   padding: 7px 0px;
   font-size: 14px;
-  color: var(--white-color);
-}
-
-footer .footer-links a:hover,
-footer .footer-links a.active {
-  padding: 7px 0px 7px 15px;
   color: var(--white-color);
 }
 
