@@ -1,17 +1,14 @@
 import React from "react";
 import "./styles.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { FiPhone } from "react-icons/fi";
 import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { RiFacebookFill, RiTwitterFill } from "react-icons/ri";
-import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
-import Logo from "assets/Brand/gbsLogoHighRes.png";
 import { getCurrentYear, openInNewTab } from "utils";
+import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import Logo from "assets/Brand/gbsLogoHighRes.png";
 
 const Footer = () => {
   return (

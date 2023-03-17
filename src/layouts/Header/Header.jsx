@@ -1,8 +1,9 @@
 import React from "react";
-import "./styles.css";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
 import { FiUser, FiShoppingCart } from "react-icons/fi";
 import { RiMenu3Fill } from "react-icons/ri";
+import "./styles.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -16,10 +17,10 @@ const Header = () => {
           <FiUser className="font-size-1_5rem"/>
           <p>My Account</p>
         </div>
-        <div className="flex-d-clm-align-c">
+        <Link className="flex-d-clm-align-c" to="/cartPage">
           <FiShoppingCart className="font-size-1_5rem"/>
           <p>Cart</p>
-        </div>
+        </Link>
         <div>
           <RiMenu3Fill className="font-size-1_5rem"/>
         </div>
