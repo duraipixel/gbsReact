@@ -11,14 +11,7 @@ import { RiFacebookFill, RiTwitterFill } from "react-icons/ri";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
-
-const openInNewTab = (url) => {
-  window.open(url, "_blank", "noopener,noreferrer");
-};
-
-const getCurrentYear = () => {
-  return new Date().getFullYear();
-};
+import { getCurrentYear, openInNewTab } from "utils";
 
 const Footer = () => {
   return (
