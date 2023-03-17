@@ -21,7 +21,7 @@ const Footer = () => {
               <ListGroup.Item>
                 <Link
                   rel="noopener noreferrer"
-                  onClick={() => openInNewTab("")}
+                  onClick={() => openInNewTab("https://www.instagram.com")}
                 >
                   <AiOutlineInstagram />
                 </Link>
@@ -29,7 +29,7 @@ const Footer = () => {
               <ListGroup.Item>
                 <Link
                   rel="noopener noreferrer"
-                  onClick={() => openInNewTab("")}
+                  onClick={() => openInNewTab("https://twitter.com")}
                 >
                   <RiTwitterFill />
                 </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
               <ListGroup.Item>
                 <Link
                   rel="noopener noreferrer"
-                  onClick={() => openInNewTab("")}
+                  onClick={() => openInNewTab("https://www.facebook.com")}
                 >
                   <RiFacebookFill />
                 </Link>
