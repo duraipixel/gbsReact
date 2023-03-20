@@ -30,3 +30,18 @@ a {
   flex-direction: column;
   align-items: center;
 }
+.align-c {
+  display: flex;
+  align-items: center;
+}
+.m-l-4 {
+  margin-left: 4rem;
+}
+
+.sub-heading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+}
