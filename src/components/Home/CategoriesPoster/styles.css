@@ -1,0 +1,9 @@
+.categories-container {
+  padding: 4rem 0;
+  gap: 3rem;
+}
+.categories-img-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

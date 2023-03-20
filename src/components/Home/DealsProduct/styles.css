@@ -1,0 +1,12 @@
+.dealsContainer-div {
+  padding: 4rem;
+  gap: 3rem;
+}
+.deals-poster-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.deals-poster-div img {
+  cursor: pointer;
+}
