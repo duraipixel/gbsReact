@@ -7,6 +7,7 @@ import DealsProduct from "components/Home/DealsProduct/DealsProduct";
 import CategoriesPoster from "components/Home/CategoriesPoster/CategoriesPoster";
 import BrowseByPrice from "components/Home/BrowseByPrice/BrowseByPrice";
 import ServiceCenter from "components/Home/ServiceCenter/ServiceCenter";
+import NewArrivals from "components/Home/NewArrivals/NewArrivals";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <DealsProduct />
       <CategoriesPoster />
       <BrowseByPrice />
+      <NewArrivals />
       <ServiceCenter />
       <PackageSupport />
       <Footer />

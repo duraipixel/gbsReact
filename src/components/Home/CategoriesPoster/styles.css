@@ -7,3 +7,22 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+.deals-imgs{position: relative;}
+.btm-liner {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.08%, rgba(0, 0, 0, 0.8) 85.21%);
+  border-radius: 6px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  bottom: 0;
+  left: 0;
+}
+
+.btm-liner h4{position: absolute;bottom:9px;font-weight: 600;
+  font-size: 23px;
+  line-height: 29px; 
+  text-align: center;width: 100%;text-align: center;
+  color: #FFFFFF;}
+
