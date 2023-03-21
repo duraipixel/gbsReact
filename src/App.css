@@ -30,6 +30,11 @@ a {
   flex-direction: column;
   align-items: center;
 }
+.flex-jc-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .align-c {
   display: flex;
   align-items: center;

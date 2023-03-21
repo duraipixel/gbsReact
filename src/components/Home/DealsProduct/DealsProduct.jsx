@@ -9,11 +9,11 @@ const DealsProduct = () => {
   return (
     <div className="flex-d-clm-align-c dealsContainer-div">
       <h1 className="sub-heading">Deals you Might Want to Consider</h1>
-      <div className="deals-poster-div">
-        <img src={poster1} alt="" />
-        <img src={poster2} alt="" />
-        <img src={poster3} alt="" />
-        <img src={poster4} alt="" />
+      <div className="deals-poster-div container">
+        <img src={poster1} alt="" className='img-fluid' />
+        <img src={poster2} alt="" className='img-fluid' />
+        <img src={poster3} alt="" className='img-fluid' />
+        <img src={poster4} alt="" className='img-fluid' />
       </div>
     </div>
   );

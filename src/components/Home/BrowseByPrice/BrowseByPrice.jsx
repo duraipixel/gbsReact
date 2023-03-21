@@ -7,13 +7,13 @@ import poster4 from "assets/images/BrowseByPrice/Frame23.png";
 
 const BrowseByPrice = () => {
   return (
-    <div className="browse-container flex-d-clm-align-c">
+    <div className="browse-container flex-d-clm-align-c ">
       <h1>Browse by Price</h1>
       <div className="browse-img-div">
-        <img src={poster1} alt="" />
-        <img src={poster2} alt="" />
-        <img src={poster3} alt="" />
-        <img src={poster4} alt="" />
+        <img src={poster1} alt="" className='img-fluid' />
+        <img src={poster2} alt="" className='img-fluid' />
+        <img src={poster3} alt="" className='img-fluid' />
+        <img src={poster4} alt="" className='img-fluid' />
       </div>
     </div>
   );

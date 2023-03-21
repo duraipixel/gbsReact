@@ -6,6 +6,8 @@ import Footer from "layouts/Footer/Footer";
 import DealsProduct from "components/Home/DealsProduct/DealsProduct";
 import CategoriesPoster from "components/Home/CategoriesPoster/CategoriesPoster";
 import BrowseByPrice from "components/Home/BrowseByPrice/BrowseByPrice";
+import ServiceCenter from "components/Home/ServiceCenter/ServiceCenter";
+
 const HomePage = () => {
   return (
     <div>
@@ -14,6 +16,7 @@ const HomePage = () => {
       <DealsProduct />
       <CategoriesPoster />
       <BrowseByPrice />
+      <ServiceCenter />
       <PackageSupport />
       <Footer />
     </div>

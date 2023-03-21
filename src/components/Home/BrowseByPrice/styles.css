@@ -6,6 +6,6 @@
 }
 .browse-img-div {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  display: "img-fluid";
 }

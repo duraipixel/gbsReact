@@ -11,7 +11,7 @@ const PackageSupport = () => {
     <section className="possibles">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between flex-jc-wrap">
             <div className="care-box text-left">
               <span>
                 <img src={icon1} alt="" /> 24x7{" "}

@@ -9,7 +9,9 @@ const Header = () => {
   return (
     <div className="header-div align-c">
       <div className="logo">
-        <img src={Logo} alt="" />
+        <Link to="/">
+          <img src={Logo} alt="" />
+        </Link>
       </div>
       <div className="nav-link-div m-l-4">
         <div className="flex-d-clm-align-c">
