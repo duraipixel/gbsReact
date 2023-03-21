@@ -50,3 +50,16 @@ a {
   font-size: 30px;
   line-height: 38px;
 }
+
+section{padding:80px 0px;}
+
+.comon-heads h2{  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;margin-bottom: 40px;
+  line-height: 38px;}
+
+a{text-decoration: none;transition: all 0.3s ease;}
+a:hover{text-decoration: none;transition: all 0.3s ease;color:#fff;}
+ul{padding: 0px;margin: 0px;}
+ul li{display: inline-block;}
