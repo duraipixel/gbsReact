@@ -1,4 +1,4 @@
-import CartProduct from "components/Cart/CartProduct/CartProduct";
+import CartProduct from "components/Cart/CartProduct";
 import PackageSupport from "components/Home/PackageSupport/PackageSupport";
 import Footer from "layouts/Footer/Footer";
 import Header from "layouts/Header/Header";
