@@ -41,7 +41,7 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/cartPage">
+                      <Link to="/cart">
                         <FiShoppingCart className="font-size-1_5rem" />
                         <span>Cart</span>
                       </Link>

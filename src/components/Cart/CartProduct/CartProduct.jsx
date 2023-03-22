@@ -14,7 +14,7 @@ const CartProduct = () => {
       <section className="bg-off-grey">
         <Container>
           <Row>
-            <Col lg={8} className="card-cart p-4">
+            <Col lg={8} className="card-cart p-4 pb-0">
               <h2>Shopping Cart</h2>
               <div className="finalcart-list">
                 <table className="table table-bordered desky-verson">
@@ -40,19 +40,19 @@ const CartProduct = () => {
                       <td>ASUS ROG Strix G17 - G713IE-HX040W</td>
 
                       <td>
-                        <button>
+                        <button style={{ paddingRight: "5px" }}>
                           <img src={MinusSign} alt="MinusSign" />
                         </button>
                         <span> 1 </span>
-                        <button>
+                        <button style={{ paddingLeft: "5px" }}>
                           <img src={PlusSign} alt="PlusSign" />
                         </button>
                       </td>
                       <td>
-                        <span className="price"> ₹ 800562</span>
+                        <span className="price"> ₹89,306</span>
                       </td>
                     </tr>
-                    <hr className="m-0"/>
+                    <hr className="m-0" />
                     <tr>
                       <td>
                         <button>
@@ -65,16 +65,16 @@ const CartProduct = () => {
                       <td>ASUS TUF K1 USB Gaming Keyboard </td>
 
                       <td>
-                        <button>
+                        <button style={{ paddingRight: "5px" }}>
                           <img src={MinusSign} alt="MinusSign" />
                         </button>
                         <span> 1 </span>
-                        <button>
+                        <button style={{ paddingLeft: "5px" }}>
                           <img src={PlusSign} alt="PlusSign" />
                         </button>
                       </td>
                       <td>
-                        <span className="price"> ₹ 4000</span>
+                        <span className="price"> ₹9,200</span>
                       </td>
                     </tr>
                     <tr>
@@ -85,11 +85,13 @@ const CartProduct = () => {
                           placeholder="Enter Coupon code here"
                           id="coupon"
                           name="coupon"
-                          value="1"
-                          disabled="disabled"
+                          // value="1"
+                          // disabled="disabled"
                           maxLength="6"
                         />
-                        <button type="button">Apply</button>
+                        <button type="button" className="cpn-btn">
+                          Apply
+                        </button>
                       </td>
                       <td
                         colSpan="2"
