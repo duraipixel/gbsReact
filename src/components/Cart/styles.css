@@ -1,0 +1,248 @@
+.finalcart-list .table-bordered > :not(caption) > *:last-child {
+  border: 0px;
+}
+
+.finalcart-list .table-bordered > :not(caption) > * {
+  border: 0px;
+  border-bottom: 1px solid #d0d0d0;
+  vertical-align: middle;
+}
+
+.finalcart-list .table-bordered > :not(caption) > * > * {
+  border: 0px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.finalcart-list .table-bordered td {
+  text-transform: none;
+  padding: 20px 15px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.finalcart-list .table-bordered th {
+  line-height: 21px;
+  color: #929292;
+}
+
+.finalcart-list .table-bordered td button {
+  background: transparent;
+  border: none;
+  outline: none !important;
+}
+
+.finalcart-list .table-bordered td i {
+  font-size: 24px;
+  padding: 10px;
+  background: #f1416c33;
+  border-radius: 3px;
+  color: red;
+}
+
+.finalcart-list .table-bordered td a {
+  color: #000;
+}
+
+.finalcart-list .table-bordered td input {
+  height: 45px;
+  background: #ebebeb;
+  width: 310px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8d8d8d;
+  padding: 0px 15px;
+  margin: 0px 15px;
+  border: 0px;
+  border-radius: 4px;
+}
+
+.finalcart-list .table-bordered td:nth-child(1) {
+  padding-right: 20px;
+}
+
+.finalcart-list .table-bordered td:nth-child(3) {
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.finalcart-list .table-bordered td:nth-child(5) span {
+  margin: 0px 5px;
+}
+
+.finalcart-list .table-bordered th:nth-child(4) {
+  text-align: center;
+}
+
+.finalcart-list .table-bordered th:nth-child(5) {
+  text-align: center;
+}
+
+.finalcart-list .table-bordered th:nth-child(6) {
+  text-align: right;
+}
+
+.finalcart-list .table-bordered td:nth-child(4) {
+  text-align: center;
+}
+
+.finalcart-list .table-bordered td:nth-child(5) {
+  text-align: center;
+}
+
+.finalcart-list .table-bordered td:nth-child(6) {
+  text-align: right;
+}
+
+button.refreshing {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 24px;
+  color: #a5a5a5;
+}
+
+button.refreshing img {
+  margin-right: 25px;
+  margin-top: -2px;
+}
+
+/* .ship-list {
+  margin-top: 40px;
+}
+
+.ship-list h3 {
+  line-height: 21px;
+
+  color: #929292;
+}
+
+.cart-boduy {
+  background-color: #fff;
+  box-shadow: 11px 11px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 30px 30px 10px 30px;
+}
+
+.cart-boduy h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: #212363;
+  margin-bottom: 15px;
+}
+
+.cart-boduy h5 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #212363;
+  margin-bottom: 15px;
+}
+
+.cart-boduy .table-borderless td:nth-child(2) {
+  text-align: right;
+}
+
+.cart-boduy .table-borderless td {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Mulish", sans-serif;
+  color: #000000;
+  padding: 10px 0px;
+}
+
+.cart-boduy .form-check-input[type="radio"] {
+  margin-right: 10px;
+}
+
+.line-spacer {
+  height: 1px;
+  background-color: #d0d0d0;
+  margin-bottom: 25px;
+}
+
+.table.table-borderless.end-point {
+  margin-top: -15px;
+}
+
+.table.table-borderless.end-point button {
+  align-items: center;
+  padding: 12px 20px;
+  background: #1a1a1a;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  color: #fff;
+  line-height: 22px;
+
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.table.table-borderless.end-point button:hover {
+  background-color: #141f80;
+  transition: all 0.5s ease;
+}
+
+.table.table-borderless.end-point td:first-child {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #212363;
+}
+
+.table.table-borderless.end-point td:last-child {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 33px;
+  font-family: "Mulish", sans-serif;
+  color: #000000;
+}
+
+
+.customRadio input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.customRadio input[type="radio"] + label {
+  position: relative;
+  padding: 3px 0 0 25px;
+  cursor: pointer;
+}
+
+.customRadio input[type="radio"] + label:before {
+  content: "";
+  background: #fff;
+  border: 2px solid #212363;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+
+.customRadio input[type="radio"] + label:after {
+  content: "";
+  background: #212363;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: 9px;
+  left: 4px;
+  opacity: 0;
+  transform: scale(2);
+  transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+.customRadio input[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+} */

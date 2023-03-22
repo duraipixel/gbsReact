@@ -1,6 +1,16 @@
-.cart-div{
-    margin: 2rem auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.card-cart {
+  background: #ffffff;
+  box-shadow: 11px 11px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
 }
+
+@media (max-width:990px) {
+    .card-cart{
+        margin-top: 2rem;
+        margin-left: auto;
+    }
+    .card-cart div div{
+        gap: 3rem;
+    }
+}
+
