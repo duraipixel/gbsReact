@@ -10,6 +10,10 @@
   gap: 1rem;
 }
 
-.browse-price{background-color: #37363b;}
+.browse-price {
+  background-color: #37363b;
+}
 
-.browse-price .comon-heads h2{color:#fff;}
+.browse-price .comon-heads h2 {
+  color: #fff;
+}

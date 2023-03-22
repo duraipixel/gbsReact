@@ -1,12 +1,14 @@
 .top-bar {
-  background: #F1000A;
+  background: #f1000a;
   padding: 15px 0px;
   z-index: 9;
   position: relative;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-.hoger-toggle{margin-right:20px;}
+.hoger-toggle {
+  margin-right: 20px;
+}
 
 .top-bar ul.top-socials {
   display: flex;
@@ -29,12 +31,12 @@
   text-decoration: none;
   font-size: 12px;
   background: rgba(60, 60, 60, 0.1);
-  color: #6D6D6D;
+  color: #6d6d6d;
 }
 
 .top-bar ul.top-socials li a:hover {
-  background: #D31217;
-  color: #FFF;
+  background: #d31217;
+  color: #fff;
 }
 
 .top-bar .top-phone {
@@ -49,7 +51,7 @@
 }
 
 .top-bar .top-phone a:hover {
-  color: #D31217;
+  color: #d31217;
 }
 
 .top-bar .top-phone img {
@@ -59,7 +61,7 @@
 header {
   position: relative;
   width: 100%;
-  background: #1A1A1A;
+  background: #1a1a1a;
   padding: 7px 0px;
   z-index: 0;
 }
@@ -94,11 +96,11 @@ body.town-bus {
 
 @keyframes fadeInDown {
   from {
-      transform: translate3d(0, -200px, 0)
+    transform: translate3d(0, -200px, 0);
   }
   to {
-      transform: translate3d(0, 0, 0);
-      opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
@@ -142,38 +144,38 @@ nav {
 }
 
 #cssmenu:after,
-#cssmenu>ul:after {
+#cssmenu > ul:after {
   content: ".";
   display: block;
   clear: both;
   visibility: hidden;
   line-height: 0;
-  height: 0
+  height: 0;
 }
 
 #cssmenu #head-mobile {
-  display: none
+  display: none;
 }
 
-#cssmenu>ul {
+#cssmenu > ul {
   float: right;
   overflow: hidden;
 }
 
-#cssmenu>ul:hover {
+#cssmenu > ul:hover {
   overflow: visible;
 }
 
-#cssmenu>ul>li#corporate-menu {
+#cssmenu > ul > li#corporate-menu {
   z-index: 9999;
 }
 
-#cssmenu>ul>li>a {
+#cssmenu > ul > li > a {
   font-family: "Outfit", sans-serif;
   padding: 15px 33px;
   text-decoration: none;
   position: relative;
-  color: #FFF;
+  color: #fff;
   font-weight: 400;
   border-radius: 50px;
   font-weight: 400;
@@ -181,7 +183,7 @@ nav {
   line-height: 20px;
 }
 
-#cssmenu>ul>li>a::before {
+#cssmenu > ul > li > a::before {
   position: absolute;
   width: 0;
   height: 2px;
@@ -190,64 +192,64 @@ nav {
   right: 0px;
   z-index: -1;
   content: "";
-  background: #FFF;
+  background: #fff;
   transition: all 0.3s ease;
 }
 
-#cssmenu>ul>li>a.active:before {
+#cssmenu > ul > li > a.active:before {
   width: 100%;
 }
 
-#cssmenu>ul>li.having-hamber>a::before {
+#cssmenu > ul > li.having-hamber > a::before {
   display: none;
 }
 
-#cssmenu>ul>li.having-hamber>a {
+#cssmenu > ul > li.having-hamber > a {
   position: relative;
 }
 
-#cssmenu>ul>li.having-hamber>a img {
+#cssmenu > ul > li.having-hamber > a img {
   position: absolute;
   left: 0;
 }
 
-#cssmenu>ul>li>a:hover:before {
+#cssmenu > ul > li > a:hover:before {
   width: 100%;
   left: 0;
 }
 
-#cssmenu>ul>li.active>a:before {
+#cssmenu > ul > li.active > a:before {
   width: 100%;
 }
 
-.fixed-top #cssmenu>ul>li>a,
-body.town-bus header #cssmenu>ul>li>a {
+.fixed-top #cssmenu > ul > li > a,
+body.town-bus header #cssmenu > ul > li > a {
   padding: 9px 30px;
 }
 
-#cssmenu>ul>li.active:hover>a {
-  color: #FFF;
+#cssmenu > ul > li.active:hover > a {
+  color: #fff;
 }
 
-#cssmenu>ul>li.active>a {
-  color: #FFF;
+#cssmenu > ul > li.active > a {
+  color: #fff;
 }
 
 #cssmenu ul ul li.active a {
-  color: #D31217;
+  color: #d31217;
 }
 
-#cssmenu>ul>li:hover,
+#cssmenu > ul > li:hover,
 #cssmenu ul li.active:hover,
 #cssmenu ul li.active,
 #cssmenu ul li.has-sub.active:hover {
-  color: #D31217;
+  color: #d31217;
 }
 
 #cssmenu ul li.contact a,
 body.town-bus header #cssmenu ul li.contact a {
-  background: #194B98;
-  color: #FFF;
+  background: #194b98;
+  color: #fff;
   z-index: 10;
   padding: 15px 30px;
   overflow: hidden;
@@ -262,12 +264,12 @@ body.town-bus header #cssmenu ul li.contact a {
 
 #cssmenu ul li.contact a:hover,
 #cssmenu ul li.contact.active a {
-  background: #D31217;
-  color: #FFF;
+  background: #d31217;
+  color: #fff;
 }
 
 #cssmenu ul li.contact a:before {
-  background: #D31217;
+  background: #d31217;
   position: absolute;
   right: 0px;
   top: 0px;
@@ -288,28 +290,28 @@ body.town-bus header #cssmenu ul li.contact a {
   transition: all 0.3s ease;
 }
 
-#cssmenu>ul>li.has-sub>a {
-  padding-right: 30px
+#cssmenu > ul > li.has-sub > a {
+  padding-right: 30px;
 }
 
-#cssmenu>ul>li.has-sub>a:after {
+#cssmenu > ul > li.has-sub > a:after {
   position: absolute;
   top: 37px;
   right: 10px;
   display: block;
   color: #a7a7a7;
   font-family: FontAwesome;
-  content: '\f107';
-  transition: all .3s ease;
+  content: "\f107";
+  transition: all 0.3s ease;
 }
 
-.fixed-top #cssmenu>ul>li.has-sub>a:after,
-body.town-bus header #cssmenu>ul>li.has-sub>a:after {
+.fixed-top #cssmenu > ul > li.has-sub > a:after,
+body.town-bus header #cssmenu > ul > li.has-sub > a:after {
   top: 24px;
 }
 
-.fixed-top #cssmenu>ul>li>a:before,
-body.town-bus header #cssmenu>ul>li.has-sub>a:before {
+.fixed-top #cssmenu > ul > li > a:before,
+body.town-bus header #cssmenu > ul > li.has-sub > a:before {
   top: 34px;
   height: 1px;
 }
@@ -326,31 +328,31 @@ body.town-bus header #cssmenu>ul>li.has-sub>a:before {
   animation-fill-mode: both;
   opacity: 0;
   padding: 6px 0px 10px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
 
 .top-bar.top-fix .top-search select {
   height: 30px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   right: -3px;
   font-size: 14px;
 }
 
 .top-bar.top-fix .top-search input[type="search"] {
   height: 40px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   margin-top: 6px;
 }
 
 .top-bar.top-fix .top-logo img {
   width: 70%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .top-logo img {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .fixed-top {
@@ -379,14 +381,16 @@ body.town-bus header #cssmenu>ul>li.has-sub>a:before {
   transition: all 0.3s ease;
 }
 
-.top-fix .cart-tpimg{top: 0;
+.top-fix .cart-tpimg {
+  top: 0;
   right: -5px;
-  transition: all 0.3s ease;}
+  transition: all 0.3s ease;
+}
 
-#cssmenu>ul>li.has-sub:hover>a:after {
+#cssmenu > ul > li.has-sub:hover > a:after {
   transform: rotate(180deg);
-  color: #D31217;
-  transition: all .3s ease;
+  color: #d31217;
+  transition: all 0.3s ease;
 }
 
 #cssmenu ul ul {
@@ -394,19 +398,19 @@ body.town-bus header #cssmenu>ul>li.has-sub>a:before {
   left: 0px;
   top: 135px;
   z-index: 999;
-  background: #FFF;
+  background: #fff;
   border-radius: 5px;
   padding: 7px;
   opacity: 0;
   visibility: hidden;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
   box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
-#cssmenu>ul>li.active>a:after,
-#cssmenu>ul>li.active>a:hover:after,
-#cssmenu>ul>li.active:hover>a:after {
-  color: #FFF;
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li.active > a:hover:after,
+#cssmenu > ul > li.active:hover > a:after {
+  color: #fff;
   transition: all 0.3s ease;
 }
 
@@ -437,8 +441,8 @@ body.town-bus header #cssmenu ul ul {
   text-align: center;
 }
 
-.top-icons li a span{
-  display:block;
+.top-icons li a span {
+  display: block;
 }
 .top-search .form-data {
   display: flex;
@@ -450,16 +454,16 @@ body.town-bus header #cssmenu ul ul {
   width: 65%;
 }
 
-
 .top-search input[type="search"] {
   width: 100%;
   border: 0px solid #d4d4d4;
   height: 45px;
   padding: 15px 35px 15px 15px;
   border-radius: 4px;
-  background: #fff url("../../assets/images/serch.png") no-repeat scroll 97% center;
+  background: #fff url("../../assets/images/serch.png") no-repeat scroll 97%
+    center;
   margin-top: 0px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   outline: none;
 }
 
@@ -479,7 +483,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   transition: all 0.6s ease;
 }
 
-#cssmenu ul li.mega-menu>ul:before {
+#cssmenu ul li.mega-menu > ul:before {
   position: absolute;
   left: 265px;
   top: 0px;
@@ -565,8 +569,8 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 
 #cssmenu ul li.mega-menu ul li.active ul li.active a,
 #cssmenu ul li.mega-menu ul li.active ul li.active a:hover {
-  background: #D31217;
-  color: #FFF;
+  background: #d31217;
+  color: #fff;
 }
 
 #cssmenu ul li.mega-menu ul ul li a {
@@ -584,19 +588,19 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 
 #cssmenu ul ul li {
   margin: 1px 0px;
-  transition: all .6s ease
+  transition: all 0.6s ease;
 }
 
-#cssmenu li:hover>ul {
+#cssmenu li:hover > ul {
   opacity: 1;
   visibility: visible;
   transform: translate3d(0, -50px, 0);
-  transition: all .6s ease;
+  transition: all 0.6s ease;
 }
 
 #cssmenu ul ul ul {
   margin-left: 100%;
-  top: 0
+  top: 0;
 }
 
 #cssmenu ul ul li a {
@@ -605,7 +609,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   width: 250px;
   font-size: 14px;
   text-decoration: none;
-  color: #191A1A;
+  color: #191a1a;
   font-weight: 400;
   display: block;
   position: relative;
@@ -619,20 +623,20 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   width: 4px;
   height: 0px;
   content: "";
-  background: #D31217;
+  background: #d31217;
   transition: all 0.3s ease;
 }
 
-#cssmenu ul ul li:last-child>a,
-#cssmenu ul ul li.last-item>a {
-  border-bottom: 0
+#cssmenu ul ul li:last-child > a,
+#cssmenu ul ul li.last-item > a {
+  border-bottom: 0;
 }
 
-#cssmenu ul ul li:hover>a,
+#cssmenu ul ul li:hover > a,
 #cssmenu ul ul li.active a,
 #cssmenu ul ul li a:hover,
 #cssmenu ul li.mega-menu ul li.active a:hover {
-  color: #D31217;
+  color: #d31217;
   padding: 13px 15px 13px 20px;
 }
 
@@ -651,7 +655,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   width: 4px;
   height: 0px;
   content: "";
-  background: #D31217;
+  background: #d31217;
   transition: all 0.3s ease;
 }
 
@@ -671,7 +675,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   display: none;
 }
 
-#cssmenu ul ul li.has-sub>a:after {
+#cssmenu ul ul li.has-sub > a:after {
   position: absolute;
   top: 20px;
   right: 12px;
@@ -680,10 +684,10 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   display: block;
   transform: rotate(-45deg);
   background: #747474;
-  content: ''
+  content: "";
 }
 
-#cssmenu ul ul li.has-sub>a:before {
+#cssmenu ul ul li.has-sub > a:before {
   position: absolute;
   top: 15px;
   left: inherit;
@@ -693,19 +697,19 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   height: 5px;
   transform: rotate(-45deg);
   background: #747474;
-  content: '';
-  -webkit-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  transition: all .25s ease
+  content: "";
+  -webkit-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
-#cssmenu ul ul>li.has-sub:hover>a:before,
-#cssmenu ul ul>li.has-sub:hover>a:after {
+#cssmenu ul ul > li.has-sub:hover > a:before,
+#cssmenu ul ul > li.has-sub:hover > a:after {
   background: #9d9d9d;
 }
 
 #cssmenu ul ul ul li.active a {
-  border-left: 1px solid #333
+  border-left: 1px solid #333;
 }
 
 .togle-menu {
@@ -715,7 +719,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   width: 450px;
   height: 100vh;
   z-index: 9999;
-  background: #FFF;
+  background: #fff;
   color: #000;
   transition: all 0.5s ease;
 }
@@ -724,7 +728,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   position: absolute;
   content: "";
   right: 0;
-  bottom: 0; 
+  bottom: 0;
   width: 350px;
   height: 674px;
   opacity: 0.7;
@@ -785,7 +789,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 
 .togmenu-header:before {
   position: absolute;
-  content: ""; 
+  content: "";
   width: 100px;
   height: 135px;
   right: 0;
@@ -802,7 +806,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   font-weight: 700;
   font-size: 24px;
   line-height: 33px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0px;
   font-family: "Outfit", sans-serif;
 }
@@ -826,13 +830,13 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   box-shadow: none;
 }
 
-.togle-menu .accordion-button::after { 
+.togle-menu .accordion-button::after {
   width: 14px;
   height: 8px;
   background-size: 100%;
 }
 
-.togle-menu .mCSB_inside>.mCSB_container {
+.togle-menu .mCSB_inside > .mCSB_container {
   margin-right: 0px;
 }
 
@@ -865,364 +869,361 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   color: #212363;
 }
 
-@media (max-width:1200px) {
-  #cssmenu>ul>li>a {
-      padding: 36px 10px;
+@media (max-width: 1200px) {
+  #cssmenu > ul > li > a {
+    padding: 36px 10px;
   }
   #cssmenu ul li.mega-menu ul ul li a img {
-      max-width: 50px;
+    max-width: 50px;
   }
-  #cssmenu>ul>li.active>a {
-      color: #FFF;
-      background: #D31217;
+  #cssmenu > ul > li.active > a {
+    color: #fff;
+    background: #d31217;
   }
-  .fixed-top #cssmenu>ul>li>a,
-  body.town-bus header #cssmenu>ul>li>a {
-      padding: 24px 10px;
+  .fixed-top #cssmenu > ul > li > a,
+  body.town-bus header #cssmenu > ul > li > a {
+    padding: 24px 10px;
   }
   .fixed-top #cssmenu ul li.contact a {
-      padding: 15px 20px;
+    padding: 15px 20px;
   }
   #cssmenu ul li.mega-menu ul ul {
-      width: 400px;
+    width: 400px;
   }
 }
 
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
   header.fixed-top .srch-btn {
-      top: -39px;
+    top: -39px;
   }
   header.fixed-top .button {
-      top: -39px;
+    top: -39px;
   }
-  #cssmenu>ul>li>a {
-      color: #000;
-      font-weight: 600;
-      font-size: 17px !important;
+  #cssmenu > ul > li > a {
+    color: #000;
+    font-weight: 600;
+    font-size: 17px !important;
   }
   li.having-hamber {
-      display: none !important;
+    display: none !important;
   }
   .logo2 {
-      display: none
+    display: none;
   }
   nav {
-      width: 100%;
+    width: 100%;
   }
   header .container {
-      max-width: 100%;
-      padding-left: 0px;
-      padding-right: 0px;
+    max-width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .top-bar .container {
-      max-width: 100%;
-      padding-left: 20px;
-      padding-right: 20px;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   #cssmenu {
-      width: 100%;
-      padding-left: 15px;
-      padding-right: 15px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   #cssmenu ul {
-      width: 100%;
-      display: none;
+    width: 100%;
+    display: none;
   }
   #cssmenu ul li.mega-menu {
-      position: relative;
+    position: relative;
   }
   #cssmenu ul li.mega-menu ul,
   body.town-bus header #cssmenu ul li.mega-menu ul,
   body.town-bus header #cssmenu ul ul {
-      top: 0px;
-      min-height: inherit;
+    top: 0px;
+    min-height: inherit;
   }
   #cssmenu ul li.mega-menu ul li {
-      max-width: inherit;
+    max-width: inherit;
   }
   #cssmenu ul li {
-      width: 100%;
-      border-top: 1px solid #ebebeb;
+    width: 100%;
+    border-top: 1px solid #ebebeb;
   }
   #cssmenu ul ul li.active a {
-      color: #000;
+    color: #000;
   }
   #cssmenu ul ul li,
-  #cssmenu li:hover>ul>li {
-      height: auto
+  #cssmenu li:hover > ul > li {
+    height: auto;
   }
   #cssmenu ul li a,
   #cssmenu ul ul li a {
-      width: 100%;
-      border-bottom: 0;
-      border-radius: 0px;
-      padding: 15px 10px !important;
+    width: 100%;
+    border-bottom: 0;
+    border-radius: 0px;
+    padding: 15px 10px !important;
   }
-  #cssmenu>ul>li {
-      float: none
+  #cssmenu > ul > li {
+    float: none;
   }
   #cssmenu ul li.mega-menu ul ul {
-      width: auto;
-      display: block;
-      left: 0;
+    width: auto;
+    display: block;
+    left: 0;
   }
   #cssmenu ul li.mega-menu ul ul li {
-      padding: 0px;
-      width: 100%;
-      text-align: left;
+    padding: 0px;
+    width: 100%;
+    text-align: left;
   }
   #cssmenu ul li.mega-menu ul ul li h3 {
-      padding: 0px 10px;
-      font-size: 16px;
-      margin-top: 10px;
+    padding: 0px 10px;
+    font-size: 16px;
+    margin-top: 10px;
   }
   #cssmenu ul li.mega-menu ul.active {
-      min-height: auto;
+    min-height: auto;
   }
   #cssmenu ul li.mega-menu ul ul li a {
-      position: relative;
-      padding: 15px 10px 15px 60px !important;
+    position: relative;
+    padding: 15px 10px 15px 60px !important;
   }
   #cssmenu ul li.mega-menu ul li#food-menu ul {
-      top: 0px;
-      max-height: inherit;
+    top: 0px;
+    max-height: inherit;
   }
   #cssmenu ul li.mega-menu ul li:hover ul {
-      opacity: 1;
-      visibility: visible;
+    opacity: 1;
+    visibility: visible;
   }
   #cssmenu ul li.mega-menu ul li.active ul li a {
-      border-radius: 0px;
-      max-width: 100%;
+    border-radius: 0px;
+    max-width: 100%;
   }
   #cssmenu ul li.mega-menu ul ul li a img {
-      position: absolute;
-      left: 10px;
-      top: 5px;
-      max-width: 35px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    max-width: 35px;
   }
   #cssmenu ul li.mega-menu ul li#food-menu ul li a img {
-      top: 10px;
+    top: 10px;
   }
   header.fixed-top #cssmenu ul ul,
   header.fixed-top #cssmenu ul li.mega-menu ul {
-      top: 0px;
+    top: 0px;
   }
   #cssmenu ul li.mega-menu ul {
-      width: calc(100% - 50px);
+    width: calc(100% - 50px);
   }
   #cssmenu ul li.mega-menu ul li a:hover {
-      color: #D31217;
+    color: #d31217;
   }
   #cssmenu ul ul li a {
-      padding-left: 25px
+    padding-left: 25px;
   }
-  #cssmenu ul li.mega-menu>ul:before {
-      display: none;
+  #cssmenu ul li.mega-menu > ul:before {
+    display: none;
   }
   #cssmenu ul ul ul li a {
-      padding-left: 35px
+    padding-left: 35px;
   }
-  #cssmenu>ul>li>a:before {
-      display: none;
+  #cssmenu > ul > li > a:before {
+    display: none;
   }
   #cssmenu ul ul,
   #cssmenu ul ul ul {
-      position: relative;
-      left: 0;
-      width: 100%;
-      padding: 0px 10px;
-      background: #f3f3f3;
-      margin: 0;
-      opacity: 1;
-      top: 0px;
-      max-height: 300px;
-      overflow-y: auto;
-      visibility: visible;
-      text-align: left;
-      transform: none !important;
-      transition: all 0.2s ease;
-      border-radius: 0px;
-      box-shadow: none;
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding: 0px 10px;
+    background: #f3f3f3;
+    margin: 0;
+    opacity: 1;
+    top: 0px;
+    max-height: 300px;
+    overflow-y: auto;
+    visibility: visible;
+    text-align: left;
+    transform: none !important;
+    transition: all 0.2s ease;
+    border-radius: 0px;
+    box-shadow: none;
   }
-  #cssmenu li:hover>ul {
-      transition: all 0.2s ease;
+  #cssmenu li:hover > ul {
+    transition: all 0.2s ease;
   }
-  #cssmenu>ul>li.has-sub>a:after,
-  #cssmenu>ul>li.has-sub>a:before,
-  #cssmenu ul ul>li.has-sub>a:after,
-  #cssmenu ul ul>li.has-sub>a:before {
-      display: none
+  #cssmenu > ul > li.has-sub > a:after,
+  #cssmenu > ul > li.has-sub > a:before,
+  #cssmenu ul ul > li.has-sub > a:after,
+  #cssmenu ul ul > li.has-sub > a:before {
+    display: none;
   }
   #cssmenu #head-mobile {
-      display: block;
-      text-align: right;
+    display: block;
+    text-align: right;
   }
   #cssmenu ul li.contact {
-      display: none;
+    display: none;
   }
   #head-mobile a.contact {
-      text-align: center;
-      border-radius: 30px;
-      background: #194B98;
-      color: #FFF;
-      padding: 13px 20px;
-      margin-top: 20px;
-      display: inline-block;
-      margin-right: 50px;
+    text-align: center;
+    border-radius: 30px;
+    background: #194b98;
+    color: #fff;
+    padding: 13px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-right: 50px;
   }
   header.fixed-top #head-mobile a.contact,
   body.town-bus header #head-mobile a.contact {
-      margin-top: 10px;
+    margin-top: 10px;
   }
   #head-mobile a.contact:hover {
-      background: #D31217;
+    background: #d31217;
   }
   header .button {
-      width: 31px;
-      height: 21px;
-      position: absolute;
-      right: 20px;
-      top: -54px;
-      cursor: pointer;
-      z-index: 12399994;
+    width: 31px;
+    height: 21px;
+    position: absolute;
+    right: 20px;
+    top: -54px;
+    cursor: pointer;
+    z-index: 12399994;
   }
   header .button.menu-opened {
-      top: -59px;
-      height: 43px;
+    top: -59px;
+    height: 43px;
   }
   body.town-bus header .button {
-      top: 0px;
+    top: 0px;
   }
   header .button::after {
-      position: absolute;
-      top: 9px;
-      right: 0px;
-      display: block;
-      height: 10px;
-      width: 30px;
-      border-top: 2px solid #fff;
-      border-bottom: 2px solid #fff;
-      content: '';
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    display: block;
+    height: 10px;
+    width: 30px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    content: "";
   }
   header .button::before {
-      -webkit-transition: all .3s ease;
-      -ms-transition: all .3s ease;
-      transition: all .3s ease;
-      position: absolute;
-      top: 0;
-      right: 0px;
-      display: block;
-      height: 2px;
-      width: 30px;
-      background: #fff;
-      content: '';
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    display: block;
+    height: 2px;
+    width: 30px;
+    background: #fff;
+    content: "";
   }
   header .button.menu-opened:after {
-      -webkit-transition: all .3s ease;
-      -ms-transition: all .3s ease;
-      transition: all .3s ease;
-      top: 15px;
-      border: 0;
-      height: 2px;
-      background: #fff;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg)
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    top: 15px;
+    border: 0;
+    height: 2px;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
   header .button.menu-opened:before {
-      top: 15px;
-      background: #fff;
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg)
+    top: 15px;
+    background: #fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
   }
   header.fixed-top .button.menu-opened:after,
   header.fixed-top .button.menu-opened:before {
-      top: 30px;
+    top: 30px;
   }
   #cssmenu .submenu-button {
-      position: absolute;
-      z-index: 99;
-      right: 0;
-      top: 0;
-      background: #dbdbdb;
-      display: block;
-      height: 46px;
-      width: 46px;
-      border-bottom: 1px solid #bbb;
-      cursor: pointer
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    top: 0;
+    background: #dbdbdb;
+    display: block;
+    height: 46px;
+    width: 46px;
+    border-bottom: 1px solid #bbb;
+    cursor: pointer;
   }
   #cssmenu .submenu-button.submenu-opened {
-      background: #cfcfcf;
+    background: #cfcfcf;
   }
   #cssmenu ul ul .submenu-button {
-      height: 44px;
-      width: 44px
+    height: 44px;
+    width: 44px;
   }
   #cssmenu .submenu-button:after {
-      position: absolute;
-      top: 22px;
-      right: 19px;
-      width: 8px;
-      height: 2px;
-      display: block;
-      background: #878787;
-      content: ''
+    position: absolute;
+    top: 22px;
+    right: 19px;
+    width: 8px;
+    height: 2px;
+    display: block;
+    background: #878787;
+    content: "";
   }
   #cssmenu ul ul .submenu-button:after {
-      top: 20px;
-      right: 17px
+    top: 20px;
+    right: 17px;
   }
   #cssmenu .submenu-button.submenu-opened:after {
-      background: #878787
+    background: #878787;
   }
   #cssmenu .submenu-button:before {
-      position: absolute;
-      top: 19px;
-      right: 22px;
-      display: block;
-      width: 2px;
-      height: 8px;
-      background: #878787;
-      content: ''
+    position: absolute;
+    top: 19px;
+    right: 22px;
+    display: block;
+    width: 2px;
+    height: 8px;
+    background: #878787;
+    content: "";
   }
   #cssmenu ul ul .submenu-button:before {
-      top: 17px;
-      right: 20px
+    top: 17px;
+    right: 20px;
   }
   #cssmenu .submenu-button.submenu-opened:before {
-      display: none
+    display: none;
   }
   #cssmenu ul ul ul li.active a {
-      border-left: none
+    border-left: none;
   }
-  #cssmenu>ul>li.has-sub>ul>li.active>a,
-  #cssmenu>ul ul>li.has-sub>ul>li.active>a {
-      border-top: none
+  #cssmenu > ul > li.has-sub > ul > li.active > a,
+  #cssmenu > ul ul > li.has-sub > ul > li.active > a {
+    border-top: none;
   }
   #cssmenu ul {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      padding: 0px;
-      z-index: 999;
-      background: #FFF;
-      box-shadow: 10px 10px 20px rgb(0 0 0 / 20%);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    z-index: 999;
+    background: #fff;
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 20%);
   }
   header.fixed-top #cssmenu ul,
   body.town-bus header #cssmenu ul {
-      top: 0px;
+    top: 0px;
   }
   #cssmenu .submenu-button {
-      background: #efefef;
-      border-bottom: 1px solid #cfcfcf;
+    background: #efefef;
+    border-bottom: 1px solid #cfcfcf;
   }
 }
-
-
-
