@@ -1,0 +1,22 @@
+.next-jump a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #F1000A;
+    position: relative;
+    top: 6px;
+    padding-right: 22px;
+  }
+
+  .next-jump svg {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 20px;
+    text-align: center;
+    color: #F1000A;
+    position: absolute;
+    top: 1px;
+    right:0px;transition: all 0.3s ease;
+  }
+ 

@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { FiChevronRight } from "react-icons/fi";
 import Poster1 from "assets/images/HomeProductsPoster/Poster1.png";
 import "./styles.css";
 
@@ -12,70 +13,33 @@ const NewArrivals = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
   };
   return (
+  <>
+  <section className="new-arrivals">
+  <div className="container">
+    <div className="row">
+    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between">
+    <div className="comon-heads">
+      <h2>New Arrivals</h2>
+    </div>
+    <div className="next-jump">
+      <a href="">View All <FiChevronRight /></a>
+    </div>
+    </div> 
+
     <Slider {...settings}>
       <div>
-        <img src={Poster1} alt="" className="img-fluid w-100 poster-image" />
-        <div className="container">
-          <div className="poster-content">
-            <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
-            <p>
-              Up to Intel Core i9-13980HX | Up to GeForce RTX 4090 | Up to 64GB
-              DDR5 RAM
-            </p>
-            <h4>Starting From ₹82,000</h4>
-            <button className="btn btn-cta">Shop Now</button>
-          </div>
-        </div>
-      </div>
-      <div>
-        <img src={Poster1} alt="" className="img-fluid w-100" />
-        <div className="container">
-          <div className="poster-content">
-            <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
-            <p>
-              Up to Intel Core i9-13980HX | Up to GeForce RTX 4090 | Up to 64GB
-              DDR5 RAM
-            </p>
-            <h4>Starting From ₹82,000</h4>
-            <button className="btn btn-cta">Shop Now</button>
-          </div>
-        </div>
-      </div>
-      <div>
-        <img src={Poster1} alt="" className="img-fluid w-100" />
-        <div className="container">
-          <div className="poster-content">
-            <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
-            <p>
-              Up to Intel Core i9-13980HX | Up to GeForce RTX 4090 | Up to 64GB
-              DDR5 RAM
-            </p>
-            <h4>Starting From ₹82,000</h4>
-            <button className="btn btn-cta">Shop Now</button>
-          </div>
-        </div>
-      </div>
-      <div>
-        <img src={Poster1} alt="" className="img-fluid w-100" />
-        <div className="container">
-          <div className="poster-content">
-            <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
-            <p>
-              Up to Intel Core i9-13980HX <span> | </span> Up to GeForce RTX
-              4090 <span> | </span> Up to 64GB DDR5 RAM
-            </p>
-            <h4>
-              Starting From <b>₹82,000</b>
-            </h4>
-            <button className="btn btn-cta">Shop Now</button>
-          </div>
-        </div>
+         
       </div>
     </Slider>
+
+    </div>
+    </div>
+  </section>
+  </>
   );
 };
 
