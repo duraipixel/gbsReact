@@ -111,3 +111,14 @@ ul {
 ul li {
   display: inline-block;
 }
+a.red-bg-btn{font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px 15px;
+  text-align: center;
+  text-transform: capitalize;
+  background: #F1000A;
+  border-radius: 4px;
+  color: #FFFFFF;}
+
+  a.red-bg-btn:hover{background-color:#00043A;}
