@@ -1,0 +1,5 @@
+.narroww-search{background-color: #f9f9f9;padding:80px 0px 120px;}
+
+.brands-list-slider .slick-dots{bottom:-60px;}
+.brands-list-slider .slick-dots li button{background-color: rgba(241, 0, 10, 0.6) !important;}
+.brands-list-slider .slick-dots li.slick-active button{background-color: #DD1818 !important;} 

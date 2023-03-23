@@ -1,35 +1,36 @@
-.new-arrivals{background-color: #f9f9f9;padding:80px 0px 120px;}
+.new-arrivals.for-students{background-color: #f9f9f9;padding:80px 0px 120px;background: url("../../../assets/images/bg-2.jpg") no-repeat rgba(0, 0, 0, 0); background-size: auto;
+  background-size: cover;}
 
-.next-jump a {
+  .new-arrivals.for-students .comon-heads h2{color:#fff;}
+
+  .new-arrivals.for-students .next-jump a {
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
     text-align: center;
-    color: #F1000A;
+    color: #fff;
     position: relative;
     top: 7px;
     padding-right: 22px;
     transition: all 0.3s ease;
   }
 
-  .next-jump svg {
+  .new-arrivals.for-students .next-jump svg {
     font-weight: 400;
     font-size: 19px;
     line-height: 20px;
     text-align: center;
-    color: #F1000A;
+    color: #fff;
     position: absolute;
     top: 1px;
     right:0px;transition: all 0.3s ease;
   }
  
-  .next-jump a:hover{ 
-    color: var(--bs-body-color); 
+  .next-jump a:hover{  
     transition: all 0.3s ease;
   }
  
-  .next-jump a:hover svg{ 
-    color: var(--bs-body-color); 
+  .next-jump a:hover svg{  
     transition: all 0.3s ease;
     transform: rotate(360deg);
   }

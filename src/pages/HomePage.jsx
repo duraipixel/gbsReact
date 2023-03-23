@@ -8,6 +8,8 @@ import CategoriesPoster from "components/Home/CategoriesPoster/CategoriesPoster"
 import BrowseByPrice from "components/Home/BrowseByPrice/BrowseByPrice";
 import ServiceCenter from "components/Home/ServiceCenter/ServiceCenter";
 import NewArrivals from "components/Home/NewArrivals/NewArrivals";
+import NarrowSearch from "components/Home/NarrowSearch/NarrowSearch";
+import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
 
 const HomePage = () => {
   return (
@@ -19,6 +21,8 @@ const HomePage = () => {
       <BrowseByPrice />
       <NewArrivals />
       <ServiceCenter />
+      <NarrowSearch />
+      <PerfectStudents />
       <PackageSupport />
       <Footer />
     </div>

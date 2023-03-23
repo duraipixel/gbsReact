@@ -10,7 +10,7 @@ import Poster4 from "assets/images/arrivals/product-4.jpg";
 import Poster5 from "assets/images/arrivals/product-5.jpg";
 import "./styles.css";
 
-const NewArrivals = () => {
+const PerfectStudents = () => {
   var settings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -24,12 +24,12 @@ const NewArrivals = () => {
   };
   return (
   <>
-  <section className="new-arrivals">
+  <section className="new-arrivals for-students">
   <div className="container">
     <div className="row">
     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between">
     <div className="comon-heads">
-      <h2>New Arrivals</h2>
+      <h2>Perfect for Students</h2>
     </div>
     <div className="next-jump">
       <a href="">View All <FiChevronRight /></a>
@@ -213,4 +213,4 @@ const NewArrivals = () => {
   );
 };
 
-export default NewArrivals;
+export default PerfectStudents;
