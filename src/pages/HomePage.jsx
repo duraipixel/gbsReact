@@ -10,6 +10,7 @@ import ServiceCenter from "components/Home/ServiceCenter/ServiceCenter";
 import NewArrivals from "components/Home/NewArrivals/NewArrivals";
 import NarrowSearch from "components/Home/NarrowSearch/NarrowSearch";
 import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
+import PrefferedProcessor from "components/Home/PrefferedProcessor/PrefferedProcessor";
 
 const HomePage = () => {
   return (
@@ -23,6 +24,7 @@ const HomePage = () => {
       <ServiceCenter />
       <NarrowSearch />
       <PerfectStudents />
+      <PrefferedProcessor />
       <PackageSupport />
       <Footer />
     </div>
