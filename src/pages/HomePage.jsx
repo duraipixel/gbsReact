@@ -11,6 +11,8 @@ import NewArrivals from "components/Home/NewArrivals/NewArrivals";
 import NarrowSearch from "components/Home/NarrowSearch/NarrowSearch";
 import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
 import PrefferedProcessor from "components/Home/PrefferedProcessor/PrefferedProcessor";
+import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
+import Tablets from "components/Home/Tablets/Tablets";
 
 const HomePage = () => {
   return (
@@ -25,6 +27,8 @@ const HomePage = () => {
       <NarrowSearch />
       <PerfectStudents />
       <PrefferedProcessor />
+      <GamersLaptop />
+      <Tablets />
       <PackageSupport />
       <Footer />
     </div>
