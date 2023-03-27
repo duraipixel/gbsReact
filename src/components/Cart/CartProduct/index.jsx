@@ -10,11 +10,11 @@ const CartProduct = () => {
       <section className="bg-off-grey">
         <Container>
           <Row>
-            <Col lg={8} className="card-cart p-4 pb-0">
+            <Col lg={8} className="card-cart p-4 pb-0 align-self-start">
               <ProductDetails />
             </Col>
 
-            <Col lg={{ span: 3, offset: 1 }} className="card-cart p-4">
+            <Col lg={{ span: 3, offset: 1 }} className="card-cart p-4 align-self-start">
               <CartDetails />
             </Col>
           </Row>

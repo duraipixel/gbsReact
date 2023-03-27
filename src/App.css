@@ -30,6 +30,9 @@ a {
 .bg-off-grey {
   background-color: #f7f7f7;
 }
+.clr-accent{
+  color: var(--accent-color);
+}
 /* Font */
 .font-size-1_5rem {
   font-size: 1.5rem;
