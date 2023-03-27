@@ -60,6 +60,10 @@ a {
   display: flex;
   align-items: center;
 }
+.flex-align-start{
+  display: flex;
+  align-self: flex-start;
+}
 .gap-8rem {
   gap: 8rem;
 }
@@ -69,7 +73,6 @@ a {
 .m-l-2{
   margin-left: 2rem;
 }
-
 .m-l-4 {
   margin-left: 4rem;
 }
