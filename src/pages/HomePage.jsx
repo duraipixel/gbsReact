@@ -13,6 +13,7 @@ import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
 import PrefferedProcessor from "components/Home/PrefferedProcessor/PrefferedProcessor";
 import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
 import Tablets from "components/Home/Tablets/Tablets";
+import Combos from "components/Home/Combos/Combos";
 
 const HomePage = () => {
   return (
@@ -29,6 +30,7 @@ const HomePage = () => {
       <PrefferedProcessor />
       <GamersLaptop />
       <Tablets />
+      <Combos />
       <PackageSupport />
       <Footer />
     </div>
