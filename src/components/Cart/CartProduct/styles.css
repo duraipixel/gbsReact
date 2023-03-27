@@ -1,6 +1,13 @@
 * {
   font-family: "Outfit";
 }
+a.change-address{
+  color: #000;
+}
+
+a.change-address:hover{
+  text-decoration:underline ;
+}
 .card-cart {
   background: #ffffff;
   box-shadow: 11px 11px 15px rgba(0, 0, 0, 0.06);
@@ -109,4 +116,65 @@
 
 .finalcart-list .table-bordered td:nth-child(6) {
   text-align: right;
+}
+
+button.refreshing {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 24px;
+  color: #a5a5a5;
+}
+
+button.refreshing img {
+  margin-right: 25px;
+  margin-top: -2px;
+}
+
+.line-spacer {
+  height: 1px;
+  background-color: #d0d0d0;
+  margin-bottom: 25px;
+}
+
+.table.table-borderless.end-point {
+  margin-top: -15px;
+}
+
+.table.table-borderless.end-point button {
+  font-family: "Outfit";
+  font-size: 16px;
+  align-items: center;
+  padding: 12px 15px;
+  background: var(--accent-color);
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+/* .table.table-borderless.end-point button:hover {
+  background-color: #141f80;
+  transition: all 0.5s ease;
+} */
+
+.table.table-borderless.end-point td:first-child {
+  font-size: 20px;
+  color: #212363;
+}
+
+.table.table-borderless.end-point td:last-child {
+  font-size: 20px;
+  color: #000000;
+}
+
+@media (max-width: 990px) {
+  .card-cart {
+    margin-top: 2rem;
+    margin-left: auto;
+  }
+  .card-cart div div {
+    gap: 3rem;
+  }
 }
