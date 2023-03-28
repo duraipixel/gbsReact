@@ -1,12 +1,12 @@
 * {
   font-family: "Outfit";
 }
-a.change-address{
+a.change-address {
   color: #000;
 }
 
-a.change-address:hover{
-  text-decoration:underline ;
+a.change-address:hover {
+  text-decoration: underline;
 }
 .card-cart {
   background: #ffffff;
@@ -47,6 +47,10 @@ a.change-address:hover{
 .finalcart-list .table-bordered th {
   line-height: 21px;
   color: #929292;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .finalcart-list .table-bordered td button {
