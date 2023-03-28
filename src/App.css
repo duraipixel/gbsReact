@@ -85,7 +85,9 @@ a {
 .m-l-4 {
   margin-left: 4rem;
 }
-
+.p-t-1{
+  padding:1rem;
+}
 .sub-heading {
   font-family: "Outfit";
   font-style: normal;

@@ -1,6 +1,7 @@
 import React from "react";
 import Cart1 from "assets/images/Cart/Cart1.png";
 import Cart2 from "assets/images/Cart/Cart2.png";
+import Warrenty from "assets/images/Cart/warranty.png";
 import PlusSign from "assets/images/Cart/PlusSign.png";
 import MinusSign from "assets/images/Cart/MinusSign.png";
 import RefreshBtn from "assets/images/Cart/refreshBtn.png";
@@ -53,6 +54,23 @@ const ProductDetails = () => {
                 </button>
               </td>
               <td>
+                <img src={Warrenty} alt="empty" />
+              </td>
+              <td>Extended Warranty - 1 Year</td>
+
+              <td>&nbsp;</td>
+              <td>
+                <span className="price"> ₹6,000</span>
+              </td>
+            </tr>
+            <hr className="m-0" />
+            <tr>
+              <td>
+                <button>
+                  <i className="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+              </td>
+              <td>
                 <img src={Cart2} alt="empty" />
               </td>
               <td>ASUS TUF K1 USB Gaming Keyboard </td>
@@ -70,6 +88,7 @@ const ProductDetails = () => {
                 <span className="price"> ₹9,200</span>
               </td>
             </tr>
+           
             <tr>
               <td colSpan="4" style={{ border: "0px" }}>
                 Have a Coupon?
