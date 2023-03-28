@@ -31,7 +31,7 @@ const PrefferedProcessor = () => {
   <div className="container">
   <div className="row">
 
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div className="intel-core text-center"> 
 
     <div>
@@ -75,7 +75,7 @@ const PrefferedProcessor = () => {
     </div>
     </div>  
 
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 <div className="intel-core text-center"> 
 
 <div>
@@ -119,7 +119,7 @@ Intel® CoreTM  i3 Processors
 </div>
 </div>  
 
-<div class="min-hgt-80">
+<div className="min-hgt-80">
 
 </div>
 

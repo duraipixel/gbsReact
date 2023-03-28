@@ -198,19 +198,19 @@ const Tablets = () => {
     </div> 
     </div>
 
-  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+  <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
   <img src={screen1} alt="" className="img-fluid poster-image" />
   </div>
 
-<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <img src={screen2} alt="" className="img-fluid poster-image" />
 </div>
 
-<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <img src={screen3} alt="" className="img-fluid poster-image" />
 </div>
 
-<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <img src={screen4} alt="" className="img-fluid poster-image" />
 </div>
 

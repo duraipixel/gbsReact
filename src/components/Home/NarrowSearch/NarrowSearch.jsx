@@ -24,7 +24,7 @@ const NarrowSearch = () => {
   return (
   <>
    
-  <section class="narroww-search text-center">
+  <section className="narroww-search text-center">
   <div className="container">
   <div className="row">
 

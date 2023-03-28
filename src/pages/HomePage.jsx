@@ -14,6 +14,7 @@ import PrefferedProcessor from "components/Home/PrefferedProcessor/PrefferedProc
 import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
 import Tablets from "components/Home/Tablets/Tablets";
 import Combos from "components/Home/Combos/Combos";
+import MustHaves from "components/Home/MustHaves/MustHaves";
 
 const HomePage = () => {
   return (
@@ -31,6 +32,7 @@ const HomePage = () => {
       <GamersLaptop />
       <Tablets />
       <Combos />
+      <MustHaves />
       <PackageSupport />
       <Footer />
     </div>

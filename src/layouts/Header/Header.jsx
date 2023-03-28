@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
+import close from "assets/images/close.png";
 import { FiUser, FiShoppingCart, FiMenu } from "react-icons/fi";
 import "./styles.css";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ const Header = () => {
                 </div>
                 <div className="top-search text-center">
                   <div className="hoger-toggle">
-                    <Link to="">
+                    <Link to="javascript:void(0)" className="toggle-button">
                       <FiMenu className="font-size-1_5rem" />
                       Menu
                     </Link>
@@ -52,8 +53,40 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> 
+        
+        <div className="togle-menu">
+              <div className="togmenu-header">
+                  <a href="javascript:void(0)" className="clse-menu"><img src={close} alt="" /></a>
+                  <h4>What are you looking<br /> for today?</h4>
+              </div>
+              <div className="togmenu-lists">
+                <ul>
+                <li>
+                <Link>Laptops</Link>
+                </li>
+                <li>
+                <Link>Desktops</Link>
+                </li>
+                <li>
+                <Link>Tablets</Link>
+                </li>
+                <li>
+                <Link>Top Deals</Link>
+                </li>
+                <li>
+                <Link>Shop by Brand</Link>
+                </li>
+                <li>
+                <Link>GBS Service</Link>
+                </li>
+                <li>
+                <Link>Store Finder</Link>
+                </li>
+                </ul>
+              </div>
+        </div>    
     </>
   );
 };
