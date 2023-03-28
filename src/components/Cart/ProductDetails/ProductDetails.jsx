@@ -28,7 +28,7 @@ const ProductDetails = () => {
                 </button>
               </td>
               <td>
-                <img className="prdt-clsimg" src={Cart1} alt="empty" />
+                <img src={Cart1} alt="empty" />
               </td>
               <td>ASUS ROG Strix G17 - G713IE-HX040W</td>
 
@@ -53,7 +53,7 @@ const ProductDetails = () => {
                 </button>
               </td>
               <td>
-                <img className="" src={Cart2} alt="empty" />
+                <img src={Cart2} alt="empty" />
               </td>
               <td>ASUS TUF K1 USB Gaming Keyboard </td>
 
