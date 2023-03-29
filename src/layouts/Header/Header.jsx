@@ -5,7 +5,7 @@ import { FiUser, FiShoppingCart, FiMenu } from "react-icons/fi";
 import "./styles.css";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
   return (
     <>
       <div className="top-bar">
@@ -20,7 +20,7 @@ const Header = () => {
                 </div>
                 <div className="top-search text-center">
                   <div className="hoger-toggle">
-                    <Link to="javascript:void(0)" className="toggle-button">
+                    <Link to="javascript:void(0)" onClick={() => toggleLeftSideMenu()} className="toggle-button">
                       <FiMenu className="font-size-1_5rem" />
                       Menu
                     </Link>
@@ -56,35 +56,56 @@ const Header = () => {
         </div> 
       </div> 
         
-        <div className="togle-menu">
+        <div className={`togle-menu ${showToggle ? 'show' : ''}`} id="toggle_left_menu">
               <div className="togmenu-header">
-                  <a href="javascript:void(0)" className="clse-menu"><img src={close} alt="" /></a>
+                  <a href="javascript:void(0)" className="clse-menu" onClick={() => closeToggle()}>
+                    <img src={close} alt="" /></a>
                   <h4>What are you looking<br /> for today?</h4>
               </div>
               <div className="togmenu-lists">
+              <div class="navigation">
                 <ul>
-                <li>
-                <Link>Laptops</Link>
-                </li>
-                <li>
-                <Link>Desktops</Link>
-                </li>
-                <li>
-                <Link>Tablets</Link>
-                </li>
-                <li>
-                <Link>Top Deals</Link>
-                </li>
-                <li>
-                <Link>Shop by Brand</Link>
-                </li>
-                <li>
-                <Link>GBS Service</Link>
-                </li>
-                <li>
-                <Link>Store Finder</Link>
-                </li>
+                  {/* <li class="has-sub"> <a href="#">Menu 1</a>
+                    <ul>
+                    <li class="has-sub"> <a href="#">Submenu 1.1</a>
+                      <ul>
+                      <li><a href="#">Submenu 1.1.1</a></li>
+                      <li class="has-sub"><a href="#">Submenu 1.1.2</a>
+                        <ul>
+                        <li><a href="#">Submenu 1.1.2.1</a></li>
+                        <li><a href="#">Submenu 1.1.2.2</a></li>
+                        </ul>
+                      </li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Submenu 1.2</a></li>
+                    </ul>
+                  </li> */}
+                  <li class="has-sub"> <a href="#">Laptops</a>
+                    <ul>
+                    <li><a href="#">All Laptops</a></li>
+                    <li><a href="#">for Casual & Everyday Use</a></li>
+                    <li><a href="#">for Business</a></li>
+                    <li><a href="#">for Content Creators</a></li>
+                    <li><a href="#">for Gaming</a></li>
+                    </ul>
+                  </li>
+                  <li class="has-sub"> <a href="#">Desktops </a>
+                    <ul>
+                    <li><a href="#">All Desktops</a></li>
+                    <li><a href="#">for Casual & Everyday Use</a></li>
+                    <li><a href="#">for Business</a></li>
+                    <li><a href="#">for Content Creators</a></li>
+                    <li><a href="#">for Gaming</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="#"> Tablets </a></li>
+                  <li><a href="#"> Top Deals </a></li>
+                  <li><a href="#"> Shop by Brand </a></li>
+                  <li><a href="#"> GBS Service </a></li>
+                  <li><a href="#"> Store Finder </a></li>
                 </ul>
+              </div>
               </div>
         </div>    
     </>

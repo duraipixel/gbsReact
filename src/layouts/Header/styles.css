@@ -330,7 +330,7 @@ body.town-bus header #cssmenu > ul > li.has-sub > a:before {
   padding: 6px 0px 10px;
   transition: all 0.3s ease;
   box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  z-index: 99;
 }
 
 .top-bar.top-fix .top-search select {
@@ -463,8 +463,7 @@ body.town-bus header #cssmenu ul ul {
   height: 45px;
   padding: 15px 35px 15px 15px;
   border-radius: 4px;
-  background: #fff url("../../assets/images/serch.png") no-repeat scroll 97%
-    center;
+  background: #fff url("../../assets/images/serch.png") no-repeat scroll 97% center;
   margin-top: 0px;
   transition: all 0.3s ease;
   outline: none;
@@ -717,13 +716,15 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 
 .togle-menu {
   position: fixed;
-  left: -500px;
+  left: 0;
   top: 0px;
   width: 450px;
   height: 100vh;
   z-index: 9999;
   background: #fff;
   color: #000;
+  opacity: 0;
+  visibility: hidden;
   transition: all 0.5s ease;
 }
 
@@ -742,8 +743,9 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 }
 
 .togle-menu.show {
-  left: 0px;
+  opacity: 1;
   transition: all 0.5s ease;
+  visibility: visible;
 }
 
 .overlay {
@@ -766,8 +768,9 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 }
 
 .togmenu-header {
-  background: #212363;
+ background: #fff url("../../assets/images/bg-5.jpg") no-repeat scroll center center;
   padding: 30px 30px 30px 40px;
+  background-size: cover;
   transition: all 0.5s ease;
 }
 
@@ -775,18 +778,19 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   position: fixed;
   width: 450px;
   top: 0;
-  left: -450px;
+  left:0;
+  opacity: 0;
   transition: all 0.5s ease;
   z-index: 90;
 }
 
 .togle-menu.show .togmenu-header {
-  left: 0;
+  opacity: 1;
   transition: all 0.5s ease;
 }
 
 .togmenu-lists {
-  padding-top: 127px;
+  padding-top: 125px;
   position: relative;
 }
 
@@ -806,12 +810,12 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 }
 
 .togmenu-header h4 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 24px;
   line-height: 33px;
   color: #ffffff;
   margin: 0px;
-  font-family: "Outfit", sans-serif;
+  text-align: center;
 }
 
 .togle-menu .accordion-button {
@@ -1229,4 +1233,210 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     background: #efefef;
     border-bottom: 1px solid #cfcfcf;
   }
+}
+
+
+
+.navigation {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 1;
+}
+
+.navigation ul,
+.navigation ul li,
+.navigation ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul {
+  position: relative;
+  z-index: 500;
+  float: left;
+}
+
+.navigation ul li {
+  float: left;
+  min-height: 0.05em;
+  line-height: 1em;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+    width:100%;
+}
+
+.navigation ul li.hover,
+.navigation ul li:hover {
+  position: relative;
+  z-index: 510;
+  cursor: default;
+}
+
+.navigation ul ul { 
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  z-index: 520;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navigation ul ul li { float: none; }
+
+.navigation ul ul ul {
+  top: 0;
+  right: 0;
+}
+
+.navigation ul li:hover > ul {  opacity: 1;visibility: visible;}
+
+.navigation ul ul {
+  top: 0;
+  left: 99%;
+}
+
+.navigation ul li { float: none; }
+
+.navigation ul ul { margin-top: 0.05em; }
+
+.navigation {
+  width: 100%; 
+  font-family: 'roboto', Tahoma, Arial, sans-serif;
+  zoom: 1;
+}
+
+.navigation:before {
+  content: '';
+  display: block;
+}
+
+.navigation:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.navigation a {
+  display: block;
+  padding: 1em 1.3em;
+  color: #ffffff;
+  text-decoration: none; 
+
+}
+
+.navigation > ul { width: 100%; }
+
+.navigation ul ul { width: 100%; }
+
+.navigation > ul > li > a {  
+  font-weight: 500;
+font-size: 18px;
+line-height: 23px; 
+border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+color: #000000;
+font-family: 'Mulish', sans-serif;
+}
+
+.navigation > ul > li > a:hover { color: #000; }
+
+.navigation > ul > li a:hover,
+.navigation > ul > li:hover a {  }
+
+.navigation li { position: relative; }
+
+.navigation ul li.has-sub > a:after {
+  background: #fff url("../../assets/images/rgt.png") no-repeat scroll 0 0;
+  content: '';
+  position: absolute;
+  top:22px;
+  right:30px;
+  width: 8px;
+  height: 14px;
+
+}
+
+.navigation ul ul li.first {
+  -webkit-border-radius: 0 3px 0 0;
+  -moz-border-radius: 0 3px 0 0;
+  border-radius: 0 3px 0 0;
+}
+
+.navigation ul ul li.last {
+  -webkit-border-radius: 0 0 3px 0;
+  -moz-border-radius: 0 0 3px 0;
+  border-radius: 0 0 3px 0;
+  border-bottom: 0;
+}
+
+.navigation ul ul {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.navigation ul ul {background-color: #fff;-webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.21);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.21);
+  box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.21);}
+
+.navigation ul ul a { color: #000; }
+
+.navigation ul ul a:hover { color: #ffffff; }
+
+.navigation ul ul li {  }
+
+.navigation ul ul li:hover > a {
+  background: #000;
+  color: #ffffff;
+}
+
+.navigation.align-right > ul > li > a {
+   
+  border-right: none;
+}
+
+.navigation.align-right { float: right; }
+
+.navigation.align-right li { text-align: right; }
+
+.navigation.align-right ul li.has-sub > a:before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -6px;
+}
+
+.navigation.align-right ul li.has-sub > a:after { content: none; }
+
+.navigation.align-right ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 598;
+  width: 100%;
+  opacity: 0;
+
+}
+
+.navigation.align-right ul ul li.first {
+  -webkit-border-radius: 3px 0 0 0;
+  -moz-border-radius: 3px 0 0 0;
+  border-radius: 3px 0 0 0;
+}
+
+.navigation.align-right ul ul li.last {
+  -webkit-border-radius: 0 0 0 3px;
+  -moz-border-radius: 0 0 0 3px;
+  border-radius: 0 0 0 3px;
+}
+
+.navigation.align-right ul ul {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
 }
