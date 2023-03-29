@@ -63,14 +63,14 @@ const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
                   <h4>What are you looking<br /> for today?</h4>
               </div>
               <div className="togmenu-lists">
-              <div class="navigation">
+              <div className="navigation">
                 <ul>
-                  {/* <li class="has-sub"> <a href="#">Menu 1</a>
+                  {/* <li className="has-sub"> <a href="#">Menu 1</a>
                     <ul>
-                    <li class="has-sub"> <a href="#">Submenu 1.1</a>
+                    <li className="has-sub"> <a href="#">Submenu 1.1</a>
                       <ul>
                       <li><a href="#">Submenu 1.1.1</a></li>
-                      <li class="has-sub"><a href="#">Submenu 1.1.2</a>
+                      <li className="has-sub"><a href="#">Submenu 1.1.2</a>
                         <ul>
                         <li><a href="#">Submenu 1.1.2.1</a></li>
                         <li><a href="#">Submenu 1.1.2.2</a></li>
@@ -81,7 +81,7 @@ const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
                     <li><a href="#">Submenu 1.2</a></li>
                     </ul>
                   </li> */}
-                  <li class="has-sub"> <a href="#">Laptops</a>
+                  <li className="has-sub"> <a href="#">Laptops</a>
                     <ul>
                     <li><a href="#">All Laptops</a></li>
                     <li><a href="#">for Casual & Everyday Use</a></li>
@@ -90,7 +90,7 @@ const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
                     <li><a href="#">for Gaming</a></li>
                     </ul>
                   </li>
-                  <li class="has-sub"> <a href="#">Desktops </a>
+                  <li className="has-sub"> <a href="#">Desktops </a>
                     <ul>
                     <li><a href="#">All Desktops</a></li>
                     <li><a href="#">for Casual & Everyday Use</a></li>

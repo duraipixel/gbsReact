@@ -17,7 +17,7 @@ const CartProduct = () => {
             </Col>
 
             <Col lg={4} className="align-self-start pb-0">
-            <Col className="card-cart p-4">
+              <Col className="card-cart p-4">
               <CartDetails />
               </Col>       
             </Col>

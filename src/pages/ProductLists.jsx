@@ -1,9 +1,10 @@
+import ProductLists from "components/ProductsLists";
 import React from "react";
 
 const CartPage = () => {
   return (
     <div>
-      <ProductListView />
+      <ProductLists />
     </div>
   );
 };

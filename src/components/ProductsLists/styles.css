@@ -1,0 +1,207 @@
+.products-list-layer{position: relative;}
+.products-list-layer:before{            position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 31%;
+  background-color: rgba(241, 0, 10, 0.03);}
+  .products-list-layer .container {
+    position: relative;
+    z-index: 10;
+}
+  .cstm-chkbx {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin: 10px 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cstm-chkbx input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.cstm-chkbx .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 1px solid #F1000A;;
+}
+/* On mouse-over, add a grey background color */
+
+.cstm-chkbx:hover input~.checkmark {
+    background-color: #fecacb;
+}
+
+.cstm-chkbx input:checked~.checkmark {
+    background-color: #F1000A;;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cstm-chkbx input:checked~.checkmark:after {
+    display: block;
+}
+
+.cstm-chkbx .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 8px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.filter-lists h3 { 
+    margin-bottom: 30px;
+    font-weight: 600;
+font-size: 24px;
+line-height: 33px; 
+color: #000000;
+}
+
+.filter-lists h4 { 
+    margin-bottom:10px; 
+    font-weight: 500;
+font-size: 20px;
+line-height: 25px;
+color: #000000;
+}
+
+.filter-lists ul {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom:25px;
+}
+
+.filter-lists ul li {
+    display: inline-block;
+    width: 100%;
+    font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #000000;
+} 
+
+.sort-order select {
+  width: 179px;
+  height: 35px;
+  border-radius: 4px;
+  margin-top: 0px;
+  background: #EBEBEB url("../../assets/images/dwn.png") no-repeat scroll 90% center;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 15px; 
+  line-height: 19px;
+  border: 0px;
+  position: relative;
+  right: -2px;
+  transition: all .3s ease;
+  color: #101010;
+}
+
+.sort-order {
+  position: relative;
+}
+
+.sort-order span {
+  position: absolute;
+  left: -60px; 
+  top: 8px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.primary-heads h3{font-weight: 500;
+  font-size: 15px;
+  line-height: 19px; 
+  color: #000000;}
+
+.img-details h2{font-weight: 600;
+  font-size: 28px;
+  line-height: 35px; margin-bottom: 15px;
+  text-transform: capitalize;
+  color: #000000;}
+
+.img-details h3{font-weight: 500;font-size: 12px; 
+line-height: 15px; 
+text-transform: uppercase;
+color: #929292;}
+
+.img-details h3 span.rat-esr {
+margin-left: 15px;
+display: inline-block;
+font-weight: 600;
+font-size: 13px;
+position: relative;
+line-height: 16px;
+color: #929292;
+padding-left: 19px;
+}
+
+.img-details h3 span.rat-esr svg {
+font-size: 16px;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.img-details h4{font-weight: 500;
+font-size: 18px;
+line-height: 23px;margin-top: 15px; 
+text-decoration-line: line-through;
+color: #929292;}
+
+.img-details h4 span.ori-nal{font-weight: 500;
+  font-size: 22px;display: inline-block;
+  line-height: 28px; text-decoration: none;
+  color: #000000;margin-left: 10px;}
+
+  .img-details h5{font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;margin-left: 15px;
+    display: inline-block;
+    color: #212363;}
+
+ul.config-uration{padding: 0px;margin:0px;margin-top: 15px;}    
+ul.config-uration li{display: inline-block;font-weight: 400;
+  font-size: 14px;margin-right: 22px;
+  line-height: 18px; position: relative;
+  text-transform: capitalize;
+  color: #212363;}    
+  ul.config-uration li::before {
+    position: absolute;
+    content: "";
+    right: -13px;
+    top: 8px;
+    height: 4px;
+    width: 4px;
+    background-color: #F1000A;
+    border-radius: 100%;
+  }
+  ul.config-uration li:last-child:before {display:none;}
+  .clk-optn a{text-align: center;}
+
+  .seprators-prdlst{border: 1px solid rgba(162, 162, 162, 0.5);margin: 30px 0px;}
