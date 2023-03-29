@@ -1,104 +1,170 @@
-.new-arrivals.for-gamers{background-color: #f9f9f9;padding:80px 0px 120px;background: url("../../../assets/images/bg-3.jpg") no-repeat rgba(0, 0, 0, 0); background-size: auto;
-  background-size: cover;}
+.new-arrivals.for-gamers {
+  background-color: #f9f9f9;
+  padding: 80px 0px 120px;
+  background: url("../../../assets/images/bg-3.jpg") no-repeat rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-size: cover;
+}
 
-  .new-arrivals.for-gamers .comon-heads h2{color:#fff;}
+.new-arrivals.for-gamers .comon-heads h2 {
+  color: #fff;
+}
 
-  .new-arrivals.for-gamers .next-jump a {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    top: 7px;
-    padding-right: 22px;
-    transition: all 0.3s ease;
-  }
+.new-arrivals.for-gamers .next-jump a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  top: 7px;
+  padding-right: 22px;
+  transition: all 0.3s ease;
+}
 
-  .new-arrivals.for-gamers .next-jump svg {
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 20px;
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    top: 1px;
-    right:0px;transition: all 0.3s ease;
-  }
- 
-  .next-jump a:hover{  
-    transition: all 0.3s ease;
-  }
- 
-  .next-jump a:hover svg{  
-    transition: all 0.3s ease;
-    transform: rotate(360deg);
-  }
+.new-arrivals.for-gamers .next-jump svg {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  transition: all 0.3s ease;
+}
 
-  .arival-det{box-shadow:0px 0px 5px rgba(0, 0, 0, 0.06);
-    border-radius: 6px; }
+.next-jump a:hover {
+  transition: all 0.3s ease;
+}
 
-  .ari-cnt{padding: 15px;background: #EFEFEF;}
-  .ari-cnt h2 {font-weight: 500;
-font-size: 12px;
-line-height: 15px;
-text-transform: uppercase;
-color: #929292;}
-.ari-cnt h3{font-weight: 600;
-font-size: 13px;
-line-height: 16px;
-color: #929292;}
-.ari-cnt h4{font-weight: 600;
-font-size: 16px;
-line-height: 20px;
-text-align: center;margin-top: 10px;
-text-transform: capitalize;
-color: #000000;min-height: 45px;}
-.ari-cnt h5{font-weight: 500;
+.next-jump a:hover svg {
+  transition: all 0.3s ease;
+  transform: rotate(360deg);
+}
+
+.arival-det {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+}
+
+.ari-cnt {
+  padding: 15px;
+  background: #efefef;
+}
+.ari-cnt h2 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #929292;
+}
+.ari-cnt h3 {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #929292;
+}
+.ari-cnt h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 10px;
+  text-transform: capitalize;
+  color: #000000;
+  min-height: 45px;
+}
+.ari-cnt h5 {
+  font-weight: 500;
   font-size: 22px;
-  line-height: 28px; 
-  color: #000000;margin-bottom: 15px;}
+  line-height: 28px;
+  color: #000000;
+  margin-bottom: 15px;
+}
 
-  .ari-cnt ul{margin: 0px;padding: 0px;margin-bottom: 20px;}
-  .ari-cnt ul li{display: inline-block;width: 100%;font-weight: 400;
-    font-size: 14px;
-    line-height: 18px; 
-    text-align: center;
-    text-transform: capitalize;position: relative;
-    color: #000000;margin-bottom: 15px;}
-    .ari-cnt ul li:before{position: absolute;content:"";left:0;bottom:-10px;height:1px;width:100%;background-color: rgba(146, 146, 146, 0.2);} 
-.ari-cnt h5 span{font-weight: 500;
-  font-size: 18px;margin-right: 10px;
-  line-height: 23px; display: inline-block;
+.ari-cnt ul {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+.ari-cnt ul li {
+  display: inline-block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  position: relative;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.ari-cnt ul li:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -10px;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(146, 146, 146, 0.2);
+}
+.ari-cnt h5 span {
+  font-weight: 500;
+  font-size: 18px;
+  margin-right: 10px;
+  line-height: 23px;
+  display: inline-block;
   text-decoration-line: line-through;
-  color: #929292;}
-.ari-cnt h3 svg{position: relative;top:-2px;}
-.ari-img{background-color:#fff;text-align: center;position: relative;}
-.ari-img img{display: inline-block;}
+  color: #929292;
+}
+.ari-cnt h3 svg {
+  position: relative;
+  top: -2px;
+}
+.ari-img {
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+}
+.ari-img img {
+  display: inline-block;
+}
 
-.off-prc{position: absolute;content: "";height:50px;width:50px;background: #00043A;top:15px;right:15px;border-radius: 100%;}
+.off-prc {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  background: #00043a;
+  top: 15px;
+  right: 15px;
+  border-radius: 100%;
+}
 
 .off-prc h3 {
   font-weight: 700;
   font-size: 16px;
   line-height: 15px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 10px 0px 0px;
 }
 
-  .off-prc h3 span{font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-text-align: center;
-display: inline-block;
-color: #FFFFFF;}
+.off-prc h3 span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  display: inline-block;
+  color: #ffffff;
+}
 
 .clk-optn a {
   height: 30px;
   width: 30px;
-  border: 1px solid #00043A;
-  color: #00043A;
+  border: 1px solid #00043a;
+  color: #00043a;
   padding: 1px;
   border-radius: 100%;
   position: relative;
@@ -106,13 +172,27 @@ color: #FFFFFF;}
   margin-right: 12px;
 }
 
-.clk-optn a:hover{background-color:#00043A;}
-.clk-optn a:hover svg{color:#fff;}
+.clk-optn a:hover {
+  background-color: #00043a;
+}
+.clk-optn a:hover svg {
+  color: #fff;
+}
 
-.arrival-slider .slick-slide > div{padding: 0px 10px;}
+.arrival-slider .slick-slide > div {
+  padding: 0px 10px;
+}
 
-.arrival-slider{margin: 0px -10px;}
+.arrival-slider {
+  margin: 0px -10px;
+}
 
-.arrival-slider .slick-dots{bottom:-60px;}
-.new-arrivals.for-gamers .arrival-slider .slick-dots li button{background-color:rgba(255, 255, 255, 0.6)!important;}
-.new-arrivals.for-gamers .arrival-slider .slick-dots li.slick-active button{background-color: #fff  !important;} 
+.arrival-slider .slick-dots {
+  bottom: -60px;
+}
+.new-arrivals.for-gamers .arrival-slider .slick-dots li button {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+.new-arrivals.for-gamers .arrival-slider .slick-dots li.slick-active button {
+  background-color: #fff !important;
+}
