@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Outfit:wght@400;500;600;700&display=swap");
 @import url("slick-carousel/slick/slick.css");
 @import url("slick-carousel/slick/slick-theme.css");
 
@@ -85,8 +84,8 @@ a {
 .m-l-4 {
   margin-left: 4rem;
 }
-.p-t-1{
-  padding:1rem;
+.p-t-1 {
+  padding: 1rem;
 }
 .sub-heading {
   font-family: "Outfit";

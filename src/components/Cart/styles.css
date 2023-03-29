@@ -172,7 +172,11 @@ button.refreshing img {
   font-size: 20px;
   color: #000000;
 }
-
+.address-details {
+  font-family: "Mulish";
+  font-size: 14px;
+  line-height: 18px;
+}
 @media (max-width: 990px) {
   .card-cart {
     margin-top: 2rem;

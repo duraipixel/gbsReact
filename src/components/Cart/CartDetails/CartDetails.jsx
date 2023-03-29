@@ -46,8 +46,10 @@ const CartDetails = () => {
         <tbody>
           <tr colSpan="2">
             Kabir L <br />
-            1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West,
-            Chennai, Tamil Nadu 600040
+            <p className="address-details" style={{ paddingLeft: "0", textAlign: "left" }}>
+              1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West,
+              Chennai, Tamil Nadu 600040
+            </p>
           </tr>
           <tr>
             <td style={{ paddingLeft: "0", textAlign: "left" }}>
