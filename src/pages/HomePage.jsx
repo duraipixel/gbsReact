@@ -13,8 +13,9 @@ import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
 import Tablets from "components/Home/Tablets/Tablets";
 import Combos from "components/Home/Combos/Combos";
 import MustHaves from "components/Home/MustHaves/MustHaves";
-
+import { scrollToTop } from "utils";
 const HomePage = () => {
+  scrollToTop();
   return (
     <div>
       <HomeProductsSlider />
