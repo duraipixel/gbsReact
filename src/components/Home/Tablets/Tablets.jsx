@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { FiChevronRight, FiHeart } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
@@ -36,9 +37,9 @@ const Tablets = () => {
                 <h2>Tablets that Help You Work on the Move</h2>
               </div>
               <div className="next-jump">
-                <a href="">
+                <Link to="">
                   View All <FiChevronRight />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -72,17 +73,17 @@ const Tablets = () => {
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -117,17 +118,17 @@ const Tablets = () => {
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -156,17 +157,17 @@ const Tablets = () => {
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -201,17 +202,17 @@ const Tablets = () => {
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -246,17 +247,17 @@ const Tablets = () => {
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 const ServiceCenter = () => {
@@ -28,7 +29,7 @@ const ServiceCenter = () => {
                   <li>Coimbatore</li>
                   <li>Bangalore</li>
                 </ul>
-                <a href="">Find Your Nearest GBS After Sales Service Center</a>
+                <Link to="">Find Your Nearest GBS After Sales Service Center</Link>
               </div>
             </div>
           </div>

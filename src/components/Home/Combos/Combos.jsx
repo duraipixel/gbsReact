@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { FiChevronRight, FiHeart } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
@@ -32,9 +33,9 @@ const Combos = () => {
                 <h2>Undeniable Combos</h2>
               </div>
               <div className="next-jump">
-                <a href="">
+                <Link to="">
                   View All <FiChevronRight />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -51,7 +52,7 @@ const Combos = () => {
     <div className="col">
     <img src={combo1} alt="" className="img-fluid poster-image w-100" />
     </div> 
-    <AiOutlinePlus />
+    <LinkiOutlinePlus />
     <div className="col mt-90">
     <img src={combo2} alt="" className="img-fluid poster-image w-100" />
     </div> 
@@ -77,17 +78,17 @@ const Combos = () => {
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -104,7 +105,7 @@ const Combos = () => {
     <div className="col">
     <img src={combo1} alt="" className="img-fluid poster-image w-100" />
     </div> 
-    <AiOutlinePlus />
+    <LinkiOutlinePlus />
     <div className="col mt-90">
     <img src={combo2} alt="" className="img-fluid poster-image w-100" />
     </div> 
@@ -130,17 +131,17 @@ const Combos = () => {
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -157,7 +158,7 @@ const Combos = () => {
     <div className="col">
     <img src={combo1} alt="" className="img-fluid poster-image w-100" />
     </div> 
-    <AiOutlinePlus />
+    <LinkiOutlinePlus />
     <div className="col mt-90">
     <img src={combo2} alt="" className="img-fluid poster-image w-100" />
     </div> 
@@ -180,17 +181,17 @@ const Combos = () => {
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -207,7 +208,7 @@ const Combos = () => {
     <div className="col">
     <img src={combo1} alt="" className="img-fluid poster-image w-100" />
     </div> 
-    <AiOutlinePlus />
+    <LinkiOutlinePlus />
     <div className="col mt-90">
     <img src={combo2} alt="" className="img-fluid poster-image w-100" />
     </div> 
@@ -230,17 +231,17 @@ const Combos = () => {
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -257,7 +258,7 @@ const Combos = () => {
     <div className="col">
     <img src={combo1} alt="" className="img-fluid poster-image w-100" />
     </div> 
-    <AiOutlinePlus />
+    <LinkiOutlinePlus />
     <div className="col mt-90">
     <img src={combo2} alt="" className="img-fluid poster-image w-100" />
     </div> 
@@ -283,17 +284,17 @@ const Combos = () => {
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

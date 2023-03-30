@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { FiChevronRight, FiHeart } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
@@ -48,24 +49,24 @@ const PrefferedProcessor = () => {
                   <div className="col-lg-12 lay-btns">
                     <div className="row">
                       <div className="col-lg-6">
-                        <a href="">
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
+                        </Link>
                       </div>
                       <div className="col-lg-6">
-                        <a href="">
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -92,24 +93,24 @@ const PrefferedProcessor = () => {
                   <div className="col-lg-12 lay-btns">
                     <div className="row">
                       <div className="col-lg-6">
-                        <a href="">
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
+                        </Link>
                       </div>
                       <div className="col-lg-6">
-                        <a href="">
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           Intel® CoreTM i3 Processors
                           <span>Ideal for Casual Use</span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -124,9 +125,9 @@ const PrefferedProcessor = () => {
                 <h2>Workhorses for Your Business</h2>
               </div>
               <div className="next-jump">
-                <a href="">
+                <Link to="">
                   View All <FiChevronRight />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -166,17 +167,17 @@ const PrefferedProcessor = () => {
                     </ul>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -216,17 +217,17 @@ const PrefferedProcessor = () => {
                     </ul>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -260,17 +261,17 @@ const PrefferedProcessor = () => {
                     </ul>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -310,17 +311,17 @@ const PrefferedProcessor = () => {
                     </ul>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -360,17 +361,17 @@ const PrefferedProcessor = () => {
                     </ul>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
-                        <a href="">
+                        <Link to="">
                           <FiHeart />{" "}
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link to="">
                           <BiGitCompare />
-                        </a>
+                        </Link>
                       </div>
                       <div>
-                        <a className="red-bg-btn" href="">
+                        <Link className="red-bg-btn" to="">
                           Add to cart
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

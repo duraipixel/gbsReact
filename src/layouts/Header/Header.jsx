@@ -1,9 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
 import close from "assets/images/close.png";
 import { FiUser, FiShoppingCart, FiMenu } from "react-icons/fi";
-import "./styles.css";
-import { Link } from "react-router-dom";
+import "./styles.css"; 
 
 const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
   return (
@@ -20,7 +20,7 @@ const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
                 </div>
                 <div className="top-search text-center">
                   <div className="hoger-toggle">
-                    <Link to="javascript:void(0)" onClick={() => toggleLeftSideMenu()} className="toggle-button">
+                    <Link onClick={() => toggleLeftSideMenu()} className="toggle-button">
                       <FiMenu className="font-size-1_5rem" />
                       Menu
                     </Link>
@@ -58,52 +58,52 @@ const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
         
         <div className={`togle-menu ${showToggle ? 'show' : ''}`} id="toggle_left_menu">
               <div className="togmenu-header">
-                  <a href="javascript:void(0)" className="clse-menu" onClick={() => closeToggle()}>
-                    <img src={close} alt="" /></a>
+                  <Link to="" className="clse-menu" onClick={() => closeToggle()}>
+                    <img src={close} alt="" /></Link>
                   <h4>What are you looking<br /> for today?</h4>
               </div>
               <div className="togmenu-lists">
               <div className="navigation">
                 <ul>
-                  {/* <li className="has-sub"> <a href="#">Menu 1</a>
+                  {/* <li className="has-sub"> <Link to="#">Menu 1</Link>
                     <ul>
-                    <li className="has-sub"> <a href="#">Submenu 1.1</a>
+                    <li className="has-sub"> <Link to="#">Submenu 1.1</Link>
                       <ul>
-                      <li><a href="#">Submenu 1.1.1</a></li>
-                      <li className="has-sub"><a href="#">Submenu 1.1.2</a>
+                      <li><Link to="#">Submenu 1.1.1</Link></li>
+                      <li className="has-sub"><Link to="#">Submenu 1.1.2</Link>
                         <ul>
-                        <li><a href="#">Submenu 1.1.2.1</a></li>
-                        <li><a href="#">Submenu 1.1.2.2</a></li>
+                        <li><Link to="#">Submenu 1.1.2.1</Link></li>
+                        <li><Link to="#">Submenu 1.1.2.2</Link></li>
                         </ul>
                       </li>
                       </ul>
                     </li>
-                    <li><a href="#">Submenu 1.2</a></li>
+                    <li><Link to="#">Submenu 1.2</Link></li>
                     </ul>
                   </li> */}
-                  <li className="has-sub"> <a href="#">Laptops</a>
+                  <li className="has-sub"> <Link to="#">Laptops</Link>
                     <ul>
-                    <li><a href="#">All Laptops</a></li>
-                    <li><a href="#">for Casual & Everyday Use</a></li>
-                    <li><a href="#">for Business</a></li>
-                    <li><a href="#">for Content Creators</a></li>
-                    <li><a href="#">for Gaming</a></li>
+                    <li><Link to="#">All Laptops</Link></li>
+                    <li><Link to="#">for Casual & Everyday Use</Link></li>
+                    <li><Link to="#">for Business</Link></li>
+                    <li><Link to="#">for Content Creators</Link></li>
+                    <li><Link to="#">for Gaming</Link></li>
                     </ul>
                   </li>
-                  <li className="has-sub"> <a href="#">Desktops </a>
+                  <li className="has-sub"> <Link to="#">Desktops </Link>
                     <ul>
-                    <li><a href="#">All Desktops</a></li>
-                    <li><a href="#">for Casual & Everyday Use</a></li>
-                    <li><a href="#">for Business</a></li>
-                    <li><a href="#">for Content Creators</a></li>
-                    <li><a href="#">for Gaming</a></li>
+                    <li><Link to="#">All Desktops</Link></li>
+                    <li><Link to="#">for Casual & Everyday Use</Link></li>
+                    <li><Link to="#">for Business</Link></li>
+                    <li><Link to="#">for Content Creators</Link></li>
+                    <li><Link to="#">for Gaming</Link></li>
                   </ul>
                   </li>
-                  <li><a href="#"> Tablets </a></li>
-                  <li><a href="#"> Top Deals </a></li>
-                  <li><a href="#"> Shop by Brand </a></li>
-                  <li><a href="#"> GBS Service </a></li>
-                  <li><a href="#"> Store Finder </a></li>
+                  <li><Link to="#"> Tablets </Link></li>
+                  <li><Link to="#"> Top Deals </Link></li>
+                  <li><Link to="#"> Shop by Brand </Link></li>
+                  <li><Link to="#"> GBS Service </Link></li>
+                  <li><Link to="#"> Store Finder </Link></li>
                 </ul>
               </div>
               </div>

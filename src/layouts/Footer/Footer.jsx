@@ -23,7 +23,7 @@ const Footer = ({showToggle}) => {
                   rel="noopener noreferrer"
                   onClick={() => openInNewTab("https://www.instagram.com")}
                 >
-                  <AiOutlineInstagram />
+                  <LinkiOutlineInstagram />
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>

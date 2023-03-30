@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 import { Col, Container, Row } from "react-bootstrap"; 
 import product1 from "assets/images/products/product-1.jpg";
@@ -18,7 +19,7 @@ const ProductLists = () => {
             <div className="filter-lists">
               <h3>Filters</h3>
                 <span className="cl-se-btn">
-                  <a href="javascript:void(0)">  </a>
+                  <Link to="javascript:void(0)">  </Link>
                 </span>
                   <ul>
                     <h4>Product Availability</h4>
@@ -123,17 +124,17 @@ const ProductLists = () => {
             <li> NVIDIA GeForce GTX 1650 - 4GB </li>
             </ul>
             <div className="clk-optn d-inline-block mt-4">
-            <a href="">
+            <Link to="">
               <FiHeart />{" "}
-            </a>
-            <a href="">
+            </Link>
+            <Link to="">
               <BiGitCompare />
-            </a>
+            </Link>
             </div>
             <div className="d-inline-block mt-4 m-l-1">
-            <a className="red-bg-btn" href="">
+            <Link className="red-bg-btn" to="">
               Add to cart
-            </a>
+            </Link>
             </div>
             </div>
             </div>
@@ -163,17 +164,17 @@ const ProductLists = () => {
             <li> NVIDIA GeForce GTX 1650 - 4GB </li>
             </ul>
             <div className="clk-optn d-inline-block mt-4">
-            <a href="">
+            <Link to="">
               <FiHeart />{" "}
-            </a>
-            <a href="">
+            </Link>
+            <Link to="">
               <BiGitCompare />
-            </a>
+            </Link>
             </div>
             <div className="d-inline-block mt-4 m-l-1">
-            <a className="red-bg-btn" href="">
+            <Link className="red-bg-btn" to="">
               Add to cart
-            </a>
+            </Link>
             </div>
             </div>
             </div>
