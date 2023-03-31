@@ -1,10 +1,13 @@
 import CartProduct from "components/Cart";
 import PackageSupport from "components/Home/PackageSupport/PackageSupport";
-import React from "react";
+import React, { useEffect } from "react";
 import { scrollToTop } from "utils";
 
 const CartPage = () => {
-  scrollToTop();
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   return (
     <div>
       <CartProduct />

@@ -6,7 +6,7 @@ const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 const scrollToTop = () => {
-  window.scroll(0, 0);
+  window.scroll({ top: 0, left: 0, behavior: "smooth" });
 };
 
 export { openInNewTab, getCurrentYear, scrollToTop };

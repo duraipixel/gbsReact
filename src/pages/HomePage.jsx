@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeProductsSlider from "components/Home/HomeProductsSlider/HomeProductsSlider";
 import PackageSupport from "components/Home/PackageSupport/PackageSupport";
 import DealsProduct from "components/Home/DealsProduct/DealsProduct";
@@ -15,7 +15,9 @@ import Combos from "components/Home/Combos/Combos";
 import MustHaves from "components/Home/MustHaves/MustHaves";
 import { scrollToTop } from "utils";
 const HomePage = () => {
-  scrollToTop();
+  useEffect(() => {
+    scrollToTop();
+  }, []);
   return (
     <div>
       <HomeProductsSlider />

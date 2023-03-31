@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Cart1 from "assets/images/Cart/Cart1.png";
 import Cart2 from "assets/images/Cart/Cart2.png";
 import Warrenty from "assets/images/Cart/warranty.png";
@@ -7,6 +7,15 @@ import MinusSign from "assets/images/Cart/MinusSign.png";
 import RefreshBtn from "assets/images/Cart/refreshBtn.png";
 
 const ProductDetails = () => {
+  const [productCount, setProductCount] = useState(1);
+
+  const addProduct = () => {
+    setProductCount((prev) => prev + 1);
+  };
+
+  const minusProduct = () => {
+    setProductCount((prev) => prev - 1);
+  };
   return (
     <div>
       <h3>Shopping Cart</h3>
@@ -34,13 +43,19 @@ const ProductDetails = () => {
               <td>ASUS ROG Strix G17 - G713IE-HX040W</td>
 
               <td>
-                <button style={{ paddingRight: "5px" }}>
-                  <img src={MinusSign} alt="MinusSign" />
-                </button>
-                <span> 1 </span>
-                <button style={{ paddingLeft: "5px" }}>
-                  <img src={PlusSign} alt="PlusSign" />
-                </button>
+                <img
+                  src={MinusSign}
+                  alt="MinusSign"
+                  style={{ paddingRight: "5px" }}
+                  onClick={() => minusProduct()}
+                />
+                <span> {productCount} </span>
+                <img
+                  src={PlusSign}
+                  alt="PlusSign"
+                  style={{ paddingLeft: "5px" }}
+                  onClick={() => addProduct()}
+                />
               </td>
               <td>
                 <span className="price"> ₹89,306</span>
@@ -76,19 +91,15 @@ const ProductDetails = () => {
               <td>ASUS TUF K1 USB Gaming Keyboard </td>
 
               <td>
-                <button style={{ paddingRight: "5px" }}>
-                  <img src={MinusSign} alt="MinusSign" />
-                </button>
+                  <img src={MinusSign} alt="MinusSign"  style={{ paddingRight: "5px" }}/>
                 <span> 1 </span>
-                <button style={{ paddingLeft: "5px" }}>
-                  <img src={PlusSign} alt="PlusSign" />
-                </button>
+                  <img src={PlusSign} alt="PlusSign" style={{ paddingLeft: "5px" }} />
               </td>
               <td>
                 <span className="price"> ₹9,200</span>
               </td>
             </tr>
-           
+
             <tr>
               <td colSpan="4" style={{ border: "0px" }}>
                 Have a Coupon?

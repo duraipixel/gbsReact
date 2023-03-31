@@ -1,7 +1,10 @@
 import ProductLists from "components/ProductsLists";
-import React from "react";
+import React, { useEffect } from "react";
 
 const CartPage = () => {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
   return (
     <div>
       <ProductLists />
