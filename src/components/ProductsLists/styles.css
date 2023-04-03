@@ -228,7 +228,7 @@ ul.config-uration li {
   line-height: 18px;
   position: relative;
   text-transform: capitalize;
-  color: #212363;
+  color: #000;
 }
 
 ul.config-uration li::before {
