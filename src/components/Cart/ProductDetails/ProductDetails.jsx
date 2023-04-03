@@ -1,21 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Cart1 from "assets/images/Cart/Cart1.png";
 import Cart2 from "assets/images/Cart/Cart2.png";
 import Warrenty from "assets/images/Cart/warranty.png";
 import PlusSign from "assets/images/Cart/PlusSign.png";
 import MinusSign from "assets/images/Cart/MinusSign.png";
 import RefreshBtn from "assets/images/Cart/refreshBtn.png";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "redux/features/cartSlice";
 
 const ProductDetails = () => {
-  const [productCount, setProductCount] = useState(1);
+  const count = useSelector((state) => state.cart.value);
+  const dispatch = useDispatch();
 
-  const addProduct = () => {
-    setProductCount((prev) => prev + 1);
-  };
-
-  const minusProduct = () => {
-    setProductCount((prev) => prev - 1);
-  };
   return (
     <div>
       <h3>Shopping Cart</h3>
@@ -47,14 +43,14 @@ const ProductDetails = () => {
                   src={MinusSign}
                   alt="MinusSign"
                   style={{ paddingRight: "5px" }}
-                  onClick={() => minusProduct()}
+                  onClick={() => dispatch(decrement())}
                 />
-                <span> {productCount} </span>
+                <span> {count} </span>
                 <img
                   src={PlusSign}
                   alt="PlusSign"
                   style={{ paddingLeft: "5px" }}
-                  onClick={() => addProduct()}
+                  onClick={() => dispatch(increment())}
                 />
               </td>
               <td>
@@ -91,9 +87,17 @@ const ProductDetails = () => {
               <td>ASUS TUF K1 USB Gaming Keyboard </td>
 
               <td>
-                  <img src={MinusSign} alt="MinusSign"  style={{ paddingRight: "5px" }}/>
+                <img
+                  src={MinusSign}
+                  alt="MinusSign"
+                  style={{ paddingRight: "5px" }}
+                />
                 <span> 1 </span>
-                  <img src={PlusSign} alt="PlusSign" style={{ paddingLeft: "5px" }} />
+                <img
+                  src={PlusSign}
+                  alt="PlusSign"
+                  style={{ paddingLeft: "5px" }}
+                />
               </td>
               <td>
                 <span className="price"> ₹9,200</span>
