@@ -125,7 +125,7 @@ const PrefferedProcessor = () => {
                 <h2>Workhorses for Your Business</h2>
               </div>
               <div className="next-jump">
-                <Link to="">
+                <Link to="/product-list">
                   View All <FiChevronRight />
                 </Link>
               </div>

@@ -33,7 +33,7 @@ const GamersLaptop = () => {
                 <h2>Handpicked by Gamers</h2>
               </div>
               <div className="next-jump">
-                <Link to="">
+                <Link to="/product-list">
                   View All <FiChevronRight />
                 </Link>
               </div>

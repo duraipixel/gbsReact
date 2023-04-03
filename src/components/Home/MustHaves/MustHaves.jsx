@@ -36,7 +36,7 @@ const MustHaves = () => {
                 <h2>Must Haves for Your PC</h2>
               </div>
               <div className="next-jump">
-                <Link to="">
+                <Link to="/product-list">
                   View All <FiChevronRight />
                 </Link>
               </div>

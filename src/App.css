@@ -144,3 +144,16 @@ a.red-bg-btn:hover {
 .min-hgt-80 {
   height: 80px;
 }
+
+td label{cursor: pointer;}
+
+
+
+
+/* Responsive Codes */
+
+@media (min-width: 1400px){
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width: 1400px;
+}
+}
