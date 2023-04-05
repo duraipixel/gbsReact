@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import Poster1 from "assets/images/HomeProductsPoster/Poster1.png";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const HomeProductsSlider = () => {
   var settings = {
@@ -27,7 +28,9 @@ const HomeProductsSlider = () => {
               DDR5 RAM
             </p>
             <h4>Starting From ₹82,000</h4>
-            <button className="btn btn-cta">Shop Now</button>
+            <Link to="/product-list" className="btn btn-cta">
+              Shop Now
+            </Link>
           </div>
         </div>
       </div>
@@ -41,7 +44,9 @@ const HomeProductsSlider = () => {
               DDR5 RAM
             </p>
             <h4>Starting From ₹82,000</h4>
-            <button className="btn btn-cta">Shop Now</button>
+            <Link to="/product-list" className="btn btn-cta">
+              Shop Now
+            </Link>
           </div>
         </div>
       </div>
@@ -55,7 +60,9 @@ const HomeProductsSlider = () => {
               DDR5 RAM
             </p>
             <h4>Starting From ₹82,000</h4>
-            <button className="btn btn-cta">Shop Now</button>
+            <Link to="/product-list" className="btn btn-cta">
+              Shop Now
+            </Link>
           </div>
         </div>
       </div>
@@ -71,7 +78,9 @@ const HomeProductsSlider = () => {
             <h4>
               Starting From <b>₹82,000</b>
             </h4>
-            <button className="btn btn-cta">Shop Now</button>
+            <Link to="/product-list" className="btn btn-cta">
+              Shop Now
+            </Link>
           </div>
         </div>
       </div>

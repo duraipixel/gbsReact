@@ -1,9 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/HomePage";
-import CartPage from "pages/CartPage";
-import Layout from "layouts/layout/Layout";
-import ProductLists from "components/ProductsLists";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy } from "react";
+// Code Splitting
+const HomePage =  lazy(()=> import("pages/HomePage"))
+const CartPage =  lazy(()=> import("pages/CartPage"))
+const ProductLists =  lazy(()=> import("pages/ProductLists"))
+const Layout =  lazy(()=> import("layouts/layout/Layout"))
 
 function App() {
   return (
