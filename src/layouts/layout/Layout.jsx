@@ -2,6 +2,7 @@ import Footer from "layouts/Footer/Footer";
 import Header from "layouts/Header/Header";
 import React, { Suspense, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { Loader } from "utils";
 
 const Layout = () => {
   const [showToggle, setShowToggle] = useState(false);
@@ -25,7 +26,7 @@ const Layout = () => {
         showToggle={showToggle}
         closeToggle={closeToggle}
       />
-      <Suspense fallback={<h1>Loading</h1>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <Footer showToggle={showToggle} />
