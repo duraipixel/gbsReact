@@ -21,15 +21,15 @@ const Layout = () => {
 
   return (
     <div>
-      <Header
-        toggleLeftSideMenu={toggleLeftSideMenu}
-        showToggle={showToggle}
-        closeToggle={closeToggle}
-      />
       <Suspense fallback={<Loader />}>
+        <Header
+          toggleLeftSideMenu={toggleLeftSideMenu}
+          showToggle={showToggle}
+          closeToggle={closeToggle}
+        />
         <Outlet />
+        <Footer showToggle={showToggle} />
       </Suspense>
-      <Footer showToggle={showToggle} />
     </div>
   );
 };
