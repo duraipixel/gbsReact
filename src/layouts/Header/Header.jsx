@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
 import close from "assets/images/close.png";
 import { FiUser, FiShoppingCart, FiMenu } from "react-icons/fi";
-import "./styles.css"; 
+import "./styles.scss"; 
 
 const Header = ({toggleLeftSideMenu, showToggle, closeToggle}) => {
   return (
