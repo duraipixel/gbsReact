@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.scss";
 import { Link } from "react-router-dom";
 import close from "assets/images/close.png";
 import { FiUser, FiShoppingCart, FiMenu } from "react-icons/fi";
