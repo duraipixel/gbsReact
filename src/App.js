@@ -1,3 +1,4 @@
+import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { lazy } from "react";
 // Code Splitting
