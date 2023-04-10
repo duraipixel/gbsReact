@@ -1,10 +1,11 @@
-import React from "react";
 import Slider from "react-slick";
-import Poster1 from "assets/images/HomeProductsPoster/Poster1.png";
 import "./styles.css";
 import { Link } from "react-router-dom";
+import { useBannersQuery } from "redux/features/banners/bannerService";
 
 const HomeProductsSlider = () => {
+  const { data, isSuccess, isLoading  } =  useBannersQuery()
+ 
   var settings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -19,7 +20,7 @@ const HomeProductsSlider = () => {
   return (
     <Slider {...settings}>
       <div>
-        <img src={Poster1} alt="" className="img-fluid w-100 poster-image" />
+        <img src={require('assets/images/HomeProductsPoster/Poster1.png')} alt="" className="img-fluid w-100 poster-image" />
         <div className="container">
           <div className="poster-content">
             <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
@@ -35,7 +36,7 @@ const HomeProductsSlider = () => {
         </div>
       </div>
       <div>
-        <img src={Poster1} alt="" className="img-fluid w-100" />
+        <img src={require('assets/images/HomeProductsPoster/Poster1.png')} alt="" className="img-fluid w-100" />
         <div className="container">
           <div className="poster-content">
             <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
@@ -51,7 +52,7 @@ const HomeProductsSlider = () => {
         </div>
       </div>
       <div>
-        <img src={Poster1} alt="" className="img-fluid w-100" />
+        <img src={require('assets/images/HomeProductsPoster/Poster1.png')} alt="" className="img-fluid w-100" />
         <div className="container">
           <div className="poster-content">
             <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
@@ -67,7 +68,7 @@ const HomeProductsSlider = () => {
         </div>
       </div>
       <div>
-        <img src={Poster1} alt="" className="img-fluid w-100" />
+        <img src={require('assets/images/HomeProductsPoster/Poster1.png')} alt="" className="img-fluid w-100" />
         <div className="container">
           <div className="poster-content">
             <h1>Push Performance to New Heights with ROG Strix Scar 16</h1>
