@@ -19,7 +19,7 @@ const ProductLists = () => {
                 <div className="filter-lists">
                   <h3>Filters</h3>
                   <span className="cl-se-btn">
-                    <Link to="javascript:void(0)">  </Link>
+                    <Link to="">  </Link>
                   </span>
                   <ul>
                     <h4>Product Availability</h4>
