@@ -1,5 +1,5 @@
 .top-bar {
-  background: #f1000a;
+  background: var(--primary-color);
   padding: 15px 0px;
   z-index: 9;
   position: relative;
@@ -923,16 +923,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   nav {
     width: 100%;
   }
-  header .container {
-    max-width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .top-bar .container {
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+
   #cssmenu {
     width: 100%;
     padding-left: 15px;

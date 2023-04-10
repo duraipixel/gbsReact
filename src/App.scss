@@ -1,12 +1,12 @@
-
-
 @import "https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Outfit:wght@400;500;600;700&display=swap";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
-
+:root {
+	--primary-color : #f1000a;
+}
 $color_1: #ffffff;
 $color_2: #929292;
-$color_3:  #f1000a;
+$color_3: var(--primary-color);
 $color_4: #000;
 $color_5: #fff;
 $color_6: #ffffff;
@@ -23,9 +23,9 @@ $background-color_3: #00043a;
 	font-family: $font-family_1;
 }
 a {
-	text-decoration: none;
+	text-decoration: none !important;
 	color: $color_1;
-	text-decoration: none;
+	text-decoration: none !important;
 	transition: all 0.3s ease;
 	&:hover {
 		text-decoration: none;
@@ -146,25 +146,5 @@ a.red-bg-btn {
 td {
 	label {
 		cursor: pointer;
-	}
-}
-@media (min-width: 1400px) {
-	.container {
-		max-width: 1400px;
-	}
-	.container-lg {
-		max-width: 1400px;
-	}
-	.container-md {
-		max-width: 1400px;
-	}
-	.container-sm {
-		max-width: 1400px;
-	}
-	.container-xl {
-		max-width: 1400px;
-	}
-	.container-xxl {
-		max-width: 1400px;
 	}
 }
