@@ -1,9 +1,13 @@
-@import "https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Outfit:wght@400;500;600;700&display=swap";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
 :root {
 	--primary-color : #f1000a;
 }
+$theme-colors: (
+  "primary": #f1000a,
+);
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Outfit:wght@400;500;600;700&display=swap";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css"; 
 $color_1: #ffffff;
 $color_2: #929292;
 $color_3: var(--primary-color);
