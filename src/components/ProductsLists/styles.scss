@@ -1,3 +1,5 @@
+@import "src/App.scss";
+
 .products-list-layer {
   position: relative;
 }
@@ -44,19 +46,17 @@
   height: 20px;
   width: 20px;
   background-color: transparent;
-  border: 1px solid #F1000A;
-  ;
+  border: 1px solid #f1000a;
 }
 
 /* On mouse-over, add a grey background color */
 
-.cstm-chkbx:hover input~.checkmark {
+.cstm-chkbx:hover input ~ .checkmark {
   background-color: #fecacb;
 }
 
-.cstm-chkbx input:checked~.checkmark {
-  background-color: #F1000A;
-  ;
+.cstm-chkbx input:checked ~ .checkmark {
+  background-color: #f1000a;
 }
 
 .checkmark:after {
@@ -65,7 +65,7 @@
   display: none;
 }
 
-.cstm-chkbx input:checked~.checkmark:after {
+.cstm-chkbx input:checked ~ .checkmark:after {
   display: block;
 }
 
@@ -117,7 +117,8 @@
   height: 35px;
   border-radius: 4px;
   margin-top: 0px;
-  background: #EBEBEB url("../../assets/images/dwn.png") no-repeat scroll 90% center;
+  background: #ebebeb url("../../assets/images/dwn.png") no-repeat scroll 90%
+    center;
   color: #fff;
   font-weight: 400;
   cursor: pointer;
@@ -126,7 +127,7 @@
   border: 0px;
   position: relative;
   right: -2px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   color: #101010;
 }
 
@@ -238,7 +239,7 @@ ul.config-uration li::before {
   top: 8px;
   height: 4px;
   width: 4px;
-  background-color: #F1000A;
+  background-color: #f1000a;
   border-radius: 100%;
 }
 
@@ -259,16 +260,18 @@ ul.config-uration li:last-child:before {
   position: relative;
 }
 
-.img-details{margin-left: 35px;}
+.img-details {
+  margin-left: 35px;
+}
 
 span.ofer-infs {
   position: absolute;
   content: "";
   top: -20px;
   right: -30px;
-  height: 50px; 
+  height: 50px;
   width: 50px;
-  background: #00043A;
+  background: #00043a;
   border-radius: 100%;
 }
 
@@ -277,7 +280,7 @@ span.ofer-infs h4 {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 7px;
 }
 
@@ -286,10 +289,39 @@ span.ofer-infs h5 {
   font-size: 12px;
   line-height: 15px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .img-covers img {
   width: 100%;
   display: inline-block;
+}
+
+.product-filter-btn {
+  display: inline-block;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: text;
+  margin-bottom: 1rem;
+  &:hover {
+    color: #000;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-filter-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: $color_1;
+    background: var(--primary-color);
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .filter-lists {
+    display: none;
+  }
+  .products-list-layer::before {
+    background-color: $background-color_2;
+  }
 }
