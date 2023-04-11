@@ -6,6 +6,7 @@
 
 .poster-image {
   position: relative;
+  height: 450px;
 }
 .poster-content {
   position: absolute;

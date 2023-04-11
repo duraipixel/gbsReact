@@ -2,10 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const bannerService = createApi({
     reducerPath: 'bannerService',
-    baseQuery: fetchBaseQuery({ baseUrl:'https://admin.anandlab.com/public'}),
+    baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL}),
     endpoints: (builder) => ({
         banners: builder.query({
-            query:() => '/api/banners'
+            query:() => 'get/banners'
         })
     })
 })
