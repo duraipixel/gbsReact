@@ -25,7 +25,7 @@ const ProductListDetails = () => {
             </select>
           </div>
         </div>
-        <div className="col-lg-12">
+        <div className="col-lg-12 m-4">
           <div className="row">
             <div className="col-lg-3 bg-white">
               <div className="img-covers text-center">
@@ -77,11 +77,11 @@ const ProductListDetails = () => {
           </div>
         </div>
 
-        <div className="col-lg-12">
+        <div className="col-lg-12 m-4">
           <div className="seprators-prdlst"></div>
         </div>
 
-        <div className="col-lg-12">
+        <div className="col-lg-12 m-4">
           <div className="row">
             <div className="col-lg-3 bg-white">
               <div className="img-covers">

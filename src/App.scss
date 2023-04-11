@@ -1,7 +1,7 @@
 :root {
   --primary-color: #f1000a;
   --grey-color: gray;
-  --white-color: white
+  --white-color: white;
 }
 
 $theme-colors: (
@@ -96,7 +96,9 @@ a {
   justify-content: center;
   flex-wrap: wrap;
 }
-
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .align-c {
   display: flex;
   align-items: center;
@@ -126,7 +128,9 @@ a {
 .p-t-1 {
   padding: 1rem;
 }
-
+.pb-0 {
+  padding-bottom: 0;
+}
 .sub-heading {
   font-family: $font-family_2;
   font-style: normal;

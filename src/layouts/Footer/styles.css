@@ -85,7 +85,7 @@ footer .footer-links a.active:after {
 }
 
 footer .footer-bottom {
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   margin-top: 30px;
 }
 

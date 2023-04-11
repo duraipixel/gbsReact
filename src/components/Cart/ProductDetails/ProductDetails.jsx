@@ -7,6 +7,7 @@ import MinusSign from "assets/images/Cart/MinusSign.png";
 import RefreshBtn from "assets/images/Cart/refreshBtn.png";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "redux/features/cartSlice";
+import { FaTrash } from "react-icons/fa";
 
 const ProductDetails = () => {
   const count = useSelector((state) => state.cart.value);
@@ -30,7 +31,7 @@ const ProductDetails = () => {
             <tr>
               <td>
                 <button>
-                  <i className="fa fa-trash-o" aria-hidden="true"></i>
+                  <FaTrash className="trash-btn" />
                 </button>
               </td>
               <td>
@@ -61,7 +62,7 @@ const ProductDetails = () => {
             <tr>
               <td>
                 <button>
-                  <i className="fa fa-trash-o" aria-hidden="true"></i>
+                  <FaTrash className="trash-btn" />
                 </button>
               </td>
               <td>
@@ -78,7 +79,7 @@ const ProductDetails = () => {
             <tr>
               <td>
                 <button>
-                  <i className="fa fa-trash-o" aria-hidden="true"></i>
+                  <FaTrash className="trash-btn" />
                 </button>
               </td>
               <td>

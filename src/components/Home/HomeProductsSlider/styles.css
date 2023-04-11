@@ -1,25 +1,29 @@
-.poster-content h1{font-weight: 700;font-size: 30px;line-height:38px;}
+.poster-content h1 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+}
 
 .poster-image {
   position: relative;
 }
 .poster-content {
   position: absolute;
-  top: 8rem; 
+  top: 8rem;
   color: white;
   max-width: 603px;
   line-height: 4rem;
 }
-.btn-cta {
+.btn.btn-cta {
   padding: 12px, 22px, 12px, 22px;
-  background: var(--accent-color);
+  background: var(--primary-color);
   color: var(--white-color);
   border-radius: 2px;
 }
 
-.btn-cta:hover {
+.btn.btn-cta:hover {
   background-color: var(--white-color);
-  color: var(--accent-color);
+  color: var(--primary-color);
 }
 
 /* Slick Slider */
@@ -35,36 +39,36 @@
   color: transparent;
 }
 
-.slick-dots li{
-    text-align: center;
-    margin: 0px !important;
-    width: 20px !important;
-    height: 7px !important;
-    transition: all 0.3s ease;
+.slick-dots li {
+  text-align: center;
+  margin: 0px !important;
+  width: 20px !important;
+  height: 7px !important;
+  transition: all 0.3s ease;
 }
 
-.slick-dots li.slick-active{
-    width: 40px !important;
-    transition: all 0.3s ease;
+.slick-dots li.slick-active {
+  width: 40px !important;
+  transition: all 0.3s ease;
 }
 
-.slick-dots li button{
-    padding: 0px !important;
-    background: var(--grey-color) !important;
-    width: 10px !important;
-    height: 10px !important;
-    border-radius: 10px !important;
-    opacity: 1 !important;
-    margin: 0 auto;
-    transition: all 0.3s ease;
+.slick-dots li button {
+  padding: 0px !important;
+  background: var(--grey-color) !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 10px !important;
+  opacity: 1 !important;
+  margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
-.slick-dots li button:before{
-    display: none !important;
+.slick-dots li button:before {
+  display: none !important;
 }
 
-.slick-dots li.slick-active button{
-    width: 35px !important;
-    background: var(--white-color) !important;
-    transition: all 0.3s ease;
+.slick-dots li.slick-active button {
+  width: 35px !important;
+  background: var(--white-color) !important;
+  transition: all 0.3s ease;
 }
