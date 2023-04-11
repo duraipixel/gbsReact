@@ -104,3 +104,14 @@
     }
   }
 }
+
+.offers-slider {
+  background: rgba(241, 0, 10, 0.1);
+}
+.offer-sliders-imgs {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

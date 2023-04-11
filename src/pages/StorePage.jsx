@@ -4,6 +4,7 @@ import OurExclusiveBrand from "components/Stores/OurExclusiveBrand/OurExclusiveB
 import FindStoreNearYou from "components/Stores/FindStoreNearYou/FindStoreNearYou";
 import StoreBanner from "components/Stores/StoreBanner/StoreBanner";
 import GbsStoreServices from "components/Stores/GbsStoreServices/GbsStoreServices";
+import ExclusiveStoreOffers from "components/Stores/ExclusiveStoreOffers/ExclusiveStoreOffers";
 
 const StorePage = () => {
   useEffect(() => {
@@ -13,6 +14,7 @@ const StorePage = () => {
     <div>
       <StoreBanner />
       <GbsStoreServices />
+      <ExclusiveStoreOffers />
       <FindStoreNearYou />
       <OurExclusiveBrand />
     </div>
