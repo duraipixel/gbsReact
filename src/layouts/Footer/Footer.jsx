@@ -10,7 +10,7 @@ import { getCurrentYear, openInNewTab } from "utils";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
 
-const Footer = ({showToggle}) => {
+const Footer = ({ showToggle }) => {
   return (
     <footer>
       <Container>
@@ -49,7 +49,7 @@ const Footer = ({showToggle}) => {
             <div className="footer-links">
               <Link to="/">Home</Link>
               <Link to="/">About Us</Link>
-              <Link to="/">Stores</Link>
+              <Link to="/stores">Stores</Link>
               <Link to="/">Awards</Link>
               <Link to="/">Gallery</Link>
               <Link to="/">Careers</Link>
@@ -132,7 +132,10 @@ const Footer = ({showToggle}) => {
           All Rights Reserved | Designed by Pixel Studios
         </p>
       </div>
-      <div className={`overlay ${showToggle ? 'overlay-bg' : ''}`} id="site_overlay"></div>
+      <div
+        className={`overlay ${showToggle ? "overlay-bg" : ""}`}
+        id="site_overlay"
+      ></div>
     </footer>
   );
 };
