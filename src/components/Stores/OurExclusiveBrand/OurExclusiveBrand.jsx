@@ -50,35 +50,19 @@ const OurExclusiveBrand = () => {
               <div className="brands-list-slider">
                 <Slider {...settings}>
                   <div className="brnd-sector">
-                    <img
-                      src={Poster1}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
+                    <img src={Poster1} alt="" className="img-fluid" />
                   </div>
 
                   <div className="brnd-sector">
-                    <img
-                      src={Poster2}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
+                    <img src={Poster2} alt="" className="img-fluid" />
                   </div>
 
                   <div className="brnd-sector">
-                    <img
-                      src={Poster3}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
+                    <img src={Poster3} alt="" className="img-fluid" />
                   </div>
 
                   <div className="brnd-sector">
-                    <img
-                      src={Poster4}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
+                    <img src={Poster4} alt="" className="img-fluid" />
                   </div>
                 </Slider>
               </div>

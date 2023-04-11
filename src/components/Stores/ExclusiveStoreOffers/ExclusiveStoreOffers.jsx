@@ -51,22 +51,22 @@ const ExclusiveStoreOffers = () => {
             <div className="brands-list-slider">
               <Slider {...settings}>
                 <div className="offer-sliders-imgs">
-                  <img src={Offer1} alt="" className="img-fluid poster-image" />
+                  <img src={Offer1} alt="" className="img-fluid" />
                   <p>Up to 30%* Discount on All Laptops & Desktops</p>
                 </div>
 
                 <div className="offer-sliders-imgs">
-                  <img src={Offer2} alt="" className="img-fluid poster-image" />
+                  <img src={Offer2} alt="" className="img-fluid" />
                   <p>Special Cashback Up to ₹10,000</p>
                 </div>
 
                 <div className="offer-sliders-imgs">
-                  <img src={Offer3} alt="" className="img-fluid poster-image" />
+                  <img src={Offer3} alt="" className="img-fluid" />
                   <p>Laptop Exchange Value upto ₹20,000</p>
                 </div>
 
                 <div className="offer-sliders-imgs">
-                  <img src={Offer4} alt="" className="img-fluid poster-image" />
+                  <img src={Offer4} alt="" className="img-fluid" />
                   <p>No Cost EMI on all major Debit & Credit Cards</p>
                 </div>
               </Slider>
