@@ -1,15 +1,11 @@
 import React from "react";
-import Slider from "react-slick";
-// import { FiChevronRight, FiHeart } from "react-icons/fi";
-// import { AiFillStar } from "react-icons/ai";
-// import { BiGitCompare } from "react-icons/bi";
 import Poster1 from "assets/images/brands/product-1.jpg";
 import Poster2 from "assets/images/brands/product-2.jpg";
 import Poster3 from "assets/images/brands/product-3.jpg";
 import Poster4 from "assets/images/brands/product-4.jpg";
-import "./styles.css";
+import Slider from "react-slick";
 
-const NarrowSearch = () => {
+const OurExclusiveBrand = () => {
   var settings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -28,7 +24,7 @@ const NarrowSearch = () => {
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div className="comon-heads">
-                <h2>Narrow Your Search to the Brands you Trust</h2>
+                <h2>Our Exclusive Brand Stores</h2>
               </div>
             </div>
 
@@ -76,4 +72,4 @@ const NarrowSearch = () => {
   );
 };
 
-export default NarrowSearch;
+export default OurExclusiveBrand;

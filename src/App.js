@@ -1,6 +1,6 @@
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { CartPage, HomePage, ProductLists } from "pages";
+import { CartPage, HomePage, ProductLists, StorePage } from "pages";
 import Layout from "layouts/layout/Layout";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/product-list" element={<ProductLists />} />
+            <Route path="/store" element={<StorePage />} />
           </Route>
         </Routes>
       </BrowserRouter>
