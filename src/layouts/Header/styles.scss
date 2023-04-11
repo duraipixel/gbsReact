@@ -1595,6 +1595,7 @@ input[type="search"]::-webkit-search-results-decoration {
   border-top: 2px solid white;
   background: white;
   top: 60px;
+  min-height: 400px;
   @media (min-width:992px) {
     width: 420px;
     left: 0%;

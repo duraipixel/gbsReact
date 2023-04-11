@@ -1,3 +1,4 @@
+import { Spinner } from "react-bootstrap";
 import { ProgressBar } from "react-loader-spinner";
 
 const openInNewTab = (url) => {
@@ -10,11 +11,18 @@ const getCurrentYear = () => {
 const scrollToTop = () => {
   window.scroll({ top: 0, left: 0, behavior: "smooth" });
 };
+const LoadingSpinner = () => {
+  return (
+    <Spinner size="sm" animation="border" role="status">
+      <span className="visually-hidden"> Loading...</span>
+    </Spinner>
+  );
+}
 const Loader = () => {
   return (
     <div
       style={{
-        height:"100vh",
+        height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -27,9 +35,9 @@ const Loader = () => {
         wrapperStyle={{}}
         wrapperclassName="progress-bar-wrapper"
         borderColor="#8d8d8d"
-        barColor="#f1000a" 
+        barColor="#f1000a"
       />
     </div>
   );
 };
-export { openInNewTab, getCurrentYear, scrollToTop, Loader };
+export { openInNewTab, getCurrentYear, scrollToTop, Loader, LoadingSpinner };
