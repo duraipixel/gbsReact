@@ -14,21 +14,39 @@ const OurExclusiveBrand = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
     slidesToScroll: 1,
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          centerMode: true,
+          centerPadding: "0px",
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          centerMode: true,
+          centerPadding: "0px",
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <>
       <section className="narroww-search text-center">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div className="col-lg-12 justify-content-center">
               <div className="comon-heads">
                 <h2>Our Exclusive Brand Stores</h2>
               </div>
             </div>
 
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div className="col-lg-12 justify-content-center">
               <div className="brands-list-slider">
                 <Slider {...settings}>
                   <div className="brnd-sector">

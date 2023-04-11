@@ -5,3 +5,34 @@
   padding: 15px 30px;
   border-radius: 4px;
 }
+.slick-slide.slick-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.store-bg {
+  background: url("../../assets/images/Stores/Rectangle135.png") no-repeat
+    rgba(0, 0, 0, 0);
+  background-size: cover;
+  position: relative;
+}
+.store-bg:before {
+  background: rgba(0, 0, 0, 0.75);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+.store-bg {
+  .row {
+    position: relative;
+    height: 8rem;
+    .store-text-overlay {
+      position: absolute;
+      width: 100%;
+      color: white;
+    }
+  }
+}
