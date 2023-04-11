@@ -7,12 +7,11 @@ import { Link } from 'react-router-dom';
 export default function NavMenus() {
     const { data, isSuccess } = useNavMenuQuery()
     if (isSuccess) return (
-        <div className="nav-menus shadow-sm">
+        <div className="nav-menus shadow">
             <div className="nav-menu-banner">
                 <img src={require('../../assets/images/computer.png')} className="d-block w-100" height={120} alt="menu" />
                 <div className="carousel-caption p-0">
-                    <h5>What are you looking for </h5>
-                    <h5>today?</h5>
+                    <h5>What are you looking for today?</h5>
                 </div>
             </div>
             <div className='p-3'>
