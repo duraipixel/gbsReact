@@ -10,7 +10,7 @@ import { getCurrentYear, openInNewTab } from "utils";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
 
-const Footer = ({ showToggle }) => {
+const Footer = () => {
   return (
     <footer>
       <Container>
@@ -131,11 +131,7 @@ const Footer = ({ showToggle }) => {
           Copyright &copy; {getCurrentYear()} GBS Systems & Services Pvt Ltd. |
           All Rights Reserved | Designed by Pixel Studios
         </p>
-      </div>
-      <div
-        className={`overlay ${showToggle ? "overlay-bg" : ""}`}
-        id="site_overlay"
-      ></div>
+      </div> 
     </footer>
   );
 };
