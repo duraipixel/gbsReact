@@ -16,6 +16,7 @@ const HomeProductsSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    lazyLoad:'progressive'
   };
   return (
     <Slider {...settings}>
