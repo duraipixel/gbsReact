@@ -9,8 +9,8 @@ const HomeProductsSlider = () => {
     <BannerSlider>
       {
         data.data.map(item => (
-          <div>
-            <img src={window.innerWidth < 992 ? item.mobile_banner : item.image} alt="" className="img-fluid w-100" />
+          <div className="banner-overlay-wrapper">
+            <img src={window.innerWidth < 992 ? item.mobile_banner : item.image}  className="banner-image"/>
             <div className="container">
               <div className="poster-content">
                 <h1>{item.title}</h1>
