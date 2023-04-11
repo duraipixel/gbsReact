@@ -9,7 +9,7 @@ const CartDetails = () => {
       }}
     >
       <h4>Cart Details</h4>
-      <h5 className="clr-accent">Cart Subtotal</h5>
+      <h5 className="text-primary">Cart Subtotal</h5>
       <table className="table table-borderless">
         <tbody>
           <tr>
@@ -25,7 +25,7 @@ const CartDetails = () => {
         </tbody>
       </table>
       <div className="line-spacer"></div>
-      <h5 className="clr-accent">Select Shipping Speed</h5>
+      <h5 className="text-primary">Select Shipping Speed</h5>
       <table className="table table-borderless">
         <thead>
           <tr>
@@ -72,7 +72,7 @@ const CartDetails = () => {
         </tbody>
       </table>
       <div className="line-spacer"></div>
-      <h5 className="clr-accent">Select Payment Method</h5>
+      <h5 className="text-primary">Select Payment Method</h5>
       <table className="table table-borderless">
         <tbody>
           <tr>

@@ -1,23 +1,11 @@
 import "./styles.scss";
 import { Link } from "react-router-dom";
-import close from "assets/images/close.png";
 import { FiUser, FiShoppingCart, FiMenu } from "react-icons/fi";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Header = ({ toggleLeftSideMenu, showToggle, closeToggle }) => {
-  const MenuIcon = () => {
-    return (
-      <Link onClick={() => toggleLeftSideMenu()} className="toggle-button">
-        <FiMenu className="font-size-1_5rem" />
-        <div>Menu</div>
-      </Link>
-    );
-  };
   const CartButton = ({ className, text, size }) => {
     return (
       <Link to="/cart" className={`position-relative ${className}`}>
@@ -41,16 +29,18 @@ const Header = ({ toggleLeftSideMenu, showToggle, closeToggle }) => {
         </div>
         <Navbar.Collapse id="navbarScroll" className="py-2">
           <div className="d-md-flex align-items-center justify-content-between w-100">
-            <div className="d-flex align-items-center text-center search-wrapper">
-              {window.innerWidth > 992 && <MenuIcon />}
+            <div className="input-group search-wrapper">
+              <button onClick={() => toggleLeftSideMenu()} className="btn btn-light d-flex align-items-center justify-content-center">
+                <FiMenu className="font-size-1_5rem me-2" />
+                <div>Menu</div>
+              </button>
               <Form.Control
                 type="search"
-                className="ms-lg-3"
+                className="h-100"
                 placeholder="Search Your Product ..."
               />
             </div>
             <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
-              {window.innerWidth < 992 && <MenuIcon />}
               <Link to="" className="ps-3">
                 <FiUser className="font-size-1_5rem" />
                 <div>My Account</div>

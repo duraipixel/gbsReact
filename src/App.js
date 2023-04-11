@@ -1,4 +1,5 @@
 import "./App.scss";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartPage, HomePage, ProductLists, StorePage } from "pages";
 import Layout from "layouts/layout/Layout";
