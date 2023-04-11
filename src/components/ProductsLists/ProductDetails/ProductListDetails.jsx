@@ -11,7 +11,7 @@ const ProductListDetails = () => {
   return (
     <Col lg={9} className="align-self-start pb-0">
       <Col className="list-details-side">
-        <div className="d-flex justify-content-between mb-5">
+        <div className="d-sm-flex justify-content-between mb-5">
           <div className="primary-heads">
             <h3> Displaying 1-12 of 6540 results</h3>
           </div>
