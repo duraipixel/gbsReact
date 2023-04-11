@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { IoMdClose } from "react-icons/io";
 
 const ProductFilter = () => {
+  const [isActive, setActive] = useState("false");
+
+  const ToggleClass = () => {
+    setActive(!isActive);
+  };
   return (
     <Col lg={3} className="pb-0 align-self-start">
       <Col className="filters-side">
-        <Link className="product-filter-btn">Filters</Link>
-        <div className="filter-lists">
+        <Link className="product-filter-btn" onClick={ToggleClass}>
+          Filters
+        </Link>
+        <div
+          className={
+            isActive
+              ? "filter-lists product-filters"
+              : "active product-filters filter-lists"
+          }
+        >
+          <Link className="close-btn" onClick={ToggleClass}>
+            <IoMdClose />
+          </Link>
           <ul>
             <h4>Product Availability</h4>
             <li>
