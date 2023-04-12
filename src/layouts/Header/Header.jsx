@@ -9,7 +9,7 @@ import { useState } from "react";
 import CartButton from "./CartButton";
 
 const Header = () => {
-  const [navMenu, setNavMenu] = useState(false)
+  const [navMenu, setNavMenu] = useState(false);
   return (
     <Navbar bg="primary" expand="lg" variant="dark">
       <Container>
@@ -26,7 +26,10 @@ const Header = () => {
           <div className="d-md-flex align-items-center justify-content-between w-100">
             <div className="search-wrapper">
               <div className="input-group">
-                <button onClick={() => setNavMenu(!navMenu)} className="btn btn-light d-flex align-items-center justify-content-center">
+                <button
+                  onClick={() => setNavMenu(!navMenu)}
+                  className="btn btn-light d-flex align-items-center justify-content-center"
+                >
                   <FiMenu className="font-size-1_5rem me-2" />
                   <div className="small">Menu</div>
                 </button>
@@ -40,7 +43,7 @@ const Header = () => {
               {navMenu && <NavMenus />}
             </div>
             <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
-              <Link to="" className="ps-3">
+              <Link to="/myAccount/profile" className="ps-3">
                 <FiUser size={22} />
                 <div className="small fw-lighter">My Account</div>
               </Link>
