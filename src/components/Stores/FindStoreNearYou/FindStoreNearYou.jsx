@@ -4,7 +4,7 @@ import { location } from "data/StoreLoaction";
 
 const FindStoreNearYou = () => {
   return (
-    <section style={{ background: "#f9f9f9" }} className="text-center">
+    <section className="bg-off-white text-center pb-0">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">

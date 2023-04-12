@@ -4,6 +4,7 @@ import Poster2 from "assets/images/brands/product-2.jpg";
 import Poster3 from "assets/images/brands/product-3.jpg";
 import Poster4 from "assets/images/brands/product-4.jpg";
 import Slider from "react-slick";
+import { Col, Container, Row } from "react-bootstrap";
 
 const OurExclusiveBrand = () => {
   var settings = {
@@ -37,16 +38,16 @@ const OurExclusiveBrand = () => {
   };
   return (
     <>
-      <section className="narroww-search text-center">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 justify-content-center">
+      <section className="bg-off-white text-center">
+        <Container className="pb-5">
+          <Row>
+            <Col lg={12} className="justify-content-center">
               <div className="comon-heads">
                 <h2>Our Exclusive Brand Stores</h2>
               </div>
-            </div>
+            </Col>
 
-            <div className="col-lg-12 justify-content-center">
+            <Col lg={12} className="justify-content-center">
               <div className="brands-list-slider">
                 <Slider {...settings}>
                   <div className="brnd-sector">
@@ -66,9 +67,9 @@ const OurExclusiveBrand = () => {
                   </div>
                 </Slider>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </>
   );
