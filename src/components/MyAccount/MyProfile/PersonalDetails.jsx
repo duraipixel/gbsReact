@@ -87,7 +87,7 @@ const PersonalDetails = () => {
               sm={{ offset: 1, span: 3 }}
               className="password-btn-div flex-jc-right"
             >
-              <button type="submit" class="btn">
+              <button type="submit" className="btn">
                 Change Password
               </button>
             </Col>

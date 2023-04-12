@@ -32,7 +32,7 @@ const ProductListDetails = () => {
                 <img src={product1} alt="" />
                 <span className="ofer-infs">
                   <h4>
-                    30% <h5>OFF</h5>
+                    30% <span>OFF</span>
                   </h4>
                 </span>
               </div>
