@@ -263,3 +263,14 @@ td {
     margin: 1rem 0.6rem;
   }
 }
+
+.small-content{
+  h3{
+    font-family: $font-family_1;font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;margin-bottom:25px;
+  }
+  p{font-family: $font-family_1;font-weight: 400;
+    font-size: 20px;margin-bottom: 40px;
+    line-height: 25px;}
+}

@@ -1,13 +1,13 @@
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { CartPage, HomePage, ProductLists, StorePage } from "pages";
+import { CartPage, HomePage, ProductLists, StorePage, AboutPage } from "pages";
 import Layout from "layouts/layout/Layout";
 import {
   MyAddressBook,
   MyOrders,
   MyProfile,
   MyWishlist,
-} from "components/MyAccount";
+} from "components/MyAccount"; 
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
             <Route path="/myAccount/accountbook" element={<MyAddressBook />} />
             <Route path="/myAccount/myorders" element={<MyOrders />} />
             <Route path="/myAccount/wishlist" element={<MyWishlist />} />
+            <Route path="/about-us" element={<AboutPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
