@@ -15,7 +15,7 @@ export default function NavMenus() {
                     <h5>What are you looking for today?</h5>
                 </div>
             </div>
-            <div className='p-3'>
+            <div className='px-3'>
                 {isLoading && <LoadingSpinner />}
                 {
                     isSuccess &&
@@ -23,8 +23,8 @@ export default function NavMenus() {
                         <ul className="list-group list-group-flush">
                             {
                                 data.data.map(item => (
-                                    <li className="list-group-item" key={item.id}>
-                                        <div className='d-flex justify-content-between align-items-start'>
+                                    <li className="list-group-item p-3" key={item.id}>
+                                        <div className='d-flex justify-content-between align-items-center'>
                                             <MenuItem item={item} />
                                             {item.child.length > 0 && <AccordionToggler eventKey={item.id} />}
                                         </div>
@@ -32,7 +32,7 @@ export default function NavMenus() {
                                             <Accordion.Collapse eventKey={item.id}>
                                                 <ul className='list-group list-group-flush'>
                                                     {item.child.map(data => (
-                                                        <li key={data.id} className='list-group-item'><MenuItem className="text-dark" item={data} /></li>
+                                                        <li key={data.id} className='list-group-item pt-3'><MenuItem className="text-dark" item={data} /></li>
                                                     ))}
                                                 </ul>
                                             </Accordion.Collapse>
