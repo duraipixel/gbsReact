@@ -26,7 +26,7 @@ const HomeProductsSlider = () => {
       }
     </BannerSlider>
   );
-  if (isLoading) return (<Placeholder as="p" animation="glow"><Placeholder bg="danger" style={{ height: 400 }} xs={12} /></Placeholder>)
+  if (isLoading) return (<Placeholder as="p" animation="glow"><Placeholder bg="dark" style={{ height: 400 }} xs={12} /></Placeholder>)
 };
 
 export default HomeProductsSlider;

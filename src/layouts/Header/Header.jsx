@@ -9,11 +9,11 @@ import { useState } from "react";
 import CartButton from "./CartButton";
 
 const Header = () => {
-  const [navMenu, setNavMenu] = useState(false) 
+  const [navMenu, setNavMenu] = useState(false)
   return (
     <Navbar bg="primary" expand="lg" variant="dark">
       <Container>
-        <Link to="/">
+        <Link to="/" className="brand">
           <img src={require("assets/Brand/gbsLogoHighRes.png")} alt="logo" />
         </Link>
         <div className="d-flex align-items-center">
@@ -28,9 +28,10 @@ const Header = () => {
               <div className="input-group">
                 <button onClick={() => setNavMenu(!navMenu)} className="btn btn-light d-flex align-items-center justify-content-center">
                   <FiMenu className="font-size-1_5rem me-2" />
-                  <div>Menu</div>
+                  <div className="small">Menu</div>
                 </button>
                 <Form.Control
+                  size="sm"
                   type="search"
                   className="h-100"
                   placeholder="Search Your Product ..."
@@ -40,8 +41,8 @@ const Header = () => {
             </div>
             <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
               <Link to="" className="ps-3">
-                <FiUser className="font-size-1_5rem" />
-                <div>My Account</div>
+                <FiUser size={22} />
+                <div className="small fw-lighter">My Account</div>
               </Link>
               {window.innerWidth > 992 && (
                 <CartButton size={22} text={true} className="ps-lg-4 ps-3" />
