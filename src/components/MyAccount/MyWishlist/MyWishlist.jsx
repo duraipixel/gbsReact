@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Sidebar from "../Sidebar";
 import product1 from "assets/images/products/product-1.jpg";
@@ -7,8 +7,12 @@ import { FiHeart } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
 import { BiGitCompare } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "utils";
 
 const MyWishlist = () => {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
   return (
     <section className="bg-off-grey">
       <Container>
@@ -28,7 +32,7 @@ const MyWishlist = () => {
                     <h3 className="mb-0"> Displaying 1-12 of 6540 results</h3>
                   </div>
                   <div className="sort-order flex-jc-right align-c gap-1">
-                    <p className="pb-0"> Sort by</p>
+                    <div> Sort by</div>
                     <select className="form-control" id="enq" name="enq">
                       <option value="">Top Deals</option>
                       <option value="New Products">New Products</option>

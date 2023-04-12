@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../Sidebar";
 import AddressBookDetails from "./AddressBookDetails";
 import { Col, Container, Row } from "react-bootstrap";
+import { scrollToTop } from "utils";
 
 const MyAddressBook = () => {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
   return (
     <section className="bg-off-grey">
       <Container>
