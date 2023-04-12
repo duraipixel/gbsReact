@@ -2,7 +2,12 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartPage, HomePage, ProductLists, StorePage } from "pages";
 import Layout from "layouts/layout/Layout";
-import MyProfile from "components/MyAccount/MyProfile/MyProfile";
+import {
+  MyAddressBook,
+  MyOrders,
+  MyProfile,
+  MyWishlist,
+} from "components/MyAccount";
 
 function App() {
   return (
@@ -15,6 +20,9 @@ function App() {
             <Route path="/product-list" element={<ProductLists />} />
             <Route path="/stores" element={<StorePage />} />
             <Route path="/myAccount/profile" element={<MyProfile />} />
+            <Route path="/myAccount/accountbook" element={<MyAddressBook />} />
+            <Route path="/myAccount/myorders" element={<MyOrders />} />
+            <Route path="/myAccount/wishlist" element={<MyWishlist />} />
           </Route>
         </Routes>
       </BrowserRouter>
