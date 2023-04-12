@@ -1,0 +1,66 @@
+.myaccount-sidebar {
+  line-height: 3.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  h2 {
+    margin: 1rem auto;
+    font-weight: 600;
+    font-size: 26px;
+    color: #212363;
+  }
+  div {
+    a {
+      font-weight: 500;
+      font-size: 20px;
+      text-transform: capitalize;
+      color: #000000;
+    }
+  }
+}
+.myaccount-personal-details {
+  line-height: 3.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  .heading-div {
+    margin: 0.5rem auto 1.8rem;
+    h2 {
+      font-weight: 600;
+      font-size: 30px;
+      color: #212363;
+    }
+    button {
+      color: #d1bd0b;
+      border: 1px transparent;
+      background: #e2cd0633;
+      border-radius: 4px;
+    }
+  }
+
+  form {
+    div {
+      label {
+        font-weight: 500;
+        font-size: 20px;
+        color: #212363;
+      }
+      input {
+        background-color: #ebebeb99;
+        font-weight: 400;
+        font-size: 16px;
+        color: #000000;
+      }
+      button {
+        color: #212363;
+        border: 2px solid #212363;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .password-btn-div {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+}

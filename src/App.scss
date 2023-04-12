@@ -102,7 +102,15 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
+.flex-jc-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .flex-jc-wrap {
   display: flex;
   justify-content: center;
@@ -244,4 +252,14 @@ td {
   width: 100%;
   color: #fff;
   transition: all 0.5s ease;
+}
+.container-card {
+  background: #ffffff;
+  box-shadow: 11px 11px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+}
+@media (max-width: 992px) {
+  .container-card {
+    margin: 1rem 0.6rem;
+  }
 }
