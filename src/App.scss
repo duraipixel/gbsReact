@@ -14,7 +14,7 @@ $theme-colors: (
 @import "https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Outfit:wght@400;500;600;700&display=swap";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap");
 :root {
   --bs-primary-rgb: 240, 0, 8;
   --primary-color: rgb(240, 0, 8);
@@ -264,13 +264,19 @@ td {
   }
 }
 
-.small-content{
-  h3{
-    font-family: $font-family_1;font-weight: 600;
+.small-content {
+  h3 {
+    font-family: $font-family_1;
+    font-weight: 600;
     font-size: 30px;
-    line-height: 38px;margin-bottom:25px;
+    line-height: 38px;
+    margin-bottom: 25px;
   }
-  p{font-family: $font-family_1;font-weight: 400;
-    font-size: 20px;margin-bottom: 40px;
-    line-height: 25px;}
+  p {
+    font-family: $font-family_1;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 25px;
+  }
 }

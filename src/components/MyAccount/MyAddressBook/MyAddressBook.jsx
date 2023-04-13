@@ -1,7 +1,18 @@
+import { Col, Container, Row } from "react-bootstrap";
+import AddressBookDetails from "./AddressBookDetails";
+
 function MyAddressBook() {
   return (
-    <div>MyAddressBook</div>
-  )
+    <section>
+      <Container>
+        <Row>
+          <Col lg={9} className="align-self-start">
+            <AddressBookDetails />
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
 }
 
-export default MyAddressBook
+export default MyAddressBook;

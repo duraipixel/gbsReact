@@ -1,7 +1,9 @@
 .myaccount-sidebar {
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
   div {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   h2 {
@@ -24,7 +26,7 @@
       border-right: 2px solid #f1000a;
       display: flex;
       justify-content: space-between;
-      margin-right: -1.5rem;
+      margin-right: -2.2rem;
     }
   }
 }
@@ -66,6 +68,55 @@
         border-radius: 4px;
       }
     }
+  }
+}
+
+.address-book-details {
+  h2 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    color: #212363;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+    color: #212363;
+  }
+  .btn.default-address-btn {
+    padding: 10px;
+    background: rgba(47, 180, 255, 0.2);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #009ef7;
+  }
+  .btn.edit-btn {
+    padding: 10px;
+    color: #d1bd0b;
+    border: 1px transparent;
+    background: rgba(226, 205, 6, 0.2);
+    border-radius: 3px;
+  }
+  .btn.del-btn {
+    padding: 10px;
+    background: rgba(241, 65, 108, 0.2);
+    color: #bc2f03;
+    border: 1px transparent;
+    border-radius: 3px;
+  }
+  .btn.add-address-btn {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    border-radius: 4px;
+    padding: 10px;
   }
 }
 @media (max-width: 992px) {
