@@ -216,7 +216,12 @@ td {
     cursor: pointer;
   }
 }
-
+.btn.btn-outline-dblue {
+  color: #212363;
+  border: 2px solid #212363;
+  border-radius: 4px;
+  padding: 10px;
+}
 // .slick-arrow {
 //   z-index: 1;
 //   width: 40px;
