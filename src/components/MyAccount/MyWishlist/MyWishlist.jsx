@@ -38,7 +38,7 @@ const MyWishlist = () => {
                   <img src={product1} alt="" />
                   <span className="ofer-infs">
                     <h4>
-                      30% <h5>OFF</h5>
+                      30% <b className="fs-5">OFF</b>
                     </h4>
                   </span>
                 </div>
@@ -56,7 +56,7 @@ const MyWishlist = () => {
                     ₹83,127 <span className="ori-nal">
                       ₹62,558
                     </span>
-                    <h5> You Save (₹26,441) </h5>
+                    <b className="fs-5"> You Save (₹26,441) </b>
                   </h4>
                   <ul className="config-uration">
                     <li> 11th Gen Intel Core i5-11400H </li>
@@ -136,7 +136,7 @@ const MyWishlist = () => {
                   <img src={product1} alt="" />
                   <span className="ofer-infs">
                     <h4>
-                      30% <h5>OFF</h5>
+                      30% <b>OFF</b>
                     </h4>
                   </span>
                 </div>
@@ -154,7 +154,7 @@ const MyWishlist = () => {
                     ₹83,127 <span className="ori-nal">
                       ₹62,558
                     </span>
-                    <h5> You Save (₹26,441) </h5>
+                    <b className="fs-5"> You Save (₹26,441) </b>
                   </h4>
                   <ul className="config-uration">
                     <li> 11th Gen Intel Core i5-11400H </li>

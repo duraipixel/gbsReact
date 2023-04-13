@@ -9,7 +9,7 @@ const HomeProductsSlider = () => {
     return (
       <BannerSlider>
         {data.data.map((item) => (
-          <div className="banner-overlay-wrapper">
+          <div key={item.id} className="banner-overlay-wrapper">
             <img
               src={window.innerWidth < 992 ? item.mobile_banner : item.image}
               className="banner-image"
