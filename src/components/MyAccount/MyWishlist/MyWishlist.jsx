@@ -16,14 +16,14 @@ const MyWishlist = () => {
   }, []);
   return (
     <Col className="p-1 ps-4">
-      <h2>My Wishlist</h2>
+      <h2 className="wishlist-title">My Wishlist</h2>
       <div className="list-details-side">
         <div className="flex-jc-btwn align-c flex-wrap gap-2 mb-5">
           <div className="primary-heads">
-            <h3 className="mb-0"> Displaying 1-12 of 6540 results</h3>
+            <h3 className="mb-0">Displaying 1-4 of 4 results</h3>
           </div>
-          <div className="sort-order flex-jc-right align-c gap-1">
-            <div> Sort by</div>
+          <div className="sort-order flex-jc-right align-c">
+            <div className="sort-by-div"> Sort by</div>
             <select className="form-control" id="enq" name="enq">
               <option value="">Top Deals</option>
               <option value="New Products">New Products</option>

@@ -1,13 +1,11 @@
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import AddressBookDetails from "./AddressBookDetails";
 
 function MyAddressBook() {
   return (
-    <Container>
-      <Row>
-        <AddressBookDetails />
-      </Row>
-    </Container>
+    <Row>
+      <AddressBookDetails />
+    </Row>
   );
 }
 

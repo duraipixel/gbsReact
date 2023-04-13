@@ -126,7 +126,6 @@
   line-height: 19px;
   border: 0px;
   position: relative;
-  right: -2px;
   transition: all 0.3s ease;
   color: #101010;
 }
@@ -168,7 +167,26 @@
   text-transform: uppercase;
   color: #929292;
 }
-
+.sort-by-div {
+  font-weight: 400;
+  font-size: 15px;
+  padding: 5px 10px;
+  height: 35px;
+  background: #cccccc;
+  border-radius: 4px;
+  color: #000000;
+}
+.clk-optn a {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #00043a;
+  color: #00043a;
+  padding: 1px;
+  border-radius: 100%;
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+}
 .img-details h3 span.rat-esr {
   margin-left: 15px;
   display: inline-block;

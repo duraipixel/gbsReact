@@ -15,8 +15,8 @@ const ProductListDetails = () => {
           <div className="primary-heads">
             <h3> Displaying 1-12 of 6540 results</h3>
           </div>
-          <div className="sort-order flex-jc-right align-c gap-1">
-            <div> Sort by</div>
+          <div className="sort-order flex-jc-right align-c">
+            <div className="sort-by-div"> Sort by</div>
             <select className="form-control" id="enq" name="enq">
               <option value="">Top Deals</option>
               <option value="New Products">New Products</option>

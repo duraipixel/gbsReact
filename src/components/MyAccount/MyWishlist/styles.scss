@@ -1,3 +1,9 @@
+.wishlist-title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  color: #212363;
+}
 .clk-optn a {
   height: 30px;
   width: 30px;
@@ -26,4 +32,13 @@
       color: #212363;
     }
   }
+}
+.sort-by-div {
+  font-weight: 400;
+  font-size: 15px;
+  padding: 5px 10px;
+  height: 35px;
+  background: #cccccc;
+  border-radius: 4px;
+  color: #000000;
 }
