@@ -2,6 +2,7 @@ import "./styles.css";
 import { useBannersQuery } from "redux/features/banners/bannerService";
 import { Placeholder } from "react-bootstrap";
 import BannerSlider from "./BannerSlider";
+import { Image } from "utils";
 
 const HomeProductsSlider = () => {
   const { data, isSuccess, isLoading } = useBannersQuery();
@@ -10,11 +11,7 @@ const HomeProductsSlider = () => {
       <BannerSlider>
         {data.data.map((item) => (
           <div key={item.id} className="banner-overlay-wrapper">
-            <img
-              src={window.innerWidth < 992 ? item.mobile_banner : item.image}
-              className="banner-image"
-              alt=""
-            />
+            <Image alt="banner" effect="blur" className="banner-image"  src={window.innerWidth < 992 ? item.mobile_banner : item.image}/>
             <div className="container">
               <div className="poster-content">
                 <h1>{item.title}</h1>
@@ -32,7 +29,7 @@ const HomeProductsSlider = () => {
   if (isLoading)
     return (
       <Placeholder as="p" animation="glow">
-        <Placeholder bg="dark" style={{ height: 400 }} xs={12} />
+        <Placeholder bg="dark" style={{ height: 360 }} xs={12} />
       </Placeholder>
     );
 };

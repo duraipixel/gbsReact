@@ -16,11 +16,12 @@
 }
 .banner-overlay-wrapper {
   position: relative;
+  min-height: 360px;
 }
 .banner-overlay-wrapper::before {
   position: absolute;
   content: "";
-  top: 0;
+  top: -5px;
   left: 0;
   width: 100%;
   height: 100%;

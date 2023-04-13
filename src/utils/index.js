@@ -1,10 +1,10 @@
 import { Spinner } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ProgressBar } from "react-loader-spinner";
 
 const openInNewTab = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");
 };
-
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
@@ -31,7 +31,7 @@ const Loader = () => {
       <ProgressBar
         height="80"
         width="80"
-        ariaLabel="progress-bar-loading" 
+        ariaLabel="progress-bar-loading"
         wrapperclassName="progress-bar-wrapper"
         borderColor="#8d8d8d"
         barColor="#f1000a"
@@ -39,4 +39,7 @@ const Loader = () => {
     </div>
   );
 };
-export { openInNewTab, getCurrentYear, scrollToTop, Loader, LoadingSpinner };
+const Image = (props) => {
+  return <LazyLoadImage {...props} />
+}
+export { openInNewTab, getCurrentYear, scrollToTop, Loader, LoadingSpinner,Image };
