@@ -28,9 +28,9 @@ function App() {
               <Route path="/product-list" element={<ProductLists />} />
               <Route path="/stores" element={<StorePage />} />
               <Route path="/about-us" element={<AboutPage />} />
-              <Route path="/my-account/" element={<ProfileLayout />}>
+              <Route path="/my-account" element={<ProfileLayout />}>
                 <Route path="profile" element={<MyProfile />} />
-                <Route path="accountbook" element={<MyAddressBook />} />
+                <Route path="address-book" element={<MyAddressBook />} />
                 <Route path="myorders" element={<MyOrders />} />
                 <Route path="wishlist" element={<MyWishlist />} />
               </Route>

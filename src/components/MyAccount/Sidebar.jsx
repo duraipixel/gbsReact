@@ -11,7 +11,7 @@ const Sidebar = () => {
         </Link>
       </div>
       <div>
-        <Link to="/my-account/accountbook" style={{ color: "black" }}>
+        <Link to="/my-account/address-book" style={{ color: "black" }}>
           Address Book
         </Link>
       </div>
