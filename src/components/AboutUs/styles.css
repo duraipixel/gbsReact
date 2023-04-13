@@ -1,0 +1,21 @@
+.awardspage-section{background-color: #292929;}
+
+.awardspage-section{padding: 300px 0px 80px;margin-top: -240px;}
+
+.award-container span{font-weight: 400;color:#fff;
+    font-size: 14px;display: block;margin: 10px 0px 10px;
+    line-height: 18px;}
+
+    .award-container{margin: 30px 0px;}
+    .award-container h4{font-weight: 400;
+        font-size: 22px;color:#fff;
+        line-height: 28px;}
+
+        .ceo-msg{padding: 80px 0px 0px;}
+
+        .bordered-button a{margin-top:40px;display:inline-block;padding: 12px 30px;border: 2px solid #FFFFFF;
+            border-radius: 4px;font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;}
+
+            .bordered-button a:hover{background-color: #F1000A;}
