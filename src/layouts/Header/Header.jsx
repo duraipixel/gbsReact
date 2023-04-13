@@ -43,7 +43,7 @@ const Header = () => {
               {navMenu && <NavMenus />}
             </div>
             <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
-              <Link to="/myAccount/profile" className="ps-3">
+              <Link to="/my-account/profile" className="ps-3">
                 <FiUser size={22} />
                 <div className="small fw-lighter">My Account</div>
               </Link>

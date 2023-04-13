@@ -31,8 +31,7 @@ const Loader = () => {
       <ProgressBar
         height="80"
         width="80"
-        ariaLabel="progress-bar-loading"
-        wrapperStyle={{}}
+        ariaLabel="progress-bar-loading" 
         wrapperclassName="progress-bar-wrapper"
         borderColor="#8d8d8d"
         barColor="#f1000a"
