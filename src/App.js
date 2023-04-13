@@ -14,6 +14,7 @@ const MyAddressBook = lazy(() => import("components/MyAccount/MyAddressBook/MyAd
 const MyOrders      = lazy(() => import("components/MyAccount/MyOrders/MyOrder"))
 const MyProfile     = lazy(() => import("components/MyAccount/MyProfile/MyProfile"))
 const MyWishlist    = lazy(() => import("components/MyAccount/MyWishlist/MyWishlist"))
+const NotFound      = lazy(() => import("errors/NotFound"))
 
 function App() {
   return (
@@ -27,12 +28,13 @@ function App() {
               <Route path="/product-list" element={<ProductLists />} />
               <Route path="/stores" element={<StorePage />} />
               <Route path="/about-us" element={<AboutPage />} />
-              <Route path="my-account" element={<ProfileLayout />}>
+              <Route path="/my-account/" element={<ProfileLayout />}>
                 <Route path="profile" element={<MyProfile />} />
                 <Route path="accountbook" element={<MyAddressBook />} />
                 <Route path="myorders" element={<MyOrders />} />
                 <Route path="wishlist" element={<MyWishlist />} />
               </Route>
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </Suspense>
