@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 function ProductBreadcrumb() {
     return (
-        <Breadcrumb className="mt-3">
+        <Breadcrumb>
             <Breadcrumb.Item as={Link} to={'/'}>
                 <span className="text-secondary">Laptops</span>
             </Breadcrumb.Item>

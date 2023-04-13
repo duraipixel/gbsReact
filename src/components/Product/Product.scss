@@ -1,0 +1,87 @@
+.product-thumbnail-image,
+.product-carousel-image {
+    object-fit: contain;
+    object-position: center center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.product-thumbnail-column {
+    @media (min-width:1367px) {
+        width: 130px;
+    }
+    .slick-list {
+        @media (min-width:1367px) {
+            min-height: 540px !important;
+        }
+    }
+}
+
+.product-thumbnail-image {
+    width: 95px;
+    height: 94px;
+    opacity: 0.4;
+    background: white;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.product-thumbnail-image:last-child(1) {
+    margin: 0 !important;
+}
+
+.slick-current {
+    .product-thumbnail-image {
+        opacity: 1 !important;
+    }
+}
+
+.product-thumbnail-image-wrapper {
+    text-align: center;
+    padding: 5px 0;
+    display: flex !important;
+}
+
+.product-carousel-image-wrapper {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    display: flex !important;
+    justify-content: center;
+}
+
+.product-carousel-image {
+    @media (max-width:425px) {
+        height: 250px;
+        width: 100%;
+    }
+    @media (min-width:600px) {
+        height: 350px;
+        width: 100%;
+    }
+    @media (min-width:992px) {
+        height: 450px;
+        width: 520px;
+    }
+    @media (min-width:1200px) {
+        height: 520px;
+        width: 520px;
+    } 
+    @media (min-width:1366px) {
+        height: 400px;
+        width: 520px;
+    } 
+}
+
+.product-section-title {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+    text-transform: capitalize;
+    color: #000000;
+}
