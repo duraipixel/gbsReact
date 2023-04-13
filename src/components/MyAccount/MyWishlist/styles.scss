@@ -1,1 +1,29 @@
-body {background-color: red !important;}
+.clk-optn a {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #00043a;
+  color: #00043a;
+  padding: 1px;
+  border-radius: 100%;
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+}
+.img-details {
+  h4 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 15px;
+    text-decoration-line: line-through;
+    color: #929292;
+    span {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      margin-left: 15px;
+      display: inline-block;
+      color: #212363;
+    }
+  }
+}
