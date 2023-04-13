@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import { Loader } from "utils";
-import { AboutPage, CartPage, HomePage, Layout, MyAddressBook, MyOrders, MyProfile, MyWishlist, NotFound, Product, ProductLists, ProfileLayout, StorePage } from "lazy";
+import { AboutPage, CartPage, HomePage, Layout, MyAddressBook, MyOrders, MyProfile, MyWishlist, NotFound, ProductPage, ProductLists, ProfileLayout, StorePage } from "lazy";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
               <Route index element={<HomePage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/product-list" element={<ProductLists />} />
-              <Route path="/product" element={<Product />} />
+              <Route path="/product" element={<ProductPage />} />
               <Route path="/stores" element={<StorePage />} />
               <Route path="/about-us" element={<AboutPage />} />
               <Route path="/my-account" element={<ProfileLayout />}>
