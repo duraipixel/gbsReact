@@ -5,6 +5,8 @@ import { BiGitCompare } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "utils";
 import '../../ProductsLists/styles.scss'
+import { useEffect } from "react";
+import { FiHeart } from "react-icons/fi";
 
 const MyWishlist = () => {
   useEffect(() => {

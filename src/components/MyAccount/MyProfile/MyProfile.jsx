@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { FiEdit } from "react-icons/fi";
+import { scrollToTop } from "utils";
 
 const MyProfile = () => {
   useEffect(() => {
