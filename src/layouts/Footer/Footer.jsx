@@ -48,7 +48,7 @@ const Footer = () => {
             <h5>Quick Links</h5>
             <div className="footer-links">
               <Link to="/">Home</Link>
-              <Link to="/">About Us</Link>
+              <Link to="/about-us">About Us</Link>
               <Link to="/stores">Stores</Link>
               <Link to="/">Awards</Link>
               <Link to="/">Gallery</Link>
@@ -131,7 +131,7 @@ const Footer = () => {
           Copyright &copy; {getCurrentYear()} GBS Systems & Services Pvt Ltd. |
           All Rights Reserved | Designed by Pixel Studios
         </p>
-      </div> 
+      </div>
     </footer>
   );
 };

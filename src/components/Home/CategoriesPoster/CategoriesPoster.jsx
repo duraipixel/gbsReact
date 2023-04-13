@@ -4,7 +4,7 @@ import poster1 from "assets/images/Categories/Rectangle87.png";
 import poster2 from "assets/images/Categories/Rectangle88.png";
 import poster3 from "assets/images/Categories/Rectangle89.png";
 import poster4 from "assets/images/Categories/Rectangle90.png";
-import { AiFillStar } from "react-icons/ai";
+// import { AiFillStar } from "react-icons/ai";
 
 const CategoriesPoster = () => {
   return (

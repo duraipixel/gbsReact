@@ -7,7 +7,7 @@ import {
   MyOrders,
   MyProfile,
   MyWishlist,
-} from "components/MyAccount"; 
+} from "components/MyAccount";
 
 function App() {
   return (

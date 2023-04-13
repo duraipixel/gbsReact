@@ -4,13 +4,17 @@ import { Placeholder } from "react-bootstrap";
 import BannerSlider from "./BannerSlider";
 
 const HomeProductsSlider = () => {
-  const { data, isSuccess, isLoading } = useBannersQuery()
-  if (isSuccess) return (
-    <BannerSlider>
-      {
-        data.data.map(item => (
+  const { data, isSuccess, isLoading } = useBannersQuery();
+  if (isSuccess)
+    return (
+      <BannerSlider>
+        {data.data.map((item) => (
           <div className="banner-overlay-wrapper">
-            <img src={window.innerWidth < 992 ? item.mobile_banner : item.image}  className="banner-image"/>
+            <img
+              src={window.innerWidth < 992 ? item.mobile_banner : item.image}
+              className="banner-image"
+              alt=""
+            />
             <div className="container">
               <div className="poster-content">
                 <h1>{item.title}</h1>
@@ -22,11 +26,15 @@ const HomeProductsSlider = () => {
               </div>
             </div>
           </div>
-        ))
-      }
-    </BannerSlider>
-  );
-  if (isLoading) return (<Placeholder as="p" animation="glow"><Placeholder bg="dark" style={{ height: 400 }} xs={12} /></Placeholder>)
+        ))}
+      </BannerSlider>
+    );
+  if (isLoading)
+    return (
+      <Placeholder as="p" animation="glow">
+        <Placeholder bg="dark" style={{ height: 400 }} xs={12} />
+      </Placeholder>
+    );
 };
 
 export default HomeProductsSlider;
