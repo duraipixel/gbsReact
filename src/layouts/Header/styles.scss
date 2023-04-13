@@ -39,7 +39,7 @@
 }
 
 .top-bar ul.top-socials li a:hover {
-  background: #d31217;
+  background: var(--primary-color);
   color: #fff;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .top-bar .top-phone a:hover {
-  color: #d31217;
+  color: var(--primary-color);
 }
 
 .top-bar .top-phone img {
@@ -241,14 +241,14 @@ body.town-bus header #cssmenu>ul>li>a {
 }
 
 #cssmenu ul ul li.active a {
-  color: #d31217;
+  color: var(--primary-color);
 }
 
 #cssmenu>ul>li:hover,
 #cssmenu ul li.active:hover,
 #cssmenu ul li.active,
 #cssmenu ul li.has-sub.active:hover {
-  color: #d31217;
+  color: var(--primary-color);
 }
 
 #cssmenu ul li.contact a,
@@ -269,12 +269,12 @@ body.town-bus header #cssmenu ul li.contact a {
 
 #cssmenu ul li.contact a:hover,
 #cssmenu ul li.contact.active a {
-  background: #d31217;
+  background: var(--primary-color);
   color: #fff;
 }
 
 #cssmenu ul li.contact a:before {
-  background: #d31217;
+  background: var(--primary-color);
   position: absolute;
   right: 0px;
   top: 0px;
@@ -397,7 +397,7 @@ body.town-bus header #cssmenu>ul>li.has-sub>a:before {
 
 #cssmenu>ul>li.has-sub:hover>a:after {
   transform: rotate(180deg);
-  color: #d31217;
+  color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
@@ -473,21 +473,34 @@ body.town-bus header #cssmenu ul ul {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-dark-rgb), 0.25);
 }
 
-input[type="search"] {
+.offcanvas-header .btn-close {
+  filter: invert(1);
+}
+
+.user-none {
+  cursor: none;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input[type=search] {
   width: 100%;
   border: none;
   height: 45px;
-  padding: 15px 35px 15px 15px;
+  padding: 10px 35px 10px 15px;
   border-radius: 4px;
-  background: #fff url("../../assets/images/serch.png") no-repeat scroll 97% center;
+  // background: #fff url("../../assets/images/serch.png") no-repeat scroll 98% center;
   margin-top: 0px;
   transition: all 0.3s ease;
   outline: none;
 }
 
 .navbar-toggler {
-  border-color: #f78c99;
   box-shadow: none !important;
+  padding: 0 !important;
+  border: none !important;
+  margin-left: 10px;
 }
 
 .navbar-toggler .navbar-toggler-icon {
@@ -503,8 +516,13 @@ input[type="search"] {
 
 }
 
+@media (max-width:600px) {
+  .search-wrapper {
+    margin: 0;
+  }
+}
+
 .search-wrapper {
-  margin: 20px 0;
   position: relative;
 }
 
@@ -618,7 +636,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 
 #cssmenu ul li.mega-menu ul li.active ul li.active a,
 #cssmenu ul li.mega-menu ul li.active ul li.active a:hover {
-  background: #d31217;
+  background: var(--primary-color);
   color: #fff;
 }
 
@@ -672,7 +690,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   width: 4px;
   height: 0px;
   content: "";
-  background: #d31217;
+  background: var(--primary-color);
   transition: all 0.3s ease;
 }
 
@@ -685,7 +703,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 #cssmenu ul ul li.active a,
 #cssmenu ul ul li a:hover,
 #cssmenu ul li.mega-menu ul li.active a:hover {
-  color: #d31217;
+  color: var(--primary-color);
   padding: 13px 15px 13px 20px;
 }
 
@@ -704,7 +722,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   width: 4px;
   height: 0px;
   content: "";
-  background: #d31217;
+  background: var(--primary-color);
   transition: all 0.3s ease;
 }
 
@@ -934,7 +952,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 
   #cssmenu>ul>li.active>a {
     color: #fff;
-    background: #d31217;
+    background: var(--primary-color);
   }
 
   .fixed-top #cssmenu>ul>li>a,
@@ -1093,7 +1111,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   }
 
   #cssmenu ul li.mega-menu ul li a:hover {
-    color: #d31217;
+    color: var(--primary-color);
   }
 
   #cssmenu ul ul li a {
@@ -1169,7 +1187,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   }
 
   #head-mobile a.contact:hover {
-    background: #d31217;
+    background: var(--primary-color);
   }
 
   header .button {
@@ -1591,21 +1609,58 @@ input[type="search"]::-webkit-search-results-decoration {
     }
   }
 }
+
+.accordion-dark {
+  .btn-light {
+    background-color: #eeeeee5a !important;
+    border-color: #eee !important;
+    color: #eee !important;
+  }
+  .list-group-item {
+    background: #191a1a !important;
+    text-align: left !important; 
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    a {
+      color: #eee  !important;
+      margin: 0 !important;
+      &:hover {
+        color: var(--primary-color) !important;
+      }
+    }
+  }
+}
+
 .brand {
   img {
     width: 92px;
+
+    @media (max-width:600px) {
+      width: 80px;
+    }
   }
 }
-.small, small {
+
+.small,
+small {
   font-size: 12px !important;
 }
+
+.bg-max-lg-dark {
+  @media (max-width:992px) {
+    background: #191a1a !important;
+  }
+}
+
 .nav-menus {
   position: absolute;
   z-index: 11;
   border-top: 2px solid white;
   background: white;
-  top: 60px;
+  top: 50px;
   min-height: 400px;
+  min-width: 280px;
+
   @media (min-width:992px) {
     width: 420px;
     left: 0%;
@@ -1624,7 +1679,9 @@ input[type="search"]::-webkit-search-results-decoration {
       border-right: 10px solid transparent;
       border-bottom: 10px solid white;
       position: absolute;
-      top: -12px;
+      top: -10px;
+      left: 8px;
+
       @media (min-width:992px) {
         top: -10px;
         left: 50%;
