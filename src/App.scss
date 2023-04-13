@@ -220,7 +220,7 @@ td {
   color: #212363;
   border: 2px solid #212363;
   border-radius: 4px;
-  padding: 10px;
+  width: 167px !important;
 }
 // .slick-arrow {
 //   z-index: 1;
@@ -274,13 +274,18 @@ td {
     font-family: $font-family_1;
     font-weight: 600;
     font-size: 30px;
-    line-height: 38px;margin-bottom:25px;
-  } 
-  p{font-family: $font-family_1;font-weight: 400;
-    font-size: 20px;margin-bottom: 40px;
-    line-height: 25px;}
+    line-height: 38px;
+    margin-bottom: 25px;
+  }
+  p {
+    font-family: $font-family_1;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 25px;
+  }
 }
 
 .bg-primary {
-  background: linear-gradient(var(--primary-color),#bb1218) !important;
+  background: linear-gradient(var(--primary-color), #bb1218) !important;
 }

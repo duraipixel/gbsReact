@@ -36,15 +36,21 @@
     font-size: 16px;
     line-height: 20px;
     color: #212363;
+    padding: 8px;
   }
-  .btn.btn-outline-dblue {
-    padding: 8px 35px;
-  }
+
   .btn.btn-cancel {
-    padding: 8px 31.5px;
+    width: 167px;
+    padding: 8px;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     color: #f1000a;
+  }
+  .payment-canceled {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #ee5162;
   }
 }
