@@ -1,30 +1,22 @@
 import React from "react";
 import "./styles.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <div className="myaccount-sidebar">
       <h2>My Account</h2>
       <div>
-        <Link to="/myAccount/profile" style={{ color: "black" }}>
-          My Profile
-        </Link>
+        <NavLink to="/myAccount/profile">My Profile</NavLink>
       </div>
       <div>
-        <Link to="/myAccount/accountbook" style={{ color: "black" }}>
-          Address Book
-        </Link>
+        <NavLink to="/myAccount/accountbook">Address Book</NavLink>
       </div>
       <div>
-        <Link to="/myAccount/myorders" style={{ color: "black" }}>
-          My Orders
-        </Link>
+        <NavLink to="/myAccount/myorders">My Orders</NavLink>
       </div>
       <div>
-        <Link to="/myAccount/wishlist" style={{ color: "black" }}>
-          My Wishlist
-        </Link>
+        <NavLink to="/myAccount/wishlist">My Wishlist</NavLink>
       </div>
     </div>
   );

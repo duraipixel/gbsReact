@@ -1,7 +1,9 @@
 .myaccount-sidebar {
-  line-height: 3.3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  div {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
   h2 {
     margin: 1rem auto;
     font-weight: 600;
@@ -10,10 +12,19 @@
   }
   div {
     a {
-      font-weight: 500;
+      font-weight: 400;
       font-size: 20px;
+      line-height: 25px;
       text-transform: capitalize;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    a.active {
+      font-weight: 500;
       color: #000000;
+      border-right: 2px solid #f1000a;
+      display: flex;
+      justify-content: space-between;
+      margin-right: -1.5rem;
     }
   }
 }
