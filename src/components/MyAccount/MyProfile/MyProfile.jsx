@@ -10,7 +10,7 @@ const MyProfile = () => {
     scrollToTop();
   }, []);
   return (
-    <Col className="container-card p-4">
+    <Col className="container-card card p-4">
       <div className="myaccount-personal-details">
         <div className="flex-jc-btwn flex-wrap heading-div">
           <h2>PersonalDetails</h2>

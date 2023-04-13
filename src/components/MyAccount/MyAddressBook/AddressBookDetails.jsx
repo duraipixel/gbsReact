@@ -6,7 +6,7 @@ import { SlLocationPin } from "react-icons/sl";
 const AddressBookDetails = () => {
   return (
     <div className="address-book-details">
-      <Col className="container-card p-4">
+      <Col className="container-card card p-4">
         <div className="flex-jc-btwn flex-wrap">
           <h3>Kabir L</h3>
           <button className="btn default-address-btn flex-center gap-2">
@@ -34,7 +34,7 @@ const AddressBookDetails = () => {
         <h2>Other Addresses</h2>
         <button className="btn align-c add-address-btn">Add New Address</button>
       </div>
-      <Col className="container-card p-4">
+      <Col className="container-card card p-4">
         <div>
           <h3>Inaya</h3>
         </div>
@@ -59,7 +59,7 @@ const AddressBookDetails = () => {
         </div>
       </Col>
       <br />
-      <Col className="container-card p-4">
+      <Col className="container-card card p-4">
         <div>
           <h3>Naya</h3>
         </div>
