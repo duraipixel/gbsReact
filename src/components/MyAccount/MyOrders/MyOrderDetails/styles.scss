@@ -1,3 +1,6 @@
+p {
+  margin-bottom: 0;
+}
 .btn.btn-cancel {
   width: 167px;
   padding: 8px;
@@ -13,4 +16,13 @@
   font-size: 28px;
   line-height: 35px;
   color: #212363;
+}
+.t-head-title {
+  p {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    color: #929292;
+  }
 }
