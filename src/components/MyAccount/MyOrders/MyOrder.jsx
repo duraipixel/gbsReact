@@ -7,25 +7,25 @@ function MyOrder() {
     <>
       <Col className="container-card card p-4 mb-3">
         <div className="order-details">
-          <div className="table-container">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Order placed on:</th>
-                  <th>Order ID:</th>
-                  <th>Ship to: </th>
-                  <th>Order Total </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>10 March 2023</td>
-                  <td>403-9499889-4551543</td>
-                  <td>Kabir L</td>
-                  <td>₹80,933.8</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="table align-c flex-jc-btwn">
+            <div className="flex flex-wrap gap-5">
+              <div>
+                <p>Order Placed On</p>
+                <p>10 March 2023</p>
+              </div>
+              <div>
+                <p>Order ID:</p>
+                <p>403-9499889-4551543</p>
+              </div>
+              <div>
+                <p>Ship to: </p>
+                <p>Kabir L</p>
+              </div>
+              <div>
+                <p>Order Total </p>
+                <p>₹80,933.8</p>
+              </div>
+            </div>
             <div className="view-invoice-btn">View Invoice</div>
           </div>
           <hr />
@@ -55,25 +55,25 @@ function MyOrder() {
       </Col>
       <Col className="container-card card p-4 mb-3">
         <div className="order-details">
-          <div className="table-container">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Order placed on:</th>
-                  <th>Order ID:</th>
-                  <th>Ship to: </th>
-                  <th>Order Total </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>3 February 2023</td>
-                  <td>405-9466109-3240337</td>
-                  <td>Kabir L</td>
-                  <td>₹70,933.8</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="table align-c flex-jc-btwn">
+            <div className="flex flex-wrap gap-5">
+              <div>
+                <p>Order Placed On</p>
+                <p>10 March 2023</p>
+              </div>
+              <div>
+                <p>Order ID:</p>
+                <p>403-9499889-4551543</p>
+              </div>
+              <div>
+                <p>Ship to: </p>
+                <p>Kabir L</p>
+              </div>
+              <div>
+                <p>Order Total </p>
+                <p>₹80,933.8</p>
+              </div>
+            </div>
             <div className="view-invoice-btn">View Invoice</div>
           </div>
           <hr />
@@ -105,25 +105,25 @@ function MyOrder() {
       </Col>
       <Col className="container-card card p-4 mb-3">
         <div className="order-details">
-          <div className="table-container">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Order placed on:</th>
-                  <th>Order ID:</th>
-                  <th>Ship to: </th>
-                  <th>Order Total </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>25 Januray 2023</td>
-                  <td>405-9466109-3240337</td>
-                  <td>Kabir L</td>
-                  <td>₹111,889</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="table align-c flex-jc-btwn">
+            <div className="flex flex-wrap gap-5">
+              <div>
+                <p>Order Placed On</p>
+                <p>10 March 2023</p>
+              </div>
+              <div>
+                <p>Order ID:</p>
+                <p>403-9499889-4551543</p>
+              </div>
+              <div>
+                <p>Ship to: </p>
+                <p>Kabir L</p>
+              </div>
+              <div>
+                <p>Order Total </p>
+                <p>₹80,933.8</p>
+              </div>
+            </div>
             <div className="view-invoice-btn">View Invoice</div>
           </div>
           <hr />
@@ -155,25 +155,25 @@ function MyOrder() {
       </Col>
       <Col className="container-card card p-4 mb-3">
         <div className="order-details">
-          <div className="table-container">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Order placed on:</th>
-                  <th>Order ID:</th>
-                  <th>Ship to: </th>
-                  <th>Order Total </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>3 February 2023</td>
-                  <td>405-9466109-3240337</td>
-                  <td>Kabir L</td>
-                  <td>₹70,933.8</td>
-                </tr>
-              </tbody>
-            </table>{" "}
+          <div className="table align-c flex-jc-btwn">
+            <div className="flex flex-wrap gap-5">
+              <div>
+                <p>Order Placed On</p>
+                <p>10 March 2023</p>
+              </div>
+              <div>
+                <p>Order ID:</p>
+                <p>403-9499889-4551543</p>
+              </div>
+              <div>
+                <p>Ship to: </p>
+                <p>Kabir L</p>
+              </div>
+              <div>
+                <p>Order Total </p>
+                <p>₹80,933.8</p>
+              </div>
+            </div>{" "}
             <div className="payment-canceled align-c gap-2">
               <AiOutlineWarning /> Payment Failed
             </div>
