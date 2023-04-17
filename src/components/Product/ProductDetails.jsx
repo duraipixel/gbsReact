@@ -25,15 +25,15 @@ function ProductDetails() {
         <div className='py-lg-3'>
             <Row>
                 <Col xl={6}>
-                    <div className='d-xxl-flex d-flex flex-column-reverse flex-xxl-row'>
-                        <div className='product-thumbnail-column  py-3 py-xxl-0'>
+                    <div className='row align-items-center product-row'>
+                        <div className='product-thumbnail-column col-lg-2'>
                             <ProductThumbnailSlider
                                 images={images}
                                 parentSlider={productCarouselSliders}
                                 action={setNavSlider}
                             />
                         </div>
-                        <Col lg={10} className='px-xxl-3 mt-xxl-0 mt-3'>
+                        <Col lg={9} className='px-xxl-3 mt-xxl-0 mt-3'>
                             <ProductCarousel
                                 setPhotoIndex={setPhotoIndex}
                                 photoIndex={photoIndex}

@@ -4,15 +4,15 @@ function ProductThumbnailSlider({ parentSlider, action, images }) {
     return (
         <Slider className='product-thumbnail-slider' responsive={[
             {
-                breakpoint: 1367,
+                breakpoint: 1025,
                 settings: {
                     slidesToShow: 5,
                     slidesToScroll: 1,
-                    vertical: false,
+                    vertical: true,
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint:769,
                 settings: {
                     slidesToShow: 3,
                     vertical: false,
