@@ -2,7 +2,22 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import { Loader } from "utils";
-import { AboutPage, CartPage, HomePage, Layout, MyAddressBook, MyOrders, MyProfile, MyWishlist, NotFound, ProductPage, ProductLists, ProfileLayout, StorePage } from "lazy";
+import {
+  AboutPage,
+  CartPage,
+  HomePage,
+  Layout,
+  MyAddressBook,
+  MyOrders,
+  MyProfile,
+  MyWishlist,
+  NotFound,
+  ProductPage,
+  ProductLists,
+  ProfileLayout,
+  StorePage,
+  MyOrdersDetails,
+} from "lazy";
 
 function App() {
   return (
@@ -21,6 +36,10 @@ function App() {
                 <Route path="profile" element={<MyProfile />} />
                 <Route path="address-book" element={<MyAddressBook />} />
                 <Route path="myorders" element={<MyOrders />} />
+                <Route
+                  path="myorders/order-details"
+                  element={<MyOrdersDetails />}
+                />
                 <Route path="wishlist" element={<MyWishlist />} />
               </Route>
               <Route path="*" element={<NotFound />} />

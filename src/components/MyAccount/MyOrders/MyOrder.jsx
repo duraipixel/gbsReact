@@ -1,6 +1,7 @@
 import { Col } from "react-bootstrap";
 import "./styles.scss";
 import { AiOutlineWarning } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 function MyOrder() {
   return (
@@ -32,7 +33,12 @@ function MyOrder() {
           <div>
             <div className="flex-jc-btwn flex-wrap gap-2 align-c pb-3">
               <h4>Your Order is on the way</h4>
-              <button className="btn btn-outline-dblue">Track Order</button>
+              <Link
+                to="/my-account/myorders/order-details"
+                className="btn btn-outline-dblue"
+              >
+                Track Order
+              </Link>
             </div>
             <div className="flex-jc-btwn flex-wrap gap-2 align-c pb-2">
               <div style={{ fontWeight: "400", fontSize: "18px" }}>

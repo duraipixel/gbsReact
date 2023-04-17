@@ -1,24 +1,27 @@
 import { Spinner } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { ProgressBar } from "react-loader-spinner";
 
 const openInNewTab = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");
 };
+
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
+
 const scrollToTop = () => {
   window.scroll({ top: 0, left: 0, behavior: "smooth" });
 };
+
 const LoadingSpinner = () => {
   return (
     <Spinner size="sm" animation="border" role="status">
       <span className="visually-hidden"> Loading...</span>
     </Spinner>
   );
-}
+};
 const Loader = () => {
   return (
     <div
@@ -41,6 +44,13 @@ const Loader = () => {
   );
 };
 const Image = (props) => {
-  return <LazyLoadImage {...props} />
-}
-export { openInNewTab, getCurrentYear, scrollToTop, Loader, LoadingSpinner,Image };
+  return <LazyLoadImage {...props} />;
+};
+export {
+  openInNewTab,
+  getCurrentYear,
+  scrollToTop,
+  Loader,
+  LoadingSpinner,
+  Image,
+};
