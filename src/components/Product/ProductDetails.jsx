@@ -25,7 +25,7 @@ function ProductDetails() {
         <div className='py-lg-3 h-100'>
             <Row className='h-100 '>
                 <Col xl={6}>
-                    <div class="sticky-top">
+                    <div class="sticky-top pt-lg-4">
                         <div className='row align-items-center product-row'>
                             <div className='product-thumbnail-column col-lg-2'>
                                 <ProductThumbnailSlider
