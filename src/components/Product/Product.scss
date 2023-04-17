@@ -10,6 +10,7 @@
     @media (min-width:1367px) {
         width: 130px;
     }
+
     .slick-list {
         @media (min-width:1367px) {
             min-height: 540px !important;
@@ -51,36 +52,44 @@
     display: flex !important;
     justify-content: center;
 }
+
 .breadcrumb {
     margin: 0 !important;
 }
+
 .breadcrumb-item {
     @media (max-width:768px) {
         font-size: 12px;
     }
 }
+
 .product-row {
     @media (max-width:768px) {
         flex-direction: column-reverse;
-    } 
+    }
 }
+
 .product-carousel-image {
     @media (max-width:425px) {
         height: 250px;
     }
+
     @media (min-width:600px) {
         height: 350px;
     }
+
     @media (min-width:992px) {
         height: 450px;
     }
+
     @media (min-width:1200px) {
         height: 520px;
-    } 
+    }
+
     @media (min-width:1366px) {
         max-height: 525px;
         width: 450px;
-    } 
+    }
 }
 
 .product-section-title {
@@ -91,4 +100,91 @@
     line-height: 45px;
     text-transform: capitalize;
     color: #000000;
+}
+
+.offer-badge {
+    background: var(--dark-blue-color);
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.text-sku {
+    color: #929292;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.rounded-box-circle {
+    height: 53px;
+    width: 53px;
+    border-radius: 100%;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pincode-input {
+    background: #EBEBEB !important;
+    border-radius: 4px !important;
+    border: none;
+    outline: none;
+}
+
+.bullet-points {
+    li {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 35px;
+        display: block;
+
+        span {
+            font-weight: 600;
+        }
+
+        &::before {
+            content: '•';
+            margin-right: 10px;
+        }
+    }
+}
+
+.accordion,
+.accordion-item,
+.accordion-button {
+    background: none !important;
+}
+.accordion-button {
+    padding-left: 0  !important;
+    padding-right: 0  !important;
+}
+
+
+.accordion-button {
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background: none !important;
+    color: black !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-icon) !important;
 }
