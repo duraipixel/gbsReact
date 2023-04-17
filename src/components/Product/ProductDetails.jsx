@@ -5,6 +5,7 @@ import './Product.scss'
 import ProductInfo from './ProductInfo';
 import ProductThumbnailSlider from './ProductThumbnailSlider';
 import ProductCarousel from './ProductCarousel';
+import ProductsFeaturesTabs from './ProductsFeaturesTabs';
 
 function ProductDetails() {
     const [productCarouselSliders, setProductCarouselSlider] = useState();
@@ -50,6 +51,7 @@ function ProductDetails() {
                     <ProductInfo />
                 </Col>
             </Row>
+            <ProductsFeaturesTabs />
         </div>
     )
 }
