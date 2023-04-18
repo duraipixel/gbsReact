@@ -7,8 +7,21 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-
-.deals-imgs{position: relative;}
+.deals-imgs img {
+  border-radius: 5px;
+}
+@media (max-width:992px) {
+  .deals-imgs{
+    position: relative;
+    margin-bottom: 10px;
+    display: block;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+.deals-imgs{
+  position: relative;
+ 
+}
 .btm-liner {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.08%, rgba(0, 0, 0, 0.8) 85.21%);
   border-radius: 6px;
