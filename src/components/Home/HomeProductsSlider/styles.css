@@ -6,12 +6,10 @@
 
 .poster-image {
   position: relative;
-  /* height: 450px; */
 }
 
 .banner-image {
   width: 100%;
-  max-height: 380px;
   object-fit: contain !important;
 }
 .banner-overlay-wrapper {
@@ -92,4 +90,15 @@
   width: 35px !important;
   background: var(--white-color) !important;
   transition: all 0.3s ease;
+}
+
+.search-result {
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 50px;
+}
+.search-result li {
+  cursor: pointer;
 }

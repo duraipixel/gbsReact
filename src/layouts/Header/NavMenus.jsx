@@ -39,7 +39,7 @@ export const NavMenuList = ({ className }) => {
             {data.data.map((item) => (
               <li className="list-group-item p-3" key={item.id}>
                 <div className="d-flex justify-content-between align-items-center">
-                  <Link to="/" className={`me-auto text-secondary`}>  {item.name} </Link>
+                  <Link to="/" className={`me-auto text-dark`}>  {item.name} </Link>
                   {item.child.length > 0 && (
                     <AccordionToggler eventKey={item.id} />
                   )}
@@ -49,7 +49,7 @@ export const NavMenuList = ({ className }) => {
                     <ul className="list-group list-group-flush">
                       {item.child.map((data) => (
                         <li key={data.id} className="list-group-item pt-3">
-                          <Link to="/" className={`me-auto text-secondary`}>  {data.name} </Link>
+                          <Link to="/" className={`me-auto text-dark`}>  {data.name} </Link>
                         </li>
                       ))}
                     </ul>
@@ -73,7 +73,7 @@ function AccordionToggler({ eventKey, callback }) {
 
   return (
     <Button className="btn-sm" variant="light" onClick={decoratedOnClick}>
-      {activeEventKey == eventKey ? <BsChevronDown /> : <BsChevronRight />}
+      {activeEventKey === eventKey ? <BsChevronDown /> : <BsChevronRight />}
     </Button>
   );
 }
