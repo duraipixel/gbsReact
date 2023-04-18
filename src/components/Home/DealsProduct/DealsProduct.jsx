@@ -4,6 +4,7 @@ import poster1 from "assets/images/Deals/Rectangle 187.png";
 import poster2 from "assets/images/Deals/Rectangle 188.png";
 import poster3 from "assets/images/Deals/Rectangle 189.png";
 import poster4 from "assets/images/Deals/Rectangle 190.png";
+import { Link } from "react-router-dom";
 
 const DealsProduct = () => {
   return (
@@ -20,27 +21,27 @@ const DealsProduct = () => {
                 </div>
 
                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div className="deals-imgs">
+                  <Link to="/product" className="deals-imgs">
                     <img src={poster1} alt="" className="img-fluid" />
-                  </div>
+                  </Link>
                 </div>
 
                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div className="deals-imgs">
+                  <Link to="/product" className="deals-imgs">
                     <img src={poster2} alt="" className="img-fluid" />
-                  </div>
+                  </Link>
                 </div>
 
                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div className="deals-imgs">
+                  <Link to="/product" className="deals-imgs">
                     <img src={poster3} alt="" className="img-fluid" />
-                  </div>
+                  </Link>
                 </div>
 
                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div className="deals-imgs">
+                  <Link to="/product" className="deals-imgs">
                     <img src={poster4} alt="" className="img-fluid" />
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
