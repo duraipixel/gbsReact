@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import "./styles.scss";
 
 const PaymentDetails = () => {
   return (
