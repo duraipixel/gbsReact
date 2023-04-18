@@ -9,8 +9,7 @@ function ProductCarousel({
   setPhotoIndex,
   photoIndex,
 }) {
-  document.querySelector("html").style.overflow =
-    photoIndex !== null ? "hidden" : "auto";
+  document.querySelector("html").style.overflow = photoIndex !== null ? "hidden" : "auto";
   return (
     <Fragment>
       <Slider
@@ -19,9 +18,8 @@ function ProductCarousel({
         ref={(slider) => action(slider)}
       >
         {images.map((item, i) => (
-          <div className="product-carousel-image-wrapper">
+          <div className="product-carousel-image-wrapper"  onClick={(e) => setPhotoIndex(i)}>
             <img
-              onClick={(e) => setPhotoIndex(i)}
               src={item}
               alt="product-carousel"
               className="product-carousel-image"

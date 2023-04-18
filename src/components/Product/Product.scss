@@ -3,17 +3,21 @@
     object-fit: contain;
     object-position: center center;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 0px;
 }
-
+ 
 .product-thumbnail-column {
     @media (min-width:1367px) {
         width: 130px;
     }
-
     .slick-list {
         @media (min-width:1367px) {
             min-height: 540px !important;
+        }
+    }
+    .slick-track {
+        @media (min-width:1367px) {
+            height: 500px !important;
         }
     }
 }
@@ -53,6 +57,8 @@
     text-align: center;
     padding: 5px 0;
     display: flex !important;
+    cursor: pointer;
+    justify-content: center;
 }
 
 .product-carousel-image-wrapper {
@@ -306,3 +312,4 @@
         }
     }
 }
+

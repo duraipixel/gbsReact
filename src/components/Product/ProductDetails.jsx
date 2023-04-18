@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import './Product.scss' 
 import 'react-image-lightbox/style.css';
+import { useState } from 'react'
 import { Col, Row } from 'react-bootstrap';
-import './Product.scss'
-import ProductInfo from './ProductInfo';
 import ProductThumbnailSlider from './ProductThumbnailSlider';
 import ProductCarousel from './ProductCarousel';
-import ProductsFeaturesTabs from './ProductsFeaturesTabs';
+import ProductsFeaturesTabs from './ProductFeaturesMenu/ProductsFeaturesTabs';
+import ProductInformation from './ProductInformation';
 
 function ProductDetails() {
     const [productCarouselSliders, setProductCarouselSlider] = useState();
@@ -13,21 +13,18 @@ function ProductDetails() {
     const [photoIndex, setPhotoIndex] = useState(null);
 
     const images = [
-        "https://i.dummyjson.com/data/products/4/1.jpg",
-        "https://i.dummyjson.com/data/products/4/2.jpg",
-        "https://i.dummyjson.com/data/products/4/3.jpg",
-        "https://i.dummyjson.com/data/products/4/4.jpg",
-        "https://i.dummyjson.com/data/products/4/1.jpg",
-        "https://i.dummyjson.com/data/products/4/2.jpg",
-        "https://i.dummyjson.com/data/products/4/3.jpg",
-        "https://i.dummyjson.com/data/products/4/4.jpg",
+        require('../../assets/images/products/p (6).png'),
+        require('../../assets/images/products/p (2).png'),
+        require('../../assets/images/products/p (3).png'),
+        require('../../assets/images/products/p (4).png'),
+        require('../../assets/images/products/p (5).png'),
     ]
     return (
         <div className='py-lg-3 h-100'>
             <Row className='h-100 '>
                 <Col xl={6}>
                     <div class="sticky-top pt-lg-4">
-                        <div className='row align-items-center product-row'>
+                        <div className='row product-row'>
                             <div className='product-thumbnail-column col-lg-2'>
                                 <ProductThumbnailSlider
                                     images={images}
@@ -48,7 +45,7 @@ function ProductDetails() {
                     </div>
                 </Col>
                 <Col xl={6}>
-                    <ProductInfo />
+                    <ProductInformation />
                 </Col>
             </Row>
             <ProductsFeaturesTabs />
