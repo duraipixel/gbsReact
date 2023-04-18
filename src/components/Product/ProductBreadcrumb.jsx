@@ -7,10 +7,9 @@ function ProductBreadcrumb() {
         <span className="text-secondary">Laptops</span>
       </Link>
       <div className="px-2">
-        <img
-          src={require("../../assets/icons/arrow-down.png")}
-          alt="arrow-down"
-        />
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+          <path d="M1 13L7 7L1 1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
       </div>
       <Link to={"/"} active>
         <span className="text-dark">
