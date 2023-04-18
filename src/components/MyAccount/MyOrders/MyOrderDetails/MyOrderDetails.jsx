@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 
@@ -9,13 +9,14 @@ const MyOrderDetails = () => {
       <Col className="container-card card p-4 mb-3">
         <div className="flex-wrap flex-jc-btwn align-c">
           <h2 className="order-details-title">
-            Order Details - #403-9499889-4551543{" "}
+            <span style={{ fontWeight: "600" }}>Order Details</span> -
+            #403-9499889-4551543{" "}
           </h2>
           <Link className="btn btn-cancel">Cancel Order</Link>
         </div>
-        <div>
+        <div className="pt-3 pb-3">
           <p>Your order has been shipped and it’s out for delivery</p>
-          <div className="p-2"></div>
+          <div className="pb-4"></div>
         </div>
         <div>
           <div className="flex-jc-btwn align-c t-head-title">
@@ -47,6 +48,35 @@ const MyOrderDetails = () => {
               <p>₹6000</p>
             </div>
           </div>
+          <hr />
+        </div>
+        <div className="billing-details">
+          <h4>Shipping & Billing Details</h4>
+          <Row>
+            <Col>
+              <h5>Shipping Address</h5>
+              <h6>Kabir L</h6>
+              <p>1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West</p>
+              <p>Chennai - 600040</p>
+              <p>Tamil Nadu, India</p>
+              <p>Phone: +91 00000 00000</p>
+              <h5>Shipping Partner</h5>
+              <img
+                src={require("assets/images/myOrders/Bluedart.png")}
+                alt=""
+              />
+              <p>AWB: 28443321126</p>
+            </Col>
+
+            <Col>
+              <h5>Billing Address</h5>
+              <h6>Kabir L</h6>
+              <p>1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West</p>
+              <p>Chennai - 600040</p>
+              <p>Tamil Nadu, India</p>
+              <p>Phone: +91 00000 00000</p>
+            </Col>
+          </Row>
         </div>
       </Col>
     </>

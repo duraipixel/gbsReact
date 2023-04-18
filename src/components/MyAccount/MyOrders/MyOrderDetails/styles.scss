@@ -26,3 +26,40 @@ p {
     color: #929292;
   }
 }
+.billing-details {
+  h4 {
+    margin-top: 2rem;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+    color: #212363;
+  }
+  .row {
+    .col {
+      h5 {
+        margin-top: 1rem;
+        padding-bottom: 7px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+        color: #212363;
+      }
+      h6 {
+        padding-bottom: 6px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        color: #212363;
+      }
+      p {
+        padding-bottom: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+      }
+      img {
+        margin-bottom: 13px;
+      }
+    }
+  }
+}
