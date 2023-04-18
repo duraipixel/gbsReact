@@ -1,5 +1,8 @@
+import { useSelector } from 'react-redux'
+
 function SearchResult() {
-    return (
+    const search = useSelector((state) => state.search.value)
+    if (search.length > 0) return (
         <ul className="list-group rounded list-group-flush">
             <li className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
                 <div className='d-md-flex'>

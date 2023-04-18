@@ -14,15 +14,16 @@ const Transition = forwardRef(function Transition(props, ref) {
 });
 
 
-function MobileSearch({ searchMobileSearch, setSearchMobileSearch }) {
+function MobileSearch({ searchMobileSearch, setMobileSearch }) {
+    
     return (
         <Dialog
             fullScreen
             open={searchMobileSearch}
-            onClose={() => setSearchMobileSearch(!searchMobileSearch)}
+            onClose={() => setMobileSearch(!searchMobileSearch)}
             TransitionComponent={Transition}
         >
-            <AppBar sx={{ position: 'relative' }}>
+            <AppBar sx={{ position: 'relative' }} className="sticky-top bg-primary">
                 <Toolbar>
                     <Typography sx={{ flex: 1 }} variant="h6" component="div">
                         <img src={require("assets/Brand/gbsLogoHighRes.png")} alt="logo" width={80} />
@@ -30,7 +31,7 @@ function MobileSearch({ searchMobileSearch, setSearchMobileSearch }) {
                     <IconButton
                         edge="start"
                         color="inherit"
-                        onClick={() => setSearchMobileSearch(!searchMobileSearch)}
+                        onClick={() => setMobileSearch(!searchMobileSearch)}
                         aria-label="close"
                     >
                         <CloseIcon />
