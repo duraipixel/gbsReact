@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.scss";
-
+import PaymentDetails from "./PaymentDetails";
 const MyOrderDetails = () => {
   return (
     <>
@@ -21,7 +21,7 @@ const MyOrderDetails = () => {
         <div>
           <div className="flex-jc-btwn align-c t-head-title">
             <p>Product</p>
-            <div className="flex-jc-btwn align-c gap-8rem">
+            <div className="flex-jc-btwn align-c t-head-gap">
               <p>Quantity</p>
               <p>Price</p>
             </div>
@@ -32,7 +32,7 @@ const MyOrderDetails = () => {
               <img src={require("assets/images/Cart/Cart1.png")} alt="" />
               <p>ASUS ROG Strix G17 - G713IE-HX040W</p>
             </div>
-            <div className="flex-jc-btwn gap-8rem align-c">
+            <div className="flex-jc-btwn t-head-gap align-c">
               <p>1</p>
               <p>₹89,306</p>
             </div>
@@ -43,7 +43,7 @@ const MyOrderDetails = () => {
               <img src={require("assets/images/Cart/warranty.png")} alt="" />
               <p>Extended Warranty - 1 Year</p>
             </div>
-            <div className="flex-jc-btwn gap-8rem align-c">
+            <div className="flex-jc-btwn t-head-gap align-c">
               <p>1</p>
               <p>₹6000</p>
             </div>
@@ -79,6 +79,7 @@ const MyOrderDetails = () => {
           </Row>
         </div>
       </Col>
+      <PaymentDetails />
     </>
   );
 };

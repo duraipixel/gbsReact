@@ -1,6 +1,9 @@
 p {
   margin-bottom: 0;
 }
+.t-head-gap {
+  gap: 8rem;
+}
 .btn.btn-cancel {
   width: 167px;
   padding: 8px;
@@ -61,5 +64,25 @@ p {
         margin-bottom: 13px;
       }
     }
+  }
+}
+
+.payment-details {
+  h4 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    color: #212363;
+    padding-bottom: 5px;
+  }
+  .row {
+    .col > * {
+      padding-top: 13px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .t-head-gap {
+    gap: 1rem;
   }
 }
