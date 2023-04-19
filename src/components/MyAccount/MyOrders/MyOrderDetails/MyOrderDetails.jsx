@@ -68,7 +68,7 @@ const MyOrderDetails = () => {
               />
               <p>AWB: 28443321126</p>
             </Col>
-
+            <div className="vr"></div>
             <Col>
               <h5>Billing Address</h5>
               <h6>Kabir L</h6>

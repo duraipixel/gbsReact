@@ -1,6 +1,11 @@
 p {
   margin-bottom: 0 !important;
 }
+.vr {
+  color: #d0d0d0;
+  margin: 5px 10px;
+  padding: 0 !important;
+}
 .t-head-gap {
   gap: 8rem;
 }
@@ -84,5 +89,8 @@ p {
 @media (max-width: 600px) {
   .t-head-gap {
     gap: 1rem;
+  }
+  .vr {
+    width: 0;
   }
 }
