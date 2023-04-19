@@ -1,7 +1,4 @@
-.new-arrivals {
-  background-color: #f9f9f9;
-  padding: 80px 0px 120px;
-}
+
 
 .intel-core {
   background-color: #1e1d23;
@@ -182,9 +179,7 @@
   padding: 0px 10px;
 }
 
-.arrival-slider {
-  margin: 0px -10px;
-}
+
 
 .arrival-slider .slick-dots {
   bottom: -60px;

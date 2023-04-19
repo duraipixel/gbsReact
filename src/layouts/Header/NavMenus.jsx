@@ -3,12 +3,13 @@ import {
   Accordion,
   AccordionContext,
   Button,
+  Placeholder,
   useAccordionButton,
 } from "react-bootstrap";
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 import { BsChevronRight, BsChevronDown } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { LoadingSpinner } from "utils";
+import { Skeleton } from "@mui/material";
 
 export default function NavMenus() {
   return (
@@ -32,7 +33,37 @@ export const NavMenuList = ({ className }) => {
   const { data, isSuccess, isLoading } = useNavMenuQuery();
   return (
     <>
-      {isLoading && <LoadingSpinner />}
+      {isLoading &&
+        <>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+          <Placeholder as="div" animation="glow" className="m-2">
+            <Placeholder xs={12} className="list-group-item p-4" />
+          </Placeholder>
+        </>
+      }
       {isSuccess && (
         <Accordion defaultActiveKey="0" className={className}>
           <ul className="list-group list-group-flush">

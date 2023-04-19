@@ -15,7 +15,6 @@ function SearchInput() {
                 onChange={(e) => {dispatch(setSearchResults(e.target.value)); setSearch(e.target.value)}}
                 size="sm"
                 type="search"
-                className="h-100"
                 placeholder="Search Your Product ..."
             />
             <button className="btn bg-white btn-sm user-none">

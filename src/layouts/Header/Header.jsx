@@ -9,7 +9,7 @@ import CartButton from "./CartButton";
 import { useDispatch, useSelector } from "react-redux";
 import { Offcanvas } from "react-bootstrap";
 import { setHeader } from "redux/features/headerSlice";
-import { FaBars, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import SearchResult from "./SearchResult";
 import SearchInput from "./SearchInput";
 import MobileSearch from "./MobileSearch";
@@ -20,7 +20,7 @@ const Header = () => {
   const [navMenu, setNavMenu] = useState(false);
   const [search, setSearch] = useState("");
   const [searchMobileSearch, setMobileSearch] = useState(false);
-  
+
   const expand = "lg"
   const toggleHeader = () => {
     setNavMenu(!navMenu)
@@ -36,11 +36,15 @@ const Header = () => {
           {window.innerWidth < 992 && (
             <>
               <FaSearch onClick={() => setMobileSearch(true)} size={20} text={false} className="text-white me-3" />
-              <CartButton size={20} text={false} className="me-3" />
+              <CartButton size={23} text={false} className="me-3" />
             </>
           )}
           <Navbar.Toggle aria-controls="navbarScroll" onClick={toggleHeader}>
-            <FaBars color="white" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
+              <line x1="0.75" y1="1.25" x2="24.25" y2="1.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="0.75" y1="9.25" x2="24.25" y2="9.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="0.75" y1="17.25" x2="24.25" y2="17.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
           </Navbar.Toggle>
         </div>
         <Navbar.Offcanvas
@@ -59,20 +63,25 @@ const Header = () => {
             <div className="d-lg-flex align-items-center justify-content-between w-100">
               <div className="search-wrapper">
                 {window.innerWidth > 992 && (
-                  <>
+                  <div className="d-flex align-items-center">
+                    <button
+                      onClick={() => setNavMenu(!navMenu)}
+                      className="btn btn-sm border-0 me-md-3"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
+                        <line x1="0.75" y1="1.25" x2="24.25" y2="1.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        <line x1="0.75" y1="9.25" x2="24.25" y2="9.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        <line x1="0.75" y1="17.25" x2="24.25" y2="17.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
+                      <div className="small text-white mt-2 fw-500">Menu</div>
+                    </button>
                     <div className="input-group shadow rounded">
-                      <button
-                        onClick={() => setNavMenu(!navMenu)}
-                        className="btn btn-light d-flex align-items-center justify-content-center"
-                      >
-                        <FiMenu className="font-size-1_5rem me-2" />
-                        <div className="small">Menu</div>
-                      </button>
-                      <SearchInput search={search} setSearch={setSearch}/>
+                      <SearchInput search={search} setSearch={setSearch} />
                     </div>
                     {navMenu && <NavMenus />}
-                    {search !== "" &&  <div className="search-result rounded"><SearchResult/></div> }
-                  </>
+                    {navMenu && <div className="nav-menu-close-btn" onClick={() => setNavMenu(!navMenu)}></div>}
+                    {search !== "" && <div className="search-result rounded"><SearchResult /></div>}
+                  </div>
                 )}
               </div>
               <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
@@ -88,7 +97,7 @@ const Header = () => {
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>
-      {searchMobileSearch && <MobileSearch searchMobileSearch={searchMobileSearch} setMobileSearch={setMobileSearch}/> }
+      {searchMobileSearch && <MobileSearch searchMobileSearch={searchMobileSearch} setMobileSearch={setMobileSearch} />}
     </Navbar>
   );
 };

@@ -488,12 +488,16 @@ input[type=search] {
   width: 100%;
   border: none;
   height: 45px;
-  padding: 10px 35px 10px 15px;
+  padding: 10px 35px 10px 20px;
   border-radius: 4px;
   // background: #fff url("../../assets/images/serch.png") no-repeat scroll 98% center;
   margin-top: 0px;
   transition: all 0.3s ease;
   outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8D8D8D;
 }
 
 .navbar-toggler {
@@ -1616,14 +1620,17 @@ input[type="search"]::-webkit-search-results-decoration {
     border-color: #eee !important;
     color: #eee !important;
   }
+
   .list-group-item {
     background: #191a1a !important;
-    text-align: left !important; 
+    text-align: left !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+
     a {
-      color: #eee  !important;
+      color: #eee !important;
       margin: 0 !important;
+
       &:hover {
         color: var(--primary-color) !important;
       }
@@ -1684,7 +1691,7 @@ small {
 
       @media (min-width:992px) {
         top: -10px;
-        left: 50%;
+        left: 41%;
         transform: translateX(-50%);
       }
     }
@@ -1704,4 +1711,14 @@ small {
       z-index: 11;
     }
   }
+}
+
+.nav-menu-close-btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000097;
+  z-index: 3;
 }

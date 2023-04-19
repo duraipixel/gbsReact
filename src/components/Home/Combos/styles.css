@@ -1,6 +1,6 @@
 .new-arrivals.combos {
-  padding: 80px 0px 120px;
-  padding: 80px 0px 120px;
+  
+  
   background: url("../../../assets/images/bg-4.jpg") no-repeat rgba(0, 0, 0, 0);
   background-size: auto;
   background-size: cover;
@@ -190,9 +190,7 @@
   padding: 0px 10px;
 }
 
-.arrival-slider {
-  margin: 0px -10px;
-}
+
 
 .arrival-slider .slick-dots {
   bottom: -60px;

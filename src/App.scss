@@ -280,7 +280,8 @@ section {
     font-weight: 600;
     margin-bottom: 25px;
     line-height: 38px;
-    @media (min-width: 992px) {
+    font-size: 20px;
+    @media (min-width:992px) {
       font-size: 30px;
       margin-bottom: 40px;
     }
