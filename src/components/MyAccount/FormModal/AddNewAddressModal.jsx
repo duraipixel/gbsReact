@@ -66,7 +66,7 @@ const AddNewAddressModal = (props) => {
                           pattern: {
                             value:
                               /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
-                            message: "Not a valid Phone Number",
+                            message: "Not a valid Mobile Number",
                           },
                         })}
                       />
@@ -94,8 +94,8 @@ const AddNewAddressModal = (props) => {
                           required: "This is required.",
                           pattern: {
                             value:
-                              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                            message: "Invalid Telephone Number !",
+                              /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+                            message: "Not a valid Telephone Number",
                           },
                         })}
                       />
@@ -117,11 +117,13 @@ const AddNewAddressModal = (props) => {
                       <Form.Control
                         type="text"
                         placeholder="Address Type"
-                        {...register("address_type")}
+                        {...register("addresstype", {
+                          required: "This is required.",
+                        })}
                       />
                       <ErrorMessage
                         errors={errors}
-                        name="address_type"
+                        name="addresstype"
                         render={({ message }) => (
                           <small className="text-danger ml-2">
                             * {message}
