@@ -52,7 +52,7 @@ function AuthModals() {
                         </div>
                     </div>
                     <div className="modal-dialog-scrollable">
-                        <div className="modal-content py-lg-4">
+                        <div className="modal-content p-4">
                             <LayoutForm />
                         </div>
                     </div>

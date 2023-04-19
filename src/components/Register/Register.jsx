@@ -19,6 +19,10 @@ function Register() {
           <Form.Label className="small">Email</Form.Label>
           <Form.Control size="sm" type="email" placeholder="Enter Your Email" />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="MobileNumber">
+          <Form.Label className="small">Mobile Number</Form.Label>
+          <Form.Control size="sm" type="number" placeholder="Enter Your Mobile Number" />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="Password">
           <Form.Label className="small">Password</Form.Label>
           <Form.Control size="sm" type="password" placeholder="Enter Your Password" />

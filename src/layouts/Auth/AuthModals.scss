@@ -1,4 +1,3 @@
-
 .auth-modal-overlay {
     position: fixed;
     width: 100%;
@@ -8,16 +7,24 @@
     right: 0;
     display: flex;
     justify-content: end;
-    z-index: 1;
+    z-index: 1111;
+    @media (min-width:992px) {
+        width: 534px;
+        z-index: 1;
+    }
 }
+
 .auth-modal {
     position: fixed;
     top: 88px;
     right: 0;
     background: white;
-    width: 534px;
-    z-index: 2;
     max-height: calc(100% - 88px);
     min-height: calc(100% - 88px);
     overflow-y: auto;
+    z-index: 1111;
+    @media (min-width:992px) {
+        width: 534px;
+        z-index: 2;
+    }
 }

@@ -1,6 +1,5 @@
 import "./styles.scss";
 import { Link } from "react-router-dom";
-import { FiUser } from "react-icons/fi";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavMenus, { NavMenuList } from "./NavMenus";
@@ -13,17 +12,14 @@ import { FaSearch } from "react-icons/fa";
 import SearchResult from "./SearchResult";
 import SearchInput from "./SearchInput";
 import MobileSearch from "./MobileSearch";
-import { useNavigate } from "react-router-dom";
-import { setLayoutStatus } from "redux/features/authLayoutSlice";
+import AccountButton from "./AccountButton";
 
 const Header = () => {
   const dispatch = useDispatch()
-  const header   = useSelector((state) => state.header.status)
-  const authUser = useSelector((state) => state.auth)
-  const [navMenu, setNavMenu]                 = useState(false);
-  const [search, setSearch]                   = useState("");
+  const header = useSelector((state) => state.header.status)
+  const [navMenu, setNavMenu] = useState(false);
+  const [search, setSearch] = useState("");
   const [searchMobileSearch, setMobileSearch] = useState(false);
-  const navigate = useNavigate()
   const expand = "lg"
   const toggleHeader = () => {
     setNavMenu(!navMenu)
@@ -39,7 +35,11 @@ const Header = () => {
           <div className="d-flex align-items-center">
             {window.innerWidth < 992 && (
               <>
-                <FaSearch onClick={() => setMobileSearch(true)} size={20} text={false} className="text-white me-3" />
+                <svg xmlns="http://www.w3.org/2000/svg" onClick={() => setMobileSearch(true)} width="20" height="19" viewBox="0 0 20 19" fill="none">
+                  <path d="M8.56 15.9787C12.7353 15.9787 16.12 12.6256 16.12 8.48936C16.12 4.3531 12.7353 1 8.56 1C4.38473 1 1 4.3531 1 8.48936C1 12.6256 4.38473 15.9787 8.56 15.9787Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M18.0101 17.8516L13.8994 13.7793" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <AccountButton size={23} text={false} className="mx-2" />
                 <CartButton size={23} text={false} className="me-3" />
               </>
             )}
@@ -89,13 +89,12 @@ const Header = () => {
                   )}
                 </div>
                 <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
-                  <button onClick={() => authUser.isLoggedIn ? navigate('/my-account/profile') : dispatch(setLayoutStatus({status:true,type:'login'}))} className="border-0 text-white btn-sm btn ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center ">
-                    <FiUser size={22} />
-                    <span className="small fw-lighter ms-3 ms-lg-0">My Account</span>
-                  </button>
                   {window.innerWidth > 992 ? (
-                    <CartButton size={22} text={true} className="ps-lg-4 ps-3 d-lg-flex flex-lg-column justify-content-center align-items-center" />
-                  ) : <NavMenuList className="accordion-dark border-secondary border-top mt-3" />}
+                    <>
+                      <AccountButton size={22} text={true} />
+                      <CartButton size={22} text={true} className="ps-lg-4 ps-3 d-lg-flex flex-lg-column justify-content-center align-items-center" />
+                    </>
+                  ) : <NavMenuList className="accordion-dark" />}
                 </div>
               </div>
             </Offcanvas.Body>
