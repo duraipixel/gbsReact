@@ -1,4 +1,5 @@
 import "./App.scss";
+import 'animate.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import { Loader } from "utils";

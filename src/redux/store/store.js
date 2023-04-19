@@ -5,10 +5,12 @@ import headerReducer from 'redux/features/headerSlice';
 import { bannerService } from 'redux/features/banners/bannerService';
 import { navMenuService } from 'redux/features/homePage/navMenuService';
 import authReducer from 'redux/features/authSlice'
+import authLayoutReducer from 'redux/features/authLayoutSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    authLayout: authLayoutReducer,
     cart: cartReducer,
     search: searchReducer,
     header: headerReducer,

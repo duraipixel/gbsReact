@@ -5,7 +5,9 @@
   position: relative;
   transition: all 0.3s ease;
 }
-
+.navbar {
+  min-height: 88px;
+}
 .top-bar a {
   color: white;
 }
@@ -1688,25 +1690,12 @@ small {
       position: absolute;
       top: -10px;
       left: 8px;
-
       @media (min-width:992px) {
         top: -10px;
         left: 41%;
         transform: translateX(-50%);
       }
     }
-
-    &::after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      background: #000000b9;
-      top: 0;
-      left: 0;
-      position: absolute;
-      z-index: 1;
-    }
-
     .carousel-caption {
       z-index: 11;
     }
