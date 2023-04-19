@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col } from "react-bootstrap";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import { SlLocationPin } from "react-icons/sl";
+import AddNewAddressModal from "../FormModal/AddNewAddressModal";
 
 const AddressBookDetails = () => {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div className="address-book-details">
       <Col className="container-card card p-4">
@@ -32,7 +34,14 @@ const AddressBookDetails = () => {
       </Col>
       <div className="flex-jc-btwn align-c flex-wrap p-1 pt-5 pb-4">
         <h2>Other Addresses</h2>
-        <button className="btn align-c add-address-btn">Add New Address</button>
+        <button
+          className="btn align-c add-address-btn"
+          onClick={() => {
+            setModalShow(true);
+          }}
+        >
+          Add New Address
+        </button>
       </div>
       <Col className="container-card card p-4">
         <div>
@@ -83,6 +92,7 @@ const AddressBookDetails = () => {
           </div>
         </div>
       </Col>
+      <AddNewAddressModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };

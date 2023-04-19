@@ -169,7 +169,9 @@ a {
 .font-size-1_5rem {
   font-size: 1.5rem;
 }
-
+.text-center {
+  text-align: center;
+}
 .flex {
   display: flex;
 }
@@ -233,7 +235,7 @@ a {
   margin-left: 2rem;
 }
 
-.slick-slide>div {
+.slick-slide > div {
   display: grid;
   place-items: center;
 }
@@ -257,7 +259,12 @@ a {
   font-size: 30px;
   line-height: 38px;
 }
-
+.btn-trans {
+  color: #1a1a1a !important;
+  border: 2px solid #1a1a1a;
+  border-radius: 4px;
+  background-color: transparent !important;
+}
 section {
   padding: 80px 0px;
 
@@ -273,7 +280,7 @@ section {
     font-weight: 600;
     margin-bottom: 25px;
     line-height: 38px;
-    @media (min-width:992px) {
+    @media (min-width: 992px) {
       font-size: 30px;
       margin-bottom: 40px;
     }
@@ -547,6 +554,6 @@ h5 {
 }
 
 .badge-soft-primary {
-  background-color: #FCD9E2;
+  background-color: #fcd9e2;
   color: var(--primary-color) !important;
 }
