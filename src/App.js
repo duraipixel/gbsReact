@@ -2,6 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import { Loader } from "utils";
+
 import {
   AboutPage,
   CartPage,

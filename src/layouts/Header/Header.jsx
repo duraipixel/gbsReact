@@ -13,15 +13,19 @@ import { FaSearch } from "react-icons/fa";
 import SearchResult from "./SearchResult";
 import SearchInput from "./SearchInput";
 import MobileSearch from "./MobileSearch";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch()
   const header = useSelector((state) => state.header.status)
+  const authUser = useSelector((state) => state.auth)
   const [navMenu, setNavMenu] = useState(false);
   const [search, setSearch] = useState("");
   const [searchMobileSearch, setMobileSearch] = useState(false);
-
+  const navigate = useNavigate()
   const expand = "lg"
+
+
   const toggleHeader = () => {
     setNavMenu(!navMenu)
     dispatch(setHeader(true))
@@ -41,9 +45,9 @@ const Header = () => {
           )}
           <Navbar.Toggle aria-controls="navbarScroll" onClick={toggleHeader}>
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
-              <line x1="0.75" y1="1.25" x2="24.25" y2="1.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-              <line x1="0.75" y1="9.25" x2="24.25" y2="9.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-              <line x1="0.75" y1="17.25" x2="24.25" y2="17.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="0.75" y1="1.25" x2="24.25" y2="1.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="0.75" y1="9.25" x2="24.25" y2="9.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="0.75" y1="17.25" x2="24.25" y2="17.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </Navbar.Toggle>
         </div>
@@ -69,9 +73,9 @@ const Header = () => {
                       className="btn btn-sm border-0 me-md-3"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
-                        <line x1="0.75" y1="1.25" x2="24.25" y2="1.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                        <line x1="0.75" y1="9.25" x2="24.25" y2="9.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                        <line x1="0.75" y1="17.25" x2="24.25" y2="17.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        <line x1="0.75" y1="1.25" x2="24.25" y2="1.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                        <line x1="0.75" y1="9.25" x2="24.25" y2="9.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                        <line x1="0.75" y1="17.25" x2="24.25" y2="17.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                       <div className="small text-white mt-2 fw-500">Menu</div>
                     </button>
@@ -85,10 +89,10 @@ const Header = () => {
                 )}
               </div>
               <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
-                <Link to="/my-account/profile" className="ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center ">
+                <button onClick={() => authUser.isLoggedIn ? navigate('/my-account/profile') : '/'} className="border-0 text-white btn-sm btn ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center ">
                   <FiUser size={22} />
-                  <span className="small fw-lighter ms-3 ms-lg-0">My Account</span>
-                </Link>
+                  <span className="small fw-lighter ms-3 ms-lg-0">{authUser.isLoggedIn ? "My Account" : "Login"}</span>
+                </button>
                 {window.innerWidth > 992 ? (
                   <CartButton size={22} text={true} className="ps-lg-4 ps-3 d-lg-flex flex-lg-column justify-content-center align-items-center" />
                 ) : <NavMenuList className="accordion-dark border-secondary border-top mt-3" />}
