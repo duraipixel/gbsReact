@@ -89,9 +89,9 @@ const Header = () => {
                   )}
                 </div>
                 <div className="d-lg-flex align-items-center text-center justify-content-center nav-menu">
-                  <button onClick={() => authUser.isLoggedIn ? navigate('/my-account/profile') : dispatch(setLayoutStatus(true))} className="border-0 text-white btn-sm btn ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center ">
+                  <button onClick={() => authUser.isLoggedIn ? navigate('/my-account/profile') : dispatch(setLayoutStatus({status:true,type:'login'}))} className="border-0 text-white btn-sm btn ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center ">
                     <FiUser size={22} />
-                    <span className="small fw-lighter ms-3 ms-lg-0">{authUser.isLoggedIn ? "My Account" : "Login"}</span>
+                    <span className="small fw-lighter ms-3 ms-lg-0">My Account</span>
                   </button>
                   {window.innerWidth > 992 ? (
                     <CartButton size={22} text={true} className="ps-lg-4 ps-3 d-lg-flex flex-lg-column justify-content-center align-items-center" />

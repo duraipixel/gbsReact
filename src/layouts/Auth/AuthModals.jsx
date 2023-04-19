@@ -1,13 +1,39 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './AuthModals.scss'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
+import Login from 'components/Login/Login'
+import Register from 'components/Register/Register'
 function AuthModals() {
     const dispatch = useDispatch()
-    const status = useSelector((status) => status.authLayout)
-    if (status) return (
+    const layout = useSelector((status) => status.authLayout)
+    const closeLayout = () => {
+        dispatch(setLayoutStatus({
+            status: false,
+            type: layout.type
+        }))
+    }
+    const LayoutTitle = () => {
+        if (layout.type === 'login') {
+            return "Sign In"
+        }
+        if (layout.type === 'register') {
+            return "Create an Account"
+        }
+        return "Reset Your Password"
+    }
+    const LayoutForm = () => {
+        switch (layout.type) {
+            case 'login':
+                return <Login />
+            case 'register':
+                return <Register />
+            default:
+                return <Login />
+        }
+    }
+    if (layout.status) return (
         <>
-            <div className='auth-modal-overlay'>
-            </div>
+            <div className='auth-modal-overlay'></div>
             <div className="auth-modal animate__animated animate__slideInRight">
                 <div className="card rounded-0 h-100 border-0">
                     <div className="position-relative">
@@ -17,16 +43,18 @@ function AuthModals() {
                             height={120}
                             alt="menu"
                         />
-                        <svg onClick={() => dispatch(setLayoutStatus(false))} xmlns="http://www.w3.org/2000/svg" className='position-absolute top-0 end-0 m-4' width="27" height="27" viewBox="0 0 27 27" fill="none" style={{ cursor: 'pointer' }}>
+                        <svg onClick={closeLayout} xmlns="http://www.w3.org/2000/svg" className='position-absolute top-0 end-0 m-4' width="27" height="27" viewBox="0 0 27 27" fill="none" style={{ cursor: 'pointer' }}>
                             <path d="M26 1L1 26" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M1 1L26 26" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         <div className="carousel-caption p-0">
-                            <h2>Sign In</h2>
+                            <h2><LayoutTitle /></h2>
                         </div>
                     </div>
-                    <div className="card-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et debitis magnam mollitia voluptatem, necessitatibus quia saepe, nam, eos dolor incidunt expedita maxime dolorem voluptatum exercitationem. Voluptates suscipit tenetur molestiae quod.</p>
+                    <div className="modal-dialog-scrollable">
+                        <div className="modal-content py-lg-4">
+                            <LayoutForm />
+                        </div>
                     </div>
                 </div>
             </div>
