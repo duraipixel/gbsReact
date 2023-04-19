@@ -1,6 +1,6 @@
 import "./styles.scss";
 import { Link } from "react-router-dom";
-import { FiUser, FiMenu } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavMenus, { NavMenuList } from "./NavMenus";

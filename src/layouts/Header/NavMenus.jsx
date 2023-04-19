@@ -9,7 +9,6 @@ import {
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 import { BsChevronRight, BsChevronDown } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { Skeleton } from "@mui/material";
 
 export default function NavMenus() {
   return (
