@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import { useForm } from "react-hook-form";
 import { FiEdit } from "react-icons/fi";
 import { scrollToTop } from "utils";
 
@@ -9,6 +10,8 @@ const MyProfile = () => {
   useEffect(() => {
     scrollToTop();
   }, []);
+  const { handleSubmit } = useForm();
+  const onSubmit = (e) => console.log(e);
   return (
     <Col className="container-card card p-4">
       <div className="myaccount-personal-details">
@@ -71,7 +74,7 @@ const MyProfile = () => {
           <div className="heading-div">
             <h2>Security Settings</h2>
           </div>
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group
               as={Row}
               className="mb-4 flex-center "
