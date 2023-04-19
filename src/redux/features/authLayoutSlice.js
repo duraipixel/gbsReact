@@ -1,6 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = false;
+const initialState = {
+    status:false,
+    type:'login'
+};
 
 export const authLayoutSlice = createSlice(
     {

@@ -14,8 +14,10 @@
     position: fixed;
     top: 88px;
     right: 0;
-    background: red;
+    background: white;
     width: 534px;
     z-index: 2;
-    height: 100%;
+    max-height: calc(100% - 88px);
+    min-height: calc(100% - 88px);
+    overflow-y: auto;
 }
