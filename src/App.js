@@ -23,33 +23,31 @@ import {
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<HomePage />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="/product-list" element={<ProductLists />} />
-              <Route path="/product" element={<ProductPage />} />
-              <Route path="/stores" element={<StorePage />} />
-              <Route path="/about-us" element={<AboutPage />} />
-              <Route path="/my-account" element={<ProfileLayout />}>
-                <Route path="profile" element={<MyProfile />} />
-                <Route path="address-book" element={<MyAddressBook />} />
-                <Route path="myorders" element={<MyOrders />} />
-                <Route
-                  path="myorders/order-details"
-                  element={<MyOrdersDetails />}
-                />
-                <Route path="wishlist" element={<MyWishlist />} />
-              </Route>
-              <Route path="*" element={<NotFound />} />
+    <BrowserRouter>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/product-list" element={<ProductLists />} />
+            <Route path="/product" element={<ProductPage />} />
+            <Route path="/stores" element={<StorePage />} />
+            <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/my-account" element={<ProfileLayout />}>
+              <Route path="profile" element={<MyProfile />} />
+              <Route path="address-book" element={<MyAddressBook />} />
+              <Route path="myorders" element={<MyOrders />} />
+              <Route
+                path="myorders/order-details"
+                element={<MyOrdersDetails />}
+              />
+              <Route path="wishlist" element={<MyWishlist />} />
             </Route>
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </div>
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
