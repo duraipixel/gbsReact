@@ -14,7 +14,7 @@ function AccountButton({text,size,className}) {
     return (
         <button onClick={() => authUser.isLoggedIn ? navigate('/my-account/profile') : LoginAuth()} className={`${className} border-0 text-white btn-sm btn ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center`}>
             <FiUser size={size} />
-            {text &&  <span className="small fw-lighter ms-3 ms-lg-0">My Account</span>}
+            {text &&  <span className="small ms-3 ms-lg-0">My Account</span>}
         </button>
     )
 }

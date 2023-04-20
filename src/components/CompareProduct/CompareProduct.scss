@@ -1,0 +1,60 @@
+.compare-menu-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #eee;
+    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0) !important;
+    z-index: 9999;
+    @media (min-width:600px) {
+        padding: 20px;
+    }
+}
+
+.compare-menu-bar.hide {
+    display: none;
+}
+
+.compare-menu-bar.show {
+    display: unset;
+}
+
+.compare-card-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width:600px) {
+        overflow: auto;
+        width: 100%;
+        padding: 20px 20px 20px 0;
+        gap: 10px;
+    }
+
+    .compare-card {
+        background-color: #fff;
+        min-width: 150px;
+        margin: 0 auto;
+        padding: 20px;
+
+        img {
+            width: 132px;
+            height: 132px;
+            object-fit: contain;
+            overflow: hidden;
+        }
+    }
+
+    .product-title {
+        font-size: 12px;
+        font-weight: 400;
+        max-height: 4rem;
+        line-height: 17px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        margin-bottom: 10px;
+    }
+}
