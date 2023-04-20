@@ -20,6 +20,7 @@ import {
   StoreLocatorPage,
   MyOrdersDetails,
   ServiceCenterLocator,
+  ServiceCenterDetails,
 } from "lazy";
 
 function App() {
@@ -47,6 +48,10 @@ function App() {
             <Route
               path="/service-center-locator"
               element={<ServiceCenterLocator />}
+            />
+            <Route
+              path="/service-center-details"
+              element={<ServiceCenterDetails />}
             />
             <Route path="*" element={<NotFound />} />
           </Route>

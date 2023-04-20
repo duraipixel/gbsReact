@@ -8,6 +8,9 @@ export const StoreLocatorPage = lazy(() => import("pages/StoreLocatorPage"));
 export const ServiceCenterLocator = lazy(() =>
   import("pages/ServiceCenterLocator")
 );
+export const ServiceCenterDetails = lazy(() =>
+  import("pages/ServiceCenterDetails")
+);
 export const AboutPage = lazy(() => import("pages/AboutPage"));
 export const Layout = lazy(() => import("layouts/layout/Layout"));
 export const ProfileLayout = lazy(() => import("layouts/layout/ProfileLayout"));

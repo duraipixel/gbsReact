@@ -4,6 +4,7 @@ import { FiPhone } from "react-icons/fi";
 import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
 import "components/StoreLocator/LocationContent/styles.scss";
+import { Link } from "react-router-dom";
 
 const ServiceLocatorContent = () => {
   return (
@@ -24,7 +25,9 @@ const ServiceLocatorContent = () => {
             </div>
           </div>
           <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-            <button className="btn-red-outline">More Details</button>
+            <Link to="/service-center-details" className="btn-red-outline">
+              More Details
+            </Link>
             <div>
               <p>Find us on</p>
               <img
