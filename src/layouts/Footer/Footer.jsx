@@ -87,7 +87,7 @@ const Footer = () => {
               <Link to="/">Warranty Policy</Link>
               <Link to="/">Terms Of Use</Link>
               <Link to="/">Returns Policy</Link>
-              <Link to="/">Store Locator</Link>
+              <Link to="/store-locator">Store Locator</Link>
             </div>
           </Col>
           <Col xs={12} sm={12} md={6} lg={2} xl={2}>
