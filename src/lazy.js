@@ -30,3 +30,5 @@ export const MyWishlist = lazy(() =>
   import("components/MyAccount/MyWishlist/MyWishlist")
 );
 export const NotFound = lazy(() => import("errors/NotFound"));
+export const VerifyAccount = lazy(() => import("pages/VerifyAccount"));
+

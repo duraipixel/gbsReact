@@ -11,6 +11,7 @@ function AccountButton({text,size,className}) {
         document.querySelector('nav').classList.toggle('sticky-top')
         dispatch(setLayoutStatus({ status: true, type: 'login' }))
     }
+    console.log(authUser)
     return (
         <button onClick={() => authUser.isLoggedIn ? navigate('/my-account/profile') : LoginAuth()} className={`${className} border-0 text-white btn-sm btn ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center`}>
             <FiUser size={size} />

@@ -21,6 +21,7 @@ import {
   MyOrdersDetails,
   ServiceCenterLocator,
   ServiceCenterDetails,
+  VerifyAccount
 } from "lazy";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
               path="/service-center-details"
               element={<ServiceCenterDetails />}
             />
+            <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
