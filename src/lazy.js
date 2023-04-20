@@ -4,7 +4,7 @@ export const HomePage = lazy(() => import("pages/HomePage"));
 export const CartPage = lazy(() => import("pages/CartPage"));
 export const ProductLists = lazy(() => import("pages/ProductLists"));
 export const ProductPage = lazy(() => import("pages/ProductPage"));
-export const StorePage = lazy(() => import("pages/StorePage"));
+export const StoreLocatorPage = lazy(() => import("pages/StoreLocatorPage"));
 export const AboutPage = lazy(() => import("pages/AboutPage"));
 export const Layout = lazy(() => import("layouts/layout/Layout"));
 export const ProfileLayout = lazy(() => import("layouts/layout/ProfileLayout"));

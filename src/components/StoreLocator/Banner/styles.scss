@@ -1,0 +1,42 @@
+.banner {
+  color: #ffffff;
+  background: #37363b;
+}
+.banner {
+  div {
+    h2 {
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 38px;
+      color: #ffffff;
+    }
+    div {
+      select,
+      input {
+        padding: 10px 5px;
+        margin: 1rem;
+        width: 380px;
+        height: 55px;
+        background: #ffffff;
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        color: #8d8d8d;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    div {
+      div {
+        select,
+        input {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}
