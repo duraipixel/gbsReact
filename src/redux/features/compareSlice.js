@@ -14,7 +14,6 @@ export const compareSlice = createSlice(
         reducers: {
             status: (state) => state.status,
             setCompareStatus: (state, action) => {
-                console.log(action,'action')
                 return state = action.payload
             },
             addProduct: (state, action) => {

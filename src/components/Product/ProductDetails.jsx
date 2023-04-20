@@ -32,7 +32,7 @@ function ProductDetails() {
                                     action={setNavSlider}
                                 />
                             </div>
-                            <Col lg={9} className='px-xxl-3 mt-xxl-0 mt-3'>
+                            <Col lg={9} className='px-0 mt-xxl-0 mt-3'>
                                 <ProductCarousel
                                     setPhotoIndex={setPhotoIndex}
                                     photoIndex={photoIndex}

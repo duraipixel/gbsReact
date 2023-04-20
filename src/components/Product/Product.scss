@@ -23,8 +23,8 @@
 }
 
 .product-thumbnail-image {
-    width: 95px;
-    height: 94px;
+    width: 80px;
+    height: 80px;
 
     @media (max-width:600px) {
         width: 95%;
@@ -95,15 +95,6 @@
 
     @media (min-width:992px) {
         height: 450px;
-    }
-
-    @media (min-width:1200px) {
-        height: 520px;
-    }
-
-    @media (min-width:1366px) {
-        max-height: 525px;
-        width: 450px;
     }
 }
 
