@@ -193,7 +193,10 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
+.flex-jc-s-a {
+  display: flex;
+  justify-content: space-around;
+}
 .flex-jc-right {
   display: flex;
   justify-content: flex-end;
@@ -237,7 +240,7 @@ a {
   margin-left: 2rem;
 }
 
-.slick-slide>div {
+.slick-slide > div {
   display: grid;
   place-items: center;
 }
@@ -286,7 +289,7 @@ section {
     line-height: 38px;
     font-size: 20px;
 
-    @media (min-width:992px) {
+    @media (min-width: 992px) {
       font-size: 30px;
       margin-bottom: 40px;
     }
@@ -566,5 +569,5 @@ h5 {
 }
 
 .bg-primary-soft {
-  background: #F7F0F0 !important
+  background: #f7f0f0 !important;
 }
