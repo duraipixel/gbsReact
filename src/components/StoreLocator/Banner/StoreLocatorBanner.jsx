@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 
 const StoreLocatorBanner = () => {
   return (
@@ -8,7 +8,7 @@ const StoreLocatorBanner = () => {
       <Container>
         <Col>
           <h2 className="text-center">Store Locator</h2>
-          <Row>
+          <div>
             <div className="m-2 flex-center flex-wrap">
               <select className="" id="" name="">
                 <option value="Chennai - All Stores">
@@ -20,7 +20,7 @@ const StoreLocatorBanner = () => {
               </select>
               <input type="number" placeholder="Search by Pincode" />
             </div>
-          </Row>
+          </div>
         </Col>
       </Container>
     </section>
