@@ -40,7 +40,7 @@
   .location-content-div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
     padding: 10px;
     .find-us-on-map {

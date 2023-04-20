@@ -88,6 +88,7 @@ const Footer = () => {
               <Link to="/">Terms Of Use</Link>
               <Link to="/">Returns Policy</Link>
               <Link to="/store-locator">Store Locator</Link>
+              <Link to="/service-center-locator">Service Center Locator</Link>
             </div>
           </Col>
           <Col xs={12} sm={12} md={6} lg={2} xl={2}>
@@ -114,7 +115,7 @@ const Footer = () => {
                 <FiPhone /> Sales: +91 96003 76222
               </Link>
             </p>
-            <p className="footer-text1">
+            <p className="footer-text1 ms-3">
               <Link
                 rel="noopener noreferrer"
                 onClick={() => openInNewTab("tel:+919841603332")}
