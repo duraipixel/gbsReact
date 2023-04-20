@@ -578,7 +578,8 @@ h5 {
   to { transform: rotate(360deg); }
 }
 
-.btn:disabled {
+button[loading=true]{
+  pointer-events: none;
   position: relative;
   opacity: 1 !important;
   &::after {

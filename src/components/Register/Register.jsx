@@ -86,7 +86,7 @@ function Register() {
         </Form.Text>
         <div className="text-center">
           {errorMessage && <p className="text-primary mt-4">{errorMessage}</p>}
-          <Button variant="primary" disabled={loading} type="submit" className="my-4">
+          <Button variant="primary" loading={`${loading}`} disabled={loading} type="submit" className="my-4">
             Create an Account
           </Button>
           <div>
