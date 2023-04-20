@@ -19,6 +19,7 @@ import {
   ProfileLayout,
   StoreLocatorPage,
   MyOrdersDetails,
+  ServiceCenterLocator,
 } from "lazy";
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
             <Route path="/store-locator" element={<StoreLocatorPage />} />
+            <Route
+              path="/service-center-locator"
+              element={<ServiceCenterLocator />}
+            />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
