@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { ProgressBar } from "react-loader-spinner";
+import { useLocation } from "react-router-dom";
 
 const openInNewTab = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");
@@ -46,7 +48,17 @@ const Loader = () => {
 const Image = (props) => {
   return <LazyLoadImage {...props} />;
 };
+
+const AppScroller = ({ children }) => {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scroll(0,0);
+  }, [pathname]);
+  return children || null;
+};
+
 export {
+  AppScroller,
   openInNewTab,
   getCurrentYear,
   scrollToTop,

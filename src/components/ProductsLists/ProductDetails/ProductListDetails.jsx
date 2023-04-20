@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const ProductListDetails = () => {
   return (
-    <Col lg={9} className="align-self-start pb-0">
+    <Col lg={9} className="align-self-start py-md-5 py-3 px-md-3 bg-white bg-white-layer">
       <Col className="list-details-side">
         <div className="d-sm-flex justify-content-between mb-5">
           <div className="primary-heads">
@@ -25,7 +25,7 @@ const ProductListDetails = () => {
             </select>
           </div>
         </div>
-        <div className="col-lg-12 m-4">
+        <div className="">
           <div className="row">
             <div className="col-lg-3 bg-white">
               <div className="img-covers text-center">
@@ -77,11 +77,11 @@ const ProductListDetails = () => {
           </div>
         </div>
 
-        <div className="col-lg-12 m-4">
+        <div className="">
           <div className="seprators-prdlst"></div>
         </div>
 
-        <div className="col-lg-12 m-4">
+        <div className="">
           <div className="row">
             <div className="col-lg-3 bg-white">
               <div className="img-covers">

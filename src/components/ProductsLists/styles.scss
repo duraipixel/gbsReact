@@ -51,11 +51,11 @@
 
 /* On mouse-over, add a grey background color */
 
-.cstm-chkbx:hover input ~ .checkmark {
+.cstm-chkbx:hover input~.checkmark {
   background-color: #fecacb;
 }
 
-.cstm-chkbx input:checked ~ .checkmark {
+.cstm-chkbx input:checked~.checkmark {
   background-color: #f1000a;
 }
 
@@ -65,7 +65,7 @@
   display: none;
 }
 
-.cstm-chkbx input:checked ~ .checkmark:after {
+.cstm-chkbx input:checked~.checkmark:after {
   display: block;
 }
 
@@ -117,8 +117,7 @@
   height: 35px;
   border-radius: 4px;
   margin-top: 0px;
-  background: #ebebeb url("../../assets/images/dwn.png") no-repeat scroll 90%
-    center;
+  background: #ebebeb url("../../assets/images/dwn.png") no-repeat scroll 90% center;
   color: #fff;
   font-weight: 400;
   cursor: pointer;
@@ -167,6 +166,7 @@
   text-transform: uppercase;
   color: #929292;
 }
+
 .sort-by-div {
   font-weight: 400;
   font-size: 15px;
@@ -176,6 +176,7 @@
   border-radius: 4px;
   color: #000000;
 }
+
 .clk-optn a {
   height: 30px;
   width: 30px;
@@ -187,6 +188,7 @@
   display: inline-block;
   margin-right: 12px;
 }
+
 .img-details h3 span.rat-esr {
   margin-left: 15px;
   display: inline-block;
@@ -322,10 +324,12 @@ span.ofer-infs span {
   font-weight: 600;
   cursor: text;
   margin-bottom: 1rem;
+
   &:hover {
     color: #000;
   }
 }
+
 .product-filters .close-btn {
   display: none;
   width: 35px;
@@ -354,6 +358,7 @@ span.ofer-infs span {
   .products-list-layer::before {
     background-color: $background-color_2;
   }
+
   .product-filters {
     position: fixed;
     left: -350px;
@@ -366,11 +371,56 @@ span.ofer-infs span {
     overflow: auto;
     transition: all 0.3s ease;
   }
+
   .active.product-filters {
     left: 0px;
     transition: all 0.3s ease;
   }
+
   .product-filters .close-btn {
     display: flex;
+  }
+}
+
+.filters-accordion {
+  background: none !important;
+
+  .accordion-body {
+    padding-bottom: 0 !important;
+  }
+
+  .accordion-button {
+    background: none !important;
+    box-shadow: none !important;
+    padding-bottom: 0 !important;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000 !important;
+  }
+
+  ul {
+    margin: 0 !important;
+  }
+
+  .accordion-item {
+    color: none !important;
+    background: none !important;
+    border: none !important;
+  }
+}
+
+.bg-white-layer {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    z-index: -1;
   }
 }

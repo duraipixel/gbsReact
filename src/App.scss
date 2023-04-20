@@ -169,9 +169,11 @@ a {
 .font-size-1_5rem {
   font-size: 1.5rem;
 }
+
 .text-center {
   text-align: center;
 }
+
 .flex {
   display: flex;
 }
@@ -235,7 +237,7 @@ a {
   margin-left: 2rem;
 }
 
-.slick-slide > div {
+.slick-slide>div {
   display: grid;
   place-items: center;
 }
@@ -259,12 +261,14 @@ a {
   font-size: 30px;
   line-height: 38px;
 }
+
 .btn-trans {
   color: #1a1a1a !important;
   border: 2px solid #1a1a1a;
   border-radius: 4px;
   background-color: transparent !important;
 }
+
 section {
   padding: 80px 0px;
 
@@ -281,6 +285,7 @@ section {
     margin-bottom: 25px;
     line-height: 38px;
     font-size: 20px;
+
     @media (min-width:992px) {
       font-size: 30px;
       margin-bottom: 40px;
@@ -398,7 +403,7 @@ td {
     font-size: 20px;
     margin-bottom: 40px;
     line-height: 25px;
-    color:rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -558,4 +563,8 @@ h5 {
 .badge-soft-primary {
   background-color: #fcd9e2;
   color: var(--primary-color) !important;
+}
+
+.bg-primary-soft {
+  background: #F7F0F0 !important
 }

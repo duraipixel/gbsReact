@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    status:false,
-    type:'login'
+    status: false,
+    type: 'login'
 };
 
 export const authLayoutSlice = createSlice(
@@ -11,7 +11,9 @@ export const authLayoutSlice = createSlice(
         initialState,
         reducers: {
             layoutStatus: (state) => state,
-            setLayoutStatus: (state, action) => state = action.payload,
+            setLayoutStatus: (state, action) => {
+                return state = action.payload
+            },
         }
     }
 );

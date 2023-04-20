@@ -32,7 +32,6 @@ const Header = () => {
         expanded={header}
         expand={`${expand}`}
         variant="dark"
-        className="sticky-top"
       >
         <Container>
           <Link to="/" className="brand">

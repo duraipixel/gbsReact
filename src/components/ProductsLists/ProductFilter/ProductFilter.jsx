@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
+import Accordion from 'react-bootstrap/Accordion';
 
 const ProductFilter = () => {
   const [isActive, setActive] = useState("false");
@@ -10,8 +11,8 @@ const ProductFilter = () => {
     setActive(!isActive);
   };
   return (
-    <Col lg={3} className="pb-0 align-self-start">
-      <Col className="filters-side">
+    <Col lg={3} className="py-md-5 align-self-start pt-3 h-100 ">
+      <div className="filters-side sticky-top">
         <Link className="product-filter-btn" onClick={ToggleClass}>
           Filters
         </Link>
@@ -25,72 +26,570 @@ const ProductFilter = () => {
           <Link className="close-btn" onClick={ToggleClass}>
             <IoMdClose />
           </Link>
-          <ul>
-            <h4>Product Availability</h4>
-            <li>
-              <label className="cstm-chkbx">
-                In Stock
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label className="cstm-chkbx">
-                Upcoming
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label className="cstm-chkbx">
-                Exclude Out Of Stock
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-          </ul>
-          <div className="seperator-hgt-30"></div>
-
-          <ul>
-            <h4>Price</h4>
-            <li>
-              <label className="cstm-chkbx">
-                Below ₹30,000
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label className="cstm-chkbx">
-                ₹30,000 to ₹49,999
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label className="cstm-chkbx">
-                ₹50,000 to ₹69,999
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label className="cstm-chkbx">
-                ₹70,000 to ₹99,999
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label className="cstm-chkbx">
-                ₹1,00,000 & above
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </li>
-          </ul>
+          <Accordion defaultActiveKey={['0','1']} alwaysOpen className="filters-accordion">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Product Availability</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      In Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Upcoming
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Exclude Out Of Stock
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Price</Accordion.Header>
+              <Accordion.Body>
+                <ul>
+                  <li>
+                    <label className="cstm-chkbx">
+                      Below ₹30,000
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹30,000 to ₹49,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹50,000 to ₹69,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹70,000 to ₹99,999
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label className="cstm-chkbx">
+                      ₹1,00,000 & above
+                      <input type="checkbox" />
+                      <span className="checkmark"></span>
+                    </label>
+                  </li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </div>
-      </Col>
+      </div>
     </Col>
   );
 };
