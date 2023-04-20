@@ -6,7 +6,7 @@ function AboutBanner() {
     <div>
     <section className="p-0">
         <div className='col-lg-12 col-md-12 col-sm-12'>
-        <img className='w-100' src={banner} alt="" /> 
+        <img className='w-100' src={banner} alt="" />
         </div>
     </section>
     </div>

@@ -87,7 +87,7 @@ $theme-colors: (
 @import "~bootstrap/scss/bootstrap.scss";
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-@import "https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Outfit:wght@400;500;600;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Outfit:wght@100;200;300;400;500;600;700&display=swap";
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap");
@@ -398,6 +398,7 @@ td {
     font-size: 20px;
     margin-bottom: 40px;
     line-height: 25px;
+    color:rgba(0, 0, 0, 0.8);
   }
 }
 
