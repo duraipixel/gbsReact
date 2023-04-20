@@ -1,3 +1,4 @@
+import CompareProduct from "components/CompareProduct/CompareProduct";
 import AuthModals from "layouts/Auth/AuthModals";
 import Footer from "layouts/Footer/Footer";
 import Header from "layouts/Header/Header";
@@ -11,6 +12,7 @@ const Layout = () => {
       <Outlet />
       <Footer />
       <AuthModals />
+      <CompareProduct />
     </AppScroller>
   );
 };
