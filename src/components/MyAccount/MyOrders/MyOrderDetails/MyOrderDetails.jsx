@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import PaymentDetails from "./PaymentDetails";
+import { FaCheck, FaCheckCircle } from "react-icons/fa";
 
 const MyOrderDetails = () => {
   return (
@@ -15,9 +16,30 @@ const MyOrderDetails = () => {
           </h2>
           <Link className="btn btn-cancel">Cancel Order</Link>
         </div>
-        <div className="pt-3 pb-3">
+        <div className="pt-3">
           <p>Your order has been shipped and it’s out for delivery</p>
-          <div className="pb-4"></div>
+        </div>
+        <div className="time-line-group my-5">
+          <div className="time-line-item">
+            <div className="time-line-icon"><FaCheckCircle /></div>
+            <div className="time-line-text">Order Placed</div>
+          </div>
+          <div className="time-line-item">
+            <div className="time-line-icon"><FaCheckCircle /></div>
+            <div className="time-line-text">Order Processed</div>
+          </div>
+          <div className="time-line-item">
+            <div className="time-line-icon"><FaCheckCircle /></div>
+            <div className="time-line-text">Out for Delivery</div>
+          </div>
+          <div className="time-line-item">
+            <div className="time-line-icon"><FaCheckCircle /></div>
+            <div className="time-line-text">Order Placed</div>
+          </div>
+          <div className="time-line-item">
+            <div className="time-line-icon"><FaCheckCircle /></div>
+            <div className="time-line-text">Delivered</div>
+          </div>
         </div>
         <div>
           <div className="flex-jc-btwn align-c t-head-title">
