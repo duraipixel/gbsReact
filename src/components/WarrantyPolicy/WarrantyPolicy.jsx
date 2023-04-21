@@ -51,7 +51,7 @@ function WarrantyPolicy() {
                   </div>
                   <div className='col-lg-3'>
                     <div className='clnt-more text-end'>
-                      <Link to=''>know More</Link>
+                      <a href="https://www.dell.com/support/home/en-in" target="_blank">know More</a>
                     </div>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ function WarrantyPolicy() {
       </div>
       <div className='col-lg-3'>
         <div className='clnt-more text-end'>
-          <Link to=''>know More</Link>
+        <a href="https://support.hp.com/us-en/check-warranty" target="_blank">know More</a>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@ function WarrantyPolicy() {
       </div>
       <div className='col-lg-3'>
         <div className='clnt-more text-end'>
-          <Link to=''>know More</Link>
+        <a href="https://pcsupport.lenovo.com/in/en/warrantylookup#/" target="_blank">know More</a>
         </div>
       </div>
     </div>
@@ -133,7 +133,7 @@ function WarrantyPolicy() {
       </div>
       <div className='col-lg-3'>
         <div className='clnt-more text-end'>
-          <Link to=''>know More</Link>
+        <a href="https://www.acer.com/us-en/support/index.html" target="_blank">know More</a>
         </div>
       </div>
     </div>
@@ -160,7 +160,7 @@ function WarrantyPolicy() {
       </div>
       <div className='col-lg-3'>
         <div className='clnt-more text-end'>
-          <Link to=''>know More</Link>
+        <a href="https://www.asus.com/in/support/warranty-status-inquiry/" target="_blank">know More</a>
         </div>
       </div>
     </div>

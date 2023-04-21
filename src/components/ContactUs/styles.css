@@ -194,7 +194,7 @@
 }
 
 .form-bg {
-	background: #F1000A;
+	background: linear-gradient(var(--primary-color), #bb1218) !important;
 	padding: 30px;
 	border-radius: 20px;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -271,3 +271,54 @@ label.error{
 .form-bg .submit-btn:focus {
 	background: #00043A;
 }
+
+.maping{padding: 0px;}
+
+.deals-imgs img {
+	border-radius: 5px;
+  }
+  @media (max-width:992px) {
+	.deals-imgs{
+	  position: relative;
+	  margin-bottom: 10px;
+	  display: block;
+	  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+	}
+  }
+  .deals-imgs{
+	position: relative;
+   
+  }
+  .btm-liner {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.08%, rgba(0, 0, 0, 0.8) 85.21%);
+	border-radius: 6px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	content: "";
+	bottom: 0;
+	left: 0;
+  }
+  
+  .btm-liner h4{position: absolute;bottom: 65px;font-weight: 600;
+	font-size: 23px;
+	line-height: 29px; left:20px;
+	text-align: left;width: 100%; 
+	color: #FFFFFF;}
+	
+	.btm-liner a{position: absolute;bottom:25px; 
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 19px;
+		padding: 5px 20px 7px;	
+		text-align: center;
+		display: inline-block;
+		text-transform: capitalize;
+		border-radius: 4px;
+		color: #ffffff;
+		left:20px;
+		text-align: left;
+		border: 1px solid #fff; }
+		.btm-liner a:hover{
+		
+		background: #f1000a;}

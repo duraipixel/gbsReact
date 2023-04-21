@@ -52,8 +52,8 @@ const Footer = () => {
               <Link to="/stores">Stores</Link>
               <Link to="/">Awards</Link>
               <Link to="/">Gallery</Link>
-              <Link to="/">Careers</Link>
-              <Link to="/">Contact Us</Link>
+              {/* <Link to="/">Careers</Link> */}
+              <Link to="/contact-us">Contact Us</Link>
             </div>
           </Col>
 
@@ -68,7 +68,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col xs={12} sm={12} md={6} lg={2} xl={2}>
+          {/* <Col xs={12} sm={12} md={6} lg={2} xl={2}>
             <h5>PC Service</h5>
             <div className="footer-links">
               <Link to="/">Chip Level Repair</Link>
@@ -77,21 +77,23 @@ const Footer = () => {
               <Link to="/">Keyboard Repair</Link>
               <Link to="/">Screen Replacement</Link>
             </div>
-          </Col>
-          <Col xs={12} sm={12} md={6} lg={2} xl={2}>
+          </Col> */}
+
+
+          <Col xs={12} sm={12} md={6} lg={3} xl={3}>
             <h5>Information</h5>
             <div className="footer-links">
-              <Link to="/">Shipping & Delivery</Link>
-              <Link to="/">Support Center</Link>
-              <Link to="/">Privacy Policy</Link>
-              <Link to="/">Warranty Policy</Link>
-              <Link to="/">Terms Of Use</Link>
-              <Link to="/">Returns Policy</Link>
+              <Link to="/shipping-delivery">Shipping & Delivery</Link>
+              {/* <Link to="/">Support Center</Link> */}
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/warantty-policy">Warranty Policy</Link>
+              {/* <Link to="/">Terms Of Use</Link> */}
+              {/* <Link to="/">Returns Policy</Link> */}
               <Link to="/store-locator">Store Locator</Link>
               <Link to="/service-center-locator">Service Center Locator</Link>
             </div>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={2} xl={2}>
+          <Col xs={12} sm={12} md={6} lg={3} xl={3}>
             <h5>Contact Us</h5>
             <p className="footer-text1">
               <RiMapPinLine /> 1070A, Munusamy Salai,
