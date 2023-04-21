@@ -126,7 +126,7 @@
 }
 
 .home-products.testimonials h4 {
-	color: #F1000A;
+	color: #000;
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 28px;
@@ -139,7 +139,7 @@
 .home-products.testimonials h6 {
 	position: relative;
 	line-height: 24px;
-	color: #F1000A;
+	color: #000;
 	padding-right: 30px;
 }
 
@@ -169,55 +169,10 @@
 }
 
 .home-products:hover {
-	box-shadow: 0px 0px 30px rgba(6, 91, 170, 0.2);
+	box-shadow: 10px 10px 0px rgba(241, 0, 10, 0.2);
 	transition: all 0.6s ease;
 }
 
-.home-products:before {
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	width: 0px;
-	height: 0px;
-	content: "";
-	z-index: -1;
-	opacity: 0;
-	background: #00043A;
-	transition: all 0.6s ease;
-}
-
-.home-products:hover:before {
-	left: -5px;
-	bottom: -5px;
-	width: 80%;
-	height: 80%;
-	opacity: 1;
-	border-radius: 20px;
-	transition: all 0.6s ease;
-}
-
-.home-products:after {
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	width: 0px;
-	height: 0px;
-	content: "";
-	z-index: -1;
-	opacity: 0;
-	background: #F1000A;
-	transition: all 0.6s ease;
-}
-
-.home-products:hover:after {
-	right: -5px;
-	top: -5px;
-	width: 80%;
-	height: 80%;
-	opacity: 1;
-	border-radius: 20px;
-	transition: all 0.6s ease;
-}
 
 .home-products .home-products-image {
 	overflow: hidden;

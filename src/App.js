@@ -23,7 +23,11 @@ import {
   PrivacyPolicyPage,
   WaranttyPolicyPage,
   ContactUsPage,
-} from "lazy";  
+  StorePage,
+  ServiceCenterLocator,
+  ServiceCenterDetails,
+  VerifyAccount
+} from "lazy";
 
 function App() {
   return (
@@ -36,7 +40,6 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/product-list" element={<ProductLists />} />
             <Route path="/product" element={<ProductPage />} />
-            <Route path="/stores" element={<StorePage />} />
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/shipping-delivery" element={<ShippingDeliveryPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
@@ -64,6 +67,7 @@ function App() {
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="*" element={<NotFound />} />
           </Route>
+          {/* <Route path="/stores" element={<StorePage />} /> */}
         </Routes>
       </Suspense>
     </BrowserRouter>
