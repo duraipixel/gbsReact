@@ -14,7 +14,15 @@ export const updatePasswordApi = async (data) => {
 }
 
 export const customerAddressApi = async (data) => {
-    return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/addresses`,{
+    const response =  await axios.post(`${process.env.REACT_APP_BASE_URL}/get/addresses`,{
         customer_id: AuthUser()?.id
     });
+    localStorage.setItem("customer_address", JSON.stringify(response.data.addresses))
+    return response
+}
+
+export const updateOrCreateAddressApi = async (data) => {
+    const response =  await axios.post(`${process.env.REACT_APP_BASE_URL}/save/customer/address`, data);
+    localStorage.setItem("customer_address", JSON.stringify(response.data.addresses))
+    return response
 }

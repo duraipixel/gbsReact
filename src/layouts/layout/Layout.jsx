@@ -1,3 +1,4 @@
+import AddressForm from "components/AddressForm/AddressForm";
 import CompareProduct from "components/CompareProduct/CompareProduct";
 import AuthModals from "layouts/Auth/AuthModals";
 import Footer from "layouts/Footer/Footer";
@@ -14,6 +15,7 @@ const Layout = () => {
       <Footer />
       <AuthModals />
       <CompareProduct />
+      <AddressForm />
       <Toaster position="top-center"
         reverseOrder={false}
         gutter={8}
@@ -31,7 +33,8 @@ const Layout = () => {
               secondary: 'black',
             },
           },
-        }} />
+        }}
+      />
     </AppScroller>
   );
 };

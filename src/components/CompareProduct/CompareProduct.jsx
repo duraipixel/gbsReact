@@ -5,8 +5,8 @@ import { HiXMark } from "react-icons/hi2";
 function CompareProduct() {
     const products = useSelector((state) => state.compareProducts)
     const dispatch = useDispatch()
-    return (
-        <div className={`compare-menu-bar animate__animated animate__slideInUp ${products.status ? 'show' : 'hide'}`} >
+    if(products.status) return (
+        <div className={`compare-menu-bar animate__animated animate__slideInUp show`} >
             <button className="float-end btn btn-sm">
                 <HiXMark color="#f00008" size={25} onClick={() => dispatch(setCompareStatus({ status: false, value: [] }))} />
             </button>

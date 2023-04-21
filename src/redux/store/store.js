@@ -7,11 +7,13 @@ import { navMenuService } from 'redux/features/homePage/navMenuService';
 import authReducer from 'redux/features/authSlice'
 import authLayoutReducer from 'redux/features/authLayoutSlice';
 import compareSlice from 'redux/features/compareSlice';
+import addressSlice from 'redux/features/addressSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    compareProducts: compareSlice, 
+    address: addressSlice,
+    compareProducts: compareSlice,
     authLayout: authLayoutReducer,
     cart: cartReducer,
     search: searchReducer,

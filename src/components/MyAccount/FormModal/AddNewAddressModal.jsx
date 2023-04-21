@@ -2,14 +2,12 @@ import React from "react";
 import { Col, Button, Modal, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import "./styles.scss";
 
 const AddNewAddressModal = (props) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
-    // reset,
   } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
@@ -21,7 +19,7 @@ const AddNewAddressModal = (props) => {
       className="new-address-modal"
     >
       <Modal.Header closeButton>
-        <Modal.Title>Add a New Shipping Address</Modal.Title>
+        <Modal.Title className="text-info">Add a New Shipping Address</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Container>
