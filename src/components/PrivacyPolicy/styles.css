@@ -1,0 +1,60 @@
+.bg-banner-liner {
+  padding: 50px 0px;
+  background-color: #292929;
+}
+
+.banner-liners h1 {
+  color: #fff;
+  margin: 0px 0px -2px;
+  font-weight: 600;
+}
+
+.common-content-area span {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+  color: #F1000A;
+  font-size: 18px;
+}
+
+.common-content-area h3 {
+  font-family: "Outfit";
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.common-content-area h4 {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 38px;
+  color: #F1000A;
+}
+
+.common-content-area {
+  padding: 55px 0px;
+}
+
+.common-content-area ul li {
+  position: relative;
+  margin: 8px 0px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+
+.common-content-area ul{margin-bottom: 20px;}
+
+.common-content-area ul li::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 4px;
+  background-color: #F1000A;
+  border-radius: 55px;
+}
+
+.common-content-area strong{color: #777575;}

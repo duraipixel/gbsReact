@@ -19,10 +19,11 @@ import {
   ProfileLayout,
   StoreLocatorPage,
   MyOrdersDetails,
-  ServiceCenterLocator,
-  ServiceCenterDetails,
-  VerifyAccount
-} from "lazy";
+  ShippingDeliveryPage,
+  PrivacyPolicyPage,
+  WaranttyPolicyPage,
+  ContactUsPage,
+} from "lazy";  
 
 function App() {
   return (
@@ -35,6 +36,12 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/product-list" element={<ProductLists />} />
             <Route path="/product" element={<ProductPage />} />
+            <Route path="/stores" element={<StorePage />} />
+            <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/shipping-delivery" element={<ShippingDeliveryPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/warantty-policy" element={<WaranttyPolicyPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/my-account" element={<ProfileLayout />}>
               <Route path="profile" element={<MyProfile />} />
               <Route path="address-book" element={<MyAddressBook />} />

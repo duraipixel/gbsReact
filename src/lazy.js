@@ -31,4 +31,7 @@ export const MyWishlist = lazy(() =>
 );
 export const NotFound = lazy(() => import("errors/NotFound"));
 export const VerifyAccount = lazy(() => import("pages/VerifyAccount"));
-
+export const ShippingDeliveryPage = lazy(() => import('./pages/ShippingDeliveryPage'))
+export const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage') ) 
+export const WaranttyPolicyPage = lazy(() => import('./pages/WaranttyPolicyPage') ) 
+export const ContactUsPage = lazy(() => import('./pages/ContactUsPage') ) 
