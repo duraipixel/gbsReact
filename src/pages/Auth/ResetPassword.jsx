@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useMemo } from "react"
 import { Button, Spinner } from "react-bootstrap"
 import { toast } from "react-hot-toast"
-import { Form, Link, useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { ResetPasswordApi, VerfiyResetPasswordApi } from "services/auth.service"
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -20,7 +20,6 @@ function ResetPassword() {
       navigate('/')
     } else {
       setCustomerId(response.data.customer.id)
-      toast.success(response.data.message)
       setIsVerfying(false)
     }
   }
@@ -45,9 +44,10 @@ const ResetPasswordComponent = ({ customerId }) => {
     confirm_password: Yup.string().required().oneOf([Yup.ref('password')], 'Passwords does not match'),
   })
   const formOptions = { resolver: yupResolver(formSchema) }
-  const { register, handleSubmit, reset, formState } = useForm(formOptions)
+  const { register, handleSubmit, formState } = useForm(formOptions)
   const { errors } = formState
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
   const FormHandler = async (data) => {
     data.customer_id = customerId
     setLoading(true)
@@ -56,6 +56,7 @@ const ResetPasswordComponent = ({ customerId }) => {
       toast.error(response.data.message)
     } else {
       toast.success(response.data.message)
+      navigate('/')
     }
     setLoading(false)
   }
