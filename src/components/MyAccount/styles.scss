@@ -41,12 +41,6 @@
       font-size: 30px;
       color: #212363;
     }
-    button {
-      color: #d1bd0b;
-      border: 1px transparent;
-      background: #e2cd0633;
-      border-radius: 4px;
-    }
   }
 
   form {
@@ -57,20 +51,27 @@
         color: #212363;
       }
       input {
-        background-color: #ebebeb99;
         font-weight: 400;
         font-size: 16px;
         color: #000000;
       }
-      button {
-        color: #212363;
-        border: 2px solid #212363;
-        border-radius: 4px;
-      }
     }
   }
 }
-
+.btn.edit-btn {
+  padding: 10px;
+  color: #d1bd0b;
+  border: 1px transparent;
+  background: rgba(226, 205, 6, 0.2);
+  border-radius: 3px;
+}
+.btn.save-btn {
+  padding: 10px;
+  color: #000000;
+  border: 1px transparent;
+  background: rgba(6, 226, 13, 0.2);
+  border-radius: 3px;
+}
 .address-book-details {
   h2 {
     font-weight: 600;
@@ -93,13 +94,7 @@
     line-height: 15px;
     color: #009ef7;
   }
-  .btn.edit-btn {
-    padding: 10px;
-    color: #d1bd0b;
-    border: 1px transparent;
-    background: rgba(226, 205, 6, 0.2);
-    border-radius: 3px;
-  }
+
   .btn.del-btn {
     padding: 10px;
     background: rgba(241, 65, 108, 0.2);

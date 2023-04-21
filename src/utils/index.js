@@ -70,7 +70,16 @@ const AppScroller = ({ children }) => {
   }, [pathname]);
   return children || null;
 };
-
+const setAuthUser = (data) => {
+  localStorage.setItem('user', JSON.stringify(data))
+}
+const AuthUser = () => {
+  var user = localStorage.getItem('user')
+  if (user !== undefined && user !== null && user !== '') {
+    return JSON.parse(user)
+  }
+  return false
+}
 export {
   AppScroller,
   openInNewTab,
@@ -79,5 +88,7 @@ export {
   Loader,
   LoadingSpinner,
   Image,
-  Alert
+  Alert,
+  AuthUser,
+  setAuthUser
 };
