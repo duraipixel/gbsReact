@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const LoginApi = async (credentials) => {
     const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, credentials); 
-    localStorage.setItem("user", JSON.stringify(response.data.customer_data));
+    localStorage.setItem("user", JSON.stringify(response.data.customer));
     localStorage.setItem("user_verfied", true)
     return  response
 }
@@ -14,7 +14,7 @@ export const Logout = () => {
 export const RegisterApi = async (credentials) => {
     const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/register/customer`, credentials);
     if (response.data) {
-        localStorage.setItem("user", JSON.stringify(response.data.customer_data));
+        localStorage.setItem("user", JSON.stringify(response.data.customer));
     }
     return response.data;
 }
@@ -23,4 +23,18 @@ export const VerfiyAccountApi = async (token) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/verify/account`, {
         token: token
     });
+}
+
+export const VerfiyResetPasswordApi = async (token) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/check/tokenValid`, {
+        token_id: token
+    });
+}
+
+export const sendResetPasswordApi = async (email) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/send/password/link`, email);
+}
+
+export const ResetPasswordApi = async (data) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/reset/password`, data);
 }

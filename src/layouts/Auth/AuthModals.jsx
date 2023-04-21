@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './AuthModals.scss'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
-import Login from 'components/Login/Login'
-import Register from 'components/Register/Register'
+import Login from 'components/Auth/Login'
+import Register from 'components/Auth/Register'
+import ForgotPassword from 'components/Auth/ForgotPassword'
 function AuthModals() {
     const dispatch = useDispatch()
     const layout = useSelector((status) => status.authLayout)
     const closeLayout = () => {
-        window.scroll(0,0)
+        window.scroll(0, 0)
         document.querySelector('nav').classList.toggle('sticky-top')
         dispatch(setLayoutStatus({
             status: false,
@@ -29,6 +30,8 @@ function AuthModals() {
                 return <Login />
             case 'register':
                 return <Register />
+            case 'forgot_password':
+                return <ForgotPassword />
             default:
                 return <Login />
         }

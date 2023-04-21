@@ -16,7 +16,7 @@ function Login() {
     password: Yup.string().required(),
   })
   const formOptions = { resolver: yupResolver(formSchema) }
-  const { register, handleSubmit, formState,reset } = useForm(formOptions)
+  const { register, handleSubmit, formState, reset } = useForm(formOptions)
   const { errors } = formState
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
@@ -55,7 +55,16 @@ function Login() {
           <Form.Label>Password</Form.Label>
           <Form.Control {...register("password")} className={`${errors.password ? 'border-danger' : ''}`} type="password" placeholder="Enter Your Password" />
         </Form.Group>
-        <p className="text-secondary fs-14">Forgot your password? <button className="btn-link btn btn-sm text-info px-0 border-0">Click Here</button></p>
+        <p className="text-secondary fs-14">
+          Forgot your password?
+          <button type="button" onClick={() => dispatch(setLayoutStatus({
+            status: true,
+            type: 'forgot_password'
+          }))}
+            className="btn-link btn btn-sm text-info px-0 border-0">
+            Click Here
+          </button>
+        </p>
         <div className="text-center">
           {errorMessage && <p className="text-primary mt-4">{errorMessage}</p>}
           <Button variant="primary" loading={`${loading}`} type="submit" className="my-4">
@@ -63,7 +72,7 @@ function Login() {
           </Button>
           <div>
             <div className="text-secondary fs-14">Don’t have an account? </div>
-            <button onClick={() => dispatch(setLayoutStatus({
+            <button type="button" onClick={() => dispatch(setLayoutStatus({
               status: true,
               type: 'register'
             }))} className="btn-link btn btn-sm text-info px-0 border-0">Click here to register</button>

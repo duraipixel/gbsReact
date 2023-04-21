@@ -22,12 +22,12 @@ import {
   ShippingDeliveryPage,
   PrivacyPolicyPage,
   WaranttyPolicyPage,
-  ContactUsPage,
-  StorePage,
+  ContactUsPage, 
   ServiceCenterLocator,
   ServiceCenterDetails,
   VerifyAccount
 } from "lazy";
+import ResetPassword from "pages/Auth/ResetPassword";
 
 function App() {
   return (
@@ -65,6 +65,7 @@ function App() {
               element={<ServiceCenterDetails />}
             />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />
           </Route>
           {/* <Route path="/stores" element={<StorePage />} /> */}
