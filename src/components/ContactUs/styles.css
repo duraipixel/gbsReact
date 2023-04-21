@@ -21,9 +21,10 @@
 }
 
 .contact-us .home-products.testimonials h4 {
-	font-size: 24px;
-	margin-bottom: 20px;
+	font-size: 22px;
+	margin-bottom:15px;
 	margin-top: 0px;
+	color: #F1000A;
 }
 
 .contact-us .home-products.testimonials h6 {
@@ -190,4 +191,83 @@
 .home-products:hover .home-products-image img {
 	transform: scale(1.1);
 	transition: all 0.6s ease;
+}
+
+.form-bg {
+	background: #F1000A;
+	padding: 30px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+input.form-control,
+select.form-control {
+	height: 50px;
+	line-height: 50px;
+	padding: 5px 10px;
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	outline: none !important;
+	box-shadow: none !important;
+	margin-bottom: 30px;
+}
+
+textarea.form-control {
+	height: 100px;
+	line-height: 24px;
+	padding: 5px 10px;
+	border-radius: 4px;
+	resize: none;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	outline: none;
+	box-shadow: none !important;
+	margin-bottom: 30px;
+}
+
+#formRental input.form-control,
+#formRental select.form-control {
+	border: none !important;
+}
+
+
+label.error{
+	color: #FFF;
+	font-size: 13px;
+	font-weight: 600;
+	bottom: 0px;
+	position: absolute;
+}
+#contactusform label.error, #enqjvalidate label.error, #productquote label.error{
+	bottom: -30px;
+}
+#contactusform label.error{
+    color: #ff8d00;
+}
+
+.submit-btn {
+	background: #F1000A;
+	color: #fff;
+	letter-spacing: 0.1em; 
+	padding: 10px 20px;
+	font-weight: 600;
+	border: none;
+	border-radius: 4px;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 16px;
+	transition: all 0.3s ease;
+	border: 2px solid #fff;;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+	background: #00043A;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+
+.form-bg .submit-btn:hover,
+.form-bg .submit-btn:focus {
+	background: #00043A;
 }
