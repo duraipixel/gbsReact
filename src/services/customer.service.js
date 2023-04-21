@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setAuthUser } from "utils";
+import { AuthUser, setAuthUser } from "utils";
 
 export const updateProfileApi = async (data) => {
     const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/update/profile`, data);
@@ -11,4 +11,10 @@ export const updateProfileApi = async (data) => {
 
 export const updatePasswordApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/change/password`, data);
+}
+
+export const customerAddressApi = async (data) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/addresses`,{
+        customer_id: AuthUser()?.id
+    });
 }

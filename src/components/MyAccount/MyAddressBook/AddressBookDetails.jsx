@@ -3,9 +3,17 @@ import { Col } from "react-bootstrap";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import { SlLocationPin } from "react-icons/sl";
 import AddNewAddressModal from "../FormModal/AddNewAddressModal";
-
+import { customerAddressApi } from 'services/customer.service'
+import { useMemo } from "react";
 const AddressBookDetails = () => {
   const [modalShow, setModalShow] = useState(false);
+  const fetchData = async () => {
+    const { data } = await customerAddressApi()
+    console.log(data)
+  }
+  useMemo(() => {
+    fetchData()
+  }, [])
   return (
     <div className="address-book-details">
       <Col className="container-card card p-4">

@@ -3,15 +3,14 @@ import { Row, Form, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FiEdit, FiSave } from "react-icons/fi";
-import { IoCloseCircle } from "react-icons/io5";
-import { MdPublishedWithChanges } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 import { updatePasswordApi, updateProfileApi } from "services/customer.service";
 import { AuthUser } from "utils";
 
 const MyProfile = () => {
   const customer = AuthUser();
-  const { handleSubmit, register } = useForm({
+  const { handleSubmit, register, setValue } = useForm({
     defaultValues: {
       first_name: customer?.first_name,
       last_name: customer?.last_name,
@@ -42,6 +41,7 @@ const MyProfile = () => {
             setDisabled={setDisabled}
             editBtnText={"Edit Profile"}
             saveBtnText={"Save Changes"}
+            setValue={setValue}
           />
           <Form.Group as={Row} className="mb-4" controlId="firstName">
             <Form.Label className="fs-6" column sm="3">
@@ -95,7 +95,7 @@ const MyProfile = () => {
             </Col>
           </Form.Group>
         </Form>
-        <hr className="my-5" /> 
+        <hr className="my-5" />
         <SecuritySetting />
       </div>
     </Col>
@@ -103,7 +103,7 @@ const MyProfile = () => {
 };
 
 const SecuritySetting = () => {
-  const { handleSubmit, register, reset } = useForm();
+  const { handleSubmit, register, reset, setValue } = useForm();
   const [disabled, setDisabled] = useState(true)
   const [loading, setLoading] = useState(false)
   const editPasswordHandler = async (formData) => {
@@ -128,6 +128,7 @@ const SecuritySetting = () => {
           setDisabled={setDisabled}
           editBtnText={"Change Password"}
           saveBtnText={"Set Password"}
+          setValue={setValue}
         />
         <Form.Group
           as={Row}
@@ -172,22 +173,34 @@ const SecuritySetting = () => {
   )
 }
 
-const SectionHeader = ({ disabled, setDisabled, loading, title, editBtnText, saveBtnText }) => {
+const SectionHeader = ({ disabled, setDisabled, loading, title, editBtnText, saveBtnText, setValue }) => {
+  const cancel = () => {
+    if (setValue) {
+      const customer = AuthUser()
+      setValue('first_name', customer?.first_name)
+      setValue('last_name', customer?.last_name)
+      setValue('email', customer?.email)
+      setValue('mobile_no', customer?.mobile_no)
+      setValue('customer_id', customer.id)
+      setValue('current_password', "")
+    }
+    setDisabled(!disabled)
+  }
   return (
     <div className="flex-jc-btwn flex-wrap heading-div">
       <h2 className="m-0 fs-5">{title}</h2>
       {
         disabled ?
           <button type="button" className="btn-sm btn btn-outline-info" onClick={() => setDisabled(!disabled)}>
-            <FiEdit className="me-2" />  {editBtnText}
+            <FiEdit className="me-1" />  {editBtnText}
           </button>
           :
           <div className="btn-group">
             <button type="submit" loading={`${loading}`} className="btn-sm btn btn-success" >
-              <FiSave className="me-2" /> {saveBtnText}
+              <FiSave className="me-1" /> {saveBtnText}
             </button>
-            <button type="button" className="btn-sm btn btn-success" onClick={() => setDisabled(!disabled)}>
-              <IoCloseCircle size={25} />
+            <button type="button" className="btn-sm btn btn-light border" onClick={cancel}>
+              <IoClose className="me-1" /> Cancel
             </button>
           </div>
       }
