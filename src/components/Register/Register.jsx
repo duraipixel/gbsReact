@@ -5,8 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { RegisterApi } from "services/auth.service";
-import { useState } from "react";
-import { Alert } from "utils";
+import { useState } from "react"; 
 import { toast } from "react-hot-toast";
 
 function Register() {
@@ -29,7 +28,7 @@ function Register() {
     setLoading(true)
     const response = await RegisterApi(data)
     if (response.error) {
-      toast.success(response.message[0])
+      toast.error(response.message[0])
       setErrorMessage(response.message[0])
       setTimeout(() => setErrorMessage(), 3000)
     } else {
@@ -80,8 +79,8 @@ function Register() {
         <Form.Text className="text-muted d-flex mt-3">
           <Form.Check type="checkbox" />
           <span className="fs-14 ms-2">
-            By continuing, you're agreeing to our <button class="btn btn-sm text-info p-0 border-0">customer terms of service</button> ,<button class="btn btn-sm text-info px-0 border-0">privacy policy</button>  and
-            <button class="btn btn-sm text-info p-0 border-0">cookie policy</button>
+            By continuing, you're agreeing to our <button className="btn btn-sm text-info p-0 border-0">customer terms of service</button> ,<button className="btn btn-sm text-info px-0 border-0">privacy policy</button>  and
+            <button className="btn btn-sm text-info p-0 border-0">cookie policy</button>
           </span>
         </Form.Text>
         <div className="text-center">
@@ -94,7 +93,7 @@ function Register() {
             <button onClick={() => dispatch(setLayoutStatus({
               status: true,
               type: 'login'
-            }))} class="btn-link btn btn-sm text-info px-0 border-0">Click here to register</button>
+            }))} className="btn-link btn btn-sm text-info px-0 border-0">Click here to register</button>
           </div>
         </div>
       </Form>

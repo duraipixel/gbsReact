@@ -1,26 +1,64 @@
 import { Button, Form } from "react-bootstrap"
 import { useDispatch } from "react-redux"
 import { setLayoutStatus } from "redux/features/authLayoutSlice"
+import { LoginApi } from "services/auth.service"
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+import { setAuthUser } from "redux/features/authSlice";
 
 function Login() {
   const dispatch = useDispatch()
+  const formSchema = Yup.object().shape({
+    email: Yup.string().required(),
+    password: Yup.string().required(),
+  })
+  const formOptions = { resolver: yupResolver(formSchema) }
+  const { register, handleSubmit, formState,reset } = useForm(formOptions)
+  const { errors } = formState
+  const [loading, setLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const LoginHandler = async (data) => {
+    setLoading(true)
+    const response = await LoginApi(data)
+    if (response.data.error) {
+      setErrorMessage(response.data.message)
+      setTimeout(() => setErrorMessage(), 3000)
+    } else {
+      toast.success(response.data.message)
+      dispatch(setAuthUser({
+        data: response.data.customer_data,
+        isLoggedIn: true
+      }))
+      dispatch(setLayoutStatus({
+        status: false,
+        type: 'login'
+      }))
+      reset()
+    }
+    setLoading(false)
+  }
   return (
     <div className="mx-auto col-md-10">
-      <div>
+      <Form onSubmit={handleSubmit(LoginHandler)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter Your Email" />
+          <Form.Control {...register("email")} className={`${errors.email ? 'border-danger' : ''}`} type="email" placeholder="Enter Your Email" />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Enter Your Password" />
+          <Form.Control {...register("password")} className={`${errors.password ? 'border-danger' : ''}`} type="password" placeholder="Enter Your Password" />
         </Form.Group>
-        <p className="text-secondary fs-14">Forgot your password? <button class="btn-link btn btn-sm text-info px-0 border-0">Click Here</button></p>
+        <p className="text-secondary fs-14">Forgot your password? <button className="btn-link btn btn-sm text-info px-0 border-0">Click Here</button></p>
         <div className="text-center">
-          <Button variant="primary" type="button" className="my-4">
+          {errorMessage && <p className="text-primary mt-4">{errorMessage}</p>}
+          <Button variant="primary" loading={`${loading}`} type="submit" className="my-4">
             Sign In
           </Button>
           <div>
@@ -28,10 +66,10 @@ function Login() {
             <button onClick={() => dispatch(setLayoutStatus({
               status: true,
               type: 'register'
-            }))} class="btn-link btn btn-sm text-info px-0 border-0">Click here to register</button>
+            }))} className="btn-link btn btn-sm text-info px-0 border-0">Click here to register</button>
           </div>
         </div>
-      </div>
+      </Form>
     </div>
   )
 }

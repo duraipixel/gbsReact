@@ -15,17 +15,17 @@ function CompareProduct() {
                     <div className="compare-card-group">
                         <div className="compare-card">
                             <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664431264/Croma%20Assets/Computers%20Peripherals/Laptop/Images/257040_0_yigvy6.png/mxw_1536,f_auto" alt="" />
-                            <p class="product-title">Acer Nitro 5 Intel Core i5 11th Gen (15.6 inch, 8GB, 1TB and 256GB, Windows 11, NVIDIA GTX 1650, IPS Display, Black, UN.QEHSI.004)</p>
+                            <p className="product-title">Acer Nitro 5 Intel Core i5 11th Gen (15.6 inch, 8GB, 1TB and 256GB, Windows 11, NVIDIA GTX 1650, IPS Display, Black, UN.QEHSI.004)</p>
                             <b className="small">₹62999</b>
                         </div>
                         <div className="compare-card">
                             <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664431264/Croma%20Assets/Computers%20Peripherals/Laptop/Images/257040_0_yigvy6.png/mxw_1536,f_auto" alt="" />
-                            <p class="product-title">Acer Nitro 5 Intel Core i5 11th Gen (15.6 inch, 8GB, 1TB and 256GB, Windows 11, NVIDIA GTX 1650, IPS Display, Black, UN.QEHSI.004)</p>
+                            <p className="product-title">Acer Nitro 5 Intel Core i5 11th Gen (15.6 inch, 8GB, 1TB and 256GB, Windows 11, NVIDIA GTX 1650, IPS Display, Black, UN.QEHSI.004)</p>
                             <b className="small">₹62999</b>
                         </div>
                         <div className="compare-card">
                             <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1668663197/Croma%20Assets/Computers%20Peripherals/Laptop/Images/262706_0_wog1el.png/mxw_1536,f_auto" alt="" />
-                            <p class="product-title">Acer NITRO 5 AN515-58 Intel i5 12th Gen (15.6 inch, 16GB, 512GB, Windows 11, NVIDIA GeForce RTX 3050, FHD IPS Display, Obsidian Black, UN.QFHSI.006 )</p>
+                            <p className="product-title">Acer NITRO 5 AN515-58 Intel i5 12th Gen (15.6 inch, 16GB, 512GB, Windows 11, NVIDIA GeForce RTX 3050, FHD IPS Display, Obsidian Black, UN.QFHSI.006 )</p>
                             <b className="small">₹82990</b>
                         </div>
                     </div>
