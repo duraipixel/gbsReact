@@ -1,10 +1,13 @@
 import { useOutlet, Outlet, Navigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import Sidebar from "components/MyAccount/Sidebar";
+import { useSelector } from "react-redux";
 
-function ProfileLayout(props) {
+function ProfileLayout() {
   const outlet = useOutlet();
+  const authUser = useSelector((state) => state.auth)
   if (outlet === null) return <Navigate to="/my-account/profile" />;
+  if (authUser.isLoggedIn === false) return <Navigate to="/" />;
   return (
     <section className="bg-off-grey">
       <Container>
