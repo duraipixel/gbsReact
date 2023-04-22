@@ -106,7 +106,7 @@ function ProductInformation({ product }) {
                     <button className="text-primary btn-link btn"><TbCurrentLocation className='me-1' /> Find Stores</button>
                 </div>
             </div>
-            <ProductOverview />
+            <ProductOverview product={product} />
             <ProductAddOns product={product} />
         </div>
     )

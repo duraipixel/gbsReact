@@ -40,7 +40,7 @@ function App() {
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/product-list" element={<ProductLists />} />
-            <Route path="/product/:slug" element={<ProductPage />} />
+            <Route path="/product-list/:slug" element={<ProductPage />} />
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/shipping-delivery" element={<ShippingDeliveryPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
