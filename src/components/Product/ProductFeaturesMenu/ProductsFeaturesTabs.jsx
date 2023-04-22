@@ -26,7 +26,7 @@ function ProductsFeaturesTabs({product}) {
                         <Specification product={product.attributes}/>
                     </Tab.Pane>
                     <Tab.Pane eventKey="2">
-                        <CustomerReview />
+                        <CustomerReview product_id={product.id} />
                     </Tab.Pane>
                 </Tab.Content>
             </Tab.Container>
