@@ -18,6 +18,9 @@ export const customerAddressApi = async (data) => {
         customer_id: AuthUser()?.id
     });
     localStorage.setItem("customer_address", JSON.stringify(response.data.addresses))
+    localStorage.setItem("address_type", JSON.stringify(response.data.address_type))
+    localStorage.setItem("country", JSON.stringify(response.data.country))
+    localStorage.setItem("state", JSON.stringify(response.data.state))
     return response
 }
 

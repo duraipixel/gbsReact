@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col } from "react-bootstrap";
+import { Col, Placeholder } from "react-bootstrap";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import { SlLocationPin } from "react-icons/sl";
 import AddNewAddressModal from "../FormModal/AddNewAddressModal";
@@ -56,7 +56,8 @@ const AddressBookDetails = () => {
               addresses.map((address, i) => (
                 <div key={i} className="list-group-item">
                   <div className="flex-jc-btwn flex-wrap">
-                    <h3>{address.name}</h3>
+                    <h3>{address?.name}  <span className="badge bg-warning text-dark rounded-pill ms-2">{address.address_type}</span></h3>
+                   
                     <div>
                       {
                         address?.is_default === "1" ?
@@ -68,7 +69,7 @@ const AddressBookDetails = () => {
                     </div>
                   </div>
                   <div className="mt-3">
-                    <p>{address.address_line1}</p>
+                    <p>{address?.address_line1}</p>
                     <p>{address.city} - {address.post_code}</p>
                     <p>{address.state}, {address.country}</p>
                     <div className="flex-jc-btwn flex-wrap">
@@ -94,7 +95,7 @@ const AddressBookDetails = () => {
               ))
             }
           </ul>
-          : null
+          :   ""
       }
       <AddNewAddressModal show={modalShow} onHide={() => setModalShow(false)} />
       <SweetAlert

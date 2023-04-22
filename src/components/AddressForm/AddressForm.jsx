@@ -18,28 +18,28 @@ function AddressForm() {
     reset,
   } = useForm();
   const onSubmit = async (formData) => {
-    var payload = { ...formData, customer_id: AuthUser()?.id, id:address?.edit_value?.customer_address_id }
+    var payload = { ...formData, customer_id: AuthUser()?.id, id: address?.edit_value?.customer_address_id }
     const { data } = await updateOrCreateAddressApi(payload)
     toast.success(data.message)
     dispatch(addAddress({ status: false, value: data.addresses }))
     reset()
   };
   useEffect(() => {
-    if (address?.edit_value) { 
+    if (address?.edit_value) {
       setValue('id', address?.edit_value?.id)
       setValue('name', address?.edit_value?.name)
       setValue('address_type_id', address?.edit_value?.address_type_id)
       setValue('email', address?.edit_value?.email)
       setValue('mobile_no', address?.edit_value?.mobile_no)
-      setValue('address', address?.edit_value?.address)
+      setValue('address', address?.edit_value?.address_line1)
       setValue('city', address?.edit_value?.city)
-      setValue('state', address?.edit_value?.state)
-      setValue('country', address?.edit_value?.country)
+      setValue('state', address?.edit_value?.stateid)
+      setValue('country', address?.edit_value?.countryid)
       setValue('post_code', address?.edit_value?.post_code)
     } else {
       reset()
     }
-  },[address?.edit_value])
+  }, [address?.edit_value])
   if (address.status) return (
     <Modal
       show={true}
@@ -114,14 +114,18 @@ function AddressForm() {
               controlId="addresstype"
               style={{ width: "49%" }}
             >
-              <Form.Control
-                type="text"
-                placeholder="Address Type"
+              <Form.Select
                 {...register("address_type_id", {
                   required: "This is required.",
                 })}
-                className={`${errors.address_type_id ? 'border-danger' : ''}`}
-              />
+                className={`${errors.address_type_id ? 'border-danger' : ''}`} >
+                <option>-- Choose --</option>
+                {
+                  JSON.parse(localStorage.getItem('address_type')).map((address_type) => (
+                    <option key={address_type.id} value={address_type.id}>{address_type.name}</option>
+                  ))
+                }
+              </Form.Select>
             </Form.Group>
           </div>
           <h3 className="fs-5 text-info">Address</h3>
@@ -171,28 +175,36 @@ function AddressForm() {
               controlId="state"
               style={{ width: "49%" }}
             >
-              <Form.Control
-                type="text"
-                placeholder="State"
+              <Form.Select
                 {...register("state", {
                   required: "This is required.",
                 })}
-                className={`${errors.state ? 'border-danger' : ''}`}
-              />
+                className={`${errors.state ? 'border-danger' : ''}`} >
+                <option>-- Choose --</option>
+                {
+                  JSON.parse(localStorage.getItem('state')).map((state) => (
+                    <option key={state.id} value={state.id}>{state.state_name}</option>
+                  ))
+                }
+              </Form.Select>
             </Form.Group>
             <Form.Group
               className="mb-3"
               controlId="country"
               style={{ width: "49%" }}
             >
-              <Form.Control
-                type="text"
-                placeholder="Country"
+              <Form.Select
                 {...register("country", {
                   required: "This is required.",
                 })}
-                className={`${errors.country ? 'border-danger' : ''}`}
-              />
+                className={`${errors.country ? 'border-danger' : ''}`} >
+                <option>-- Choose --</option>
+                {
+                  JSON.parse(localStorage.getItem('country')).map((country) => (
+                    <option key={country.id} value={country.id}>{country.name}</option>
+                  ))
+                }
+              </Form.Select>
             </Form.Group>
           </div>
           <div className="text-center mt-3 mb-1">
