@@ -2,14 +2,14 @@ import { useDispatch, useSelector } from "react-redux"
 import { clearProduct, removeProduct, setCompareStatus } from "redux/features/compareSlice";
 import './CompareProduct.scss'
 import { HiXMark } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 function CompareProduct() {
     const products = useSelector((state) => state.compareProducts)
-    const dispatch = useDispatch()
-    console.log(products.value)
+    const dispatch = useDispatch() 
     if (products.status) return (
         <div className={`compare-menu-bar animate__animated animate__slideInUp show`} >
             <button className="float-end btn btn-sm">
-                <HiXMark color="#f00008" size={25} onClick={() => dispatch(setCompareStatus({ status: false, value: [] }))} />
+                <HiXMark color="#f00008" size={25} onClick={() => dispatch(setCompareStatus({ status: false}))} />
             </button>
             <div className="container p-0">
                 <div className="d-md-flex align-items-center justify-content-center">
@@ -29,7 +29,7 @@ function CompareProduct() {
                         }
                     </div>
                     <div className="d-flex flex-md-column ms-md-3">
-                        <button className="rounded-0 w-100 btn btn-primary mb-md-3">Compare</button>
+                        <Link to="/compare" onClick={() => dispatch(setCompareStatus({ status: false }))} className="rounded-0 w-100 btn btn-primary mb-md-3">Compare</Link>
                         <button onClick={() => dispatch(clearProduct())} className="rounded-0 w-100 btn btn-outline-dark">Clear all</button>
                     </div>
                 </div>

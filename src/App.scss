@@ -353,11 +353,11 @@ td {
   width: 50px;
   background: #00043a;
   border-radius: 100%;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
 }
 
 span.ofer-infs {
@@ -657,4 +657,32 @@ button[loading=true] {
 
 .btn-outline-info:hover {
   color: #00043a !important;
+}
+
+.bg-banner-liner {
+  padding: 50px 0px;
+  background-color: #292929;
+  color: white;
+}
+
+.bullet-points {
+  list-style-position: inside;
+
+  li {
+    display: flex !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 35px;
+    display: block;
+
+    span {
+      font-weight: 600;
+    }
+
+    &::before {
+      content: '•';
+      margin-right: 10px;
+    }
+  }
 }

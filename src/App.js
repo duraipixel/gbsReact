@@ -3,7 +3,6 @@ import "animate.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import { Loader } from "utils";
-
 import {
   AboutPage,
   CartPage,
@@ -25,9 +24,10 @@ import {
   ContactUsPage, 
   ServiceCenterLocator,
   ServiceCenterDetails,
-  VerifyAccount
+  VerifyAccount,
+  ResetPassword,
+  ComparePage
 } from "lazy";
-import ResetPassword from "pages/Auth/ResetPassword";
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/compare" element={<ComparePage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/product-list" element={<ProductLists />} />
             <Route path="/product/:slug" element={<ProductPage />} />
@@ -49,21 +50,12 @@ function App() {
               <Route path="profile" element={<MyProfile />} />
               <Route path="address-book" element={<MyAddressBook />} />
               <Route path="myorders" element={<MyOrders />} />
-              <Route
-                path="myorders/order-details"
-                element={<MyOrdersDetails />}
-              />
+              <Route path="myorders/order-details" element={<MyOrdersDetails />}/>
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
             <Route path="/store-locator" element={<StoreLocatorPage />} />
-            <Route
-              path="/service-center-locator"
-              element={<ServiceCenterLocator />}
-            />
-            <Route
-              path="/service-center-details"
-              element={<ServiceCenterDetails />}
-            />
+            <Route path="/service-center-locator" element={<ServiceCenterLocator />} />
+            <Route path="/service-center-details" element={<ServiceCenterDetails />} />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />

@@ -15,7 +15,11 @@ export const compareSlice = createSlice(
         reducers: {
             status: (state) => state.status,
             setCompareStatus: (state, action) => {
-                return state = action.payload
+                var products = JSON.parse(localStorage.getItem('compare_products'))
+                return state = {
+                    status: action.payload.status,
+                    value: products
+                }
             },
             addProduct: (state, action) => {
                 if (localStorage.getItem('compare_products') === undefined || localStorage.getItem('compare_products') === null) {
