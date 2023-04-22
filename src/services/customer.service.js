@@ -33,3 +33,10 @@ export const deleteAddressApi = async (address_id) => {
         customer_address_id: address_id
     });
 }
+
+export const setDefaultAddressApi = async (address_id) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/set/default/address`, {
+        customer_id: AuthUser()?.id,
+        customer_address_id: address_id
+    });
+}
