@@ -26,13 +26,20 @@ function ProductDetails({ product }) {
                                 />
                             </div>
                             <Col lg={9} className='px-0 mt-xxl-0 mt-3'>
-                                <ProductCarousel
-                                    setPhotoIndex={setPhotoIndex}
-                                    photoIndex={photoIndex}
-                                    images={images}
-                                    navSlider={navSlider}
-                                    action={setProductCarouselSlider}
-                                />
+                                <div className="position-relative">
+                                    <span className="offer-badge">
+                                        <div>
+                                            {product.discount_percentage}% <span>OFF</span>
+                                        </div>
+                                    </span>
+                                    <ProductCarousel
+                                        setPhotoIndex={setPhotoIndex}
+                                        photoIndex={photoIndex}
+                                        images={images}
+                                        navSlider={navSlider}
+                                        action={setProductCarouselSlider}
+                                    />
+                                </div>
                             </Col>
                         </div>
                     </div>

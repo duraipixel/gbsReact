@@ -8,11 +8,11 @@ import { toast } from 'react-hot-toast'
 import axios from 'axios'
 import { AuthUser } from 'utils'
 
-function CustomerReview({ product_id }) {
+function CustomerReview({ product_id, is_review }) {
     const authUser = useSelector((state) => state.auth)
     const { handleSubmit, reset, register, formState: { errors } } = useForm()
     const [rating, setRating] = useState(0)
-    const [disableRateingBox, setDisableRateingBox] = useState(false)
+    const [disableRateingBox, setDisableRateingBox] = useState(is_review)
     const handleRating = (comments) => {
         if (rating === 0) {
             toast.error('Star Rating is Required!')

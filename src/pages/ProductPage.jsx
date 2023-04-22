@@ -1,18 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import ProductBreadcrumb from "components/Product/ProductBreadcrumb"
-import { Container } from "react-bootstrap"
 import ProductDetails from "components/Product/ProductDetails"
+import axios from "axios"
+import { Container } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { useMemo } from "react"
-import axios from "axios"
 import { useState } from "react"
-import { Loader } from '../utils/index'
+import { AuthUser, Loader } from '../utils/index'
 import { Helmet } from "react-helmet"
 function ProductPage() {
   const { slug } = useParams()
   const [product, setProduct] = useState([])
   const getProduct = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/get/products/by/slug/${slug}`)
+    const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/get/products/by/slug`, {
+      customer_id: AuthUser()?.id,
+      product_url: slug
+    })
     setProduct(data)
   }
   useMemo(() => {
