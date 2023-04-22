@@ -1,10 +1,40 @@
 import { useDispatch } from 'react-redux'
 import ProductAddOns from './ProductAddOns'
 import ProductOverview from './ProductOverview'
-import {TbCurrentLocation} from 'react-icons/tb'
+import { TbCurrentLocation } from 'react-icons/tb'
 import { setCompareStatus } from 'redux/features/compareSlice'
-function ProductInformation({product}) {
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { Form } from 'react-bootstrap'
+import { CheckProductAvailabilityApi } from 'services/product.serice'
+function ProductInformation({ product }) {
     const dispatch = useDispatch()
+    const [checkAvailability, setAvailability] = useState(false)
+    const [information, setInformation] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
+    const [loading, setLoading] = useState(false)
+
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset
+    } = useForm();
+    const CheckAvailabilityHander = async (formData) => {
+        setLoading(true)
+        const { data } = await CheckProductAvailabilityApi(formData)
+        if (data.error === 1) {
+            setErrorMessage(data.message)
+            setTimeout(() => {
+                setErrorMessage("")
+            }, 5000);
+            reset()
+        } else {
+            setAvailability(true)
+            setInformation(data.information)
+        }
+        setLoading(false)
+    }
     return (
         <div>
             <h6 className='h5'>{product.product_name}</h6>
@@ -26,14 +56,15 @@ function ProductInformation({product}) {
                 <div className="text-info fs-6">You Save (₹{product.save_price}) </div>
             </div>
             <div className="action-group mb-4">
-                <button className="mb-md-0 mb-3 btn btn-primary me-md-3 px-5 fw-semibold">Add to Cart</button>
+                <button className="mb-md-0 mb-3 btn btn-primary me-md-3 px-5 fw-semibold">Buy Now</button>
+                <button className="mb-md-0 mb-3 btn btn-outline-primary me-md-3 px-5 fw-semibold">Add to Cart</button>
                 <button className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle me-md-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 25 23" fill="none">
                         <path d="M21.9515 3.48201C21.393 2.92145 20.7299 2.47679 20 2.1734C19.2702 1.87002 18.4879 1.71387 17.6979 1.71387C16.9079 1.71387 16.1256 1.87002 15.3957 2.1734C14.6659 2.47679 14.0028 2.92145 13.4443 3.48201L12.2852 4.6448L11.1261 3.48201C9.99796 2.35026 8.46788 1.71445 6.87247 1.71445C5.27705 1.71445 3.74697 2.35026 2.61884 3.48201C1.49071 4.61375 0.856934 6.14873 0.856934 7.74925C0.856934 9.34978 1.49071 10.8848 2.61884 12.0165L3.77793 13.1793L12.2852 21.7138L20.7924 13.1793L21.9515 12.0165C22.5103 11.4562 22.9535 10.791 23.2559 10.0588C23.5583 9.3266 23.714 8.54181 23.714 7.74925C23.714 6.9567 23.5583 6.17191 23.2559 5.43972C22.9535 4.70754 22.5103 4.04229 21.9515 3.48201V3.48201Z" stroke="#212363" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <span>Add to favourite</span>
                 </button>
-                <button className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle" onClick={() => dispatch(setCompareStatus({status:true,value:[]}))}>
+                <button className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle" onClick={() => dispatch(setCompareStatus({ status: true, value: [] }))}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
                         <path d="M2.61475 7.27423C2.61475 10.2697 2.61475 13.2653 2.61475 16.2608C2.61475 16.5846 2.69571 17.4752 3.42434 18.2038C4.55778 19.4992 6.33889 19.1753 6.50081 19.1753C6.50081 17.799 6.50081 16.3417 6.50081 14.9654L10.225 18.6896L6.41985 22.4947C6.41985 21.3612 6.41985 20.1468 6.50081 19.0134" stroke="#212363" strokeWidth="1.5" stroke-miterlimit="10" />
                         <path d="M2.6147 7.51646C3.55367 7.51646 4.31486 6.75527 4.31486 5.8163C4.31486 4.87733 3.55367 4.11615 2.6147 4.11615C1.67574 4.11615 0.914551 4.87733 0.914551 5.8163C0.914551 6.75527 1.67574 7.51646 2.6147 7.51646Z" stroke="#212363" strokeWidth="1.5" stroke-miterlimit="10" />
@@ -44,19 +75,25 @@ function ProductInformation({product}) {
                 </button>
             </div>
             <h3 className="mb-3">Check availability for Delivery</h3>
-            <div className="d-flex align-items-center col-md-6 p-0 mb-4">
-                <input type="number" min={0} className="pincode-input" value={600039} />
-                <input type="button" value='Check' className="btn btn-sm btn-link text-info fw-bold" />
-            </div>
-            <div className="row align-items-center mb-3">
-                <div className="col-md-1 col-3 text-center p-0">
-                    <img src={require('../../assets/icons/delivery-truck.png')} width={50} alt='gps' />
+            {errorMessage ? <div className='text-primary small mb-3'>{errorMessage}</div> : ""}
+            <Form onSubmit={handleSubmit(CheckAvailabilityHander)} className="d-inline-flex col-md-6 mb-4">
+                <input type="number" min={0} {...register('pin_code', { required: true })} className={`form-control form-control-sm ${errors.pin_code ? 'border border-danger' : ''}`} placeholder='Pincode' />
+                <button loading={`${loading}`} type="submit" className="btn pe-3 btn-sm btn-link text-info h-100 fw-bold" >
+                    Check
+                </button>
+            </Form>
+            {
+                checkAvailability &&
+                <div className="row align-items-center mb-3">
+                    <div className="col-md-1 col-3 text-center p-0">
+                        <img src={require('../../assets/icons/delivery-truck.png')} width={50} alt='gps' />
+                    </div>
+                    <div className="col-md-11 col-9 text-info d-md-flex">
+                        <div className="fw-bold"> Standard Shipping:</div>
+                        <div className="text-dark ps-2"> {information} </div>
+                    </div>
                 </div>
-                <div className="col-md-11 col-9 text-info d-md-flex">
-                    <div className="fw-bold"> Standard Shipping:</div>
-                    <div className="text-dark"> 10 April - 11 April</div>
-                </div>
-            </div>
+            }
             <div className="row align-items-center mb-2">
                 <div className="col-md-1 col-3 text-center p-0">
                     <img src={require('../../assets/icons/shopping-bag.png')} width={30} alt='gps' />
@@ -64,7 +101,7 @@ function ProductInformation({product}) {
                 <div className="col-md-11 col-9 text-info  d-flex align-items-center">
                     <div className="d-md-flex">
                         <div className="fw-bold">Pickup From Store:</div>
-                        <div className="text-dark"> Available for Pickup</div>
+                        <div className="text-dark ps-2"> Available for Pickup</div>
                     </div>
                     <div className="vr ms-2"></div>
                     <button className="text-primary btn-link btn"><TbCurrentLocation className='me-1' /> Find Stores</button>

@@ -575,13 +575,26 @@ h5 {
 }
 
 @keyframes spinner-border {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-button[loading=true]{
+button[loading=true] {
   pointer-events: none;
   position: relative;
   opacity: 1 !important;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000005e;
+  }
+
   &::after {
     content: '';
     display: inline-block;
@@ -598,20 +611,25 @@ button[loading=true]{
     left: 42%;
   }
 }
+
 .section {
   min-height: calc(100vh - 130px);
 }
+
 .section-center-center,
 .section-center {
   display: flex;
 }
+
 .section-center {
   justify-content: center;
 }
+
 .section-center-center {
   justify-content: center;
   align-items: center;
 }
+
 .btn-outline-info:hover {
   color: #00043a !important;
 }

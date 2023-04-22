@@ -21,8 +21,8 @@ function ProductAddOns({ product }) {
                                 <div className="d-md-inline-flex g-3">
                                     {addon.items.map((item, key) => (
                                         <>
-                                            <input type="radio" name="addon" value={item.id} id={`add_on_${key}`} />
-                                            <label key={key} className='btn-add-on' htmlFor={`add_on_${key}`}>
+                                            <input type="radio" name="addon" value={item.id} id={`form_${i}_add_on_${key}`} />
+                                            <label key={key} className='btn-add-on' htmlFor={`form_${i}_add_on_${key}`}>
                                                 {item.label}<span className="text-info">₹{item.amount}</span>
                                             </label>
                                         </>
