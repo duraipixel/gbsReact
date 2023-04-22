@@ -3,17 +3,28 @@ import { Col } from "react-bootstrap";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import { SlLocationPin } from "react-icons/sl";
 import AddNewAddressModal from "../FormModal/AddNewAddressModal";
-import { customerAddressApi } from 'services/customer.service'
+import { customerAddressApi, deleteAddressApi } from 'services/customer.service'
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAdressForm } from '../../../redux/features/addressSlice'
+import SweetAlert from "react-bootstrap-sweetalert";
+import { toast } from "react-hot-toast";
 const AddressBookDetails = () => {
   const [modalShow, setModalShow] = useState(false);
   const address = useSelector((state) => state.address.value)
   const dispatch = useDispatch()
   const [addresses, setAddress] = useState([])
+  const [addressesId, setAddressId] = useState(null)
+  const [deleteAlert, setDeleteAlert] = useState(false);
   const fetchData = async () => {
     const { data } = await customerAddressApi()
+    setAddress(data.addresses)
+  }
+  const deleteAddress = async () => {
+    const { data } = await deleteAddressApi(addressesId)
+    toast.success(data?.message)
+    setDeleteAlert(false)
+    setAddressId(null)
     setAddress(data.addresses)
   }
   useMemo(() => {
@@ -50,7 +61,7 @@ const AddressBookDetails = () => {
         <button
           className="btn align-c add-address-btn"
           onClick={() => {
-            dispatch(setAdressForm({ status: true }));
+            dispatch(setAdressForm({ status: true, type: 'CREATE' }));
           }}
         >
           Add New Address
@@ -60,8 +71,8 @@ const AddressBookDetails = () => {
         addresses?.length ?
           <ul className="list-group">
             {
-              addresses.map(address => (
-                <div key={address.id} className="list-group-item">
+              addresses.map((address, i) => (
+                <div key={i} className="list-group-item">
                   <div>
                     <h3>{address.name}</h3>
                   </div>
@@ -75,10 +86,10 @@ const AddressBookDetails = () => {
                         <button className="btn default-address-btn flex-center">
                           Set as Default
                         </button>
-                        <button className="btn edit-btn flex-center">
+                        <button onClick={() => dispatch(setAdressForm({ status: true, type: 'EDIT', edit_value: address }))} className="btn edit-btn flex-center">
                           <FiEdit />
                         </button>
-                        <button className="btn del-btn flex-center">
+                        <button onClick={() => { setDeleteAlert(true); setAddressId(address?.customer_address_id) }} className="btn del-btn flex-center">
                           <FiTrash />
                         </button>
                       </div>
@@ -91,7 +102,20 @@ const AddressBookDetails = () => {
           : null
       }
       <AddNewAddressModal show={modalShow} onHide={() => setModalShow(false)} />
-    </div>
+      <SweetAlert
+        warning
+        showCancel
+        confirmBtnText="Yes, delete it!"
+        confirmBtnBsStyle="danger"
+        title="Are you sure?"
+        onConfirm={deleteAddress}
+        onCancel={() => setDeleteAlert(false)}
+        focusCancelBtn
+        show={deleteAlert}
+      >
+        You will not be able to recover this data!
+      </SweetAlert>
+    </div >
   );
 };
 

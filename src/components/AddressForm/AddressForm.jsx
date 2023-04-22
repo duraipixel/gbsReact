@@ -6,6 +6,7 @@ import { MdOutlineClose } from "react-icons/md";
 import { AuthUser } from 'utils';
 import { updateOrCreateAddressApi } from 'services/customer.service';
 import { toast } from 'react-hot-toast';
+import { useEffect } from 'react';
 function AddressForm() {
   const address = useSelector((state) => state.address)
   const dispatch = useDispatch()
@@ -13,14 +14,32 @@ function AddressForm() {
     register,
     formState: { errors },
     handleSubmit,
+    setValue,
     reset,
   } = useForm();
   const onSubmit = async (formData) => {
-    const { data } = await updateOrCreateAddressApi({ ...formData, customer_id: AuthUser()?.id })
+    var payload = { ...formData, customer_id: AuthUser()?.id, id:address?.edit_value?.customer_address_id }
+    const { data } = await updateOrCreateAddressApi(payload)
     toast.success(data.message)
-    dispatch(addAddress({ status: false, value: data.addresses}))
+    dispatch(addAddress({ status: false, value: data.addresses }))
     reset()
   };
+  useEffect(() => {
+    if (address?.edit_value) { 
+      setValue('id', address?.edit_value?.id)
+      setValue('name', address?.edit_value?.name)
+      setValue('address_type_id', address?.edit_value?.address_type_id)
+      setValue('email', address?.edit_value?.email)
+      setValue('mobile_no', address?.edit_value?.mobile_no)
+      setValue('address', address?.edit_value?.address)
+      setValue('city', address?.edit_value?.city)
+      setValue('state', address?.edit_value?.state)
+      setValue('country', address?.edit_value?.country)
+      setValue('post_code', address?.edit_value?.post_code)
+    } else {
+      reset()
+    }
+  },[address?.edit_value])
   if (address.status) return (
     <Modal
       show={true}
@@ -30,8 +49,10 @@ function AddressForm() {
       className="new-address-modal"
     >
       <Modal.Header className='bg-light'>
-        <Modal.Title className="fs-5 fw-bold text-info">Add a New Shipping Address</Modal.Title>
-        <button className="btn btn-light" onClick={() => dispatch(setAdressForm({ status: false }))}>
+        <Modal.Title className="fs-5 fw-bold text-info">
+          {address.type === "CREATE" ? "Add a New Shipping Address" : "Edit Shipping Address"}
+        </Modal.Title>
+        <button className="btn btn-light" onClick={() => dispatch(setAdressForm({ status: false, type: address.type }))}>
           <MdOutlineClose />
         </button>
       </Modal.Header>

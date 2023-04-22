@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 const customer_address = JSON.parse(localStorage.getItem("customer_address"));
 
 const initialState = {
-    status: false,
+    status    : false,
+    type      : 'CREATE',
+    edit_value: [],
     value: customer_address ? customer_address : [],
 };
 
@@ -14,7 +16,7 @@ export const addressSlice = createSlice(
         reducers: {
             status: (state) => state.status,
             setAdressForm: (state, action) => {
-                return state = {...action.payload,value:initialState.value}
+                return state = {...action.payload,value:initialState.value,edit_value:action.payload?.edit_value}
             },
             addAddress: (state, action) => {
                 return state = action.payload
