@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-hot-toast';
 
 const compare_products = JSON.parse(localStorage.getItem("compare_products"));
 
@@ -17,14 +18,43 @@ export const compareSlice = createSlice(
                 return state = action.payload
             },
             addProduct: (state, action) => {
-                return state += action.payload
+                if (localStorage.getItem('compare_products') === undefined || localStorage.getItem('compare_products') === null) {
+                    localStorage.setItem('compare_products', JSON.stringify([]));
+                }
+                if (localStorage.getItem('compare_products') !== undefined || localStorage.getItem('compare_products') !== null) {
+                    let currentList = JSON.parse(localStorage.getItem('compare_products'));
+                    if (currentList.length < 3) {
+                        if (currentList.length === 0) {
+                            localStorage.setItem('compare_products', JSON.stringify([...currentList, action.payload.value]))
+                        } else {
+                            var filters = currentList.filter(item => item.id !== action.payload.value.id)
+                            localStorage.setItem('compare_products', JSON.stringify([...filters, action.payload.value]));
+                        }
+                    } else {
+                        toast.error("You can add maximum 3 items to compare.")
+                    }
+                }
+                var products = JSON.parse(localStorage.getItem('compare_products'))
+                return state = {
+                    status: true,
+                    value: products
+                }
             },
             removeProduct: (state, action) => {
-                const removeItem   = state.value.filter((item) => item.id !== action.payload);
-                return state.value = removeItem;
+                let currentList = JSON.parse(localStorage.getItem('compare_products'));
+                const removeItem = currentList.filter((item) => item.id !== action.payload.value);
+                localStorage.setItem('compare_products', JSON.stringify(removeItem));
+                return state = {
+                    status: removeItem.length === 0 ? false : true,
+                    value: removeItem
+                }
             },
             clearProduct: (state) => {
-                return state.value = []
+                localStorage.setItem('compare_products', JSON.stringify([]));
+                return state = {
+                    status: false,
+                    value: []
+                }
             }
         }
     }

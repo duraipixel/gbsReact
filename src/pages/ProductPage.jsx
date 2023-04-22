@@ -3,7 +3,7 @@ import ProductBreadcrumb from "components/Product/ProductBreadcrumb"
 import ProductDetails from "components/Product/ProductDetails"
 import axios from "axios"
 import { Container } from "react-bootstrap"
-import { useParams } from "react-router-dom"
+import { useParams, Navigate } from "react-router-dom"
 import { useMemo } from "react"
 import { useState } from "react"
 import { AuthUser, Loader } from '../utils/index'
@@ -11,31 +11,42 @@ import { Helmet } from "react-helmet"
 function ProductPage() {
   const { slug } = useParams()
   const [product, setProduct] = useState([])
+  const [fetching, setfetching] = useState(true)
   const getProduct = async () => {
     const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/get/products/by/slug`, {
       customer_id: AuthUser()?.id,
       product_url: slug
     })
     setProduct(data)
+    setfetching(false)
   }
   useMemo(() => {
     getProduct()
-  }, [slug])
+  }, [slug]) 
+
   return (
     <div className="bg-light py-3">
       <Container>
         {
-          product.length !== 0 ?
+          fetching ?
+            <Loader />
+            :
             <>
-              <Helmet>
-                <title>{product.meta.title}</title>
-                <meta name="description" content={product.meta.description} />
-                <meta name="keywords" content={product.meta.keywords} />
-              </Helmet>
-              <ProductBreadcrumb category={product.category_name} title={product.product_name} />
-              <ProductDetails product={product} />
+              {
+                product.length === 0 ?
+                  <Navigate to='/404' />
+                  :
+                  <>
+                    <Helmet>
+                      <title>{product?.meta?.title}</title>
+                      <meta name="description" content={product?.meta?.description} />
+                      <meta name="keywords" content={product?.meta?.keywords} />
+                    </Helmet>
+                    <ProductBreadcrumb category={product.category_name} title={product.product_name} />
+                    <ProductDetails product={product} />
+                  </>
+              }
             </>
-            : <Loader />
         }
       </Container>
     </div>

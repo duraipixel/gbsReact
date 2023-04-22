@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux'
 import ProductAddOns from './ProductAddOns'
 import ProductOverview from './ProductOverview'
 import { TbCurrentLocation } from 'react-icons/tb'
-import { setCompareStatus } from 'redux/features/compareSlice'
+import { addProduct } from 'redux/features/compareSlice'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Form } from 'react-bootstrap'
@@ -13,7 +13,6 @@ function ProductInformation({ product }) {
     const [information, setInformation] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
     const [loading, setLoading] = useState(false)
-
     const {
         register,
         formState: { errors },
@@ -64,7 +63,7 @@ function ProductInformation({ product }) {
                     </svg>
                     <span>Add to favourite</span>
                 </button>
-                <button className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle" onClick={() => dispatch(setCompareStatus({ status: true, value: [] }))}>
+                <button className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle" onClick={() => dispatch(addProduct({ status: true, value: product }))}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
                         <path d="M2.61475 7.27423C2.61475 10.2697 2.61475 13.2653 2.61475 16.2608C2.61475 16.5846 2.69571 17.4752 3.42434 18.2038C4.55778 19.4992 6.33889 19.1753 6.50081 19.1753C6.50081 17.799 6.50081 16.3417 6.50081 14.9654L10.225 18.6896L6.41985 22.4947C6.41985 21.3612 6.41985 20.1468 6.50081 19.0134" stroke="#212363" strokeWidth="1.5" stroke-miterlimit="10" />
                         <path d="M2.6147 7.51646C3.55367 7.51646 4.31486 6.75527 4.31486 5.8163C4.31486 4.87733 3.55367 4.11615 2.6147 4.11615C1.67574 4.11615 0.914551 4.87733 0.914551 5.8163C0.914551 6.75527 1.67574 7.51646 2.6147 7.51646Z" stroke="#212363" strokeWidth="1.5" stroke-miterlimit="10" />
