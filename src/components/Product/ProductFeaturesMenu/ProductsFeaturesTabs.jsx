@@ -3,7 +3,7 @@ import Description from './Description'
 import Specification from './Specification'
 import CustomerReview from './CustomerReview'
 
-function ProductsFeaturesTabs() {
+function ProductsFeaturesTabs({product}) {
     return (
         <div className="product-features-tab">
             <Tab.Container defaultActiveKey="0">
@@ -20,10 +20,10 @@ function ProductsFeaturesTabs() {
                 </Nav>
                 <Tab.Content className='p-3 pt-4'>
                     <Tab.Pane eventKey="0">
-                        <Description />
+                        <Description product={product.description_products}/>
                     </Tab.Pane>
                     <Tab.Pane eventKey="1">
-                        <Specification />
+                        <Specification product={product.attributes}/>
                     </Tab.Pane>
                     <Tab.Pane eventKey="2">
                         <CustomerReview />

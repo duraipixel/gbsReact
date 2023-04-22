@@ -25,8 +25,8 @@ const ProductListDetails = () => {
             </select>
           </div>
         </div>
-        <div className="">
-          <div className="row">
+        <div className=" pb-3">
+          <div className="row border-bottom  pb-3">
             <div className="col-lg-3 bg-white">
               <div className="img-covers text-center">
                 <img src={product1} alt="" />
@@ -76,11 +76,6 @@ const ProductListDetails = () => {
             </div>
           </div>
         </div>
-
-        <div className="">
-          <div className="seprators-prdlst"></div>
-        </div>
-
         <div className="">
           <div className="row">
             <div className="col-lg-3 bg-white">

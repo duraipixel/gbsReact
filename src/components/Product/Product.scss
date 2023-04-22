@@ -5,16 +5,18 @@
     background-color: white;
     border-radius: 0px;
 }
- 
+
 .product-thumbnail-column {
     @media (min-width:1367px) {
         width: 130px;
     }
+
     .slick-list {
         @media (min-width:1367px) {
             min-height: 540px !important;
         }
     }
+
     .slick-track {
         @media (min-width:1367px) {
             height: 500px !important;
@@ -87,14 +89,17 @@
 .product-carousel-image {
     @media (max-width:425px) {
         height: 250px;
+        width: 250px;
     }
 
     @media (min-width:600px) {
         height: 350px;
+        width: 350px;
     }
 
     @media (min-width:992px) {
         height: 450px;
+        width: 450px;
     }
 }
 
@@ -239,7 +244,21 @@
     border: 2px solid #F1000A;
 }
 
+input[name=addon]:checked+.btn-add-on {
+    border: 2px solid #F1000A !important;
+}
+
+input[name=addon] {
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+}
 .btn-add-on {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
     @media (max-width:720px) {
         width: 100%;
         padding: 20px;
@@ -253,7 +272,7 @@
 
     border-radius: 4px;
     background-color: white;
-    border: none;
+    border: 2px solid #f1000800;
     outline: none;
     margin-right: 15px;
     box-shadow: 7px 7px 25px rgba(0, 0, 0, 0.05);
@@ -279,6 +298,7 @@
 
 .product-features-tab {
     padding: 40px 0;
+
     .nav-pills {
         border-top: 2px solid #A2A2A2 !important;
         border-bottom: 2px solid #A2A2A2 !important;
@@ -303,4 +323,3 @@
         }
     }
 }
-

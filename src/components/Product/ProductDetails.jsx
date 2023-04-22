@@ -1,4 +1,4 @@
-import './Product.scss' 
+import './Product.scss'
 import 'react-image-lightbox/style.css';
 import { useState } from 'react'
 import { Col, Row } from 'react-bootstrap';
@@ -7,18 +7,11 @@ import ProductCarousel from './ProductCarousel';
 import ProductsFeaturesTabs from './ProductFeaturesMenu/ProductsFeaturesTabs';
 import ProductInformation from './ProductInformation';
 
-function ProductDetails() {
+function ProductDetails({ product }) {
     const [productCarouselSliders, setProductCarouselSlider] = useState();
     const [navSlider, setNavSlider] = useState();
     const [photoIndex, setPhotoIndex] = useState(null);
-
-    const images = [
-        require('../../assets/images/products/p (6).png'),
-        require('../../assets/images/products/p (2).png'),
-        require('../../assets/images/products/p (3).png'),
-        require('../../assets/images/products/p (4).png'),
-        require('../../assets/images/products/p (5).png'),
-    ]
+    const images = product.gallery
     return (
         <div className='py-lg-3 h-100'>
             <Row className='h-100 '>
@@ -45,10 +38,10 @@ function ProductDetails() {
                     </div>
                 </Col>
                 <Col xl={6}>
-                    <ProductInformation />
+                    <ProductInformation product={product} />
                 </Col>
             </Row>
-            <ProductsFeaturesTabs />
+            <ProductsFeaturesTabs product={product} />
         </div>
     )
 }
