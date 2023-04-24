@@ -4,6 +4,7 @@ export const CartPage             = lazy(() => import("pages/CartPage"));
 export const ProductLists         = lazy(() => import("components/ProductsLists"));
 export const ProductPage          = lazy(() => import("pages/ProductPage"));
 export const StoreLocatorPage     = lazy(() => import("pages/StoreLocatorPage"));
+export const StoreLocationDetailsPage = lazy(() => import("pages/StoreLocationDetails"));
 export const ServiceCenterLocator = lazy(() =>import("pages/ServiceCenterLocator"));
 export const ServiceCenterDetails = lazy(() =>import("pages/ServiceCenterDetails"));
 export const AboutPage            = lazy(() => import("pages/AboutPage"));

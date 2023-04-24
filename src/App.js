@@ -26,7 +26,8 @@ import {
   ServiceCenterDetails,
   VerifyAccount,
   ResetPassword,
-  ComparePage
+  ComparePage,
+  StoreLocationDetailsPage
 } from "lazy";
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
             <Route path="/store-locator" element={<StoreLocatorPage />} />
+            <Route path="/store-location-details" element={<StoreLocationDetailsPage />} />
             <Route path="/service-center-locator" element={<ServiceCenterLocator />} />
             <Route path="/service-center-details" element={<ServiceCenterDetails />} />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
