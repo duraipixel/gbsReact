@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import razorpay from "assets/images/Cart/razorpay.png";
-const CartDetails = () => {
-  return (
+const CartDetails = ({ checkoutData }) => {
+  console.log(checkoutData)
+  if (checkoutData) return (
     <div
       style={{
         position: "relative",
@@ -14,12 +15,12 @@ const CartDetails = () => {
         <tbody>
           <tr>
             <td style={{ paddingLeft: "0", textAlign: "left" }}>Sub Total</td>
-            <td style={{ paddingRight: "0", textAlign: "right" }}>₹98,506</td>
+            <td style={{ paddingRight: "0", textAlign: "right" }}>₹{checkoutData.product_tax_exclusive_total}</td>
           </tr>
           <tr>
             <td style={{ paddingLeft: "0", textAlign: "left" }}>Taxes</td>
             <td style={{ paddingRight: "0", textAlign: "right" }}>
-              ₹17,731.08
+              ₹{checkoutData.tax_total}
             </td>
           </tr>
         </tbody>
@@ -97,7 +98,7 @@ const CartDetails = () => {
           <tr>
             <td style={{ paddingLeft: "0", textAlign: "left" }}>Grand Total</td>
             <td style={{ paddingRight: "0", textAlign: "right" }}>
-              116,237.08
+              ₹{checkoutData.total}
             </td>
           </tr>
           <tr>

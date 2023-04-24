@@ -604,6 +604,13 @@ h5 {
   }
 }
 
+.btn-sm[loading=true]::after {
+  top: 20% !important;
+  left: 4% !important;
+}
+.custom-btn[loading=true]::after  {
+  left: 16% !important;
+}
 button[loading=true] {
   pointer-events: none;
   position: relative;
@@ -725,4 +732,11 @@ button[loading=true] {
       vertical-align: middle;
       align-items: center;
   }
+}
+.product-thumnail {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background: white;
+  display: block
 }

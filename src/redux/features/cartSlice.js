@@ -1,16 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-hot-toast';
-import { addToCartApi, removeFromCartApi } from 'services/product.serice';
+import { addToCartApi } from 'services/product.serice';
 import { AuthUser } from 'utils';
-const initialCount = JSON.parse(localStorage.getItem('cart_list'))
+const cartList = JSON.parse(localStorage.getItem('cart_list'))
 const initialState = {
-  value: initialCount ? initialCount.length : 0,
+  value: cartList ? cartList.length : 0,
+  data: cartList ? cartList : [],
 }
 
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    setCartList: (state, action) => {
+      localStorage.setItem('cart_list', JSON.stringify(action.payload.data));
+      let currentCart = JSON.parse(localStorage.getItem('cart_list'));
+      return {
+        value: action.payload.value,
+        data: currentCart,
+      }
+    },
     setCart: (state, action) => {
       if (localStorage.getItem('cart_list') === undefined || localStorage.getItem('cart_list') === null) {
         localStorage.setItem('cart_list', JSON.stringify([]));
@@ -22,7 +31,7 @@ export const cartSlice = createSlice({
           product_id: action.payload.id,
           customer_id: AuthUser()?.id,
           guest_token: localStorage.getItem('guest_token'),
-          quantity: currentCart.length
+          quantity: 1
         }).then((response) => {
           if (response.data.error === 0) {
             toast.success(response.data.message);
@@ -31,7 +40,11 @@ export const cartSlice = createSlice({
           }
         })
       }
-      state.value += 1
+      var counter = state.value + 1
+      return state = {
+        value: counter,
+        data: cartList ? cartList : [],
+      }
     },
     removeCart: (state, action) => {
       let currentCart = JSON.parse(localStorage.getItem('cart_list'));
@@ -42,22 +55,15 @@ export const cartSlice = createSlice({
       var index = currentCart.indexOf(Result)
       currentCart.splice(index, 1)
       localStorage.setItem('cart_list', JSON.stringify(currentCart));
-      removeFromCartApi({
-        product_id: action.payload.id,
-        customer_id: AuthUser()?.id,
-        guest_token: localStorage.getItem('guest_token'),
-      }).then((response) => {
-        if (response.data.error === 0) {
-          toast.success(response.data.message);
-        } else {
-          toast.error('Network Error')
-        }
-      })
-      state.value = currentCart.length > 1 ? currentCart.length - 1 : currentCart.length
+      
+      return state = {
+        value: currentCart.length > 1 ? currentCart.length - 1 : currentCart.length,
+        data: currentCart,
+      }
     },
   },
 })
 
-export const { setCart, removeCart } = cartSlice.actions
+export const { setCart, removeCart, setCartList } = cartSlice.actions
 
 export default cartSlice.reducer

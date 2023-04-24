@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { toast } from "react-hot-toast"
 import { useDispatch } from "react-redux"
 import { removeCart, setCart } from "redux/features/cartSlice"
-import { checkCartBucket, strRandom } from "utils"
+import { removeFromCartApi } from "services/product.serice"
+import { AuthUser, checkCartBucket, strRandom } from "utils"
 
 function AddCartButton({ className, product, type }) {
     const dispatch = useDispatch()
@@ -10,8 +12,20 @@ function AddCartButton({ className, product, type }) {
     const addOrRemoveCart = () => {
         setLoading(true)
         if (checkCartBucket(product.id)) {
-            dispatch(removeCart(product))
-            setIsAddCart(false)
+            removeFromCartApi({
+                product_id: product.id,
+                customer_id: AuthUser()?.id,
+                guest_token: localStorage.getItem('guest_token'),
+            }).then((response) => { 
+                if (response.data.error === 0) {
+                    toast.success(response.data.message);
+                    dispatch(removeCart(product))
+                    setIsAddCart(false)
+                } else {
+                    toast.error('Network Error')
+                }
+            })
+
         } else {
             dispatch(setCart(product))
             setIsAddCart(true)

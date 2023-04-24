@@ -8,6 +8,7 @@ import authReducer from 'redux/features/authSlice'
 import authLayoutReducer from 'redux/features/authLayoutSlice';
 import compareSlice from 'redux/features/compareSlice';
 import addressSlice from 'redux/features/addressSlice';
+import checkOutSlice from 'redux/features/checkOutSlice';
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     compareProducts: compareSlice,
     authLayout: authLayoutReducer,
     cart: cartReducer,
+    checkout: checkOutSlice,
     search: searchReducer,
     header: headerReducer,
     [bannerService.reducerPath]: bannerService.reducer,
