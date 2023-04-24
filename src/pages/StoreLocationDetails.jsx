@@ -4,6 +4,7 @@ import StoreDetailsBanner from "../components/StoreLocator/StoreDetails/StoreDet
 import StoreLocationDetails from "../components/StoreLocator/StoreDetails/StoreLocationDetails/StoreLocationDetails";
 import StoreOffers from "../components/StoreLocator/StoreDetails/StoreOffers/StoreOffers";
 import ProductsAvailInStore from "../components/StoreLocator/StoreDetails/ProductsAvailInStore/ProductsAvailInStore";
+import StoreMap from "../components/StoreLocator/StoreDetails/StoreMap/StoreMap";
 
 const StoreLocationDetailsPage = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const StoreLocationDetailsPage = () => {
       <StoreLocationDetails/>
       <StoreOffers/>
       <ProductsAvailInStore/>
+      <StoreMap/>
     </div>
   );
 };

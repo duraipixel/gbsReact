@@ -1,0 +1,43 @@
+.contact-map-section {
+  margin-bottom: 40px;
+  h2 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+}
+.contact-map iframe {
+  position: relative !important;
+  width: 808px;
+  height: 502px;
+  border: none !important;
+}
+.contact-card {
+  position: absolute;
+  width: 689px;
+  height: 280px;
+  background: #ffffff;
+  box-shadow: 7px 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  left: 700px;
+  margin-top: 111px;
+  padding: 40px;
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 25px;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
