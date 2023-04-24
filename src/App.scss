@@ -732,3 +732,10 @@ button[loading="true"] {
   background: white;
   display: block;
 }
+.btn-sm[loading=true]::after {
+  top: 20% !important;
+  left: 4% !important;
+}
+.custom-btn[loading=true]::after  {
+  left: 16% !important;
+}

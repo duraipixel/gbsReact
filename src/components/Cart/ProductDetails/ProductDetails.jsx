@@ -7,7 +7,6 @@ import { useState } from "react";
 import { removeFromCartApi, updateCartApi } from "services/product.serice";
 import { toast } from "react-hot-toast";
 import { AuthUser } from "utils";
-import { BiRepeat } from "react-icons/bi";
 
 const ProductDetails = ({ cartProduct }) => {
   return (
