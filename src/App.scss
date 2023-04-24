@@ -242,7 +242,7 @@ a {
   margin-left: 2rem;
 }
 
-.slick-slide>div {
+.slick-slide > div {
   display: grid;
   place-items: center;
 }
@@ -604,21 +604,14 @@ h5 {
   }
 }
 
-.btn-sm[loading=true]::after {
-  top: 20% !important;
-  left: 4% !important;
-}
-.custom-btn[loading=true]::after  {
-  left: 16% !important;
-}
-button[loading=true] {
+button[loading="true"] {
   pointer-events: none;
   position: relative;
   opacity: 1 !important;
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -628,7 +621,7 @@ button[loading=true] {
   }
 
   &::after {
-    content: '';
+    content: "";
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -636,8 +629,8 @@ button[loading=true] {
     border: 0.25em solid white;
     border-right-color: transparent;
     border-radius: 50%;
-    -webkit-animation: spinner-border .75s linear infinite;
-    animation: spinner-border .75s linear infinite;
+    -webkit-animation: spinner-border 0.75s linear infinite;
+    animation: spinner-border 0.75s linear infinite;
     position: absolute;
     top: 22%;
     left: 42%;
@@ -688,7 +681,7 @@ button[loading=true] {
     }
 
     &::before {
-      content: '•';
+      content: "•";
       margin-right: 10px;
     }
   }
@@ -705,7 +698,7 @@ button[loading=true] {
     }
   }
 
-  @media (min-width:992px) {
+  @media (min-width: 992px) {
     height: 40px;
     width: 40px !important;
     border-radius: 100%;
@@ -719,18 +712,17 @@ button[loading=true] {
   }
 }
 
-
 .action-group {
-  @media (max-width:767px) {
-      display: flex;
-      flex-direction: column;
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
   }
 
-  @media (min-width:768px) {
-      position: relative;
-      display: inline-flex;
-      vertical-align: middle;
-      align-items: center;
+  @media (min-width: 768px) {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
   }
 }
 .product-thumnail {
@@ -738,5 +730,5 @@ button[loading=true] {
   height: 60px;
   object-fit: contain;
   background: white;
-  display: block
+  display: block;
 }
