@@ -6,7 +6,7 @@ import PlusSign from "assets/images/Cart/PlusSign.png";
 import MinusSign from "assets/images/Cart/MinusSign.png";
 import RefreshBtn from "assets/images/Cart/refreshBtn.png";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "redux/features/cartSlice";
+import { removeCart, setCart } from "redux/features/cartSlice";
 import { FaTrash } from "react-icons/fa";
 
 const ProductDetails = () => {
@@ -44,14 +44,14 @@ const ProductDetails = () => {
                   src={MinusSign}
                   alt="MinusSign"
                   style={{ paddingRight: "5px" }}
-                  onClick={() => dispatch(decrement())}
+                  onClick={() => dispatch(setCart())}
                 />
                 <span> {count} </span>
                 <img
                   src={PlusSign}
                   alt="PlusSign"
                   style={{ paddingLeft: "5px" }}
-                  onClick={() => dispatch(increment())}
+                  onClick={() => dispatch(removeCart())}
                 />
               </td>
               <td>

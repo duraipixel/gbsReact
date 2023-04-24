@@ -80,6 +80,32 @@ const AuthUser = () => {
   }
   return false
 }
+function checkCartBucket(product_id) {
+  let currentCart = JSON.parse(localStorage.getItem('cart_list'));
+  if (currentCart !== null) {
+    function isExists(CurrentTest) {
+      return CurrentTest.id === product_id;
+    }
+    var Result = currentCart.find(isExists)
+    if (Result !== undefined) {
+      return true
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+}
+
+function strRandom(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
 export {
   AppScroller,
   openInNewTab,
@@ -90,5 +116,7 @@ export {
   Image,
   Alert,
   AuthUser,
-  setAuthUser
+  setAuthUser,
+  checkCartBucket,
+  strRandom
 };

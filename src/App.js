@@ -2,7 +2,7 @@ import "./App.scss";
 import "animate.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
-import { Loader } from "utils";
+import { Loader, strRandom } from "utils";
 import {
   AboutPage,
   CartPage,
@@ -30,6 +30,9 @@ import {
 } from "lazy";
 
 function App() {
+  if(localStorage.getItem('guest_token') === null) {
+    localStorage.setItem('guest_token',strRandom(100))
+  }
   return (
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
