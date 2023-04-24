@@ -1,3 +1,4 @@
+import AddCartButton from 'components/AddCartButton'
 import { Accordion } from 'react-bootstrap'
 
 function ProductAddOns({ product }) {
@@ -40,20 +41,17 @@ function ProductAddOns({ product }) {
             }
             <hr />
             {
-                product.frequently_purchased.length !== 0 &&     <>
+                product.frequently_purchased.length !== 0 && <>
                     <h5>This Product is Frequently purchased with</h5>
                     <div className="list-group list-group-flush bg-light">
                         {
                             product.frequently_purchased.map((item, key) => (
-                                <div className="px-0 bg-light d-flex align-items-center justify-content-between list-group-item list-group-item-action">
+                                <div key={key} className="px-0 bg-light d-flex align-items-center justify-content-between list-group-item list-group-item-action">
                                     <div className='d-flex'>
                                         <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                         <div className='ps-3'>
                                             <span >{item.product_name.substring(0, 60)}</span>
-                                            <label className='mt-2 text-primary d-block' htmlFor={`Frequently_${key}`}>
-                                                <input type="checkbox" id={`Frequently_${key}`} className='form-check-input me-2 rounded-0 border border-primary' />
-                                                Selected
-                                            </label>
+                                            <AddCartButton type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} /> 
                                         </div>
                                     </div>
                                     <div className="text-info fw-bold ps-2">

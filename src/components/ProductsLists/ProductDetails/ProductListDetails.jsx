@@ -97,7 +97,7 @@ const ProductListDetails = () => {
                                         <path d="M15.2446 20.7937C16.1836 20.7937 16.9447 20.0326 16.9447 19.0936C16.9447 18.1546 16.1836 17.3934 15.2446 17.3934C14.3056 17.3934 13.5444 18.1546 13.5444 19.0936C13.5444 20.0326 14.3056 20.7937 15.2446 20.7937Z" stroke="#212363" strokeWidth="1.5" strokeMiterlimit="10" />
                                       </svg>
                                     </button>
-                                    <AddCartButton product={product} className="btn btn-primary"/>
+                                    <AddCartButton type='button' product={product} className="btn btn-primary"/>
                                   </div>
                                 </div>
                               </div>

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-hot-toast';
 import { addToCartApi, removeFromCartApi } from 'services/product.serice';
-import { AuthUser, strRandom } from 'utils';
+import { AuthUser } from 'utils';
 const initialCount = JSON.parse(localStorage.getItem('cart_list'))
 const initialState = {
   value: initialCount ? initialCount.length : 0,
