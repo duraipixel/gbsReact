@@ -33,6 +33,7 @@ function Login() {
         data: response.data.customer_data,
         isLoggedIn: true
       }))
+      document.querySelector('nav').classList.toggle('sticky-top')
       dispatch(setLayoutStatus({
         status: false,
         type: 'login'

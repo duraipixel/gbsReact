@@ -8,7 +8,8 @@ import { setAdressForm } from '../../../redux/features/addressSlice'
 import SweetAlert from "react-bootstrap-sweetalert";
 import { toast } from "react-hot-toast";
 import { useEffect } from "react";
-const AddressBookDetails = ({ selectType }) => {
+import { setBillingAddress, setShippingAddress } from "redux/features/cartAddressSlice";
+const AddressBookDetails = ({ selectType, modalType }) => {
   const [modalShow, setModalShow] = useState(false);
   const address = useSelector((state) => state.address.value)
   const dispatch = useDispatch()
@@ -30,10 +31,16 @@ const AddressBookDetails = ({ selectType }) => {
     const { data } = await setDefaultAddressApi(id)
     toast.success(data?.message)
     fetchData()
+    if (modalType === 'SHIPPING_ADDRESS') {
+      dispatch(setShippingAddress(data.addresses[0]))
+    } else {
+      dispatch(setBillingAddress(data.addresses[0]))
+    }
   }
-  useEffect(() => {
+  useEffect(() => { 
     fetchData()
   }, [address])
+
   return (
     <div className="address-book-details">
       <div className="flex-jc-btwn align-c flex-wrap mb-3">

@@ -1,15 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import CheckoutButton from "components/CheckoutButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { shippingChargesApi } from "services/product.serice";
 import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDetails";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import { setAdressForm } from "redux/features/addressSlice";
 const CartDetails = ({ checkoutData }) => {
   const authUser = useSelector((state) => state.auth)
+  const myAddress = useSelector((state) => state.address.value)
+  const address = useSelector((state) => state.cartAddress)
+  const dispatch = useDispatch()
   const [shippingMethod, setShippingMethod] = useState('Standard_Shipping')
+  const [addressModalType, setAddressModalType] = useState('')
+  const [addressForm, setAddressForm] = useState(false)
   const [shippingTypes, setshippingTypes] = useState([])
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     if (shippingMethod === 'Standard_Shipping' && checkoutData) {
       shippingChargesApi(checkoutData.product_tax_exclusive_total_without_format).then(response => {
@@ -17,6 +24,12 @@ const CartDetails = ({ checkoutData }) => {
       })
     }
   }, [checkoutData])
+  const addAddresHandler = (type) => {
+    setAddressForm(true);
+    setAddressModalType(type);
+    // setShow(!show)
+    dispatch(setAdressForm({ status: true, type: 'CREATE' }));
+  }
   if (checkoutData) return (
     <>
       <div className="position-relative" >
@@ -89,34 +102,54 @@ const CartDetails = ({ checkoutData }) => {
                   <div>
                     <h5 className="text-primary d-flex align-items-center justify-content-between">
                       Shipping Address
-                      <button className="fs-14 btn btn-sm" onClick={() => setShow(!show)}>
-                        Change Address
-                      </button>
+                      {
+                        typeof (myAddress) === 'object' && myAddress.length === 0 ?
+                          <button className="fs-14 btn btn-sm" onClick={() => { addAddresHandler('SHIPPING_ADDRESS') }}>
+                            Add Address
+                          </button>
+                          :
+                          <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('SHIPPING_ADDRESS'); setShow(!show) }}>
+                            Change Address
+                          </button>
+                      }
                     </h5>
-                    <div>
-                      Kabir L <br />
-                      <p className="address-details">
-                        1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West, Chennai, Tamil Nadu 600040
-                      </p>
-                    </div>
+                    {
+                      address.shipping_address ?
+                        <div>
+                          {address.shipping_address?.name} <br />
+                          <p className="address-details">
+                            {address.shipping_address?.address_line1} ,{address.shipping_address?.city} - {address.shipping_address?.post_code},{address.shipping_address?.state}, {address.shipping_address?.country}
+                          </p>
+                        </div>
+                        : null
+                    }
                   </div>
               }
-
               <div className="line-spacer"></div>
               <div>
                 <h5 className="text-primary d-flex align-items-center justify-content-between">
                   Billing Address
-                  <button className="fs-14 btn btn-sm">
-                    Change Address
-                  </button>
+                  {
+                    typeof (myAddress) === 'object' && myAddress.length === 0 ?
+                      <button className="fs-14 btn btn-sm" onClick={() => { addAddresHandler('BILLING_ADDRESS') }}>
+                        Add Address
+                      </button>
+                      :
+                      <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('BILLING_ADDRESS'); setShow(!show) }}>
+                        Change Address
+                      </button>
+                  }
                 </h5>
-                <div>
-                  Kabir L <br />
-                  <p className="address-details">
-                    1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West,
-                    Chennai, Tamil Nadu 600040
-                  </p>
-                </div>
+                {
+                  address.billing_address !== null ?
+                    <div>
+                      {address.billing_address?.name} <br />
+                      <p className="address-details">
+                        {address.billing_address?.address_line1} ,{address.billing_address?.city} - {address.billing_address?.post_code},{address.billing_address?.state}, {address.billing_address?.country}
+                      </p>
+                    </div>
+                    : null
+                }
               </div>
               <div className="line-spacer"></div>
             </>
@@ -150,7 +183,7 @@ const CartDetails = ({ checkoutData }) => {
           <Modal.Title>Address</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddressBookDetails selectType="checkbox" />
+          <AddressBookDetails openCreateForm={addressForm} selectType="checkbox" modalType={addressModalType} />
         </Modal.Body>
       </Modal>
     </>

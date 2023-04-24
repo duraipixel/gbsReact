@@ -4,9 +4,10 @@ import { useForm } from "react-hook-form";
 import { addAddress, setAdressForm } from "redux/features/addressSlice";
 import { MdOutlineClose } from "react-icons/md";
 import { AuthUser } from 'utils';
-import { updateOrCreateAddressApi } from 'services/customer.service';
+import { customerAddressApi, updateOrCreateAddressApi } from 'services/customer.service';
 import { toast } from 'react-hot-toast';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { setShippingAddress } from 'redux/features/cartAddressSlice';
 function AddressForm() {
   const address = useSelector((state) => state.address)
   const dispatch = useDispatch()
@@ -24,7 +25,20 @@ function AddressForm() {
     dispatch(addAddress({ status: false, value: data.addresses }))
     reset()
   };
+  const [addressMaster, setAdressMaster] = useState([])
+  const [countryMaster, setCountryMaster] = useState([])
+  const [stateMaster, setStateMaster] = useState([])
+  const getMasters = async () => {
+    const { data } = await customerAddressApi()
+    dispatch(setShippingAddress(data.addresses[0]))
+    setAdressMaster(data.address_type)
+    setStateMaster(data.state)
+    setCountryMaster(data.country)
+  }
   useEffect(() => {
+    if(AuthUser()) {
+      getMasters()
+    }
     if (address?.edit_value) {
       setValue('id', address?.edit_value?.id)
       setValue('name', address?.edit_value?.name)
@@ -45,7 +59,6 @@ function AddressForm() {
       show={true}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
-      centered
       className="new-address-modal"
     >
       <Modal.Header className='bg-light'>
@@ -121,7 +134,7 @@ function AddressForm() {
                 className={`${errors.address_type_id ? 'border-danger' : ''}`} >
                 <option>-- Choose --</option>
                 {
-                  JSON.parse(localStorage.getItem('address_type')).map((address_type) => (
+                  addressMaster.length !== 0 && addressMaster.map((address_type) => (
                     <option key={address_type.id} value={address_type.id}>{address_type.name}</option>
                   ))
                 }
@@ -182,7 +195,7 @@ function AddressForm() {
                 className={`${errors.state ? 'border-danger' : ''}`} >
                 <option>-- Choose --</option>
                 {
-                  JSON.parse(localStorage.getItem('state')).map((state) => (
+                  stateMaster.length !== 0 && stateMaster.map((state) => (
                     <option key={state.id} value={state.id}>{state.state_name}</option>
                   ))
                 }
@@ -200,7 +213,7 @@ function AddressForm() {
                 className={`${errors.country ? 'border-danger' : ''}`} >
                 <option>-- Choose --</option>
                 {
-                  JSON.parse(localStorage.getItem('country')).map((country) => (
+                  countryMaster.length !== 0 && countryMaster.map((country) => (
                     <option key={country.id} value={country.id}>{country.name}</option>
                   ))
                 }

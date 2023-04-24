@@ -9,11 +9,13 @@ import authLayoutReducer from 'redux/features/authLayoutSlice';
 import compareSlice from 'redux/features/compareSlice';
 import addressSlice from 'redux/features/addressSlice';
 import checkOutSlice from 'redux/features/checkOutSlice';
+import cartAddressSlice from 'redux/features/cartAddressSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     address: addressSlice,
+    cartAddress: cartAddressSlice,
     compareProducts: compareSlice,
     authLayout: authLayoutReducer,
     cart: cartReducer,
