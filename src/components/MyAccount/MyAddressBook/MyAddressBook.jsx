@@ -4,7 +4,7 @@ import AddressBookDetails from "./AddressBookDetails";
 function MyAddressBook() {
   return (
     <Row>
-      <AddressBookDetails />
+      <AddressBookDetails selectType="button" />
     </Row>
   );
 }

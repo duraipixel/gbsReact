@@ -739,3 +739,8 @@ button[loading="true"] {
 .custom-btn[loading=true]::after  {
   left: 16% !important;
 }
+.btn-close-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
