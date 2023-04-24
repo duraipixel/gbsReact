@@ -2,10 +2,11 @@ import axios from "axios";
 import { setAuthUser } from "utils";
 
 export const LoginApi = async (credentials) => {
-    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, credentials); 
+    credentials['guest_token'] = localStorage.getItem('guest_token')
+    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, credentials);
     setAuthUser(response.data.customer)
     localStorage.setItem("user_verfied", true)
-    return  response
+    return response
 }
 
 export const Logout = () => {

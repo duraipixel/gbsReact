@@ -17,7 +17,13 @@ export const removeFromCartApi = async (data) => {
 export const cartListApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/cart`, {
         customer_id: AuthUser()?.id,
-        guest_token: localStorage.getItem('guest_token'),
+        guest_token: AuthUser() === false ? localStorage.getItem('guest_token') : "",
+    });
+}
+export const shippingChargesApi = async (amount) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/shipping/charges`, {
+        customer_id: AuthUser()?.id,
+        amount: amount,
     });
 }
 
