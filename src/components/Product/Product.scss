@@ -185,11 +185,11 @@
     border: 2px solid #F1000A;
 }
 
-input[name=addon]:checked+.btn-add-on {
+input.addon:checked+.btn-add-on {
     border: 2px solid #F1000A !important;
 }
 
-input[name=addon] {
+input.addon {
     visibility: hidden;
     position: absolute;
     z-index: -1;

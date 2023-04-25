@@ -1,27 +1,16 @@
 import AddCartButton from 'components/AddCartButton'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Accordion } from 'react-bootstrap'
 import { toast } from 'react-hot-toast'
 import { updateCartApi } from 'services/product.serice'
 
 function ProductAddOns({ product, cartId, setCartId }) {
-    const addonHandler = async (addon, item) => {
-        const { data } = await updateCartApi({
-            cart_id: cartId,
-            quantity: 1,
-            addon_id: addon.id,
-            addon_item_id: item.id,
-        })
-        if (data.error === 0) {
-            toast.success(data.message)
-        }
-    }
     return (
         <>
             {
                 product.addons.length &&
                 <>
-                    <h5>Personalized Add-ons for your Product {cartId}</h5>
+                    <h5>Personalized Add-ons for your Product  </h5>
                     <Accordion defaultActiveKey="0" flush>
                         {
                             product.addons.map((addon, i) => (
@@ -38,12 +27,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                     <Accordion.Body>
                                         <div className="d-md-inline-flex g-3">
                                             {addon.items.map((item, key) => (
-                                                <Fragment key={key}>
-                                                    <input type="radio" checked={item.is_selected} name="addon" onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${i}_add_on_${key}`} />
-                                                    <label key={key} className='btn-add-on' htmlFor={`form_${i}_add_on_${key}`}>
-                                                        {item.label}<span className="text-info">₹{item.amount}</span>
-                                                    </label>
-                                                </Fragment>
+                                                <AddOnInput addon={addon} cartId={cartId} item={item} key={key} index={i} secIndex={key} />
                                             ))}
                                         </div>
                                     </Accordion.Body>
@@ -78,6 +62,30 @@ function ProductAddOns({ product, cartId, setCartId }) {
                 </>
             }
 
+        </>
+    )
+}
+
+const AddOnInput = ({ item, index, cartId, secIndex , addon}) => {
+    const addonHandler = async (addon, item) => {
+        const { data } = await updateCartApi({
+            cart_id: cartId,
+            quantity: 1,
+            addon_id: addon.id,
+            addon_item_id: item.id,
+        })
+        if (data.error === 0) {
+            toast.success(data.message)
+            setIsChecked(true)
+        }
+    }
+    const [isChecked, setIsChecked] = useState(item.is_selected)
+    return (
+        <>
+            <input type="radio" checked={isChecked} className='addon' name={`add_on_${addon.id}`} onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
+            <label className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
+                {item.label}<span className="text-info">₹{item.amount}</span>
+            </label>
         </>
     )
 }
