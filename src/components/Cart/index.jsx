@@ -36,16 +36,14 @@ const CartProduct = () => {
   if (fetching) return <Loader />
   if (cartProduct.length) {
     return (
-      <section className="bg-off-grey">
+      <section className="bg-off-grey py-4">
         <Container>
           <Row>
             <Col lg={8} className="align-self-start">
               <ProductDetails cartProduct={cartProduct} setCheckoutData={setCheckoutData} fetchCartData={fetchCartData} />
             </Col>
             <Col lg={4} className="align-self-start">
-              <Col className="card-cart p-4 pb-1">
-                <CartDetails checkoutData={checkoutData} />
-              </Col>
+              <CartDetails checkoutData={checkoutData} />
             </Col>
           </Row>
         </Container>
