@@ -1,13 +1,12 @@
 
 import { useDispatch } from "react-redux";
-import { BsDash, BsPlus } from "react-icons/bs";
+import { BsDash, BsPlus, BsX } from "react-icons/bs";
 import { removeCart } from "redux/features/cartSlice";
 import { FaTrash } from "react-icons/fa";
 import { useState } from "react";
 import { clearCartList, removeFromCartApi, updateCartApi } from "services/product.serice";
 import { toast } from "react-hot-toast";
 import { AuthUser } from "utils";
-import { BiRepeat } from "react-icons/bi";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import SweetAlert from "react-bootstrap-sweetalert";
@@ -28,6 +27,16 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         toast.success(response.data.message)
         setCouponApplyed(true)
         setCheckoutData(response.data.cart_info.cart_total)
+      }
+    });
+  }
+  const removeAddons = (data) => {
+    axios.post(`${process.env.REACT_APP_BASE_URL}/delete/addon`, data).then((response) => {
+      if (response.data.error) {
+        toast.error(response.data.message)
+      } else {
+        toast.success(response.data.message)
+        fetchCartData()
       }
     });
   }
@@ -59,13 +68,40 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
             cartProduct?.length ?
               cartProduct.map(product => (
                 <li key={product.id} className="d-md-flex gap-3 align-items-center justify-content-between list-group-item">
-                  <div className='d-md-flex col-lg-8 align-items-center'>
+                  <div className='d-md-flex col-lg-8 '>
                     <img src={product.image} alt="product-thumnail" className='product-thumnail' />
                     <div className='ps-md-3'>
                       <span className="fs-14">{product.product_name}</span>
                       <div className="text-info fw-bold mt-2 mb-2 mb-md-0">
                         ₹{product.price}
                       </div>
+                      {
+                        product.addons.length > 0 ?
+                          <ul className="border-top mt-3">
+                            {
+                              product.addons.map(item => (
+                                <li key={item.id} className="mt-2 d-flex align-items-center">
+                                  <div>
+                                    <img src={item.icon} alt={item?.title} width={35} />
+                                  </div>
+                                  <div className="ms-2">
+                                    <span className="text-info">{item?.title}</span>
+                                    <div className="d-flex">
+                                      {item?.addon_item_label}
+                                      <span className="fw-bold ms-1">  ₹{item?.amount}</span>
+                                      <span onClick={() => removeAddons({
+                                        addon_id: item.addon_item_id,
+                                        cart_id: product.cart_id,
+                                        product_id: product.id,
+                                      })} className="btn btn-sm text-primary py-0 ms-2"> <BsX /> remove</span>
+                                    </div>
+                                  </div>
+                                </li>
+                              ))
+                            }
+                          </ul>
+                          : ""
+                      }
                     </div>
                   </div>
                   <ProductQuantityInput product={product} />

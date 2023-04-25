@@ -4,11 +4,12 @@ import { toast } from 'react-hot-toast'
 import { updateCartApi } from 'services/product.serice'
 
 function ProductAddOns({ product, cartId, setCartId }) {
-    const addonHandler = async (addon) => {
+    const addonHandler = async (addon, item) => {
         const { data } = await updateCartApi({
             cart_id: cartId,
             quantity: 1,
-            addon_id: addon.id
+            addon_id: addon.id,
+            addon_item_id: item.id,
         })
         if (data.error === 0) {
             toast.success(data.message)
@@ -37,7 +38,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                         <div className="d-md-inline-flex g-3">
                                             {addon.items.map((item, key) => (
                                                 <>
-                                                    <input type="radio" name="addon" onChange={() => addonHandler(item)} value={item.id} id={`form_${i}_add_on_${key}`} />
+                                                    <input type="radio" name="addon" onChange={() => addonHandler(addon,item)} value={item.id} id={`form_${i}_add_on_${key}`} />
                                                     <label key={key} className='btn-add-on' htmlFor={`form_${i}_add_on_${key}`}>
                                                         {item.label}<span className="text-info">₹{item.amount}</span>
                                                     </label>
