@@ -14,9 +14,10 @@ const CartProduct = () => {
   const [cartProduct, setCartProduct] = useState([])
   const [checkoutData, setCheckoutData] = useState(null)
   const dispatch = useDispatch()
-  const authUser = useSelector((state) => state.auth) 
-  const fetchCartData = () => {
-    cartListApi().then(response => {
+  const authUser = useSelector((state) => state.auth)
+  const fetchCartData = async () => {
+    const response = await cartListApi()
+    if (response) {
       setCartProduct(response.data?.carts)
       setCheckoutData(response.data?.cart_total)
       if (response.data?.carts?.length > 0) {
@@ -25,8 +26,9 @@ const CartProduct = () => {
           data: response.data?.carts,
         }))
       }
-      setfetching(false)
-    })
+    }
+    setfetching(false)
+    return response;
   }
   useEffect(() => {
     fetchCartData()
@@ -38,7 +40,7 @@ const CartProduct = () => {
         <Container>
           <Row>
             <Col lg={8} className="align-self-start">
-              <ProductDetails cartProduct={cartProduct} />
+              <ProductDetails cartProduct={cartProduct} setCheckoutData={setCheckoutData} fetchCartData={fetchCartData} />
             </Col>
             <Col lg={4} className="align-self-start">
               <Col className="card-cart p-4 pb-1">

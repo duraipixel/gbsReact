@@ -14,8 +14,9 @@ export const updatePasswordApi = async (data) => {
 }
 
 export const customerAddressApi = async (data) => {
+    if(AuthUser() === false) return false;
     const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/get/addresses`, {
-        customer_id: AuthUser()?.id
+        customer_id: AuthUser().id
     });
     localStorage.setItem("customer_address", JSON.stringify(response.data.addresses))
     localStorage.setItem("address_type", JSON.stringify(response.data.address_type))
@@ -25,6 +26,7 @@ export const customerAddressApi = async (data) => {
 }
 
 export const updateOrCreateAddressApi = async (data) => {
+    if(AuthUser() === false) return false;
     const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/save/customer/address`, data);
     localStorage.setItem("customer_address", JSON.stringify(response.data.addresses))
     return response

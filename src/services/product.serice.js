@@ -13,7 +13,6 @@ export const addToCartApi = async (data) => {
 export const removeFromCartApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/delete/cart`, data);
 }
-
 export const cartListApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/cart`, {
         customer_id: AuthUser()?.id,
@@ -26,7 +25,12 @@ export const shippingChargesApi = async (amount) => {
         amount: amount,
     });
 }
-
 export const updateCartApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/update/cart`, data);
+}
+export const clearCartList = async (data) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/clear/cart`, {
+        customer_id: AuthUser()?.id,
+        guest_token: AuthUser() === false ? localStorage.getItem('guest_token') : "",
+    });
 }
