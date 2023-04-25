@@ -5,11 +5,11 @@ import ServiceCenterLocationDetails from "components/ServiceCenter/ServiceCenter
 import ServiceWeOffer from "components/ServiceCenter/ServiceCenterDetails/ServiceWeOffer";
 import ServiceStoreMap from "components/ServiceCenter/ServiceStoreMap/ServiceStoreMap";
 import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { scrollToTop } from "utils";
 
 const ServiceCenterDetails = () => {
-  // const { store_slug } = useParams();
+  const { store_slug } = useParams();
   // console.log(store_slug);
 
   const [serviceCenterData, setServiceCenterData] = useState();
@@ -22,7 +22,7 @@ const ServiceCenterDetails = () => {
   const getData = () => {
     return axios
       .post(`${process.env.REACT_APP_BASE_URL}/serviceCenterDetail`, {
-        center_id: "2",
+        slug: {store_slug},
       })
       .then((res) => {
         setServiceCenterData(res.data);
