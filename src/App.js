@@ -60,7 +60,7 @@ function App() {
             <Route path="/store-locator" element={<StoreLocatorPage />} />
             <Route path="/store-location-details" element={<StoreLocationDetailsPage />} />
             <Route path="/service-center-locator" element={<ServiceCenterLocator />} />
-            <Route path="/service-center-details" element={<ServiceCenterDetails />} />
+            <Route path="/service-center-details/:store_slug" element={<ServiceCenterDetails />} />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />

@@ -13,9 +13,9 @@ const ServiceStoreMap = () => {
         <Col>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.978246723673!2d80.25000829999999!3d12.973243099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d695f6bc21b%3A0xa5a81440ba84c7b9!2s390%2C%20Rajiv%20Gandhi%20Salai%2C%20Nehru%20Nagar%2C%20OMR%2C%20Chennai%2C%20Tamil%20Nadu%20600041!5e0!3m2!1sen!2sin!4v1682402042070!5m2!1sen!2sin"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
             title="Contact Map"
           ></iframe>
         </Col>
