@@ -34,3 +34,10 @@ export const clearCartList = async (data) => {
         guest_token: AuthUser() === false ? localStorage.getItem('guest_token') : "",
     });
 }
+export const addOrRemoveWhishListApi = async (data) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/add/remove/whishlist`, {
+        customer_id: AuthUser()?.id,
+        product_id : data.product_id,
+        status     : data.status,
+    });
+}
