@@ -4,6 +4,7 @@ import { FiPhone } from "react-icons/fi";
 import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 const LocationContent = () => {
   return (
@@ -24,7 +25,7 @@ const LocationContent = () => {
             </div>
           </div>
           <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-            <button className="btn-red-outline">More Details</button>
+            <Link  to="/store-location-details" className="btn-red-outline">More Details</Link>
             <div>
               <p>Find us on</p>
               <img
@@ -50,7 +51,7 @@ const LocationContent = () => {
             </div>
           </div>
           <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-            <button className="btn-red-outline">More Details</button>
+            <Link className="btn-red-outline">More Details</Link>
             <div>
               <p>Find us on</p>
               <img
@@ -76,7 +77,7 @@ const LocationContent = () => {
             </div>
           </div>
           <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-            <button className="btn-red-outline">More Details</button>
+            <Link className="btn-red-outline">More Details</Link>
             <div>
               <p>Find us on</p>
               <img
@@ -102,7 +103,7 @@ const LocationContent = () => {
             </div>
           </div>
           <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-            <button className="btn-red-outline">More Details</button>
+            <Link className="btn-red-outline">More Details</Link>
             <div>
               <p>Find us on</p>
               <img
@@ -128,7 +129,7 @@ const LocationContent = () => {
             </div>
           </div>
           <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-            <button className="btn-red-outline">More Details</button>
+            <Link className="btn-red-outline">More Details</Link>
             <div>
               <p>Find us on</p>
               <img
@@ -154,7 +155,7 @@ const LocationContent = () => {
             </div>
           </div>
           <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-            <button className="btn-red-outline">More Details</button>
+            <Link className="btn-red-outline">More Details</Link>
             <div>
               <p>Find us on</p>
               <img
@@ -166,7 +167,7 @@ const LocationContent = () => {
         </div>
         <hr />
         <div className="flex-center mt-3">
-          <button className="btn-trans mt-3 p-2 ps-4 pe-4">Load More</button>
+          <Link className="btn-trans mt-3 p-2 ps-4 pe-4">Load More</Link>
         </div>
       </Container>
     </section>
