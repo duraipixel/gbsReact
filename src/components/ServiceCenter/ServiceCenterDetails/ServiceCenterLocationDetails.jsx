@@ -8,7 +8,7 @@ const ServiceCenterLocationDetails = ({ serviceCenterData }) => {
     serviceCenterData && (
       <Container>
         <Row className="details-container">
-          <Col>
+          <Col lg={6}>
             <h2>{serviceCenterData.title}</h2>
             <p>
              {serviceCenterData.description}
@@ -23,8 +23,8 @@ const ServiceCenterLocationDetails = ({ serviceCenterData }) => {
               </p>
             </div>
           </Col>
-          <Col>
-            <img src={serviceCenterData.banner} alt="" />
+          <Col lg={6}>
+            <img src={serviceCenterData.banner} alt="" className="img-fluid" />
           </Col>
         </Row>
       </Container>

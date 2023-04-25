@@ -6,11 +6,13 @@ const StoreDetailsBanner = () => {
     <div className="img-banner">
       <img
         src={require("assets/Store/StoreBanner.png")}
+        style={{height:"400px", width:"100%"}}
         className="img-fluid"
         alt=""
       />
       <img
         className="img-fluid img-overlay"
+        style={{height:"400px", width:"100%"}}
         src={require("assets/Store/overlay.png")}
         alt=""
       />

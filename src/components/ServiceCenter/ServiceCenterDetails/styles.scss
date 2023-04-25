@@ -97,8 +97,11 @@
   }
 }
 @media (max-width: "768px") {
+  img{
+    max-height: 100px !important;
+  }
   .overlay-text {
-    top: 3rem;
+    top: 5rem;
     left: 2rem;
   }
   .img-banner > * {

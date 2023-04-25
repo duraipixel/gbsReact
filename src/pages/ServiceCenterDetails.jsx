@@ -36,8 +36,8 @@ const ServiceCenterDetails = () => {
       <ServiceCenterDetailBanner serviceCenterData={serviceCenterData}/>
       <ServiceCenterLocationDetails serviceCenterData={serviceCenterData}/>
       <ServiceWeOffer />
-      <ServiceStoreMap />
-      <Map360Degree />
+      <ServiceStoreMap serviceCenterData={serviceCenterData}/>
+      <Map360Degree serviceCenterData={serviceCenterData}/>
     </>
   );
 };

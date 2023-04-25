@@ -39,6 +39,9 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    svg {
+      min-width: 1rem;
+    }
   }
 }
 .map-360-div {
@@ -57,7 +60,7 @@
   }
 }
 @media (max-width: "992px") {
-  .contact-map  {
+  .contact-map {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -67,7 +70,7 @@
     height: 350px;
   }
   .contact-card {
-    position:static;
+    position: static;
     width: 95%;
     height: 100%;
     border-radius: 6px;
