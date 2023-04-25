@@ -20,6 +20,7 @@ const AddressBookDetails = ({ selectType, modalType }) => {
     const { data } = await customerAddressApi()
     setAddress(data.addresses)
   }
+  document.querySelector('nav').classList.toggle('sticky-top')
   const deleteAddress = async () => {
     const { data } = await deleteAddressApi(addressesId)
     toast.success(data?.message)

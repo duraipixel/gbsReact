@@ -9,7 +9,7 @@ function AuthModals() {
     const layout = useSelector((status) => status.authLayout)
     const closeLayout = () => {
         window.scroll(0, 0)
-        document.querySelector('nav').classList.toggle('sticky-top')
+        document.querySelector('nav').classList.remove('sticky-top')
         dispatch(setLayoutStatus({
             status: false,
             type: layout.type
