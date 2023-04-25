@@ -18,7 +18,7 @@ function ProductCarousel({
         ref={(slider) => action(slider)}
       >
         {images.map((item, i) => (
-          <div className="product-carousel-image-wrapper"  onClick={(e) => setPhotoIndex(i)}>
+          <div key={i} className="product-carousel-image-wrapper"  onClick={(e) => setPhotoIndex(i)}>
             <img
               src={item}
               alt="product-carousel"

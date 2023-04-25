@@ -1,4 +1,5 @@
 import AddCartButton from 'components/AddCartButton'
+import { Fragment } from 'react'
 import { Accordion } from 'react-bootstrap'
 import { toast } from 'react-hot-toast'
 import { updateCartApi } from 'services/product.serice'
@@ -37,12 +38,12 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                     <Accordion.Body>
                                         <div className="d-md-inline-flex g-3">
                                             {addon.items.map((item, key) => (
-                                                <>
-                                                    <input type="radio" name="addon" onChange={() => addonHandler(addon,item)} value={item.id} id={`form_${i}_add_on_${key}`} />
+                                                <Fragment key={key}>
+                                                    <input type="radio" checked={item.is_selected} name="addon" onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${i}_add_on_${key}`} />
                                                     <label key={key} className='btn-add-on' htmlFor={`form_${i}_add_on_${key}`}>
                                                         {item.label}<span className="text-info">₹{item.amount}</span>
                                                     </label>
-                                                </>
+                                                </Fragment>
                                             ))}
                                         </div>
                                     </Accordion.Body>
@@ -64,7 +65,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                         <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                         <div className='ps-3'>
                                             <span >{item.product_name.substring(0, 60)}</span>
-                                            <AddCartButton  type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} />
+                                            <AddCartButton type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} />
                                         </div>
                                     </div>
                                     <div className="text-info fw-bold ps-2">

@@ -11,11 +11,9 @@ function ProductBreadcrumb({ category, title }) {
           <path d="M1 13L7 7L1 1" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <Link active>
-        <span className="text-dark">
-          {title?.substring(1, 50)}
-        </span>
-      </Link>
+      <span className="text-dark">
+        {title?.substring(1, 50)}
+      </span>
     </div>
   );
 }
