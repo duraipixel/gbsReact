@@ -15,6 +15,8 @@ function ProductInformation({ product }) {
     const [information, setInformation] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
     const [loading, setLoading] = useState(false)
+    const [addOnsStatus, setAddOnsStatus] = useState(product.is_cart)
+    const [cartId, setCartId] = useState(product.cart_id)
     const {
         register,
         formState: { errors },
@@ -58,8 +60,8 @@ function ProductInformation({ product }) {
             </div>
             <div className="action-group mb-4">
                 <button className="mb-md-0 mb-3 btn btn-primary me-md-3 px-5 fw-semibold">Buy Now</button>
-                <AddCartButton type='button' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={product} />
-                <AddFavButton className="ms-md-3 mb-md-0 mb-3 btn btn-outline-info rounded-box-circle me-md-3" product={product}/>
+                <AddCartButton setCartId={setCartId} setAddOnsStatus={setAddOnsStatus} type='button' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={product} />
+                <AddFavButton className="ms-md-3 mb-md-0 mb-3 btn btn-outline-info rounded-box-circle me-md-3" product={product} />
                 <button className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle" onClick={() => dispatch(addProduct({ status: true, value: product }))}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
                         <path d="M2.61475 7.27423C2.61475 10.2697 2.61475 13.2653 2.61475 16.2608C2.61475 16.5846 2.69571 17.4752 3.42434 18.2038C4.55778 19.4992 6.33889 19.1753 6.50081 19.1753C6.50081 17.799 6.50081 16.3417 6.50081 14.9654L10.225 18.6896L6.41985 22.4947C6.41985 21.3612 6.41985 20.1468 6.50081 19.0134" stroke="#212363" strokeWidth="1.5" strokeMiterlimit="10" />
@@ -104,7 +106,7 @@ function ProductInformation({ product }) {
                 </div>
             </div>
             <ProductOverview product={product} />
-            <ProductAddOns product={product} />
+            {addOnsStatus === true && <ProductAddOns setCartId={setCartId} cartId={cartId} product={product} />}
         </div>
     )
 }

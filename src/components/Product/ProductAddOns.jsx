@@ -1,13 +1,25 @@
 import AddCartButton from 'components/AddCartButton'
 import { Accordion } from 'react-bootstrap'
+import { toast } from 'react-hot-toast'
+import { updateCartApi } from 'services/product.serice'
 
-function ProductAddOns({ product }) {
+function ProductAddOns({ product, cartId, setCartId }) {
+    const addonHandler = async (addon) => {
+        const { data } = await updateCartApi({
+            cart_id: cartId,
+            quantity: 1,
+            addon_id: addon.id
+        })
+        if (data.error === 0) {
+            toast.success(data.message)
+        }
+    }
     return (
         <>
             {
                 product.addons.length &&
                 <>
-                    <h5>Personalized Add-ons for your Product</h5>
+                    <h5>Personalized Add-ons for your Product {cartId}</h5>
                     <Accordion defaultActiveKey="0" flush>
                         {
                             product.addons.map((addon, i) => (
@@ -25,8 +37,7 @@ function ProductAddOns({ product }) {
                                         <div className="d-md-inline-flex g-3">
                                             {addon.items.map((item, key) => (
                                                 <>
-                                                {console.log(item)}
-                                                    <input type="radio" name="addon" value={item.id} id={`form_${i}_add_on_${key}`} />
+                                                    <input type="radio" name="addon" onChange={() => addonHandler(item)} value={item.id} id={`form_${i}_add_on_${key}`} />
                                                     <label key={key} className='btn-add-on' htmlFor={`form_${i}_add_on_${key}`}>
                                                         {item.label}<span className="text-info">₹{item.amount}</span>
                                                     </label>
@@ -52,7 +63,7 @@ function ProductAddOns({ product }) {
                                         <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                         <div className='ps-3'>
                                             <span >{item.product_name.substring(0, 60)}</span>
-                                            <AddCartButton type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} /> 
+                                            <AddCartButton  type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} />
                                         </div>
                                     </div>
                                     <div className="text-info fw-bold ps-2">

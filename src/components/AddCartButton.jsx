@@ -2,10 +2,10 @@ import { useState } from "react"
 import { toast } from "react-hot-toast"
 import { useDispatch } from "react-redux"
 import { removeCart, setCart } from "redux/features/cartSlice"
-import { removeFromCartApi } from "services/product.serice"
+import { addToCartApi, removeFromCartApi } from "services/product.serice"
 import { AuthUser, checkCartBucket, strRandom } from "utils"
 
-function AddCartButton({ className, product, type }) {
+function AddCartButton({ className, product, type, setAddOnsStatus, setCartId }) {
     const dispatch = useDispatch()
     const [isAddCart, setIsAddCart] = useState(checkCartBucket(product.id))
     const [loading, setLoading] = useState(false)
@@ -16,19 +16,39 @@ function AddCartButton({ className, product, type }) {
                 product_id: product.id,
                 customer_id: AuthUser()?.id,
                 guest_token: localStorage.getItem('guest_token'),
-            }).then((response) => { 
+            }).then((response) => {
                 if (response.data.error === 0) {
                     toast.success(response.data.message);
                     dispatch(removeCart(product))
                     setIsAddCart(false)
+                    if (setAddOnsStatus !== undefined) {
+                        setAddOnsStatus(false)
+                    }
                 } else {
                     toast.error('Network Error')
                 }
             })
-
         } else {
-            dispatch(setCart(product))
-            setIsAddCart(true)
+            addToCartApi({
+                product_id: product.id,
+                customer_id: AuthUser()?.id,
+                guest_token: localStorage.getItem('guest_token'),
+                quantity: 1
+            }).then((response) => {
+                if (response.data.error === 0) { 
+                    dispatch(setCart(product))
+                    toast.success(response.data.message);
+                    setIsAddCart(true)
+                    if (setAddOnsStatus !== undefined) {
+                        setAddOnsStatus(true)
+                    }
+                    if (setCartId !== undefined) {
+                        setCartId(response.data.data.carts[0].cart_id)
+                    }
+                } else {
+                    toast.error('Network Error')
+                }
+            })
         }
         setTimeout(() => setLoading(false), 200)
     }

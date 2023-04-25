@@ -25,19 +25,7 @@ export const cartSlice = createSlice({
       }
       if (localStorage.getItem('cart_list') !== undefined || localStorage.getItem('cart_list') !== null) {
         let currentCart = JSON.parse(localStorage.getItem('cart_list'));
-        localStorage.setItem('cart_list', JSON.stringify([...currentCart, action.payload]));
-        addToCartApi({
-          product_id: action.payload.id,
-          customer_id: AuthUser()?.id,
-          guest_token: localStorage.getItem('guest_token'),
-          quantity: 1
-        }).then((response) => {
-          if (response.data.error === 0) {
-            toast.success(response.data.message);
-          } else {
-            toast.error('Network Error')
-          }
-        })
+        localStorage.setItem('cart_list', JSON.stringify([...currentCart, action.payload])); 
       }
       var counter = state.value + 1
       return state = {
