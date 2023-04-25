@@ -1,4 +1,3 @@
-import React from "react";
 import { Col, Button, Modal, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";

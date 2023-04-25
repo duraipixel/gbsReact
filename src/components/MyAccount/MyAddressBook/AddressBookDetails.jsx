@@ -27,20 +27,39 @@ const AddressBookDetails = ({ selectType, modalType }) => {
     setAddressId(null)
     setAddress(data.addresses)
   }
-  const setDefaultAddressHanlder = async (id) => {
+  const setDefaultAddressHanlder = async (id, address) => {
     const { data } = await setDefaultAddressApi(id)
     toast.success(data?.message)
-    fetchData()
     if (modalType === 'SHIPPING_ADDRESS') {
-      dispatch(setShippingAddress(data.addresses[0]))
-    } else {
-      dispatch(setBillingAddress(data.addresses[0]))
+      dispatch(setShippingAddress(address))
+    }
+    if (modalType === 'BILLING_ADDRESS') {
+      dispatch(setBillingAddress(address))
     }
   }
-  useEffect(() => { 
+  useEffect(() => {
     fetchData()
   }, [address])
-
+  const checkIsAddress = (type, id) => {
+    if (type === 'SHIPPING_ADDRESS') {
+      const shipping_address = JSON.parse(localStorage.getItem("shipping_address"));
+      if (shipping_address?.customer_address_id === id) {
+        return true
+      }
+      else {
+        return false
+      }
+    }
+    if (type === 'BILLING_ADDRESS') {
+      const billing_address = JSON.parse(localStorage.getItem("billing_address"));
+      if (billing_address?.customer_address_id === id) {
+        return true
+      }
+      else {
+        return false
+      }
+    }
+  }
   return (
     <div className="address-book-details">
       <div className="flex-jc-btwn align-c flex-wrap mb-3">
@@ -68,7 +87,7 @@ const AddressBookDetails = ({ selectType, modalType }) => {
                     <div>
                       {
                         selectType === "checkbox" ?
-                          <input type="radio" checked={address?.is_default === "1"} className="me-3 form-check-input" name="default_address" onClick={() => setDefaultAddressHanlder(address?.customer_address_id)} id={address?.name} />
+                          <input type="radio" checked={checkIsAddress(modalType, address?.customer_address_id)} className="me-3 form-check-input" name="default_address" onChange={() => setDefaultAddressHanlder(address?.customer_address_id, address)} id={address?.name} />
                           : ""
                       }
                     </div>

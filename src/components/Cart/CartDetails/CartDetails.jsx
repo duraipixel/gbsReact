@@ -12,7 +12,7 @@ const CartDetails = ({ checkoutData }) => {
   const address = useSelector((state) => state.cartAddress)
   const dispatch = useDispatch()
   const [shippingMethod, setShippingMethod] = useState('Standard_Shipping')
-  const [addressModalType, setAddressModalType] = useState('')
+  const [addressModalType, setAddressModalType] = useState(null)
   const [addressForm, setAddressForm] = useState(false)
   const [shippingTypes, setshippingTypes] = useState([])
   const [show, setShow] = useState(false);
@@ -171,7 +171,7 @@ const CartDetails = ({ checkoutData }) => {
           </tbody>
         </table>
       </div>
-      <Modal
+      {addressModalType !== null && <Modal
         show={show}
         size="lg"
         onHide={() => setShow(!show)}
@@ -180,12 +180,14 @@ const CartDetails = ({ checkoutData }) => {
         scrollable={true}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Address</Modal.Title>
+          <Modal.Title>
+            {addressModalType === 'SHIPPING_ADDRESS' ? 'Shipping address' : "Billing address"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <AddressBookDetails openCreateForm={addressForm} selectType="checkbox" modalType={addressModalType} />
         </Modal.Body>
-      </Modal>
+      </Modal>}
     </>
   );
 };

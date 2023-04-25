@@ -7,7 +7,7 @@ import { AuthUser } from 'utils';
 import { customerAddressApi, updateOrCreateAddressApi } from 'services/customer.service';
 import { toast } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
-import { setShippingAddress } from 'redux/features/cartAddressSlice';
+
 function AddressForm() {
   const address = useSelector((state) => state.address)
   const dispatch = useDispatch()
@@ -30,15 +30,14 @@ function AddressForm() {
   const [stateMaster, setStateMaster] = useState([])
   const getMasters = async () => {
     const { data } = await customerAddressApi()
-    dispatch(setShippingAddress(data.addresses[0]))
-    setAdressMaster(data.address_type)
-    setStateMaster(data.state)
-    setCountryMaster(data.country)
+    if (data.status === "success") {
+      setAdressMaster(data.address_type)
+      setStateMaster(data.state)
+      setCountryMaster(data.country)
+    }
   }
   useEffect(() => {
-    if(AuthUser()) {
-      getMasters()
-    }
+    getMasters()
     if (address?.edit_value) {
       setValue('id', address?.edit_value?.id)
       setValue('name', address?.edit_value?.name)
@@ -132,7 +131,7 @@ function AddressForm() {
                   required: "This is required.",
                 })}
                 className={`${errors.address_type_id ? 'border-danger' : ''}`} >
-                <option>-- Choose --</option>
+                <option value="">-- Choose --</option>
                 {
                   addressMaster.length !== 0 && addressMaster.map((address_type) => (
                     <option key={address_type.id} value={address_type.id}>{address_type.name}</option>
@@ -193,7 +192,7 @@ function AddressForm() {
                   required: "This is required.",
                 })}
                 className={`${errors.state ? 'border-danger' : ''}`} >
-                <option>-- Choose --</option>
+                <option value="">-- Choose --</option>
                 {
                   stateMaster.length !== 0 && stateMaster.map((state) => (
                     <option key={state.id} value={state.id}>{state.state_name}</option>
@@ -211,7 +210,7 @@ function AddressForm() {
                   required: "This is required.",
                 })}
                 className={`${errors.country ? 'border-danger' : ''}`} >
-                <option>-- Choose --</option>
+                <option value="">-- Choose --</option>
                 {
                   countryMaster.length !== 0 && countryMaster.map((country) => (
                     <option key={country.id} value={country.id}>{country.name}</option>
