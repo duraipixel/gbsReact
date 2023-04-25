@@ -13,7 +13,7 @@ export const addToCartApi = async (data) => {
 export const removeFromCartApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/delete/cart`, data);
 }
-export const cartListApi = async (data) => {
+export const cartListApi = async () => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/cart`, {
         customer_id: AuthUser()?.id,
         guest_token: AuthUser() === false ? localStorage.getItem('guest_token') : "",
@@ -28,7 +28,7 @@ export const shippingChargesApi = async (amount) => {
 export const updateCartApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/update/cart`, data);
 }
-export const clearCartList = async (data) => {
+export const clearCartList = async () => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/clear/cart`, {
         customer_id: AuthUser()?.id,
         guest_token: AuthUser() === false ? localStorage.getItem('guest_token') : "",
@@ -39,5 +39,16 @@ export const addOrRemoveWhishListApi = async (data) => {
         customer_id: AuthUser()?.id,
         product_id : data.product_id,
         status     : data.status,
+    });
+}
+export const getWhishListApi = async () => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/whishlist`, {
+        customer_id: AuthUser()?.id,
+    });
+}
+
+export const clearWhishListApi = async () => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/clear/whishlist`, {
+        customer_id: AuthUser()?.id,
     });
 }
