@@ -41,7 +41,21 @@
     gap: 1rem;
   }
 }
-
+.map-360-div {
+  h2 {
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #000000;
+  }
+  iframe {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3.5rem;
+    height: 450px;
+  }
+}
 @media (max-width: "992px") {
   .contact-map  {
     display: flex;

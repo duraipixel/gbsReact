@@ -5,6 +5,7 @@ import StoreLocationDetails from "../components/StoreLocator/StoreDetails/StoreL
 import StoreOffers from "../components/StoreLocator/StoreDetails/StoreOffers/StoreOffers";
 import ProductsAvailInStore from "../components/StoreLocator/StoreDetails/ProductsAvailInStore/ProductsAvailInStore";
 import StoreMap from "../components/StoreLocator/StoreDetails/StoreMap/StoreMap";
+import Map360Degree from "components/Map360Degree";
 
 const StoreLocationDetailsPage = () => {
   useEffect(() => {
@@ -13,10 +14,11 @@ const StoreLocationDetailsPage = () => {
   return (
     <div>
       <StoreDetailsBanner />
-      <StoreLocationDetails/>
-      <StoreOffers/>
-      <ProductsAvailInStore/>
-      <StoreMap/>
+      <StoreLocationDetails />
+      <StoreOffers />
+      <ProductsAvailInStore />
+      <StoreMap />
+      <Map360Degree />
     </div>
   );
 };
