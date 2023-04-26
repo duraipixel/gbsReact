@@ -51,9 +51,16 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
               </div>
             );
           })}
-        <div className="flex-center mt-3">
-          <button className="btn-trans mt-3 p-2 ps-4 pe-4">Load More</button>
-        </div>
+        {serviceCenterFilteredData.data.length === 0 && (
+          <div className="flex-center mt-3">
+            <h2>No Data</h2>
+          </div>
+        )}
+        {serviceCenterFilteredData.data.length > 5 && (
+          <div className="flex-center mt-3">
+            <button className="btn-trans mt-3 p-2 ps-4 pe-4">Load More</button>
+          </div>
+        )}
       </Container>
     </section>
   );
