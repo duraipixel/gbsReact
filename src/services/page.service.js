@@ -22,3 +22,7 @@ export const homePageApi = async () => {
     }
     return false
 }
+
+export const getStoreLocatorApi = async (data) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/store-locator`,data);
+}

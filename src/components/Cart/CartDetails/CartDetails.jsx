@@ -6,6 +6,7 @@ import { shippingChargesApi } from "services/product.serice";
 import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDetails";
 import { Modal } from "react-bootstrap";
 import { setAdressForm } from "redux/features/addressSlice";
+import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
 const CartDetails = ({ checkoutData }) => {
   const authUser = useSelector((state) => state.auth)
   const myAddress = useSelector((state) => state.address.value)
@@ -84,20 +85,7 @@ const CartDetails = ({ checkoutData }) => {
                 <div className="line-spacer"></div>
                 {
                   shippingMethod === 'Pickup_From_Store' ?
-                    <div>
-                      <h5 className="text-primary d-flex align-items-center justify-content-between">
-                        Preferred Store for Pickup
-                        <button className="fs-14 btn btn-sm">
-                          Change Address
-                        </button>
-                      </h5>
-                      <div>
-                        GBS Systems, Anna Nagar <br />
-                        <p className="address-details">
-                          AA, 74, 4th Ave, AA Block, Shanthi Colony, Anna Nagar, Chennai, Tamil Nadu 600040
-                        </p>
-                      </div>
-                    </div>
+                    <PickupFromStoreAddress />
                     :
                     <div>
                       <h5 className="text-primary d-flex align-items-center justify-content-between">
