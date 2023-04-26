@@ -83,16 +83,16 @@ function ContactUs() {
                     <div className='row mt-5'>
 
                         <div className='col-lg-6'>
-                            <div class="deals-imgs stre-lctr">
-                                <img src={locator1} alt="" class="img-fluid" />
-                                <div class="btm-liner text-left"><h4>Store Locator</h4><Link to=''> Locate Us</Link></div>
+                            <div className="deals-imgs stre-lctr">
+                                <img src={locator1} alt="" className="img-fluid" />
+                                <div className="btm-liner text-left"><h4>Store Locator</h4><Link to=''> Locate Us</Link></div>
                             </div>
                         </div>
 
                         <div className='col-lg-6'>
-                            <div class="deals-imgs stre-lctr">
-                                <img src={locator1} alt="" class="img-fluid" />
-                                <div class="btm-liner text-left"><h4>Service Locator</h4><Link to=''> Locate Us</Link></div>
+                            <div className="deals-imgs stre-lctr">
+                                <img src={locator1} alt="" className="img-fluid" />
+                                <div className="btm-liner text-left"><h4>Service Locator</h4><Link to=''> Locate Us</Link></div>
                             </div>
                         </div>
 
