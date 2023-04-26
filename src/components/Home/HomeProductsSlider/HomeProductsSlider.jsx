@@ -7,16 +7,13 @@ import { useSelector } from "react-redux";
 
 const HomeProductsSlider = () => {
   const banners = useSelector(state => state.homePageCollection.banners)
-  if (banners)
-    return (
-      <BannerSlider>
-        {banners.map((item) => (
-          <Link to={item.links} key={item.id} >
-            <Image alt="banner" className="banner-image" src={window.innerWidth < 992 ? item.mobile_banner : item.image} />
-          </Link>
-        ))}
-      </BannerSlider>
-    );
+  if (banners) return (
+    <BannerSlider>
+      {banners.map((item) => (
+        <Image key={item.id} alt={item.title} className="w-100" src={window.innerWidth < 768 ? item.mobile_banner : item.image} />
+      ))}
+    </BannerSlider>
+  );
   if (!banners)
     return (
       <Placeholder as="p" animation="glow">

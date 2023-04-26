@@ -38,7 +38,7 @@ function ComparePage() {
                   <button className="mb-md-0 my-3 btn btn-outline-primary small btn-sm fw-semibold">Add to Cart</button>
                 </div>
                 {
-                  product.attributes.length > 0 ?
+                  product?.attributes?.length > 0 ?
                     <ul className="bullet-points mt-3">
                       {
                         product.attributes.map(item => (

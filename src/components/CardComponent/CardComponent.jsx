@@ -4,9 +4,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FiHeart } from 'react-icons/fi'
 import { AiFillStar } from 'react-icons/ai'
 import { Image } from 'utils'
+import AddCartButton from 'components/AddCartButton'
+import AddFavButton from 'components/AddFavButton'
+import CompareButton from 'components/CompareButton'
 
 function CardComponent({ product }) {
-  const navigate = useNavigate() 
+  const navigate = useNavigate()
   return (
     <div>
       <div className="arival-det" >
@@ -34,18 +37,12 @@ function CardComponent({ product }) {
             <li>Intel Integrated Graphics</li>
           </ul> */}
           <div className="d-flex justify-content-between">
-            <div className="clk-optn">
-              <Link to="">
-                <FiHeart />{" "}
-              </Link>
-              <Link to="">
-                <BiGitCompare />
-              </Link>
+            <div className="d-flex clk-optn">
+              <AddFavButton className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} />
+              <CompareButton className="btn btn-outline-info rounded-box-circle rounded-box-sm" product={product} />
             </div>
             <div>
-              <Link className="red-bg-btn" to="">
-                Add to cart
-              </Link>
+              <AddCartButton type='button' className="btn btn-primary" product={product} />
             </div>
           </div>
         </div>

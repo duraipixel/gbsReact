@@ -10,13 +10,13 @@ function ProductSlider({ products, children, slidesToShow}) {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: slidesToShow || 4,
+        slidesToShow: slidesToShow === undefined ? products.length > 3 ?  4 : 3 : slidesToShow,
         slidesToScroll: 1
     };
     if (products) return (
         <Slider {...settings}>
             {products.map((product, key) => (
-                <CardComponent product={product} key={key} />
+                <CardComponent product={product} key={key} /> 
             ))}
         </Slider>
     )
