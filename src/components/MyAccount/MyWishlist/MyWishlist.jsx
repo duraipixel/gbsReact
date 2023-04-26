@@ -23,8 +23,8 @@ const MyWishlist = () => {
   }, [])
   return (
     <div className="bg-white">
-      <div class="flex-jc-btwn flex-wrap heading-div p-3 pb-0">
-        <h2 class="m-0 fs-5">My Wishlist</h2>
+      <div className="flex-jc-btwn flex-wrap heading-div p-3 pb-0">
+        <h2 className="m-0 fs-5">My Wishlist</h2>
         <button type="button" className="btn-sm btn btn-outline-info" onClick={() => clearWhishList()}>
           <svg className="me-2" width="15" height="15" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1152_3000)">

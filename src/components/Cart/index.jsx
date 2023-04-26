@@ -52,11 +52,11 @@ const CartProduct = () => {
   } else {
     return (
       <Container>
-        <div class="container-fluid  mt-100">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="py-4">
-                <div class="col-sm-12 empty-cart-cls text-center">
+        <div className="container-fluid  mt-100">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="py-4">
+                <div className="col-sm-12 empty-cart-cls text-center">
                   <svg className="col-lg-3" viewBox="656 573 264 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsxlink="http://www.w3.org/1999/xlink">
                     <rect id="bg-line" stroke="none" fill-opacity="0.2" fill="#FFE100" fill-rule="evenodd" x="656" y="624" width="206" height="38" rx="19"></rect>
                     <rect id="bg-line" stroke="none" fill-opacity="0.2" fill="#FFE100" fill-rule="evenodd" x="692" y="665" width="192" height="29" rx="14.5"></rect>
@@ -109,7 +109,7 @@ const CartProduct = () => {
                   </svg>
                   <h3><strong>Your Cart is Empty</strong></h3>
                   <h4>Add something to make me happy :)</h4>
-                  <Link class="btn btn-primary cart-btn-transform m-3" to='/'>
+                  <Link className="btn btn-primary cart-btn-transform m-3" to='/'>
                     continue shopping
                   </Link>
                 </div>
