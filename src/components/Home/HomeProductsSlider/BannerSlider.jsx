@@ -14,7 +14,7 @@ function BannerSlider({children}) {
         lazyLoad: 'progressive'
     };
     return (
-        <Slider {...settings}>
+        <Slider {...settings} className="bg-dark">
             {children}
         </Slider>
     )
