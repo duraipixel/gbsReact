@@ -1,0 +1,19 @@
+.browse-container {
+  padding: 4rem 0;
+  gap: 3rem;
+  background-color: #37363b;
+  color: var(--white-color);
+}
+.browse-img-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.browse-price {
+  background-color: #37363b;
+}
+
+.browse-price .comon-heads h2 {
+  color: #fff;
+}

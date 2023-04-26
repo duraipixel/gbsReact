@@ -1,13 +1,10 @@
-import React from "react";
 import "./styles.css";
-import poster1 from "assets/images/Categories/Rectangle87.png";
-import poster2 from "assets/images/Categories/Rectangle88.png";
-import poster3 from "assets/images/Categories/Rectangle89.png";
-import poster4 from "assets/images/Categories/Rectangle90.png";
-// import { AiFillStar } from "react-icons/ai";
+import { useSelector } from "react-redux";
+import { Image } from "utils";
 
 const CategoriesPoster = () => {
-  return (
+  const subcategoryCollections = useSelector(state => state.homePageCollection.subcategoryCollections)
+  if (subcategoryCollections) return (
     <>
       <section className="laptop-based text-center">
         <div className="container">
@@ -17,42 +14,18 @@ const CategoriesPoster = () => {
                 <h2>Get the Right Laptop Based on Your Use</h2>
               </div>
             </div>
-
-            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div className="deals-imgs">
-                <img src={poster1} alt="" className="img-fluid" />
-                <div className="btm-liner">
-                  <h4>For Casual & Everyday Use</h4>
+            {
+              subcategoryCollections.map(item => (
+                <div key={item.id} className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div className="deals-imgs">
+                    <Image src={item.image} alt={item.slug} className="img-fluid" />
+                    <div className="btm-liner">
+                      <h4>{item.name}</h4>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div className="deals-imgs">
-                <img src={poster3} alt="" className="img-fluid" />
-                <div className="btm-liner">
-                  <h4>For Business Use</h4>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div className="deals-imgs">
-                <img src={poster2} alt="" className="img-fluid" />
-                <div className="btm-liner">
-                  <h4>For Content Creators</h4>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div className="deals-imgs">
-                <img src={poster4} alt="" className="img-fluid" />
-                <div className="btm-liner">
-                  <h4>For Gaming</h4>
-                </div>
-              </div>
-            </div>
+              ))
+            }
           </div>
         </div>
       </section>
