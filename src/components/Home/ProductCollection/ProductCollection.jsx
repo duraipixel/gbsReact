@@ -1,29 +1,10 @@
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
-import { FiChevronRight, FiHeart } from "react-icons/fi";
-import { AiFillStar } from "react-icons/ai";
-import { BiGitCompare } from "react-icons/bi";
-import Poster1 from "assets/images/arrivals/product-1.jpg";
-import Poster2 from "assets/images/arrivals/product-2.jpg";
-import Poster3 from "assets/images/arrivals/product-3.jpg";
-import Poster4 from "assets/images/arrivals/product-4.jpg";
-import Poster5 from "assets/images/arrivals/product-5.jpg";
+import { FiChevronRight } from "react-icons/fi";
 import "./styles.css";
-import { useSelector } from "react-redux";
-import CardComponent from "components/CardComponent/CardComponent";
+import { useSelector } from "react-redux"; 
+import ProductSlider from "components/ProductSlider/ProductSlider";
 
 function ProductCollection() {
-  var settings = {
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-    swipe: true,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-  };
   const productCollections = useSelector(state => state.homePageCollection.productCollections)
   if (productCollections)
     return (
@@ -40,16 +21,9 @@ function ProductCollection() {
                     View All <FiChevronRight />
                   </Link>
                 </div>
-              </div>
-
+              </div> 
               <div className="arrival-slider">
-                <Slider {...settings}>
-                  {
-                    collection.products.map((product, key) => (
-                      <CardComponent product={product} key={key} /> 
-                    ))
-                  }
-                </Slider>
+                <ProductSlider products={collection.products}/>
               </div>
             </div>
           </div>

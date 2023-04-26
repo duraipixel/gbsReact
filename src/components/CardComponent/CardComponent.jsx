@@ -1,22 +1,23 @@
 import { BiGitCompare } from 'react-icons/bi'
 import './CardComponent.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FiHeart } from 'react-icons/fi'
 import { AiFillStar } from 'react-icons/ai'
+import { Image } from 'utils'
 
 function CardComponent({ product }) {
-  console.log(product)
+  const navigate = useNavigate() 
   return (
     <div>
       <div className="arival-det" >
-        <div className="ari-img">
-          <img src={product.thumbnail} alt={product.product_name} />
+        <div className="ari-img" onClick={() => navigate(`/product-list/${product.product_url}`)}>
+          <Image src={product.thumbnail} alt={product.product_name} />
           <div className="off-prc">
             <h3> 30% <span>OFF</span></h3>
           </div>
         </div>
         <div className="ari-cnt text-center">
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between" onClick={() => navigate(`/product-list/${product.product_url}`)}>
             <h2>{product.product}</h2>
             <h3>
               <AiFillStar /> 4.5

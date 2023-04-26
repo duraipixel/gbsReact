@@ -35,11 +35,11 @@ const HomePage = () => {
       <ProductCollection />
       <ServiceCenter />
       <NarrowSearch />
-      <PerfectStudents />
+      {/* <PerfectStudents /> */}
       <PrefferedProcessor />
-      <GamersLaptop />
-      <Tablets />
-      <Combos />
+      {/* <GamersLaptop /> */}
+      {/* <Tablets /> */}
+      {/* <Combos /> */}
       <MustHaves />
       <PackageSupport />
     </div>

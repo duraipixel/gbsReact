@@ -1,27 +1,11 @@
-import React from "react";
-import Slider from "react-slick";
-// import { FiChevronRight, FiHeart } from "react-icons/fi";
-// import { AiFillStar } from "react-icons/ai";
-// import { BiGitCompare } from "react-icons/bi";
-import Poster1 from "assets/images/brands/product-1.jpg";
-import Poster2 from "assets/images/brands/product-2.jpg";
-import Poster3 from "assets/images/brands/product-3.jpg";
-import Poster4 from "assets/images/brands/product-4.jpg";
 import "./styles.css";
+import { useSelector } from "react-redux";
+import { Image } from "utils";
+import ProductSlider from "components/ProductSlider/ProductSlider";
 
 const NarrowSearch = () => {
-  var settings = {
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-    swipe: true,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
-  return (
+  const brands = useSelector(state => state.homePageCollection.brands)
+  if (brands) return (
     <>
       <section className="narroww-search text-center">
         <div className="container">
@@ -34,39 +18,15 @@ const NarrowSearch = () => {
 
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div className="brands-list-slider">
-                <Slider {...settings}>
-                  <div className="brnd-sector">
-                    <img
-                      src={Poster1}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
-                  </div>
-
-                  <div className="brnd-sector">
-                    <img
-                      src={Poster2}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
-                  </div>
-
-                  <div className="brnd-sector">
-                    <img
-                      src={Poster3}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
-                  </div>
-
-                  <div className="brnd-sector">
-                    <img
-                      src={Poster4}
-                      alt=""
-                      className="img-fluid poster-image"
-                    />
-                  </div>
-                </Slider>
+                <ProductSlider slidesToShow={3}>
+                  {
+                    brands.map((item, i) => (
+                      <div key={i} className="brnd-sector">
+                        <Image src={item.image} alt={item.title} className="img-fluid poster-image"/>
+                      </div>
+                    ))
+                  }
+                </ProductSlider>
               </div>
             </div>
           </div>
