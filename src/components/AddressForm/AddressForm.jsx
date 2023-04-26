@@ -30,7 +30,7 @@ function AddressForm() {
   const [stateMaster, setStateMaster] = useState([])
   const getMasters = async () => {
     const { data } = await customerAddressApi()
-    if (data.status === "success") {
+    if (data?.status === "success") {
       setAdressMaster(data.address_type)
       setStateMaster(data.state)
       setCountryMaster(data.country)
