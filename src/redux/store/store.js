@@ -10,10 +10,12 @@ import compareSlice from 'redux/features/compareSlice';
 import addressSlice from 'redux/features/addressSlice';
 import checkOutSlice from 'redux/features/checkOutSlice';
 import cartAddressSlice from 'redux/features/cartAddressSlice';
+import homePageSlice from 'redux/features/homePageSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    homePageCollection: homePageSlice,
     address: addressSlice,
     cartAddress: cartAddressSlice,
     compareProducts: compareSlice,

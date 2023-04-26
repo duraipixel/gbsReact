@@ -60,7 +60,7 @@ const Loader = () => {
   );
 };
 const Image = (props) => {
-  return <LazyLoadImage {...props} />;
+  return <LazyLoadImage effect="blur" {...props} />;
 };
 
 const AppScroller = ({ children }) => {
