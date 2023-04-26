@@ -1,34 +1,26 @@
 import "./styles.css";
-import { useBannersQuery } from "redux/features/banners/bannerService";
 import { Placeholder } from "react-bootstrap";
 import BannerSlider from "./BannerSlider";
+import { Link } from "react-router-dom";
+import { Image } from "utils";
+import { useSelector } from "react-redux";
 
 const HomeProductsSlider = () => {
-  const { data, isSuccess, isLoading } = useBannersQuery();
-  if (isSuccess)
+  const banners = useSelector(state => state.homePageCollection.banners)
+  if (banners)
     return (
       <BannerSlider>
-        {data.data.map((item) => (
-          <div key={item.id} className="banner-overlay-wrapper">
-            <img alt="banner" effect="blur" className="banner-image"  src={window.innerWidth < 992 ? item.mobile_banner : item.image}/>
-            <div className="container">
-              <div className="poster-content">
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
-                <h4>Starting From ₹82,000</h4>
-                <a target="_blank" href={item.links} className="btn btn-cta" rel="noreferrer">
-                  Shop Now
-                </a>
-              </div>
-            </div>
-          </div>
+        {banners.map((item) => (
+          <Link to={item.links} key={item.id} >
+            <Image alt="banner" className="banner-image" src={window.innerWidth < 992 ? item.mobile_banner : item.image} />
+          </Link>
         ))}
       </BannerSlider>
     );
-  if (isLoading)
+  if (!banners)
     return (
       <Placeholder as="p" animation="glow">
-        <Placeholder bg="dark" style={{ height: 360 }} xs={12} />
+        <Placeholder bg="dark" style={{ height: 380 }} xs={12} />
       </Placeholder>
     );
 };
