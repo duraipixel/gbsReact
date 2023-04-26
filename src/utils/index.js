@@ -59,6 +59,29 @@ const Loader = () => {
     </div>
   );
 };
+
+const HalfHeightLoader = () => {
+  return (
+    <div
+      style={{
+        height: "50vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <ProgressBar
+        height="80"
+        width="80"
+        ariaLabel="progress-bar-loading"
+        wrapperclassName="progress-bar-wrapper"
+        borderColor="#8d8d8d"
+        barColor="#f1000a"
+      />
+    </div>
+  );
+};
+
 const Image = (props) => {
   return <LazyLoadImage effect="blur" {...props} />;
 };
@@ -117,5 +140,6 @@ export {
   AuthUser,
   setAuthUser,
   checkCartBucket,
-  strRandom
+  strRandom,
+  HalfHeightLoader
 };

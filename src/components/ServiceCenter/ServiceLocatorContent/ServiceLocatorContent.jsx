@@ -5,17 +5,20 @@ import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
 import "components/StoreLocator/LocationContent/styles.scss";
 import { Link } from "react-router-dom";
+import { HalfHeightLoader } from "utils";
 
-const ServiceLocatorContent = ({ serviceCenterData }) => {
-  // console.log(serviceCenterData);
-  return (
+const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
+  // console.log(serviceCenterFilteredData);
+  return fetching ? (
+    <HalfHeightLoader />
+  ) : (
     <section>
       <Container>
-        {serviceCenterData &&
-          serviceCenterData.data.map((item) => {
+        {serviceCenterFilteredData &&
+          serviceCenterFilteredData.data.map((item) => {
             return (
               <div key={item.id}>
-                <div className="flex-jc-btwn flex-wrap location-content-div" >
+                <div className="flex-jc-btwn flex-wrap location-content-div">
                   <div className="location-content">
                     <h3>{item.title}</h3>
                     <div className="align-c gap-3">
