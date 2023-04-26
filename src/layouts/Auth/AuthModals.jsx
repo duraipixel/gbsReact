@@ -38,10 +38,10 @@ function AuthModals() {
     }
     if (layout.status) return (
         <>
-            <div class="fade modal-backdrop show"></div>
-            <div class="modal auth-modal" >
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
+            <div className="fade modal-backdrop show"></div>
+            <div className="modal auth-modal" >
+                <div className="modal-dialog modal-dialog-scrollable">
+                    <div className="modal-content">
                         <div className="modal-header">
                             <img
                                 src={require("../../assets/images/computer.png")}
@@ -57,7 +57,7 @@ function AuthModals() {
                                 <h2><LayoutTitle /></h2>
                             </div>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <LayoutForm />
                         </div>
                     </div>
