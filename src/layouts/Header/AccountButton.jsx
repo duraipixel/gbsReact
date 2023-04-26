@@ -8,7 +8,6 @@ function AccountButton({text,size,className}) {
     const authUser = useSelector((state) => state.auth)
     const navigate = useNavigate()
     const LoginAuth =  () => {
-        document.querySelector('nav').classList.remove('sticky-top')
         dispatch(setLayoutStatus({ status: true, type: 'login' }))
     }
     return (

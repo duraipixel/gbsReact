@@ -6,7 +6,7 @@ function CheckoutButton({className}) {
     const authUser = useSelector((state) => state.auth)
     const dispatch = useDispatch()
     const LoginAuth = () => {
-        document.querySelector('nav').classList.toggle('sticky-top')
+        
         dispatch(setLayoutStatus({ status: true, type: 'login' }))
     }
     const checkoutHandler = () => {

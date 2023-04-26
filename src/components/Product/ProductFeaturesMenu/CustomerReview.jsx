@@ -14,7 +14,7 @@ function CustomerReview({ product_id, is_review }) {
     const authUser = useSelector((state) => state.auth)
     const dispatch = useDispatch()
     const LoginAuth = () => {
-        document.querySelector('nav').classList.toggle('sticky-top')
+        
         dispatch(setLayoutStatus({ status: true, type: 'login' }))
     }
     const { handleSubmit, reset, register, formState: { errors } } = useForm()
