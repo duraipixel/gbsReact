@@ -9,6 +9,7 @@ import SweetAlert from "react-bootstrap-sweetalert";
 import { toast } from "react-hot-toast";
 import { useEffect } from "react";
 import { setBillingAddress, setShippingAddress } from "redux/features/cartAddressSlice";
+import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 const AddressBookDetails = ({ selectType, modalType }) => {
   const [modalShow, setModalShow] = useState(false);
   const address = useSelector((state) => state.address.value)
@@ -16,9 +17,12 @@ const AddressBookDetails = ({ selectType, modalType }) => {
   const [addresses, setAddress] = useState([])
   const [addressesId, setAddressId] = useState(null)
   const [deleteAlert, setDeleteAlert] = useState(false);
+  const [isFetching, setIsFetching] = useState(true);
   const fetchData = async () => {
+    setIsFetching(true)
     const { data } = await customerAddressApi()
     setAddress(data.addresses)
+    setIsFetching(false)
   }
   
   const deleteAddress = async () => {
@@ -130,6 +134,10 @@ const AddressBookDetails = ({ selectType, modalType }) => {
             }
           </ul>
           : ""
+      }
+      {isFetching && "Fething addresss .... "}
+      {
+        addresses.length === 0 && isFetching === false && <NoDataComponent />
       }
       <AddNewAddressModal show={modalShow} onHide={() => setModalShow(false)} />
       <SweetAlert

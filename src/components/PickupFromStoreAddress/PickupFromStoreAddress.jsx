@@ -3,8 +3,13 @@ import { Modal } from "react-bootstrap"
 import Filters from "./Filters"
 import StoreLocation from "./StoreLocation"
 import { getStoreLocatorApi } from "services/page.service"
+import { useDispatch, useSelector } from "react-redux"
+import { setStoreAddress } from "redux/features/cartAddressSlice"
+import { toast } from "react-hot-toast"
 
 function PickupFromStoreAddress() {
+    const address = useSelector((state) => state.cartAddress)
+    const dispatch = useDispatch()
     const [stores, setStores] = useState([])
     const [show, setShow] = useState(false)
     const [filter, setFilter] = useState({
@@ -12,7 +17,11 @@ function PickupFromStoreAddress() {
         post_code: null,
         center_id: null,
     })
-
+    const selectStoreHander = (address) => {
+        dispatch(setStoreAddress(address))
+        setShow(!show)
+        toast.success('Store location selected')
+    }
     const getStoreLocator = async () => {
         const { data } = await getStoreLocatorApi(filter)
         setStores(data.data)
@@ -20,7 +29,7 @@ function PickupFromStoreAddress() {
     useEffect(() => {
         getStoreLocator()
     }, [show, filter])
-
+    console.log(address.store_address)
     return (
         <div>
             <h5 className="text-primary d-flex align-items-center justify-content-between">
@@ -30,10 +39,16 @@ function PickupFromStoreAddress() {
                 </button>
             </h5>
             <div>
-                GBS Systems, Anna Nagar <br />
-                <p className="address-details">
-                    AA, 74, 4th Ave, AA Block, Shanthi Colony, Anna Nagar, Chennai, Tamil Nadu 600040
-                </p>
+                {
+                    address.store_address ?
+                        <div className="mb-3">
+                            {address.store_address?.address} <br />
+                            {/* <p className="address-details">
+                                {address.store_address?.address_line1} ,{address.store_address?.city} - {address.store_address?.post_code},{address.store_address?.state}, {address.store_address?.country}
+                            </p> */}
+                        </div>
+                        : null
+                }
             </div>
             <Modal
                 show={show}
@@ -48,8 +63,8 @@ function PickupFromStoreAddress() {
                     <h3 className="text-primary fw-bold mb-3 text-uppercase">Service Center Locator</h3>
                     <Filters stores={stores} filter={filter} setFilter={setFilter} />
                 </div>
-                <Modal.Body style={{ minHeight:450 }}>
-                    <StoreLocation stores={stores}/>
+                <Modal.Body style={{ minHeight: 450 }} className="p-0">
+                    <StoreLocation stores={stores} selectStoreHander={selectStoreHander} />
                 </Modal.Body>
             </Modal>
         </div>

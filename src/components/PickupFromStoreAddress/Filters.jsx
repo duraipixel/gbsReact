@@ -14,9 +14,11 @@ function Filters({ stores, filter, setFilter }) {
         options.push({ value: item.id, label: item.title })
     ))
     const brands = useSelector(state => state.homePageCollection.brands)
-    brands.map((item) => (
-        brandOptions.push({ value: item.id, label: item.title })
-    ))
+    if(brands) {
+        brands.map((item) => (
+            brandOptions.push({ value: item.id, label: item.title })
+        ))
+    }
 
     const ClearAllFilters = () => {
         postCodeRef.current.value = ""

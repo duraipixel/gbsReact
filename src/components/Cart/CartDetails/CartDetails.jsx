@@ -90,7 +90,7 @@ const CartDetails = ({ checkoutData }) => {
                     <div>
                       <h5 className="text-primary d-flex align-items-center justify-content-between">
                         Shipping Address
-                        {
+                        {/* {
                           typeof (myAddress) === 'object' && myAddress.length === 0 ?
                             <button className="fs-14 btn btn-sm" onClick={() => { addAddresHandler('SHIPPING_ADDRESS') }}>
                               Add Address
@@ -99,7 +99,10 @@ const CartDetails = ({ checkoutData }) => {
                             <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('SHIPPING_ADDRESS'); setShow(!show) }}>
                               Change Address
                             </button>
-                        }
+                        } */}
+                        <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('SHIPPING_ADDRESS'); setShow(!show) }}>
+                          Change Address
+                        </button>
                       </h5>
                       {
                         address.shipping_address ?
@@ -117,7 +120,7 @@ const CartDetails = ({ checkoutData }) => {
                 <div>
                   <h5 className="text-primary d-flex align-items-center justify-content-between">
                     Billing Address
-                    {
+                    {/* {
                       typeof (myAddress) === 'object' && myAddress.length === 0 ?
                         <button className="fs-14 btn btn-sm" onClick={() => { addAddresHandler('BILLING_ADDRESS') }}>
                           Add Address
@@ -126,7 +129,10 @@ const CartDetails = ({ checkoutData }) => {
                         <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('BILLING_ADDRESS'); setShow(!show) }}>
                           Change Address
                         </button>
-                    }
+                    } */}
+                    <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('BILLING_ADDRESS'); setShow(!show) }}>
+                      Change Address
+                    </button>
                   </h5>
                   {
                     address.billing_address !== null ?
