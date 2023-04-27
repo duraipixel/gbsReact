@@ -4,7 +4,7 @@ import { Accordion } from 'react-bootstrap'
 import { toast } from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
 import { setCart } from 'redux/features/cartSlice'
-import { addToCartApi, updateCartApi } from 'services/product.serice'
+import { addToCartApi, updateCartApi } from 'services/product.service'
 import { AuthUser, LoadingSpinner, checkCartBucket } from 'utils'
 
 function ProductAddOns({ product, cartId, setCartId }) {

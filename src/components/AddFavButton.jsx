@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { toast } from "react-hot-toast"
-import { addOrRemoveWhishListApi } from "services/product.serice"
+import { addOrRemoveWhishListApi } from "services/product.service"
 
 function AddFavButton({ className, product, action}) { 
     const [loading, setLoading] = useState(false)

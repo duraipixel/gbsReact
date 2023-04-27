@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast'
 import useRazorpay from 'react-razorpay'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
-import { checkoutApi, paymentVerifyApi } from 'services/product.serice'
+import { checkoutApi, paymentVerifyApi } from 'services/product.service'
 
 function CheckoutButton({ className }) {
     const Razorpay           = useRazorpay()

@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import CartDetails from "./CartDetails/CartDetails";
 import { useEffect, useState } from "react";
-import { cartListApi } from "services/product.serice";
+import { cartListApi } from "services/product.service";
 import { useDispatch, useSelector } from "react-redux";
 import { setCartList } from "redux/features/cartSlice";
 import { Loader } from "utils";

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import CheckoutButton from "components/CheckoutButton";
 import { useDispatch, useSelector } from "react-redux";
-import { setShippingChargesApi, shippingChargesApi } from "services/product.serice";
+import { setShippingChargesApi, shippingChargesApi } from "services/product.service";
 import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDetails";
 import { Modal } from "react-bootstrap";
 import { setAdressForm } from "redux/features/addressSlice";

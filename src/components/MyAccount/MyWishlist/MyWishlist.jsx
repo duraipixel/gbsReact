@@ -1,6 +1,6 @@
 import "../../ProductsLists/styles.scss";
 import "./styles.scss";
-import { clearWhishListApi, getWhishListApi } from "services/product.serice";
+import { clearWhishListApi, getWhishListApi } from "services/product.service";
 import { useEffect, useState } from "react";
 import ProductListComponent from "components/ProductsLists/ProductListComponent";
 import { toast } from "react-hot-toast";

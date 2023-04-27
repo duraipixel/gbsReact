@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { productReviewApi } from 'services/product.serice'
+import { productReviewApi } from 'services/product.service'
 import RatingIcons from '../RatingIcons'
 import { useState } from 'react'
 import { useMemo } from 'react'

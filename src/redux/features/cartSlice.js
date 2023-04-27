@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-hot-toast';
-import { addToCartApi } from 'services/product.serice';
+import { addToCartApi } from 'services/product.service';
 import { AuthUser } from 'utils';
 const cartList = JSON.parse(localStorage.getItem('cart_list'))
 const initialState = {

@@ -86,7 +86,7 @@ export const checkoutApi = async (formData, setLoader) => {
         image: data.image,
         order_id: data.order_id,
         handler: function (response) {
-            paymentVerifyApi(response, true).then((res) => setLoader(false) );
+            paymentVerifyApi(response, true).then((res) => setLoader(false));
         },
         prefill: {
             name: data.prefill.name,
@@ -98,4 +98,10 @@ export const checkoutApi = async (formData, setLoader) => {
         },
     };
     return paymenyOptions;
+}
+
+export const getOrdersListApi = async () => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/orders`, {
+        customer_id: AuthUser()?.id,
+    });
 }

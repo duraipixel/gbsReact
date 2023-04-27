@@ -3,7 +3,7 @@ import { BsDash, BsPlus, BsX } from "react-icons/bs";
 import { clearCart, removeCart } from "redux/features/cartSlice";
 import { FaTrash } from "react-icons/fa";
 import { useState } from "react";
-import { clearCartList, removeFromCartApi, updateCartApi } from "services/product.serice";
+import { clearCartList, removeFromCartApi, updateCartApi } from "services/product.service";
 import { toast } from "react-hot-toast";
 import { AuthUser } from "utils";
 import { useForm } from "react-hook-form";

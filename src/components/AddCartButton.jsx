@@ -2,7 +2,7 @@ import { useState } from "react"
 import { toast } from "react-hot-toast"
 import { useDispatch } from "react-redux"
 import { removeCart, setCart } from "redux/features/cartSlice"
-import { addToCartApi, removeFromCartApi } from "services/product.serice"
+import { addToCartApi, removeFromCartApi } from "services/product.service"
 import { AuthUser, LoadingSpinner, checkCartBucket, strRandom } from "utils"
 
 function AddCartButton({ className, product, type, setCartId }) {
