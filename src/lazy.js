@@ -23,3 +23,4 @@ export const WaranttyPolicyPage   = lazy(() => import('pages/WaranttyPolicyPage'
 export const ContactUsPage        = lazy(() => import('pages/ContactUsPage') )
 export const ComparePage          = lazy(() => import('pages/ComparePage') )
 export const ResetPassword        = lazy(() => import('pages/Auth/ResetPassword') )
+export const PaymentSuccess        = lazy(() => import('pages/PaymentSuccess') )

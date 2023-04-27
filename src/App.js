@@ -21,18 +21,19 @@ import {
   ShippingDeliveryPage,
   PrivacyPolicyPage,
   WaranttyPolicyPage,
-  ContactUsPage, 
+  ContactUsPage,
   ServiceCenterLocator,
   ServiceCenterDetails,
   VerifyAccount,
   ResetPassword,
   ComparePage,
-  StoreLocationDetailsPage
+  StoreLocationDetailsPage,
+  PaymentSuccess
 } from "lazy";
 
 function App() {
-  if(localStorage.getItem('guest_token') === null) {
-    localStorage.setItem('guest_token',strRandom(100))
+  if (localStorage.getItem('guest_token') === null) {
+    localStorage.setItem('guest_token', strRandom(100))
   }
   return (
     <BrowserRouter>
@@ -54,7 +55,7 @@ function App() {
               <Route path="profile" element={<MyProfile />} />
               <Route path="address-book" element={<MyAddressBook />} />
               <Route path="myorders" element={<MyOrders />} />
-              <Route path="myorders/order-details" element={<MyOrdersDetails />}/>
+              <Route path="myorders/order-details" element={<MyOrdersDetails />} />
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
             <Route path="/store-locator" element={<StoreLocatorPage />} />
@@ -64,6 +65,7 @@ function App() {
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/payment-success" element={<PaymentSuccess />} />
           </Route>
           {/* <Route path="/stores" element={<StorePage />} /> */}
         </Routes>

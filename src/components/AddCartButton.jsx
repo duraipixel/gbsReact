@@ -10,6 +10,7 @@ function AddCartButton({ className, product, type, setCartId }) {
     const [isAddCart, setIsAddCart] = useState(checkCartBucket(product.id))
     const [loading, setLoading] = useState(false)
     const addOrRemoveCart = () => {
+        console.log(product.stock_status)
         setLoading(true)
         if (checkCartBucket(product.id)) {
             removeFromCartApi({
@@ -46,6 +47,17 @@ function AddCartButton({ className, product, type, setCartId }) {
         }
         setTimeout(() => setLoading(false), 1000)
     }
+    if (product.stock_status === 'out_of_stock' && type === 'button') {
+        return <button className='btn btn-primary text-white' disabled>out of stock</button>
+    }
+    if (product.stock_status === 'out_of_stock' && type === 'checkbox') {
+        return (
+            <label className='mt-2 text-dark d-block'  >
+                <input type="checkbox" disabled className='form-check-input me-2 rounded-0 border border-dark' />
+                out of stock
+            </label>
+        )
+    }
     if (type === 'button') return (
         <button loading={`${loading}`} onClick={addOrRemoveCart} className={isAddCart ? 'btn btn-outline-primary' : className}>
             {isAddCart ? "Remove" : "Add to cart"}
@@ -57,7 +69,7 @@ function AddCartButton({ className, product, type, setCartId }) {
             <label className='mt-2 text-primary d-block' htmlFor={`Frequently_${key}`} >
                 {
                     loading ? <LoadingSpinner className="me-2" />
-                    : <input type="checkbox" checked={isAddCart} onChange={addOrRemoveCart} id={`Frequently_${key}`} className='form-check-input me-2 rounded-0 border border-primary' />
+                        : <input type="checkbox" checked={isAddCart} onChange={addOrRemoveCart} id={`Frequently_${key}`} className='form-check-input me-2 rounded-0 border border-primary' />
                 }
                 Selected
             </label>

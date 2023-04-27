@@ -69,6 +69,7 @@ export const paymentVerifyApi = async (razor_response, status) => {
     if (data.success) {
         localStorage.removeItem('cart_list')
         toast.success(data.message)
+        window.location.href = "/payment-success"
     } else {
         toast.error(data.message)
     }
@@ -85,7 +86,7 @@ export const checkoutApi = async (formData, setLoader) => {
         image: data.image,
         order_id: data.order_id,
         handler: function (response) {
-            paymentVerifyApi(response, true).then((res) => setLoader(false));
+            paymentVerifyApi(response, true).then((res) => setLoader(false) );
         },
         prefill: {
             name: data.prefill.name,

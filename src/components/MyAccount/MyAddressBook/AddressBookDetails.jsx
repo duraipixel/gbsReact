@@ -20,8 +20,8 @@ const AddressBookDetails = ({ selectType, modalType }) => {
   const [isFetching, setIsFetching] = useState(true);
   const fetchData = async () => {
     setIsFetching(true)
-    const { data } = await customerAddressApi()
-    setAddress(data.addresses)
+    const response = await customerAddressApi()
+    setAddress(response.data.addresses)
     setIsFetching(false)
   }
   
