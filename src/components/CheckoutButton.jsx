@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
 import { checkoutApi } from 'services/product.serice'
 
-function CheckoutButton({ className, checkoutData }) {
+function CheckoutButton({ className }) {
     const authUser = useSelector((state) => state.auth)
     const dispatch = useDispatch()
     const billing_address = JSON.parse(localStorage.getItem('billing_address'))
@@ -43,7 +43,7 @@ function CheckoutButton({ className, checkoutData }) {
             coupon_data: JSON.parse(localStorage.getItem('coupon_data')),
             cart_items: JSON.parse(localStorage.getItem('cart_list')),
             standard_shipping_charge_id: shipping_charge_id,
-            checkout_data: checkoutData
+            checkout_data: JSON.parse(localStorage.getItem('checkout_data'))
         }
         if (isCheckoutData()) checkoutApi(JSON.stringify(checkData))
     }

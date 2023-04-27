@@ -19,7 +19,11 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
 
   const CouponHandler = (data) => {
     setLoading(true)
-    axios.post(`${process.env.REACT_APP_BASE_URL}/apply/coupon`, { ...data, customer_id: AuthUser()?.id }).then((response) => {
+    axios.post(`${process.env.REACT_APP_BASE_URL}/apply/coupon`, {
+      ...data,
+      customer_id: AuthUser()?.id,
+      shipping_fee_id: localStorage.getItem('shipping_charge_id')
+    }).then((response) => {
       setLoading(false)
       if (response.data.status === "error") {
         toast.error(response.data.message)
@@ -28,6 +32,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         setCouponApplyed(true)
         localStorage.setItem('coupon_data', JSON.stringify(response.data))
         setCheckoutData(response.data.cart_info.cart_total)
+        localStorage.setItem('checkout_data', JSON.stringify(response.data.cart_info.cart_total))
       }
     });
   }
@@ -36,21 +41,29 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
       if (response.data.error) {
         toast.error(response.data.message)
       } else {
-        toast.success(response.data.message) 
+        toast.success(response.data.message)
         fetchCartData()
       }
     });
   }
   const removeCouponCode = async () => {
     setLoading(true)
-    const { data } = await fetchCartData()
-    if (data) {
-      reset()
-      setCouponApplyed(false)
-      localStorage.removeItem('coupon_data')
+    axios.post(`${process.env.REACT_APP_BASE_URL}/remove/coupon`, {
+      customer_id: AuthUser()?.id,
+      shipping_fee_id: localStorage.getItem('shipping_charge_id')
+    }).then((response) => {
       setLoading(false)
-      toast.success('coupon removed!')
-    }
+      if (response.data.status === "error") {
+        toast.error(response.data.message)
+      } else {
+        toast.success(response.data.message)
+        reset()
+        setCouponApplyed(false)
+        localStorage.setItem('coupon_data', JSON.stringify(response.data))
+        setCheckoutData(response.data.cart_info.cart_total)
+        localStorage.setItem('checkout_data', JSON.stringify(response.data.cart_info.cart_total))
+      }
+    }); 
   }
   const clearCartData = () => {
     clearCartList().then((response) => {

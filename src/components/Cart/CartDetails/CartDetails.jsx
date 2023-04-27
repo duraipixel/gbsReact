@@ -20,7 +20,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
   useEffect(() => {
     if (shippingMethod === 'Standard_Shipping' && checkoutData) {
       shippingChargesApi(checkoutData.product_tax_exclusive_total_without_format).then(response => {
-        setshippingTypes(response.data)
+        setshippingTypes(response.data) 
       })
     }
   }, [checkoutData, shippingMethod])
@@ -38,6 +38,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
     localStorage.setItem('shipping_charge_id',id)
     const response = await setShippingChargesApi(id)
     setCheckoutData(response.data.data.cart_total)
+    localStorage.setItem('checkout_data',JSON.stringify(response.data.data.cart_total))
   }
   if (checkoutData) return (
     <>
