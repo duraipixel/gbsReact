@@ -46,6 +46,7 @@ function CheckoutButton({ className }) {
             standard_shipping_charge_id: shipping_charge_id,
             checkout_data: JSON.parse(localStorage.getItem('checkout_data'))
         }
+        console.log(checkData)
         if (isCheckoutData()) checkoutApi(JSON.stringify(checkData))
     }
     return (

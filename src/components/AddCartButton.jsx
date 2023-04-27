@@ -5,7 +5,7 @@ import { removeCart, setCart } from "redux/features/cartSlice"
 import { addToCartApi, removeFromCartApi } from "services/product.serice"
 import { AuthUser, checkCartBucket, strRandom } from "utils"
 
-function AddCartButton({ className, product, type, setAddOnsStatus, setCartId }) {
+function AddCartButton({ className, product, type, setCartId }) {
     const dispatch = useDispatch()
     const [isAddCart, setIsAddCart] = useState(checkCartBucket(product.id))
     const [loading, setLoading] = useState(false)
@@ -21,9 +21,6 @@ function AddCartButton({ className, product, type, setAddOnsStatus, setCartId })
                     toast.success(response.data.message);
                     dispatch(removeCart(product))
                     setIsAddCart(false)
-                    if (setAddOnsStatus !== undefined) {
-                        setAddOnsStatus(false)
-                    }
                 } else {
                     toast.error('Network Error')
                 }
@@ -39,9 +36,6 @@ function AddCartButton({ className, product, type, setAddOnsStatus, setCartId })
                     dispatch(setCart(product))
                     toast.success(response.data.message);
                     setIsAddCart(true)
-                    if (setAddOnsStatus !== undefined) {
-                        setAddOnsStatus(true)
-                    }
                     if (setCartId !== undefined) {
                         setCartId(response.data.data.carts[0].cart_id)
                     }

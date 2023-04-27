@@ -10,13 +10,11 @@ import AddCartButton from 'components/AddCartButton'
 import AddFavButton from 'components/AddFavButton'
 import CompareButton from 'components/CompareButton'
 import BuyButton from 'components/BuyButton'
-import { checkCartBucket } from 'utils'
 function ProductInformation({ product }) {
     const [checkAvailability, setAvailability] = useState(false)
     const [information, setInformation] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
     const [loading, setLoading] = useState(false)
-    const [addOnsStatus, setAddOnsStatus] = useState(checkCartBucket(product.id))
     const [cartId, setCartId] = useState(product.cart_id)
     const {
         register,
@@ -61,7 +59,7 @@ function ProductInformation({ product }) {
             </div>
             <div className="action-group mb-4">
                 <BuyButton className="mb-md-0 mb-3 btn btn-primary me-md-3 px-5 fw-semibold" product={product}/>
-                <AddCartButton setCartId={setCartId} setAddOnsStatus={setAddOnsStatus} type='button' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={product} />
+                <AddCartButton setCartId={setCartId} type='button' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={product} />
                 <AddFavButton className="ms-md-3 mb-md-0 mb-3 btn btn-outline-info rounded-box-circle me-md-3" product={product} />
                 <CompareButton className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle" product={product} />
             </div>
@@ -99,7 +97,7 @@ function ProductInformation({ product }) {
                 </div>
             </div>
             <ProductOverview product={product} />
-            {addOnsStatus === true && <ProductAddOns setCartId={setCartId} cartId={cartId} product={product} />}
+            <ProductAddOns setCartId={setCartId} cartId={cartId} product={product} />
         </div>
     )
 }

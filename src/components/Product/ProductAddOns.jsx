@@ -2,10 +2,12 @@ import AddCartButton from 'components/AddCartButton'
 import { useState } from 'react'
 import { Accordion } from 'react-bootstrap'
 import { toast } from 'react-hot-toast'
-import { updateCartApi } from 'services/product.serice'
-import { LoadingSpinner } from 'utils'
+import { useDispatch } from 'react-redux'
+import { setCart } from 'redux/features/cartSlice'
+import { addToCartApi, updateCartApi } from 'services/product.serice'
+import { AuthUser, LoadingSpinner, checkCartBucket } from 'utils'
 
-function ProductAddOns({ product, cartId }) {
+function ProductAddOns({ product, cartId, setCartId }) {
     return (
         <>
             {
@@ -28,7 +30,7 @@ function ProductAddOns({ product, cartId }) {
                                     <Accordion.Body>
                                         <div className="d-md-inline-flex g-3">
                                             {addon.items.map((item, key) => (
-                                                <AddOnInput addon={addon} cartId={cartId} item={item} key={key} index={i} secIndex={key} />
+                                                <AddOnInput product={product} addon={addon} cartId={cartId} setCartId={setCartId} item={item} key={key} index={i} secIndex={key} />
                                             ))}
                                         </div>
                                     </Accordion.Body>
@@ -67,11 +69,10 @@ function ProductAddOns({ product, cartId }) {
     )
 }
 
-const AddOnInput = ({ item, index, cartId, secIndex, addon }) => {
+const AddOnInput = ({ item, index, cartId, secIndex, addon, product, setCartId }) => {
     const [loading, setLoading] = useState(false)
-
-    const addonHandler = (addon, item) => {
-        setLoading(true)
+    const dispatch = useDispatch()
+    const updateCartApiHandler = () => {
         updateCartApi({
             cart_id: cartId,
             quantity: 1,
@@ -87,12 +88,20 @@ const AddOnInput = ({ item, index, cartId, secIndex, addon }) => {
             setLoading(false)
         })
     }
+    const addonHandler = (addon, item) => {
+        if (checkCartBucket(product.id)) {
+            setLoading(true)
+            updateCartApiHandler()
+        } else {
+            toast.error('You need add cart list first')
+        }
+    }
     const [isChecked, setIsChecked] = useState(item.is_selected)
     return (
         <>
             <input type="radio" disabled={loading} checked={isChecked} className='addon' name={`add_on_${addon.id}`} onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
-            <label  className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
-                {loading?<LoadingSpinner className="position-absolute"/>:""}
+            <label className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
+                {loading ? <LoadingSpinner className="position-absolute" /> : ""}
                 {item.label}<span className="text-info">₹{item.amount}</span>
             </label>
         </>
