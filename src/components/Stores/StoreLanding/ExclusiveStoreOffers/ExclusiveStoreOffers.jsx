@@ -57,12 +57,12 @@ const ExclusiveStoreOffers = () => {
 
                 <div className="offer-sliders-imgs">
                   <img src={Offer2} alt="" className="img-fluid" />
-                  <p>Special Cashback Up to ₹10,000</p>
+                  <p>Special Cashback Up to <sup>₹</sup>10,000</p>
                 </div>
 
                 <div className="offer-sliders-imgs">
                   <img src={Offer3} alt="" className="img-fluid" />
-                  <p>Laptop Exchange Value upto ₹20,000</p>
+                  <p>Laptop Exchange Value upto <sup>₹</sup>20,000</p>
                 </div>
 
                 <div className="offer-sliders-imgs">

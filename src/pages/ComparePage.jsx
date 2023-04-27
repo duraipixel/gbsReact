@@ -33,7 +33,7 @@ function ComparePage() {
                 </button>
                 <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664431264/Croma%20Assets/Computers%20Peripherals/Laptop/Images/257040_0_yigvy6.png/mxw_1536,f_auto" alt="" />
                 <p className="product-title">{product.product_name}</p>
-                <b>₹{product.price}</b>
+                <b><sup>₹</sup>{product.price}</b>
                 <div>
                   <button className="mb-md-0 my-3 btn btn-outline-primary small btn-sm fw-semibold">Add to Cart</button>
                 </div>

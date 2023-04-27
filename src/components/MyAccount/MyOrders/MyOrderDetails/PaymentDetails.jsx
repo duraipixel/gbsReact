@@ -16,9 +16,9 @@ const PaymentDetails = () => {
           </Col>
           <Col>
             <img src={require("assets/images/Cart/razorpay.png")} alt="" />
-            <p>₹68,588</p>
-            <p>₹12,345.84</p>
-            <h5>₹80,933.8</h5>
+            <p><sup>₹</sup>68,588</p>
+            <p><sup>₹</sup>12,345.84</p>
+            <h5><sup>₹</sup>80,933.8</h5>
           </Col>
         </Row>
       </Col>

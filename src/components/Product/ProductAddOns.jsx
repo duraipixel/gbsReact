@@ -53,7 +53,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                         </div>
                                     </div>
                                     <div className="text-info fw-bold ps-2">
-                                        ₹{item.price}
+                                        <sup>₹</sup>{item.price}
                                     </div>
                                 </div>
                             ))
@@ -84,7 +84,7 @@ const AddOnInput = ({ item, index, cartId, secIndex , addon}) => {
         <>
             <input type="radio" checked={isChecked} className='addon' name={`add_on_${addon.id}`} onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
             <label className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
-                {item.label}<span className="text-info">₹{item.amount}</span>
+                {item.label}<span className="text-info"><sup>₹</sup>{item.amount}</span>
             </label>
         </>
     )

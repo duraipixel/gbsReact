@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 import CheckoutButton from "components/CheckoutButton";
 import { useDispatch, useSelector } from "react-redux";
-import { shippingChargesApi } from "services/product.serice";
+import { setShippingChargesApi, shippingChargesApi } from "services/product.serice";
 import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDetails";
 import { Modal } from "react-bootstrap";
 import { setAdressForm } from "redux/features/addressSlice";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
-const CartDetails = ({ checkoutData }) => {
+const CartDetails = ({ checkoutData, setCheckoutData }) => {
   const authUser = useSelector((state) => state.auth)
   const myAddress = useSelector((state) => state.address.value)
   const address = useSelector((state) => state.cartAddress)
@@ -31,6 +31,10 @@ const CartDetails = ({ checkoutData }) => {
     // setShow(!show)
     dispatch(setAdressForm({ status: true, type: 'CREATE' }));
   }
+  const setShippingCharges = async (id) => {
+    const response = await setShippingChargesApi(id)
+    setCheckoutData(response.data.data.cart_total)
+  }
   if (checkoutData) return (
     <>
       <div className="card border-0 shadow-lg" >
@@ -40,12 +44,12 @@ const CartDetails = ({ checkoutData }) => {
             <tbody>
               <tr>
                 <td style={{ paddingLeft: "0", textAlign: "left" }}>Sub Total</td>
-                <td style={{ paddingRight: "0", textAlign: "right" }}>₹{checkoutData.product_tax_exclusive_total}</td>
+                <td style={{ paddingRight: "0", textAlign: "right" }}><sup>₹</sup>{checkoutData.product_tax_exclusive_total}</td>
               </tr>
               <tr>
                 <td style={{ paddingLeft: "0", textAlign: "left" }}>Taxes</td>
                 <td style={{ paddingRight: "0", textAlign: "right" }}>
-                  ₹{checkoutData.tax_total}
+                  <sup>₹</sup>{checkoutData.tax_total}
                 </td>
               </tr>
             </tbody>
@@ -69,7 +73,7 @@ const CartDetails = ({ checkoutData }) => {
                               <span>{type.shipping_title}</span>
                               <div>
                                 <b>{type.charges === "0.00" ? <span className="text-success">FREE</span> : type.charges}</b>
-                                <input type="radio" name="shipping_type" id={type.shipping_title} className="ms-2" />
+                                <input type="radio" onChange={() => setShippingCharges(type.id)} name="shipping_type" id={type.shipping_title} className="ms-2" />
                               </div>
                             </label>
                           ))
@@ -153,7 +157,7 @@ const CartDetails = ({ checkoutData }) => {
             <tr>
               <td style={{ paddingLeft: "0", textAlign: "left" }}>Grand Total</td>
               <td style={{ paddingRight: "0", textAlign: "right" }}>
-                ₹{checkoutData.total}
+                <sup>₹</sup>{checkoutData.total}
               </td>
             </tr>
           </table>

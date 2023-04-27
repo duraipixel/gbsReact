@@ -57,7 +57,7 @@ const MyOrderDetails = () => {
             </div>
             <div className="flex-jc-btwn t-head-gap align-c">
               <p>1</p>
-              <p>₹89,306</p>
+              <p><sup>₹</sup>89,306</p>
             </div>
           </div>
           <hr />
@@ -68,7 +68,7 @@ const MyOrderDetails = () => {
             </div>
             <div className="flex-jc-btwn t-head-gap align-c">
               <p>1</p>
-              <p>₹6000</p>
+              <p><sup>₹</sup>6000</p>
             </div>
           </div>
           <hr />

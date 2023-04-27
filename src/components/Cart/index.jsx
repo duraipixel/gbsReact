@@ -43,7 +43,7 @@ const CartProduct = () => {
               <ProductDetails cartProduct={cartProduct} setCheckoutData={setCheckoutData} fetchCartData={fetchCartData} />
             </Col>
             <Col lg={4} className="align-self-start">
-              <CartDetails checkoutData={checkoutData} />
+              <CartDetails checkoutData={checkoutData} setCheckoutData={setCheckoutData} />
             </Col>
           </Row>
         </Container>

@@ -26,6 +26,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
       } else {
         toast.success(response.data.message)
         setCouponApplyed(true)
+        localStorage.setItem('coupon_amount',response.data.coupon_amount)
         setCheckoutData(response.data.cart_info.cart_total)
       }
     });
@@ -36,6 +37,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         toast.error(response.data.message)
       } else {
         toast.success(response.data.message)
+        localStorage.removeItem('coupon_amount')
         fetchCartData()
       }
     });
@@ -73,7 +75,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
                     <div className='ps-md-3'>
                       <span className="fs-14">{product.product_name}</span>
                       <div className="text-info fw-bold mt-2 mb-2 mb-md-0">
-                        ₹{product.price}
+                        <sup>₹</sup>{product.price}
                       </div>
                       {
                         product.addons.length > 0 ?
@@ -88,7 +90,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
                                     <span className="text-info">{item?.title}</span>
                                     <div className="d-flex">
                                       {item?.addon_item_label}
-                                      <span className="fw-bold ms-1">  ₹{item?.amount}</span>
+                                      <span className="fw-bold ms-1">  <sup>₹</sup>{item?.amount}</span>
                                       <span onClick={() => removeAddons({
                                         addon_id: item.addon_item_id,
                                         cart_id: product.cart_id,

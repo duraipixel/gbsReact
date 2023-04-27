@@ -761,3 +761,6 @@ button[loading="true"] {
   top: 0;
   right: 0;
 }
+.new-arrivals:nth-child(odd) {
+  background-color: var(--bs-light) !important;
+}

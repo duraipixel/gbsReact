@@ -37,8 +37,8 @@ export const clearCartList = async () => {
 export const addOrRemoveWhishListApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/add/remove/whishlist`, {
         customer_id: AuthUser()?.id,
-        product_id : data.product_id,
-        status     : data.status,
+        product_id: data.product_id,
+        status: data.status,
     });
 }
 export const getWhishListApi = async () => {
@@ -50,5 +50,12 @@ export const getWhishListApi = async () => {
 export const clearWhishListApi = async () => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/clear/whishlist`, {
         customer_id: AuthUser()?.id,
+    });
+}
+export const setShippingChargesApi = async (shipping_fee_id) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/set/shipping/charges`, {
+        customer_id: AuthUser()?.id,
+        shipping_fee_id: shipping_fee_id,
+        coupon_amount:  localStorage.getItem('coupon_amount')
     });
 }

@@ -34,7 +34,7 @@ function ProductListComponent({ products, action }) {
                                             </div>
                                         </div>
                                         <h4 className="mb-3">
-                                            <span className="ori-nal ms-0"> ₹{product.price} </span>
+                                            <span className="ori-nal ms-0"> <sup>₹</sup>{product.price} </span>
                                         </h4>
                                         <ul className="config-uration my-2">
                                             {product.overview.map((view) => (

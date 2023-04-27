@@ -53,9 +53,9 @@ function ProductInformation({ product }) {
                 </div>
             </div>
             <div className="d-flex align-items-end mb-4">
-                <del className="text-secondary fw-600">₹{product.strike_price}</del>
-                <div className="fw-bold fs-3 text-info mx-3 lh-1">₹{product.price}</div>
-                <div className="text-info fs-6">You Save (₹{product.save_price}) </div>
+                <del className="text-secondary fw-600"><sup>₹</sup>{product.strike_price}</del>
+                <div className="fw-bold fs-3 text-info mx-3 lh-1"><sup>₹</sup>{product.price}</div>
+                <div className="text-info fs-6">You Save (<sup>₹</sup>{product.save_price}) </div>
             </div>
             <div className="action-group mb-4">
                 <button className="mb-md-0 mb-3 btn btn-primary me-md-3 px-5 fw-semibold">Buy Now</button>

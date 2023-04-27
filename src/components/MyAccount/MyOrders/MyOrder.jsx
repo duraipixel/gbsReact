@@ -24,7 +24,7 @@ function MyOrder() {
               </div>
               <div>
                 <p>Order Total </p>
-                <p>₹80,933.8</p>
+                <p><sup>₹</sup>80,933.8</p>
               </div>
             </div>
             <div className="view-invoice-btn">View Invoice</div>
@@ -77,7 +77,7 @@ function MyOrder() {
               </div>
               <div>
                 <p>Order Total </p>
-                <p>₹80,933.8</p>
+                <p><sup>₹</sup>80,933.8</p>
               </div>
             </div>
             <div className="view-invoice-btn">View Invoice</div>
@@ -127,7 +127,7 @@ function MyOrder() {
               </div>
               <div>
                 <p>Order Total </p>
-                <p>₹80,933.8</p>
+                <p><sup>₹</sup>80,933.8</p>
               </div>
             </div>
             <div className="view-invoice-btn">View Invoice</div>
@@ -177,7 +177,7 @@ function MyOrder() {
               </div>
               <div>
                 <p>Order Total </p>
-                <p>₹80,933.8</p>
+                <p><sup>₹</sup>80,933.8</p>
               </div>
             </div>{" "}
             <div className="payment-canceled align-c gap-2">

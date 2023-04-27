@@ -69,7 +69,7 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹83,127</span> ₹57,990
+                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
@@ -113,7 +113,7 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹83,127</span> ₹57,990
+                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">
@@ -152,7 +152,7 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹83,127</span> ₹57,990
+                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">
@@ -197,7 +197,7 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹83,127</span> ₹57,990
+                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">
@@ -242,7 +242,7 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹83,127</span> ₹57,990
+                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">

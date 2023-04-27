@@ -28,7 +28,7 @@ function CardComponent({ product }) {
           </div>
           <h4>{product.product_name.substring(0, 25)}</h4>
           <h5>
-            <span>₹8{product.strike_price.replace('.00', '')}</span> ₹{product.price.replace('.00', '')}
+            <span><sup>₹</sup>8{product.strike_price.replace('.00', '')}</span> <sup>₹</sup>{product.price.replace('.00', '')}
           </h5>
           {/* <ul>
             <li>12th Gen Intel Core i5-1235U</li>
