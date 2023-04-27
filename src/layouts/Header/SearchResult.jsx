@@ -10,7 +10,7 @@ function SearchResult() {
                     <div className='ps-md-3'>
                         <span >Acer Nitro 5 Gaming Laptop - Black</span>
                         <div className="text-info fw-bold ps-2 mt-2 mb-2 mb-md-0">
-                            <sup>₹</sup>62,558
+                            ₹62,558
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ function SearchResult() {
                     <div className='ps-md-3'>
                         <span >ASUS ROG Strix Scope RX Mechanical Gaming Keyboard </span>
                         <div className="text-info fw-bold ps-2 mt-2 mb-2 mb-md-0">
-                            <sup>₹</sup>9,200
+                            ₹9,200
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ function SearchResult() {
                     <div className='ps-md-3'>
                         <span >SanDisk 1TB Extreme Portable SSD</span>
                         <div className="text-info fw-bold ps-2 mt-2 mb-2 mb-md-0">
-                            <sup>₹</sup>9,200
+                            ₹9,200
                         </div>
                     </div>
                 </div>

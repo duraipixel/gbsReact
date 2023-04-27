@@ -64,7 +64,7 @@ const NewArrivals = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
                     <ul>
                       <li>12th Gen Intel Core i5-1235U</li>
@@ -114,7 +114,7 @@ const NewArrivals = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
                     <ul>
                       <li>12th Gen Intel Core i5-1235U</li>
@@ -158,7 +158,7 @@ const NewArrivals = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
                     <ul>
                       <li>12th Gen Intel Core i5-1235U</li>
@@ -208,7 +208,7 @@ const NewArrivals = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
                     <ul>
                       <li>12th Gen Intel Core i5-1235U</li>
@@ -258,7 +258,7 @@ const NewArrivals = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span><sup>₹</sup>83,127</span> <sup>₹</sup>57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
                     <ul>
                       <li>12th Gen Intel Core i5-1235U</li>

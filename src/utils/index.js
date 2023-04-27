@@ -31,9 +31,9 @@ const scrollToTop = () => {
   window.scroll({ top: 0, left: 0, behavior: "smooth" });
 };
 
-const LoadingSpinner = () => {
+const LoadingSpinner = (props) => {
   return (
-    <Spinner size="sm" animation="border" role="status">
+    <Spinner size="sm" animation="border" role="status" {...props}>
       <span className="visually-hidden"> Loading...</span>
     </Spinner>
   );

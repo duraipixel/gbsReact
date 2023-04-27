@@ -1,10 +1,11 @@
 import AddCartButton from 'components/AddCartButton'
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import { Accordion } from 'react-bootstrap'
 import { toast } from 'react-hot-toast'
 import { updateCartApi } from 'services/product.serice'
+import { LoadingSpinner } from 'utils'
 
-function ProductAddOns({ product, cartId, setCartId }) {
+function ProductAddOns({ product, cartId }) {
     return (
         <>
             {
@@ -53,7 +54,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                         </div>
                                     </div>
                                     <div className="text-info fw-bold ps-2">
-                                        <sup>₹</sup>{item.price}
+                                        ₹{item.price}
                                     </div>
                                 </div>
                             ))
@@ -66,28 +67,35 @@ function ProductAddOns({ product, cartId, setCartId }) {
     )
 }
 
-const AddOnInput = ({ item, index, cartId, secIndex , addon}) => {
-    const addonHandler = async (addon, item) => {
-        const { data } = await updateCartApi({
+const AddOnInput = ({ item, index, cartId, secIndex, addon }) => {
+    const [loading, setLoading] = useState(false)
+
+    const addonHandler = (addon, item) => {
+        setLoading(true)
+        updateCartApi({
             cart_id: cartId,
             quantity: 1,
             addon_id: addon.id,
             addon_item_id: item.id,
+        }).then((response) => {
+            if (response.data.error === 0) {
+                toast.success(response.data.message)
+                setIsChecked(true)
+            } else {
+                toast.error(response.data.message)
+            }
+            setLoading(false)
         })
-        if (data.error === 0) {
-            toast.success(data.message)
-            setIsChecked(true)
-        }
     }
     const [isChecked, setIsChecked] = useState(item.is_selected)
     return (
         <>
-            <input type="radio" checked={isChecked} className='addon' name={`add_on_${addon.id}`} onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
-            <label className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
-                {item.label}<span className="text-info"><sup>₹</sup>{item.amount}</span>
+            <input type="radio" disabled={loading} checked={isChecked} className='addon' name={`add_on_${addon.id}`} onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
+            <label  className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
+                {loading?<LoadingSpinner className="position-absolute"/>:""}
+                {item.label}<span className="text-info">₹{item.amount}</span>
             </label>
         </>
     )
 }
-
 export default ProductAddOns

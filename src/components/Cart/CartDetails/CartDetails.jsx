@@ -49,12 +49,12 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
             <tbody>
               <tr>
                 <td style={{ paddingLeft: "0", textAlign: "left" }}>Sub Total</td>
-                <td style={{ paddingRight: "0", textAlign: "right" }}><sup>₹</sup>{checkoutData.product_tax_exclusive_total}</td>
+                <td style={{ paddingRight: "0", textAlign: "right" }}>₹{checkoutData.product_tax_exclusive_total}</td>
               </tr>
               <tr>
                 <td style={{ paddingLeft: "0", textAlign: "left" }}>Taxes</td>
                 <td style={{ paddingRight: "0", textAlign: "right" }}>
-                  <sup>₹</sup>{checkoutData.tax_total}
+                  ₹{checkoutData.tax_total}
                 </td>
               </tr>
             </tbody>
@@ -162,7 +162,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
             <tr>
               <td style={{ paddingLeft: "0", textAlign: "left" }}>Grand Total</td>
               <td style={{ paddingRight: "0", textAlign: "right" }}>
-                <sup>₹</sup>{checkoutData.total}
+                ₹{checkoutData.total}
               </td>
             </tr>
           </table>

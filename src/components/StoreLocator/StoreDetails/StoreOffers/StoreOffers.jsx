@@ -10,19 +10,19 @@ const StoreOffers = () => {
           <h2>Explore Our Exclusive Store Offers</h2>
           <Row>
             <Col className="offers-card">
-              <p>Get instant 5% Cashback Up to <sup>₹</sup>2,500*</p>
+              <p>Get instant 5% Cashback Up to ₹2,500*</p>
             </Col>
             <Col className="offers-card">
               <p>No Cost EMI on all major Debit & Credit Cards</p>
             </Col>
             <Col className="offers-card">
-              <p>Warranty Upgrades worth <sup>₹</sup>5499</p>
+              <p>Warranty Upgrades worth ₹5499</p>
             </Col>
             <Col className="offers-card">
-              <p>JBL Earbuds worth <sup>₹</sup>7999 at <sup>₹</sup>999</p>
+              <p>JBL Earbuds worth ₹7999 at ₹999</p>
             </Col>
             <Col className="offers-card">
-              <p>JBL Speaker worth <sup>₹</sup>4999 at <sup>₹</sup>399</p>
+              <p>JBL Speaker worth ₹4999 at ₹399</p>
             </Col>
           </Row>
         </Col>
