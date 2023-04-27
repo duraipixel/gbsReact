@@ -18,11 +18,17 @@ const StoreOffers = ({ storeLocation }) => {
                     <p>{item}</p>
                   </Col>
                 ))}
-          </Row>
-        </Col>
-      </Container>
-    </div>
-  ))
+              {/* <Col className="offers-card">
+              <p>
+                Get instant 5% Cashback Up to <sup>₹</sup>2,500*
+              </p>
+            </Col> */}
+            </Row>
+          </Col>
+        </Container>
+      </div>
+    )
+  );
 };
 
 export default StoreOffers;
