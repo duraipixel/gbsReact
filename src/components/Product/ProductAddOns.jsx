@@ -71,7 +71,6 @@ function ProductAddOns({ product, cartId, setCartId }) {
 
 const AddOnInput = ({ item, index, cartId, secIndex, addon, product, setCartId }) => {
     const [loading, setLoading] = useState(false)
-    const dispatch = useDispatch()
     const updateCartApiHandler = () => {
         updateCartApi({
             cart_id: cartId,
@@ -99,7 +98,7 @@ const AddOnInput = ({ item, index, cartId, secIndex, addon, product, setCartId }
     const [isChecked, setIsChecked] = useState(item.is_selected)
     return (
         <>
-            <input type="radio" disabled={loading} checked={isChecked} className='addon' name={`add_on_${addon.id}`} onChange={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
+            <input type="radio" disabled={loading} checked={isChecked} className='addon' name={`add_on_${addon.id}`} onClick={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
             <label className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
                 {loading ? <LoadingSpinner className="position-absolute" /> : ""}
                 {item.label}<span className="text-info">₹{item.amount}</span>

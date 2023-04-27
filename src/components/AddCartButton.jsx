@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast"
 import { useDispatch } from "react-redux"
 import { removeCart, setCart } from "redux/features/cartSlice"
 import { addToCartApi, removeFromCartApi } from "services/product.serice"
-import { AuthUser, checkCartBucket, strRandom } from "utils"
+import { AuthUser, LoadingSpinner, checkCartBucket, strRandom } from "utils"
 
 function AddCartButton({ className, product, type, setCartId }) {
     const dispatch = useDispatch()
@@ -32,7 +32,7 @@ function AddCartButton({ className, product, type, setCartId }) {
                 guest_token: localStorage.getItem('guest_token'),
                 quantity: 1
             }).then((response) => {
-                if (response.data.error === 0) { 
+                if (response.data.error === 0) {
                     dispatch(setCart(product))
                     toast.success(response.data.message);
                     setIsAddCart(true)
@@ -44,7 +44,7 @@ function AddCartButton({ className, product, type, setCartId }) {
                 }
             })
         }
-        setTimeout(() => setLoading(false), 200)
+        setTimeout(() => setLoading(false), 1000)
     }
     if (type === 'button') return (
         <button loading={`${loading}`} onClick={addOrRemoveCart} className={isAddCart ? 'btn btn-outline-primary' : className}>
@@ -55,7 +55,10 @@ function AddCartButton({ className, product, type, setCartId }) {
         const key = strRandom(5);
         return (
             <label className='mt-2 text-primary d-block' htmlFor={`Frequently_${key}`} >
-                <input type="checkbox" checked={isAddCart} onChange={addOrRemoveCart} id={`Frequently_${key}`} className='form-check-input me-2 rounded-0 border border-primary' />
+                {
+                    loading ? <LoadingSpinner className="me-2" />
+                    : <input type="checkbox" checked={isAddCart} onChange={addOrRemoveCart} id={`Frequently_${key}`} className='form-check-input me-2 rounded-0 border border-primary' />
+                }
                 Selected
             </label>
         )

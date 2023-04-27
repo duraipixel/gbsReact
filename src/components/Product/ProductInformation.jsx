@@ -92,8 +92,8 @@ function ProductInformation({ product }) {
                         <div className="fw-bold">Pickup From Store:</div>
                         <div className="text-dark ps-2"> Available for Pickup</div>
                     </div>
-                    <div className="vr ms-2"></div>
-                    <button className="text-primary btn-link btn"><TbCurrentLocation className='me-1' /> Find Stores</button>
+                    {/* <div className="vr ms-2"></div>
+                    <button className="text-primary btn-link btn"><TbCurrentLocation className='me-1' /> Find Stores</button> */}
                 </div>
             </div>
             <ProductOverview product={product} />
