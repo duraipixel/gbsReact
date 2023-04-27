@@ -40,6 +40,7 @@ function CheckoutButton({ className }) {
             shipping_address: shipping_address,
             billing_address: billing_address,
             pickup_store_id: JSON.parse(localStorage.getItem('store_address'))?.id,
+            pickup_store_address: JSON.parse(localStorage.getItem('store_address')),
             coupon_data: JSON.parse(localStorage.getItem('coupon_data')),
             cart_items: JSON.parse(localStorage.getItem('cart_list')),
             standard_shipping_charge_id: shipping_charge_id,
