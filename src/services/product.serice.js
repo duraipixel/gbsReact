@@ -56,6 +56,17 @@ export const setShippingChargesApi = async (shipping_fee_id) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/set/shipping/charges`, {
         customer_id: AuthUser()?.id,
         shipping_fee_id: shipping_fee_id,
-        coupon_amount:  localStorage.getItem('coupon_amount')
+        coupon_amount: localStorage.getItem('coupon_amount')
+    });
+}
+
+export const checkoutApi = async (data) => {
+    console.log({
+        customer_id: AuthUser()?.id,
+        checkout_infomation: data
+    })
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/proceed/checkout`, {
+        customer_id: AuthUser()?.id,
+        checkout_infomation: data
     });
 }

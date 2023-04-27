@@ -9,10 +9,9 @@ import { setAdressForm } from "redux/features/addressSlice";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
 const CartDetails = ({ checkoutData, setCheckoutData }) => {
   const authUser = useSelector((state) => state.auth)
-  const myAddress = useSelector((state) => state.address.value)
   const address = useSelector((state) => state.cartAddress)
   const dispatch = useDispatch()
-  const [shippingMethod, setShippingMethod] = useState('Standard_Shipping')
+  const [shippingMethod, setShippingMethod] = useState()
   const [addressModalType, setAddressModalType] = useState(null)
   const [addressForm, setAddressForm] = useState(false)
   const [shippingTypes, setshippingTypes] = useState([])
@@ -24,14 +23,19 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
         setshippingTypes(response.data)
       })
     }
-  }, [checkoutData])
+  }, [checkoutData, shippingMethod])
   const addAddresHandler = (type) => {
     setAddressForm(true);
     setAddressModalType(type);
     // setShow(!show)
     dispatch(setAdressForm({ status: true, type: 'CREATE' }));
   }
+  const shippingMethodHandler = (value) => {
+    setShippingMethod(value)
+    localStorage.setItem('shipping_method',value.toUpperCase())
+  }
   const setShippingCharges = async (id) => {
+    localStorage.setItem('shipping_charge_id',id)
     const response = await setShippingChargesApi(id)
     setCheckoutData(response.data.data.cart_total)
   }
@@ -61,7 +65,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
                 <div className="mb-3">
                   <h5 className="text-primary">Select Shipping Method</h5>
                   <label htmlFor="ShippingMethod" className="d-block py-2">
-                    <input type="radio" checked={shippingMethod === 'Standard_Shipping'} onChange={(e) => setShippingMethod(e.target.value)} value='Standard_Shipping' name="ShippingMethod" id="ShippingMethod" className="form-check-input me-2" />
+                    <input type="radio" checked={shippingMethod === 'Standard_Shipping'} onChange={(e) => shippingMethodHandler(e.target.value)} value='Standard_Shipping' name="ShippingMethod" id="ShippingMethod" className="form-check-input me-2" />
                     Standard Shipping
                   </label>
                   {
@@ -82,7 +86,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
                       : ""
                   }
                   <label htmlFor="PickupFromStore" className="d-block py-2">
-                    <input type="radio" checked={shippingMethod === 'Pickup_From_Store'} onChange={(e) => setShippingMethod(e.target.value)} value='Pickup_From_Store' name="ShippingMethod" id="PickupFromStore" className="form-check-input me-2" />
+                    <input type="radio" checked={shippingMethod === 'Pickup_From_Store'} onChange={(e) => shippingMethodHandler(e.target.value)} value='Pickup_From_Store' name="ShippingMethod" id="PickupFromStore" className="form-check-input me-2" />
                     Pickup From Store
                   </label>
                 </div>
@@ -162,7 +166,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
             </tr>
           </table>
           <div>
-            <CheckoutButton className="btn btn-dark w-100 mt-3" />
+            <CheckoutButton className="btn btn-dark w-100 mt-3" checkoutData={checkoutData}/>
           </div>
         </div>
       </div>

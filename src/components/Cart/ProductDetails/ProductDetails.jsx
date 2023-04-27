@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { BsDash, BsPlus, BsX } from "react-icons/bs";
 import { removeCart } from "redux/features/cartSlice";
 import { FaTrash } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { clearCartList, removeFromCartApi, updateCartApi } from "services/product.serice";
 import { toast } from "react-hot-toast";
 import { AuthUser } from "utils";
@@ -12,7 +12,7 @@ import axios from "axios";
 import SweetAlert from "react-bootstrap-sweetalert";
 
 const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
-  const { handleSubmit, register, formState: { errors }, reset } = useForm()
+  const { handleSubmit, register, formState: { errors }, reset, setValue } = useForm()
   const [loading, setLoading] = useState(false)
   const [couponApplyed, setCouponApplyed] = useState(false)
   const [deleteAlert, setDeleteAlert] = useState(false);
@@ -26,7 +26,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
       } else {
         toast.success(response.data.message)
         setCouponApplyed(true)
-        localStorage.setItem('coupon_amount',response.data.coupon_amount)
+        localStorage.setItem('coupon_data', JSON.stringify(response.data))
         setCheckoutData(response.data.cart_info.cart_total)
       }
     });
@@ -36,8 +36,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
       if (response.data.error) {
         toast.error(response.data.message)
       } else {
-        toast.success(response.data.message)
-        localStorage.removeItem('coupon_amount')
+        toast.success(response.data.message) 
         fetchCartData()
       }
     });
@@ -48,6 +47,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
     if (data) {
       reset()
       setCouponApplyed(false)
+      localStorage.removeItem('coupon_data')
       setLoading(false)
       toast.success('coupon removed!')
     }
@@ -58,9 +58,17 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         toast.success(response.data.message)
         localStorage.clear('cart_list')
         fetchCartData()
+        setDeleteAlert(false)
       }
     })
   }
+  // useEffect(() => {
+  //   var coupon_data = JSON.parse(localStorage.getItem('coupon_data'))
+  //   if (coupon_data !== null) {
+  //     setValue('coupon_code', coupon_data.coupon_code)
+  //     setCouponApplyed(true)
+  //   }
+  // }, [])
   return (
     <>
       <div className="card border-0">
@@ -68,8 +76,8 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         <ul className="list-group rounded list-group-flush" style={{ maxHeight: '460px', overflow: 'auto' }}>
           {
             cartProduct?.length ?
-              cartProduct.map(product => (
-                <li key={product.id} className="d-md-flex gap-3 align-items-center justify-content-between list-group-item">
+              cartProduct.map((product, i) => (
+                <li key={i} className="d-md-flex gap-3 align-items-center justify-content-between list-group-item">
                   <div className='d-md-flex col-lg-8 '>
                     <img src={product.image} alt="product-thumnail" className='product-thumnail' />
                     <div className='ps-md-3'>
@@ -81,8 +89,8 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
                         product.addons.length > 0 ?
                           <ul className="border-top mt-3">
                             {
-                              product.addons.map(item => (
-                                <li key={item.id} className="mt-2 d-flex align-items-center">
+                              product.addons.map((item, i) => (
+                                <li key={i} className="mt-2 d-flex align-items-center">
                                   <div>
                                     <img src={item.icon} alt={item?.title} width={35} />
                                   </div>
@@ -106,7 +114,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
                       }
                     </div>
                   </div>
-                  <ProductQuantityInput product={product} />
+                  <ProductQuantityInput product={product} setCheckoutData={setCheckoutData} />
                   <ProductDeleteButton product={product} fetchCartData={fetchCartData} />
                 </li>
               ))
@@ -206,7 +214,7 @@ const ProductDeleteButton = ({ product, fetchCartData }) => {
     </div>
   )
 }
-const ProductQuantityInput = ({ product }) => {
+const ProductQuantityInput = ({ product, setCheckoutData }) => {
   const [count, setCount] = useState(Number(product.quantity) === 0 ? 1 : Number(product.quantity))
   const [loading, setLoading] = useState(false)
   const updateCart = async (type) => {
@@ -219,6 +227,7 @@ const ProductQuantityInput = ({ product }) => {
     if (data.error === 0) {
       toast.success(data.message)
       setCount(quantity)
+      setCheckoutData(data.data.cart_total)
     }
     setLoading(false)
   }
