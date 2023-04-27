@@ -1,29 +1,69 @@
 import React from "react";
 import "./styles.scss";
 import { Col, Container } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
-const StoreLocatorBanner = () => {
+const StoreLocatorBanner = ({
+  serviceCenterData,
+  setCenterID,
+  setBrandId,
+  setPostCode,
+}) => {
+  const brands = useSelector((state) => state.homePageCollection.brands);
+
   return (
-    <section className="banner">
-      <Container>
-        <Col>
-          <h2 className="text-center">Store Locator</h2>
-          <div>
-            <div className="m-2 flex-center flex-wrap">
-              <select className="" id="" name="">
-                <option value="Chennai - All Stores">
-                  Chennai - All Stores
-                </option>
-              </select>
-              <select className="" id="" name="">
-                <option value="Select Brand">Select Brand</option>
-              </select>
-              <input type="number" placeholder="Search by Pincode" />
+    serviceCenterData && (
+      <section className="banner">
+        <Container>
+          <Col>
+            <h2 className="text-center">Store Locator</h2>
+            <div>
+              <div className="m-2 flex-center flex-wrap">
+                <select
+                  className=""
+                  id=""
+                  name=""
+                  onChange={(e) => {
+                    setCenterID(e.target.value);
+                  }}
+                >
+                  <option value="">Select Store</option>
+                  {serviceCenterData.data.map((item) => (
+                    <option value={item.id} key={item.id}>
+                      {item.title}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  className=""
+                  id=""
+                  name=""
+                  onChange={(e) => {
+                    setBrandId(e.target.value);
+                  }}
+                >
+                  <option value="">Select Brand</option>
+                  {brands &&
+                    brands.map((item) => (
+                      <option value={item.id} key={item.id}>
+                        {item.title}
+                      </option>
+                    ))}
+                </select>
+                <input
+                  type="number"
+                  placeholder="Search by Pincode"
+                  onChange={(e) => {
+                    setPostCode(e.target.value);
+                  }}
+                />
+              </div>
             </div>
-          </div>
-        </Col>
-      </Container>
-    </section>
+          </Col>
+        </Container>
+      </section>
+    )
   );
 };
 

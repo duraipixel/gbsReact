@@ -7,7 +7,6 @@ import { Loader, scrollToTop } from "utils";
 const ServiceCenterLocator = () => {
   const [serviceCenterData, setServiceCenterData] = useState();
   const [serviceCenterFilteredData, setServiceCenterFilteredData] = useState();
-  const [serviceCenterBrandData, setServiceCenterBrandData] = useState();
   const [fetching, setfetching] = useState(true);
   const [filterFetching, setFilterFetching] = useState(true);
 
@@ -17,20 +16,13 @@ const ServiceCenterLocator = () => {
 
   useEffect(() => {
     scrollToTop();
-    getBrandData();
     getData();
+  }, []);
+
+  useEffect(() => {
     getFilterData();
   }, [centerID, brandId, postCode]);
 
-  const getBrandData = () => {
-    return axios
-      .get(`${process.env.REACT_APP_BASE_URL}/get/brands`)
-      .then((res) => {
-        setServiceCenterBrandData(res.data);
-        setfetching(false);
-      })
-      .catch((err) => console.error(err));
-  };
 
   const getData = () => {
     return axios
@@ -64,7 +56,6 @@ const ServiceCenterLocator = () => {
       <ServiceCenterLocatorBanner
         serviceCenterData={serviceCenterData}
         serviceCenterFilteredData={serviceCenterFilteredData}
-        serviceCenterBrandData={serviceCenterBrandData}
         setCenterID={setCenterID}
         setBrandId={setBrandId}
         setPostCode={setPostCode}

@@ -58,9 +58,9 @@ function App() {
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
             <Route path="/store-locator" element={<StoreLocatorPage />} />
-            <Route path="/store-location-details" element={<StoreLocationDetailsPage />} />
+            <Route path="/store-location-details/:store_slug" element={<StoreLocationDetailsPage />} />
             <Route path="/service-center-locator" element={<ServiceCenterLocator />} />
-            <Route path="/service-center-details/:store_slug" element={<ServiceCenterDetails />} />
+            <Route path="/service-center-details/:service_center_slug" element={<ServiceCenterDetails />} />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />

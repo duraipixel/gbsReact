@@ -9,8 +9,8 @@ import { useParams } from "react-router-dom";
 import { Loader, scrollToTop } from "utils";
 
 const ServiceCenterDetails = () => {
-  const { store_slug } = useParams();
-  // console.log(store_slug);
+  const { service_center_slug } = useParams();
+  // console.log(service_center_slug);
 
   const [serviceCenterData, setServiceCenterData] = useState();
   const [fetching, setfetching] = useState(true);
@@ -23,7 +23,7 @@ const ServiceCenterDetails = () => {
   const getData = () => {
     return axios
       .post(`${process.env.REACT_APP_BASE_URL}/serviceCenterDetail`, {
-        slug: { store_slug },
+        slug: { service_center_slug },
       })
       .then((res) => {
         setServiceCenterData(res.data);

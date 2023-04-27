@@ -1,19 +1,18 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "components/StoreLocator/Banner/styles.scss";
+import { useSelector } from "react-redux";
 
 const ServiceCenterLocatorBanner = ({
   serviceCenterData,
-  serviceCenterBrandData,
   setCenterID,
   setBrandId,
   setPostCode,
 }) => {
   // console.log(serviceCenterData, serviceCenterBrandData);
-
+  const brands = useSelector((state) => state.homePageCollection.brands);
   return (
-    serviceCenterData &&
-    serviceCenterBrandData && (
+    serviceCenterData && (
       <section className="banner">
         <Container>
           <Col>
@@ -44,7 +43,7 @@ const ServiceCenterLocatorBanner = ({
                   }}
                 >
                   <option value="">Select Brand</option>
-                  {serviceCenterBrandData.data.map((item) => (
+                  {brands.map((item) => (
                     <option value={item.id} key={item.id}>
                       {item.title}
                     </option>
