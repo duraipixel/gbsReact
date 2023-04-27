@@ -20,7 +20,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
   useEffect(() => {
     if (shippingMethod === 'Standard_Shipping' && checkoutData) {
       shippingChargesApi(checkoutData.product_tax_exclusive_total_without_format).then(response => {
-        setshippingTypes(response.data) 
+        setshippingTypes(response.data)
       })
     }
   }, [checkoutData, shippingMethod])
@@ -32,13 +32,13 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
   }
   const shippingMethodHandler = (value) => {
     setShippingMethod(value)
-    localStorage.setItem('shipping_method',value.toUpperCase())
+    localStorage.setItem('shipping_method', value.toUpperCase())
   }
   const setShippingCharges = async (id) => {
-    localStorage.setItem('shipping_charge_id',id)
+    localStorage.setItem('shipping_charge_id', id)
     const response = await setShippingChargesApi(id)
     setCheckoutData(response.data.data.cart_total)
-    localStorage.setItem('checkout_data',JSON.stringify(response.data.data.cart_total))
+    localStorage.setItem('checkout_data', JSON.stringify(response.data.data.cart_total))
   }
   if (checkoutData) return (
     <>
@@ -159,15 +159,17 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
               : <div className="line-spacer"></div>
           }
           <table className="table table-borderless end-point m-0">
-            <tr>
-              <td style={{ paddingLeft: "0", textAlign: "left" }}>Grand Total</td>
-              <td style={{ paddingRight: "0", textAlign: "right" }}>
-                ₹{checkoutData.total}
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td style={{ paddingLeft: "0", textAlign: "left" }}>Grand Total</td>
+                <td style={{ paddingRight: "0", textAlign: "right" }}>
+                  ₹{checkoutData.total}
+                </td>
+              </tr>
+            </tbody>
           </table>
           <div>
-            <CheckoutButton className="btn btn-dark w-100 mt-3" checkoutData={checkoutData}/>
+            <CheckoutButton className="btn btn-dark w-100 mt-3" checkoutData={checkoutData} />
           </div>
         </div>
       </div>

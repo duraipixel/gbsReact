@@ -1,16 +1,20 @@
+import { useState } from 'react'
 import { toast } from 'react-hot-toast'
+import useRazorpay from 'react-razorpay'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
-import { checkoutApi } from 'services/product.serice'
+import { checkoutApi, paymentVerifyApi } from 'services/product.serice'
 
 function CheckoutButton({ className }) {
-    const authUser = useSelector((state) => state.auth)
-    const dispatch = useDispatch()
-    const billing_address = JSON.parse(localStorage.getItem('billing_address'))
-    const shipping_address = JSON.parse(localStorage.getItem('shipping_address'))
-    const shipping_method = localStorage.getItem('shipping_method')
+    const Razorpay           = useRazorpay()
+    const authUser           = useSelector((state) => state.auth)
+    const dispatch           = useDispatch()
+    const billing_address    = JSON.parse(localStorage.getItem('billing_address'))
+    const shipping_address   = JSON.parse(localStorage.getItem('shipping_address'))
+    const shipping_method    = localStorage.getItem('shipping_method')
     const shipping_charge_id = localStorage.getItem('shipping_charge_id')
-    const store_address = JSON.parse(localStorage.getItem('store_address'));
+    const store_address      = JSON.parse(localStorage.getItem('store_address'));
+    const [loader, setLoader] = useState(false)
     const isCheckoutData = () => {
         if (billing_address === null || billing_address === undefined) {
             toast.error('Billing address required!')
@@ -34,7 +38,7 @@ function CheckoutButton({ className }) {
         }
         return true
     }
-    const checkoutHandler = () => {
+    const checkoutHandler = async () => {
         const checkData = {
             shipping_method: shipping_method,
             shipping_address: shipping_address,
@@ -46,11 +50,18 @@ function CheckoutButton({ className }) {
             standard_shipping_charge_id: shipping_charge_id,
             checkout_data: JSON.parse(localStorage.getItem('checkout_data'))
         }
-        console.log(checkData)
-        if (isCheckoutData()) checkoutApi(JSON.stringify(checkData))
+        if (isCheckoutData()) {
+            setLoader(true)
+            const options = await checkoutApi(JSON.stringify(checkData), setLoader);
+            const RazorpayModal = new Razorpay(options);
+            RazorpayModal.on("payment.failed", function (response) {
+                paymentVerifyApi(response.error, true).then((res) => setLoader(false));
+            });
+            RazorpayModal.open();
+        }
     }
     return (
-        <button className={className} onClick={() => authUser.isLoggedIn ? checkoutHandler() : dispatch(setLayoutStatus({ status: true, type: 'login' }))}>
+        <button loading={`${loader}`} disabled={loader} className={className} onClick={() => authUser.isLoggedIn ? checkoutHandler() : dispatch(setLayoutStatus({ status: true, type: 'login' }))}>
             Proceed to Checkout
         </button>
     )
