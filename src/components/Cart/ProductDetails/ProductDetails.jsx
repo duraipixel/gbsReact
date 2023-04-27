@@ -1,22 +1,24 @@
-
 import { useDispatch } from "react-redux";
 import { BsDash, BsPlus, BsX } from "react-icons/bs";
-import { removeCart } from "redux/features/cartSlice";
+import { clearCart, removeCart } from "redux/features/cartSlice";
 import { FaTrash } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { clearCartList, removeFromCartApi, updateCartApi } from "services/product.serice";
 import { toast } from "react-hot-toast";
 import { AuthUser } from "utils";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import SweetAlert from "react-bootstrap-sweetalert";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
-  const { handleSubmit, register, formState: { errors }, reset, setValue } = useForm()
+  const { handleSubmit, register, formState: { errors }, reset } = useForm()
   const [loading, setLoading] = useState(false)
   const [couponApplyed, setCouponApplyed] = useState(false)
   const [deleteAlert, setDeleteAlert] = useState(false);
-
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  
   const CouponHandler = (data) => {
     setLoading(true)
     axios.post(`${process.env.REACT_APP_BASE_URL}/apply/coupon`, {
@@ -63,15 +65,16 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         setCheckoutData(response.data.cart_info.cart_total)
         localStorage.setItem('checkout_data', JSON.stringify(response.data.cart_info.cart_total))
       }
-    }); 
+    });
   }
   const clearCartData = () => {
     clearCartList().then((response) => {
       if (response.data.error === 0) {
         toast.success(response.data.message)
-        localStorage.clear('cart_list')
+        localStorage.removeItem('cart_list')
         fetchCartData()
         setDeleteAlert(false)
+        dispatch(clearCart())
       }
     })
   }

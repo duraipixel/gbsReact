@@ -25,7 +25,7 @@ export const cartSlice = createSlice({
       }
       if (localStorage.getItem('cart_list') !== undefined || localStorage.getItem('cart_list') !== null) {
         let currentCart = JSON.parse(localStorage.getItem('cart_list'));
-        localStorage.setItem('cart_list', JSON.stringify([...currentCart, action.payload])); 
+        localStorage.setItem('cart_list', JSON.stringify([...currentCart, action.payload]));
       }
       var counter = state.value + 1
       return state = {
@@ -42,15 +42,21 @@ export const cartSlice = createSlice({
       var index = currentCart.indexOf(Result)
       currentCart.splice(index, 1)
       localStorage.setItem('cart_list', JSON.stringify(currentCart));
-      
+
       return state = {
         value: currentCart.length > 1 ? currentCart.length - 1 : currentCart.length,
         data: currentCart,
       }
     },
+    clearCart: (state, action) => {
+      return state = {
+        value: 0,
+        data: []
+      }
+    },
   },
 })
 
-export const { setCart, removeCart, setCartList } = cartSlice.actions
+export const { setCart, removeCart, setCartList, clearCart } = cartSlice.actions
 
 export default cartSlice.reducer
