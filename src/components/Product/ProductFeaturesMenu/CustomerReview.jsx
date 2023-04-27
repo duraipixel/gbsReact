@@ -10,24 +10,27 @@ import { AuthUser } from 'utils'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
 import ReviewsList from './ReviewsList'
 
-function CustomerReview({ product_id, is_review }) {
+function CustomerReview({ product, is_review }) { 
     const authUser = useSelector((state) => state.auth)
     const dispatch = useDispatch()
-    const LoginAuth = () => {
-        
+    const LoginAuth = () => { 
         dispatch(setLayoutStatus({ status: true, type: 'login' }))
     }
     const { handleSubmit, reset, register, formState: { errors } } = useForm()
     const [rating, setRating] = useState(0)
     const [disableRateingBox, setDisableRateingBox] = useState(is_review)
     const handleRating = (comments) => {
+        if(product.has_purchased === false) {
+            toast.error('You need to purchase this product !')
+            return false
+        }
         if (rating === 0) {
             toast.error('Star Rating is Required!')
             return false
         }
         axios.post(`${process.env.REACT_APP_BASE_URL}/add/customer/reviews`, {
             customer_id: AuthUser()?.id,
-            product_id: product_id,
+            product_id: product.id,
             star: rating,
             comments: comments['review']
         }).then((response) => {
@@ -58,23 +61,25 @@ function CustomerReview({ product_id, is_review }) {
                             <div>
                                 {
                                     disableRateingBox === false ?
-                                        <Form onSubmit={handleSubmit(handleRating)}>
-                                            <div className="mb-4">
-                                                <h3 className='mb-3'>Your Rating</h3>
-                                                <Rating
-                                                    onClick={(rate) => setRating(rate)}
-                                                    fillIcon={<img src={require('../../../assets/icons/star-yellow.png')} width={30} alt="star" className="me-2" />}
-                                                    emptyIcon={<img src={require('../../../assets/icons/star-gray.png')} width={30} alt="star" className="me-2" />}
-                                                    fillColor="#FFB661"
-                                                    transition
-                                                    showTooltip
-                                                    tooltipArray={["Terrible", "Bad", "Average", "Great", "Awesome"]}
-                                                />
-                                            </div>
-                                            <h3 className='mb-3'>Your Review</h3>
-                                            <textarea name='review' {...register('review', { required: true, max: 255 })} placeholder='Enter Your Review Here' className={`form-control ${errors.review ? 'border-primary' : ''}`} cols="30" rows="10"></textarea>
-                                            <button type='submit' className='btn btn-outline-primary mt-3'>Submit Review</button>
-                                        </Form>
+                                            product.has_purchased ?
+                                            <Form onSubmit={handleSubmit(handleRating)}>
+                                                <div className="mb-4">
+                                                    <h3 className='mb-3'>Your Rating</h3>
+                                                    <Rating
+                                                        onClick={(rate) => setRating(rate)}
+                                                        fillIcon={<img src={require('../../../assets/icons/star-yellow.png')} width={30} alt="star" className="me-2" />}
+                                                        emptyIcon={<img src={require('../../../assets/icons/star-gray.png')} width={30} alt="star" className="me-2" />}
+                                                        fillColor="#FFB661"
+                                                        transition
+                                                        showTooltip
+                                                        tooltipArray={["Terrible", "Bad", "Average", "Great", "Awesome"]}
+                                                    />
+                                                </div>
+                                                <h3 className='mb-3'>Your Review</h3>
+                                                <textarea name='review' {...register('review', { required: true, max: 255 })} placeholder='Enter Your Review Here' className={`form-control ${errors.review ? 'border-primary' : ''}`} cols="30" rows="10"></textarea>
+                                                <button type='submit' className='btn btn-outline-primary mt-3'>Submit Review</button>
+                                            </Form>
+                                            : "You need to purchase this product"
                                         : "Review submitted"
                                 }
                             </div>
@@ -86,7 +91,7 @@ function CustomerReview({ product_id, is_review }) {
                 </div>
                 <div className="vr p-0"></div>
                 <div className="col-lg-7 ps-lg-5">
-                    <ReviewsList product_id={product_id} />  
+                    <ReviewsList product_id={product.id} />  
                 </div>
             </div>
         </div>
