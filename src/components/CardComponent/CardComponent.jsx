@@ -40,8 +40,8 @@ function CardComponent({ product }) {
           </ul> */}
           <div className="d-flex justify-content-between">
             <div className="d-flex clk-optn">
-              <AddFavButton className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} />
-              <CompareButton className="btn btn-outline-info rounded-box-circle rounded-box-sm" product={product} />
+              <AddFavButton buttonType="icon" className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} />
+              <CompareButton buttonType="icon" className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} />
             </div>
             <div>
               <AddCartButton type='button' className="btn btn-primary" product={product} />

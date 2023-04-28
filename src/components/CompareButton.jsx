@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import { addProduct } from "redux/features/compareSlice"
 
-function CompareButton({ product, className }) {
+function CompareButton({ product, className, buttonType }) {
     const dispatch = useDispatch()
     return (
         <button className={className} onClick={() => dispatch(addProduct({ status: true, value: product }))}>
@@ -11,7 +11,7 @@ function CompareButton({ product, className }) {
                 <path d="M15.2445 17.6364C15.2445 14.6409 15.2445 11.6454 15.2445 8.64989C15.2445 8.32605 15.1635 7.43549 14.4349 6.70685C13.3015 5.4115 11.5203 5.73534 11.3584 5.73534C11.3584 7.11165 11.3584 8.56893 11.3584 9.94524L7.63428 6.30206L11.4394 2.49695C11.4394 3.63038 11.4394 4.84478 11.3584 5.97822" stroke="#212363" strokeWidth="1.5" strokeMiterlimit="10" />
                 <path d="M15.2446 20.7937C16.1836 20.7937 16.9447 20.0326 16.9447 19.0936C16.9447 18.1546 16.1836 17.3934 15.2446 17.3934C14.3056 17.3934 13.5444 18.1546 13.5444 19.0936C13.5444 20.0326 14.3056 20.7937 15.2446 20.7937Z" stroke="#212363" strokeWidth="1.5" strokeMiterlimit="10" />
             </svg>
-            <span>Compare</span>
+            {buttonType === 'icon' ? '' : <span>Compare</span>}
         </button>
     )
 }

@@ -785,10 +785,29 @@ button[loading="true"] {
   inset: 0px;
   background: rgba(0, 0, 0, 0.495) !important;
 }
+
 .image-gallery-thumbnail.active {
-  border-color:  var(--dark-blue-color) !important;
+  border-color: var(--dark-blue-color) !important;
 }
+
 .image-gallery-thumbnail:hover,
 .image-gallery-thumbnail:focus {
-  border-color:  var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+@media (max-width:600px) {
+  .slick-dots {
+    position: unset !important;
+    margin-top: 20px;
+  }
+  .banner-slider {
+    .slick-dots {
+      position: absolute !important;
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.next-jump {
+  display: flex !important;
 }
