@@ -1,11 +1,11 @@
 import { Col } from "react-bootstrap";
 import "./styles.scss";
-import { AiOutlineWarning } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getOrdersListApi } from "services/product.service";
 import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 import { Loader } from "utils";
+import { CancelOrderRequested } from "./CancelOrderRequested";
 
 function MyOrder() {
   const [orders, setOrders] = useState([])
@@ -55,8 +55,8 @@ function MyOrder() {
                   <div className="flex-jc-btwn flex-wrap gap-2 align-c pb-3">
                     <h4>Your Order is {order.status}</h4>
                     <Link
-                      to="/my-account/myorders/order-details"
-                      className="btn btn-outline-dblue"
+                      to={`/my-account/myorders/${order.order_no}`}
+                      className="btn btn-info"
                     >
                       Track Order
                     </Link>
@@ -69,13 +69,13 @@ function MyOrder() {
                         13 March 2023
                       </span> */}
                     </div>
-                    <button className="btn btn-cancel">Cancel Order</button>
+                    <CancelOrderRequested order_id={order.id} />
                   </div>
                   <div className="flex gap-4 align-c pt-1 pb-1">
                     {
-                      order.items.map((item,i) => (
-                         <img key={i} src={item.image} height={50} width={50} className="object-cover" alt="order" />
-                      )) 
+                      order.items.map((item, i) => (
+                        <img key={i} src={item.image} height={50} width={50} className="object-cover" alt="order" />
+                      ))
                     }
                   </div>
                 </div>

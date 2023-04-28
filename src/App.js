@@ -55,7 +55,7 @@ function App() {
               <Route path="profile" element={<MyProfile />} />
               <Route path="address-book" element={<MyAddressBook />} />
               <Route path="myorders" element={<MyOrders />} />
-              <Route path="myorders/order-details" element={<MyOrdersDetails />} />
+              <Route path="myorders/:order_id" element={<MyOrdersDetails />} />
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
             <Route path="/store-locator" element={<StoreLocatorPage />} />

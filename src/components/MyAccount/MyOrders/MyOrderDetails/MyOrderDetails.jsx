@@ -1,108 +1,123 @@
-import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./styles.scss";
 import PaymentDetails from "./PaymentDetails";
-import { FaCheck, FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+import { Fragment, useEffect, useState } from "react";
+import { getOrderDetailApi } from "services/product.service";
+import { Loader } from "utils";
+import { CancelOrderRequested } from "../CancelOrderRequested";
 
 const MyOrderDetails = () => {
+  const { order_id } = useParams()
+  const [fetching, setFetching] = useState(true)
+  const [order, setOrder] = useState(false)
+  useEffect(() => {
+    getOrderDetailApi(order_id).then(({ data }) => {
+      console.log(data)
+      setOrder(data)
+      setFetching(false)
+    })
+  }, [])
   return (
     <>
-      <Col className="container-card card p-4 mb-3">
-        <div className="flex-wrap flex-jc-btwn align-c">
-          <h2 className="order-details-title">
-            <span style={{ fontWeight: "600" }}>Order Details</span> -
-            #403-9499889-4551543{" "}
-          </h2>
-          <Link className="btn btn-cancel">Cancel Order</Link>
-        </div>
-        <div className="pt-3">
-          <p>Your order has been shipped and it’s out for delivery</p>
-        </div>
-        <div className="time-line-group my-5">
-          <div className="time-line-item">
-            <div className="time-line-icon"><FaCheckCircle /></div>
-            <div className="time-line-text">Order Placed</div>
-          </div>
-          <div className="time-line-item">
-            <div className="time-line-icon"><FaCheckCircle /></div>
-            <div className="time-line-text">Order Processed</div>
-          </div>
-          <div className="time-line-item">
-            <div className="time-line-icon"><FaCheckCircle /></div>
-            <div className="time-line-text">Out for Delivery</div>
-          </div>
-          <div className="time-line-item">
-            <div className="time-line-icon"><FaCheckCircle /></div>
-            <div className="time-line-text">Order Placed</div>
-          </div>
-          <div className="time-line-item">
-            <div className="time-line-icon"><FaCheckCircle /></div>
-            <div className="time-line-text">Delivered</div>
-          </div>
-        </div>
-        <div>
-          <div className="flex-jc-btwn align-c t-head-title">
-            <p>Product</p>
-            <div className="flex-jc-btwn align-c t-head-gap">
-              <p>Quantity</p>
-              <p>Price</p>
-            </div>
-          </div>
-          <hr className="mt-0" />
-          <div className="flex-jc-btwn pt-1">
-            <div className="flex gap-3 align-c flex-wrap">
-              <img src={require("assets/images/Cart/Cart1.png")} alt="" />
-              <p>ASUS ROG Strix G17 - G713IE-HX040W</p>
-            </div>
-            <div className="flex-jc-btwn t-head-gap align-c">
-              <p>1</p>
-              <p>₹89,306</p>
-            </div>
-          </div>
-          <hr />
-          <div className="flex-jc-btwn pt-1">
-            <div className="flex flex-jc-btwn gap-3 align-c flex-wrap">
-              <img src={require("assets/images/Cart/warranty.png")} alt="" />
-              <p>Extended Warranty - 1 Year</p>
-            </div>
-            <div className="flex-jc-btwn t-head-gap align-c">
-              <p>1</p>
-              <p>₹6000</p>
-            </div>
-          </div>
-          <hr />
-        </div>
-        <div className="billing-details">
-          <h4>Shipping & Billing Details</h4>
-          <Row>
-            <Col>
-              <h5>Shipping Address</h5>
-              <h6>Kabir L</h6>
-              <p>1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West</p>
-              <p>Chennai - 600040</p>
-              <p>Tamil Nadu, India</p>
-              <p>Phone: +91 00000 00000</p>
-              <h5>Shipping Partner</h5>
-              <img
-                src={require("assets/images/myOrders/Bluedart.png")}
-                alt=""
-              />
-              <p>AWB: 28443321126</p>
-            </Col>
-            <div className="vr"></div>
-            <Col>
-              <h5>Billing Address</h5>
-              <h6>Kabir L</h6>
-              <p>1833, 18th Main Road, Thiruvalluvar Colony, Anna Nagar West</p>
-              <p>Chennai - 600040</p>
-              <p>Tamil Nadu, India</p>
-              <p>Phone: +91 00000 00000</p>
-            </Col>
-          </Row>
-        </div>
-      </Col>
-      <PaymentDetails />
+
+      {
+        fetching ?
+          <Loader />
+          :
+          order ?
+            <>
+              <Col className="container-card card p-4 mb-3">
+                <div className="flex-wrap flex-jc-btwn align-c">
+                  <h2 className="order-details-title">
+                    <span style={{ fontWeight: "600" }}>Order Details</span> -
+                    #{order.order_no}
+                  </h2>
+                  <CancelOrderRequested order_id={order.id} />
+                </div>
+                <div className="pt-3">
+                  <p>Your order has been shipped and it’s out for delivery</p>
+                </div>
+                <div className="time-line-group my-5">
+                  <div className="time-line-item">
+                    <div className="time-line-icon"><FaCheckCircle /></div>
+                    <div className="time-line-text">Order Placed</div>
+                  </div>
+                  <div className="time-line-item">
+                    <div className="time-line-icon"><FaCheckCircle /></div>
+                    <div className="time-line-text">Order Processed</div>
+                  </div>
+                  <div className="time-line-item">
+                    <div className="time-line-icon"><FaCheckCircle /></div>
+                    <div className="time-line-text">Out for Delivery</div>
+                  </div>
+                  <div className="time-line-item">
+                    <div className="time-line-icon"><FaCheckCircle /></div>
+                    <div className="time-line-text">Order Placed</div>
+                  </div>
+                  <div className="time-line-item">
+                    <div className="time-line-icon"><FaCheckCircle /></div>
+                    <div className="time-line-text">Delivered</div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex-jc-btwn align-c t-head-title">
+                    <p>Product</p>
+                    <div className="flex-jc-btwn align-c t-head-gap">
+                      <p>Quantity</p>
+                      <p>Price</p>
+                    </div>
+                  </div>
+                  <hr className="mt-0" />
+                  {
+                    order.items.map((item, i) => (
+                      <Fragment key={i}>
+                        <div className="flex-jc-btwn pt-1">
+                          <div className="flex gap-3 align-c flex-wrap">
+                            <img src={item.image} alt="" width={60} />
+                            <p>{item.product_name.substring(0, 50)}</p>
+                          </div>
+                          <div className="flex-jc-btwn t-head-gap align-c">
+                            <p>{item.quantity}</p>
+                            <p>₹{item.price}</p>
+                          </div>
+                        </div>
+                        <hr />
+                      </Fragment>
+                    ))
+                  }
+                </div>
+                <div className="billing-details">
+                  <h4>Shipping & Billing Details</h4>
+                  <Row>
+                    <Col>
+                      <h5>Shipping Address</h5>
+                      <h6>{order.shipping.name}</h6>
+                      <p>{order.shipping.address}</p>
+                      <p>Phone: +91 {order.shipping.mobile_no}</p>
+                      <h5>Shipping Partner</h5>
+                      <img
+                        src={require("assets/images/myOrders/Bluedart.png")}
+                        alt=""
+                      />
+                      <p>AWB: 28443321126</p>
+                    </Col>
+                    <div className="vr"></div>
+                    <Col>
+                      <h5>Billing Address</h5>
+                      <h6>{order.billing.name}</h6>
+                      <p>{order.billing.address}</p>
+                      <p>Phone: +91 {order.billing.mobile_no}</p>
+                    </Col>
+                  </Row>
+                </div>
+              </Col>
+              <PaymentDetails order={order} />
+            </>
+            : "Nodata"
+      }
+
     </>
   );
 };
