@@ -13,8 +13,8 @@ const StoreOffers = ({ storeLocation }) => {
             <h2>Explore Our Exclusive Store Offers</h2>
             <Row>
               {storeLocation &&
-                storeLocation.offers.map((item) => (
-                  <Col className="offers-card">
+                storeLocation.offers.map((item,i) => (
+                  <Col className="offers-card" key={i}>
                     <p>{item}</p>
                   </Col>
                 ))}

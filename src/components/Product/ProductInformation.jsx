@@ -72,7 +72,7 @@ function ProductInformation({ product }) {
                 </button>
             </Form>
             {
-                checkAvailability &&
+                checkAvailability ?
                 <div className="row align-items-center mb-3">
                     <div className="col-md-1 col-3 text-center p-0">
                         <img src={require('../../assets/icons/delivery-truck.png')} width={50} alt='gps' />
@@ -82,6 +82,7 @@ function ProductInformation({ product }) {
                         <div className="text-dark ps-2"> {information} </div>
                     </div>
                 </div>
+                : ""
             }
             <div className="row align-items-center mb-2">
                 <div className="col-md-1 col-3 text-center p-0">

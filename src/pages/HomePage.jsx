@@ -11,21 +11,28 @@ import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
 import Tablets from "components/Home/Tablets/Tablets";
 import Combos from "components/Home/Combos/Combos";
 import MustHaves from "components/Home/MustHaves/MustHaves";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { homePageApi } from "services/page.service";
 import { setHomePageCollection } from "redux/features/homePageSlice";
 import { useDispatch } from "react-redux";
 import ProductCollection from "components/Home/ProductCollection/ProductCollection";
+import { Loader } from "utils";
 const HomePage = () => {
   const dispatch = useDispatch()
+  const homePageData = sessionStorage.getItem('home_page_collection')
+  const [fetching, setFetching] = useState(homePageData !== null ? false : true)
   const GetPageData = () => {
     homePageApi().then((response) => {
-      if(response) dispatch(setHomePageCollection(response))
+      if (response) {
+        dispatch(setHomePageCollection(response))
+        setFetching(false)
+      }
     })
-  }
+  } 
   useEffect(() => {
     GetPageData()
   }, []);
+  if(fetching) return <Loader />
   return (
     <div>
       <HomeProductsSlider />
@@ -35,11 +42,7 @@ const HomePage = () => {
       <ProductCollection />
       <ServiceCenter />
       <NarrowSearch />
-      {/* <PerfectStudents /> */}
       <PrefferedProcessor />
-      {/* <GamersLaptop /> */}
-      {/* <Tablets /> */}
-      {/* <Combos /> */}
       <MustHaves />
       <PackageSupport />
     </div>
