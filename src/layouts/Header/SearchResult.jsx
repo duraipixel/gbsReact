@@ -1,46 +1,50 @@
-import { useSelector } from 'react-redux'
+import NoDataComponent from 'components/NoDataComponent/NoDataComponent'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { resetSearch } from 'redux/features/searchSlice'
 
 function SearchResult() {
     const search = useSelector((state) => state.search.value)
-    if (search.length > 0) return (
-        <ul className="list-group rounded list-group-flush">
-            <li className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
-                <div className='d-md-flex'>
-                    <img src={require('../../assets/images/products/product-thumnail-1.png')} alt="product-thumnail" className='product-thumnail' />
-                    <div className='ps-md-3'>
-                        <span >Acer Nitro 5 Gaming Laptop - Black</span>
-                        <div className="text-info fw-bold ps-2 mt-2 mb-2 mb-md-0">
-                            ₹62,558
-                        </div>
-                    </div>
-                </div>
-                <div className="badge badge-soft-primary"> Keyboards </div>
-            </li>
-            <li className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
-                <div className='d-md-flex'>
-                    <img src={require('../../assets/images/products/product-thumnail-2.png')} alt="product-thumnail" className='product-thumnail' />
-                    <div className='ps-md-3'>
-                        <span >ASUS ROG Strix Scope RX Mechanical Gaming Keyboard </span>
-                        <div className="text-info fw-bold ps-2 mt-2 mb-2 mb-md-0">
-                            ₹9,200
-                        </div>
-                    </div>
-                </div>
-                <div className="badge badge-soft-primary"> Laptops </div>
-            </li>
-            <li className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
-                <div className='d-md-flex'>
-                    <img src={require('../../assets/images/products/product-thumnail-3.png')} alt="product-thumnail" className='product-thumnail' />
-                    <div className='ps-md-3'>
-                        <span >SanDisk 1TB Extreme Portable SSD</span>
-                        <div className="text-info fw-bold ps-2 mt-2 mb-2 mb-md-0">
-                            ₹9,200
-                        </div>
-                    </div>
-                </div>
-                <div className="badge badge-soft-primary"> Laptops </div>
-            </li>
-        </ul>
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const searchResultHandler = (item) => {
+        navigate(`/product-list/${item.product_url}`)
+        dispatch(resetSearch())
+    }
+    if (search.status) return (
+        <div className="search-result rounded">
+            <ul className="list-group rounded list-group-flush">
+                {
+                    search.products.map((item, i) => (
+                        <li key={i} onClick={() => searchResultHandler(item)} className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
+                            <div className='d-md-flex'>
+                                <img src={item.image} alt="product-thumnail" className='product-thumnail' />
+                                <div className='ps-md-3'>
+                                    <span className='fs-14'>{item.product_name}</span>
+                                    <div className="text-info fw-bold">
+                                        ₹{item.price}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="badge badge-soft-primary btn-sm small ms-md-3"> {item.category_name} </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    )
+    return (
+        <div className="search-result rounded">
+            <ul className="list-group rounded list-group-flush">
+                {
+                    search?.products?.map((item, i) => (
+                        <li className="d-md-flex align-items-center justify-content-center list-group-item list-group-item-action">
+                            <NoDataComponent />
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
     )
 }
 

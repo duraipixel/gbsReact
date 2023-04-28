@@ -111,13 +111,16 @@
   transition: all 0.3s ease;
 }
 
-.search-result {
-  background-color: white;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  top: 50px;
+@media (min-width:762px) {
+  .search-result {
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 60px;
+  }
 }
+
 
 .search-result li {
   cursor: pointer;

@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     value: [],
-    status: 'idle',
+    isSuccess: false,
+    query: ""
 };
 
 export const searchSlice = createSlice({
@@ -10,10 +11,20 @@ export const searchSlice = createSlice({
     initialState,
     reducers: {
         setSearchResults: (state, action) => {
-            state.value = action.payload;
+            return state = action.payload;
         },
-    } 
+        setSearchStatus: (state, action) => {
+            return state = {
+                value: [],
+                isSuccess: action.payload.isSuccess,
+                query: action.payload.query,
+            };
+        },
+        resetSearch: (state, action) => {
+            return state = initialState;
+        },
+    }
 });
 
-export const { setSearchResults } = searchSlice.actions;
+export const { setSearchResults, setSearchStatus, resetSearch } = searchSlice.actions;
 export default searchSlice.reducer;

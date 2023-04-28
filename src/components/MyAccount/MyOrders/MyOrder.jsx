@@ -74,7 +74,7 @@ function MyOrder() {
                   <div className="flex gap-4 align-c pt-1 pb-1">
                     {
                       order.items.map((item, i) => (
-                        <img key={i} src={item.image} height={50} width={50} className="object-cover" alt="order" />
+                        <img key={i} src={item.image} height={50} width={50}  style={{ objectFit:'contain' }} alt="order" className="shadow-sm"/>
                       ))
                     }
                   </div>

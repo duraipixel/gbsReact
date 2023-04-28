@@ -18,7 +18,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const header = useSelector((state) => state.header.status);
   const [navMenu, setNavMenu] = useState(false);
-  const [search, setSearch] = useState("");
+  const search = useSelector((state) => state.search.value)
   const [searchMobileSearch, setMobileSearch] = useState(false);
   const expand = "lg";
   const toggleHeader = () => {
@@ -167,7 +167,7 @@ const Header = () => {
                         <div className="small text-white mt-2 fw-500">Menu</div>
                       </button>
                       <div className="input-group shadow rounded">
-                        <SearchInput search={search} setSearch={setSearch} />
+                        <SearchInput />
                       </div>
                       {navMenu && <NavMenus />}
                       {navMenu && (
@@ -176,11 +176,7 @@ const Header = () => {
                           onClick={() => setNavMenu(!navMenu)}
                         ></div>
                       )}
-                      {search !== "" && (
-                        <div className="search-result rounded">
-                          <SearchResult />
-                        </div>
-                      )}
+                      <SearchResult />
                     </div>
                   )}
                 </div>
