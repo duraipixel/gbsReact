@@ -18,7 +18,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const header = useSelector((state) => state.header.status);
   const [navMenu, setNavMenu] = useState(false);
-  const search = useSelector((state) => state.search.value)
   const [searchMobileSearch, setMobileSearch] = useState(false);
   const expand = "lg";
   const toggleHeader = () => {
@@ -176,7 +175,7 @@ const Header = () => {
                           onClick={() => setNavMenu(!navMenu)}
                         ></div>
                       )}
-                      <SearchResult />
+                      <SearchResult setMobileSearch={setMobileSearch}/>
                     </div>
                   )}
                 </div>

@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { resetSearch } from 'redux/features/searchSlice'
 
-function SearchResult() {
+function SearchResult({ setMobileSearch }) {
     const search = useSelector((state) => state.search.value)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const searchResultHandler = (item) => {
         navigate(`/product-list/${item.product_url}`)
         dispatch(resetSearch())
+        setMobileSearch(false)
     }
     if (search.status) return (
         <div className="search-result rounded">

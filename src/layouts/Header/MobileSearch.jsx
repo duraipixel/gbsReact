@@ -43,7 +43,7 @@ function MobileSearch({ searchMobileSearch, setMobileSearch }) {
                     <SearchInput />
                 </div>
             </div>
-            <SearchResult />
+            <SearchResult setMobileSearch={setMobileSearch}/>
         </Dialog>
     )
 }
