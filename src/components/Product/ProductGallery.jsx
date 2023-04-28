@@ -10,16 +10,14 @@ export default function ProductGallery({ images }) {
         })
     ))
     return (
-        <div>
+        <div className="mx-3">
             <ReactImageGallery
                 thumbnailPosition={window.innerWidth > 769 ? 'left' : 'bottom'}
-                useTranslate3D={true}
                 items={produtcCollection}
                 loading="lazy"
                 autoPlay={true}
-                useBrowserFullscreen={true}
-                renderItem={(image) => <div><Image className="product-carousel-image" src={image.original} /></div> }
-                renderThumbInner={(image) => <div><Image className="product-thumbnail-image" src={image.thumbnail} /></div> }
+                showPlayButton={true}
+                showFullscreenButton={window.innerWidth > 400 ? true : false}
             />
         </div>
     )

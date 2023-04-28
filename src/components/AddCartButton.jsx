@@ -48,7 +48,7 @@ function AddCartButton({ className, product, type, setCartId }) {
         setTimeout(() => setLoading(false), 1000)
     }
     if (product.stock_status === 'out_of_stock' && type === 'button') {
-        return <button className='btn btn-primary text-white' disabled>out of stock</button>
+        return <button className='btn btn-primary text-white mb-md-0 mb-3' disabled>out of stock</button>
     }
     if (product.stock_status === 'out_of_stock' && type === 'checkbox') {
         return (

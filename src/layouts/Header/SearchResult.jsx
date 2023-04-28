@@ -21,7 +21,7 @@ function SearchResult({ setMobileSearch }) {
                             <div className='d-md-flex'>
                                 <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                 <div className='ps-md-3'>
-                                    <span className='fs-14'>{item.product_name}</span>
+                                    <span className='fs-14 cursor'>{item.product_name}</span>
                                     <div className="text-info fw-bold">
                                         ₹{item.price}
                                     </div>

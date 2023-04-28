@@ -32,6 +32,6 @@ export default function BuyButton({ className, product }) {
         }
     }
     return (
-        <button className={className} loading={`${loading}`} onClick={buttonHandler}>BuyButton</button>
+        <button className={className} loading={`${loading}`} onClick={buttonHandler}>Buy Now</button>
     )
 }
