@@ -31,7 +31,9 @@
     margin-top: 10px;
     text-transform: capitalize;
     color: #000000;
-    min-height: 45px;
+    &::after {
+        content: '...';
+    }
 }
 
 .ari-cnt h5 {
@@ -95,7 +97,7 @@
 .ari-img img {
     display: inline-block;
     width: 183px;
-    height: 183px;
+    height: 209px !important;
     object-fit: contain;
 }
 

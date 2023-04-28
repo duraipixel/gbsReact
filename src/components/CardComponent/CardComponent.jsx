@@ -20,16 +20,18 @@ function CardComponent({ product }) {
           </div>
         </div>
         <div className="ari-cnt text-center">
-          <div className="d-flex justify-content-between" onClick={() => navigate(`/product-list/${product.product_url}`)}>
-            <h2>{product.product}</h2>
-            <h3>
-              <AiFillStar /> 4.5
-            </h3>
+          <div onClick={() => navigate(`/product-list/${product.product_url}`)}>
+            <div className="d-flex justify-content-between" >
+              <h2>{product.category_name}</h2>
+              <h3>
+                <AiFillStar /> 4.5
+              </h3>
+            </div>
+            <h4>{product.product_name.substring(0, 25)}</h4>
+            <h5>
+              <span>₹8{product.strike_price.replace('.00', '')}</span> ₹{product.price.replace('.00', '')}
+            </h5>
           </div>
-          <h4>{product.product_name.substring(0, 25)}</h4>
-          <h5>
-            <span>₹8{product.strike_price.replace('.00', '')}</span> ₹{product.price.replace('.00', '')}
-          </h5>
           {/* <ul>
             <li>12th Gen Intel Core i5-1235U</li>
             <li>8GB, DDR4, 2666 MHz</li>

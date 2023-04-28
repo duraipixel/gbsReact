@@ -124,7 +124,7 @@ export const CancelOrderRequested = ({ order_id }) => {
             }
           </Modal.Body>
           <Modal.Footer className="justify-content-end">
-            <button className="btn btn-light border me-2" onClick={() => setModal(!modal)} >Cancel</button>
+            <button type="button" className="btn btn-light border me-2" onClick={() => setModal(!modal)} >Cancel</button>
             <button type="submit" className="btn btn-primary" disabled={formLoader} >
               {formLoader ? (
                 <span className="spinner-grow spinner-grow-sm me-1"></span>

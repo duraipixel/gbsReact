@@ -53,7 +53,7 @@ function MyOrder() {
                 <hr />
                 <div>
                   <div className="flex-jc-btwn flex-wrap gap-2 align-c pb-3">
-                    <h4>Your Order is {order.status}</h4>
+                    <h4 className="text-capitalize text-secondary">Order Status : <span className="text-dark">{order.status.replaceAll('_',' ')}</span></h4>
                     <Link
                       to={`/my-account/myorders/${order.order_no}`}
                       className="btn btn-info"
@@ -69,7 +69,7 @@ function MyOrder() {
                         13 March 2023
                       </span> */}
                     </div>
-                    <CancelOrderRequested order_id={order.id} />
+                    {order.status === "cancel_requested" ? <b className="text-primary">Cancel Requested</b> : <CancelOrderRequested order_id={order.id} />}
                   </div>
                   <div className="flex gap-4 align-c pt-1 pb-1">
                     {

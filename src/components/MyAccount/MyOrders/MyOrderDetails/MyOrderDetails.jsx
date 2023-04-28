@@ -34,32 +34,21 @@ const MyOrderDetails = () => {
                     <span style={{ fontWeight: "600" }}>Order Details</span> -
                     #{order.order_no}
                   </h2>
-                  <CancelOrderRequested order_id={order.id} />
+                  {order.status === "cancel_requested" ? <b className="text-primary">Cancel Requested</b> : <CancelOrderRequested order_id={order.id} />}
                 </div>
                 <div className="pt-3">
                   <p>Your order has been shipped and it’s out for delivery</p>
                 </div>
                 <div className="time-line-group my-5">
-                  <div className="time-line-item">
-                    <div className="time-line-icon"><FaCheckCircle /></div>
-                    <div className="time-line-text">Order Placed</div>
-                  </div>
-                  <div className="time-line-item">
-                    <div className="time-line-icon"><FaCheckCircle /></div>
-                    <div className="time-line-text">Order Processed</div>
-                  </div>
-                  <div className="time-line-item">
-                    <div className="time-line-icon"><FaCheckCircle /></div>
-                    <div className="time-line-text">Out for Delivery</div>
-                  </div>
-                  <div className="time-line-item">
-                    <div className="time-line-icon"><FaCheckCircle /></div>
-                    <div className="time-line-text">Order Placed</div>
-                  </div>
-                  <div className="time-line-item">
-                    <div className="time-line-icon"><FaCheckCircle /></div>
-                    <div className="time-line-text">Delivered</div>
-                  </div>
+                  {
+                    order.orderTracking.map((track, index) => (
+                      <div className="time-line-item" key={index}>
+                        <div className={`time-line-icon  ${track.has_tracking ? 'bg-info' : 'bg-secondary'}`}><FaCheckCircle /></div>
+                        <div className="time-line-text">{track.status_name}</div>
+                        <div className="time-line-text small text-muted">{track?.tracking_info?.created_at}</div>
+                      </div>
+                    ))
+                  }  
                 </div>
                 <div>
                   <div className="flex-jc-btwn align-c t-head-title">

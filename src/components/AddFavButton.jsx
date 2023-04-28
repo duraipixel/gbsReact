@@ -1,12 +1,17 @@
 import { useState } from "react"
 import { toast } from "react-hot-toast"
 import { addOrRemoveWhishListApi } from "services/product.service"
+import { AuthUser } from "utils"
 
 function AddFavButton({ className, product, action}) { 
     const [loading, setLoading] = useState(false)
     const [isSelected, setIsSelected] = useState(product.is_wishlist)
     
     const addToFavList = () => {
+        if(AuthUser() === false) {
+            toast.error('You need to login first!')
+            return false
+        }
         setLoading(true)
         addOrRemoveWhishListApi({
             product_id: product.id,
