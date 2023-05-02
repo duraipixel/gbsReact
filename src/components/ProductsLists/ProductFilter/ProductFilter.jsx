@@ -40,10 +40,10 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
         tempArr.push(item)
       }
     })
-    if(tempArr.length > 0) {
+    if (tempArr.length > 0) {
       setDefaultActiveKey(tempArr)
     } else {
-      setDefaultActiveKey(['product_availability','brands'])
+      setDefaultActiveKey(['product_availability', 'brands'])
     }
   }
 
@@ -64,10 +64,12 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
 
   return (
     <Col lg={3} className="py-md-5 align-self-start pt-3 h-100 ">
-      <div className="filters-side sticky-top">
-        <div className="product-filter-btn d-flex justify-content-between">
-          Filters
-          {clearFilter ? <button onClick={() => clearAllFilters(true)} className="btn btn-dark btn-sm">Clear</button> : ''}
+      <div className="filters-side">
+        <div className="d-flex justify-content-between" >
+          <div className="product-filter-btn" onClick={toggleClass}>Filters</div>
+          <div>
+            {clearFilter ? <button onClick={() => clearAllFilters(true)} className="btn btn-dark btn-sm">Clear</button> : ''}
+          </div>
         </div>
         <div className={isActive ? "filter-lists product-filters" : "active product-filters filter-lists"}>
           <Link className="close-btn" onClick={toggleClass}>
