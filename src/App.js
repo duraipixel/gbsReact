@@ -28,8 +28,9 @@ import {
   ResetPassword,
   ComparePage,
   StoreLocationDetailsPage,
-  PaymentSuccess
-} from "lazy";
+  PaymentSuccess,
+  TermsConditions
+} from "lazy"; 
 
 function App() {
   if (localStorage.getItem('guest_token') === null) {
@@ -66,6 +67,7 @@ function App() {
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
           </Route>
           {/* <Route path="/stores" element={<StorePage />} /> */}
         </Routes>

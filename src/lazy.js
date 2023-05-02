@@ -24,3 +24,5 @@ export const ContactUsPage        = lazy(() => import('pages/ContactUsPage') )
 export const ComparePage          = lazy(() => import('pages/ComparePage') )
 export const ResetPassword        = lazy(() => import('pages/Auth/ResetPassword') )
 export const PaymentSuccess        = lazy(() => import('pages/PaymentSuccess') )
+export const TermsConditions        = lazy(() => import('pages/TermsConditionsPage') )
+
