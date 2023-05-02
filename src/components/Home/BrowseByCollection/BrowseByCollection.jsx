@@ -1,6 +1,7 @@
 import "./styles.css";
 import { Image } from "utils";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const BrowseByCollection = () => {
   const browseHome = useSelector(state => state.homePageCollection.browseHome)
@@ -16,9 +17,9 @@ const BrowseByCollection = () => {
             </div>
             {browse.children.map((item, seIndex) => (
               <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12" key={seIndex}>
-                <div className="deals-imgs">
+                <Link to={`/products?screen_size=${item.start_size}`} className="deals-imgs">
                   <Image src={item.path} alt={item.start_size} className="img-fluid" />
-                </div>
+                </Link>
               </div>
             ))}
           </div>

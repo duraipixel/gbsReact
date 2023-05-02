@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles.scss";
 import { FiPhone } from "react-icons/fi";
 import { RiMapPinLine } from "react-icons/ri";

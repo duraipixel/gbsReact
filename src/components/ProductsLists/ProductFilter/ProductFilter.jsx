@@ -40,7 +40,11 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
         tempArr.push(item)
       }
     })
-    setDefaultActiveKey(tempArr)
+    if(tempArr.length > 0) {
+      setDefaultActiveKey(tempArr)
+    } else {
+      setDefaultActiveKey(['product_availability','brands'])
+    }
   }
 
   useEffect(() => {

@@ -27,14 +27,17 @@ const ProductLists = () => {
     })
   }, [take, currentLocation]);
   return (
-    <section className="bg-primary-soft p-0 overflow-hidden">
-      <Container>
-        <Row>
-          <ProductFilter setCurrentLocation={setCurrentLocation} clearFilter={clearFilter} setClearFilter={setClearFilter} />
-          <ProductListDetails setCurrentLocation={setCurrentLocation} clearFilter={clearFilter} setClearFilter={setClearFilter} products={products} fetching={fetching} setTake={setTake} take={take} />
-        </Row>
-      </Container>
-    </section>
+    <div>
+      {/* <h1>HEADER</h1> */}
+      <section className="bg-primary-soft p-0 overflow-hidden">
+        <Container>
+          <Row>
+            <ProductFilter setCurrentLocation={setCurrentLocation} clearFilter={clearFilter} setClearFilter={setClearFilter} />
+            <ProductListDetails setCurrentLocation={setCurrentLocation} clearFilter={clearFilter} setClearFilter={setClearFilter} products={products} fetching={fetching} setTake={setTake} take={take} />
+          </Row>
+        </Container>
+      </section>
+    </div>
   );
 };
 

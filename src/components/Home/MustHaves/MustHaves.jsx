@@ -1,6 +1,7 @@
 // import screen1 from "assets/images/screen-5.jpg";
 // import screen2 from "assets/images/screen-6.jpg";
 // import screen3 from "assets/images/screen-7.jpg";
+import { Link } from "react-router-dom";
 import "./styles.scss";
 import { useSelector } from "react-redux";
 
@@ -21,7 +22,7 @@ const MustHaves = () => {
                 </div>
               </div>
               {handpickedCollections.map((item) => (
-                <div
+                <Link to={`products?handpicked=${item.slug}`}
                   className="col-lg-4 col-md-4 col-sm-6 col-xs-12"
                   key={item.id}
                 >
@@ -30,7 +31,7 @@ const MustHaves = () => {
                     alt=""
                     className="img-fluid poster-image"
                   />
-                </div>
+                </Link>
               ))}
               {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <img src={screen1} alt="" className="img-fluid poster-image" />

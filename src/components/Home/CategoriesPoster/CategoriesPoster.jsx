@@ -1,5 +1,6 @@
 import "./styles.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Image } from "utils";
 
 const CategoriesPoster = () => {
@@ -17,12 +18,12 @@ const CategoriesPoster = () => {
             {
               subcategoryCollections.map(item => (
                 <div key={item.id} className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div className="deals-imgs">
+                  <Link to={`products?category=${item.slug}`} className="deals-imgs">
                     <Image src={item.image} alt={item.slug} className="img-fluid" />
                     <div className="btm-liner">
                       <h4>{item.name}</h4>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))
             }

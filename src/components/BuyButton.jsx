@@ -2,9 +2,9 @@ import { useState } from "react"
 import { toast } from "react-hot-toast"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { AuthUser, checkCartBucket } from "utils"
 import { setCart } from "redux/features/cartSlice"
 import { addToCartApi } from "services/product.service"
-import { AuthUser, checkCartBucket } from "utils"
 
 export default function BuyButton({ className, product }) {
     const dispatch = useDispatch()

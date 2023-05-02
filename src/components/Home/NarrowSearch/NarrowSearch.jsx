@@ -2,6 +2,7 @@ import "./styles.css";
 import { useSelector } from "react-redux";
 import { Image } from "utils";
 import ProductSlider from "components/ProductSlider/ProductSlider";
+import { Link } from "react-router-dom";
 
 const NarrowSearch = () => {
   const brands = useSelector(state => state.homePageCollection.brands)
@@ -21,9 +22,9 @@ const NarrowSearch = () => {
                 <ProductSlider slidesToShow={3}>
                   {
                     brands.map((item, i) => (
-                      <div key={i} className="brnd-sector">
+                      <Link to={`products?brand=${item.slug}`} key={i} className="brnd-sector">
                         <Image src={item.image} alt={item.title} className="img-fluid poster-image"/>
-                      </div>
+                      </Link>
                     ))
                   }
                 </ProductSlider>
