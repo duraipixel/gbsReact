@@ -10,6 +10,7 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
   const [defaultActiveKey, setDefaultActiveKey] = useState([]);
   const [isActive, setActive] = useState("false");
   const [Filters, setFilters] = useState(false);
+  const [browesBy, setBrowesBy] = useState([]);
   const toggleClass = () => setActive(!isActive);
   const location = useLocation();
   const navigate = useNavigate();
@@ -49,16 +50,18 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
 
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
-      delete data.attributes
-      delete data.browse_by
       var customOption = {
         product_availability: [
           { name: "In Stock", slug: 'in-stock' },
           { name: "Upcoming", slug: 'upcoming' }
         ]
       }
-      setFilters({ ...customOption, ...data })
       filterAccordionHandler({ ...customOption, ...data })
+      delete data.attributes
+      delete data.sort_by
+      setBrowesBy(data.browse_by)
+      delete data.browse_by
+      setFilters({ ...customOption, ...data })
     })
   }, [])
 
@@ -91,6 +94,35 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
                                 <label className="cstm-chkbx" htmlFor={filter.name}>
                                   {filter.name}
                                   <CheckBoxInput id={filter.name} name={filters[0]} value={filter.slug} setClearFilter={setClearFilter} filterHandler={filterHandler} />
+                                  <span className="checkmark"></span>
+                                </label>
+                              </li>
+                            ))
+                          }
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  ))
+                }
+              </Accordion>
+              : ''
+          }
+          {
+            browesBy.length > 0
+              ?
+              <Accordion defaultActiveKey={defaultActiveKey} alwaysOpen className="px-0 filters-accordion">
+                {
+                  browesBy.map((item, key) => (
+                    <Accordion.Item eventKey={key} key={key}>
+                      <Accordion.Header>{item.title} </Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          {
+                            item.children.map((filter, index) => (
+                              <li key={index}>
+                                <label className="cstm-chkbx" htmlFor={`${filter.start}__${item.type}`}>
+                                  {filter.start} to {filter.end}
+                                  <CheckBoxInput id={`${filter.start}__${item.type}`} name={item.type} value={`${filter.start}-${filter.end}`} setClearFilter={setClearFilter} filterHandler={filterHandler} />
                                   <span className="checkmark"></span>
                                 </label>
                               </li>
