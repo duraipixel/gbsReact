@@ -1,27 +1,9 @@
 import { Col } from "react-bootstrap";
-import axios from "axios";
-import { useState } from "react";
-import { useMemo } from "react";
-import { AuthUser, Loader } from "utils"; 
 import ProductListComponent from "../ProductListComponent";
+import { Loader } from "utils";
 
-const ProductListDetails = () => {
-  const [products, setProduct] = useState([])
-  const [fetching, setfetching] = useState(true)
-  const [take, setTake] = useState(5)
+const ProductListDetails = ({ products, fetching, setTake , take }) => {
 
-
-  const getProduct = async () => {
-    const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/get/products`, {
-      take: take,
-      customer_id: AuthUser()?.id,
-    })
-    setProduct(data)
-    setfetching(false)
-  }
-  useMemo(() => {
-    getProduct()
-  }, [take])
   return (
     <Col lg={9} className="align-self-start py-md-5 py-3 px-md-3 bg-white bg-white-layer">
       <Col className="list-details-side">
@@ -49,7 +31,7 @@ const ProductListDetails = () => {
                   "No Data"
                   :
                   <>
-                    <ProductListComponent products={products.products} /> 
+                    <ProductListComponent products={products.products} />
                     <center>
                       <button onClick={() => setTake(take + 5)} className="btn mt-4 btn-outline-info">Load more</button>
                     </center>
