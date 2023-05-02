@@ -84,7 +84,7 @@ const Footer = () => {
               <div className="footer-links">
                 {brands &&
                   brands.map((brand) => (
-                    <Link to="/" key={brand.id}>
+                    <Link to={`products?brands=${brand.slug}`} key={brand.id}>
                       {brand.title}
                     </Link>
                   ))}
