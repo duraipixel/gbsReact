@@ -153,7 +153,7 @@ const CheckBoxInput = ({ value, name, filterHandler, setClearFilter, id }) => {
     <input type="checkbox"  name={name} id={id} className={`${name}_checkbox`} value={value} onChange={(e) => handler(e.target)} />
   )
 }
-const SetAllCheckBoxes = (location, setClearFilter) => {
+const SetAllCheckBoxes = (location) => {
   var searchQuery = location.search.replace('?', '').replaceAll('=', '_')
   var checkboxes = document.querySelectorAll('input[type=checkbox]')
   for (var index = 0; index < checkboxes.length; index++) {
@@ -162,7 +162,6 @@ const SetAllCheckBoxes = (location, setClearFilter) => {
       item.split('_').forEach(row => {
         if (checkboxes[index].value == row) {
           checkboxes[index].checked = true;
-          setClearFilter(true)
         }
       })
     })
