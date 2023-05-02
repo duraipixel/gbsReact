@@ -5,11 +5,11 @@ import CategoriesPoster from "components/Home/CategoriesPoster/CategoriesPoster"
 import BrowseByCollection from "components/Home/BrowseByCollection/BrowseByCollection";
 import ServiceCenter from "components/Home/ServiceCenter/ServiceCenter";
 import NarrowSearch from "components/Home/NarrowSearch/NarrowSearch";
-import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
+// import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
 import PrefferedProcessor from "components/Home/PrefferedProcessor/PrefferedProcessor";
-import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
-import Tablets from "components/Home/Tablets/Tablets";
-import Combos from "components/Home/Combos/Combos";
+// import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
+// import Tablets from "components/Home/Tablets/Tablets";
+// import Combos from "components/Home/Combos/Combos";
 import MustHaves from "components/Home/MustHaves/MustHaves";
 import { useEffect, useState } from "react";
 import { homePageApi } from "services/page.service";

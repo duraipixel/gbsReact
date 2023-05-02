@@ -1,20 +1,35 @@
-import screen1 from "assets/images/screen-5.jpg";
-import screen2 from "assets/images/screen-6.jpg";
-import screen3 from "assets/images/screen-7.jpg";
-import "./styles.css";
+// import screen1 from "assets/images/screen-5.jpg";
+// import screen2 from "assets/images/screen-6.jpg";
+// import screen3 from "assets/images/screen-7.jpg";
+import "./styles.scss";
+import { useSelector } from "react-redux";
 
-const MustHaves = () => { 
-  return (
-    <>
-      <section className="screen-size pt-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div className="comon-heads text-center">
-                <h2>Latest Laptops, Handpicked for You</h2>
+const MustHaves = () => {
+  const handpickedCollections = useSelector(
+    (state) => state.homePageCollection.handpickedCollections
+  );
+
+  if (handpickedCollections)
+    return (
+      <>
+        <section className="screen-size pt-5">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div className="comon-heads text-center">
+                  <h2>Latest Laptops, Handpicked for You</h2>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+              {handpickedCollections.map((item) => (
+                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="img-fluid poster-image"
+                  />
+                </div>
+              ))}
+              {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <img src={screen1} alt="" className="img-fluid poster-image" />
             </div>
 
@@ -24,12 +39,12 @@ const MustHaves = () => {
 
             <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <img src={screen3} alt="" className="img-fluid poster-image" />
+            </div> */}
             </div>
           </div>
-        </div>
-      </section>
-    </>
-  );
+        </section>
+      </>
+    );
 };
 
 export default MustHaves;

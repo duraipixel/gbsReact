@@ -9,8 +9,10 @@ import { Link } from "react-router-dom";
 import { getCurrentYear, openInNewTab } from "utils";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
 import Logo from "assets/Brand/gbsLogoHighRes.png";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const brands = useSelector((state) => state.homePageCollection.brands);
   return (
     <footer>
       <Container>
@@ -60,11 +62,16 @@ const Footer = () => {
           <Col xs={12} sm={12} md={6} lg={2} xl={2}>
             <h5>Shop Brands</h5>
             <div className="footer-links">
-              <Link to="/">Acer</Link>
+              {
+                brands && brands.map((brand)=>(
+                  <Link to="/" key={brand.id}>{brand.title}</Link>
+                ))
+              }
+              {/* <Link to="/">Acer</Link>
               <Link to="/">Asus</Link>
               <Link to="/">Dell</Link>
               <Link to="/">HP</Link>
-              <Link to="/">Lenovo</Link>
+              <Link to="/">Lenovo</Link> */}
             </div>
           </Col>
 
