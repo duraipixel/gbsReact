@@ -7,14 +7,13 @@ import { useEffect } from "react";
 import { filterMenuApi } from "services/filters.service";
 import { CheckBoxInput, Text } from "utils";
 
-const ProductFilter = ({setCurrentLocation}) => { 
+const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
   const [isActive, setActive] = useState("false");
-  const [Filters, setFilters] = useState(false); 
+  const [Filters, setFilters] = useState(false);
 
   const ToggleClass = () => {
     setActive(!isActive);
-  }; 
-  const [clearFilter, setClearFilter] = useState(false)
+  };
   const location = useLocation();
   const navigate = useNavigate();
   const filterHandler = (type, value) => {
@@ -22,7 +21,7 @@ const ProductFilter = ({setCurrentLocation}) => {
     searchParams.set(type, typeof (value) === 'object' ? value.join("_") : value);
     setCurrentLocation(`?${searchParams.toString()}`)
     navigate(`/products?${searchParams.toString()}`);
-  } 
+  }
   const clearAllFilters = () => {
     var checkboxes = document.querySelectorAll('input:checked')
     for (var i = 0; i < checkboxes.length; i++) {
@@ -30,10 +29,10 @@ const ProductFilter = ({setCurrentLocation}) => {
         checkboxes[i].checked = false;
       }
     }
-    setCurrentLocation(''); 
+    setCurrentLocation('');
     setClearFilter(false)
     navigate('/products')
-  } 
+  }
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
       delete data.attributes
@@ -54,7 +53,7 @@ const ProductFilter = ({setCurrentLocation}) => {
           Filters
           {clearFilter ? <button onClick={() => clearAllFilters(true)} className="btn btn-dark btn-sm">Clear</button> : ''}
         </div>
-        <div className={isActive ? "filter-lists product-filters" : "active product-filters filter-lists" }>
+        <div className={isActive ? "filter-lists product-filters" : "active product-filters filter-lists"}>
           <Link className="close-btn" onClick={ToggleClass}>
             <IoMdClose />
           </Link>
@@ -70,7 +69,7 @@ const ProductFilter = ({setCurrentLocation}) => {
                           <li key={index}>
                             <label className="cstm-chkbx" htmlFor={filter.name}>
                               {filter.name}
-                              <CheckBoxInput id={filter.name} name={filters[0]} value={filter.slug} setClearFilter={setClearFilter} filterHandler={filterHandler}/>
+                              <CheckBoxInput id={filter.name} name={filters[0]} value={filter.slug} setClearFilter={setClearFilter} filterHandler={filterHandler} />
                               <span className="checkmark"></span>
                             </label>
                           </li>

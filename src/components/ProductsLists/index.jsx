@@ -9,13 +9,16 @@ import { productsApi } from "services/filters.service";
 import { SetAllCheckBoxes } from "utils";
 
 const ProductLists = () => {
-  const [products, setProduct]  = useState([])
+  const [products, setProduct] = useState([])
   const [fetching, setfetching] = useState(true)
-  const [take, setTake]         = useState(20)
-  const location                = useLocation()
-  const { search }              = useLocation()
+  const [take, setTake] = useState(20)
+  const location = useLocation()
+  const { search } = useLocation()
+  const [clearFilter, setClearFilter] = useState(false)
+
   const [currentLocation, setCurrentLocation] = useState(location.search)
-  useMemo(() => { 
+
+  useMemo(() => {
     setfetching(true)
     productsApi(search, take).then(({ data }) => {
       setProduct(data)
@@ -27,8 +30,8 @@ const ProductLists = () => {
     <section className="bg-primary-soft p-0 overflow-hidden">
       <Container>
         <Row>
-          <ProductFilter setCurrentLocation={setCurrentLocation} />
-          <ProductListDetails products={products} fetching={fetching} setTake={setTake} take={take} />
+          <ProductFilter setCurrentLocation={setCurrentLocation} clearFilter={clearFilter} setClearFilter={setClearFilter} />
+          <ProductListDetails setCurrentLocation={setCurrentLocation} clearFilter={clearFilter} setClearFilter={setClearFilter} products={products} fetching={fetching} setTake={setTake} take={take} />
         </Row>
       </Container>
     </section>
