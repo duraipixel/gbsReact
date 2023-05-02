@@ -25,8 +25,8 @@ const Footer = () => {
               <img src={siteInfo.logo} alt="" />
               <ListGroup>
                 {
-                  siteInfo.links.map((i)=>(
-                    <ListGroup.Item>
+                  siteInfo.links.map((i, index)=>(
+                    <ListGroup.Item key={index}>
                     <Link
                       rel="noopener noreferrer"
                       onClick={() => openInNewTab(i.link_url)}

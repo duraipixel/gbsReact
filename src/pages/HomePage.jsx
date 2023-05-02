@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { homePageApi } from "services/page.service";
 import { setHomePageCollection } from "redux/features/homePageSlice";
 import { useDispatch } from "react-redux";
-import { Loader } from "utils";
+import { Loader, scrollToTop } from "utils";
 import ProductCollection from "components/Home/ProductCollection/ProductCollection";
 // import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
 // import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
@@ -21,6 +21,7 @@ import ProductCollection from "components/Home/ProductCollection/ProductCollecti
 const HomePage = () => {
   useEffect(() => {
     GetPageData();
+    scrollToTop();
   }, []);
 
   const dispatch = useDispatch();
