@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./styles.scss";
 import { FiPhone } from "react-icons/fi";
 import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
@@ -24,7 +24,19 @@ const Footer = () => {
             <Col xs={12} sm={12} md={6} lg={2} xl={2}>
               <img src={siteInfo.logo} alt="" />
               <ListGroup>
-                <ListGroup.Item>
+                {
+                  siteInfo.links.map((i)=>(
+                    <ListGroup.Item>
+                    <Link
+                      rel="noopener noreferrer"
+                      onClick={() => openInNewTab(i.link_url)}
+                    >
+                      <i className={`fa-brands fa-${i.link_name}`}></i>
+                    </Link>
+                  </ListGroup.Item>
+                  ))
+                }
+                {/* <ListGroup.Item>
                   <Link
                     rel="noopener noreferrer"
                     onClick={() => openInNewTab("https://www.instagram.com")}
@@ -45,9 +57,9 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     onClick={() => openInNewTab("https://www.facebook.com")}
                   >
-                    <i className="fa-brands fa-facebook-f"></i>
+                    <i className="fa-brands fa-facebook"></i>
                   </Link>
-                </ListGroup.Item>
+                </ListGroup.Item> */}
               </ListGroup>
             </Col>
             <Col xs={12} sm={12} md={6} lg={2} xl={2}>
