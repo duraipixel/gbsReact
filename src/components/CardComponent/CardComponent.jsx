@@ -13,14 +13,14 @@ function CardComponent({ product }) {
   return (
     <div>
       <div className="arival-det" >
-        <div className="ari-img" onClick={() => navigate(`/product-list/${product.product_url}`)}>
+        <div className="ari-img" onClick={() => navigate(`/products/${product.product_url}`)}>
           <Image src={product.thumbnail} alt={product.product_name} />
           <div className="off-prc">
             <h3> 30% <span>OFF</span></h3>
           </div>
         </div>
         <div className="ari-cnt text-center">
-          <div onClick={() => navigate(`/product-list/${product.product_url}`)}>
+          <div onClick={() => navigate(`/products/${product.product_url}`)}>
             <div className="d-flex justify-content-between" >
               <h2>{product.category_name}</h2>
               <h3>

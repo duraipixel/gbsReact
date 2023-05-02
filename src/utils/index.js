@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { ProgressBar } from "react-loader-spinner";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
@@ -29,6 +29,12 @@ const getCurrentYear = () => {
 
 const scrollToTop = () => {
   window.scroll({ top: 0, left: 0, behavior: "smooth" });
+};
+
+const Text = (text) => {
+  const str = text.replaceAll('_', ' ');
+  const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+  return str2
 };
 
 const LoadingSpinner = (props) => {
@@ -128,7 +134,44 @@ function strRandom(length) {
   }
   return result;
 }
+
+function useQuery() {
+  const { search } = useLocation();
+  return useMemo(() => new URLSearchParams(search), [search]);
+}
+const CheckBoxInput = ({ value, name, filterHandler, setClearFilter, id }) => {
+  const handler = (element) => {
+    var array = []
+    var checkboxes = document.querySelectorAll(`.${element.name}_checkbox:checked`)
+    for (var i = 0; i < checkboxes.length; i++) {
+      array.push(checkboxes[i].value)
+    }
+    filterHandler(element.name, array)
+    setClearFilter(checkboxes.length > 0 ? true : false)
+  }
+  return (
+    <input type="checkbox"  name={name} id={id} className={`${name}_checkbox`} value={value} onChange={(e) => handler(e.target)} />
+  )
+}
+const SetAllCheckBoxes = (location, setClearFilter) => {
+  var searchQuery = location.search.replace('?', '').replaceAll('=', '_')
+  var checkboxes = document.querySelectorAll('input[type=checkbox]')
+  for (var index = 0; index < checkboxes.length; index++) {
+    // eslint-disable-next-line no-loop-func
+    searchQuery.split('&').forEach(item => {
+      item.split('_').forEach(row => {
+        if (checkboxes[index].value == row) {
+          checkboxes[index].checked = true;
+          setClearFilter(true)
+        }
+      })
+    })
+  }
+}
 export {
+  SetAllCheckBoxes,
+  CheckBoxInput,
+  useQuery,
   AppScroller,
   openInNewTab,
   getCurrentYear,
@@ -141,5 +184,6 @@ export {
   setAuthUser,
   checkCartBucket,
   strRandom,
-  HalfHeightLoader
+  HalfHeightLoader,
+  Text
 };

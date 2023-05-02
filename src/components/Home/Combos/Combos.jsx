@@ -33,7 +33,7 @@ const Combos = () => {
                 <h2>Undeniable Combos</h2>
               </div>
               <div className="next-jump">
-                <Link to="/product-list">
+                <Link to="/products">
                   View All <FiChevronRight />
                 </Link>
               </div>

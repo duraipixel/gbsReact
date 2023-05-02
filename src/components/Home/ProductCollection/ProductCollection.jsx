@@ -17,7 +17,7 @@ function ProductCollection() {
                   <h2>{collection.collection_name}</h2>
                 </div>
                 <div className="next-jump">
-                  <Link to={`/product-list/${collection.collection_slug}`}>
+                  <Link to={`/products/${collection.collection_slug}`}>
                     View All <FiChevronRight />
                   </Link>
                 </div>

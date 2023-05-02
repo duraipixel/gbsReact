@@ -33,7 +33,7 @@ const PerfectStudents = () => {
                 <h2>Perfect for Students</h2>
               </div>
               <div className="next-jump">
-                <Link to="/product-list">
+                <Link to="/products">
                   View All <FiChevronRight />
                 </Link>
               </div>

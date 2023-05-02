@@ -19,7 +19,7 @@ const DealsProduct = () => {
               {
                 discountCollections.map(item => (
                   <div key={item.id} className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <Link to="/product-list" className="deals-imgs bg-dark">
+                    <Link to="/products" className="deals-imgs bg-dark">
                       <Image src={item.image} alt={item.slug} className="img-fluid" />
                     </Link>
                   </div>

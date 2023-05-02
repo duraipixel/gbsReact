@@ -15,12 +15,12 @@ function ProductListComponent({ products, action }) {
                     products.map((product) => (
                         <div key={product.id} className="list-group-item" >
                             <div className="d-lg-flex align-items-center g-3">
-                                <div onClick={() => navigate(`/product-list/${product.product_url}`)}>
+                                <div onClick={() => navigate(`/products/${product.product_url}`)}>
                                     <img src={product.image} alt={product.product_name} width={150} />
                                 </div>
                                 <div className="p-3">
                                     <div>
-                                        <p onClick={() => navigate(`/product-list/${product.product_url}`)} className="fw-normal text-dark fw-500 m-0">{product.product_name}</p>
+                                        <p onClick={() => navigate(`/products/${product.product_url}`)} className="fw-normal text-dark fw-500 m-0">{product.product_name}</p>
                                         <div className="d-md-flex align-items-end mb-3">
                                             <div className="text-sku mb-md-0 mb-2 fw-bold text-primary">{product.category_name}</div>
                                             <div>

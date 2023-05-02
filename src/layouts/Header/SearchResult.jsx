@@ -8,7 +8,7 @@ function SearchResult({ setMobileSearch }) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const searchResultHandler = (item) => {
-        navigate(`/product-list/${item.product_url}`)
+        navigate(`/products/${item.product_url}`)
         dispatch(resetSearch())
         setMobileSearch(false)
     }
