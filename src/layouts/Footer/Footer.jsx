@@ -111,6 +111,7 @@ const Footer = () => {
               <h5>Information</h5>
               <div className="footer-links">
                 <Link to="/shipping-delivery">Shipping & Delivery</Link>
+                <Link to="/terms-conditions">Terms & Conditions</Link>
                 {/* <Link to="/">Support Center</Link> */}
                 <Link to="/privacy-policy">Privacy Policy</Link>
                 <Link to="/warantty-policy">Warranty Policy</Link>
