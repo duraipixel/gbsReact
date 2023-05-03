@@ -8,7 +8,6 @@ import CompareButton from 'components/CompareButton'
 
 function CardComponent({ product }) {
   const navigate = useNavigate()
-  // console.log(product)
   return (
     <div>
       <div className="arival-det" >

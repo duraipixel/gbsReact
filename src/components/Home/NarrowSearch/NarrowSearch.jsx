@@ -22,7 +22,7 @@ const NarrowSearch = () => {
                 <ProductSlider slidesToShow={3}>
                   {
                     brands.map((item, i) => (
-                      <Link to={`products?brand=${item.slug}`} key={i} className="brnd-sector">
+                      <Link to={`products?brands=${item.slug}`} key={i} className="brnd-sector">
                         <Image src={item.image} alt={item.title} className="img-fluid poster-image"/>
                       </Link>
                     ))

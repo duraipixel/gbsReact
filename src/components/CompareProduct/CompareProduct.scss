@@ -1,3 +1,17 @@
+.compare-menu-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 2rem;
+    background-color: rgba(0, 0, 0, .88);
+    border: 1px solid #fff;
+    border-radius: 3rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    z-index: 4;
+    line-height: 1;
+    font-weight: 700;
+}
+
 .compare-menu-bar {
     position: fixed;
     bottom: 0;
@@ -6,6 +20,7 @@
     background: #eee;
     box-shadow: 0 0.5rem 1rem rgb(0, 0, 0) !important;
     z-index: 9999;
+
     @media (min-width:600px) {
         padding: 20px;
     }
@@ -20,22 +35,27 @@
 }
 
 .compare-card-group {
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
+
+    @media (min-width:600px) {
+        display: inline-flex;
+        justify-content: center !important;
+        gap: 20px;
+    }
 
     @media (max-width:600px) {
         overflow: auto;
         width: 100%;
         padding: 20px 20px 20px 0;
-        gap: 10px;
     }
 
     .compare-card {
         background-color: #fff;
-        min-width: 150px;
-        margin: 0 auto;
         padding: 20px;
+
+        @media (min-width:600px) {
+            max-width: 33%;
+            margin: 0 auto;
+        }
 
         img {
             width: 132px;
