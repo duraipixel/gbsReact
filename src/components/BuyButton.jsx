@@ -31,7 +31,7 @@ export default function BuyButton({ className, product }) {
             })
         }
     }
-    return (
+    if (product.stock_status !== 'out_of_stock') return (
         <button className={className} loading={`${loading}`} onClick={buttonHandler}>Buy Now</button>
     )
 }

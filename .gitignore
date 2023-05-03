@@ -24,3 +24,4 @@ yarn-error.log*
 log.txt
 DEMO
 package-lock.json
+.env

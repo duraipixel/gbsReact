@@ -1712,3 +1712,10 @@ small {
   background-color: #00000097;
   z-index: 3;
 }
+.btn-account {
+  border: none !important;
+  background: none !important ;
+}
+.btn-account::after {
+  display: none !important;
+}

@@ -824,6 +824,9 @@ button[loading="true"] {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
   }
 }
+.bg-none {
+  background: none !important;
+}
 .search-result {
   max-height: 500px;
   overflow-y: auto;
