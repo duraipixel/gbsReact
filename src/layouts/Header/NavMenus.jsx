@@ -1,16 +1,10 @@
 import { useContext } from "react";
-import {
-  Accordion,
-  AccordionContext,
-  Button,
-  Placeholder,
-  useAccordionButton,
-} from "react-bootstrap";
+import { Accordion, AccordionContext, Button, Placeholder, useAccordionButton } from "react-bootstrap";
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 import { BsChevronRight, BsChevronDown } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function NavMenus() {
+export default function NavMenus({ toggleHeader }) {
   return (
     <div className="nav-menus shadow">
       <div className="nav-menu-banner">
@@ -19,17 +13,24 @@ export default function NavMenus() {
           className="d-block w-100"
           height={120}
           alt="menu"
-        />
+        />  
         <div className="carousel-caption p-0">
           <h5>What are you looking for today?</h5>
         </div>
       </div>
-      <NavMenuList className="px-2" />
+      <NavMenuList className="px-2" toggleHeader={toggleHeader} />
     </div>
   );
 }
-export const NavMenuList = ({ className }) => {
+export const NavMenuList = ({ className, toggleHeader }) => {
   const { data, isSuccess, isLoading } = useNavMenuQuery();
+  const navigate = useNavigate()
+  const linkHandler = (slug) => {
+    if (toggleHeader) {
+      toggleHeader()
+    }
+    navigate(`/products?${slug}`)
+  }
   return (
     <>
       {isLoading && (
@@ -81,11 +82,8 @@ export const NavMenuList = ({ className }) => {
                   <Accordion.Collapse eventKey={item.id}>
                     <ul className="list-group list-group-flush">
                       {item.child.map((data) => (
-                        <li key={data.id} className="list-group-item pt-3">
-                          <Link to="/" className={`me-auto text-dark`}>
-                            {" "}
-                            {data.name}{" "}
-                          </Link>
+                        <li key={data.id} className="list-group-item pt-3" onClick={() => linkHandler(data.slug)}>
+                          {data.name}
                         </li>
                       ))}
                     </ul>

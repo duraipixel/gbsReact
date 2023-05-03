@@ -8,8 +8,8 @@ export const headerSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    setHeader: (state,payload) => {
-      state.status = payload.value
+    setHeader: (state, action) => {
+      return state = action.payload
     }
   },
 })

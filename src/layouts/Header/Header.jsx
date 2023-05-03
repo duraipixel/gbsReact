@@ -8,7 +8,6 @@ import CartButton from "./CartButton";
 import { useDispatch, useSelector } from "react-redux";
 import { Offcanvas } from "react-bootstrap";
 import { setHeader } from "redux/features/headerSlice";
-// import { FaSearch } from "react-icons/fa";
 import SearchResult from "./SearchResult";
 import SearchInput from "./SearchInput";
 import MobileSearch from "./MobileSearch";
@@ -21,8 +20,10 @@ const Header = () => {
   const [searchMobileSearch, setMobileSearch] = useState(false);
   const expand = "lg";
   const toggleHeader = () => {
+    dispatch(setHeader({
+      status: !header,
+    }));
     setNavMenu(!navMenu);
-    dispatch(setHeader(true));
   };
   return (
     <>
@@ -168,7 +169,7 @@ const Header = () => {
                       <div className="input-group shadow rounded">
                         <SearchInput />
                       </div>
-                      {navMenu && <NavMenus />}
+                      {navMenu && <NavMenus/>}
                       {navMenu && (
                         <div
                           className="nav-menu-close-btn"
@@ -190,7 +191,7 @@ const Header = () => {
                       />
                     </>
                   ) : (
-                    <NavMenuList className="accordion-dark" />
+                    <NavMenuList className="accordion-dark" toggleHeader={toggleHeader}/>
                   )}
                 </div>
               </div>
