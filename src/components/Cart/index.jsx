@@ -52,7 +52,7 @@ const CartProduct = () => {
     )
   } else {
     return (
-      <Container>
+      <Container className="mt-5 mb-5">
         <div className="container-fluid  mt-100">
           <div className="row">
             <div className="col-md-12">
@@ -111,7 +111,7 @@ const CartProduct = () => {
                   <h3><strong>Your Cart is Empty</strong></h3>
                   <h4>Add something to make me happy :)</h4>
                   <Link className="btn btn-primary cart-btn-transform m-3" to='/'>
-                    continue shopping
+                    Continue Shopping
                   </Link>
                 </div>
               </div>
