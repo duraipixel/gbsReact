@@ -16,26 +16,30 @@ function CheckoutButton({ className }) {
     const store_address      = JSON.parse(localStorage.getItem('store_address'));
     const [loader, setLoader] = useState(false)
     const isCheckoutData = () => {
-        if (billing_address === null || billing_address === undefined) {
-            toast.error('Billing address required!')
-            return false
-        }
-        if (shipping_address === null || shipping_address === undefined) {
-            toast.error('Shipping address required!')
-            return false
-        }
-        if (shipping_method === null || shipping_method === undefined) {
+        if (shipping_method === null || shipping_method === undefined ) {
             toast.error('Please select the shipping method')
             return false
-        }
-        if (shipping_charge_id === null || shipping_charge_id === undefined) {
+        } 
+
+        if((shipping_method === 'STANDARD_SHIPPING' && shipping_charge_id === null) || shipping_charge_id === undefined) {
             toast.error('Please select the shipping type')
             return false
         }
-        if (shipping_method === 'PICKUP_FROM_STORE' & store_address === null || store_address === undefined) {
-            toast.error('Store address required')
+
+        if ((shipping_method === 'STANDARD_SHIPPING' && shipping_address === null) || shipping_address === undefined) {
+            toast.error('Shipping address required!')
             return false
         }
+
+        if ((shipping_method === 'PICKUP_FROM_STORE' && store_address === null) || store_address === undefined) {
+            toast.error('Store address required')
+            return false
+        } 
+
+        if (billing_address === null || billing_address === undefined) {
+            toast.error('Billing address required!')
+            return false
+        }  
         return true
     }
     const checkoutHandler = async () => {
