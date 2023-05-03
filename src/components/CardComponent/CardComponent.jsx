@@ -8,22 +8,25 @@ import CompareButton from 'components/CompareButton'
 
 function CardComponent({ product }) {
   const navigate = useNavigate()
+  console.log(product)
   return (
     <div>
       <div className="arival-det" >
         <div className="ari-img" onClick={() => navigate(`/products/${product.product_url}`)}>
-          <Image src={product.thumbnail} alt={product.product_name} />
+          <Image src={product.image} alt={product.product_name} />
           <div className="off-prc">
-            <h3> 30% <span>OFF</span></h3>
+            <h3> {product.discount_percentage}% <br /> <span>OFF</span></h3>
           </div>
         </div>
         <div className="ari-cnt text-center">
           <div onClick={() => navigate(`/products/${product.product_url}`)}>
             <div className="d-flex justify-content-between" >
               <h2>{product.category_name}</h2>
-              <h3>
-                <AiFillStar /> 4.5
-              </h3>
+              {
+                product?.common_review?.rating ?
+                  <h3><AiFillStar /> {product?.common_review?.rating}</h3>
+                  : ''
+              }
             </div>
             <h4>{product.product_name.substring(0, 25)}</h4>
             <h5>
