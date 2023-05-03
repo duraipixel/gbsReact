@@ -1,19 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import CheckoutButton from "components/CheckoutButton";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { setShippingChargesApi, shippingChargesApi } from "services/product.service";
 import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDetails";
 import { Modal } from "react-bootstrap";
-import { setAdressForm } from "redux/features/addressSlice";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
-const CartDetails = ({ checkoutData, setCheckoutData }) => {
+const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const authUser = useSelector((state) => state.auth)
   const address = useSelector((state) => state.cartAddress)
-  const dispatch = useDispatch()
   const [shippingMethod, setShippingMethod] = useState(checkoutData.has_pickup_store === false ? 'Standard_Shipping' : '')
   const [addressModalType, setAddressModalType] = useState(null)
-  const [addressForm, setAddressForm] = useState(false)
   const [shippingTypes, setshippingTypes] = useState([])
   const [show, setShow] = useState(false);
 
@@ -24,12 +21,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
       })
     }
   }, [checkoutData, shippingMethod])
-  const addAddresHandler = (type) => {
-    setAddressForm(true);
-    setAddressModalType(type);
-    // setShow(!show)
-    dispatch(setAdressForm({ status: true, type: 'CREATE' }));
-  }
+
   const shippingMethodHandler = (value) => {
     setShippingMethod(value)
     localStorage.setItem('shipping_method', value.toUpperCase())
@@ -57,6 +49,16 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
                   ₹{checkoutData.tax_total}
                 </td>
               </tr>
+              {
+                coupon ?
+                  <tr>
+                    <td style={{ paddingLeft: "0", textAlign: "left" }}>Coupon</td>
+                    <td style={{ paddingRight: "0", textAlign: "right" }} className="text-success">
+                      - ₹{coupon.coupon_amount}
+                    </td>
+                  </tr>
+                  : ''
+              }
             </tbody>
           </table>
           {
@@ -92,7 +94,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
                         <input type="radio" checked={shippingMethod === 'Pickup_From_Store'} onChange={(e) => shippingMethodHandler(e.target.value)} value='Pickup_From_Store' name="ShippingMethod" id="PickupFromStore" className="form-check-input me-2" />
                         Pickup From Store
                       </label>
-                    : ''
+                      : ''
                   }
                 </div>
                 <div className="line-spacer"></div>
@@ -102,7 +104,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
                     :
                     <div>
                       <h5 className="text-primary d-flex align-items-center justify-content-between">
-                        Shipping Address 
+                        Shipping Address
                         <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('SHIPPING_ADDRESS'); setShow(!show) }}>
                           Change Address
                         </button>
@@ -181,7 +183,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddressBookDetails openCreateForm={addressForm} selectType="checkbox" modalType={addressModalType} />
+          <AddressBookDetails selectType="checkbox" modalType={addressModalType} />
         </Modal.Body>
       </Modal>}
     </>

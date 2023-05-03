@@ -9,14 +9,12 @@ import { AuthUser } from "utils";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import SweetAlert from "react-bootstrap-sweetalert";
-import { useNavigate } from "react-router-dom";
 
-const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
+const ProductDetails = ({ cartProduct, setCheckoutData,setCoupon, fetchCartData }) => {
   const { handleSubmit, register, formState: { errors }, reset } = useForm()
   const [loading, setLoading] = useState(false)
   const [couponApplyed, setCouponApplyed] = useState(false)
   const [deleteAlert, setDeleteAlert] = useState(false);
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   
   const CouponHandler = (data) => {
@@ -34,6 +32,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         setCouponApplyed(true)
         localStorage.setItem('coupon_data', JSON.stringify(response.data))
         setCheckoutData(response.data.cart_info.cart_total)
+        setCoupon(response.data)
         localStorage.setItem('checkout_data', JSON.stringify(response.data.cart_info.cart_total))
       }
     });
@@ -61,6 +60,7 @@ const ProductDetails = ({ cartProduct, setCheckoutData, fetchCartData }) => {
         toast.success(response.data.message)
         reset()
         setCouponApplyed(false)
+        setCoupon(null)
         localStorage.setItem('coupon_data', JSON.stringify(response.data))
         setCheckoutData(response.data.cart_info.cart_total)
         localStorage.setItem('checkout_data', JSON.stringify(response.data.cart_info.cart_total))

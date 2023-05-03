@@ -13,6 +13,7 @@ const CartProduct = () => {
   const [fetching, setfetching] = useState(true)
   const [cartProduct, setCartProduct] = useState([])
   const [checkoutData, setCheckoutData] = useState(null)
+  const [coupon, setCoupon] = useState(null)
   const dispatch = useDispatch()
   const authUser = useSelector((state) => state.auth)
   const fetchCartData = async () => {
@@ -41,10 +42,10 @@ const CartProduct = () => {
         <Container>
           <Row>
             <Col lg={8} className="align-self-start">
-              <ProductDetails cartProduct={cartProduct} setCheckoutData={setCheckoutData} fetchCartData={fetchCartData} />
+              <ProductDetails setCoupon={setCoupon} cartProduct={cartProduct} setCheckoutData={setCheckoutData} fetchCartData={fetchCartData} />
             </Col>
             <Col lg={4} className="align-self-start">
-              <CartDetails checkoutData={checkoutData} setCheckoutData={setCheckoutData} />
+              <CartDetails coupon={coupon} checkoutData={checkoutData} setCheckoutData={setCheckoutData} />
             </Col>
           </Row>
         </Container>
