@@ -14,7 +14,7 @@ function ProductBreadcrumb({ category, title }) {
         </div>
       </div>
       <span className="text-dark">
-        {title?.substring(1, 50)}
+        {title?.substring(0, 50)}
       </span>
     </div>
   );
