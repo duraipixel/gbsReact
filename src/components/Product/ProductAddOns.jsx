@@ -11,6 +11,14 @@ function ProductAddOns({ product, cartId, setCartId }) {
             {
                 product.addons.length ?
                     <>
+                        {
+                            product?.warranty_available?.name ?
+                                <div className='bg-white p-3 rounded mb-3 shadow'>
+                                    <div className="lead fw-bold d-flex align-items-center mb-2">{product?.warranty_available.name} <div className="vr mx-2"></div> <b className='text-primary fs-14 fw-bold'>{product?.warranty_available?.warranty_period} {product?.warranty_available?.warranty_period_type} warranty</b></div>
+                                    <div>{product?.warranty_available.description}</div>
+                                </div>
+                            : ''
+                        }
                         <h5>Personalized Add-ons for your Product  </h5>
                         <Accordion defaultActiveKey="0" flush>
                             {

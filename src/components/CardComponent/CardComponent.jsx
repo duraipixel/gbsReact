@@ -1,7 +1,5 @@
-import { BiGitCompare } from 'react-icons/bi'
 import './CardComponent.scss'
-import { Link, useNavigate } from 'react-router-dom'
-import { FiHeart } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
 import { AiFillStar } from 'react-icons/ai'
 import { Image } from 'utils'
 import AddCartButton from 'components/AddCartButton'
