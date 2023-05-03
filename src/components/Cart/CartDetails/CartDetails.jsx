@@ -11,7 +11,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
   const authUser = useSelector((state) => state.auth)
   const address = useSelector((state) => state.cartAddress)
   const dispatch = useDispatch()
-  const [shippingMethod, setShippingMethod] = useState()
+  const [shippingMethod, setShippingMethod] = useState(checkoutData.has_pickup_store === false ? 'Standard_Shipping' : '')
   const [addressModalType, setAddressModalType] = useState(null)
   const [addressForm, setAddressForm] = useState(false)
   const [shippingTypes, setshippingTypes] = useState([])
@@ -86,10 +86,14 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
                       </ul>
                       : ""
                   }
-                  <label htmlFor="PickupFromStore" className="d-block py-2">
-                    <input type="radio" checked={shippingMethod === 'Pickup_From_Store'} onChange={(e) => shippingMethodHandler(e.target.value)} value='Pickup_From_Store' name="ShippingMethod" id="PickupFromStore" className="form-check-input me-2" />
-                    Pickup From Store
-                  </label>
+                  {
+                    checkoutData.has_pickup_store ?
+                      <label htmlFor="PickupFromStore" className="d-block py-2">
+                        <input type="radio" checked={shippingMethod === 'Pickup_From_Store'} onChange={(e) => shippingMethodHandler(e.target.value)} value='Pickup_From_Store' name="ShippingMethod" id="PickupFromStore" className="form-check-input me-2" />
+                        Pickup From Store
+                      </label>
+                    : ''
+                  }
                 </div>
                 <div className="line-spacer"></div>
                 {
@@ -98,17 +102,7 @@ const CartDetails = ({ checkoutData, setCheckoutData }) => {
                     :
                     <div>
                       <h5 className="text-primary d-flex align-items-center justify-content-between">
-                        Shipping Address
-                        {/* {
-                          typeof (myAddress) === 'object' && myAddress.length === 0 ?
-                            <button className="fs-14 btn btn-sm" onClick={() => { addAddresHandler('SHIPPING_ADDRESS') }}>
-                              Add Address
-                            </button>
-                            :
-                            <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('SHIPPING_ADDRESS'); setShow(!show) }}>
-                              Change Address
-                            </button>
-                        } */}
+                        Shipping Address 
                         <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('SHIPPING_ADDRESS'); setShow(!show) }}>
                           Change Address
                         </button>
