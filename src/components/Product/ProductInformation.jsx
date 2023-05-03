@@ -10,6 +10,7 @@ import AddCartButton from 'components/AddCartButton'
 import AddFavButton from 'components/AddFavButton'
 import CompareButton from 'components/CompareButton'
 import BuyButton from 'components/BuyButton'
+import PickupFromStoreAddress from 'components/PickupFromStoreAddress/PickupFromStoreAddress'
 function ProductInformation({ product }) {
     const [checkAvailability, setAvailability] = useState(false)
     const [information, setInformation] = useState("")
@@ -95,10 +96,9 @@ function ProductInformation({ product }) {
                 <div className="col-md-11 col-9 text-info  d-flex align-items-center">
                     <div className="d-md-flex">
                         <div className="fw-bold">Pickup From Store:</div>
-                        <div className="text-dark ps-2"> Available for Pickup</div>
+                        <div className="text-dark ps-2"> {product.has_pickup_store ? 'Available' : 'Un available'}  for Pickup</div>
                     </div>
-                    {/* <div className="vr ms-2"></div>
-                    <button className="text-primary btn-link btn"><TbCurrentLocation className='me-1' /> Find Stores</button> */}
+                    { product.has_pickup_store ? <PickupFromStoreAddress type='button' /> : '' }
                 </div>
             </div>
             <ProductOverview product={product} />

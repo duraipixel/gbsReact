@@ -6,8 +6,9 @@ import { getStoreLocatorApi } from "services/page.service"
 import { useDispatch, useSelector } from "react-redux"
 import { setStoreAddress } from "redux/features/cartAddressSlice"
 import { toast } from "react-hot-toast"
+import { TbCurrentLocation } from "react-icons/tb"
 
-function PickupFromStoreAddress() {
+function PickupFromStoreAddress({ type }) {
     const address = useSelector((state) => state.cartAddress)
     const dispatch = useDispatch()
     const [stores, setStores] = useState([])
@@ -29,27 +30,30 @@ function PickupFromStoreAddress() {
     useEffect(() => {
         getStoreLocator()
     }, [show, filter])
-    console.log(address.store_address)
+
     return (
         <div>
-            <h5 className="text-primary d-flex align-items-center justify-content-between">
-                Preferred Store for Pickup
-                <button className="fs-14 btn btn-sm" onClick={() => setShow(!show)}>
-                    Change Address
-                </button>
-            </h5>
-            <div>
-                {
-                    address.store_address ?
-                        <div className="mb-3">
-                            {address.store_address?.address} <br />
-                            {/* <p className="address-details">
-                                {address.store_address?.address_line1} ,{address.store_address?.city} - {address.store_address?.post_code},{address.store_address?.state}, {address.store_address?.country}
-                            </p> */}
-                        </div>
-                        : null
-                }
-            </div>
+            {
+                type !== 'button' ?
+                    <h5 className="text-primary d-flex align-items-center justify-content-between">
+                        Preferred Store for Pickup
+                        <button className="fs-14 btn btn-sm" onClick={() => setShow(!show)}>
+                            Change Address
+                        </button>
+                    </h5>
+                    :
+                    <>
+                        <div className="vr ms-2"></div>
+                        <button className="text-primary btn-link btn" onClick={() => setShow(!show)}><TbCurrentLocation className='me-1' /> Find Stores</button>
+                    </>
+            }
+            {
+                address.store_address && type !== 'button' ?
+                    <div className="mb-3">
+                        {address.store_address?.address} <br />
+                    </div>
+                    : null
+            }
             <Modal
                 show={show}
                 size="xl"
