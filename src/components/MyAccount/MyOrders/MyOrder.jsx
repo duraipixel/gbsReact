@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getOrdersListApi } from "services/product.service";
 import NoDataComponent from "components/NoDataComponent/NoDataComponent";
-import { Loader } from "utils";
+import { HalfHeightLoader } from "utils";
 import { CancelOrderRequested } from "./CancelOrderRequested";
 
 function MyOrder() {
@@ -22,7 +22,7 @@ function MyOrder() {
   return (
     <>
       {fetching ?
-        <Loader />
+        <HalfHeightLoader />
         :
         orders.length
           ?
