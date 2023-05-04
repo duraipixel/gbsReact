@@ -14,7 +14,7 @@ const Footer = () => {
   const brands = useSelector((state) => state.homePageCollection.brands);
   const siteInfo = useSelector((state) => state.homePageCollection.siteInfo);
   const quickLink = useSelector((state) => state.homePageCollection.quickLink);
-
+  const mobNum = siteInfo && siteInfo.site_mobile_no.split(",");
   if (siteInfo && quickLink && brands)
     return (
       <footer>
@@ -23,9 +23,8 @@ const Footer = () => {
             <Col xs={12} sm={12} md={6} lg={2} xl={2}>
               <img src={siteInfo.logo} alt="" />
               <ListGroup>
-                {
-                  siteInfo.links.map((i, index)=>(
-                    <ListGroup.Item key={index}>
+                {siteInfo.links.map((i, index) => (
+                  <ListGroup.Item key={index}>
                     <Link
                       rel="noopener noreferrer"
                       onClick={() => openInNewTab(i.link_url)}
@@ -33,8 +32,7 @@ const Footer = () => {
                       <i className={`fa-brands fa-${i.link_name}`}></i>
                     </Link>
                   </ListGroup.Item>
-                  ))
-                }
+                ))}
                 {/* <ListGroup.Item>
                   <Link
                     rel="noopener noreferrer"
@@ -64,11 +62,11 @@ const Footer = () => {
             <Col xs={12} sm={12} md={6} lg={2} xl={2}>
               <h5>Quick Links</h5>
               <div className="footer-links">
-                {
-                  quickLink.map((item => (
-                    <Link to={item.url} key={item.id}>{item.name}</Link>
-                  )))
-                }
+                {quickLink.map((item) => (
+                  <Link to={item.url} key={item.id}>
+                    {item.name}
+                  </Link>
+                ))}
                 {/* <Link to="/">Home</Link>
                 <Link to="/about-us">About Us</Link>
                 <Link to="/stores">Stores</Link>
@@ -137,10 +135,16 @@ const Footer = () => {
               <p className="footer-text1">
                 <Link
                   rel="noopener noreferrer"
-                  // onClick={() => openInNewTab("tel:+919600376222")}
+                  onClick={() => openInNewTab(`tel:${mobNum[0]}`)}
                 >
                   <FiPhone /> {/* Sales:  */}
-                  {siteInfo.site_mobile_no}
+                  {mobNum[0]}
+                </Link>{" "}
+                <Link
+                  rel="noopener noreferrer"
+                  onClick={() => openInNewTab(`tel:${mobNum[1]}`)}
+                >
+                  {mobNum[1]}
                 </Link>
               </p>
               {/* <p className="footer-text1 ms-3">
