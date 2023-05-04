@@ -1,60 +1,52 @@
 import React from "react";
 import "components/Home/CategoriesPoster/styles.css";
-import poster1 from "assets/images/Categories/Rectangle87.png";
-import poster2 from "assets/images/Categories/Rectangle88.png";
-import poster3 from "assets/images/Categories/Rectangle89.png";
-import poster4 from "assets/images/Categories/Rectangle90.png";
+import { useSelector } from "react-redux";
+import { Image } from "utils";
+import { useNavigate } from "react-router-dom";
 
 const ProductsAvailInStore = () => {
-  return (
-    <section className="laptop-based text-center">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div className="comon-heads">
-              <h2>Products Available In-store</h2>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div className="deals-imgs">
-              <img src={poster1} alt="" className="img-fluid" />
-              <div className="btm-liner">
-                <h4>For Casual & Everyday Use</h4>
+  const subcategoryCollections = useSelector(
+    (state) => state.homePageCollection.subcategoryCollections
+  );
+  const navigate = useNavigate();
+  const linkHandler = (slug) => {
+    navigate(`/products?category=${slug}`);
+  };
+  if (subcategoryCollections)
+    return (
+      <section className="laptop-based text-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div className="comon-heads">
+                <h2>Products Available In-store</h2>
               </div>
             </div>
-          </div>
 
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div className="deals-imgs">
-              <img src={poster3} alt="" className="img-fluid" />
-              <div className="btm-liner">
-                <h4>For Business Use</h4>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div className="deals-imgs">
-              <img src={poster2} alt="" className="img-fluid" />
-              <div className="btm-liner">
-                <h4>For Content Creators</h4>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div className="deals-imgs">
-              <img src={poster4} alt="" className="img-fluid" />
-              <div className="btm-liner">
-                <h4>For Gaming</h4>
-              </div>
-            </div>
+            {subcategoryCollections.map((item) => (
+              <span
+                key={item.id}
+                className="col-lg-3 col-md-3 col-sm-6 col-xs-12"
+              >
+                <div
+                  onClick={() => linkHandler(item.slug)}
+                  className="deals-imgs cursor-clickable"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.slug}
+                    className="img-fluid"
+                  />
+                  <div className="btm-liner">
+                    <h4>{item.name}</h4>
+                  </div>
+                </div>
+              </span>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
 };
 
 export default ProductsAvailInStore;

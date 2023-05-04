@@ -117,9 +117,15 @@ $background-color_3: #00043a;
   box-sizing: border-box;
   font-family: $font-family_1;
 }
-
+.cursor-clickable {
+  cursor: pointer;
+  transition: transform 0.8s ease !important;
+  &:hover {
+    transform: scale(1.05) !important;
+  }
+}
 .lazy-load-image-background.blur.lazy-load-image-loaded {
-  transition: transform 0.8s ease;
+  transition: transform 0.8s ease !important;
   &:hover {
     transform: scale(1.05) !important;
   }
