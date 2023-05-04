@@ -61,4 +61,13 @@
     }
   }
 }
-
+.screen-size {
+  .container {
+    .row .poster-img-div {
+      transition: transform 0.8s ease;
+      &:hover {
+        transform: scale(1.05) !important;
+      }
+    }
+  }
+}

@@ -3,6 +3,13 @@
   font-size: 30px;
   line-height: 38px;
 }
+.banner-slider {
+  .lazy-load-image-background.blur.lazy-load-image-loaded {
+    &:hover {
+      transform: none !important;
+    }
+  }
+}
 
 .poster-image {
   position: relative;
@@ -14,7 +21,7 @@
   object-fit: contain !important;
 }
 
-@media (max-width:992px) {
+@media (max-width: 992px) {
   .banner-image {
     height: 360px;
     width: 100%;
@@ -45,7 +52,7 @@
   max-width: 603px;
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .poster-content {
     line-height: 4rem;
   }
@@ -110,8 +117,6 @@
   background: var(--white-color) !important;
   transition: all 0.3s ease;
 }
- 
-
 
 .search-result li {
   cursor: pointer;

@@ -1,7 +1,6 @@
-import "./styles.css";
+import "./styles.scss";
 import { Placeholder } from "react-bootstrap";
 import BannerSlider from "./BannerSlider";
-import { Link } from "react-router-dom";
 import { Image } from "utils";
 import { useSelector } from "react-redux";
 

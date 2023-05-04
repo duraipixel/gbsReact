@@ -118,6 +118,12 @@ $background-color_3: #00043a;
   font-family: $font-family_1;
 }
 
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+  transition: transform 0.8s ease;
+  &:hover {
+    transform: scale(1.05) !important;
+  }
+}
 .navbar,
 footer {
   a {

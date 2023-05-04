@@ -21,9 +21,11 @@ const MustHaves = () => {
                   <h2>Latest Laptops, Handpicked for You</h2>
                 </div>
               </div>
+
               {handpickedCollections.map((item) => (
-                <Link to={`products?handpicked=${item.slug}`}
-                  className="col-lg-4 col-md-4 col-sm-6 col-xs-12"
+                <Link
+                  to={`products?handpicked=${item.slug}`}
+                  className="col-lg-4 col-md-4 col-sm-6 col-xs-12 poster-img-div"
                   key={item.id}
                 >
                   <img
@@ -35,6 +37,7 @@ const MustHaves = () => {
               ))}
               {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
               <img src={screen1} alt="" className="img-fluid poster-image" />
+              </div>
             </div>
 
             <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
