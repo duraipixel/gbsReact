@@ -135,9 +135,9 @@ button.refreshing img {
 }
 
 .line-spacer {
-  height: 1px;
-  background-color: #d0d0d0;
-  margin-bottom: 25px;
+  height: 1px !important;
+  background-color: #d0d0d0 !important;
+  margin-bottom: 25px !important;
 }
 
 .table.table-borderless.end-point {
