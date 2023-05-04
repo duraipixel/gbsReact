@@ -1,8 +1,17 @@
-import { useContext } from "react";
-import { Accordion, AccordionContext, Button, Placeholder, useAccordionButton } from "react-bootstrap";
+// import { useContext } from "react";
+import {
+  Accordion,
+  Placeholder,
+  // AccordionContext,
+  // Button,
+  // useAccordionButton,
+} from "react-bootstrap";
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
-import { BsChevronRight, BsChevronDown } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+// import { BsChevronRight, BsChevronDown } from "react-icons/bs";
+import {
+  Link,
+  // useNavigate
+} from "react-router-dom";
 
 export default function NavMenus({ toggleHeader }) {
   return (
@@ -13,7 +22,7 @@ export default function NavMenus({ toggleHeader }) {
           className="d-block w-100"
           height={120}
           alt="menu"
-        />  
+        />
         <div className="carousel-caption p-0">
           <h5>What are you looking for today?</h5>
         </div>
@@ -24,13 +33,14 @@ export default function NavMenus({ toggleHeader }) {
 }
 export const NavMenuList = ({ className, toggleHeader }) => {
   const { data, isSuccess, isLoading } = useNavMenuQuery();
-  const navigate = useNavigate()
-  const linkHandler = (slug) => {
-    if (toggleHeader) {
-      toggleHeader()
-    }
-    navigate(`/products?${slug}`)
-  }
+  // console.log(data);
+  // const navigate = useNavigate();
+  // const linkHandler = (slug) => {
+  //   if (toggleHeader) {
+  //     toggleHeader();
+  //   }
+  //   navigate(`/products?${slug}`);
+  // };
   return (
     <>
       {isLoading && (
@@ -64,7 +74,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
           </Placeholder>
         </>
       )}
-      {isSuccess && (
+      {/* {isSuccess && (
         <Accordion defaultActiveKey="0" className={className}>
           <ul className="list-group list-group-flush">
             {data.data.map((item) => (
@@ -93,21 +103,58 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             ))}
           </ul>
         </Accordion>
+      )} */}
+      {isSuccess && (
+        <Accordion defaultActiveKey="0" className={className}>
+          <ul className="list-group list-group-flush">
+            {data.data.map((item) =>
+              item.child.map((data) => (
+                <li className="list-group-item p-3" key={item.id}>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Link
+                      to={`/products?${data.slug}`}
+                      className={`me-auto text-dark`}
+                    >
+                      {data.name}
+                    </Link>
+                  </div>
+                </li>
+              ))
+            )}
+            <li className="list-group-item p-3">
+              <div className="d-flex justify-content-between align-items-center">
+                <Link to="/store-locator" className={`me-auto text-dark`}>
+                  Store Locator
+                </Link>
+              </div>
+            </li>
+            <li className="list-group-item p-3">
+              <div className="d-flex justify-content-between align-items-center">
+                <Link
+                  to="/service-center-locator"
+                  className={`me-auto text-dark`}
+                >
+                  Service Center Locator
+                </Link>
+              </div>
+            </li>
+          </ul>
+        </Accordion>
       )}
     </>
   );
 };
 
-function AccordionToggler({ eventKey, callback }) {
-  const { activeEventKey } = useContext(AccordionContext);
-  const decoratedOnClick = useAccordionButton(
-    eventKey,
-    () => callback && callback(eventKey)
-  );
+// function AccordionToggler({ eventKey, callback }) {
+//   const { activeEventKey } = useContext(AccordionContext);
+//   const decoratedOnClick = useAccordionButton(
+//     eventKey,
+//     () => callback && callback(eventKey)
+//   );
 
-  return (
-    <Button className="btn-sm" variant="light" onClick={decoratedOnClick}>
-      {activeEventKey === eventKey ? <BsChevronDown /> : <BsChevronRight />}
-    </Button>
-  );
-}
+//   return (
+//     <Button className="btn-sm" variant="light" onClick={decoratedOnClick}>
+//       {activeEventKey === eventKey ? <BsChevronDown /> : <BsChevronRight />}
+//     </Button>
+//   );
+// }
