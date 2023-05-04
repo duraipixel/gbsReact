@@ -1,151 +1,157 @@
 .arival-det {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.06);
-    border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+}
+.ari-img {
+  transition: transform 0.56s ease;
+  &:hover {
+    transform: scale(1.05) !important;
+  }
 }
 
 .ari-cnt {
-    padding: 15px;
-    background: #efefef;
+  padding: 15px;
+  background: #efefef;
 }
 
 .ari-cnt h2 {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: #929292;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #929292;
 }
 
 .ari-cnt h3 {
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 16px;
-    color: #929292;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #929292;
 }
 
 .ari-cnt h4 {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    margin-top: 10px;
-    text-transform: capitalize;
-    color: #000000;
-    &::after {
-        content: '...';
-    }
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 10px;
+  text-transform: capitalize;
+  color: #000000;
+  &::after {
+    content: "...";
+  }
 }
 
 .ari-cnt h5 {
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 28px;
-    color: #000000;
-    margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  color: #000000;
+  margin-bottom: 15px;
 }
 
 .ari-cnt ul {
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: 20px;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
 }
 
 .ari-cnt ul li {
-    display: inline-block;
-    width: 100%;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    text-align: center;
-    text-transform: capitalize;
-    position: relative;
-    color: #000000;
-    margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  position: relative;
+  color: #000000;
+  margin-bottom: 15px;
 }
 
 .ari-cnt ul li:before {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: -10px;
-    height: 1px;
-    width: 100%;
-    background-color: rgba(146, 146, 146, 0.2);
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -10px;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(146, 146, 146, 0.2);
 }
 
 .ari-cnt h5 span {
-    font-weight: 500;
-    font-size: 18px;
-    margin-right: 10px;
-    line-height: 23px;
-    display: inline-block;
-    text-decoration-line: line-through;
-    color: #929292;
+  font-weight: 500;
+  font-size: 18px;
+  margin-right: 10px;
+  line-height: 23px;
+  display: inline-block;
+  text-decoration-line: line-through;
+  color: #929292;
 }
 
 .ari-cnt h3 svg {
-    position: relative;
-    top: -2px;
+  position: relative;
+  top: -2px;
 }
 
 .ari-img {
-    background-color: #fff;
-    text-align: center;
-    position: relative;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
 }
 
 .ari-img img {
-    display: inline-block;
-    width: 183px;
-    height: 209px !important;
-    object-fit: contain;
+  display: inline-block;
+  width: 183px;
+  height: 209px !important;
+  object-fit: contain;
 }
 
 .off-prc {
-    position: absolute;
-    content: "";
-    height: 50px;
-    width: 50px;
-    background: #00043a;
-    top: 15px;
-    right: 15px;
-    border-radius: 100%;
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  background: #00043a;
+  top: 15px;
+  right: 15px;
+  border-radius: 100%;
 }
 
 .off-prc h3 {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 15px;
-    text-align: center;
-    color: #ffffff;
-    margin: 10px 0px 0px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 15px;
+  text-align: center;
+  color: #ffffff;
+  margin: 10px 0px 0px;
 }
 
 .off-prc h3 span {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
-    display: inline-block;
-    color: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  display: inline-block;
+  color: #ffffff;
 }
 
 .clk-optn a {
-    height: 30px;
-    width: 30px;
-    border: 1px solid #00043a;
-    color: #00043a;
-    padding: 1px;
-    border-radius: 100%;
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #00043a;
+  color: #00043a;
+  padding: 1px;
+  border-radius: 100%;
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
 }
 
 .clk-optn a:hover {
-    background-color: #00043a;
+  background-color: #00043a;
 }
 
 .clk-optn a:hover svg {
-    color: #fff;
+  color: #fff;
 }

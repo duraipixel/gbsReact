@@ -51,11 +51,11 @@
 
 /* On mouse-over, add a grey background color */
 
-.cstm-chkbx:hover input~.checkmark {
+.cstm-chkbx:hover input ~ .checkmark {
   background-color: #fecacb;
 }
 
-.cstm-chkbx input:checked~.checkmark {
+.cstm-chkbx input:checked ~ .checkmark {
   background-color: #f1000a;
 }
 
@@ -65,7 +65,7 @@
   display: none;
 }
 
-.cstm-chkbx input:checked~.checkmark:after {
+.cstm-chkbx input:checked ~ .checkmark:after {
   display: block;
 }
 
@@ -117,7 +117,8 @@
   height: 35px;
   border-radius: 4px;
   margin-top: 0px;
-  background: #ebebeb url("../../assets/images/dwn.png") no-repeat scroll 90% center;
+  background: #ebebeb url("../../assets/images/dwn.png") no-repeat scroll 90%
+    center;
   color: #fff;
   font-weight: 400;
   cursor: pointer;
@@ -284,7 +285,12 @@ ul.config-uration li:last-child:before {
   margin-left: 35px;
 }
 
-
+.prdt-list-img {
+  transition: transform 0.6s ease;
+  &:hover {
+    transform: scale(1.15) !important;
+  }
+}
 
 .img-covers img {
   width: 100%;
@@ -389,7 +395,7 @@ ul.config-uration li:last-child:before {
   position: relative;
   z-index: 1;
   &::after {
-    content: '';
+    content: "";
     height: 100%;
     width: 100%;
     background-color: white;

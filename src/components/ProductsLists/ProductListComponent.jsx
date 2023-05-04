@@ -15,7 +15,7 @@ function ProductListComponent({ products, action }) {
           <div key={product.id} className="list-group-item">
             <div className="d-lg-flex align-items-center g-3">
               <div
-                className="cursor"
+                className="cursor prdt-list-img"
                 onClick={() => navigate(`/products/${product.product_url}`)}
               >
                 <img
