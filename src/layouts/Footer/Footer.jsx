@@ -129,7 +129,7 @@ const Footer = () => {
               <p className="footer-text1">
                 <Link
                   rel="noopener noreferrer"
-                  onClick={() => openInNewTab("mailto:info@gbssystems.in")}
+                  onClick={() => openInNewTab(`mailto:${siteInfo.site_email}`)}
                 >
                   <TfiEmail /> {siteInfo.site_email}
                 </Link>
