@@ -5,7 +5,12 @@ import { filterMenuApi } from "services/filters.service";
 import { CheckBoxInput, Text } from "utils";
 import { IoMdClose } from "react-icons/io";
 
-const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
+const ProductFilter = ({
+  setCurrentLocation,
+  setClearFilter,
+  clearFilter,
+  filterData,
+}) => {
   const [defaultActiveKey, setDefaultActiveKey] = useState([]);
   const [isActive, setActive] = useState("false");
   const [Filters, setFilters] = useState(false);
@@ -14,10 +19,11 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
-  var filter_data = searchParams.toString();
-  filter_data = filter_data.split("=");
-  filter_data = filter_data[1].split("_");
-  console.log(filter_data);
+  let checkboxes = document.querySelectorAll("input:checked");
+
+  filterData = filterData && filterData.split("=");
+  filterData = filterData && filterData[1].split("_");
+  // console.log(filter_data);
 
   const filterHandler = (type, value) => {
     // console.log(type, value);
@@ -77,7 +83,7 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
             Filters
           </div>
           <div>
-            {clearFilter ? (
+            {clearFilter && checkboxes.length ? (
               <button
                 onClick={() => clearAllFilters(true)}
                 className="btn btn-dark btn-sm"
@@ -120,7 +126,7 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
                               value={filter.slug}
                               setClearFilter={setClearFilter}
                               filterHandler={filterHandler}
-                              filter_data={filter_data}
+                              filterData={filterData}
                             />
                             <span className="checkmark"></span>
                           </label>

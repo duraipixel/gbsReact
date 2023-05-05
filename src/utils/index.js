@@ -146,9 +146,9 @@ const CheckBoxInput = ({
   filterHandler,
   setClearFilter,
   id,
-  filter_data,
+  filterData,
 }) => {
-  let checked = filter_data && filter_data.includes(value);
+  let checked = filterData && filterData.includes(value);
   const handler = (element) => {
     var array = [];
     var checkboxes = document.querySelectorAll(
