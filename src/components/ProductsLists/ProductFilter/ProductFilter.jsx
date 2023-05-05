@@ -6,7 +6,6 @@ import { CheckBoxInput, Text } from "utils";
 import { IoMdClose } from "react-icons/io";
 
 const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
-
   const [defaultActiveKey, setDefaultActiveKey] = useState([]);
   const [isActive, setActive] = useState("false");
   const [Filters, setFilters] = useState(false);
@@ -15,127 +14,163 @@ const ProductFilter = ({ setCurrentLocation, setClearFilter, clearFilter }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
+  var filter_data = searchParams.toString();
+  filter_data = filter_data.split("=");
+  filter_data = filter_data[1].split("_");
+  console.log(filter_data);
 
   const filterHandler = (type, value) => {
-    searchParams.set(type, typeof (value) === 'object' ? value.join("_") : value);
-    setCurrentLocation(`?${searchParams.toString()}`)
+    // console.log(type, value);
+    searchParams.set(type, typeof value === "object" ? value.join("_") : value);
+    setCurrentLocation(`?${searchParams.toString()}`);
     navigate(`/products?${searchParams.toString()}`);
-  }
+  };
 
   const clearAllFilters = () => {
-    var checkboxes = document.querySelectorAll('input:checked')
+    var checkboxes = document.querySelectorAll("input:checked");
     for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].type == 'checkbox') {
+      if (checkboxes[i].type == "checkbox") {
         checkboxes[i].checked = false;
       }
     }
-    setCurrentLocation('');
-    setClearFilter(false)
-    navigate('/products')
-  }
+    setCurrentLocation("");
+    setClearFilter(false);
+    navigate("/products");
+  };
 
   const filterAccordionHandler = (filters) => {
-    const tempArr = []
+    const tempArr = [];
     Object.keys(filters).forEach((item) => {
       if (searchParams.get(item) !== null) {
-        tempArr.push(item)
+        tempArr.push(item);
       }
-    })
+    });
     if (tempArr.length > 0) {
-      setDefaultActiveKey(tempArr)
+      setDefaultActiveKey(tempArr);
     } else {
-      setDefaultActiveKey(['product_availability', 'brands'])
+      setDefaultActiveKey(["product_availability", "brands"]);
     }
-  }
+  };
 
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
       var customOption = {
         product_availability: [
-          { name: "In Stock", slug: 'in-stock' },
-          { name: "Upcoming", slug: 'upcoming' }
-        ]
-      }
-      filterAccordionHandler({ ...customOption, ...data })
-      delete data.attributes
-      delete data.sort_by
-      setBrowesBy(data.browse_by)
-      delete data.browse_by
-      setFilters({ ...customOption, ...data })
-    })
-  }, [])
+          { name: "In Stock", slug: "in-stock" },
+          { name: "Upcoming", slug: "upcoming" },
+        ],
+      };
+      filterAccordionHandler({ ...customOption, ...data });
+      delete data.attributes;
+      delete data.sort_by;
+      setBrowesBy(data.browse_by);
+      delete data.browse_by;
+      setFilters({ ...customOption, ...data });
+    });
+  }, []);
 
   return (
     <Col lg={3} className="py-md-5 align-self-start pt-3 h-100 ">
       <div className="filters-side">
-        <div className="d-flex justify-content-between" >
-          <div className="product-filter-btn" onClick={toggleClass}>Filters</div>
+        <div className="d-flex justify-content-between">
+          <div className="product-filter-btn" onClick={toggleClass}>
+            Filters
+          </div>
           <div>
-            {clearFilter ? <button onClick={() => clearAllFilters(true)} className="btn btn-dark btn-sm">Clear</button> : ''}
+            {clearFilter ? (
+              <button
+                onClick={() => clearAllFilters(true)}
+                className="btn btn-dark btn-sm"
+              >
+                Clear
+              </button>
+            ) : (
+              ""
+            )}
           </div>
         </div>
-        <div className={isActive ? "filter-lists product-filters" : "active product-filters filter-lists"}>
+        <div
+          className={
+            isActive
+              ? "filter-lists product-filters"
+              : "active product-filters filter-lists"
+          }
+        >
           <Link className="close-btn" onClick={toggleClass}>
             <IoMdClose />
           </Link>
-          {
-            defaultActiveKey.length > 0
-              ?
-              <Accordion defaultActiveKey={defaultActiveKey} alwaysOpen className="px-0 filters-accordion">
-                {
-                  Object.entries(Filters).map((filters, key) => (
-                    <Accordion.Item eventKey={filters[0]} key={key}>
-                      <Accordion.Header>{Text(filters[0])} </Accordion.Header>
-                      <Accordion.Body>
-                        <ul>
-                          {
-                            filters[1].map((filter, index) => (
-                              <li key={index}>
-                                <label className="cstm-chkbx" htmlFor={filter.name}>
-                                  {filter.name}
-                                  <CheckBoxInput id={filter.name} name={filters[0]} value={filter.slug} setClearFilter={setClearFilter} filterHandler={filterHandler} />
-                                  <span className="checkmark"></span>
-                                </label>
-                              </li>
-                            ))
-                          }
-                        </ul>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  ))
-                }
-              </Accordion>
-              : ''
-          }
-          {
-            browesBy.length > 0
-              ?
-              <Accordion defaultActiveKey={defaultActiveKey} alwaysOpen className="px-0 filters-accordion">
-                {
-                  browesBy.map((item, key) => (
-                    <Accordion.Item eventKey={key} key={key}>
-                      <Accordion.Header>{item.title} </Accordion.Header>
-                      <Accordion.Body>
-                        <ul>
-                          {
-                            item.children.map((filter, index) => (
-                              <li key={index}>
-                                <label className="cstm-chkbx" htmlFor={`${filter.start}__${item.type}`}>
-                                  {filter.start} to {filter.end}
-                                  <CheckBoxInput id={`${filter.start}__${item.type}`} name={item.type} value={`${filter.start}-${filter.end}`} setClearFilter={setClearFilter} filterHandler={filterHandler} />
-                                  <span className="checkmark"></span>
-                                </label>
-                              </li>
-                            ))
-                          }
-                        </ul>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  ))
-                }
-              </Accordion>
-              : ''
-          }
+          {defaultActiveKey.length > 0 ? (
+            <Accordion
+              defaultActiveKey={defaultActiveKey}
+              alwaysOpen
+              className="px-0 filters-accordion"
+            >
+              {Object.entries(Filters).map((filters, key) => (
+                <Accordion.Item eventKey={filters[0]} key={key}>
+                  <Accordion.Header>{Text(filters[0])} </Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
+                      {filters[1].map((filter, index) => (
+                        <li key={index}>
+                          <label className="cstm-chkbx" htmlFor={filter.name}>
+                            {filter.name}
+                            <CheckBoxInput
+                              id={filter.name}
+                              name={filters[0]}
+                              value={filter.slug}
+                              setClearFilter={setClearFilter}
+                              filterHandler={filterHandler}
+                              filter_data={filter_data}
+                            />
+                            <span className="checkmark"></span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          ) : (
+            ""
+          )}
+          {browesBy.length > 0 ? (
+            <Accordion
+              defaultActiveKey={defaultActiveKey}
+              alwaysOpen
+              className="px-0 filters-accordion"
+            >
+              {browesBy.map((item, key) => (
+                <Accordion.Item eventKey={key} key={key}>
+                  <Accordion.Header>{item.title} </Accordion.Header>
+                  <Accordion.Body>
+                    <ul>
+                      {item.children.map((filter, index) => (
+                        <li key={index}>
+                          <label
+                            className="cstm-chkbx"
+                            htmlFor={`${filter.start}__${item.type}`}
+                          >
+                            {filter.start} to {filter.end}
+                            <CheckBoxInput
+                              id={`${filter.start}__${item.type}`}
+                              name={item.type}
+                              value={`${filter.start}-${filter.end}`}
+                              setClearFilter={setClearFilter}
+                              filterHandler={filterHandler}
+                            />
+                            <span className="checkmark"></span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </Col>
