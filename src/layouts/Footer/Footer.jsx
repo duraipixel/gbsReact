@@ -3,18 +3,38 @@ import { FiPhone } from "react-icons/fi";
 import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
 import { Link } from "react-router-dom";
-import { getCurrentYear, openInNewTab } from "utils";
+import { Loader, getCurrentYear, openInNewTab, scrollToTop } from "utils";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getFooterApi } from "services/page.service";
+import { useEffect, useState } from "react";
+import { setfooterCollection } from "redux/features/footerSlice";
 // import { AiOutlineInstagram } from "react-icons/ai";
 // import { RiFacebookFill, RiTwitterFill } from "react-icons/ri";
 // import Logo from "assets/Brand/gbsLogoHighRes.png";
 
 const Footer = () => {
-  const brands = useSelector((state) => state.homePageCollection.brands);
-  const siteInfo = useSelector((state) => state.homePageCollection.siteInfo);
-  const quickLink = useSelector((state) => state.homePageCollection.quickLink);
+  useEffect(() => {
+    GetPageData();
+    scrollToTop();
+  }, []);
+
+  const dispatch = useDispatch();
+  const footerData = sessionStorage.getItem("footer_collection");
+  const [fetching, setFetching] = useState(footerData !== null ? false : true);
+  const GetPageData = () => {
+    getFooterApi().then((response) => {
+      if (response) {
+        dispatch(setfooterCollection(response));
+        setFetching(false);
+      }
+    });
+  };
+  const brands = useSelector((state) => state.footerCollection.brands);
+  const siteInfo = useSelector((state) => state.footerCollection.siteInfo);
+  const quickLink = useSelector((state) => state.footerCollection.quickLink);
   const mobNum = siteInfo && siteInfo.site_mobile_no.split(",");
+  if (fetching) return <Loader />;
   if (siteInfo && quickLink && brands)
     return (
       <footer>
