@@ -5,7 +5,8 @@ import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { RiMapPinLine } from "react-icons/ri";
 
-const StoreMap = ({storeLocation}) => {
+const StoreMap = ({ storeLocation }) => {
+  // console.log(storeLocation);
   return (
     storeLocation && (
       <Container className="contact-map-section">
@@ -16,28 +17,28 @@ const StoreMap = ({storeLocation}) => {
               src={storeLocation.map_link}
               allowFullScreen=""
               loading="lazy"
+              title="Google Street View map"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Contact Map"
             ></iframe>
           </Col>
 
           <div className="contact-card">
             <h2>{storeLocation.title}</h2>
             <p>
-              <RiMapPinLine />
+              {storeLocation.address && <RiMapPinLine />}
               {storeLocation.address}
             </p>
             <p>
-              <FiPhone />
+              {storeLocation.contact_no && <FiPhone />}
               {storeLocation.contact_no}
             </p>
             <p>
-              <TfiEmail /> {storeLocation.email}
+              {storeLocation.contact_no && <TfiEmail />} {storeLocation.email}
             </p>
           </div>
         </Row>
       </Container>
-      )
+    )
   );
 };
 

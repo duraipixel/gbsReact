@@ -24,15 +24,16 @@ const ServiceStoreMap = ({ serviceCenterData }) => {
           <div className="contact-card">
             <h2>{serviceCenterData.title}</h2>
             <p>
-              <RiMapPinLine />
+              {serviceCenterData.address && <RiMapPinLine />}
               {serviceCenterData.address}
             </p>
             <p>
-              <FiPhone />
+              {serviceCenterData.contact_no && <FiPhone />}
               {serviceCenterData.contact_no}
             </p>
             <p>
-              <TfiEmail /> {serviceCenterData.email}
+              {serviceCenterData.email && <TfiEmail />}{" "}
+              {serviceCenterData.email}
             </p>
           </div>
         </Row>

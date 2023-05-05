@@ -10,21 +10,27 @@ const ServiceCenterLocationDetails = ({ serviceCenterData }) => {
         <Row className="details-container">
           <Col lg={6}>
             <h2>{serviceCenterData.title}</h2>
-            <p>
-             {serviceCenterData.description}
-            </p>
+            <p>{serviceCenterData.description}</p>
             <div>
-              <h3>Reach Us</h3>
+              {(serviceCenterData.email || serviceCenterData.contact_no) && (
+                <h3>Reach Us</h3>
+              )}
               <p>
-                <FiPhone /> {serviceCenterData.contact_no}
+                {serviceCenterData.contact_no && <FiPhone />}{" "}
+                {serviceCenterData.contact_no}
               </p>
               <p>
-                <TfiEmail /> {serviceCenterData.email}
+                {serviceCenterData.email && <TfiEmail />}{" "}
+                {serviceCenterData.email}
               </p>
             </div>
           </Col>
           <Col lg={6}>
-            <img src={serviceCenterData.service_center_image} alt="" className="img-fluid" />
+            <img
+              src={serviceCenterData.service_center_image}
+              alt=""
+              className="img-fluid"
+            />
           </Col>
         </Row>
       </Container>

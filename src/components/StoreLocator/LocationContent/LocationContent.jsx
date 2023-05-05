@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 import { FiPhone } from "react-icons/fi";
 import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
@@ -18,33 +18,38 @@ const LocationContent = ({ storeData, fetching }) => {
           storeData.data.map((item) => (
             <div key={item.id}>
               <div className="flex-jc-btwn flex-wrap location-content-div">
-                <div className="location-content">
-                  <h3>{item.title}</h3>
-                  <div className="align-c gap-3">
-                    <RiMapPinLine /> {item.address}
+                <Col lg={9}>
+                  <div className="location-content">
+                    <h3>{item.title}</h3>
+                    <div className="align-c gap-3">
+                      {item.address && <RiMapPinLine />}
+                      {item.address}
+                    </div>
+                    <div className="align-c gap-3">
+                      {item.contact_no && <FiPhone />} {item.contact_no}
+                    </div>
+                    <div className="align-c gap-3">
+                      {item.email && <TfiEmail />} {item.email}
+                    </div>
                   </div>
-                  <div className="align-c gap-3">
-                    <FiPhone /> {item.contact_no}
+                </Col>
+                <Col>
+                  <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
+                    <Link
+                      to={`/store-location-details/${item.slug}`}
+                      className="btn-red-outline"
+                    >
+                      More Details
+                    </Link>
+                    <div>
+                      <p>Find us on</p>
+                      <img
+                        src={require("assets/Store/GooglePin.png")}
+                        alt="GooglePin"
+                      />
+                    </div>
                   </div>
-                  <div className="align-c gap-3">
-                    <TfiEmail /> {item.email}
-                  </div>
-                </div>
-                <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-                  <Link
-                    to={`/store-location-details/${item.slug}`}
-                    className="btn-red-outline"
-                  >
-                    More Details
-                  </Link>
-                  <div>
-                    <p>Find us on</p>
-                    <img
-                      src={require("assets/Store/GooglePin.png")}
-                      alt="GooglePin"
-                    />
-                  </div>
-                </div>
+                </Col>
               </div>
               <hr />
             </div>

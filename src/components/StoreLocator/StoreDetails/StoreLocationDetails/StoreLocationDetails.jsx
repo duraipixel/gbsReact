@@ -5,6 +5,7 @@ import { TfiEmail } from "react-icons/tfi";
 import "components/ServiceCenter/ServiceCenterDetails/styles.scss";
 
 const StoreLocationDetails = ({ storeLocation }) => {
+  console.log(storeLocation);
   return (
     storeLocation && (
       <Container>
@@ -13,21 +14,21 @@ const StoreLocationDetails = ({ storeLocation }) => {
             <h2>{storeLocation.title}</h2>
             <p>{storeLocation.description}</p>
             <div>
-              <h3>Reach Us</h3>
+              {(storeLocation.email || storeLocation.contact_no) && (
+                <h3>Reach Us</h3>
+              )}
               <p>
-                <FiPhone /> {storeLocation.contact_no}
+                {storeLocation.group_contacts && <FiPhone />}{" "}
+                {storeLocation.group_contacts}
               </p>
               <p>
-                <TfiEmail /> {storeLocation.email}
+                {storeLocation.group_emails && <TfiEmail />}{" "}
+                {storeLocation.group_emails}
               </p>
             </div>
           </Col>
           <Col lg={6}>
-            <img
-              src={storeLocation.store_image}
-              alt=""
-              className="img-fluid"
-            />
+            <img src={storeLocation.store_image} alt="" className="img-fluid" />
           </Col>
         </Row>
       </Container>
