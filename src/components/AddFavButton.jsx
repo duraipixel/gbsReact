@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { addOrRemoveWhishListApi } from "services/product.service";
 import { AuthUser } from "utils";
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip from "@mui/material/Tooltip";
 
 function AddFavButton({ className, product, action, buttonType }) {
   const [loading, setLoading] = useState(false);
@@ -56,7 +56,13 @@ function AddFavButton({ className, product, action, buttonType }) {
             strokeLinejoin="round"
           />
         </svg>
-        {buttonType === "icon" ? " " : <span>Add to favourite</span>}
+        {buttonType === "icon" ? (
+          " "
+        ) : isSelected ? (
+          <span>Remove from favourite</span>
+        ) : (
+          <span>Add to favourite</span>
+        )}
       </button>
     </Tooltip>
   );
