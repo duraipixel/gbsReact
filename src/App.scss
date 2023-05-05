@@ -119,13 +119,13 @@ $background-color_3: #00043a;
 }
 .cursor-clickable {
   cursor: pointer;
-  transition: transform 0.8s ease !important;
+  transition: transform 0.5s ease !important;
   &:hover {
     transform: scale(1.05) !important;
   }
 }
 .lazy-load-image-background.blur.lazy-load-image-loaded {
-  transition: transform 0.8s ease !important;
+  transition: transform 0.5s ease !important;
   &:hover {
     transform: scale(1.05) !important;
   }
