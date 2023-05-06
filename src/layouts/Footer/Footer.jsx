@@ -53,30 +53,6 @@ const Footer = () => {
                     </Link>
                   </ListGroup.Item>
                 ))}
-                {/* <ListGroup.Item>
-                  <Link
-                    rel="noopener noreferrer"
-                    onClick={() => openInNewTab("https://www.instagram.com")}
-                  >
-                    <i className="fa-brands fa-instagram"></i>
-                  </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link
-                    rel="noopener noreferrer"
-                    onClick={() => openInNewTab("https://twitter.com")}
-                  >
-                    <i className="fa-brands fa-twitter"></i>
-                  </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Link
-                    rel="noopener noreferrer"
-                    onClick={() => openInNewTab("https://www.facebook.com")}
-                  >
-                    <i className="fa-brands fa-facebook"></i>
-                  </Link>
-                </ListGroup.Item> */}
               </ListGroup>
             </Col>
             <Col xs={12} sm={12} md={6} lg={2} xl={2}>
@@ -87,13 +63,6 @@ const Footer = () => {
                     {item.name}
                   </Link>
                 ))}
-                {/* <Link to="/">Home</Link>
-                <Link to="/about-us">About Us</Link>
-                <Link to="/stores">Stores</Link>
-                <Link to="/">Awards</Link>
-                <Link to="/">Gallery</Link>
-                <Link to="/contact-us">Contact Us</Link>
-                <Link to="/">Careers</Link> */}
               </div>
             </Col>
 
@@ -106,11 +75,6 @@ const Footer = () => {
                       {brand.title}
                     </Link>
                   ))}
-                {/* <Link to="/">Acer</Link>
-              <Link to="/">Asus</Link>
-              <Link to="/">Dell</Link>
-              <Link to="/">HP</Link>
-              <Link to="/">Lenovo</Link> */}
               </div>
             </Col>
 
@@ -130,13 +94,13 @@ const Footer = () => {
               <div className="footer-links">
                 <Link to="/shipping-delivery">Shipping & Delivery</Link>
                 <Link to="/terms-conditions">Terms & Conditions</Link>
-                {/* <Link to="/">Support Center</Link> */}
                 <Link to="/privacy-policy">Privacy Policy</Link>
                 <Link to="/warantty-policy">Warranty Policy</Link>
-                {/* <Link to="/">Terms Of Use</Link> */}
-                {/* <Link to="/">Returns Policy</Link> */}
                 <Link to="/store-locator">Store Locator</Link>
                 <Link to="/service-center-locator">Service Center Locator</Link>
+                {/* <Link to="/">Support Center</Link> */}
+                {/* <Link to="/">Terms Of Use</Link> */}
+                {/* <Link to="/">Returns Policy</Link> */}
               </div>
             </Col>
             <Col xs={12} sm={12} md={6} lg={3} xl={3}>
@@ -145,37 +109,25 @@ const Footer = () => {
                 <RiMapPinLine /> {siteInfo.address}
               </p>
               <p className="footer-text1">
+                <TfiEmail />{" "}
                 <Link
                   rel="noopener noreferrer"
                   onClick={() => openInNewTab(`mailto:${siteInfo.site_email}`)}
                 >
-                  <TfiEmail /> {siteInfo.site_email}
+                  {siteInfo.site_email}
                 </Link>
               </p>
               <p className="footer-text1">
-                <Link
-                  rel="noopener noreferrer"
-                  onClick={() => openInNewTab(`tel:${mobNum[0]}`)}
-                >
-                  <FiPhone /> {/* Sales:  */}
-                  {mobNum[0]}
-                </Link>{" "}
-                <Link
-                  rel="noopener noreferrer"
-                  onClick={() => openInNewTab(`tel:${mobNum[1]}`)}
-                >
-                  {mobNum[1]}
-                </Link>
+                <FiPhone />{" "}
+                {mobNum.map((num) => (
+                  <Link
+                    rel="noopener noreferrer"
+                    onClick={() => openInNewTab(`tel:${num}`)}
+                  >
+                    {num} 
+                  </Link>
+                ))}
               </p>
-              {/* <p className="footer-text1 ms-3">
-                <Link
-                  rel="noopener noreferrer"
-                  onClick={() => openInNewTab("tel:+919841603332")}
-                >
-                  {" "}
-                  Service +91 98416 03332
-                </Link>
-              </p> */}
             </Col>
           </Row>
         </Container>
