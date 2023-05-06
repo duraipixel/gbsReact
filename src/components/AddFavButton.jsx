@@ -7,6 +7,11 @@ import Tooltip from "@mui/material/Tooltip";
 function AddFavButton({ className, product, action, buttonType }) {
   const [loading, setLoading] = useState(false);
   const [isSelected, setIsSelected] = useState(product.is_wishlist);
+  const favClass = {
+    color: "#f1000a",
+    borderColor: "#f1000a",
+    backgroundColor: "#edf2ff",
+  };
 
   const addToFavList = () => {
     if (AuthUser() === false) {
@@ -35,7 +40,6 @@ function AddFavButton({ className, product, action, buttonType }) {
       <button
         style={{
           backgroundColor: isSelected ? "#edf2ff" : "none",
-          borderColor: isSelected ? "#f1000a" : "212363",
         }}
         loading={`${loading}`}
         className={className}
