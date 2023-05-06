@@ -1,13 +1,25 @@
-import { useOutlet, Outlet, Navigate } from "react-router-dom";
-import { Col, Container, Row } from "react-bootstrap";
+import { useOutlet, Outlet, Navigate, useNavigate } from "react-router-dom";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import Sidebar from "components/MyAccount/Sidebar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuthUser } from "redux/features/authSlice";
+import { toast } from "react-hot-toast";
 
 function ProfileLayout() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const outlet = useOutlet();
-  const authUser = useSelector((state) => state.auth)
+  const authUser = useSelector((state) => state.auth);
   if (outlet === null) return <Navigate to="/my-account/profile" />;
   if (authUser.isLoggedIn === false) return <Navigate to="/" />;
+
+  const Logout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    toast.success("Logout Success!");
+    navigate("/");
+    dispatch(setAuthUser({ data: [], isLoggedIn: false }));
+  };
   return (
     <section className="bg-off-grey">
       <Container>
@@ -16,6 +28,11 @@ function ProfileLayout() {
             <Col className="container-card p-4">
               <Sidebar />
             </Col>
+            <div className="p-4 ms-1">
+              <Button className="p-2 px-4" onClick={Logout}>
+                Logout
+              </Button>
+            </div>
           </Col>
           <Col lg={9} className="align-self-start">
             <Outlet />
