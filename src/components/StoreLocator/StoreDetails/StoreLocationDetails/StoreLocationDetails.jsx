@@ -5,7 +5,7 @@ import { TfiEmail } from "react-icons/tfi";
 import "components/ServiceCenter/ServiceCenterDetails/styles.scss";
 
 const StoreLocationDetails = ({ storeLocation }) => {
-  console.log(storeLocation);
+  // console.log(storeLocation);
   return (
     storeLocation && (
       <Container>

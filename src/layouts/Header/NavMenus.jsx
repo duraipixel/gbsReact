@@ -1,17 +1,17 @@
 // import { useContext } from "react";
+// import { BsChevronRight, BsChevronDown } from "react-icons/bs";
 import {
-  // Accordion,
+  // useNavigate
+  Link,
+} from "react-router-dom";
+import {
   Placeholder,
+  // Accordion,
   // AccordionContext,
   // Button,
   // useAccordionButton,
 } from "react-bootstrap";
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
-// import { BsChevronRight, BsChevronDown } from "react-icons/bs";
-import {
-  Link,
-  // useNavigate
-} from "react-router-dom";
 
 export default function NavMenus({ toggleHeader }) {
   return (
@@ -21,16 +21,17 @@ export default function NavMenus({ toggleHeader }) {
           src={require("../../assets/images/computer.png")}
           className="d-block w-100"
           height={120}
-          alt="menu"
+          alt=""
         />
         <div className="carousel-caption p-0">
           <h5>What are you looking for today?</h5>
         </div>
       </div>
-      <NavMenuList className="px-2" toggleHeader={toggleHeader} />
+      <NavMenuList className="px-2" />
     </div>
   );
 }
+
 export const NavMenuList = ({ className, toggleHeader }) => {
   const { data, isSuccess, isLoading } = useNavMenuQuery();
   // console.log(data);
@@ -105,39 +106,41 @@ export const NavMenuList = ({ className, toggleHeader }) => {
         </Accordion>
       )} */}
       {isSuccess && (
-        <ul className="list-group list-group-flush">
-          {data.data.map((item) =>
-            item.child.map((data) => (
-              <li className="list-group-item p-3" key={data.id}>
-                <div className="d-flex justify-content-between align-items-center">
-                  <Link
-                    to={`/products?${data.slug}`}
-                    className={`me-auto text-dark`}
-                  >
-                    {data.name}
-                  </Link>
-                </div>
-              </li>
-            ))
-          )}
-          <li className="list-group-item p-3">
-            <div className="d-flex justify-content-between align-items-center">
-              <Link to="/store-locator" className={`me-auto text-dark`}>
-                Store Locator
-              </Link>
-            </div>
-          </li>
-          <li className="list-group-item p-3">
-            <div className="d-flex justify-content-between align-items-center">
-              <Link
-                to="/service-center-locator"
-                className={`me-auto text-dark`}
-              >
-                Service Center Locator
-              </Link>
-            </div>
-          </li>
-        </ul>
+        <div className={className}>
+          <ul className="list-group list-group-flush">
+            {data.data.map((item) =>
+              item.child.map((data) => (
+                <li className="list-group-item p-3" key={data.id}>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Link
+                      to={`/products?${data.slug}`}
+                      className={`me-auto text-dark`}
+                    >
+                      {data.name}
+                    </Link>
+                  </div>
+                </li>
+              ))
+            )}
+            <li className="list-group-item p-3">
+              <div className="d-flex justify-content-between align-items-center">
+                <Link to="/store-locator" className={`me-auto text-dark`}>
+                  Store Locator
+                </Link>
+              </div>
+            </li>
+            <li className="list-group-item p-3">
+              <div className="d-flex justify-content-between align-items-center">
+                <Link
+                  to="/service-center-locator"
+                  className={`me-auto text-dark`}
+                >
+                  Service Center Locator
+                </Link>
+              </div>
+            </li>
+          </ul>
+        </div>
       )}
     </>
   );
