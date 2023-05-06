@@ -119,12 +119,13 @@ const Footer = () => {
               </p>
               <p className="footer-text1">
                 <FiPhone />{" "}
-                {mobNum.map((num) => (
+                {mobNum.map((num, i) => (
                   <Link
+                    key={i}
                     rel="noopener noreferrer"
                     onClick={() => openInNewTab(`tel:${num}`)}
                   >
-                    {num} 
+                    {num}
                   </Link>
                 ))}
               </p>
