@@ -17,7 +17,7 @@ export const footerSlice = createSlice({
   initialState,
   reducers: {
     setfooterCollection: (state, { payload }) => {
-      sessionStorage.setItem("home_page_collection", JSON.stringify(payload));
+      sessionStorage.setItem("footer_collection", JSON.stringify(payload));
       return (state = payload);
     },
   },

@@ -1,6 +1,6 @@
 // import { useContext } from "react";
 import {
-  Accordion,
+  // Accordion,
   Placeholder,
   // AccordionContext,
   // Button,
@@ -105,41 +105,39 @@ export const NavMenuList = ({ className, toggleHeader }) => {
         </Accordion>
       )} */}
       {isSuccess && (
-        <Accordion defaultActiveKey="0" className={className}>
-          <ul className="list-group list-group-flush">
-            {data.data.map((item) =>
-              item.child.map((data) => (
-                <li className="list-group-item p-3" key={item.id}>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <Link
-                      to={`/products?${data.slug}`}
-                      className={`me-auto text-dark`}
-                    >
-                      {data.name}
-                    </Link>
-                  </div>
-                </li>
-              ))
-            )}
-            <li className="list-group-item p-3">
-              <div className="d-flex justify-content-between align-items-center">
-                <Link to="/store-locator" className={`me-auto text-dark`}>
-                  Store Locator
-                </Link>
-              </div>
-            </li>
-            <li className="list-group-item p-3">
-              <div className="d-flex justify-content-between align-items-center">
-                <Link
-                  to="/service-center-locator"
-                  className={`me-auto text-dark`}
-                >
-                  Service Center Locator
-                </Link>
-              </div>
-            </li>
-          </ul>
-        </Accordion>
+        <ul className="list-group list-group-flush">
+          {data.data.map((item) =>
+            item.child.map((data) => (
+              <li className="list-group-item p-3" key={data.id}>
+                <div className="d-flex justify-content-between align-items-center">
+                  <Link
+                    to={`/products?${data.slug}`}
+                    className={`me-auto text-dark`}
+                  >
+                    {data.name}
+                  </Link>
+                </div>
+              </li>
+            ))
+          )}
+          <li className="list-group-item p-3">
+            <div className="d-flex justify-content-between align-items-center">
+              <Link to="/store-locator" className={`me-auto text-dark`}>
+                Store Locator
+              </Link>
+            </div>
+          </li>
+          <li className="list-group-item p-3">
+            <div className="d-flex justify-content-between align-items-center">
+              <Link
+                to="/service-center-locator"
+                className={`me-auto text-dark`}
+              >
+                Service Center Locator
+              </Link>
+            </div>
+          </li>
+        </ul>
       )}
     </>
   );

@@ -28,7 +28,7 @@ export const homePageApi = async () => {
   }
   return false;
 };
-export const getFooterApi = async (data) => {
+export const getFooterApi = async () => {
   const reponses = await axios.all([
     axios.get(`${process.env.REACT_APP_BASE_URL}/get/brands`),
     axios.get(`${process.env.REACT_APP_BASE_URL}/get/site/info`),
