@@ -24,8 +24,6 @@ export const homePageApi = async () => {
       browseHome: reponses[4].data.data,
       brands: reponses[5].data.data,
       handpickedCollections: reponses[6].data,
-      siteInfo: reponses[7].data.data,
-      quickLink: reponses[8].data.data,
     };
   }
   return false;
