@@ -9,7 +9,7 @@ const StoreLocatorBanner = ({
   setBrandId,
   setPostCode,
 }) => {
-  const brands = useSelector((state) => state.homePageCollection.brands);
+  const brands = useSelector((state) => state.footerCollection.brands);
 
   return (
     serviceCenterData && (

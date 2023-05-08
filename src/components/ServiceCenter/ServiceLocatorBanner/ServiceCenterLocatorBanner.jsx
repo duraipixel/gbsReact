@@ -10,7 +10,7 @@ const ServiceCenterLocatorBanner = ({
   setPostCode,
 }) => {
   // console.log(serviceCenterData, serviceCenterBrandData);
-  const brands = useSelector((state) => state.homePageCollection.brands);
+  const brands = useSelector((state) => state.footerCollection.brands);
   return (
     serviceCenterData && (
       <section className="banner">
@@ -43,7 +43,7 @@ const ServiceCenterLocatorBanner = ({
                   }}
                 >
                   <option value="">Select Brand</option>
-                  {brands.map((item) => (
+                  {brands && brands.map((item) => (
                     <option value={item.id} key={item.id}>
                       {item.title}
                     </option>
