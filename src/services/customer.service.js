@@ -13,7 +13,7 @@ export const updatePasswordApi = async (data) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/change/password`, data);
 }
 
-export const customerAddressApi = async (data) => {
+export const customerAddressApi = async () => {
     if(AuthUser() === false) return false;
     const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/get/addresses`, {
         customer_id: AuthUser().id
@@ -22,6 +22,7 @@ export const customerAddressApi = async (data) => {
     localStorage.setItem("address_type", JSON.stringify(response.data.address_type))
     localStorage.setItem("country", JSON.stringify(response.data.country))
     localStorage.setItem("state", JSON.stringify(response.data.state))
+    localStorage.setItem("pincode", JSON.stringify(response.data.pincode))
     return response
 }
 

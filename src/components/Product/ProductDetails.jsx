@@ -8,26 +8,30 @@ import ProductGallery from "./ProductGallery";
 function ProductDetails({ product }) {
   return (
     <div className="py-lg-3 h-100 py-4">
-      <Container>
-        <Row className="h-100 ">
-          <Col xl={6}>
-            <div className="sticky-top pt-lg-4 px-5">
-              <div className="position-relative sticky-top">
-                <span className="offer-badge">
-                  <div>
-                    {product.discount_percentage}% <span>OFF</span>
+      {product && (
+        <>
+          <Container>
+            <Row className="h-100 ">
+              <Col xl={6}>
+                <div className="sticky-top pt-lg-4 px-5">
+                  <div className="position-relative sticky-top">
+                    <span className="offer-badge">
+                      <div>
+                        {product.discount_percentage}% <span>OFF</span>
+                      </div>
+                    </span>
+                    <ProductGallery images={product.gallery} />
                   </div>
-                </span>
-                <ProductGallery images={product.gallery} />
-              </div>
-            </div>
-          </Col>
-          <Col xl={6}>
-            <ProductInformation product={product} />
-          </Col>
-        </Row>
-      </Container>
-      <ProductsFeaturesTabs product={product} />
+                </div>
+              </Col>
+              <Col xl={6}>
+                <ProductInformation product={product} />
+              </Col>
+            </Row>
+          </Container>
+          <ProductsFeaturesTabs product={product} />
+        </>
+      )}
     </div>
   );
 }

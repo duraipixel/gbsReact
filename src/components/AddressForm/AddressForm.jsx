@@ -28,12 +28,15 @@ function AddressForm() {
   const [addressMaster, setAdressMaster] = useState([])
   const [countryMaster, setCountryMaster] = useState([])
   const [stateMaster, setStateMaster] = useState([])
+  const [pincodeMaster, setPincodeMaster] = useState([])
   const getMasters = async () => {
     const { data } = await customerAddressApi()
+    console.log(data);
     if (data?.status === "success") {
       setAdressMaster(data.address_type)
       setStateMaster(data.state)
       setCountryMaster(data.country)
+      setPincodeMaster(data.pincode)
     }
   }
   useEffect(() => {
@@ -171,14 +174,26 @@ function AddressForm() {
               controlId="post_code"
               style={{ width: "49%" }}
             >
-              <Form.Control
+              <Form.Select
+                {...register("post_code", {
+                  required: "This is required.",
+                })}
+                className={`${errors.post_code ? 'border-danger' : ''}`} >
+                <option value="">-- Choose --</option>
+                {
+                  pincodeMaster.length !== 0 && pincodeMaster.map((item) => (
+                    <option key={item.id} value={item.id}>{item.pincode}</option>
+                  ))
+                }
+              </Form.Select>
+              {/* <Form.Control
                 type="text"
                 placeholder="Pincode"
                 className={`${errors.post_code ? 'border-danger' : ''}`}
                 {...register("post_code", {
                   required: "This is required.",
                 })}
-              />
+              /> */}
             </Form.Group>
           </div>
           <div className="flex-jc-btwn gap-1 flex-wrap">
