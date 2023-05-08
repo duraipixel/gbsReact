@@ -85,12 +85,12 @@ const MyOrderDetails = () => {
                       <h6>{order.shipping.name}</h6>
                       <p>{order.shipping.address}</p>
                       <p>Phone: +91 {order.shipping.mobile_no}</p>
-                      <h5>Shipping Partner</h5>
+                      {/* <h5>Shipping Partner</h5>
                       <img
                         src={require("assets/images/myOrders/Bluedart.png")}
                         alt=""
                       />
-                      <p>AWB: 28443321126</p>
+                      <p>AWB: 28443321126</p> */}
                     </Col>
                     <div className="vr"></div>
                     <Col>
