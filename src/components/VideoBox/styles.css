@@ -1,0 +1,13 @@
+.modal-body button {
+  position: absolute;
+  right: -20px; 
+  border: 0;
+  font-size: 22px;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  background: #f00;
+  color: #fff;
+  border-radius: 50px;
+  top: -20px;
+}

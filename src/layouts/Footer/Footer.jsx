@@ -40,7 +40,7 @@ const Footer = () => {
       <footer>
         <Container>
           <Row>
-            <Col xs={12} sm={12} md={6} lg={2} xl={2}>
+            <Col xs={12} sm={12} md={6} lg={3} xl={3}>
               <img src={siteInfo.logo} alt="" />
               <ListGroup>
                 {siteInfo.links.map((i, index) => (
@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
           </Col> */}
 
-            <Col xs={12} sm={12} md={6} lg={3} xl={3}>
+            <Col xs={12} sm={12} md={6} lg={2} xl={2}>
               <h5>Information</h5>
               <div className="footer-links">
                 <Link to="/shipping-delivery">Shipping & Delivery</Link>

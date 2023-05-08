@@ -11,6 +11,7 @@ import client5 from "assets/images/client-5.jpg";
 import client6 from "assets/images/client-6.jpg";
 import client7 from "assets/images/client-7.jpg";
 import client8 from "assets/images/client-8.jpg";
+import VideoBox from 'components/VideoBox';
 
 function CustomerSays() {
     var customers = {
@@ -39,27 +40,22 @@ function CustomerSays() {
 
                                     <div className='customer-detsil text-center'>
                                         <img src={customerimage} alt="" className="img-fluid" />
-                                        <h4>John Doe</h4>
-                                        <span>Software Engineer</span>
-                                        <div className='ceovds'>
-                                            <img src={customer1} alt="" />
-                                            <Link to="/" id="play-video" className="video-play-button">
-                                                <span></span>
-                                            </Link>
-                                        </div>
+                                        <h4>Lenovo Exclusive store</h4><br />
+                                        {/* <span className='txt-fill'>Software Engineer</span> */}
+                                        <VideoBox bgImage={customer1} src="https://www.youtube.com/embed/-ThuAOC0PHM" /> 
                                     </div>
 
-                                    <div className='customer-detsil text-center'>
+                                    {/* <div className='customer-detsil text-center'>
                                         <img src={customerimage} alt="" className="img-fluid" />
                                         <h4>John Doe</h4>
-                                        <span>Software Engineer</span>
+                                        <span className='txt-fill'>Software Engineer</span>
                                         <div className='ceovds'>
                                             <img src={customer1} alt="" />
                                             <Link to="/" id="play-video" className="video-play-button">
                                                 <span></span>
                                             </Link>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                 </Slider>
                             </div>
