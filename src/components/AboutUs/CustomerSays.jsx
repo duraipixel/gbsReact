@@ -80,22 +80,22 @@ function CustomerSays() {
             </div> 
             <ul>
             <li>
+            <img src={client6} alt="" />    
+            </li>
+            <li>
             <img src={client1} alt="" />    
             </li>
             <li>
             <img src={client2} alt="" />    
             </li>
             <li>
-            <img src={client3} alt="" />    
-            </li>
-            <li>
             <img src={client4} alt="" />    
             </li>
             <li>
-            <img src={client5} alt="" />    
+            <img src={client3} alt="" />    
             </li>
             <li>
-            <img src={client6} alt="" />    
+            <img src={client5} alt="" />    
             </li>
             <li>
             <img src={client7} alt="" />    
