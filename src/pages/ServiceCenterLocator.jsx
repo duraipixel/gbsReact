@@ -2,6 +2,7 @@ import axios from "axios";
 import ServiceCenterLocatorBanner from "components/ServiceCenter/ServiceLocatorBanner/ServiceCenterLocatorBanner";
 import ServiceLocatorContent from "components/ServiceCenter/ServiceLocatorContent/ServiceLocatorContent";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Loader, scrollToTop } from "utils";
 
 const ServiceCenterLocator = () => {
@@ -22,7 +23,6 @@ const ServiceCenterLocator = () => {
   useEffect(() => {
     getFilterData();
   }, [centerID, brandId, postCode]);
-
 
   const getData = () => {
     return axios
@@ -53,6 +53,14 @@ const ServiceCenterLocator = () => {
     <Loader />
   ) : (
     <>
+      <Helmet>
+        <title>{serviceCenterData?.meta?.title}</title>
+        <meta
+          name="description"
+          content={serviceCenterData?.meta?.description}
+        />
+        <meta name="keywords" content={serviceCenterData?.meta?.keywords} />
+      </Helmet>
       <ServiceCenterLocatorBanner
         serviceCenterData={serviceCenterData}
         serviceCenterFilteredData={serviceCenterFilteredData}

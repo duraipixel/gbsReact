@@ -13,6 +13,7 @@ import { setHomePageCollection } from "redux/features/homePageSlice";
 import { useDispatch } from "react-redux";
 import { Loader, scrollToTop } from "utils";
 import ProductCollection from "components/Home/ProductCollection/ProductCollection";
+import { Helmet } from "react-helmet";
 // import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
 // import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
 // import Tablets from "components/Home/Tablets/Tablets";
@@ -41,6 +42,11 @@ const HomePage = () => {
   if (fetching) return <Loader />;
   return (
     <div>
+      <Helmet>
+        <title>Home Page</title>
+        <meta name="description" content={"page?.meta?.description"} />
+        <meta name="keywords" content={"page?.meta?.keywords"} />
+      </Helmet>
       <HomeProductsSlider />
       <DealsProduct />
       <CategoriesPoster />

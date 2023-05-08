@@ -4,6 +4,7 @@ import ServiceCenter from "components/Home/ServiceCenter/ServiceCenter";
 import StoreLocatorBanner from "components/StoreLocator/Banner/StoreLocatorBanner";
 import LocationContent from "components/StoreLocator/LocationContent/LocationContent";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const StoreLocatorPage = () => {
   const [storeData, setStoreData] = useState();
@@ -53,6 +54,11 @@ const StoreLocatorPage = () => {
     <Loader />
   ) : (
     <>
+      <Helmet>
+        <title>{storeData?.meta?.title}</title>
+        <meta name="description" content={storeData?.meta?.description} />
+        <meta name="keywords" content={storeData?.meta?.keywords} />
+      </Helmet>
       <StoreLocatorBanner
         serviceCenterData={storeData}
         setCenterID={setCenterID}

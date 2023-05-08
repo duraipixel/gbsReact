@@ -8,6 +8,7 @@ import StoreMap from "../components/StoreLocator/StoreDetails/StoreMap/StoreMap"
 import Map360Degree from "components/Map360Degree";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const StoreLocationDetailsPage = () => {
   const { store_slug } = useParams();
@@ -39,9 +40,14 @@ const StoreLocationDetailsPage = () => {
     <Loader />
   ) : (
     <div>
+      <Helmet>
+        <title>{storeLocation?.meta?.title}</title>
+        <meta name="description" content={storeLocation?.meta?.description} />
+        <meta name="keywords" content={storeLocation?.meta?.keywords} />
+      </Helmet>
       <StoreDetailsBanner storeLocation={storeLocation} />
       <StoreLocationDetails storeLocation={storeLocation} />
-      <StoreOffers storeLocation={storeLocation}/>
+      <StoreOffers storeLocation={storeLocation} />
       <ProductsAvailInStore />
       <StoreMap storeLocation={storeLocation} />
       <Map360Degree serviceCenterData={storeLocation} />

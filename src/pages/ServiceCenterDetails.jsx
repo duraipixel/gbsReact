@@ -5,6 +5,7 @@ import ServiceCenterLocationDetails from "components/ServiceCenter/ServiceCenter
 import ServiceWeOffer from "components/ServiceCenter/ServiceCenterDetails/ServiceWeOffer";
 import ServiceStoreMap from "components/ServiceCenter/ServiceStoreMap/ServiceStoreMap";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { Loader, scrollToTop } from "utils";
 
@@ -37,6 +38,14 @@ const ServiceCenterDetails = () => {
     <Loader />
   ) : (
     <>
+      <Helmet>
+        <title>{serviceCenterData?.meta?.title}</title>
+        <meta
+          name="description"
+          content={serviceCenterData?.meta?.description}
+        />
+        <meta name="keywords" content={serviceCenterData?.meta?.keywords} />
+      </Helmet>
       <ServiceCenterDetailBanner serviceCenterData={serviceCenterData} />
       <ServiceCenterLocationDetails serviceCenterData={serviceCenterData} />
       <ServiceWeOffer />
