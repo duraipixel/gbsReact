@@ -13,7 +13,7 @@ const DealsProduct = () => {
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div className="comon-heads">
-                  <h2>Deals you Might Want to Consider</h2>
+                  <h2>Best Deals of the Day - Get Today's Best Discounts</h2>
                 </div>
               </div>
               {
