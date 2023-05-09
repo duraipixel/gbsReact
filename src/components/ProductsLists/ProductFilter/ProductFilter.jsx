@@ -118,10 +118,10 @@ const ProductFilter = ({
                     <ul>
                       {filters[1].map((filter, index) => (
                         <li key={index}>
-                          <label className="cstm-chkbx" htmlFor={filter.name}>
+                          <label className="cstm-chkbx" htmlFor={filter.slug}>
                             {filter.name}
                             <CheckBoxInput
-                              id={filter.name}
+                              id={filter.slug}
                               name={filters[0]}
                               value={filter.slug}
                               setClearFilter={setClearFilter}

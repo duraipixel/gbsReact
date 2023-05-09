@@ -13,11 +13,12 @@ const ProductListDetails = ({
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
+  const searchParams = new URLSearchParams(location.search);
 
   const filterHandler = (e) => {
     const searchParams = new URLSearchParams(location.search);
     if (e.target.value) {
-      searchParams.set("sory_by", e.target.value);
+      searchParams.set("sort_by", e.target.value);
       setCurrentLocation(`?${searchParams.toString()}`);
       navigate(`/products?${searchParams.toString()}`);
       setClearFilter(true);
@@ -25,6 +26,7 @@ const ProductListDetails = ({
       setClearFilter(false);
     }
   };
+  
   return (
     <Col
       lg={9}
@@ -46,9 +48,10 @@ const ProductListDetails = ({
                 id="enq"
                 name="enq"
                 onChange={filterHandler}
+                value={searchParams.get('sort_by') || ''}
               >
                 <option value="">-- select --</option>
-                <option value="high-to-low">High to Low</option>
+                <option value="price-high-to-low" >High to Low</option>
                 <option value="price-low-to-high">Low to High</option>
               </select>
             </div>
