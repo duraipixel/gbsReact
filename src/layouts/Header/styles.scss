@@ -1632,13 +1632,13 @@ input[type="search"]::-webkit-search-results-decoration {
     padding-left: 5px !important;
     padding-right: 0 !important;
 
-    a{
+    a {
       color: white !important;
       margin: 0 !important;
       &:hover {
         color: var(--primary-color) !important;
       }
-      text-transform:uppercase;
+      text-transform: uppercase;
     }
     li {
       color: #cecece !important;
@@ -1680,7 +1680,7 @@ small {
   top: 50px;
   min-height: 400px;
   min-width: 280px;
-
+  text-transform: uppercase;
   @media (min-width: 992px) {
     width: 420px;
     left: 0%;
@@ -1741,10 +1741,11 @@ small {
     z-index: 1;
   }
 
-  .dropdown-content a {
+  .dropdown-content li {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    cursor: pointer !important;
   }
 
   .dropdown-content a:hover {
