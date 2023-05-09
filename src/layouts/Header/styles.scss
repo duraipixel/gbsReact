@@ -1672,17 +1672,20 @@ small {
 }
 
 .nav-menus {
-  // display: none !important;
+  width: 26.25vw;
+  font-size: 13px;
   position: absolute;
   z-index: 11;
   border-top: 2px solid white;
   background: white;
   top: 50px;
-  min-height: 400px;
+  min-height: 100%;
   min-width: 280px;
   text-transform: uppercase;
+  border-top-width: 0;
+
   @media (min-width: 992px) {
-    width: 420px;
+    // width: 420px;
     left: 0%;
     top: 58px;
     transform: translateX(-150px);
@@ -1731,6 +1734,16 @@ small {
 }
 
 @media (min-width: 900px) {
+  .accordion {
+    li {
+      a {
+        &:hover {
+          color: var(--primary-color) !important;
+          padding-left: 2px;
+        }
+      }
+    }
+  }
   .dropdown-content {
     display: none !important;
     position: fixed;
@@ -1742,10 +1755,12 @@ small {
   }
 
   .dropdown-content li {
-    padding: 12px 16px;
     text-decoration: none;
     display: block;
     cursor: pointer !important;
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 
   .dropdown-content a:hover {
@@ -1754,7 +1769,7 @@ small {
 
   .dropdown:hover .dropdown-content {
     display: block !important;
-    min-height: 400px;
+    min-height: 100%;
     min-width: 280px;
     background: white;
   }

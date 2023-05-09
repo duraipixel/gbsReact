@@ -13,17 +13,6 @@ import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 export default function NavMenus({ toggleHeader }) {
   return (
     <div className="nav-menus shadow">
-      <div className="nav-menu-banner">
-        <img
-          src={require("../../assets/images/computer.png")}
-          className="d-block w-100"
-          height={120}
-          alt=""
-        />
-        <div className="carousel-caption p-0">
-          <h5>What are you looking for today?</h5>
-        </div>
-      </div>
       <NavMenuList />
     </div>
   );
@@ -44,40 +33,49 @@ export const NavMenuList = ({ className, toggleHeader }) => {
       {isLoading && (
         <>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-4" />
+            <Placeholder xs={12} className="list-group-item p-3" />
           </Placeholder>
         </>
       )}
       {isSuccess && (
         <ul className="list-group list-group-flush">
+          <Accordion className={className}>
+            <li className="list-group-item px-3 py-2">
+              <div className="d-flex justify-content-between align-items-center">
+                <Link to="/" className={`me-auto text-dark`}>
+                  Exclusive at GBS
+                </Link>
+              </div>
+            </li>
+          </Accordion>
           {data.data.map((item) => (
             <Accordion defaultActiveKey="0" className={className}>
               <div class="dropdown">
-                <li className="list-group-item p-3" key={item.id}>
+                <li className="list-group-item px-3 py-2" key={item.id}>
                   <div className="d-flex justify-content-between align-items-center">
                     <Link to="/" className={`me-auto text-dark dropbtn`}>
                       {item.name}
@@ -107,7 +105,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                       {item.child.map((data) => (
                         <li
                           key={data.id}
-                          className="list-group-item pt-3"
+                          className="list-group-item px-3 py-2"
                           onClick={() => linkHandler(data.slug)}
                         >
                           {data.name}
@@ -120,7 +118,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             </Accordion>
           ))}
           <Accordion className={className}>
-            <li className="list-group-item p-3">
+            <li className="list-group-item px-3 py-2">
               <div className="d-flex justify-content-between align-items-center">
                 <Link to="/store-locator" className={`me-auto text-dark`}>
                   Store Locator
@@ -129,7 +127,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             </li>
           </Accordion>
           <Accordion className={className}>
-            <li className="list-group-item p-3">
+            <li className="list-group-item px-3 py-2">
               <div className="d-flex justify-content-between align-items-center">
                 <Link
                   to="/service-center-locator"
@@ -146,7 +144,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
         <Accordion defaultActiveKey="0" className={className}>
           <ul className="list-group list-group-flush">
             {data.data.map((item) => (
-              <li className="list-group-item p-3" key={item.id}>
+              <li className="list-group-item px-3 py-2" key={item.id}>
                 <div className="d-flex justify-content-between align-items-center">
                   <Link to="/" className={`me-auto text-dark`}>
                     {" "}
@@ -181,7 +179,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
           <ul className="list-group list-group-flush">
             {data.data.map((item) =>
               item.child.map((data) => (
-                <li className="list-group-item p-3" key={data.id}>
+                <li className="list-group-item px-3 py-2" key={data.id}>
                   <div className="d-flex justify-content-between align-items-center">
                     <Link
                       to={`/products?${data.slug}`}
@@ -193,14 +191,14 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                 </li>
               ))
             )}
-            <li className="list-group-item p-3">
+            <li className="list-group-item px-3 py-2">
               <div className="d-flex justify-content-between align-items-center">
                 <Link to="/store-locator" className={`me-auto text-dark`}>
                   Store Locator
                 </Link>
               </div>
             </li>
-            <li className="list-group-item p-3">
+            <li className="list-group-item px-3 py-2">
               <div className="d-flex justify-content-between align-items-center">
                 <Link
                   to="/service-center-locator"
