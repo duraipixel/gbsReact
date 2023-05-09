@@ -13,49 +13,56 @@ const ServiceCenterLocatorBanner = ({
   const brands = useSelector((state) => state.footerCollection.brands);
   return (
     serviceCenterData && (
-      <section className="banner">
+      <section className="banner py-3">
         <Container>
           <Col>
             <h2 className="text-center">Service Center Locator</h2>
             <Row>
               <div className="m-2 flex-center flex-wrap">
-                <select
-                  className=""
-                  id=""
-                  name=""
-                  onChange={(e) => {
-                    setCenterID(e.target.value);
-                  }}
-                >
-                  <option value="">Select Service Center</option>
-                  {serviceCenterData.data.map((item) => (
-                    <option value={item.id} key={item.id}>
-                      {item.title}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  className=""
-                  id=""
-                  name=""
-                  onChange={(e) => {
-                    setBrandId(e.target.value);
-                  }}
-                >
-                  <option value="">Select Brand</option>
-                  {brands && brands.map((item) => (
-                    <option value={item.id} key={item.id}>
-                      {item.title}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  type="number"
-                  placeholder="Search by Pincode"
-                  onChange={(e) => {
-                    setPostCode(e.target.value);
-                  }}
-                />
+                <Col lg={4}>
+                  <select
+                    className=""
+                    id=""
+                    name=""
+                    onChange={(e) => {
+                      setCenterID(e.target.value);
+                    }}
+                  >
+                    <option value="">Select Service Center</option>
+                    {serviceCenterData.data.map((item) => (
+                      <option value={item.id} key={item.id}>
+                        {item.title}
+                      </option>
+                    ))}
+                  </select>
+                </Col>
+                <Col lg={4}>
+                  <select
+                    className=""
+                    id=""
+                    name=""
+                    onChange={(e) => {
+                      setBrandId(e.target.value);
+                    }}
+                  >
+                    <option value="">Select Brand</option>
+                    {brands &&
+                      brands.map((item) => (
+                        <option value={item.id} key={item.id}>
+                          {item.title}
+                        </option>
+                      ))}
+                  </select>
+                </Col>
+                <Col lg={4}>
+                  <input
+                    type="number"
+                    placeholder="Search by Pincode"
+                    onChange={(e) => {
+                      setPostCode(e.target.value);
+                    }}
+                  />
+                </Col>
               </div>
             </Row>
           </Col>

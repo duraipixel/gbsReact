@@ -1,3 +1,6 @@
+hr{
+  margin-top: 0;
+}
 .find-us-on-map {
   p {
     margin-bottom: 5px !important;
@@ -14,6 +17,10 @@
   color: #f1000a;
   padding: 10px 30px;
   border-radius: 4px;
+}
+.btn-red-outline:hover{
+  background-color: #f1000a !important;
+  color: white !important;
 }
 .location-content {
   svg {

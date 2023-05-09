@@ -12,7 +12,7 @@ const LocationContent = ({ storeData, fetching }) => {
   return fetching ? (
     <HalfHeightLoader />
   ) : (
-    <section>
+    <div className="py-5">
       <Container>
         {storeData &&
           storeData.data.map((item) => (
@@ -53,21 +53,19 @@ const LocationContent = ({ storeData, fetching }) => {
                     </div>
                   </div>
                 </Col>
-                <Col>
-                  <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-                    <Link
-                      to={`/store-location-details/${item.slug}`}
-                      className="btn-red-outline"
-                    >
-                      More Details
-                    </Link>
-                    <div>
-                      <p>Find us on</p>
-                      <img
-                        src={require("assets/Store/GooglePin.png")}
-                        alt="GooglePin"
-                      />
-                    </div>
+                <Col className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
+                  <Link
+                    to={`/store-location-details/${item.slug}`}
+                    className="btn-red-outline"
+                  >
+                    More Details
+                  </Link>
+                  <div>
+                    <p>Find us on</p>
+                    <img
+                      src={require("assets/Store/GooglePin.png")}
+                      alt="GooglePin"
+                    />
                   </div>
                 </Col>
               </div>
@@ -84,7 +82,7 @@ const LocationContent = ({ storeData, fetching }) => {
           <Link className="btn-trans mt-3 p-2 ps-4 pe-4">Load More</Link>
         </div> */}
       </Container>
-    </section>
+    </div>
   );
 };
 

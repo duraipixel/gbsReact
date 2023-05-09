@@ -12,7 +12,7 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
   return fetching ? (
     <HalfHeightLoader />
   ) : (
-    <section>
+    <div className="py-5" >
       <Container>
         {serviceCenterFilteredData &&
           serviceCenterFilteredData.data.map((item) => {
@@ -34,21 +34,19 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                       </div>
                     </div>
                   </Col>
-                  <Col>
-                    <div className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
-                      <Link
-                        to={`/service-center-details/${item.slug}`}
-                        className="btn-red-outline"
-                      >
-                        More Details
-                      </Link>
-                      <div>
-                        <p>Find us on</p>
-                        <img
-                          src={require("assets/Store/GooglePin.png")}
-                          alt="GooglePin"
-                        />
-                      </div>
+                  <Col className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
+                    <Link
+                      to={`/service-center-details/${item.slug}`}
+                      className="btn-red-outline"
+                    >
+                      More Details
+                    </Link>
+                    <div>
+                      <p>Find us on</p>
+                      <img
+                        src={require("assets/Store/GooglePin.png")}
+                        alt="GooglePin"
+                      />
                     </div>
                   </Col>
                 </div>
@@ -61,13 +59,13 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
             <h2>No Data</h2>
           </div>
         )}
-        {serviceCenterFilteredData.data.length > 5 && (
+        {/* {serviceCenterFilteredData.data.length > 5 && (
           <div className="flex-center mt-3">
             <button className="btn-trans mt-3 p-2 ps-4 pe-4">Load More</button>
           </div>
-        )}
+        )} */}
       </Container>
-    </section>
+    </div>
   );
 };
 
