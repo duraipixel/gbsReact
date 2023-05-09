@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "./styles.css";
+import "./styles.scss";
 import call from "assets/images/call.png";
 import location from "assets/images/location.png";
 import mail from "assets/images/mail.png";
@@ -8,7 +8,7 @@ import locator1 from "assets/images/locator-1.jpg";
 
 function ContactUs() {
     return (
-        <div>
+        <div className='contact-us-page'>
             <section className='bg-banner-liner'>
                 <div className='container'>
                     <div className='row'>
