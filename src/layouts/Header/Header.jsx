@@ -30,9 +30,9 @@ const Header = () => {
 
   const location = useLocation();
   const { pathname } = location;
-
+  // console.log(pathname);
   useEffect(() => {
-    setNavMenu(!navMenu);
+    setNavMenu(false);
   }, [pathname]);
   return (
     <>
