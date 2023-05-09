@@ -1632,11 +1632,17 @@ input[type="search"]::-webkit-search-results-decoration {
     padding-left: 5px !important;
     padding-right: 0 !important;
 
-    a,
-    li {
-      color: #eee !important;
+    a{
+      color: white !important;
       margin: 0 !important;
-
+      &:hover {
+        color: var(--primary-color) !important;
+      }
+      text-transform:uppercase;
+    }
+    li {
+      color: #cecece !important;
+      margin: 0 !important;
       &:hover {
         color: var(--primary-color) !important;
       }

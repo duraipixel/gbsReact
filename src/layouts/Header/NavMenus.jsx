@@ -24,7 +24,7 @@ export default function NavMenus({ toggleHeader }) {
           <h5>What are you looking for today?</h5>
         </div>
       </div>
-      <NavMenuList className="px-2" />
+      <NavMenuList />
     </div>
   );
 }
