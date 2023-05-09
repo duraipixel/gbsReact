@@ -1,9 +1,9 @@
 import "./styles.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavMenus, { NavMenuList } from "./NavMenus";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartButton from "./CartButton";
 import { useDispatch, useSelector } from "react-redux";
 import { Offcanvas } from "react-bootstrap";
@@ -20,11 +20,20 @@ const Header = () => {
   const [searchMobileSearch, setMobileSearch] = useState(false);
   const expand = "lg";
   const toggleHeader = () => {
-    dispatch(setHeader({
-      status: !header,
-    }));
+    dispatch(
+      setHeader({
+        status: !header,
+      })
+    );
     setNavMenu(!navMenu);
   };
+
+  const location = useLocation();
+  const { pathname } = location;
+
+  useEffect(() => {
+    setNavMenu(!navMenu);
+  }, [pathname]);
   return (
     <>
       <Navbar
@@ -169,14 +178,14 @@ const Header = () => {
                       <div className="input-group shadow rounded">
                         <SearchInput />
                       </div>
-                      {navMenu && <NavMenus/>}
+                      {navMenu && <NavMenus />}
                       {navMenu && (
                         <div
                           className="nav-menu-close-btn"
                           onClick={() => setNavMenu(!navMenu)}
                         ></div>
                       )}
-                      <SearchResult setMobileSearch={setMobileSearch}/>
+                      <SearchResult setMobileSearch={setMobileSearch} />
                     </div>
                   )}
                 </div>
@@ -191,7 +200,10 @@ const Header = () => {
                       />
                     </>
                   ) : (
-                    <NavMenuList className="accordion-dark" toggleHeader={toggleHeader}/>
+                    <NavMenuList
+                      className="accordion-dark"
+                      toggleHeader={toggleHeader}
+                    />
                   )}
                 </div>
               </div>
