@@ -55,7 +55,7 @@ const StoreLocatorPage = () => {
   ) : (
     <>
       <Helmet>
-        <title>{storeData?.meta?.title}</title>
+        <title>{storeData?.meta?.title || "Store Locator | GBS"}</title>
         <meta name="description" content={storeData?.meta?.description} />
         <meta name="keywords" content={storeData?.meta?.keywords} />
       </Helmet>

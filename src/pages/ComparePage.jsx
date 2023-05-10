@@ -14,7 +14,7 @@ function ComparePage() {
   return (
     <>
       <Helmet>
-        <title>{products?.meta?.title}</title>
+        <title>{products?.meta?.title || "Compare Products | GBS"}</title>
         <meta name="description" content={products?.meta?.description} />
         <meta name="keywords" content={products?.meta?.keywords} />
       </Helmet>

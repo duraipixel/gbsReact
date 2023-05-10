@@ -41,7 +41,7 @@ const StoreLocationDetailsPage = () => {
   ) : (
     <div>
       <Helmet>
-        <title>{storeLocation?.meta?.title}</title>
+        <title>{storeLocation?.meta?.title || "Store Location Details | GBS"}</title>
         <meta name="description" content={storeLocation?.meta?.description} />
         <meta name="keywords" content={storeLocation?.meta?.keywords} />
       </Helmet>

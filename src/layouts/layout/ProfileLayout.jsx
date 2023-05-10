@@ -4,8 +4,11 @@ import Sidebar from "components/MyAccount/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthUser } from "redux/features/authSlice";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 function ProfileLayout() {
+  const [page, setPage] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const outlet = useOutlet();
@@ -22,6 +25,11 @@ function ProfileLayout() {
   };
   return (
     <section className="bg-off-grey">
+      <Helmet>
+        <title>{page?.meta?.title || "My Account | GBS"}</title>
+        <meta name="description" content={"page?.meta?.description"} />
+        <meta name="keywords" content={"page?.meta?.keywords"} />
+      </Helmet>
       <Container>
         <Row>
           <Col lg={3} className="align-self-start">

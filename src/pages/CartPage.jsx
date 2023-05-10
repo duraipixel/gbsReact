@@ -1,16 +1,17 @@
 import CartProduct from "components/Cart";
 import PackageSupport from "components/Home/PackageSupport/PackageSupport";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { scrollToTop } from "utils";
 const CartPage = () => {
+  const [page, setPage] = useState([]);
   useEffect(() => {
     scrollToTop();
   }, []);
   return (
     <div>
       <Helmet>
-        <title>{"page?.meta?.title"}</title>
+        <title>{page?.meta?.title || "Cart | GBS"}</title>
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>

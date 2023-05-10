@@ -39,7 +39,7 @@ const ServiceCenterDetails = () => {
   ) : (
     <>
       <Helmet>
-        <title>{serviceCenterData?.meta?.title}</title>
+        <title>{serviceCenterData?.meta?.title || "Service Center Details | GBS"}</title>
         <meta
           name="description"
           content={serviceCenterData?.meta?.description}

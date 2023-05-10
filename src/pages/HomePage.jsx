@@ -20,6 +20,7 @@ import { Helmet } from "react-helmet";
 // import Combos from "components/Home/Combos/Combos";
 
 const HomePage = () => {
+  const [page, setPage] = useState([]);
   useEffect(() => {
     GetPageData();
     scrollToTop();
@@ -43,7 +44,7 @@ const HomePage = () => {
   return (
     <div>
       <Helmet>
-        <title>Home Page</title>
+        <title>{page?.meta?.title || "Home | GBS"}</title>
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>

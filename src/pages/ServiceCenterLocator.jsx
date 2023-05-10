@@ -54,7 +54,7 @@ const ServiceCenterLocator = () => {
   ) : (
     <>
       <Helmet>
-        <title>{serviceCenterData?.meta?.title}</title>
+        <title>{serviceCenterData?.meta?.title || "Service Center Locator | GBS"}</title>
         <meta
           name="description"
           content={serviceCenterData?.meta?.description}
