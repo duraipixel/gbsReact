@@ -4,6 +4,8 @@ import { Col, Row, Container } from "react-bootstrap";
 import ProductsFeaturesTabs from "./ProductFeaturesMenu/ProductsFeaturesTabs";
 import ProductInformation from "./ProductInformation";
 import ProductGallery from "./ProductGallery";
+import ProductSlider from "components/ProductSlider/ProductSlider";
+import "components/Home/HomeProductsSlider/styles.scss"
 
 function ProductDetails({ product }) {
   // console.log(product);
@@ -31,6 +33,22 @@ function ProductDetails({ product }) {
             </Row>
           </Container>
           <ProductsFeaturesTabs product={product} />
+          {product.related_products[0] && (
+            <section className="new-arrivals">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between">
+                    <div className="comon-heads">
+                      <h2>Related Products</h2>
+                    </div>
+                  </div>
+                  <div className="arrival-slider">
+                    <ProductSlider products={product.related_products} />
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
         </>
       )}
     </div>
