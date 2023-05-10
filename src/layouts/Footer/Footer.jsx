@@ -34,6 +34,8 @@ const Footer = () => {
   const siteInfo = useSelector((state) => state.footerCollection.siteInfo);
   const quickLink = useSelector((state) => state.footerCollection.quickLink);
   const mobNum = siteInfo && siteInfo.site_mobile_no.split(",");
+  const address = siteInfo && siteInfo.address.split(",");
+  // console.log(address);
   if (fetching) return <Loader />;
   if (siteInfo && quickLink && brands)
     return (
@@ -105,30 +107,67 @@ const Footer = () => {
             </Col>
             <Col xs={12} sm={12} md={6} lg={3} xl={3}>
               <h5>Contact Us</h5>
-              <p className="footer-text1">
-                <RiMapPinLine /> {siteInfo.address}
-              </p>
-              <p className="footer-text1">
-                <TfiEmail />{" "}
-                <Link
-                  rel="noopener noreferrer"
-                  onClick={() => openInNewTab(`mailto:${siteInfo.site_email}`)}
-                >
-                  {siteInfo.site_email}
-                </Link>
-              </p>
-              <p className="footer-text1">
-                <FiPhone />{" "}
-                {mobNum.map((num, i) => (
+              <Row className="footer-text1">
+                <Col xs={1}>
+                  <RiMapPinLine /> {"   "}
+                </Col>
+                <Col>
+                  {address &&
+                    address.map((item, index) => (
+                      <span key={index}>
+                        {index !== address.length - 1 ? (
+                          <>
+                            {`${item},`}
+                            <br />
+                          </>
+                        ) : (
+                          <>{`${item}.`}</>
+                        )}
+                      </span>
+                    ))}
+                </Col>
+              </Row>
+              <Row className="footer-text1">
+                <Col xs={1}>
+                  <TfiEmail />{" "}
+                </Col>
+                <Col>
                   <Link
-                    key={i}
                     rel="noopener noreferrer"
-                    onClick={() => openInNewTab(`tel:${num}`)}
+                    onClick={() =>
+                      openInNewTab(`mailto:${siteInfo.site_email}`)
+                    }
                   >
-                    {num}
+                    {siteInfo.site_email}
                   </Link>
-                ))}
-              </p>
+                </Col>
+              </Row>
+              <Row className="footer-text1">
+                <Col xs={1}>
+                  <FiPhone />{" "}
+                </Col>
+                <Col>
+                  {mobNum &&
+                    mobNum.map((num, i) => (
+                      <Link
+                        key={i}
+                        rel="noopener noreferrer"
+                        onClick={() => openInNewTab(`tel:${num}`)}
+                      >
+                        <>
+                          {i !== mobNum.length - 1 ? (
+                            <>
+                              {`${num},`}
+                              <br />
+                            </>
+                          ) : (
+                            `${num}.`
+                          )}
+                        </>
+                      </Link>
+                    ))}
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
