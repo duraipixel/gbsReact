@@ -40,10 +40,10 @@ function MobileSearch({ searchMobileSearch, setMobileSearch }) {
             </AppBar>
             <div className="p-3">
                 <div className="input-group shadow rounded border">
-                    <SearchInput />
+                    <SearchInput type='HEADER'/>
                 </div>
             </div>
-            <SearchResult setMobileSearch={setMobileSearch}/>
+            <SearchResult type="HEADER" setMobileSearch={setMobileSearch}/>
         </Dialog>
     )
 }

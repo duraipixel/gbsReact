@@ -49,7 +49,7 @@ export const compareSlice = createSlice(
                 const removeItem = currentList.filter((item) => item.id !== action.payload.value);
                 localStorage.setItem('compare_products', JSON.stringify(removeItem));
                 return state = {
-                    status: removeItem.length === 0 ? false : true,
+                    status: action.payload.status,
                     value: removeItem
                 }
             },

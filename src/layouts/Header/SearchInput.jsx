@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Form, Spinner } from 'react-bootstrap'
 import { FiSearch } from 'react-icons/fi'
 import { HiXMark } from 'react-icons/hi2'
@@ -5,30 +6,35 @@ import { useDispatch, useSelector } from 'react-redux'
 import { resetSearch, setSearchResults, setSearchStatus } from 'redux/features/searchSlice'
 import { globalSearchApi } from 'services/page.service'
 
-const SearchInput = () => {
-    const search   = useSelector((state) => state.search)
+const SearchInput = ({ type }) => {
+    const search = useSelector((state) => state.search)
     const dispatch = useDispatch()
+    const input = useRef()
     const searchHandler = e => {
+        console.log(type)
         dispatch(setSearchStatus({
             isSuccess: true,
-            query:e.target.value
+            query: e.target.value,
+            type: type
         }))
         globalSearchApi(e.target.value, 10).then(response => {
             dispatch(setSearchResults({
                 value: response.data,
                 isSuccess: false,
-                query:e.target.value
+                query: e.target.value,
+                type: type
             }));
         })
     }
     const resetSearchHandler = () => {
         dispatch(resetSearch())
-    } 
+        input.current.value = ''
+    }
     return (
         <>
             <Form.Control
                 onChange={searchHandler}
-                value={search.query}
+                ref={input}
                 size="sm"
                 type="search"
                 placeholder="Search Your Product ..."

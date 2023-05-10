@@ -3,14 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     value: [],
     isSuccess: false,
-    query: ""
+    query: "",
+    type: ''
 };
 
 export const searchSlice = createSlice({
     name: 'search',
     initialState,
     reducers: {
-        setSearchResults: (state, action) => {
+        setSearchResults: (state, action) => { 
             return state = action.payload;
         },
         setSearchStatus: (state, action) => {
@@ -18,6 +19,7 @@ export const searchSlice = createSlice({
                 value: [],
                 isSuccess: action.payload.isSuccess,
                 query: action.payload.query,
+                type: action.payload.type
             };
         },
         resetSearch: (state, action) => {

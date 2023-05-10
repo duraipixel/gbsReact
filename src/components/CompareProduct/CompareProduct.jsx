@@ -22,7 +22,7 @@ function CompareProduct() {
                                     ?
                                     products.value.map((product) => (
                                         <div className="compare-card" key={product.id}>
-                                            <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664431264/Croma%20Assets/Computers%20Peripherals/Laptop/Images/257040_0_yigvy6.png/mxw_1536,f_auto" alt="" />
+                                            <img src={product.image} alt={product.product_name} />
                                             <p className="product-title">{product.product_name}</p>
                                             <b className="small">₹{" "}{product.price}</b>
                                             <button onClick={() => dispatch(removeProduct({ status: true, value: product.id }))} className="float-end btn-sm btn btn-outline-primary">Remove</button>

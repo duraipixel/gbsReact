@@ -117,22 +117,28 @@ $background-color_3: #00043a;
   box-sizing: border-box;
   font-family: $font-family_1;
 }
+
 .cursor-clickable {
   cursor: pointer;
   transition: transform 0.5s ease !important;
+
   &:hover {
     transform: scale(1.05) !important;
   }
 }
+
 .lazy-load-image-background.blur.lazy-load-image-loaded {
   transition: transform 0.5s ease !important;
+
   &:hover {
     transform: scale(1.05) !important;
   }
 }
+
 .text-align-right {
   text-align: right;
 }
+
 .navbar,
 footer {
   a {
@@ -257,7 +263,7 @@ a {
   margin-left: 2rem;
 }
 
-.slick-slide > div {
+.slick-slide>div {
   display: grid;
   place-items: center;
 }
@@ -829,6 +835,7 @@ button[loading="true"] {
 .next-jump {
   display: flex !important;
 }
+
 @media (min-width: 762px) {
   .search-result {
     background-color: white;
@@ -839,13 +846,34 @@ button[loading="true"] {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
   }
 }
+
 .bg-none {
   background: none !important;
 }
+
 .search-result {
   max-height: 500px;
   overflow-y: auto;
 }
+
 .cursor {
   cursor: pointer !important;
+}
+
+.compare-close-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 30px;
+  height: 30px;
+  background: #F6D3DC;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  border: 0;
+  outline: none;
 }

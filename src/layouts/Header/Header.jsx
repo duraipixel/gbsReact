@@ -176,7 +176,7 @@ const Header = () => {
                         <div className="small text-white mt-2 fw-500">Menu</div>
                       </button>
                       <div className="input-group shadow rounded">
-                        <SearchInput />
+                        <SearchInput type='HEADER'/>
                       </div>
                       {navMenu && <NavMenus />}
                       {navMenu && (
@@ -185,7 +185,7 @@ const Header = () => {
                           onClick={() => setNavMenu(!navMenu)}
                         ></div>
                       )}
-                      <SearchResult setMobileSearch={setMobileSearch} />
+                      <SearchResult type="HEADER" setMobileSearch={setMobileSearch} />
                     </div>
                   )}
                 </div>

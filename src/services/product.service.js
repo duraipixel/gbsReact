@@ -108,10 +108,13 @@ export const getOrdersListApi = async () => {
 export const getOrderDetailApi = async (order_no) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/orderByno`, {
         customer_id: AuthUser()?.id,
-        order_no:order_no
+        order_no: order_no
     });
 }
 
 export const cancelOrderApi = async (formData) => {
-    return await axios.post(`${process.env.REACT_APP_BASE_URL}/cancel/request/orders`,formData);
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/cancel/request/orders`, formData);
+}
+export const compareProductApi = async (formData) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/compare/product`, { product_id: formData });
 }

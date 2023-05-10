@@ -4,45 +4,37 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { filterMenuApi } from "services/filters.service";
 import { Text } from "utils";
 import { IoMdClose } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { setfilter } from "redux/features/filterSlice";
 import CheckBoxInput from "components/CheckBoxInput";
 
 const ProductFilter = ({
   setCurrentLocation,
-  setClearFilter,
-  clearFilter,
+  setClearFilter, 
   filterData,
 }) => {
+  const filter = useSelector((state) => state.filter)
   const [defaultActiveKey, setDefaultActiveKey] = useState([]);
   const [isActive, setActive] = useState("false");
   const [Filters, setFilters] = useState(false);
-  const [browesBy, setBrowesBy] = useState([]);
-  const toggleClass = () => setActive(!isActive);
   const location = useLocation();
   const navigate = useNavigate();
-  const searchParams = new URLSearchParams(location.search);
-  let checkboxes = document.querySelectorAll("input:checked");
+  const dispatch = useDispatch();
 
+  const searchParams = new URLSearchParams(location.search);
   filterData = filterData && filterData.split("=");
   filterData = filterData && filterData[1].split("_");
-  // console.log(filter_data);
-
-  const filterHandler = (type, value) => {
-    // console.log(type, value);
-    searchParams.set(type, typeof value === "object" ? value.join("_") : value);
-    setCurrentLocation(`?${searchParams.toString()}`);
-    navigate(`/products?${searchParams.toString()}`);
-  };
 
   const clearAllFilters = () => {
     var checkboxes = document.querySelectorAll("input:checked");
+    console.log(checkboxes)
     for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].type == "checkbox") {
+      if (checkboxes[i].type === "checkbox") {
         checkboxes[i].checked = false;
       }
     }
-    setCurrentLocation("");
-    setClearFilter(false);
     navigate("/products");
+    dispatch(setfilter(''))
   };
 
   const filterAccordionHandler = (filters) => {
@@ -55,24 +47,14 @@ const ProductFilter = ({
     if (tempArr.length > 0) {
       setDefaultActiveKey(tempArr);
     } else {
-      setDefaultActiveKey(["product_availability", "brands"]);
+      setDefaultActiveKey(['brands']);
     }
   };
 
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
-      var customOption = {
-        product_availability: [
-          { name: "In Stock", slug: "in-stock" },
-          { name: "Upcoming", slug: "upcoming" },
-        ],
-      };
-      filterAccordionHandler({ ...customOption, ...data });
-      delete data.attributes;
-      delete data.sort_by;
-      setBrowesBy(data.browse_by);
-      delete data.browse_by;
-      setFilters({ ...customOption, ...data });
+      filterAccordionHandler(data);
+      setFilters(data);
     });
   }, []);
 
@@ -80,20 +62,18 @@ const ProductFilter = ({
     <Col lg={3} className="py-md-5 align-self-start pt-3 h-100 ">
       <div className="filters-side">
         <div className="d-flex justify-content-between">
-          <div className="product-filter-btn" onClick={toggleClass}>
+          <div className="product-filter-btn" onClick={() => setActive(!isActive)}>
             Filters
           </div>
           <div>
-            {clearFilter && checkboxes.length ? (
-              <button
-                onClick={() => clearAllFilters(true)}
-                className="btn btn-dark btn-sm"
-              >
-                Clear
-              </button>
-            ) : (
-              ""
-            )}
+            {
+              filter !== '' ?
+                <button onClick={clearAllFilters} className="btn btn-dark btn-sm">
+                  Clear
+                </button>
+                : ''
+            }
+
           </div>
         </div>
         <div
@@ -103,10 +83,10 @@ const ProductFilter = ({
               : "active product-filters filter-lists"
           }
         >
-          <Link className="close-btn" onClick={toggleClass}>
+          <Link className="close-btn" onClick={() => setActive(!isActive)}>
             <IoMdClose />
           </Link>
-          {defaultActiveKey.length > 0 ? (
+          {defaultActiveKey?.length > 0 ? (
             <Accordion
               defaultActiveKey={defaultActiveKey}
               alwaysOpen
@@ -119,56 +99,7 @@ const ProductFilter = ({
                     <ul>
                       {filters[1].map((filter, index) => (
                         <li key={index}>
-                          <CheckBoxInput data={filter} name={filters[0]}/>
-                          {/* <label className="cstm-chkbx" htmlFor={filter.slug}>
-                            {filter.name}
-                            <CheckBoxInput
-                              id={filter.slug}
-                              name={filters[0]}
-                              value={filter.slug}
-                              setClearFilter={setClearFilter}
-                              filterHandler={filterHandler}
-                              filterData={filterData}
-                            />
-                            <span className="checkmark"></span>
-                          </label> */}
-                        </li>
-                      ))}
-                    </ul>
-                  </Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          ) : (
-            ""
-          )}
-          {browesBy.length > 0 ? (
-            <Accordion
-              defaultActiveKey={defaultActiveKey}
-              alwaysOpen
-              className="px-0 filters-accordion"
-            >
-              {browesBy.map((item, key) => (
-                <Accordion.Item eventKey={key} key={key}>
-                  <Accordion.Header>{item.title} </Accordion.Header>
-                  <Accordion.Body>
-                    <ul>
-                      {item.children.map((filter, index) => (
-                        <li key={index}>
-                          <label
-                            className="cstm-chkbx"
-                            htmlFor={`${filter.start}__${item.type}`}
-                          >
-                            {filter.start} to {filter.end}
-                            <CheckBoxInput
-                              id={`${filter.start}__${item.type}`}
-                              name={item.type}
-                              value={`${filter.start}-${filter.end}`}
-                              setClearFilter={setClearFilter}
-                              filterHandler={filterHandler}
-                            />
-                            <span className="checkmark"></span>
-                          </label>
+                          <CheckBoxInput data={filter} name={filters[0]} />
                         </li>
                       ))}
                     </ul>
