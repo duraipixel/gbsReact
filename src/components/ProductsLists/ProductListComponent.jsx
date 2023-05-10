@@ -66,14 +66,14 @@ function ProductListComponent({ products, action }) {
                   <h4 className="mb-3">
                     <span className="ori-nal ms-0"> ₹{" "}{product.price} </span>
                   </h4>
-                  <ul className="config-uration my-2">
+                  {/* <ul className="config-uration my-2">
                     {product.overview.map((view) => (
                       <li key={view.id} className="text-info">
                         {" "}
                         {view.attribute_values}{" "}
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                   <div className="action-group">
                     <AddFavButton
                       action={action}

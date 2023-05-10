@@ -38,7 +38,7 @@ function ProductPage() {
                   :
                   <>
                     <Helmet>
-                      <title>{product?.meta?.title}</title>
+                      <title>{product?.meta?.title || "Product Details | GBS"}</title>
                       <meta name="description" content={product?.meta?.description} />
                       <meta name="keywords" content={product?.meta?.keywords} />
                     </Helmet>
