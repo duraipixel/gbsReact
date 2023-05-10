@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import { productsApi } from "services/filters.service";
 import { SetAllCheckBoxes } from "utils";
 import CategoryFilters from "./ProductFilter/CategoryFilters";
+import { useSelector } from "react-redux";
 
 const ProductLists = () => {
   const [products, setProduct] = useState([]);
@@ -16,10 +17,11 @@ const ProductLists = () => {
   const location = useLocation();
   const { search } = useLocation();
   const [clearFilter, setClearFilter] = useState(false);
-
+  const filter = useSelector((state) => state.filter) 
   const [currentLocation, setCurrentLocation] = useState(location.search);
   const searchParams = new URLSearchParams(location.search);
   let filterData = searchParams.toString();
+  console.log(filter,'FROM _PRENT')
   useMemo(() => {
     setfetching(true);
     productsApi(search, take).then(({ data }) => {

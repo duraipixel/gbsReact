@@ -12,9 +12,11 @@ import checkOutSlice from 'redux/features/checkOutSlice';
 import cartAddressSlice from 'redux/features/cartAddressSlice';
 import homePageSlice from 'redux/features/homePageSlice';
 import footerSlice from 'redux/features/footerSlice';
+import filterSlice from 'redux/features/filterSlice';
 
 export const store = configureStore({
   reducer: {
+    filter: filterSlice,
     auth: authReducer,
     homePageCollection: homePageSlice,
     footerCollection: footerSlice,

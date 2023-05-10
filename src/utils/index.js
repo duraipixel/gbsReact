@@ -148,7 +148,7 @@ const CheckBoxInput = ({
   id,
   filterData,
 }) => {
-  let checked = filterData && filterData.includes(value);
+  // let checked = filterData && filterData.includes(value);
   const handler = (element) => {
     var array = [];
     var checkboxes = document.querySelectorAll(
@@ -168,7 +168,7 @@ const CheckBoxInput = ({
       className={`${name}_checkbox`}
       value={value}
       onChange={(e) => handler(e.target)}
-      checked={checked}
+      // checked={checked}
     />
   );
 };
