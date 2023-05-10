@@ -6,6 +6,7 @@ import ProductInformation from "./ProductInformation";
 import ProductGallery from "./ProductGallery";
 
 function ProductDetails({ product }) {
+  // console.log(product);
   return (
     <div className="py-lg-3 h-100 py-4">
       {product && (
@@ -20,7 +21,7 @@ function ProductDetails({ product }) {
                         {product.discount_percentage}% <span>OFF</span>
                       </div>
                     </span>
-                    <ProductGallery images={product.gallery} />
+                    <ProductGallery images={product.gallery || product.image} />
                   </div>
                 </div>
               </Col>

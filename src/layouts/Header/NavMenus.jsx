@@ -72,9 +72,9 @@ export const NavMenuList = ({ className, toggleHeader }) => {
               </div>
             </li>
           </Accordion>
-          {data.data.map((item) => (
-            <Accordion defaultActiveKey="0" className={className}>
-              <div class="dropdown">
+          {data && data.data.map((item) => (
+            <Accordion defaultActiveKey="0" className={className} key={item.id}>
+              <div className="dropdown">
                 <li className="list-group-item px-3 py-2" key={item.id}>
                   <div className="d-flex justify-content-between align-items-center">
                     <Link to="/" className={`me-auto text-dark dropbtn`}>
