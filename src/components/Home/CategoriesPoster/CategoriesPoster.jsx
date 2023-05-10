@@ -23,26 +23,29 @@ const CategoriesPoster = () => {
                 </div>
               </div>
 
-              {subcategoryCollections.map((item) => (
-                <span
-                  key={item.id}
-                  className="col-lg-3 col-md-3 col-sm-6 col-xs-12 "
-                >
-                  <div
-                    onClick={() => linkHandler(item.slug)}
-                    className="deals-imgs cursor-clickable"
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.slug}
-                      className="img-fluid"
-                    />
-                    <div className="btm-liner">
-                      <h4>{item.name}</h4>
-                    </div>
-                  </div>
-                </span>
-              ))}
+              {subcategoryCollections.map(
+                (item, index) =>
+                  index < 4 && (
+                    <span
+                      key={item.id}
+                      className="col-lg-3 col-md-3 col-sm-6 col-xs-12 "
+                    >
+                      <div
+                        onClick={() => linkHandler(item.slug)}
+                        className="deals-imgs cursor-clickable"
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.slug}
+                          className="img-fluid"
+                        />
+                        <div className="btm-liner">
+                          <h4>{item.name}</h4>
+                        </div>
+                      </div>
+                    </span>
+                  )
+              )}
             </div>
           </div>
         </section>
