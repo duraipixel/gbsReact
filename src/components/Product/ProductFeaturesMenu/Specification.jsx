@@ -4,10 +4,10 @@ function Specification({ product }) {
             {
                 product.map((item, key) => (
                     <li className="list-group-item d-md-inline-flex bg-light" key={key}>
-                        <p className="fw-bold col-md-3 col-lg-2">{item.title}</p>
-                        <p className="col-md-8 ps-md-3">
+                        <div className="fw-bold col-md-3 col-lg-2">{item.title}</div>
+                        <div className="col-md-8 ps-md-3">
                           {item.attribute_values}
-                        </p>
+                        </div>
                     </li>
                 ))
             }
