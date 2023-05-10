@@ -7,8 +7,19 @@ import mail from "assets/images/mail.png";
 import locator1 from "assets/images/locator-1.jpg";
 import { useSelector } from "react-redux";
 import { openInNewTab } from "utils";
-
+import { Form } from "react-bootstrap";
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
 function ContactUs() {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+  const onSubmit = (data) => {
+ 
+  };
   const siteInfo = useSelector((state) => state.footerCollection.siteInfo);
   return (
     <div className="contact-us-page">
@@ -68,25 +79,26 @@ function ContactUs() {
               <div className="form-bg">
                 <h2 className="mb-0 text-white">How can we help?</h2>
                 <p className="text-white">Send us a Message</p>
-                <form
-                  id="contactusform"
-                  name="contactusform"
-                  className="reqquote"
-                  action="#"
-                  method="post"
-                >
-                  <div className="position-relative">
+                <Form onSubmit={handleSubmit(onSubmit)} className="reqquote">
+                  <Form.Group className="position-relative">
                     <label className="text-white">
                       Your Name <span className="text-danger">*</span>
                     </label>
-                    <input
+                    <Form.Control
                       type="text"
-                      name="name"
-                      id="name"
-                      className="form-control jsrequired"
-                      placeholder="Name"
+                      placeholder="Name *"
+                      {...register("name", {
+                        required: "Enter your Name",
+                      })}
                     />
-                  </div>
+                    <ErrorMessage
+                      errors={errors}
+                      name="name"
+                      render={({ message }) => (
+                        <small className="text-white ml-2">* {message}</small>
+                      )}
+                    />
+                  </Form.Group>
                   <div className="position-relative">
                     <label className="text-white">
                       Email Address <span className="text-danger">*</span>
@@ -131,7 +143,7 @@ function ContactUs() {
                       Submit
                     </button>
                   </div>
-                </form>
+                </Form>
               </div>
             </div>
           </div>
