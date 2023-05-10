@@ -63,9 +63,20 @@ function ProductListComponent({ products, action }) {
                       ""
                     )}
                   </div>
-                  <h4 className="mb-3">
-                    <span className="ori-nal ms-0"> ₹{" "}{product.price} </span>
-                  </h4>
+                  <div className="d-flex align-items-end mb-4">
+                    <del className="text-secondary fw-600">
+                      ₹ {product.strike_price}
+                    </del>
+                    <div className="fw-bold fs-3 text-info mx-3 lh-1">
+                      ₹ {product.price}
+                    </div>
+                    <div className="text-info fs-6">
+                      You Save (₹ {product.save_price}){" "}
+                    </div>
+                  </div>
+                  {/* <h4 className="mb-3">
+                    <span className="ori-nal ms-0"> ₹ {product.price} </span>
+                  </h4> */}
                   {/* <ul className="config-uration my-2">
                     {product.overview.map((view) => (
                       <li key={view.id} className="text-info">
