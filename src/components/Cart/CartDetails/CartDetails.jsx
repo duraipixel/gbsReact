@@ -41,12 +41,12 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
             <tbody>
               <tr>
                 <td style={{ paddingLeft: "0", textAlign: "left" }}>Sub Total</td>
-                <td style={{ paddingRight: "0", textAlign: "right" }}>₹{checkoutData.product_tax_exclusive_total}</td>
+                <td style={{ paddingRight: "0", textAlign: "right" }}>₹{" "}{checkoutData.product_tax_exclusive_total}</td>
               </tr>
               <tr>
                 <td style={{ paddingLeft: "0", textAlign: "left" }}>Taxes</td>
                 <td style={{ paddingRight: "0", textAlign: "right" }}>
-                  ₹{checkoutData.tax_total}
+                  ₹{" "}{checkoutData.tax_total}
                 </td>
               </tr>
               {
@@ -54,7 +54,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                   <tr>
                     <td style={{ paddingLeft: "0", textAlign: "left" }}>Coupon</td>
                     <td style={{ paddingRight: "0", textAlign: "right" }} className="text-success">
-                      - ₹{coupon.coupon_amount}
+                      - ₹{" "}{coupon.coupon_amount}
                     </td>
                   </tr>
                   : ''
@@ -159,7 +159,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
               <tr>
                 <td style={{ paddingLeft: "0", textAlign: "left" }}>Grand Total</td>
                 <td style={{ paddingRight: "0", textAlign: "right" }}>
-                  ₹{checkoutData.total}
+                  ₹{" "}{checkoutData.total}
                 </td>
               </tr>
             </tbody>

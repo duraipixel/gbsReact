@@ -45,7 +45,7 @@ function MyOrder() {
                     </div>
                     <div>
                       <p>Order Total </p>
-                      <p>₹{order.amount}</p>
+                      <p>₹{" "}{order.amount}</p>
                     </div>
                   </div>
                   <div className="view-invoice-btn">View Invoice</div>

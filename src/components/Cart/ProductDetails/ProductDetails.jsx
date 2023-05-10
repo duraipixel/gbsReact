@@ -150,7 +150,7 @@ const ProductDetails = ({
                         {product.product_name}
                       </span>
                       <div className="text-info fw-bold mt-2 mb-2 mb-md-0">
-                        ₹{product.price}
+                        ₹{" "}{product.price}
                       </div>
                       {product.addons.length > 0 ? (
                         <ul className="border-top mt-3">
@@ -172,7 +172,7 @@ const ProductDetails = ({
                                   {item?.addon_item_label}
                                   <span className="fw-bold ms-1">
                                     {" "}
-                                    ₹{item?.amount}
+                                    ₹{" "}{item?.amount}
                                   </span>
                                   <span
                                     onClick={() =>

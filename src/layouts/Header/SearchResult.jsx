@@ -23,7 +23,7 @@ function SearchResult({ setMobileSearch }) {
                                 <div className='ps-md-3'>
                                     <span className='fs-14 cursor'>{item.product_name}</span>
                                     <div className="text-info fw-bold">
-                                        ₹{item.price}
+                                        ₹{" "}{item.price}
                                     </div>
                                 </div>
                             </div>

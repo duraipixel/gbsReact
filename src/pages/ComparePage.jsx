@@ -50,7 +50,7 @@ function ComparePage() {
                       alt=""
                     />
                     <p className="product-title">{product.product_name}</p>
-                    <b>₹{product.price}</b>
+                    <b>₹{" "}{product.price}</b>
                     <div>
                       <AddCartButton
                         type="button"
