@@ -1,7 +1,7 @@
 import { lazy } from "react";
 export const HomePage             = lazy(() => import("pages/HomePage"));
 export const CartPage             = lazy(() => import("pages/CartPage"));
-export const ProductLists         = lazy(() => import("components/ProductsLists"));
+export const ProductLists         = lazy(() => import("pages/ProductListing"));
 export const ProductPage          = lazy(() => import("pages/ProductPage"));
 export const StoreLocatorPage     = lazy(() => import("pages/StoreLocatorPage"));
 export const StoreLocationDetailsPage = lazy(() => import("pages/StoreLocationDetails"));
