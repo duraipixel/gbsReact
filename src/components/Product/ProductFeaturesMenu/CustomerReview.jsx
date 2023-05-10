@@ -10,17 +10,17 @@ import { AuthUser } from 'utils'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
 import ReviewsList from './ReviewsList'
 
-function CustomerReview({ product, is_review }) { 
+function CustomerReview({ product, is_review }) {
     const authUser = useSelector((state) => state.auth)
     const dispatch = useDispatch()
-    const LoginAuth = () => { 
+    const LoginAuth = () => {
         dispatch(setLayoutStatus({ status: true, type: 'login' }))
     }
     const { handleSubmit, reset, register, formState: { errors } } = useForm()
     const [rating, setRating] = useState(0)
     const [disableRateingBox, setDisableRateingBox] = useState(is_review)
     const handleRating = (comments) => {
-        if(product.has_purchased === false) {
+        if (product.has_purchased === false) {
             toast.error('You need to purchase this product !')
             return false
         }
@@ -61,7 +61,7 @@ function CustomerReview({ product, is_review }) {
                             <div>
                                 {
                                     disableRateingBox === false ?
-                                            product.has_purchased ?
+                                        product.has_purchased ?
                                             <Form onSubmit={handleSubmit(handleRating)}>
                                                 <div className="mb-4">
                                                     <h3 className='mb-3'>Your Rating</h3>
@@ -91,7 +91,7 @@ function CustomerReview({ product, is_review }) {
                 </div>
                 <div className="vr p-0"></div>
                 <div className="col-lg-7 ps-lg-5">
-                    <ReviewsList product_id={product.id} />  
+                    <ReviewsList product_id={product.id} />
                 </div>
             </div>
         </div>

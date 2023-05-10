@@ -4,7 +4,7 @@ function ProductBreadcrumb({ category, title }) {
   return (
     <div className="d-md-flex">
       <div className="d-flex">
-        <Link to={"/"}>
+        <Link to="/products">
           <span className="text-secondary">{category}</span>
         </Link>
         <div className="px-2">
