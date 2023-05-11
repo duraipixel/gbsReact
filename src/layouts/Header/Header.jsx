@@ -35,7 +35,7 @@ const Header = () => {
     setNavMenu(false);
   }, [pathname]);
   return (
-    <>
+    <div style={{position:"sticky",top: "0", zIndex:"100000"}}>
       <Navbar
         bg="primary"
         expanded={header}
@@ -230,7 +230,7 @@ const Header = () => {
                       <div className="input-group shadow rounded">
                         <SearchInput type="HEADER" />
                       </div>
-                      {navMenu && <NavMenus />}
+                      {navMenu && <NavMenus toggleHeader={toggleHeader} />}
                       {navMenu && (
                         <div
                           className="nav-menu-close-btn"
@@ -272,7 +272,7 @@ const Header = () => {
           />
         )}
       </Navbar>
-    </>
+    </div>
   );
 };
 

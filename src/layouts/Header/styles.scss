@@ -931,7 +931,6 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   display: inline-block;
   width: 100%;
   margin-bottom: 20px;
-  
 }
 
 .togle-menu .accordion-body ul li a {
@@ -1685,12 +1684,13 @@ small {
 }
 .nav-menus {
   width: 23.25vw;
-  font-size: 13px;
-  position: absolute;
+  font-size: 15px;
+  position: fixed;
   z-index: 11;
   border-top: 2px solid white;
   background: white;
-  top: 50px;
+  top: 70px;
+  left: 150px;
   min-height: 100%;
   min-width: 280px;
   text-transform: uppercase;
@@ -1698,9 +1698,9 @@ small {
 
   @media (min-width: 992px) {
     // width: 420px;
-    left: 0%;
-    top: 73px;
-    transform: translateX(-150px);
+    top: 88px;
+    left: 150px;
+    // transform: translateX(-150px);
   }
 
   .nav-menu-banner {
@@ -1746,27 +1746,46 @@ small {
 }
 
 @media (min-width: 900px) {
-  .accordion {
+  .menu-list {
+    position: relative;
+    overflow-y: auto;
+    .nav-heading {
+      font-weight: 700;
+      padding: 1.2rem 2rem;
+      font-size: 16px;
+    }
     li {
-      a {
-        &:hover {
-          color: var(--primary-color) !important;
-          padding-left: 2px;
-        }
+      background-color: rgba(247, 247, 247, 0.747);
+      cursor: pointer;
+      &:hover {
+        background-color: #f1000872 !important;
+        color: black !important;
+      }
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    .dropdown {
+      li {
+        background-color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
     }
   }
   .dropdown-content {
+    background-color: white;
     display: none !important;
     position: fixed;
-    top: 0;
+    top: 88px;
     height: 100%;
-    left: 100%;
+    left: 507.60px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    overflow-y: auto;
   }
 
   .dropdown-content li {
+    background-color: white;
     text-decoration: none;
     display: block;
     cursor: pointer !important;
@@ -1778,11 +1797,12 @@ small {
   .dropdown-content a:hover {
     background-color: white;
   }
-
-  .dropdown:hover .dropdown-content {
-    display: block !important;
-    min-height: 100%;
-    min-width: 280px;
-    background: white;
+  .menu-list {
+    li:hover .dropdown-content {
+      display: block !important;
+      min-height: 100%;
+      min-width: 280px;
+      background: white;
+    }
   }
 }

@@ -13,7 +13,7 @@ import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 export default function NavMenus({ toggleHeader }) {
   return (
     <div className="nav-menus shadow">
-      <NavMenuList />
+      <NavMenuList className="acc-list" />
     </div>
   );
 }
@@ -33,118 +33,119 @@ export const NavMenuList = ({ className, toggleHeader }) => {
       {isLoading && (
         <>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item p-3" />
+            <Placeholder xs={12} className="list-group-item px-3 p-4" />
           </Placeholder>
         </>
       )}
       {isSuccess && (
-        <ul className="list-group list-group-flush">
-          <Accordion className={className}>
-            <li className="list-group-item px-3 py-2">
+        <div className="menu-list">
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item px-3" onClick={() => navigate("/")}>
               <div className="d-flex justify-content-between align-items-center">
-                <Link to="/" className={`me-auto text-dark`}>
-                  Exclusive at GBS
-                </Link>
+                <div className={`me-auto text-dark`}>Exclusive at GBS</div>
               </div>
             </li>
-          </Accordion>
-          {data && data.data.map((item) => (
-            <Accordion defaultActiveKey="0" className={className} key={item.id}>
-              <div className="dropdown">
-                <li className="list-group-item px-3 py-2" key={item.id}>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <Link to="/" className={`me-auto text-dark dropbtn`}>
-                      {item.name}
-                    </Link>
-                    {item.child.length > 0 && (
-                      <div className="drop-arrow">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="14"
-                          viewBox="0 0 8 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M1 13L7 7L1 1"
-                            stroke="black"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  {item.child.length > 0 && (
-                    <ul className="dropdown-content" key={item.id}>
-                      {item.child.map((data) => (
-                        <li
-                          key={data.id}
-                          className="list-group-item px-3 py-2"
-                          onClick={() => linkHandler(data.slug)}
-                        >
-                          {data.name}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              </div>
-            </Accordion>
-          ))}
-          <Accordion className={className}>
-            <li className="list-group-item px-3 py-2">
+            <li className="list-group-item px-3" onClick={() => navigate("/")}>
               <div className="d-flex justify-content-between align-items-center">
-                <Link to="/store-locator" className={`me-auto text-dark`}>
-                  Store Locator
-                </Link>
+                <div className={`me-auto text-dark`}>Top Brand</div>
               </div>
             </li>
-          </Accordion>
-          <Accordion className={className}>
-            <li className="list-group-item px-3 py-2">
+            <li
+              className="list-group-item px-3"
+              onClick={() => navigate("/service-center-locator")}
+            >
               <div className="d-flex justify-content-between align-items-center">
-                <Link
-                  to="/service-center-locator"
-                  className={`me-auto text-dark`}
-                >
+                <div className={`me-auto text-dark`}>Store Locator</div>
+              </div>
+            </li>
+
+            <li
+              className="list-group-item px-3"
+              onClick={() => navigate("/service-center-locator")}
+            >
+              <div className="d-flex justify-content-between align-items-center">
+                <div className={`me-auto text-dark`}>
                   Service Center Locator
-                </Link>
+                </div>
               </div>
             </li>
-          </Accordion>
-        </ul>
+            <div className="px-3 py-2 nav-heading">Shop by Category</div>
+            {data &&
+              data.data.map((item) => (
+                <div className="dropdown" key={item.id}>
+                  <li className="list-group-item px-3" style={{ border: "0" }}>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <Link to="/" className={`me-auto text-dark dropbtn`}>
+                        {item.name}
+                      </Link>
+                      {item.child.length > 0 && (
+                        <div className="drop-arrow">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="8"
+                            height="14"
+                            viewBox="0 0 8 14"
+                            fill="none"
+                          >
+                            <path
+                              d="M1 13L7 7L1 1"
+                              stroke="black"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+                    {item.child.length > 0 && (
+                      <ul className="dropdown-content" key={item.id}>
+                        {item.child.map((data) => (
+                          <li
+                            key={data.id}
+                            className="list-group-item px-3"
+                            onClick={() => linkHandler(data.slug)}
+                          >
+                            {data.name}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                </div>
+              ))}
+          </ul>
+        </div>
       )}
       {/* {isSuccess && (
         <Accordion defaultActiveKey="0" className={className}>
           <ul className="list-group list-group-flush">
             {data.data.map((item) => (
-              <li className="list-group-item px-3 py-2" key={item.id}>
+              <li className="list-group-item px-3" key={item.id}>
                 <div className="d-flex justify-content-between align-items-center">
                   <Link to="/" className={`me-auto text-dark`}>
                     {" "}
@@ -160,7 +161,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                       {item.child.map((data) => (
                         <li
                           key={data.id}
-                          className="list-group-item pt-3"
+                          className="list-group-item px-3 pt-3"
                           onClick={() => linkHandler(data.slug)}
                         >
                           {data.name}
@@ -172,14 +173,14 @@ export const NavMenuList = ({ className, toggleHeader }) => {
               </li>
             ))}
           </ul>
-        </Accordion>
+        
       )} */}
       {/* {isSuccess && (
         <div className={className}>
           <ul className="list-group list-group-flush">
             {data.data.map((item) =>
               item.child.map((data) => (
-                <li className="list-group-item px-3 py-2" key={data.id}>
+                <li className="list-group-item px-3" key={data.id}>
                   <div className="d-flex justify-content-between align-items-center">
                     <Link
                       to={`/products?${data.slug}`}
@@ -191,14 +192,14 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                 </li>
               ))
             )}
-            <li className="list-group-item px-3 py-2">
+            <li className="list-group-item px-3">
               <div className="d-flex justify-content-between align-items-center">
                 <Link to="/store-locator" className={`me-auto text-dark`}>
                   Store Locator
                 </Link>
               </div>
             </li>
-            <li className="list-group-item px-3 py-2">
+            <li className="list-group-item px-3">
               <div className="d-flex justify-content-between align-items-center">
                 <Link
                   to="/service-center-locator"

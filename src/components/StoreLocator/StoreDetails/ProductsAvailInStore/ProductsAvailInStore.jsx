@@ -10,7 +10,7 @@ const ProductsAvailInStore = () => {
   );
   const navigate = useNavigate();
   const linkHandler = (slug) => {
-    navigate(`/products?category=${slug}`);
+    navigate(`/products?categories=${slug}`);
   };
   if (subcategoryCollections)
     return (
