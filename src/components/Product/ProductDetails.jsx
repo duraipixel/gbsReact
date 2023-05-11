@@ -5,7 +5,7 @@ import ProductsFeaturesTabs from "./ProductFeaturesMenu/ProductsFeaturesTabs";
 import ProductInformation from "./ProductInformation";
 import ProductGallery from "./ProductGallery";
 import ProductSlider from "components/ProductSlider/ProductSlider";
-import "components/Home/HomeProductsSlider/styles.scss"
+import "components/Home/HomeProductsSlider/styles.scss";
 
 function ProductDetails({ product }) {
   // console.log(product);
@@ -13,10 +13,10 @@ function ProductDetails({ product }) {
     <div className="py-lg-3 h-100 py-4">
       {product && (
         <>
-          <Container>
+          <Container className="p-0">
             <Row className="h-100 ">
               <Col xl={6}>
-                <div className="sticky-top pt-lg-4 px-5">
+                <div className="sticky-top pt-lg-4 pe-5">
                   <div className="position-relative sticky-top">
                     <span className="offer-badge">
                       <div>

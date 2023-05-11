@@ -3,7 +3,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 // import { Image } from "utils";
 export default function ProductGallery({ images }) {
   const produtcCollection = [];
-//   console.log(!Array.isArray(images))
+  //   console.log(!Array.isArray(images))
   if (!Array.isArray(images)) {
     produtcCollection.push({
       original: images,
@@ -19,7 +19,7 @@ export default function ProductGallery({ images }) {
       );
   }
   return (
-    <div className="mx-3">
+    <div className="mt-2 react-image-gallery-div">
       <ReactImageGallery
         thumbnailPosition={window.innerWidth > 769 ? "left" : "bottom"}
         items={produtcCollection && produtcCollection}
