@@ -66,7 +66,7 @@ const ContactForm = ({ setLoader }) => {
         <Form.Control
           type="email"
           className="form-control jsrequired"
-          placeholder="Email"
+          placeholder="Email *"
           {...register("email", {
             required: "Enter your Email ID",
             pattern: {
@@ -91,7 +91,7 @@ const ContactForm = ({ setLoader }) => {
         <Form.Control
           type="tel"
           className="form-control jsrequired"
-          placeholder="Phone Number"
+          placeholder="Phone Number *"
           {...register("mobile_no", {
             required: "Enter your Contact Number",
             pattern: {
