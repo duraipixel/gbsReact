@@ -8,6 +8,11 @@ export default function ProductGallery({ images }) {
     produtcCollection.push({
       original: images,
       thumbnail: images,
+      originalHeight: "450px",
+      loading: "lazy",
+      thumbnailLoading: "lazy",
+      thumbnailHeight: "76px",
+      thumbnailWidth : "76px",
     });
   } else {
     images &&
@@ -15,12 +20,18 @@ export default function ProductGallery({ images }) {
         produtcCollection.push({
           original: item,
           thumbnail: item,
+          originalHeight: "450px",
+          loading: "lazy",
+          thumbnailLoading: "lazy",
+          thumbnailHeight: "76px",
+          thumbnailWidth : "76px",
         })
       );
   }
   return (
     <div className="mt-2 react-image-gallery-div">
       <ReactImageGallery
+        slideInterval="4000"
         thumbnailPosition={window.innerWidth > 769 ? "left" : "bottom"}
         items={produtcCollection && produtcCollection}
         loading="lazy"
