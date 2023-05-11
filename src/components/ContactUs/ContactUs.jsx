@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import call from "assets/images/call.png";
@@ -6,20 +6,11 @@ import location from "assets/images/location.png";
 import mail from "assets/images/mail.png";
 import locator1 from "assets/images/locator-1.jpg";
 import { useSelector } from "react-redux";
-import { openInNewTab } from "utils";
-import { Form } from "react-bootstrap";
-import { ErrorMessage } from "@hookform/error-message";
-import { useForm } from "react-hook-form";
+import { Loader, openInNewTab } from "utils";
+import ContactForm from "./ContactForm";
+
 function ContactUs() {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm();
-  const onSubmit = (data) => {
- 
-  };
+  const [loader, setLoader] = useState(false);
   const siteInfo = useSelector((state) => state.footerCollection.siteInfo);
   return (
     <div className="contact-us-page">
@@ -34,120 +25,60 @@ function ContactUs() {
           </div>
         </div>
       </section>
+
       <section className="contact-us">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <h2 className="mb-0">Get in Touch</h2>
-              <p>We'd love to hear from you</p>
+          {loader ? (
+            <Loader />
+          ) : (
+            <div className="row">
+              <div className="col-lg-6">
+                <h2 className="mb-0">Get in Touch</h2>
+                <p>We'd love to hear from you</p>
 
-              <div className="home-products testimonials">
-                <img src={location} alt="" />
-                <h4>Location</h4>
-                <h6>
-                  1070A, Munusamy Salai,
-                  <br />
-                  KK Nagar, Chennai-600078.
-                </h6>
-              </div>
+                <div className="home-products testimonials">
+                  <img src={location} alt="" />
+                  <h4>Location</h4>
+                  <h6>
+                    1070A, Munusamy Salai,
+                    <br />
+                    KK Nagar, Chennai-600078.
+                  </h6>
+                </div>
 
-              <div className="home-products testimonials">
-                <img src={call} alt="" />
-                <h4>Call Us</h4>
-                <h6>Sales : +91 91 96003 76222</h6>
-                <h6>Service : +91 98416 03332</h6>
-              </div>
+                <div className="home-products testimonials">
+                  <img src={call} alt="" />
+                  <h4>Call Us</h4>
+                  <h6>Sales : +91 91 96003 76222</h6>
+                  <h6>Service : +91 98416 03332</h6>
+                </div>
 
-              <div className="home-products testimonials">
-                <img src={mail} alt="" />
-                <h4>Mail Us</h4>
-                <h6>
-                  {" "}
-                  <Link
-                    rel="noopener noreferrer"
-                    onClick={() =>
-                      openInNewTab(`mailto:${siteInfo.site_email}`)
-                    }
-                  >
-                    {siteInfo.site_email}
-                  </Link>
-                </h6>
-              </div>
-            </div>
-
-            <div className="col-lg-6">
-              <div className="form-bg">
-                <h2 className="mb-0 text-white">How can we help?</h2>
-                <p className="text-white">Send us a Message</p>
-                <Form onSubmit={handleSubmit(onSubmit)} className="reqquote">
-                  <Form.Group className="position-relative">
-                    <label className="text-white">
-                      Your Name <span className="text-danger">*</span>
-                    </label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Name *"
-                      {...register("name", {
-                        required: "Enter your Name",
-                      })}
-                    />
-                    <ErrorMessage
-                      errors={errors}
-                      name="name"
-                      render={({ message }) => (
-                        <small className="text-white ml-2">* {message}</small>
-                      )}
-                    />
-                  </Form.Group>
-                  <div className="position-relative">
-                    <label className="text-white">
-                      Email Address <span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      className="form-control jsrequired"
-                      placeholder="Email"
-                      required=""
-                    />
-                  </div>
-                  <div className="position-relative">
-                    <label className="text-white">
-                      Contact Number <span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="phone"
-                      className="form-control jsrequired"
-                      placeholder="Phone Number"
-                      required=""
-                      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                      maxlength="10"
-                    />
-                  </div>
-                  <label className="text-white">Message</label>
-                  <textarea
-                    className="form-control"
-                    name="Message"
-                    id="Message"
-                    placeholder="Message"
-                  ></textarea>
-                  <div className="text-right pad-top-20">
-                    <button
-                      type="button"
-                      onclick="btncontactsubmit()"
-                      className="submit-btn"
+                <div className="home-products testimonials">
+                  <img src={mail} alt="" />
+                  <h4>Mail Us</h4>
+                  <h6>
+                    {" "}
+                    <Link
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        openInNewTab(`mailto:${siteInfo.site_email}`)
+                      }
                     >
-                      Submit
-                    </button>
-                  </div>
-                </Form>
+                      {siteInfo.site_email}
+                    </Link>
+                  </h6>
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <div className="form-bg">
+                  <h2 className="mb-0 text-white">How can we help?</h2>
+                  <p className="text-white">Send us a Message</p>
+                  <ContactForm setLoader={setLoader} />
+                </div>
               </div>
             </div>
-          </div>
-
+          )}
           <div className="row mt-5">
             <div className="col-lg-6">
               <div className="deals-imgs stre-lctr">

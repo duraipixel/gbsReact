@@ -186,7 +186,17 @@ const SetAllCheckBoxes = (location) => {
     });
   }
 };
+const ContactResponse = () => {
+  return withReactContent(Swal).fire({
+    title: "Thanks for reaching us",
+    html: <p className="m-0">Our team will get back to you shortly.</p>,
+    confirmButtonText: "Okay",
+    confirmButtonColor: "#f1000a",
+    allowOutsideClick: false,
+  });
+};
 export {
+  ContactResponse,
   SetAllCheckBoxes,
   CheckBoxInput,
   useQuery,
