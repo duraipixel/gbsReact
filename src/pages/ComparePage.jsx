@@ -1,14 +1,14 @@
 import AddCartButton from "components/AddCartButton";
 import AddCompareModal from "components/AddCompareModal";
-import AddFavButton from "components/AddFavButton";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { HiXMark } from "react-icons/hi2";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { removeProduct } from "redux/features/compareSlice";
 import { compareProductApi } from "services/product.service";
 import { Loader } from "utils";
+// import AddFavButton from "components/AddFavButton";
+// import { HiXMark } from "react-icons/hi2";
 
 function ComparePage() {
   const products = useSelector((state) => state.compareProducts);

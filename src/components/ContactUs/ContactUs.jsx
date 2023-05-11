@@ -105,12 +105,13 @@ function ContactUs() {
 
       <section className="maping">
         <iframe
+          title="contact-map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9221913261663!2d80.19084101482271!3d13.040624590810598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266d3e030826b%3A0x304be27d75766a7c!2s1070a%2C%20Munusamy%20Salai%2C%20Bangaru%20Colony%2C%20K.%20K.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600078!5e0!3m2!1sen!2sin!4v1682063402587!5m2!1sen!2sin"
           width="100%"
           height="450"
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
     </div>

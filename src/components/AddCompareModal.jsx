@@ -2,7 +2,7 @@ import SearchInput from "layouts/Header/SearchInput";
 import SearchResult from "layouts/Header/SearchResult";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 function AddCompareModal() {
     const [modalShow, setModalShow] = useState(false);
