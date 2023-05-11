@@ -931,6 +931,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   display: inline-block;
   width: 100%;
   margin-bottom: 20px;
+  
 }
 
 .togle-menu .accordion-body ul li a {
@@ -1670,9 +1671,20 @@ small {
     background: #191a1a !important;
   }
 }
-
+.menu-btn:before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 23px;
+  margin-left: -0.6rem;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+}
 .nav-menus {
-  width: 26.25vw;
+  width: 23.25vw;
   font-size: 13px;
   position: absolute;
   z-index: 11;
@@ -1687,7 +1699,7 @@ small {
   @media (min-width: 992px) {
     // width: 420px;
     left: 0%;
-    top: 58px;
+    top: 73px;
     transform: translateX(-150px);
   }
 
@@ -1718,7 +1730,7 @@ small {
 
 .nav-menu-close-btn {
   position: fixed;
-  top: 0;
+  top: 88px;
   left: 0;
   height: 100%;
   width: 100%;

@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import { BsChevronRight, BsChevronDown } from "react-icons/bs";
 import { useNavigate, Link } from "react-router-dom";
+// import { useContext } from "react";
+// import { BsChevronRight, BsChevronDown } from "react-icons/bs";
 import {
   Placeholder,
   Accordion,
-  AccordionContext,
-  Button,
-  useAccordionButton,
+  // AccordionContext,
+  // Button,
+  // useAccordionButton,
 } from "react-bootstrap";
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 
@@ -215,16 +215,16 @@ export const NavMenuList = ({ className, toggleHeader }) => {
   );
 };
 
-function AccordionToggler({ eventKey, callback }) {
-  const { activeEventKey } = useContext(AccordionContext);
-  const decoratedOnClick = useAccordionButton(
-    eventKey,
-    () => callback && callback(eventKey)
-  );
+// function AccordionToggler({ eventKey, callback }) {
+//   const { activeEventKey } = useContext(AccordionContext);
+//   const decoratedOnClick = useAccordionButton(
+//     eventKey,
+//     () => callback && callback(eventKey)
+//   );
 
-  return (
-    <Button className="btn-sm" variant="light" onClick={decoratedOnClick}>
-      {activeEventKey === eventKey ? <BsChevronDown /> : <BsChevronRight />}
-    </Button>
-  );
-}
+//   return (
+//     <Button className="btn-sm" variant="light" onClick={decoratedOnClick}>
+//       {activeEventKey === eventKey ? <BsChevronDown /> : <BsChevronRight />}
+//     </Button>
+//   );
+// }
