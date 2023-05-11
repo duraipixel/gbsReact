@@ -56,10 +56,3 @@ export const globalSearchApi = async (data, tack) => {
     }
   );
 };
-
-export const contactFormAPI = async (data) => {
-  return await axios.post(
-    `${process.env.REACT_APP_BASE_URL}/submit/contact/form`,
-    data
-  );
-};
