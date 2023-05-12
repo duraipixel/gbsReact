@@ -43,10 +43,19 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                     >
                       More Details
                     </Link>
-                    <div className="flex-d-clm-align-c ">
+                    <div
+                      className="flex-d-clm-align-c"
+                      style={{ position: "relative" }}
+                    >
                       <p>Find us on</p>
                       <iframe
-                        style={{ width: "80px", height: "80px", border: "0" }}
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                          border: "0",
+                          opacity: "0",
+                          display: "block",
+                        }}
                         src={item.map_link}
                         frameborder="0"
                         allowFullScreen=""
@@ -54,10 +63,14 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                         referrerPolicy="no-referrer-when-downgrade"
                         title="Contact Map"
                       ></iframe>
-                      {/* <img
+                      <img
+                        style={{
+                          position: "absolute",
+                          top: "28px",
+                        }}
                         src={require("assets/Store/GooglePin.png")}
                         alt="GooglePin"
-                      /> */}
+                      />
                     </div>
                   </Col>
                 </div>
