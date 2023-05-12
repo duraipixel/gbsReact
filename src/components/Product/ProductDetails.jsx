@@ -17,7 +17,7 @@ function ProductDetails({ product }) {
           <Container className="p-0">
             <Row className="h-100 ">
               <Col xl={6}>
-                <div className="sticky-top pt-lg-4 pe-5">
+                <div className="sticky-top pe-lg-5 pe-3">
                   <div className="position-relative sticky-top">
                     <span className="offer-badge">
                       <div>
