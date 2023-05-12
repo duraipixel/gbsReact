@@ -10,9 +10,8 @@ if (homePageData === null || homePageData === undefined) {
     productCollections: false,
     browseHome: false,
     brands: false,
+    modalData: false,
     handpickedCollections: false,
-    siteInfo: false,
-    quickLink: false,
   };
 } else {
   initialState = JSON.parse(homePageData);

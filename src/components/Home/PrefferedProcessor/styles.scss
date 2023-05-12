@@ -1,5 +1,3 @@
-
-
 .intel-core {
   background-color: #1e1d23;
 }
@@ -39,13 +37,9 @@
   transform: rotate(360deg);
 }
 
-
-
 .arrival-slider .slick-slide > div {
   padding: 0px 10px;
 }
-
-
 
 .arrival-slider .slick-dots {
   bottom: -60px;
@@ -80,10 +74,16 @@
   text-align: center;
   border-radius: 6px;
   color: #ffffff;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-self: stretch;
+  @media (max-width:"700px") {
+    margin-bottom: 5px;
+  }
 }
 
 .intel-core a:hover {
+  color: white;
   background-color: #dd1818;
 }
 

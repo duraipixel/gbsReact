@@ -12,6 +12,7 @@ export const homePageApi = async () => {
       axios.get(`${process.env.REACT_APP_BASE_URL}/get/product/collections`),
       axios.get(`${process.env.REACT_APP_BASE_URL}/browseHome`),
       axios.get(`${process.env.REACT_APP_BASE_URL}/get/brands`),
+      axios.post(`${process.env.REACT_APP_BASE_URL}/get/model/data`),
       axios.post(
         `${process.env.REACT_APP_BASE_URL}/get/handpicked/collections`
       ),
@@ -23,7 +24,8 @@ export const homePageApi = async () => {
       productCollections: reponses[3].data.data,
       browseHome: reponses[4].data.data,
       brands: reponses[5].data.data,
-      handpickedCollections: reponses[6].data,
+      modalData: reponses[6].data,
+      handpickedCollections: reponses[7].data,
     };
   }
   return false;
