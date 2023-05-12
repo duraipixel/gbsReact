@@ -234,7 +234,7 @@ const Header = () => {
                       {navMenu && (
                         <div
                           className="nav-menu-close-btn"
-                          // onClick={() => setNavMenu(!navMenu)}
+                          onClick={() => setNavMenu(!navMenu)}
                         ></div>
                       )}
                       <SearchResult
