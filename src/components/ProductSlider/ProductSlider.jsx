@@ -10,8 +10,7 @@ function ProductSlider({ products, children, slidesToShow }) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow:
-      slidesToShow === undefined ? (products.length > 3 ? 4 : 3) : slidesToShow,
+    slidesToShow: slidesToShow === undefined ? (products.length > 3 ? 4 : 3) : slidesToShow,
     slidesToScroll: 1,
     responsive: [
       {
@@ -36,10 +35,10 @@ function ProductSlider({ products, children, slidesToShow }) {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 450,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
     ],

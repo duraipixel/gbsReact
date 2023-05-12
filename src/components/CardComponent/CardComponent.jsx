@@ -5,11 +5,12 @@ import { Image } from 'utils'
 import AddCartButton from 'components/AddCartButton'
 import AddFavButton from 'components/AddFavButton'
 import CompareButton from 'components/CompareButton'
+import { Rating } from '@mui/material'
 
 function CardComponent({ product }) {
   const navigate = useNavigate()
-  return (
-    <div>
+  if (window.innerWidth > 450) return (
+    <div className='product-card'>
       <div className="arival-det" >
         <div className="ari-img cursor" onClick={() => navigate(`/products/${product.product_url}`)}>
           <Image src={product.image} alt={product.product_name} />
@@ -27,9 +28,10 @@ function CardComponent({ product }) {
                   : ''
               }
             </div>
-            <h4>{product.product_name.substring(0, 25)}</h4>
+            <h4 className='product-name'>{product.product_name.substring(0, 25)}</h4>
             <h5>
-              <span>₹{" "}8{product.strike_price.replace('.00', '')}</span> ₹{" "}{product.price.replace('.00', '')}
+              <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
+              <span className="new-price">₹{product.price.replace('.00', '')}</span>
             </h5>
           </div>
           {/* <ul>
@@ -39,7 +41,7 @@ function CardComponent({ product }) {
             <li>Intel Integrated Graphics</li>
           </ul> */}
           <div className="d-flex justify-content-between">
-            <div className="d-flex clk-optn">
+            <div className="d-flex justify-content-center clk-optn">
               <AddFavButton buttonType="icon" className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} />
               <CompareButton buttonType="icon" className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} />
             </div>
@@ -48,6 +50,20 @@ function CardComponent({ product }) {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  )
+  if (window.innerWidth < 450) return (
+    <div className="product-card-sm shadow">
+      <AddFavButton buttonType="icon" className="btn-fav" product={product} />
+      <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
+      <div className="product-info">
+        <h4 className='product-name'>{product.product_name.substring(0, 25)}</h4>
+        <div className="product-prices">
+          <span className="new-price">₹{product.price.replace('.00', '')}</span>
+          <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
+        </div>
+        { product?.common_review?.rating ? <Rating name="read-only" value={product?.common_review?.rating} readOnly  size="small" />: '' }
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ const CategoriesPoster = () => {
   };
   if (subcategoryCollections)
     return (
-      <div className="section-wrapper">
+      <div className="section-wrapper bg-light">
         <div className="container">
           <h1 className="section-title">Products Available In-store</h1>
           <div className="row g-3">

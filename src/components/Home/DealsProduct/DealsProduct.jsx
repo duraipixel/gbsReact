@@ -8,7 +8,7 @@ const DealsProduct = () => {
   if (discountCollections) return (
     <div className="section-wrapper">
       <div className="container">
-        <h2 className="section-title">Best Deals of the Day <h5 className="mt-2">Get Today's Best Discounts</h5> </h2>
+        <div className="section-title">Best Deals of the Day <h5 className="mt-2">Get Today's Best Discounts</h5> </div>
         <div className="row g-3">
           {
             discountCollections.map(item => (
