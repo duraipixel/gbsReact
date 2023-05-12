@@ -321,6 +321,9 @@ label.error {
   text-align: left;
   width: 100%;
   color: #ffffff;
+  @media (max-width:450px) {
+    line-height: 18px !important;
+  }
 }
 
 .btm-liner a {

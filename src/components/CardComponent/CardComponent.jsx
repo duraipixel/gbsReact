@@ -1,11 +1,11 @@
-import './CardComponent.scss'
-import { useNavigate } from 'react-router-dom'
-import { AiFillStar } from 'react-icons/ai'
 import { Image } from 'utils'
+import { Rating } from '@mui/material'
+import { AiFillStar } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 import AddCartButton from 'components/AddCartButton'
 import AddFavButton from 'components/AddFavButton'
 import CompareButton from 'components/CompareButton'
-import { Rating } from '@mui/material'
+import './CardComponent.scss'
 
 function CardComponent({ product }) {
   const navigate = useNavigate()
@@ -54,7 +54,7 @@ function CardComponent({ product }) {
     </div>
   )
   if (window.innerWidth < 450) return (
-    <div className="product-card-sm shadow">
+    <div className="product-card-sm shadow" onClick={() => navigate(`/products/${product.product_url}`)}>
       <AddFavButton buttonType="icon" className="btn-fav" product={product} />
       <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
       <div className="product-info">
@@ -63,7 +63,7 @@ function CardComponent({ product }) {
           <span className="new-price">₹{product.price.replace('.00', '')}</span>
           <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
         </div>
-        { product?.common_review?.rating ? <Rating name="read-only" value={product?.common_review?.rating} readOnly  size="small" />: '' }
+        { product?.common_review?.rating ? <Rating name="read-only" value={product?.common_review?.rating} readOnly size="small" /> : '' }
       </div>
     </div>
   )
