@@ -43,19 +43,10 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                     >
                       More Details
                     </Link>
-                    <div
-                      className="flex-d-clm-align-c"
-                      style={{ position: "relative" }}
-                    >
+                    <div className="flex-d-clm-align-c ">
                       <p>Find us on</p>
                       <iframe
-                        style={{
-                          width: "80px",
-                          height: "80px",
-                          border: "0",
-                          opacity: "0",
-                          display: "block",
-                        }}
+                        style={{ width: "80px", height: "80px", border: "0" }}
                         src={item.map_link}
                         frameborder="0"
                         allowFullScreen=""
@@ -63,14 +54,10 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                         referrerPolicy="no-referrer-when-downgrade"
                         title="Contact Map"
                       ></iframe>
-                      <img
-                        style={{
-                          position: "absolute",
-                          top: "28px",
-                        }}
+                      {/* <img
                         src={require("assets/Store/GooglePin.png")}
                         alt="GooglePin"
-                      />
+                      /> */}
                     </div>
                   </Col>
                 </div>
@@ -78,6 +65,7 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
             );
           })}
         {serviceCenterFilteredData.data.length === 0 && (
+          
           <NoDataComponent data={"No Data have been found..."} />
         )}
         {/* {serviceCenterFilteredData.data.length > 5 && (
