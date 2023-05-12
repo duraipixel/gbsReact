@@ -7,6 +7,7 @@ import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 import Tooltip from "@mui/material/Tooltip";
 
 function ProductListComponent({ products, action }) {
+  console.log(products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   if (products.length > 0) {
@@ -17,8 +18,14 @@ function ProductListComponent({ products, action }) {
             <div className="d-lg-flex align-items-center g-3">
               <div
                 className="cursor prdt-list-img"
+                style={{position:"relative"}}
                 onClick={() => navigate(`/products/${product.product_url}`)}
               >
+                <span className="pl-offer-badge">
+                  <div>
+                    {product.discount_percentage}% <span>OFF</span>
+                  </div>
+                </span>
                 <img
                   src={product.image}
                   alt={product.product_name}

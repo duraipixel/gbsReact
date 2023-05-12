@@ -1,5 +1,26 @@
 @import "src/App.scss";
 
+.pl-offer-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: "";
+  top: -5px;
+  right: 0px;
+  height: 40px;
+  width: 40px;
+  background: #00043a;
+  border-radius: 100%;
+  font-weight: 700;
+  font-size: 11.5px;
+  text-align: center;
+  color: #ffffff;
+  span {
+    font-weight: 400;
+    display: block;
+  }
+}
 .products-list-layer {
   position: relative;
 }
