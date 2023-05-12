@@ -6,6 +6,7 @@ import ProductInformation from "./ProductInformation";
 import ProductGallery from "./ProductGallery";
 import ProductSlider from "components/ProductSlider/ProductSlider";
 import "components/Home/HomeProductsSlider/styles.scss";
+import "components/Home/NewArrivals/styles.css";
 
 function ProductDetails({ product }) {
   // console.log(product);
