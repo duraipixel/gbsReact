@@ -62,14 +62,22 @@ const LocationContent = ({ storeData, fetching }) => {
                   </Link>
                   <div>
                     <p>Find us on</p>
-                    <img
+                    <iframe
+                      style={{ width: "80px", height: "80px", border: "0" }}
+                      src={item.map_link}
+                      frameborder="0"
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Contact Map"
+                    ></iframe>
+                    {/* <img
                       src={require("assets/Store/GooglePin.png")}
                       alt="GooglePin"
-                    />
+                    /> */}
                   </div>
                 </Col>
               </div>
-              <hr />
             </div>
           ))}
         {storeData.data.length === 0 && (

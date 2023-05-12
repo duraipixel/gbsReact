@@ -6,18 +6,19 @@ import { TfiEmail } from "react-icons/tfi";
 import "components/StoreLocator/LocationContent/styles.scss";
 import { Link } from "react-router-dom";
 import { HalfHeightLoader } from "utils";
+import { Paper } from "@mui/material";
 
 const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
-  // console.log(serviceCenterFilteredData);
+  console.log(serviceCenterFilteredData);
   return fetching ? (
     <HalfHeightLoader />
   ) : (
-    <div className="py-5" >
+    <div className="py-5">
       <Container>
         {serviceCenterFilteredData &&
           serviceCenterFilteredData.data.map((item) => {
             return (
-              <div key={item.id}>
+              <Paper elevaton={30} key={item.id}>
                 <div className="flex-jc-btwn flex-wrap location-content-div">
                   <Col lg={9}>
                     <div className="location-content">
@@ -41,17 +42,25 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                     >
                       More Details
                     </Link>
-                    <div>
+                    <div className="flex-d-clm-align-c ">
                       <p>Find us on</p>
-                      <img
+                      <iframe
+                        style={{ width: "80px", height: "80px", border: "0" }}
+                        src={item.map_link}
+                        frameborder="0"
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Contact Map"
+                      ></iframe>
+                      {/* <img
                         src={require("assets/Store/GooglePin.png")}
                         alt="GooglePin"
-                      />
+                      /> */}
                     </div>
                   </Col>
                 </div>
-                <hr />
-              </div>
+              </Paper>
             );
           })}
         {serviceCenterFilteredData.data.length === 0 && (

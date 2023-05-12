@@ -1,5 +1,14 @@
-hr{
+hr {
   margin-top: 0;
+}
+.location-content-div {
+  background-color: #ffebeb8b;
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  iframe {
+    cursor: pointer;
+  }
 }
 .find-us-on-map {
   p {
@@ -18,7 +27,7 @@ hr{
   padding: 10px 30px;
   border-radius: 4px;
 }
-.btn-red-outline:hover{
+.btn-red-outline:hover {
   background-color: #f1000a !important;
   color: white !important;
 }
