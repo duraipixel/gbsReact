@@ -7,24 +7,20 @@ const BrowseByCollection = () => {
   const browseHome = useSelector(state => state.homePageCollection.browseHome)
   if (browseHome) return (
     browseHome.map((browse, index) => (
-      <section className="browse-price text-center" key={index} style={{ backgroundColor: browse.color }}>
+      <div className="section-wrapper" key={index} style={{ backgroundColor: browse.color }}>
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div className="comon-heads">
-                <h2>{browse.title}</h2>
-              </div>
-            </div>
+          <h2 className="section-title text-white">{browse.title}</h2>
+          <div className="row g-3">
             {browse.children.map((item, seIndex) => (
-              <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12" key={seIndex}>
-                <Link to={`/products?${browse.type}=${item.start_size}-${item.end_size}`} className="deals-imgs">
-                  <Image src={item.path} alt={item.start_size} className="img-fluid" />
+              <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-6" key={seIndex}>
+                <Link to={`/products?${browse.type}=${item.start_size}-${item.end_size}`} className="rounded d-block shadow m-0">
+                  <Image src={item.path} alt={item.start_size} className="img-fluid rounded-3" />
                 </Link>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
     ))
   );
 };

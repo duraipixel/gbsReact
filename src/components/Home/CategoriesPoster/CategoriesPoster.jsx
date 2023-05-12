@@ -13,43 +13,36 @@ const CategoriesPoster = () => {
   };
   if (subcategoryCollections)
     return (
-      <>
-        <section className="laptop-based text-center">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div className="comon-heads">
-                  <h2>Products Available In-store</h2>
-                </div>
-              </div>
-
-              {subcategoryCollections.map(
-                (item, index) =>
-                  index < 4 && (
-                    <span
-                      key={item.id}
-                      className="col-lg-3 col-md-3 col-sm-6 col-xs-12 "
+      <div className="section-wrapper">
+        <div className="container">
+          <h1 className="section-title">Products Available In-store</h1>
+          <div className="row g-3">
+            {subcategoryCollections.map(
+              (item, index) =>
+                index < 4 && (
+                  <div
+                    key={item.id}
+                    className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-6"
+                  >
+                    <div
+                      onClick={() => linkHandler(item.slug)}
+                      className="deals-imgs cursor-clickable m-0"
                     >
-                      <div
-                        onClick={() => linkHandler(item.slug)}
-                        className="deals-imgs cursor-clickable"
-                      >
-                        <Image
-                          src={item.image}
-                          alt={item.slug}
-                          className="img-fluid"
-                        />
-                        <div className="btm-liner">
-                          <h4>{item.name}</h4>
-                        </div>
+                      <Image
+                        src={item.image}
+                        alt={item.slug}
+                        className="img-fluid"
+                      />
+                      <div className="btm-liner">
+                        <h4 className="fs-20">{item.name}</h4>
                       </div>
-                    </span>
-                  )
-              )}
-            </div>
+                    </div>
+                  </div>
+                )
+            )}
           </div>
-        </section>
-      </>
+        </div>
+      </div>
     );
 };
 

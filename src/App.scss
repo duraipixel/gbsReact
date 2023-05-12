@@ -263,7 +263,7 @@ a {
   margin-left: 2rem;
 }
 
-.slick-slide > div {
+.slick-slide>div {
   display: grid;
   place-items: center;
 }
@@ -876,3 +876,48 @@ button[loading="true"] {
   outline: none;
 }
 
+.lazy-load-image-background {
+  display: block !important;
+}
+@media (max-width: 300px) {
+  .section-title {
+    margin-bottom: 25px ;
+  }
+}
+@media (min-width: 300px) {
+  .section-title {
+    text-align: center !important;
+    margin-bottom: 30px ;
+  }
+  .section-wrapper {
+    padding: 20px 0;
+  }
+  .section-title {
+    font-size: 18px !important;
+  }
+  .fs-20 {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 600px) {
+  .section-wrapper {
+    padding: 30px 0;
+  }
+  .section-title {
+    font-size: 20px !important;
+  }
+  .fs-20 {
+    font-size: 18px !important;
+  }
+}
+@media (min-width: 992px) {
+  .section-title {
+    font-size: 25px !important;
+  }
+  .fs-20 {
+    font-size: 20px !important;
+  }
+  .section-wrapper {
+    padding: 40px 0;
+  }
+} 
