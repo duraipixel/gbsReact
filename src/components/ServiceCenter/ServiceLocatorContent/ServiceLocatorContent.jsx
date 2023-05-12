@@ -7,6 +7,7 @@ import "components/StoreLocator/LocationContent/styles.scss";
 import { Link } from "react-router-dom";
 import { HalfHeightLoader } from "utils";
 import { Paper } from "@mui/material";
+import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 
 const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
   console.log(serviceCenterFilteredData);
@@ -64,9 +65,7 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
             );
           })}
         {serviceCenterFilteredData.data.length === 0 && (
-          <div className="flex-center mt-3">
-            <h2>No Data</h2>
-          </div>
+          <NoDataComponent data={"No Data have been found..."} />
         )}
         {/* {serviceCenterFilteredData.data.length > 5 && (
           <div className="flex-center mt-3">

@@ -6,6 +6,7 @@ import { TfiEmail } from "react-icons/tfi";
 import "./styles.scss";
 import { Link } from "react-router-dom";
 import { HalfHeightLoader, openInNewTab } from "utils";
+import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 
 const LocationContent = ({ storeData, fetching }) => {
   // console.log(storeData && storeData.data);
@@ -81,9 +82,7 @@ const LocationContent = ({ storeData, fetching }) => {
             </div>
           ))}
         {storeData.data.length === 0 && (
-          <div className="flex-center mt-3">
-            <h2>No Data</h2>
-          </div>
+          <NoDataComponent data={"No Data have been found..."} />
         )}
 
         {/* <div className="flex-center mt-3">
