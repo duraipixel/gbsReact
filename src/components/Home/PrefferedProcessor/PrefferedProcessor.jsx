@@ -26,7 +26,7 @@ const PrefferedProcessor = () => {
                       <div className="row g-2">
                         {processors.map(({ slug, name }, i) => (
                           <div className="col-lg-6" key={i}>
-                            <Link to={`/${slug}`}>{name}</Link>
+                            <Link to={`products?${slug}`}>{name}</Link>
                           </div>
                         ))}
                       </div>

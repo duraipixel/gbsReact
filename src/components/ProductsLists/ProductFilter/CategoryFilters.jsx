@@ -24,7 +24,7 @@ function CategoryFilters({setCurrentLocation}) {
                 subcategory.length > 0 ?
                     subcategory.map((item, i) => (
                         <Nav.Item key={i}>
-                            <Nav.Link onClick={() => categoryHandler('category',item.slug)} className="text-light">{item.name}</Nav.Link>
+                            <Nav.Link onClick={() => categoryHandler('categories',item.slug)} className="text-light">{item.name}</Nav.Link>
                         </Nav.Item>
                     ))
                     : ''
