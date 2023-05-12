@@ -4,6 +4,9 @@
   line-height: 38px;
 }
 .banner-slider {
+  .slick-list {
+    padding: 0 !important;
+  }
   .lazy-load-image-background.blur.lazy-load-image-loaded {
     &:hover {
       transform: none !important;

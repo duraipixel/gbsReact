@@ -39,7 +39,7 @@
   margin: 0px 20px;
   position: relative;
   color: #ffffff;
-}
+} 
 
 .details-locations li:before {
   position: absolute;
@@ -70,4 +70,29 @@
 
 .details-locations a:hover {
   background-color: #000;
+}
+@media (max-width:450px) {
+  .details-locations li {
+    font-size: 14px;
+    margin: 0px 10px;
+  }
+  .details-locations li:before {
+    right: -10px;
+  }
+  .ran-trouble h2 {
+    margin-bottom: 10px;
+  }
+  .details-locations h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .details-locations span {
+    font-size: 16px;
+  }
+  .details-locations ul {
+    margin-bottom: 20px;
+  }
+  .details-locations a {
+    font-size: 12px;
+  }
 }
