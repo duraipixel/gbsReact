@@ -89,7 +89,7 @@ const HalfHeightLoader = () => {
 };
 
 const Image = (props) => {
-  return <LazyLoadImage effect="blur" {...props} />;
+  return <LazyLoadImage placeholderSrc="https://media.croma.com/image/upload/f_auto,q_auto,d_Croma%20Assets:No_image.png/Croma%20Assets/UI%20Assets/lazyLoading.gif" effect="blur" {...props} />;
 };
 
 const AppScroller = ({ children }) => {
@@ -168,7 +168,7 @@ const CheckBoxInput = ({
       className={`${name}_checkbox`}
       value={value}
       onChange={(e) => handler(e.target)}
-      // checked={checked}
+    // checked={checked}
     />
   );
 };
