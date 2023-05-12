@@ -5,10 +5,15 @@
   position: relative;
   transition: all 0.3s ease;
 }
+
 .navbar {
   min-height: 88px;
   z-index: 1;
+  @media (max-width:450px) {
+    min-height: 70px;
+  }
 }
+
 .top-bar a {
   color: white;
 }
@@ -152,7 +157,7 @@ nav {
 }
 
 #cssmenu:after,
-#cssmenu > ul:after {
+#cssmenu>ul:after {
   content: ".";
   display: block;
   clear: both;
@@ -165,20 +170,20 @@ nav {
   display: none;
 }
 
-#cssmenu > ul {
+#cssmenu>ul {
   float: right;
   overflow: hidden;
 }
 
-#cssmenu > ul:hover {
+#cssmenu>ul:hover {
   overflow: visible;
 }
 
-#cssmenu > ul > li#corporate-menu {
+#cssmenu>ul>li#corporate-menu {
   z-index: 9999;
 }
 
-#cssmenu > ul > li > a {
+#cssmenu>ul>li>a {
   font-family: "Outfit", sans-serif;
   padding: 15px 33px;
   text-decoration: none;
@@ -191,7 +196,7 @@ nav {
   line-height: 20px;
 }
 
-#cssmenu > ul > li > a::before {
+#cssmenu>ul>li>a::before {
   position: absolute;
   width: 0;
   height: 2px;
@@ -204,42 +209,42 @@ nav {
   transition: all 0.3s ease;
 }
 
-#cssmenu > ul > li > a.active:before {
+#cssmenu>ul>li>a.active:before {
   width: 100%;
 }
 
-#cssmenu > ul > li.having-hamber > a::before {
+#cssmenu>ul>li.having-hamber>a::before {
   display: none;
 }
 
-#cssmenu > ul > li.having-hamber > a {
+#cssmenu>ul>li.having-hamber>a {
   position: relative;
 }
 
-#cssmenu > ul > li.having-hamber > a img {
+#cssmenu>ul>li.having-hamber>a img {
   position: absolute;
   left: 0;
 }
 
-#cssmenu > ul > li > a:hover:before {
+#cssmenu>ul>li>a:hover:before {
   width: 100%;
   left: 0;
 }
 
-#cssmenu > ul > li.active > a:before {
+#cssmenu>ul>li.active>a:before {
   width: 100%;
 }
 
-.fixed-top #cssmenu > ul > li > a,
-body.town-bus header #cssmenu > ul > li > a {
+.fixed-top #cssmenu>ul>li>a,
+body.town-bus header #cssmenu>ul>li>a {
   padding: 9px 30px;
 }
 
-#cssmenu > ul > li.active:hover > a {
+#cssmenu>ul>li.active:hover>a {
   color: #fff;
 }
 
-#cssmenu > ul > li.active > a {
+#cssmenu>ul>li.active>a {
   color: #fff;
 }
 
@@ -247,7 +252,7 @@ body.town-bus header #cssmenu > ul > li > a {
   color: var(--primary-color);
 }
 
-#cssmenu > ul > li:hover,
+#cssmenu>ul>li:hover,
 #cssmenu ul li.active:hover,
 #cssmenu ul li.active,
 #cssmenu ul li.has-sub.active:hover {
@@ -298,11 +303,11 @@ body.town-bus header #cssmenu ul li.contact a {
   transition: all 0.3s ease;
 }
 
-#cssmenu > ul > li.has-sub > a {
+#cssmenu>ul>li.has-sub>a {
   padding-right: 30px;
 }
 
-#cssmenu > ul > li.has-sub > a:after {
+#cssmenu>ul>li.has-sub>a:after {
   position: absolute;
   top: 37px;
   right: 10px;
@@ -313,13 +318,13 @@ body.town-bus header #cssmenu ul li.contact a {
   transition: all 0.3s ease;
 }
 
-.fixed-top #cssmenu > ul > li.has-sub > a:after,
-body.town-bus header #cssmenu > ul > li.has-sub > a:after {
+.fixed-top #cssmenu>ul>li.has-sub>a:after,
+body.town-bus header #cssmenu>ul>li.has-sub>a:after {
   top: 24px;
 }
 
-.fixed-top #cssmenu > ul > li > a:before,
-body.town-bus header #cssmenu > ul > li.has-sub > a:before {
+.fixed-top #cssmenu>ul>li>a:before,
+body.town-bus header #cssmenu>ul>li.has-sub>a:before {
   top: 34px;
   height: 1px;
 }
@@ -398,7 +403,7 @@ body.town-bus header #cssmenu > ul > li.has-sub > a:before {
   transition: all 0.3s ease;
 }
 
-#cssmenu > ul > li.has-sub:hover > a:after {
+#cssmenu>ul>li.has-sub:hover>a:after {
   transform: rotate(180deg);
   color: var(--primary-color);
   transition: all 0.3s ease;
@@ -418,9 +423,9 @@ body.town-bus header #cssmenu > ul > li.has-sub > a:before {
   box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
-#cssmenu > ul > li.active > a:after,
-#cssmenu > ul > li.active > a:hover:after,
-#cssmenu > ul > li.active:hover > a:after {
+#cssmenu>ul>li.active>a:after,
+#cssmenu>ul>li.active>a:hover:after,
+#cssmenu>ul>li.active:hover>a:after {
   color: #fff;
   transition: all 0.3s ease;
 }
@@ -556,7 +561,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   transition: all 0.6s ease;
 }
 
-#cssmenu ul li.mega-menu > ul:before {
+#cssmenu ul li.mega-menu>ul:before {
   position: absolute;
   left: 265px;
   top: 0px;
@@ -664,7 +669,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   transition: all 0.6s ease;
 }
 
-#cssmenu li:hover > ul {
+#cssmenu li:hover>ul {
   opacity: 1;
   visibility: visible;
   transform: translate3d(0, -50px, 0);
@@ -700,12 +705,12 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   transition: all 0.3s ease;
 }
 
-#cssmenu ul ul li:last-child > a,
-#cssmenu ul ul li.last-item > a {
+#cssmenu ul ul li:last-child>a,
+#cssmenu ul ul li.last-item>a {
   border-bottom: 0;
 }
 
-#cssmenu ul ul li:hover > a,
+#cssmenu ul ul li:hover>a,
 #cssmenu ul ul li.active a,
 #cssmenu ul ul li a:hover,
 #cssmenu ul li.mega-menu ul li.active a:hover {
@@ -748,7 +753,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   display: none;
 }
 
-#cssmenu ul ul li.has-sub > a:after {
+#cssmenu ul ul li.has-sub>a:after {
   position: absolute;
   top: 20px;
   right: 12px;
@@ -760,7 +765,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   content: "";
 }
 
-#cssmenu ul ul li.has-sub > a:before {
+#cssmenu ul ul li.has-sub>a:before {
   position: absolute;
   top: 15px;
   left: inherit;
@@ -776,8 +781,8 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   transition: all 0.25s ease;
 }
 
-#cssmenu ul ul > li.has-sub:hover > a:before,
-#cssmenu ul ul > li.has-sub:hover > a:after {
+#cssmenu ul ul>li.has-sub:hover>a:before,
+#cssmenu ul ul>li.has-sub:hover>a:after {
   background: #9d9d9d;
 }
 
@@ -839,8 +844,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 }
 
 .togmenu-header {
-  background: #fff url("../../assets/images/bg-5.jpg") no-repeat scroll center
-    center;
+  background: #fff url("../../assets/images/bg-5.jpg") no-repeat scroll center center;
   padding: 30px 30px 30px 40px;
   background-size: cover;
   transition: all 0.5s ease;
@@ -915,7 +919,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   background-size: 100%;
 }
 
-.togle-menu .mCSB_inside > .mCSB_container {
+.togle-menu .mCSB_inside>.mCSB_container {
   margin-right: 0px;
 }
 
@@ -949,7 +953,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 }
 
 @media (max-width: 1200px) {
-  #cssmenu > ul > li > a {
+  #cssmenu>ul>li>a {
     padding: 36px 10px;
   }
 
@@ -957,13 +961,13 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     max-width: 50px;
   }
 
-  #cssmenu > ul > li.active > a {
+  #cssmenu>ul>li.active>a {
     color: #fff;
     background: var(--primary-color);
   }
 
-  .fixed-top #cssmenu > ul > li > a,
-  body.town-bus header #cssmenu > ul > li > a {
+  .fixed-top #cssmenu>ul>li>a,
+  body.town-bus header #cssmenu>ul>li>a {
     padding: 24px 10px;
   }
 
@@ -985,7 +989,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     top: -39px;
   }
 
-  #cssmenu > ul > li > a {
+  #cssmenu>ul>li>a {
     color: #000;
     font-weight: 600;
     font-size: 17px !important;
@@ -1039,7 +1043,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   }
 
   #cssmenu ul ul li,
-  #cssmenu li:hover > ul > li {
+  #cssmenu li:hover>ul>li {
     height: auto;
   }
 
@@ -1051,7 +1055,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     padding: 15px 10px !important;
   }
 
-  #cssmenu > ul > li {
+  #cssmenu>ul>li {
     float: none;
   }
 
@@ -1125,7 +1129,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     padding-left: 25px;
   }
 
-  #cssmenu ul li.mega-menu > ul:before {
+  #cssmenu ul li.mega-menu>ul:before {
     display: none;
   }
 
@@ -1133,7 +1137,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     padding-left: 35px;
   }
 
-  #cssmenu > ul > li > a:before {
+  #cssmenu>ul>li>a:before {
     display: none;
   }
 
@@ -1157,14 +1161,14 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     box-shadow: none;
   }
 
-  #cssmenu li:hover > ul {
+  #cssmenu li:hover>ul {
     transition: all 0.2s ease;
   }
 
-  #cssmenu > ul > li.has-sub > a:after,
-  #cssmenu > ul > li.has-sub > a:before,
-  #cssmenu ul ul > li.has-sub > a:after,
-  #cssmenu ul ul > li.has-sub > a:before {
+  #cssmenu>ul>li.has-sub>a:after,
+  #cssmenu>ul>li.has-sub>a:before,
+  #cssmenu ul ul>li.has-sub>a:after,
+  #cssmenu ul ul>li.has-sub>a:before {
     display: none;
   }
 
@@ -1338,8 +1342,8 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
     border-left: none;
   }
 
-  #cssmenu > ul > li.has-sub > ul > li.active > a,
-  #cssmenu > ul ul > li.has-sub > ul > li.active > a {
+  #cssmenu>ul>li.has-sub>ul>li.active>a,
+  #cssmenu>ul ul>li.has-sub>ul>li.active>a {
     border-top: none;
   }
 
@@ -1421,7 +1425,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   right: 0;
 }
 
-.navigation ul li:hover > ul {
+.navigation ul li:hover>ul {
   opacity: 1;
   visibility: visible;
 }
@@ -1463,7 +1467,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   text-decoration: none;
 }
 
-.navigation > ul {
+.navigation>ul {
   width: 100%;
 }
 
@@ -1471,7 +1475,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   width: 100%;
 }
 
-.navigation > ul > li > a {
+.navigation>ul>li>a {
   font-weight: 500;
   font-size: 18px;
   line-height: 23px;
@@ -1480,7 +1484,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   font-family: "Mulish", sans-serif;
 }
 
-.navigation > ul > li > a:hover {
+.navigation>ul>li>a:hover {
   color: #000;
 }
 
@@ -1492,7 +1496,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   position: relative;
 }
 
-.navigation ul li.has-sub > a:after {
+.navigation ul li.has-sub>a:after {
   background: #fff url("../../assets/images/rgt.png") no-repeat scroll 0 0;
   content: "";
   position: absolute;
@@ -1539,12 +1543,12 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
 /* .navigation ul ul li {
 } */
 
-.navigation ul ul li:hover > a {
+.navigation ul ul li:hover>a {
   background: #000;
   color: #ffffff;
 }
 
-.navigation.align-right > ul > li > a {
+.navigation.align-right>ul>li>a {
   border-right: none;
 }
 
@@ -1556,7 +1560,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   text-align: right;
 }
 
-.navigation.align-right ul li.has-sub > a:before {
+.navigation.align-right ul li.has-sub>a:before {
   content: "+";
   position: absolute;
   top: 50%;
@@ -1564,7 +1568,7 @@ body.town-bus header #cssmenu ul li.mega-menu ul ul {
   margin-top: -6px;
 }
 
-.navigation.align-right ul li.has-sub > a:after {
+.navigation.align-right ul li.has-sub>a:after {
   content: none;
 }
 
@@ -1623,9 +1627,11 @@ input[type="search"]::-webkit-search-results-decoration {
     border-color: #eee !important;
     color: #eee !important;
   }
+
   .drop-arrow {
     transform: rotate(90deg);
   }
+
   .list-group-item {
     background: #191a1a !important;
     text-align: left !important;
@@ -1635,14 +1641,18 @@ input[type="search"]::-webkit-search-results-decoration {
     a {
       color: white !important;
       margin: 0 !important;
+
       &:hover {
         color: var(--primary-color) !important;
       }
+
       text-transform: uppercase;
     }
+
     li {
       color: #cecece !important;
       margin: 0 !important;
+
       &:hover {
         color: var(--primary-color) !important;
       }
@@ -1670,6 +1680,7 @@ small {
     background: #191a1a !important;
   }
 }
+
 .menu-btn:before {
   content: "";
   position: absolute;
@@ -1682,6 +1693,7 @@ small {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #ffffff;
 }
+
 .nav-menus {
   width: 23.25vw;
   font-size: 14px;
@@ -1716,12 +1728,14 @@ small {
       position: absolute;
       top: -10px;
       left: 8px;
+
       @media (min-width: 992px) {
         top: -10px;
         left: 41%;
         transform: translateX(-50%);
       }
     }
+
     .carousel-caption {
       z-index: 11;
     }
@@ -1737,10 +1751,12 @@ small {
   background-color: #000000e0;
   z-index: 3;
 }
+
 .btn-account {
   border: none !important;
-  background: none !important ;
+  background: none !important;
 }
+
 .btn-account::after {
   display: none !important;
 }
@@ -1749,21 +1765,26 @@ small {
   .menu-list {
     position: relative;
     overflow-y: auto;
+
     .nav-heading {
       font-weight: 700;
       padding: 1.2rem 2rem;
       font-size: 16px;
     }
+
     li {
       background-color: rgba(247, 247, 247, 0.747);
       cursor: pointer;
+
       &:hover {
         background-color: #f1000872 !important;
         color: black !important;
       }
+
       padding-top:12px;
       padding-bottom:12px;
     }
+
     .dropdown {
       li {
         background-color: white;
@@ -1772,6 +1793,7 @@ small {
       }
     }
   }
+
   .dropdown-content {
     background-color: white;
     display: none !important;
@@ -1789,6 +1811,7 @@ small {
     text-decoration: none;
     display: block;
     cursor: pointer !important;
+
     &:hover {
       color: var(--primary-color);
     }
@@ -1797,6 +1820,7 @@ small {
   .dropdown-content a:hover {
     background-color: white;
   }
+
   .menu-list {
     li:hover .dropdown-content {
       display: block !important;

@@ -18,7 +18,7 @@ function AccountButton({ text, size, className }) {
     dispatch(setAuthUser({ data: [], isLoggedIn: false }));
   };
   return (
-    <Dropdown align="end">
+    <Dropdown align="end" className="m-0">
       <Dropdown.Toggle
         className={`${className} btn-account border-0 text-white btn-sm btn ps-lg-3 d-block d-lg-flex flex-lg-column justify-content-center align-items-center`}
       >
