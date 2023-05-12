@@ -884,6 +884,8 @@ button[loading="true"] {
     margin-bottom: 25px ;
   }
 }
+
+
 @media (min-width: 300px) {
   .section-title {
     text-align: center !important;
@@ -921,3 +923,14 @@ button[loading="true"] {
     padding: 40px 0;
   }
 } 
+
+.section-title.text-start {
+  text-align: left !important;
+}
+
+.section-wrapper {
+  .slick-dots {
+    position: unset;
+    margin-top: 20px;
+  }
+}
