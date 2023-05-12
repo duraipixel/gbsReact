@@ -118,7 +118,7 @@ const Header = () => {
           aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
           placement="end"
         >
-          <Offcanvas.Header closeButton className="bg-primary">
+          <Offcanvas.Header  className="bg-primary">
             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
               <Link to="/" className="brand">
                 <img
@@ -127,6 +127,7 @@ const Header = () => {
                 />
               </Link>
             </Offcanvas.Title>
+            <button className="btn btn-close" onClick={toggleHeader}></button>
           </Offcanvas.Header>
           <Offcanvas.Body className="bg-max-lg-dark">
             <div className="d-lg-flex align-items-center justify-content-between w-100">
@@ -147,9 +148,9 @@ const Header = () => {
                             <g
                               id="Header-Navigation-Journey"
                               stroke="none"
-                              stroke-width="1"
+                              strokeWidth="1"
                               fill="none"
-                              fill-rule="evenodd"
+                              fillRule="evenodd"
                             >
                               <g
                                 id="02.1_Header-and-Navigation"
@@ -174,7 +175,7 @@ const Header = () => {
                                       d="M17.414185,16 L25.7070925,7.7070925 C26.0971909,7.31650446 26.0969925,6.68369412 25.7066492,6.29335081 C25.3163059,5.90300749 24.6834955,5.90280906 24.2929075,6.2929075 L16,14.585815 L7.7070925,6.2929075 C7.31650446,5.90280906 6.68369412,5.90300749 6.29335081,6.29335081 C5.90300749,6.68369412 5.90280906,7.31650446 6.2929075,7.7070925 L14.585815,16 L6.2929075,24.2929075 C6.04002357,24.5454744 5.94116419,24.9138066 6.03359596,25.2590554 C6.12602774,25.6043042 6.39569584,25.8739723 6.74094461,25.966404 C7.08619338,26.0588358 7.45452555,25.9599764 7.7070925,25.7070925 L16,17.414185 L24.2929075,25.7070925 C24.6834955,26.0971909 25.3163059,26.0969925 25.7066492,25.7066492 C26.0969925,25.3163059 26.0971909,24.6834955 25.7070925,24.2929075 L17.414185,16 Z"
                                       id="Path"
                                       fill="#FFFFFF"
-                                      fill-rule="nonzero"
+                                      fillRule="nonzero"
                                     ></path>
                                   </g>
                                 </g>

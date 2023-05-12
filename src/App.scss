@@ -879,9 +879,10 @@ button[loading="true"] {
 .lazy-load-image-background {
   display: block !important;
 }
+
 @media (max-width: 300px) {
   .section-title {
-    margin-bottom: 25px ;
+    margin-bottom: 25px;
   }
 }
 
@@ -889,40 +890,49 @@ button[loading="true"] {
 @media (min-width: 300px) {
   .section-title {
     text-align: center !important;
-    margin-bottom: 30px ;
+    margin-bottom: 30px;
   }
+
   .section-wrapper {
     padding: 20px 0;
   }
+
   .section-title {
     font-size: 18px !important;
   }
+
   .fs-20 {
     font-size: 12px !important;
   }
 }
+
 @media (min-width: 600px) {
   .section-wrapper {
     padding: 30px 0;
   }
+
   .section-title {
     font-size: 20px !important;
   }
+
   .fs-20 {
     font-size: 18px !important;
   }
 }
+
 @media (min-width: 992px) {
   .section-title {
     font-size: 25px !important;
   }
+
   .fs-20 {
     font-size: 20px !important;
   }
+
   .section-wrapper {
     padding: 40px 0;
   }
-} 
+}
 
 .section-title.text-start {
   text-align: left !important;
@@ -932,5 +942,51 @@ button[loading="true"] {
   .slick-dots {
     position: unset;
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-heading {
+    color: wheat !important;
+  }
+
+  .dropdown {
+    margin-bottom: 10px;
+
+    .list-group-item {
+      padding: 0px !important;
+      background: none !important;
+    }
+    .dropdown-content {
+      .list-group-item {
+        text-transform: capitalize !important;
+        font-size: 12px !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        background-color: white !important;
+        border-width: 0 0 var(--bs-list-group-border-width) !important;
+        border: var(--bs-list-group-border-width) solid rgb(0 0 0 / 2%) !important;
+      }
+    }
+
+    .drop-arrow {
+      display: none;
+    }
+
+    .justify-content-between {
+      justify-content: center !important;
+    }
+
+    .dropbtn {
+      margin: 0 !important;
+      text-align: center;
+      display: block;
+      color: #c8061f !important;
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+      background: #f1f3f4;
+      width: 100%;
+      font-weight: bold;
+    }
   }
 }

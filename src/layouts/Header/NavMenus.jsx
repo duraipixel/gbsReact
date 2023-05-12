@@ -1,26 +1,17 @@
-import { useNavigate, Link } from "react-router-dom";
-// import { useContext } from "react";
-// import { BsChevronRight, BsChevronDown } from "react-icons/bs";
-import {
-  Placeholder,
-  Accordion,
-  // AccordionContext,
-  // Button,
-  // useAccordionButton,
-} from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Placeholder } from "react-bootstrap";
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 
 export default function NavMenus({ toggleHeader }) {
   return (
     <div className="nav-menus shadow">
-      <NavMenuList className="acc-list" />
+      <NavMenuList className="acc-list" toggleHeader={toggleHeader}/>
     </div>
   );
 }
 
 export const NavMenuList = ({ className, toggleHeader }) => {
   const { data, isSuccess, isLoading } = useNavMenuQuery();
-  // console.log(data);
   const navigate = useNavigate();
   const linkHandler = (slug) => {
     if (toggleHeader) {
@@ -71,9 +62,9 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                   <g
                     id="Header-Navigation-Journey"
                     stroke="none"
-                    stroke-width="1"
+                    strokeWidth="1"
                     fill="none"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   >
                     <g
                       id="02_Header-and-Navigation"
@@ -99,14 +90,14 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M13.1249904,22.1045098 C16.0336346,21.7984963 18.9663586,21.7984963 21.8750027,22.1045098"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                         </g>
                       </g>
@@ -120,44 +111,44 @@ export const NavMenuList = ({ className, toggleHeader }) => {
               <div className="d-flex justify-content-between align-items-center">
                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M7.44582 27.5542C6.18747 26.2958 7.02209 23.6539 6.38159 22.1059C5.71763 20.5012 3.28125 19.2097 3.28125 17.4999C3.28125 15.7903 5.71764 14.4988 6.3816 12.8941C7.02209 11.3461 6.18747 8.70418 7.44582 7.44582C8.70418 6.18747 11.3461 7.02209 12.8941 6.38159C14.4988 5.71763 15.7903 3.28125 17.5001 3.28125C19.2097 3.28125 20.5013 5.71764 22.1059 6.3816C23.6539 7.02209 26.2958 6.18747 27.5542 7.44582C28.8125 8.70418 27.9779 11.3461 28.6184 12.8941C29.2824 14.4988 31.7188 15.7903 31.7188 17.5001C31.7188 19.2097 29.2824 20.5013 28.6184 22.1059C27.9779 23.6539 28.8125 26.2958 27.5542 27.5542C26.2958 28.8125 23.6539 27.9779 22.1059 28.6184C20.5012 29.2824 19.2097 31.7188 17.4999 31.7188C15.7903 31.7188 14.4988 29.2824 12.8941 28.6184C11.3461 27.9779 8.70418 28.8125 7.44582 27.5542Z"
                     stroke="black"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M13.1782 13.4533V16.5749C13.1782 18.8242 14.9774 20.6886 17.2266 20.7053C18.3138 20.7135 19.3594 20.2874 20.1311 19.5215C20.9028 18.7556 21.3369 17.7133 21.3369 16.6261V13.4533C21.3369 13.2029 21.1339 13 20.8836 13H13.6315C13.3812 13 13.1782 13.2029 13.1782 13.4533Z"
                     stroke="black"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M15.4446 22.9934H19.0706"
                     stroke="black"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M17.2792 20.7056V22.9719"
                     stroke="black"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M21.2358 17.5327H21.7902C22.7915 17.5327 23.6032 16.7209 23.6032 15.7196V14.8131C23.6032 14.5628 23.4003 14.3599 23.15 14.3599H21.3369"
                     stroke="black"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M13.2896 17.5327H12.7178C11.7165 17.5327 10.9048 16.7209 10.9048 15.7196V14.8131C10.9048 14.5628 11.1077 14.3599 11.358 14.3599H13.1711"
                     stroke="black"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
                 <div className={`me-auto text-dark ms-2`}>Top Brand</div>
@@ -172,9 +163,9 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                   <g
                     id="Header-Navigation-Journey"
                     stroke="none"
-                    stroke-width="1"
+                    strokeWidth="1"
                     fill="none"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   >
                     <g
                       id="02_Header-and-Navigation"
@@ -200,35 +191,35 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M7.38751699,5.46875 L27.612483,5.46875 C28.1008208,5.46875 28.5299928,5.79247518 28.6641496,6.26202363 L30.625,13.125 L4.375,13.125 L6.33585039,6.26202363 C6.47000715,5.79247518 6.89917922,5.46875 7.38751699,5.46875 Z"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M13.125,13.125 L13.125,15.3125 C13.125,17.7287458 11.1662458,19.6875 8.75,19.6875 C6.33375422,19.6875 4.375,17.7287458 4.375,15.3125 L4.375,13.125"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M21.875,13.125 L21.875,15.3125 C21.875,17.7287458 19.9162458,19.6875 17.5,19.6875 C15.0837542,19.6875 13.125,17.7287458 13.125,15.3125 L13.125,13.125"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M30.625,13.125 L30.625,15.3125 C30.625,17.7287458 28.6662458,19.6875 26.25,19.6875 C23.8337542,19.6875 21.875,17.7287458 21.875,15.3125 L21.875,13.125"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                         </g>
                       </g>
@@ -247,9 +238,9 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                   <g
                     id="Header-Navigation-Journey"
                     stroke="none"
-                    stroke-width="1"
+                    strokeWidth="1"
                     fill="none"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   >
                     <g
                       id="02_Header-and-Navigation"
@@ -275,35 +266,35 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M7.38751699,5.46875 L27.612483,5.46875 C28.1008208,5.46875 28.5299928,5.79247518 28.6641496,6.26202363 L30.625,13.125 L4.375,13.125 L6.33585039,6.26202363 C6.47000715,5.79247518 6.89917922,5.46875 7.38751699,5.46875 Z"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M13.125,13.125 L13.125,15.3125 C13.125,17.7287458 11.1662458,19.6875 8.75,19.6875 C6.33375422,19.6875 4.375,17.7287458 4.375,15.3125 L4.375,13.125"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M21.875,13.125 L21.875,15.3125 C21.875,17.7287458 19.9162458,19.6875 17.5,19.6875 C15.0837542,19.6875 13.125,17.7287458 13.125,15.3125 L13.125,13.125"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                           <path
                             d="M30.625,13.125 L30.625,15.3125 C30.625,17.7287458 28.6662458,19.6875 26.25,19.6875 C23.8337542,19.6875 21.875,17.7287458 21.875,15.3125 L21.875,13.125"
                             id="Path"
                             stroke="black"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                           ></path>
                         </g>
                       </g>
@@ -362,92 +353,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
               ))}
           </ul>
         </div>
-      )}
-      {/* {isSuccess && (
-        <Accordion defaultActiveKey="0" className={className}>
-          <ul className="list-group list-group-flush">
-            {data.data.map((item) => (
-              <li className="list-group-item px-3" key={item.id}>
-                <div className="d-flex justify-content-between align-items-center">
-                  <Link to="/" className={`me-auto text-dark`}>
-                    {" "}
-                    {item.name}{" "}
-                  </Link>
-                  {item.child.length > 0 && (
-                    <AccordionToggler eventKey={item.id} />
-                  )}
-                </div>
-                {item.child.length > 0 && (
-                  <Accordion.Collapse eventKey={item.id}>
-                    <ul className="list-group list-group-flush">
-                      {item.child.map((data) => (
-                        <li
-                          key={data.id}
-                          className="list-group-item px-3 pt-3"
-                          onClick={() => linkHandler(data.slug)}
-                        >
-                          {data.name}
-                        </li>
-                      ))}
-                    </ul>
-                  </Accordion.Collapse>
-                )}
-              </li>
-            ))}
-          </ul>
-        
-      )} */}
-      {/* {isSuccess && (
-        <div className={className}>
-          <ul className="list-group list-group-flush">
-            {data.data.map((item) =>
-              item.child.map((data) => (
-                <li className="list-group-item px-3" key={data.id}>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <Link
-                      to={`/products?${data.slug}`}
-                      className={`me-auto text-dark`}
-                    >
-                      {data.name}
-                    </Link>
-                  </div>
-                </li>
-              ))
-            )}
-            <li className="list-group-item px-3">
-              <div className="d-flex justify-content-between align-items-center">
-                <Link to="/store-locator" className={`me-auto text-dark`}>
-                  Store Locator
-                </Link>
-              </div>
-            </li>
-            <li className="list-group-item px-3">
-              <div className="d-flex justify-content-between align-items-center">
-                <Link
-                  to="/service-center-locator"
-                  className={`me-auto text-dark`}
-                >
-                  Service Center Locator
-                </Link>
-              </div>
-            </li>
-          </ul>
-        </div>
-      )} */}
+      )} 
     </>
   );
-};
-
-// function AccordionToggler({ eventKey, callback }) {
-//   const { activeEventKey } = useContext(AccordionContext);
-//   const decoratedOnClick = useAccordionButton(
-//     eventKey,
-//     () => callback && callback(eventKey)
-//   );
-
-//   return (
-//     <Button className="btn-sm" variant="light" onClick={decoratedOnClick}>
-//       {activeEventKey === eventKey ? <BsChevronDown /> : <BsChevronRight />}
-//     </Button>
-//   );
-// }
+}; 

@@ -13,8 +13,8 @@ const NarrowSearch = () => {
           <div className="row g-3 justify-content-center">
             {
               brands.map((item, i) => (
-                <div className="col-6 col-xl col-lg-3 col-md-4">
-                  <Link to={`products?brands=${item.slug}`} key={i}>
+                <div className="col-6 col-xl col-lg-3 col-md-4"  key={i}>
+                  <Link to={`products?brands=${item.slug}`}>
                     <Image src={item.image} alt={item.title} className="w-100" />
                   </Link>
                 </div>
