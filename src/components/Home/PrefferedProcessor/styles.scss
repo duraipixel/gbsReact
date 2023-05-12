@@ -37,16 +37,18 @@
   transform: rotate(360deg);
 }
 
-.arrival-slider .slick-slide > div {
+.arrival-slider .slick-slide>div {
   padding: 0px 10px;
 }
 
 .arrival-slider .slick-dots {
   bottom: -60px;
 }
+
 .arrival-slider .slick-dots li button {
   background-color: rgba(241, 0, 10, 0.6) !important;
 }
+
 .arrival-slider .slick-dots li.slick-active button {
   background-color: #dd1818 !important;
 }
@@ -55,6 +57,7 @@
   border-radius: 6px;
   overflow: hidden;
 }
+
 .intel-core h4 {
   font-weight: 600;
   font-size: 28px;
@@ -62,23 +65,42 @@
   text-align: center;
   margin-bottom: 25px;
   color: #ffffff;
+
+  @media (max-width:450px) {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
 }
 
 .intel-core a {
   font-weight: 600;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 16px;
   background: #36353d;
   line-height: 23px;
-  padding: 20px 15px;
   text-align: center;
   border-radius: 6px;
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-self: stretch;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 15px;
+
   @media (max-width:"700px") {
     margin-bottom: 5px;
+  }
+
+  @media (max-width:450px) {
+    font-size: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 50px;
+    font-weight: normal;
+    line-height: 15px;
   }
 }
 
@@ -99,4 +121,22 @@
 
 .lay-btns .row {
   padding: 0px 20px;
+
+  @media (max-width:450px) {
+    padding: 0px 10px !important;
+  }
+}
+.proc-img {
+  img {
+    height: 250px !important;
+    object-fit: cover;
+  }
+}
+@media (max-width:450px) {
+  .proc-img {
+    img {
+      height: 150px !important;
+      object-fit: cover;
+    }
+  }
 }

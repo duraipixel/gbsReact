@@ -12,45 +12,24 @@ const MustHaves = () => {
 
   if (handpickedCollections)
     return (
-      <>
-        <section className="screen-size pt-5">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div className="comon-heads text-center">
-                  <h2>Latest Laptops, Handpicked for You</h2>
-                </div>
-              </div>
-
-              {handpickedCollections.map((item) => (
-                <Link
-                  to={`products?handpicked=${item.slug}`}
-                  className="col-lg-4 col-md-4 col-sm-6 col-xs-12 poster-img-div"
-                  key={item.id}
-                >
+      <div className="section-wrapper">
+        <div className="container">
+          <h2 className="section-title">Latest Laptops, Handpicked for You</h2>
+          <div className="row g-3">
+            {handpickedCollections.map((item) => (
+              <div key={item.id} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 poster-img-div">
+                <Link to={`products?handpicked=${item.slug}`} >
                   <img
                     src={item.image}
                     alt=""
-                    className="img-fluid poster-image"
+                    className="img-fluid poster-image rounded shadow"
                   />
                 </Link>
-              ))}
-              {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <img src={screen1} alt="" className="img-fluid poster-image" />
               </div>
-            </div>
-
-            <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <img src={screen2} alt="" className="img-fluid poster-image" />
-            </div>
-
-            <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <img src={screen3} alt="" className="img-fluid poster-image" />
-            </div> */}
-            </div>
+            ))}
           </div>
-        </section>
-      </>
+        </div>
+      </div>
     );
 };
 
