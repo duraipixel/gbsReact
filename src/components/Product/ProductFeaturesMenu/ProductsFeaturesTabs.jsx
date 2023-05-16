@@ -7,7 +7,7 @@ function ProductsFeaturesTabs({ product }) {
   return (
     <div className="product-features-tab">
       <Tab.Container defaultActiveKey="0">
-        <Nav variant="pills" className="sticky-top bg-light">
+        <Nav variant="pills" className="sticky-top-0 bg-light">
           {product.description_products.length ? (
             <Nav.Item>
               <Nav.Link eventKey="0">Description</Nav.Link>
