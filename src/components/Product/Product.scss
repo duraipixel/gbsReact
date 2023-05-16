@@ -267,3 +267,9 @@ input.addon {
     top: 25px !important;
   }
 }
+.sticky-top-0 {
+  @media (min-width: 900px) {
+    position: sticky;
+    top: 0px;
+  }
+}
