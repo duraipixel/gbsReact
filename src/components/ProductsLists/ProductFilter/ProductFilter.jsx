@@ -61,7 +61,7 @@ const ProductFilter = ({
   return (
     <Col lg={3} className="py-md-5 align-self-start pt-3 h-100 ">
       <div className="filters-side">
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between align-items-center">
           <div className="product-filter-btn" onClick={() => setActive(!isActive)}>
             Filters
           </div>

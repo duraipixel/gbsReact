@@ -7,9 +7,45 @@ import AddFavButton from 'components/AddFavButton'
 import CompareButton from 'components/CompareButton'
 import './CardComponent.scss'
 
-function CardComponent({ product }) {
+function CardComponent({ product, type, className }) {
   const navigate = useNavigate()
-  if (window.innerWidth > 450) return (
+  if (type === 'list' && window.innerWidth > 450) return (
+    <div className={className}>
+      <div className='product-card overflow-hidden border-bottom'>
+        <div className="arival-det row" >
+          <div className="ari-img cursor col-md-4" onClick={() => navigate(`/products/${product.product_url}`)}>
+            <Image src={product.image} alt={product.product_name} />
+            <div className="off-prc">
+              <h3> {product.discount_percentage}% <br /> <span>OFF</span></h3>
+            </div>
+          </div>
+          <div className="ari-cnt text-start w-100 bg-white col-md">
+            <div className="cursor" onClick={() => navigate(`/products/${product.product_url}`)}>
+              <div className="d-flex justify-content-between" >
+                <h2 className='text-start'>{product.category_name}</h2>
+                {
+                  product?.common_review?.rating ?
+                    <h3><AiFillStar /> {product?.common_review?.rating}</h3>
+                    : ''
+                }
+              </div>
+              <h4 className='product-name text-start'>{product.product_name}</h4>
+              <h5>
+                <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
+                <span className="new-price">₹{product.price.replace('.00', '')}</span>
+              </h5>
+            </div>
+              <div className="d-flex align-items-center clk-optn">
+                <AddFavButton buttonType="icon" className="btn btn-outline-info rounded-box-circle rounded-box-sm" product={product} />
+                <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 rounded-box-circle rounded-box-sm" product={product} />
+                <AddCartButton type='button' className="btn btn-primary ms-3" product={product} />
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+  if (window.innerWidth > 450 && type === undefined) return (
     <div className='product-card'>
       <div className="arival-det" >
         <div className="ari-img cursor" onClick={() => navigate(`/products/${product.product_url}`)}>
@@ -54,16 +90,19 @@ function CardComponent({ product }) {
     </div>
   )
   if (window.innerWidth < 450) return (
-    <div className="product-card-sm shadow" onClick={() => navigate(`/products/${product.product_url}`)}>
-      <AddFavButton buttonType="icon" className="btn-fav" product={product} />
-      <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
-      <div className="product-info">
-        <h4 className='product-name'>{product.product_name.substring(0, 25)}</h4>
-        <div className="product-prices">
-          <span className="new-price">₹{product.price.replace('.00', '')}</span>
-          <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
+    <div className={className}>
+
+      <div className="product-card-sm shadow" onClick={() => navigate(`/products/${product.product_url}`)}>
+        <AddFavButton buttonType="icon" className="btn-fav" product={product} />
+        <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
+        <div className="product-info">
+          <h4 className='product-name'>{product.product_name.substring(0, 25)}</h4>
+          <div className="product-prices">
+            <span className="new-price">₹{product.price.replace('.00', '')}</span>
+            <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
+          </div>
+          {product?.common_review?.rating ? <Rating name="read-only" value={product?.common_review?.rating} readOnly size="small" /> : ''}
         </div>
-        { product?.common_review?.rating ? <Rating name="read-only" value={product?.common_review?.rating} readOnly size="small" /> : '' }
       </div>
     </div>
   )

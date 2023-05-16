@@ -324,8 +324,6 @@ ul.config-uration li:last-child:before {
   font-size: 24px;
   font-weight: 600;
   cursor: text;
-  margin-bottom: 1rem;
-
   &:hover {
     color: #000;
   }
@@ -411,18 +409,20 @@ ul.config-uration li:last-child:before {
     border: none !important;
   }
 }
-
-.bg-white-layer {
-  position: relative;
-  z-index: 1;
-  &::after {
-    content: "";
-    height: 100%;
-    width: 100%;
+@media (min-width:662px) {
+  .bg-white-layer {
     background-color: white;
-    position: absolute;
-    top: 0;
-    right: -100%;
-    z-index: -1;
+    position: relative;
+    z-index: 1;
+    &::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      right: -100%;
+      z-index: -1;
+    }
   }
 }
