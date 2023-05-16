@@ -25,7 +25,7 @@ function ProductPage() {
   }, [slug]) 
 
   return (
-    <div className="bg-light py-3">
+    <div className="dark-section">
       <Container>
         {
           fetching ?
@@ -42,7 +42,6 @@ function ProductPage() {
                       <meta name="description" content={product?.meta?.description} />
                       <meta name="keywords" content={product?.meta?.keywords} />
                     </Helmet>
-                    <ProductBreadcrumb category={product.category_name} title={product.product_name} />
                     <ProductDetails product={product} />
                   </>
               }

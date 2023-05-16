@@ -377,6 +377,13 @@ td {
   line-height: 20px;
   text-align: center;
   color: #ffffff;
+
+  @media (max-width:400px) {
+    height: 40px !important;
+    width: 40px !important;
+    font-size: 14px !important;
+    line-height: 14px !important;
+  }
 }
 
 span.ofer-infs {
@@ -795,10 +802,6 @@ button[loading="true"] {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 400px) {
-    transform: scale(0.7);
-  }
 }
 
 :not(:root):fullscreen::backdrop {
@@ -957,6 +960,7 @@ button[loading="true"] {
       padding: 0px !important;
       background: none !important;
     }
+
     .dropdown-content {
       .list-group-item {
         text-transform: capitalize !important;
@@ -989,4 +993,54 @@ button[loading="true"] {
       font-weight: bold;
     }
   }
+}
+
+main {
+  padding-top: 88px;
+}
+
+// .dark-section {
+//   background-color: #191919 !important;
+//   color: #eeee !important;
+// }
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+  object-fit: contain;
+}
+
+@media (max-width: 400px) {
+  .product-title {
+    font-size: 14px !important;
+  }
+
+  .react-image-gallery-div {
+    overflow: hidden;
+  }
+
+  main {
+    padding-top: 77px !important;
+  }
+
+  .image-gallery-thumbnails-wrapper {
+    transform: scale(0.7);
+  }
+
+  .image-gallery-image {
+    width: 100% !important;
+    height: 176px !important;
+  }
+
+  .image-gallery-thumbnail-image {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain;
+  }
+  .action-group {
+    button {
+      margin-bottom: 10px !important;
+    }
+  }
+}
+
+.thumbnails-swipe-horizontal {
+  margin-top: 20px;
 }

@@ -182,7 +182,7 @@
   border: 2px solid #f1000a;
 }
 
-input.addon:checked + .btn-add-on {
+input.addon:checked+.btn-add-on {
   border: 2px solid #f1000a !important;
 }
 
@@ -191,12 +191,14 @@ input.addon {
   position: absolute;
   z-index: -1;
 }
+
 .btn-add-on {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+
   @media (max-width: 720px) {
     width: 100%;
     padding: 20px;
@@ -242,6 +244,10 @@ input.addon {
 
     .nav-link {
       color: #a2a2a2;
+
+      @media (max-width:400px) {
+        font-size: 14px !important;
+      }
     }
 
     .nav-link.active {
@@ -258,12 +264,45 @@ input.addon {
   @media (min-width: 900px) {
     min-height: 520px;
   }
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
-// .sticky-top {
-//   @media (min-width: 900px) {
-//     top: 25px !important;
-//   }
-// }
+
+
+@media (max-width: 400px) {
+  .pincode-input-group {
+    display: flex !important;
+    .btn-link {
+      background-color: #f1000a;
+      color: white !important;
+      text-decoration: none !important;
+      margin-left: 8px;
+      padding: 5px 10px !important;
+    }
+  }
+  .lead {
+    font-size: 16px;
+  }
+  .sub-product-title, h3 {
+    font-size: 16px !important;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .sticky-wrapper .sticky-inner.sticky-inner-pdp {
+    top: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .sticky-wrapper .sticky-inner {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 16rem;
+  }
+}

@@ -5,7 +5,9 @@ function Description({ product }) {
             <center>
                 <h2 className='fw-bold'>{product[0]?.title}</h2>
                 <p>{product[0]?.description}.</p>
-                <img src={product[0]?.desc_image} alt={product[0]?.title} className='col-sm-8 col' />
+                <div className="col-sm-8 col">
+                    <img src={product[0]?.desc_image} alt={product[0]?.title} className='w-100' />
+                </div>
             </center>
             <div className="row mt-5 justify-content-center">
                 {

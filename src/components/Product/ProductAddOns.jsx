@@ -13,13 +13,13 @@ function ProductAddOns({ product, cartId, setCartId }) {
                     <>
                         {
                             product?.warranty_available?.name ?
-                                <div className='bg-white p-3 rounded mb-3 shadow'>
+                                <div className='bg-white p-3 rounded mb-3 shadow-sm border'>
                                     <div className="lead fw-bold d-flex align-items-center mb-2">{product?.warranty_available.name} <div className="vr mx-2"></div> <b className='text-primary fs-14 fw-bold'>{product?.warranty_available?.warranty_period} {product?.warranty_available?.warranty_period_type} warranty</b></div>
                                     <div>{product?.warranty_available.description}</div>
                                 </div>
-                            : ''
+                                : ''
                         }
-                        <h5>Personalized Add-ons for your Product  </h5>
+                        <h5 className='sub-product-title'>Personalized Add-ons for your Product  </h5>
                         <Accordion defaultActiveKey="0" flush>
                             {
                                 product.addons.map((addon, i) => (
@@ -47,29 +47,31 @@ function ProductAddOns({ product, cartId, setCartId }) {
                     </>
                     : ''
             }
-            <hr />
+            <hr className='d-none d-md-block' />
             {
                 product.frequently_purchased.length !== 0 ?
                     <>
-                        <h5>This Product is Frequently purchased with</h5>
-                        <div className="list-group list-group-flush bg-light">
+                        <h5 className='sub-product-title'>This Product is Frequently purchased with</h5>
+                        <ul className="list-group list-group-flush">
                             {
                                 product.frequently_purchased.map((item, key) => (
-                                    <div key={key} className="px-0 bg-light d-flex align-items-center justify-content-between list-group-item list-group-item-action">
-                                        <div className='d-flex'>
-                                            <img src={item.image} alt="product-thumnail" className='product-thumnail' />
-                                            <div className='ps-3'>
-                                                <span >{item.product_name.substring(0, 60)}</span>
+                                    <li key={key} className="list-group-item list-group-item-action">
+                                        <div className="row align-items-center">
+                                            <div className="col">
+                                                <img src={item.image} alt="product-thumnail" className='product-thumnail' />
+                                            </div>
+                                            <div className="col-8">
+                                                <small >{item.product_name}</small>
                                                 <AddCartButton type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} />
                                             </div>
+                                            <div className="col"> 
+                                                <span className='text-info fw-bold'>₹{item.price}</span>
+                                            </div>
                                         </div>
-                                        <div className="text-info fw-bold ps-2">
-                                            ₹{" "}{item.price}
-                                        </div>
-                                    </div>
+                                    </li>
                                 ))
                             }
-                        </div>
+                        </ul>
                     </>
                     : ''
             }
@@ -108,7 +110,7 @@ const AddOnInput = ({ item, index, cartId, secIndex, addon, product, setCartId }
     return (
         <>
             <input type="radio" disabled={loading} checked={isChecked} className='addon' name={`add_on_${addon.id}`} onClick={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
-            <label className='btn-add-on' htmlFor={`form_${secIndex}_add_on_${index}`}>
+            <label className='btn-add-on border shadow-sm' htmlFor={`form_${secIndex}_add_on_${index}`}>
                 {loading ? <LoadingSpinner className="position-absolute" /> : ""}
                 {item.label}<span className="text-info">₹{" "}{item.amount}</span>
             </label>

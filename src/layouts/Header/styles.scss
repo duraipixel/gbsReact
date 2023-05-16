@@ -8,7 +8,7 @@
 
 .navbar {
   min-height: 88px;
-  z-index: 1;
+  z-index: 11;
   @media (max-width:450px) {
     min-height: 70px;
   }
@@ -368,9 +368,9 @@ body.town-bus header #cssmenu>ul>li.has-sub>a:before {
   transition: all 0.3s ease;
 }
 
-.fixed-top {
-  top: 60px;
-}
+// .fixed-top {
+//   top: 60px;
+// }
 
 .top-icons ul li {
   position: relative;

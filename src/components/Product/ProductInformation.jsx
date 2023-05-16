@@ -1,7 +1,5 @@
-import { useDispatch } from 'react-redux'
 import ProductAddOns from './ProductAddOns'
 import ProductOverview from './ProductOverview'
-import { TbCurrentLocation } from 'react-icons/tb'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Form } from 'react-bootstrap'
@@ -40,8 +38,8 @@ function ProductInformation({ product }) {
     }
     return (
         <div>
-            <h6 className='h5'>{product.product_name}</h6>
-            <div className="d-md-flex align-items-end mb-3">
+            <h6 className='product-title'>{product.product_name}</h6>
+            <div className="d-md-flex align-items-end mb-md-3 mb-2">
                 <div className="text-sku mb-md-0 mb-2">SKU: {product?.sku}</div>
                 {
                     product?.common_review?.rating ?
@@ -57,20 +55,20 @@ function ProductInformation({ product }) {
                         : ''
                 }
             </div>
-            <div className="d-flex align-items-end mb-4">
+            <div className="d-md-flex align-items-end mb-md-4 mb-2">
                 <del className="text-secondary fw-600">₹{" "}{product.strike_price}</del>
-                <div className="fw-bold fs-3 text-info mx-3 lh-1">₹{" "}{product.price}</div>
+                <div className="fw-bold fs-3 text-info mx-md-3 lh-1 py-md-0 py-2">₹{" "}{product.price}</div>
                 <div className="text-info fs-6">You Save (₹{" "}{product.save_price}) </div>
             </div>
-            <div className="action-group mb-4">
+            <div className="action-group mb-lg-4">
                 <BuyButton className="mb-md-0 mb-3 btn btn-primary me-md-3 px-5 fw-semibold" product={product} />
                 <AddCartButton setCartId={setCartId} type='button' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={product} />
                 <AddFavButton className="ms-md-3 mb-md-0 mb-3 btn btn-outline-info rounded-box-circle me-md-3" product={product} />
                 <CompareButton className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle" product={product} />
             </div>
-            <h3 className="mb-3">Check availability for Delivery</h3>
+            <h3 className="sub-product-title my-3">Check availability for Delivery</h3>
             {errorMessage ? <div className='text-primary small mb-3'>{errorMessage}</div> : ""}
-            <Form onSubmit={handleSubmit(CheckAvailabilityHander)} className="d-inline-flex col-md-6 mb-4">
+            <Form onSubmit={handleSubmit(CheckAvailabilityHander)} className="pincode-input-group d-inline-flex col-md-6 mb-4">
                 <input type="number" min={0} {...register('pin_code', { required: true })} className={`form-control form-control-sm ${errors.pin_code ? 'border border-danger' : ''}`} placeholder='Pincode' />
                 <button loading={`${loading}`} type="submit" className="btn pe-3 btn-sm btn-link text-info h-100 fw-bold" >
                     Check
@@ -93,10 +91,10 @@ function ProductInformation({ product }) {
                 <div className="col-md-1 col-3 text-center p-0">
                     <img src={require('../../assets/icons/shopping-bag.png')} width={30} alt='gps' />
                 </div>
-                <div className="col-md-11 col-9 text-info  d-flex align-items-center">
+                <div className="col-md-11 col-9 text-info  d-md-flex align-items-center">
                     <div className="d-md-flex">
                         <div className="fw-bold">Pickup From Store:</div>
-                        <div className="text-dark ps-2"> {product.has_pickup_store ? 'Available' : 'Un available'}  for Pickup</div>
+                        <div className="text-dark ps-lg-2"> {product.has_pickup_store ? 'Available' : 'Un available'}  for Pickup</div>
                     </div>
                     { product.has_pickup_store ? <PickupFromStoreAddress type='button' /> : '' }
                 </div>

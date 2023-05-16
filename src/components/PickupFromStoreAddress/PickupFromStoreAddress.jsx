@@ -42,10 +42,10 @@ function PickupFromStoreAddress({ type }) {
                         </button>
                     </h5>
                     :
-                    <>
-                        <div className="vr ms-2"></div>
+                    <div className="d-flex align-items-center">
+                        <div><div className="vr ms-3 d-none d-lg-block"></div></div>
                         <button className="text-primary btn-link btn" onClick={() => setShow(!show)}><TbCurrentLocation className='me-1' /> Find Stores</button>
-                    </>
+                    </div>
             }
             {
                 address.store_address && type !== 'button' ?
