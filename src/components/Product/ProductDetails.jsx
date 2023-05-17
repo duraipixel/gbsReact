@@ -16,9 +16,17 @@ function ProductDetails({ product }) {
         <Container className="p-0">
           <Row className="sticky-wrapper">
             <Col xl={6} className="sticky-inner sticky-inner-pdp h-100 ">
-              <ProductBreadcrumb category={product.category_name} title={product.product_name} />
+              <ProductBreadcrumb
+                slug={product.category_slug}
+                category={product.category_name}
+                title={product.product_name}
+              />
               <div className="position-relative">
-                <span className="offer-badge"><div>{product.discount_percentage}% <span>OFF</span></div></span>
+                <span className="offer-badge">
+                  <div>
+                    {product.discount_percentage}% <span>OFF</span>
+                  </div>
+                </span>
                 <ProductGallery images={product.gallery || product.image} />
               </div>
             </Col>
@@ -45,7 +53,7 @@ function ProductDetails({ product }) {
           </section>
         )}
       </div>
-    )
+    );
   }
 }
 

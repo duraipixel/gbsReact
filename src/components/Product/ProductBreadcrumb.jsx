@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-function ProductBreadcrumb({ category, title }) {
+function ProductBreadcrumb({ slug, category, title }) {
+
   return (
     <div className="d-md-flex align-items-center">
       <div className="d-flex">
-        <Link to="/products">
+        <Link to={`/products?categories=${slug}`}>
           <small className="text-secondary">{category}</small>
         </Link>
         <div className="px-2">
