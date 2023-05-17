@@ -157,14 +157,10 @@ function ProductInformation({ product }) {
         <div className="col-md-11 col-9 text-info  d-md-flex align-items-center">
           <div className="d-md-flex">
             <div className="fw-bold col-4 align-c">Pickup From Store:</div>
-            <div className="text-dark ps-lg-2 ">
+            <div className="text-dark ps-lg-2 align-c">
               <>
-                {storeAddress ? (
-                  <>
-                    <span>
-                      {storeAddress?.address && storeAddress?.address}
-                    </span>
-                  </>
+                {product.has_pickup_store && storeAddress ? (
+                  <span>{storeAddress?.address && storeAddress?.address}</span>
                 ) : (
                   <>
                     {product.has_pickup_store ? "Available" : "Un available"}{" "}

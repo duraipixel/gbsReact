@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const PrefferedProcessor = () => {
   const modalData = useSelector((state) => state.homePageCollection.modalData);
-  console.log(modalData);
+  // console.log(modalData);
   return (
     <section className="new-arrivals preffered-processor">
       <div className="container">
