@@ -17,14 +17,12 @@ function CategoryFilters({ setCurrentLocation }) {
   useEffect(() => {
     searchParams.toString() === "categories=laptop-laptop"
       ? productListCategoryMenuApi("laptop").then((response) => {
-          //   console.log(response.data.child_category);
           setSubcategory(response.data.child_category);
         })
       : productListCategoryMenuApi().then((response) => {
-          //   console.log(response.data.child_category);
           setSubcategory(response.data.child_category);
         });
-  }, []);
+  }, [searchParams.toString()]);
   return (
     <Nav className="justify-content-center bg-dark text-light">
       {subcategory.length > 0
