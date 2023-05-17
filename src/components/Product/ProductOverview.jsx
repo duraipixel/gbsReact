@@ -10,7 +10,6 @@ function ProductOverview({ product }) {
                     </li>
                 ))}
             </ul>
-            <hr />
         </div>
     )
 }
