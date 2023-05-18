@@ -154,7 +154,7 @@ function ProductInformation({ product }) {
           <div className="d-md-flex">
             <div className="row">
               <div className="fw-bold col-lg-5 align-c">Pickup From Store:</div>
-              <div className="text-dark ps-lg-2 align-c col">
+              <div className="text-dark ps-lg-2 align-c col-lg-7">
                 <>
                   {product.has_pickup_store && address ? (
                     <span>
@@ -169,13 +169,11 @@ function ProductInformation({ product }) {
                 </>
               </div>
             </div>
-            <div className="col-lg-4 align-c">
-              {product.has_pickup_store ? (
+            {product.has_pickup_store && (
+              <div className="col-lg-4 align-c">
                 <PickupFromStoreAddress type="button" />
-              ) : (
-                ""
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

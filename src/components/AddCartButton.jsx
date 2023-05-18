@@ -59,7 +59,7 @@ function AddCartButton({ className, product, type, setCartId }) {
         )
     }
     if (type === 'button') return (
-        <button loading={`${loading}`} onClick={addOrRemoveCart} className={isAddCart ? 'btn btn-outline-primary' : className}>
+        <button loading={`${loading}`} onClick={addOrRemoveCart} className={isAddCart ? 'btn btn-outline-primary ms-3' : className}>
             {isAddCart ? "Remove" : "Add to cart"}
         </button>
     )
