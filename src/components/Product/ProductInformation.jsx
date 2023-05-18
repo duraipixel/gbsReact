@@ -12,6 +12,7 @@ import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFrom
 import { useSelector } from "react-redux";
 function ProductInformation({ product }) {
   const address = useSelector((state) => state.cartAddress);
+  console.log(product.has_pickup_store);
   const [checkAvailability, setAvailability] = useState(false);
   const [information, setInformation] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -156,7 +157,7 @@ function ProductInformation({ product }) {
               <div className="fw-bold col-lg-5 align-c">Pickup From Store:</div>
               <div className="text-dark ps-lg-2 align-c col-lg-7">
                 <>
-                  {product.has_pickup_store && address ? (
+                  {product?.has_pickup_store && address.store_address?.address ? (
                     <span>
                       {address?.store_address && address.store_address?.address}
                     </span>
