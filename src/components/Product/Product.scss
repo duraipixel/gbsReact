@@ -133,7 +133,7 @@
   font-size: 16px;
   line-height: 20px;
   top: 20px;
-  right: 15px;
+  right: 15px !important;
   z-index: 1;
 }
 
@@ -293,16 +293,16 @@ input.addon {
   }
 }
 
-@media only screen and (min-width: 1200px) {
-  .sticky-wrapper .sticky-inner.sticky-inner-pdp {
-    top: 8rem;
-  }
-}
+// @media only screen and (min-width: 1200px) {
+//   .sticky-wrapper .sticky-inner.sticky-inner-pdp {
+//     top: 8rem;
+//   }
+// }
 
-@media only screen and (min-width: 1200px) {
-  .sticky-wrapper .sticky-inner {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 16rem;
-  }
-}
+// @media only screen and (min-width: 1200px) {
+//   .sticky-wrapper .sticky-inner {
+//     position: -webkit-sticky;
+//     position: sticky;
+//     top: 16rem;
+//   }
+// }

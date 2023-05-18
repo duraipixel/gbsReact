@@ -15,7 +15,7 @@ function ProductDetails({ product }) {
       <div>
         <Container className="p-0">
           <Row className="sticky-wrapper">
-            <Col xl={6} className="sticky-inner sticky-inner-pdp h-100 ">
+            <Col xl={6} className="sticky-inner sticky-inner-pdp h-100 pt-lg-5">
               <ProductBreadcrumb
                 slug={product.category_slug}
                 category={product.category_name}
