@@ -1,6 +1,6 @@
 import ProductAddOns from "./ProductAddOns";
 import ProductOverview from "./ProductOverview";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Form } from "react-bootstrap";
 import { CheckProductAvailabilityApi } from "services/product.service";
@@ -9,11 +9,9 @@ import AddFavButton from "components/AddFavButton";
 import CompareButton from "components/CompareButton";
 import BuyButton from "components/BuyButton";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
+import { useSelector } from "react-redux";
 function ProductInformation({ product }) {
-  const [storeAddress, setStoreAddress] = useState(
-    JSON.parse(localStorage.getItem("store_address"))
-  );
-  //   let storeAddress = JSON.parse(localStorage.getItem("store_address"));
+  const address = useSelector((state) => state.cartAddress);
   const [checkAvailability, setAvailability] = useState(false);
   const [information, setInformation] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -40,9 +38,7 @@ function ProductInformation({ product }) {
     }
     setLoading(false);
   };
-  useEffect(() => {
-    setStoreAddress(JSON.parse(localStorage.getItem("store_address")));
-  }, [storeAddress]);
+
   return (
     <div>
       <h6 className="product-title">{product.product_name}</h6>
@@ -159,8 +155,10 @@ function ProductInformation({ product }) {
             <div className="fw-bold col-4 align-c">Pickup From Store:</div>
             <div className="text-dark ps-lg-2 align-c">
               <>
-                {product.has_pickup_store && storeAddress ? (
-                  <span>{storeAddress?.address && storeAddress?.address}</span>
+                {product.has_pickup_store && address ? (
+                  <span>
+                    {address?.store_address && address.store_address?.address}
+                  </span>
                 ) : (
                   <>
                     {product.has_pickup_store ? "Available" : "Un available"}{" "}
