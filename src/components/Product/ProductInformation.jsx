@@ -152,28 +152,30 @@ function ProductInformation({ product }) {
         </div>
         <div className="col-md-11 col-9 text-info  d-md-flex align-items-center">
           <div className="d-md-flex">
-            <div className="fw-bold col-4 align-c">Pickup From Store:</div>
-            <div className="text-dark ps-lg-2 align-c">
-              <>
-                {product.has_pickup_store && address ? (
-                  <span>
-                    {address?.store_address && address.store_address?.address}
-                  </span>
-                ) : (
-                  <>
-                    {product.has_pickup_store ? "Available" : "Un available"}{" "}
-                    for Pickup
-                  </>
-                )}
-              </>
+            <div className="row">
+              <div className="fw-bold col-lg-5 align-c">Pickup From Store:</div>
+              <div className="text-dark ps-lg-2 align-c col">
+                <>
+                  {product.has_pickup_store && address ? (
+                    <span>
+                      {address?.store_address && address.store_address?.address}
+                    </span>
+                  ) : (
+                    <>
+                      {product.has_pickup_store ? "Available" : "Un available"}{" "}
+                      for Pickup
+                    </>
+                  )}
+                </>
+              </div>
             </div>
-          </div>
-          <div className="col-4">
-            {product.has_pickup_store ? (
-              <PickupFromStoreAddress type="button" />
-            ) : (
-              ""
-            )}
+            <div className="col-lg-4 align-c">
+              {product.has_pickup_store ? (
+                <PickupFromStoreAddress type="button" />
+              ) : (
+                ""
+              )}
+            </div>
           </div>
         </div>
       </div>
