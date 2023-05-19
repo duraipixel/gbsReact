@@ -12,6 +12,7 @@ import CategoryFilters from "./ProductFilter/CategoryFilters";
 const ProductLists = () => {
   const [products, setProduct] = useState([]);
   const [fetching, setfetching] = useState(true);
+  const [tackLoader, setTackLoader] = useState(false);
   const [take, setTake] = useState(20);
   const location = useLocation();
   const { search } = useLocation();
@@ -20,10 +21,15 @@ const ProductLists = () => {
   const searchParams = new URLSearchParams(location.search);
   let filterData = searchParams.toString();
   useMemo(() => {
-    setfetching(true);
+    if(take === 20) {
+      setfetching(true);
+    } else {
+      setTackLoader(true)
+    }
     productsApi(search, take).then(({ data }) => {
       setProduct(data);
       setfetching(false);
+      setTackLoader(false)
       SetAllCheckBoxes(location);
     });
   }, [take, currentLocation, filterData]);
@@ -47,6 +53,7 @@ const ProductLists = () => {
               fetching={fetching}
               setTake={setTake}
               take={take}
+              tackLoader={tackLoader}
             />
           </Row>
         </Container>

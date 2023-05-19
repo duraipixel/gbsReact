@@ -10,6 +10,7 @@ const ProductListDetails = ({
   take,
   setCurrentLocation,
   setClearFilter,
+  tackLoader
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,7 +27,6 @@ const ProductListDetails = ({
       setClearFilter(false);
     }
   };
-
   return (
     <Col
       lg={9}
@@ -66,14 +66,19 @@ const ProductListDetails = ({
               ) : (
                 <>
                   <ProductListComponent products={products.products} />
-                  <center>
-                    <button
-                      onClick={() => setTake(take + 5)}
-                      className="btn mt-4 btn-outline-info"
-                    >
-                      Load more
-                    </button>
-                  </center>
+                  {
+                    products.total_count !== products.to ?
+                      <center>
+                        <button
+                          onClick={() => setTake(take + 5)}
+                          loading={tackLoader.toString()}
+                          className="btn mt-4 btn-outline-info"
+                        >
+                          Load more
+                        </button>
+                      </center>
+                    : ''
+                  }
                 </>
               )}
             </>

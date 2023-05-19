@@ -20,9 +20,8 @@ const productListCategoryMenuApi = async (payload) => {
   );
 };
 const productsApi = async (search, take) => {
-  const product_search = `${search !== "" ? search : "?"}&customer_id=${
-    AuthUser().id
-  }&take=${take}`;
+  const product_search = `${search !== "" ? search : "?"}&customer_id=${AuthUser().id
+    }&take=${take}`;
   return await axios.get(
     `${process.env.REACT_APP_BASE_URL}/get/products${product_search}`
   );
