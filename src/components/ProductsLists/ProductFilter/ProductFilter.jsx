@@ -56,7 +56,6 @@ const ProductFilter = ({
       setFilters(data);
     });
   }, []);
-
   return (
     <Col lg={3} className="py-md-5 align-self-start pt-3 h-100 ">
       <div className="filters-side">
