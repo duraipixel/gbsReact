@@ -134,7 +134,7 @@ function AddressForm() {
                   required: "This is required.",
                 })}
                 className={`${errors.address_type_id ? 'border-danger' : ''}`} >
-                <option value="">-- Choose --</option>
+                <option value=""> Select Your Address type </option>
                 {
                   addressMaster.length !== 0 && addressMaster.map((address_type) => (
                     <option key={address_type.id} value={address_type.id}>{address_type.name}</option>
@@ -179,7 +179,7 @@ function AddressForm() {
                   required: "This is required.",
                 })}
                 className={`${errors.post_code ? 'border-danger' : ''}`} >
-                <option value="">-- Choose --</option>
+                <option value=""> Select Your Pincode </option>
                 {
                   pincodeMaster.length !== 0 && pincodeMaster.map((item) => (
                     <option key={item.id} value={item.id}>{item.pincode}</option>
@@ -207,7 +207,7 @@ function AddressForm() {
                   required: "This is required.",
                 })}
                 className={`${errors.state ? 'border-danger' : ''}`} >
-                <option value="">-- Choose --</option>
+                <option value=""> Select Your State </option>
                 {
                   stateMaster.length !== 0 && stateMaster.map((state) => (
                     <option key={state.id} value={state.id}>{state.state_name}</option>
@@ -225,7 +225,7 @@ function AddressForm() {
                   required: "This is required.",
                 })}
                 className={`${errors.country ? 'border-danger' : ''}`} >
-                <option value="">-- Choose --</option>
+                <option value=""> Select Your Country </option>
                 {
                   countryMaster.length !== 0 && countryMaster.map((country) => (
                     <option key={country.id} value={country.id}>{country.name}</option>
