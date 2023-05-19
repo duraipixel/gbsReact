@@ -28,12 +28,6 @@ const ProductFilter = ({
   const clearAllFilters = () => {
     navigate("/products");
     dispatch(setfilter(''))
-    // var checkboxes = document.querySelectorAll("input:checked");
-    // for (var i = 0; i < checkboxes.length; i++) {
-    //   if (checkboxes[i].type === "checkbox") {
-    //     checkboxes[i].checked = false;
-    //   }
-    // } 
   };
 
   const filterAccordionHandler = (filters) => {
@@ -55,7 +49,7 @@ const ProductFilter = ({
       filterAccordionHandler(data);
       setFilters(data);
     });
-  }, []);
+  }, [filter]);
   return (
     <Col lg={3} className="py-md-5 align-self-start pt-3 h-100 ">
       <div className="filters-side">

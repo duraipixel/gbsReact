@@ -22,7 +22,7 @@ const Header = () => {
   const toggleHeader = () => {
     dispatch(
       setHeader({
-        status: !header,
+        status:  window.innerWidth < 992 ? !header : false,
       })
     );
     setNavMenu(!navMenu);
