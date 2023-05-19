@@ -79,21 +79,21 @@ function ProductInformation({ product }) {
       </div>
       <div className="action-group mb-lg-4">
         <BuyButton
-          className="mb-md-0 mb-3 btn btn-primary me-md-3 px-5 fw-semibold"
+          className="mb-md-0 mb-3 btn btn-primary px-5 fw-semibold"
           product={product}
         />
         <AddCartButton
           setCartId={setCartId}
           type="button"
-          className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold"
+          className="ms-md-3 mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold"
           product={product}
         />
         <AddFavButton
-          className="ms-md-3 mb-md-0 mb-3 btn btn-outline-info rounded-box-circle me-md-3"
+          className="ms-md-3 mb-md-0 mb-3 btn btn-outline-info rounded-box-circle"
           product={product}
         />
         <CompareButton
-          className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle"
+          className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle ms-md-3"
           product={product}
         />
       </div>

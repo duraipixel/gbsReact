@@ -49,7 +49,7 @@ function AddCartButton({ className, product, type, setCartId }) {
   };
   if (product.stock_status === "out_of_stock" && type === "button") {
     return (
-      <button className="btn btn-primary text-white ms-3">out of stock</button>
+      <button className="btn btn-primary text-white ms-md-3">out of stock</button>
     );
   }
   if (product.stock_status === "out_of_stock" && type === "checkbox") {
@@ -69,7 +69,7 @@ function AddCartButton({ className, product, type, setCartId }) {
       <button
         loading={`${loading}`}
         onClick={addOrRemoveCart}
-        className={isAddCart ? "btn btn-outline-primary ms-3" : className}
+        className={isAddCart ? "btn btn-outline-primary ms-md-3 mb-md-0 mb-3" : className}
       >
         {isAddCart ? "Remove" : "Add to cart"}
       </button>
