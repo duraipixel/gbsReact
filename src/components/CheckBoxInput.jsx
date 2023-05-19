@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useNavigate } from "react-router-dom"
 import { setfilter } from "redux/features/filterSlice"
 
@@ -12,6 +12,7 @@ function CheckBoxInput({ data, name }) {
     const navigate     = useNavigate()
     const { search }   = useLocation()
     const searchParams = new URLSearchParams(search)
+    const filter = useSelector((state) => state.filter)
 
     const handler = () => {
         setisChecked(!isChecked)
@@ -24,12 +25,13 @@ function CheckBoxInput({ data, name }) {
         navigate(`/products?${searchParams.toString()}`);
         dispatch(setfilter(`/products?${searchParams.toString()}`))
     }
-
     useEffect(() => {
         if (search && search.includes(data?.slug)) {
             setisChecked(true)
+        } else {
+            setisChecked(false)
         }
-    }, [])
+    }, [filter])
 
     if (data !== undefined) return (
         <div>

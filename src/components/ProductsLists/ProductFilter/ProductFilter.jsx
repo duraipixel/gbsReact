@@ -26,15 +26,14 @@ const ProductFilter = ({
   filterData = filterData && filterData[1].split("_");
 
   const clearAllFilters = () => {
-    var checkboxes = document.querySelectorAll("input:checked");
-    console.log(checkboxes)
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].type === "checkbox") {
-        checkboxes[i].checked = false;
-      }
-    }
     navigate("/products");
     dispatch(setfilter(''))
+    // var checkboxes = document.querySelectorAll("input:checked");
+    // for (var i = 0; i < checkboxes.length; i++) {
+    //   if (checkboxes[i].type === "checkbox") {
+    //     checkboxes[i].checked = false;
+    //   }
+    // } 
   };
 
   const filterAccordionHandler = (filters) => {
