@@ -12,7 +12,7 @@ import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFrom
 import { useSelector } from "react-redux";
 function ProductInformation({ product }) {
   const address = useSelector((state) => state.cartAddress);
-  console.log(product.has_pickup_store);
+  // console.log(product.has_pickup_store);
   const [checkAvailability, setAvailability] = useState(false);
   const [information, setInformation] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -143,7 +143,7 @@ function ProductInformation({ product }) {
       ) : (
         ""
       )}
-      <div className="row align-items-center mb-2">
+      {/* <div className="row align-items-center mb-2">
         <div className="col-md-1 col-3 text-center p-0">
           <img
             src={require("../../assets/icons/shopping-bag.png")}
@@ -177,7 +177,37 @@ function ProductInformation({ product }) {
             )}
           </div>
         </div>
+      </div> */}
+      <div className="flex-wrap align-c gap-2">
+        <div className="me-1">
+          <img
+            src={require("../../assets/icons/shopping-bag.png")}
+            width={30}
+            alt="gps"
+          />
+        </div>
+        <div className="fw-bold">Pickup From Store:</div>
+        {!address.store_address?.address && (
+          <div>
+            {product.has_pickup_store ? "Available" : "Un available"} for Pickup
+          </div>
+        )}
+        <div>
+          {product.has_pickup_store && (
+            <div>
+              <PickupFromStoreAddress type="button" />
+            </div>
+          )}
+        </div>
       </div>
+      {product?.has_pickup_store && address.store_address?.address && (
+        <div>
+          <div className="fw-bold">Selected Store:</div>
+          <div>
+            {address?.store_address && address.store_address?.address}
+          </div>
+        </div>
+      )}
       <ProductOverview product={product} />
       <ProductAddOns setCartId={setCartId} cartId={cartId} product={product} />
     </div>
