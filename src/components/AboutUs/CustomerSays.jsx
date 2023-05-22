@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import customerimage from "assets/images/customer.png";
-import customer1 from "assets/images/bg-11.jpg";
+import customer1 from "assets/images/bg-12.jpg"; 
+import customer2 from "assets/images/bg-13.jpg"; 
 import client1 from "assets/images/client-1.jpg";
 import client2 from "assets/images/client-2.jpg";
 import client3 from "assets/images/client-3.jpg";
@@ -40,23 +41,17 @@ function CustomerSays() {
 
                                     <div className='customer-detsil text-center'>
                                         <img src={customerimage} alt="" className="img-fluid" />
-                                        <h4>Lenovo Exclusive store</h4><br />
+                                        <h4>Lenovo Exclusive store | GBS Systems</h4><br />
                                         {/* <span className='txt-fill'>Software Engineer</span> */}
                                         <VideoBox bgImage={customer1} src="https://www.youtube.com/embed/-ThuAOC0PHM" /> 
                                     </div>
 
-                                    {/* <div className='customer-detsil text-center'>
-                                        <img src={customerimage} alt="" className="img-fluid" />
-                                        <h4>John Doe</h4>
-                                        <span className='txt-fill'>Software Engineer</span>
-                                        <div className='ceovds'>
-                                            <img src={customer1} alt="" />
-                                            <Link to="/" id="play-video" className="video-play-button">
-                                                <span></span>
-                                            </Link>
-                                        </div>
-                                    </div> */}
-
+                                    <div className='customer-detsil text-center'>
+                                    <img src={customerimage} alt="" className="img-fluid" />
+                                    <h4> Nexus Forum Mall, Vadapalani | GBS Systems</h4><br />
+                                    {/* <span className='txt-fill'>Software Engineer</span> */}
+                                    <VideoBox bgImage={customer2} src="https://www.youtube.com/embed/5UIQz7rZG3g" /> 
+                                    </div> 
                                 </Slider>
                             </div>
                         </div>
