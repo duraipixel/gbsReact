@@ -226,7 +226,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                     </g>
                   </g>
                 </svg>
-                <div className={`me-auto text-dark ms-2`}>Store Locator</div>
+                <div className={`me-auto text-dark ms-2`}>Store locator for Sales</div>
               </div>
             </li>
             <li

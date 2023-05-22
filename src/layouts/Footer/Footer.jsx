@@ -98,7 +98,7 @@ const Footer = () => {
                 <Link to="/terms-conditions">Terms & Conditions</Link>
                 <Link to="/privacy-policy">Privacy Policy</Link>
                 <Link to="/warantty-policy">Warranty Policy</Link>
-                <Link to="/store-locator">Store Locator</Link>
+                <Link to="/store-locator">Store locator for Sales</Link>
                 <Link to="/service-center-locator">Service Center Locator</Link>
                 {/* <Link to="/">Support Center</Link> */}
                 {/* <Link to="/">Terms Of Use</Link> */}

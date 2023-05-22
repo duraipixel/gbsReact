@@ -84,7 +84,7 @@ function ContactUs() {
               <div className="deals-imgs stre-lctr">
                 <img src={locator1} alt="" className="img-fluid" />
                 <div className="btm-liner text-left">
-                  <h4>Store Locator</h4>
+                  <h4>Store locator for Sales</h4>
                   <Link to="/store-locator"> Locate Us</Link>
                 </div>
               </div>
