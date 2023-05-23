@@ -3,7 +3,7 @@ import AddCompareModal from "components/AddCompareModal";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { removeProduct } from "redux/features/compareSlice";
 import { compareProductApi } from "services/product.service";
 import { Loader } from "utils";
@@ -14,6 +14,7 @@ function ComparePage() {
   const products = useSelector((state) => state.compareProducts);
   const dispatch = useDispatch();
   const [compareList, setCompareList] = useState(false)
+  const navigate = useNavigate();
   useEffect(() => {
     if (products.value.length > 0) {
       var product_ids = products.value.map(item => item.id)
@@ -62,7 +63,7 @@ function ComparePage() {
                                 <path d="M1.5 1.5L16.5 16.5" stroke="#BC2F03" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
                             </button>
-                            <div className="bg-white h-100 p-3">
+                            <div className="bg-white h-100 p-3 cursor" onClick={() => navigate(`/products/${product.product_url}`)}>
                               <img
                                 src={product.image}
                                 alt={product.product_name}
@@ -70,8 +71,8 @@ function ComparePage() {
                               />
                             </div>
                             <div className="p-lg-3">
-                              <p className="small">{product.product_name.substring(0, 45)}...</p>
-                              <b>₹{product.price}</b>
+                              <p className="small cursor" onClick={() => navigate(`/products/${product.product_url}`)}>{product.product_name.substring(0, 45)}...</p>
+                              <b className="cursor" onClick={() => navigate(`/products/${product.product_url}`)}>₹{product.price}</b>
                               <div className="d-lg-flex justify-content-center align-items-center mt-2">
                                 {/* <AddFavButton buttonType="icon" className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} /> */}
                                 <AddCartButton
