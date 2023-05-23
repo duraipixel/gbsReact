@@ -10,6 +10,7 @@ import CompareButton from "components/CompareButton";
 import BuyButton from "components/BuyButton";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
 import { useSelector } from "react-redux";
+import { RiMapPinLine } from "react-icons/ri";
 function ProductInformation({ product }) {
   const address = useSelector((state) => state.cartAddress);
   // console.log(product.has_pickup_store);
@@ -202,9 +203,14 @@ function ProductInformation({ product }) {
       </div>
       {product?.has_pickup_store && address.store_address?.address && (
         <div>
-          <div className="fw-bold">Selected Store:</div>
-          <div>
-            {address?.store_address && address.store_address?.address}
+          <div className="fw-bold mt-1">
+            {address?.store_address && address.store_address?.title}
+          </div>
+          <div className="flex gap-1 mt-1">
+            <RiMapPinLine className="mt-1"/>
+            <span>
+              {address?.store_address && address.store_address?.address}
+            </span>
           </div>
         </div>
       )}
