@@ -68,6 +68,7 @@ function ComparePage() {
                                 src={product.image}
                                 alt={product.product_name}
                                 width={100}
+                                height={100}
                               />
                             </div>
                             <div className="p-lg-3">
