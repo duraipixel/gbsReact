@@ -14,6 +14,7 @@ import { RiMapPinLine } from "react-icons/ri";
 import { setStoreAddress } from "redux/features/cartAddressSlice";
 import { toast } from "react-hot-toast";
 function ProductInformation({ product }) {
+  console.log(product)
   const address = useSelector((state) => state.cartAddress);
   const dispatch = useDispatch();
   const [checkAvailability, setAvailability] = useState(false);
@@ -190,15 +191,16 @@ function ProductInformation({ product }) {
           />
         </div>
         <div className="fw-bold">Pickup From Store:</div>
-        {!address.store_address?.address && (
           <div>
-            {product.has_pickup_store ? "Available" : "Un available"} for Pickup
+            {!product.has_pickup_store && "Un available for Pickup"} 
           </div>
-        )}
+          <div>
+            {!address.store_address?.address && "Available for Pickup"} 
+          </div>
         <div>
           {product.has_pickup_store && (
             <div>
-              <PickupFromStoreAddress type="button" />
+              <PickupFromStoreAddress type="button" brandId={product.brand_id}/>
             </div>
           )}
         </div>

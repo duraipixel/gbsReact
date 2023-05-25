@@ -8,13 +8,13 @@ import { setStoreAddress } from "redux/features/cartAddressSlice"
 import { toast } from "react-hot-toast"
 import { TbCurrentLocation } from "react-icons/tb"
 
-function PickupFromStoreAddress({ type }) {
+function PickupFromStoreAddress({ type, brandId }) {
     const address = useSelector((state) => state.cartAddress)
     const dispatch = useDispatch()
     const [stores, setStores] = useState([])
     const [show, setShow] = useState(false)
     const [filter, setFilter] = useState({
-        brand_id: null,
+        brand_id: brandId ? brandId : null,
         post_code: null,
         center_id: null,
     })
@@ -65,7 +65,7 @@ function PickupFromStoreAddress({ type }) {
                 <div className="bg-dark modal-header flex-column">
                     <button onClick={() => setShow(!show)} className="btn btn-close btn-close-white float-end"></button>
                     <h3 className="text-primary fw-bold mb-3 text-uppercase">Service Center Locator</h3>
-                    <Filters stores={stores} filter={filter} setFilter={setFilter} />
+                    <Filters stores={stores} filter={filter} setFilter={setFilter} brandId={brandId}/>
                 </div>
                 <Modal.Body style={{ minHeight: 450 }} className="p-0">
                     <StoreLocation stores={stores} selectStoreHander={selectStoreHander} />
