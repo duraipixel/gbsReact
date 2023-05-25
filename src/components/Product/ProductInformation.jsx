@@ -147,41 +147,6 @@ function ProductInformation({ product }) {
       ) : (
         ""
       )}
-      {/* <div className="row align-items-center mb-2">
-        <div className="col-md-1 col-3 text-center p-0">
-          <img
-            src={require("../../assets/icons/shopping-bag.png")}
-            width={30}
-            alt="gps"
-          />
-        </div>
-        <div className="col-md-11 col-9 text-info  d-md-flex align-items-center">
-          <div className="d-md-flex">
-            <div className="row">
-              <div className="fw-bold col-lg-5 align-c">Pickup From Store:</div>
-              <div className="text-dark ps-lg-2 align-c col-lg-7">
-                <>
-                  {product?.has_pickup_store && address.store_address?.address ? (
-                    <span>
-                      {address?.store_address && address.store_address?.address}
-                    </span>
-                  ) : (
-                    <>
-                      {product.has_pickup_store ? "Available" : "Un available"}{" "}
-                      for Pickup
-                    </>
-                  )}
-                </>
-              </div>
-            </div>
-            {product.has_pickup_store && (
-              <div className="col-lg-4 align-c">
-                <PickupFromStoreAddress type="button" />
-              </div>
-            )}
-          </div>
-        </div>
-      </div> */}
       <div className="flex-wrap align-c gap-2">
         <div className="me-1">
           <img
