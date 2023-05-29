@@ -55,6 +55,7 @@ const ServiceCenterLocator = () => {
     <>
       <Helmet>
         <title>{serviceCenterData?.meta?.title || "Service Center Locator | GBS"}</title>
+        <link rel="canonical" href={window.location.href} />
         <meta
           name="description"
           content={serviceCenterData?.meta?.description}

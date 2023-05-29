@@ -39,6 +39,7 @@ function ProductPage() {
                   <>
                     <Helmet>
                       <title>{product?.meta?.title || "Product Details | GBS"}</title>
+                      <link rel="canonical" href={window.location.href} />
                       <meta name="description" content={product?.meta?.description} />
                       <meta name="keywords" content={product?.meta?.keywords} />
                     </Helmet>

@@ -40,6 +40,7 @@ const ServiceCenterDetails = () => {
     <>
       <Helmet>
         <title>{serviceCenterData?.meta?.title || "Service Center Details | GBS"}</title>
+        <link rel="canonical" href={window.location.href} />
         <meta
           name="description"
           content={serviceCenterData?.meta?.description}

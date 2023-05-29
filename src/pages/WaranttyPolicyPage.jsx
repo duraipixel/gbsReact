@@ -12,6 +12,7 @@ function WaranttyPolicyPage() {
     <div>
       <Helmet>
         <title>{page?.meta?.title || "Warantty Policy | GBS"}</title>
+        <link rel="canonical" href={window.location.href} />
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>

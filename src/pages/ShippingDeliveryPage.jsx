@@ -12,6 +12,7 @@ function ShippingDeliveryPage() {
     <div>
       <Helmet>
         <title>{page?.meta?.title || "Shipping Delivery | GBS"}</title>
+        <link rel="canonical" href={window.location.href} />
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>

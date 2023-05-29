@@ -12,6 +12,7 @@ const CartPage = () => {
     <div>
       <Helmet>
         <title>{page?.meta?.title || "Cart | GBS"}</title>
+        <link rel="canonical" href={window.location.href} />
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>

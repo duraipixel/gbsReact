@@ -45,6 +45,7 @@ const HomePage = () => {
     <div>
       <Helmet>
         <title>{page?.meta?.title || "Home | GBS"}</title>
+        <link rel="canonical" href={window.location.href} />
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>
