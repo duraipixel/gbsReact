@@ -12,7 +12,7 @@ function ProductCollection() {
         <div className="section-wrapper section-border-bottom" key={index}>
           <div className="container px-0 px-md-3">
             <div className="d-flex justify-content-between align-items-center mb-2 mb-md-4 px-3">
-              <h2 className="section-title m-0 w-75 text-start">{collection.collection_name}</h2>
+              <h4 className="h2 section-title m-0 w-75 text-start">{collection.collection_name}</h4>
               <Link to={`/products?collection=${collection.collection_slug}`}>
                 <small className="d-flex align-items-center">
                   View All <FiChevronRight className="ms-2"/>

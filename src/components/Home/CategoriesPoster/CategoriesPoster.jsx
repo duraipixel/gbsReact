@@ -15,7 +15,7 @@ const CategoriesPoster = () => {
     return (
       <div className="section-wrapper bg-light">
         <div className="container">
-          <h1 className="section-title">Products Available In-store</h1>
+          <h2 className="section-title">Products Available In-store</h2>
           <div className="row g-3">
             {subcategoryCollections.map(
               (item, index) =>

@@ -9,7 +9,7 @@ const NarrowSearch = () => {
     <>
       <div className="section-wrapper">
         <div className="container">
-          <h2 className="section-title">Narrow Your Search to the Brands you Trust</h2>
+          <h5 className="h2 section-title">Narrow Your Search to the Brands you Trust</h5>
           <div className="row g-3 justify-content-center">
             {
               brands.map((item, i) => (

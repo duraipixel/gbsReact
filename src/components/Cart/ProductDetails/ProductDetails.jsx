@@ -119,7 +119,7 @@ const ProductDetails = ({
   return (
     <>
       <div className="card border-0">
-        <h3 className="card-header bg-white fw-bold">Shopping Cart</h3>
+        <h1 className="h3 card-header bg-white fw-bold">Shopping Cart</h1>
         <ul
           className="list-group rounded list-group-flush"
           style={{ maxHeight: "460px", overflow: "auto" }}

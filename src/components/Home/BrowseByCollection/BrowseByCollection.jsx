@@ -9,7 +9,7 @@ const BrowseByCollection = () => {
     browseHome.map((browse, index) => (
       <div className="section-wrapper" key={index} style={{ backgroundColor: browse.color }}>
         <div className="container">
-          <h2 className="section-title text-white">{browse.title}</h2>
+          <h3 className="h2 section-title text-white">{browse.title}</h3>
           <div className="row g-3">
             {browse.children.map((item, seIndex) => (
               <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-6" key={seIndex}>
