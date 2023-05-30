@@ -46,7 +46,7 @@ function ProductInformation({ product }) {
 
   return (
     <div>
-      <h6 className="product-title">{product.product_name}</h6>
+      <h1 className="h6 product-title">{product.product_name}</h1>
       <div className="d-md-flex align-items-end mb-md-3 mb-2">
         <div className="text-sku mb-md-0 mb-2">SKU: {product?.sku}</div>
         {product?.common_review?.rating ? (

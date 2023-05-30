@@ -36,9 +36,9 @@ const ProductListDetails = ({
         <Col className="list-details-side">
           <div className="d-sm-flex justify-content-between mb-md-5 mb-2 text-md-start text-center">
             <div className="primary-heads">
-              <h3>
+              <h1 className="h3">
                 Displaying {products.to} of {products.total_count} results
-              </h3>
+              </h1>
             </div>
             <div className="col-lg-3">
               <div className="input-group ">
