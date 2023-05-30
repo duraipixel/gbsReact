@@ -45,18 +45,9 @@ const Combos = () => {
                   <div className="ari-img">
                     <img
                       src={combo1}
-                      alt=""
+                      alt="combo-pic"
                       className="img-fluid poster-image w-100"
                     />
-                    {/* <div className="row">
-    <div className="col">
-    <img src={combo1} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    <LinkiOutlinePlus />
-    <div className="col mt-90">
-    <img src={combo2} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    </div> */}
                     <div className="off-prc">
                       <h3>
                         {" "}
@@ -98,18 +89,9 @@ const Combos = () => {
                   <div className="ari-img">
                     <img
                       src={combo2}
-                      alt=""
+                      alt="combo-pic"
                       className="img-fluid poster-image w-100"
                     />
-                    {/* <div className="row">
-    <div className="col">
-    <img src={combo1} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    <LinkiOutlinePlus />
-    <div className="col mt-90">
-    <img src={combo2} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    </div> */}
                     <div className="off-prc">
                       <h3>
                         {" "}
@@ -151,21 +133,9 @@ const Combos = () => {
                   <div className="ari-img">
                     <img
                       src={combo3}
-                      alt=""
+                      alt="combo-pic"
                       className="img-fluid poster-image w-100"
                     />
-                    {/* <div className="row">
-    <div className="col">
-    <img src={combo1} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    <LinkiOutlinePlus />
-    <div className="col mt-90">
-    <img src={combo2} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    </div> */}
-                    {/* <div className="off-prc">
-    <h3> 30% <span>OFF</span></h3>
-    </div> */}
                   </div>
 
                   <div className="ari-cnt text-center">
@@ -201,21 +171,9 @@ const Combos = () => {
                   <div className="ari-img">
                     <img
                       src={combo4}
-                      alt=""
+                      alt="combo-pic"
                       className="img-fluid poster-image w-100"
                     />
-                    {/* <div className="row">
-    <div className="col">
-    <img src={combo1} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    <LinkiOutlinePlus />
-    <div className="col mt-90">
-    <img src={combo2} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    </div> */}
-                    {/* <div className="off-prc">
-    <h3> 30% <span>OFF</span></h3>
-    </div> */}
                   </div>
 
                   <div className="ari-cnt text-center">
@@ -251,18 +209,9 @@ const Combos = () => {
                   <div className="ari-img">
                     <img
                       src={combo5}
-                      alt=""
+                      alt="combo-pic"
                       className="img-fluid poster-image w-100"
                     />
-                    {/* <div className="row">
-    <div className="col">
-    <img src={combo1} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    <LinkiOutlinePlus />
-    <div className="col mt-90">
-    <img src={combo2} alt="" className="img-fluid poster-image w-100" />
-    </div> 
-    </div> */}
                     <div className="off-prc">
                       <h3>
                         {" "}

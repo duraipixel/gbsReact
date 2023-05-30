@@ -15,7 +15,7 @@ const PaymentDetails = ({ order }) => {
             <p>Grand Total</p>
           </Col>
           <Col className="text-align-right">
-            <img src={require("assets/images/Cart/razorpay.png")} alt="" />
+            <img src={require("assets/images/Cart/razorpay.png")} alt="razorpay-icon" />
             <p>₹{" "}{order.sub_total}</p>
             <p>₹{" "}{order.tax_amount}</p>
             <h5>₹{" "}{order.amount}</h5>

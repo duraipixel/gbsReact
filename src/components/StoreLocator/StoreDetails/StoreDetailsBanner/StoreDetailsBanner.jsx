@@ -9,13 +9,13 @@ const StoreDetailsBanner = ({ storeLocation }) => {
           src={storeLocation.banner}
           style={{ height: "400px", width: "100%" }}
           className="img-fluid"
-          alt=""
+          alt="banner"
         />
         <img
           className="img-fluid img-overlay"
           style={{ height: "400px", width: "100%" }}
           src={require("assets/Store/overlay.png")}
-          alt=""
+          alt="overlay"
         />
         <div className="overlay-text">
           <h3>{storeLocation.title}</h3>

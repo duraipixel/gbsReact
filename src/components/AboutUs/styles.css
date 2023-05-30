@@ -536,3 +536,11 @@
     margin: 130px 0px 0px;
   }
 }
+
+.ceo-msg h1{
+  font-family: Outfit;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px;
+  margin-bottom: 25px;
+}

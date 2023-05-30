@@ -17,7 +17,7 @@ const PrefferedProcessor = () => {
                     <div className="proc-img">
                       <img
                         src={banner}
-                        alt=""
+                        alt="banner-pic"
                         className="img-fluid w-100 poster-image"
                       />
                     </div>

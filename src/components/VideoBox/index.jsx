@@ -7,7 +7,7 @@ function VideoBox({ src, bgImage }) {
     return (
         <>
             <div className='ceovds'>
-                <img src={bgImage} alt="" />
+                <img src={bgImage} alt="bg-pic" />
                 <button className="video-play-button" onClick={() => setModalShow(true)}>
                     <span></span>
                 </button>

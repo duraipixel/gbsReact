@@ -28,7 +28,7 @@ const ServiceCenterLocationDetails = ({ serviceCenterData }) => {
           <Col lg={6}>
             <img
               src={serviceCenterData.service_center_image}
-              alt=""
+              alt="service_center_image"
               className="img-fluid"
             />
           </Col>

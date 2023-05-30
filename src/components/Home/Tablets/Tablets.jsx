@@ -49,7 +49,7 @@ const Tablets = () => {
                   <div className="ari-img">
                     <img
                       src={Poster1}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">
@@ -93,7 +93,7 @@ const Tablets = () => {
                   <div className="ari-img">
                     <img
                       src={Poster2}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">
@@ -138,7 +138,7 @@ const Tablets = () => {
                   <div className="ari-img">
                     <img
                       src={Poster3}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                   </div>
@@ -177,7 +177,7 @@ const Tablets = () => {
                   <div className="ari-img">
                     <img
                       src={Poster4}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">
@@ -222,7 +222,7 @@ const Tablets = () => {
                   <div className="ari-img">
                     <img
                       src={Poster5}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">
@@ -278,19 +278,19 @@ const Tablets = () => {
             </div>
 
             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <img src={screen1} alt="" className="img-fluid poster-image" />
+              <img src={screen1} alt="poster-pic" className="img-fluid poster-image" />
             </div>
 
             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <img src={screen2} alt="" className="img-fluid poster-image" />
+              <img src={screen2} alt="poster-pic" className="img-fluid poster-image" />
             </div>
 
             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <img src={screen3} alt="" className="img-fluid poster-image" />
+              <img src={screen3} alt="poster-pic" className="img-fluid poster-image" />
             </div>
 
             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <img src={screen4} alt="" className="img-fluid poster-image" />
+              <img src={screen4} alt="poster-pic" className="img-fluid poster-image" />
             </div>
           </div>
         </div>

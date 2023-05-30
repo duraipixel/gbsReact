@@ -37,7 +37,7 @@ function ContactUs() {
                 <p>We'd love to hear from you</p>
 
                 <div className="home-products testimonials">
-                  <img src={location} alt="" />
+                  <img src={location} alt="location-icon" />
                   <h4>Location</h4>
                   <h6>
                     1070A, Munusamy Salai,
@@ -47,14 +47,14 @@ function ContactUs() {
                 </div>
 
                 <div className="home-products testimonials">
-                  <img src={call} alt="" />
+                  <img src={call} alt="call-icon" />
                   <h4>Call Us</h4>
                   <h6>Sales : +91 91 96003 76222</h6>
                   <h6>Service : +91 98416 03332</h6>
                 </div>
 
                 <div className="home-products testimonials">
-                  <img src={mail} alt="" />
+                  <img src={mail} alt="mail-icon" />
                   <h4>Mail Us</h4>
                   <h6>
                     {" "}
@@ -82,7 +82,7 @@ function ContactUs() {
           <div className="row mt-5">
             <div className="col-lg-6">
               <div className="deals-imgs stre-lctr">
-                <img src={locator1} alt="" className="img-fluid" />
+                <img src={locator1} alt="location-icon" className="img-fluid" />
                 <div className="btm-liner text-left">
                   <h4>Store locator for Sales</h4>
                   <Link to="/store-locator"> Locate Us</Link>
@@ -92,7 +92,7 @@ function ContactUs() {
 
             <div className="col-lg-6">
               <div className="deals-imgs stre-lctr">
-                <img src={locator1} alt="" className="img-fluid" />
+                <img src={locator1} alt="location-icon" className="img-fluid" />
                 <div className="btm-liner text-left">
                   <h4>Service Locator</h4>
                   <Link to="/service-center-locator"> Locate Us</Link>

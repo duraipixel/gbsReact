@@ -45,7 +45,7 @@ const PerfectStudents = () => {
                   <div className="ari-img">
                     <img
                       src={Poster1}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">
@@ -95,7 +95,7 @@ const PerfectStudents = () => {
                   <div className="ari-img">
                     <img
                       src={Poster2}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">
@@ -145,7 +145,7 @@ const PerfectStudents = () => {
                   <div className="ari-img">
                     <img
                       src={Poster3}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                   </div>
@@ -189,7 +189,7 @@ const PerfectStudents = () => {
                   <div className="ari-img">
                     <img
                       src={Poster4}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">
@@ -239,7 +239,7 @@ const PerfectStudents = () => {
                   <div className="ari-img">
                     <img
                       src={Poster5}
-                      alt=""
+                      alt="poster-pic"
                       className="img-fluid poster-image"
                     />
                     <div className="off-prc">

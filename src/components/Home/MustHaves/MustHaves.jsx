@@ -21,7 +21,7 @@ const MustHaves = () => {
                 <Link to={`products?handpicked=${item.slug}`} >
                   <img
                     src={item.image}
-                    alt=""
+                    alt={item.slug}
                     className="img-fluid poster-image rounded shadow"
                   />
                 </Link>

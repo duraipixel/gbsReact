@@ -27,7 +27,7 @@ function ReviewsList({ product_id }) {
                             reviews.map((review) => (
                                 <div key={review.id} className="d-md-flex mb-3">
                                     <div>
-                                        <img width={45} className='rounded-circle' src={`https://ui-avatars.com/api/?name=${review.customer.first_name}&background=random`} alt="" />
+                                        <img width={45} className='rounded-circle' src={`https://ui-avatars.com/api/?name=${review.customer.first_name}&background=random`} alt="review-avatar" />
                                     </div>
                                     <div className="ps-md-3">
                                         <h6 className="fw-500 fs-18 m-0 lh-1">Carol Barrett</h6>

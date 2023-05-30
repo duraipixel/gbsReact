@@ -43,7 +43,7 @@ const Footer = () => {
         <Container>
           <Row>
             <Col xs={12} sm={12} md={6} lg={3} xl={3}>
-              <img src={siteInfo.logo} alt="" />
+              <img src={siteInfo.logo} alt="logo" />
               <ListGroup>
                 {siteInfo.links.map((i, index) => (
                   <ListGroup.Item key={index}>

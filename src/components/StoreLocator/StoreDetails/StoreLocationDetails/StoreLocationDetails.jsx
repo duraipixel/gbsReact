@@ -28,7 +28,7 @@ const StoreLocationDetails = ({ storeLocation }) => {
             </div>
           </Col>
           <Col lg={6}>
-            <img src={storeLocation.store_image} alt="" className="img-fluid" />
+            <img src={storeLocation.store_image} alt="store-pic" className="img-fluid" />
           </Col>
         </Row>
       </Container>

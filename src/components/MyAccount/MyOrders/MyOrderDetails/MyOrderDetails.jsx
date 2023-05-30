@@ -1,5 +1,5 @@
 import { Col, Row } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./styles.scss";
 import PaymentDetails from "./PaymentDetails";
 import { FaCheckCircle } from "react-icons/fa";
@@ -64,7 +64,7 @@ const MyOrderDetails = () => {
                       <Fragment key={i}>
                         <div className="flex-jc-btwn pt-1">
                           <div className="flex gap-3 align-c flex-wrap">
-                            <img src={item.image} alt="" width={60} />
+                            <img src={item.image} alt="product-pic" width={60} />
                             <p>{item.product_name.substring(0, 50)}</p>
                           </div>
                           <div className="flex-jc-btwn t-head-gap align-c">
@@ -85,12 +85,6 @@ const MyOrderDetails = () => {
                       <h6>{order.shipping.name}</h6>
                       <p>{order.shipping.address}</p>
                       <p>Phone: +91 {order.shipping.mobile_no}</p>
-                      {/* <h5>Shipping Partner</h5>
-                      <img
-                        src={require("assets/images/myOrders/Bluedart.png")}
-                        alt=""
-                      />
-                      <p>AWB: 28443321126</p> */}
                     </Col>
                     <div className="vr"></div>
                     <Col>
