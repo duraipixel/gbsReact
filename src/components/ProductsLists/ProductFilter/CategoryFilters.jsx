@@ -14,14 +14,13 @@ function CategoryFilters({ setCurrentLocation }) {
     setCurrentLocation(`?${searchParams.toString()}`);
     navigate(`/products?${searchParams.toString()}`);
   };
+  console.log(searchParams.toString().split("=")[1]);
   useEffect(() => {
-    searchParams.toString() === "categories=laptop-laptop"
-      ? productListCategoryMenuApi("laptop").then((response) => {
-          setSubcategory(response.data.child_category);
-        })
-      : productListCategoryMenuApi().then((response) => {
-          setSubcategory(response.data.child_category);
-        });
+    productListCategoryMenuApi(searchParams.toString().split("=")[1]).then(
+      (response) => {
+        setSubcategory(response.data.child_category);
+      }
+    );
   }, [searchParams.toString()]);
   return (
     <Nav className="justify-content-center bg-dark text-light">
