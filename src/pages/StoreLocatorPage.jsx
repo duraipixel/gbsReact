@@ -55,10 +55,9 @@ const StoreLocatorPage = () => {
   ) : (
     <>
       <Helmet>
-        <title>{storeData?.meta?.title || "Store locator for Sales | GBS"}</title>
+        <title>Store Location - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
-        <meta name="description" content={storeData?.meta?.description} />
-        <meta name="keywords" content={storeData?.meta?.keywords} />
+        <meta name="description" content="Store Location - GBS Systems" />
       </Helmet>
       <StoreLocatorBanner
         serviceCenterData={storeData}

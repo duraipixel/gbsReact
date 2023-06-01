@@ -54,13 +54,12 @@ const ServiceCenterLocator = () => {
   ) : (
     <>
       <Helmet>
-        <title>{serviceCenterData?.meta?.title || "Service Center Locator | GBS"}</title>
+        <title>Service Center Location - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
         <meta
           name="description"
-          content={serviceCenterData?.meta?.description}
+          content="Check out GBS Systems Laptop Service Center near your location."
         />
-        <meta name="keywords" content={serviceCenterData?.meta?.keywords} />
       </Helmet>
       <ServiceCenterLocatorBanner
         serviceCenterData={serviceCenterData}

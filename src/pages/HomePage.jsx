@@ -20,7 +20,6 @@ import { Helmet } from "react-helmet";
 // import Combos from "components/Home/Combos/Combos";
 
 const HomePage = () => {
-  const [page, setPage] = useState([]);
   useEffect(() => {
     GetPageData();
     scrollToTop();
@@ -44,10 +43,9 @@ const HomePage = () => {
   return (
     <div>
       <Helmet>
-        <title>{page?.meta?.title || "Home | GBS"}</title>
+        <title>Laptop Stores & Service Center in South India | GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
-        <meta name="description" content={"page?.meta?.description"} />
-        <meta name="keywords" content={"page?.meta?.keywords"} />
+        <meta name="description" content="GBS Systems is one of the leading laptop sale & service center in South India, Having branches in Chennai, Madurai, Trichy, Coimbatore & Bangalore." />
       </Helmet>
       <HomeProductsSlider />
       <DealsProduct />

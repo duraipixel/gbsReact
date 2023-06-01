@@ -4,22 +4,20 @@ import CeoMessage from "components/AboutUs/CeoMessage";
 import Counters from "components/AboutUs/Counters";
 import CustomerSays from "components/AboutUs/CustomerSays";
 import ServiceOffers from "components/AboutUs/ServiceOffers";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { scrollToTop } from "utils";
 
 function AboutPage() {
-  const [page, setPage] = useState([]);
   useEffect(() => {
     scrollToTop();
   }, []);
   return (
     <div>
       <Helmet>
-        <title>{page?.meta?.title || "About | GBS"}</title>
+        <title>About GBS Systems Laptop Stores & Service Center in South India</title>
         <link rel="canonical" href={window.location.href} />
-        <meta name="description" content={"page?.meta?.description"} />
-        <meta name="keywords" content={"page?.meta?.keywords"} />
+        <meta name="description" content="GBS Systems is a leading provider of IT solutions and services for businesses. Learn more about our company's history, mission, and expertise. Visit now!" />
       </Helmet>
 
       <AboutBanner />
