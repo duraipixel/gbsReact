@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const customer_address = JSON.parse(localStorage.getItem("customer_address"));
+const customer_address = JSON.parse(localStorage.getItem("customer_address") !== undefined ?  localStorage.getItem("customer_address") : []);
 const initialState = {
     status: false,
     type: 'CREATE',
