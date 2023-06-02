@@ -60,44 +60,18 @@ export const setShippingChargesApi = async (shipping_fee_id) => {
         coupon_amount: localStorage.getItem('coupon_amount')
     });
 }
-export const paymentVerifyApi = async (razor_response, status) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/verify/payment/signature`, {
+export const paymentVerifyApi = async (token) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/verify/ccav/token`, {
         customer_id: AuthUser()?.id,
-        razor_response: razor_response,
-        status: status
+        token: token,
     });
-    if (data.success) {
-        localStorage.removeItem('cart_list')
-        toast.success(data.message)
-        window.location.href = "/payment-success"
-    } else {
-        toast.error(data.message)
-    }
 }
 
 export const checkoutApi = async (formData, setLoader) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/proceed/checkout`, {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/proceed/ccav/checkout`, {
         customer_id: AuthUser()?.id,
         checkout_infomation: formData
     });
-    const paymenyOptions = {
-        key: data.key,
-        name: data.name,
-        image: data.image,
-        order_id: data.order_id,
-        handler: function (response) {
-            paymentVerifyApi(response, true).then((res) => setLoader(false));
-        },
-        prefill: {
-            name: data.prefill.name,
-            email: data.prefill.email,
-            contact: parseInt(data.prefill.contact),
-        },
-        theme: {
-            color: "#f00008",
-        },
-    };
-    return paymenyOptions;
 }
 
 export const getOrdersListApi = async () => {

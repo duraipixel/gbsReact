@@ -29,7 +29,9 @@ import {
   ComparePage,
   StoreLocationDetailsPage,
   PaymentSuccess,
-  TermsConditions
+  TermsConditions,
+  VerifyPayment,
+  PaymentFaild
 } from "lazy"; 
 
 function App() {
@@ -67,6 +69,9 @@ function App() {
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path="/payment-faild" element={<PaymentFaild />} />
+
+            <Route path="/verify-payment/:token" element={<VerifyPayment />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
           </Route>
           {/* <Route path="/stores" element={<StorePage />} /> */}

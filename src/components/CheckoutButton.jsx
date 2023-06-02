@@ -57,11 +57,14 @@ function CheckoutButton({ className }) {
         if (isCheckoutData()) {
             setLoader(true)
             const options = await checkoutApi(JSON.stringify(checkData), setLoader);
-            const RazorpayModal = new Razorpay(options);
-            RazorpayModal.on("payment.failed", function (response) {
-                paymentVerifyApi(response.error, true).then((res) => setLoader(false));
-            });
-            RazorpayModal.open();
+            if(options.data.error === 0) {
+                window.location.href = options.data.redirect_url
+            }
+            // const RazorpayModal = new Razorpay(options);
+            // RazorpayModal.on("payment.failed", function (response) {
+            //     paymentVerifyApi(response.error, true).then((res) => setLoader(false));
+            // });
+            // RazorpayModal.open();
         }
     }
     return (

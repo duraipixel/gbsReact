@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-export default function index() {
+export default function PaymentSuccess() {
   return (
     <div
       style={{
