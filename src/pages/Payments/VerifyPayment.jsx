@@ -1,17 +1,21 @@
 import { useEffect } from "react"
 import { Spinner } from "react-bootstrap"
 import { toast } from "react-hot-toast"
+import { useDispatch } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
+import { clearCart } from "redux/features/cartSlice"
 import { paymentVerifyApi } from "services/product.service"
 
 function VerifyPayment() {
     const { token } = useParams()
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
     useEffect(() => {
         paymentVerifyApi(token).then((response) => {
             if(response.data.message === 'PAYMENT_SUCCESS') {
                 navigate('/payment-success')
+                dispatch(clearCart())
+                localStorage.removeItem('cart_list')
             }
             if(response.data.message === 'PAYMENT_FAILD') {
                 navigate('/payment-faild')
