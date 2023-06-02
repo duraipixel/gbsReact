@@ -48,7 +48,9 @@ function MyOrder() {
                       <p>₹{" "}{order.amount}</p>
                     </div>
                   </div>
-                  <div className="view-invoice-btn">View Invoice</div>
+                  <a href={order.invoice_file} download target="_blank" rel="noreferrer"  className="view-invoice-btn">
+                    <u>View Invoice</u>
+                  </a>
                 </div>
                 <hr />
                 <div>

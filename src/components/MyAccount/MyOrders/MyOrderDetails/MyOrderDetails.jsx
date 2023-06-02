@@ -34,7 +34,10 @@ const MyOrderDetails = () => {
                     <span style={{ fontWeight: "600" }}>Order Details</span> -
                     #{order.order_no}
                   </h2>
-                  {order.status === "cancel_requested" ? <b className="text-primary">Cancel Requested</b> : <CancelOrderRequested order_id={order.id} />}
+                  <div>
+                    <a href={order.invoice_file} download target="_blank" rel="noreferrer" className="btn btn-info mx-2">Download Invoice</a>
+                    {order.status === "cancel_requested" ? <b className="text-primary">Cancel Requested</b> : <CancelOrderRequested order_id={order.id} />}
+                  </div>
                 </div>
                 <div className="pt-3">
                   <p>Your order has been shipped and it’s out for delivery</p>
@@ -48,7 +51,7 @@ const MyOrderDetails = () => {
                         <div className="time-line-text small text-muted">{track?.tracking_info?.created_at}</div>
                       </div>
                     ))
-                  }  
+                  }
                 </div>
                 <div>
                   <div className="flex-jc-btwn align-c t-head-title">
