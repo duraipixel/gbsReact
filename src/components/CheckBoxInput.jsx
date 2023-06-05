@@ -8,9 +8,9 @@ function CheckBoxInput({ data, name }) {
         isChecked,
         setisChecked
     ] = useState(false)
-    const dispatch     = useDispatch()
-    const navigate     = useNavigate()
-    const { search }   = useLocation()
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const { search } = useLocation()
     const searchParams = new URLSearchParams(search)
     const filter = useSelector((state) => state.filter)
 
@@ -21,15 +21,22 @@ function CheckBoxInput({ data, name }) {
         for (var i = 0; i < checkboxes.length; i++) {
             array.push(checkboxes[i].value)
         }
-        array.length > 0 ? searchParams.set(name, array.join("_")):  searchParams.delete(name)
+        array.length > 0 ? searchParams.set(name, array.join("_")) : searchParams.delete(name)
         navigate(`/products?${searchParams.toString()}`);
         dispatch(setfilter(`/products?${searchParams.toString()}`))
     }
     useEffect(() => {
-        if (search && search.includes(data?.slug)) {
-            setisChecked(true)
-        } else {
-            setisChecked(false)
+        const baseFilterUrl = search.toString().split("=")[1]
+        if (baseFilterUrl !== undefined) {
+            var checkboxes = document.querySelectorAll(`.${name}-product-check-input`)
+            for (let index = 0; index < checkboxes.length; index++) {
+                const element = checkboxes[index];
+                baseFilterUrl.split("_").forEach(item => {
+                    if(element.id === item) {
+                        element.checked = true
+                    }
+                })
+            }
         }
     }, [filter])
 
@@ -37,7 +44,7 @@ function CheckBoxInput({ data, name }) {
         <div>
             <label className="cstm-chkbx" htmlFor={data.slug} >
                 {data.name}
-                <input type="checkbox" id={data.slug} value={data.slug} className={`${name}-product-check-input product-check-input`} checked={isChecked} onChange={handler} />
+                <input type="checkbox" id={data.slug} value={data.slug} className={`${name}-product-check-input product-check-input`} onChange={handler} />
                 <span className="checkmark"></span>
             </label>
         </div>

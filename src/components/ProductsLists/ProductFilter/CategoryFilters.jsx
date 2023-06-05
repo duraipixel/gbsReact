@@ -13,8 +13,7 @@ function CategoryFilters({ setCurrentLocation }) {
     searchParams.set(type, typeof value === "object" ? value.join("_") : value);
     setCurrentLocation(`?${searchParams.toString()}`);
     navigate(`/products?${searchParams.toString()}`);
-  };
-  console.log(searchParams.toString().split("=")[1]);
+  }; 
   useEffect(() => {
     productListCategoryMenuApi(searchParams.toString().split("=")[1]).then(
       (response) => {

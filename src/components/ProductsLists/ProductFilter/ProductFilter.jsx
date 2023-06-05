@@ -10,7 +10,7 @@ import CheckBoxInput from "components/CheckBoxInput";
 
 const ProductFilter = ({
   setCurrentLocation,
-  setClearFilter, 
+  setClearFilter,
   filterData,
 }) => {
   const filter = useSelector((state) => state.filter)
@@ -28,6 +28,10 @@ const ProductFilter = ({
   const clearAllFilters = () => {
     navigate("/products");
     dispatch(setfilter(''))
+    var checkboxes = document.querySelectorAll(`.product-check-input`)
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = false
+    }
   };
 
   const filterAccordionHandler = (filters) => {
