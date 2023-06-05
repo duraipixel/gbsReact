@@ -22,13 +22,13 @@ export default function PaymentSuccess() {
       <div style={{ zIndex: 1 }} className="card p-4 text-center shadow border-0 rounded-4">
         <img
           src={require('../../assets/images/check.png')}
-          width="150px"
+          width="80px"
           className="mx-auto"
           alt="img"
         />
-        <h2 className="my-3">Payment Successful</h2>
-        <h1 className="fw-bold" style={{color: '#48914b' }}>₹{state?.amount}</h1>
-        <p>#Order ID : {state?.order_no}</p>
+        <h2 className="mt-3 mb-2">Payment Successful</h2>
+        <h1 className="fw-bold mb-3" style={{color: '#48914b' }}>₹{state?.amount}</h1>
+        <p className="text-secondary">#Order ID : <Link to={`/my-account/myorders/${state?.order_no}`} className="text-dark mb-2"><u>{state?.order_no}</u></Link></p>
         <hr />
         <Link to="/" className="text-secondary">
           <b>Continue Order</b> <i className="fa fa-arrow-right"></i>
