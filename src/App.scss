@@ -1053,3 +1053,14 @@ main {
 .lazy-load-image-background.blur.lazy-load-image-loaded {
   text-align: center !important;
 }
+.rotateIcon {
+  animation: infiniteSpinning 5s infinite;
+}
+@keyframes infiniteSpinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 export default function PaymentSuccess() {
+  const { state } = useLocation();
+  console.log(state)
   return (
     <div
       style={{
@@ -17,22 +19,18 @@ export default function PaymentSuccess() {
         width="100%"
         alt="Success-gif"
       />
-      <div style={{ zIndex: 1 }}>
+      <div style={{ zIndex: 1 }} className="card p-4 text-center shadow border-0 rounded-4">
         <img
-          src="https://cdn-icons-png.flaticon.com/128/5442/5442020.png"
+          src={require('../../assets/images/check.png')}
           width="150px"
-          className="mb-4"
+          className="mx-auto"
           alt="img"
         />
-        <h1>YOUR ORDER HAS BEEN RECEIVED</h1>
-        <h3 className="my-3 text-success">
-          Thank you for your payment, it’s processing
-        </h3>
-        <p className="mb-4">
-          You will receive an order confirmation email with details of your
-          order and a link to track your process.
-        </p>
-        <Link to="/" className="text-primary">
+        <h2 className="my-3">Payment Successful</h2>
+        <h1 className="fw-bold" style={{color: '#48914b' }}>₹{state?.amount}</h1>
+        <p>#Order ID : {state?.order_no}</p>
+        <hr />
+        <Link to="/" className="text-secondary">
           <b>Continue Order</b> <i className="fa fa-arrow-right"></i>
         </Link>
       </div>

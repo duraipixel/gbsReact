@@ -10,14 +10,16 @@ function VerifyPayment() {
     const { token } = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    useEffect(() => {
+    useEffect(() => { 
         paymentVerifyApi(token).then((response) => {
-            if(response.data.message === 'PAYMENT_SUCCESS') {
-                navigate('/payment-success')
+            if (response.data.message === 'PAYMENT_SUCCESS') {
+                navigate('/payment-success', {
+                    state: response.data?.order
+                })
                 dispatch(clearCart())
                 localStorage.removeItem('cart_list')
             }
-            if(response.data.message === 'PAYMENT_FAILD') {
+            if (response.data.message === 'PAYMENT_FAILD') {
                 navigate('/payment-faild')
             }
             if (response.data.message === 'PAYMENT_TOKEN_INVALID' || response.data.status === 'error') {

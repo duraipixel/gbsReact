@@ -183,7 +183,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                   </div>
                 )}
                 <div className="line-spacer"></div>
-                <div>
+                <div> 
                   <h5 className="text-primary d-flex align-items-center justify-content-between">
                     Billing Address
                     {/* {
