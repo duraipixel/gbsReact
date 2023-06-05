@@ -5,7 +5,7 @@ import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 export default function NavMenus({ toggleHeader }) {
   return (
     <div className="nav-menus shadow">
-      <NavMenuList className="acc-list" toggleHeader={toggleHeader}/>
+      <NavMenuList className="acc-list" toggleHeader={toggleHeader} />
     </div>
   );
 }
@@ -226,7 +226,9 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                     </g>
                   </g>
                 </svg>
-                <div className={`me-auto text-dark ms-2`}>Store locator for Sales</div>
+                <div className={`me-auto text-dark ms-2`}>
+                  Store locator for Sales
+                </div>
               </div>
             </li>
             <li
@@ -341,7 +343,10 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                           <li
                             key={data.id}
                             className="list-group-item px-3"
-                            onClick={() => linkHandler(data.slug)}
+                            onClick={() => {
+                              linkHandler(data.slug);
+                              console.log(data.slug);
+                            }}
                           >
                             {data.name}
                           </li>
@@ -353,7 +358,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
               ))}
           </ul>
         </div>
-      )} 
+      )}
     </>
   );
-}; 
+};
