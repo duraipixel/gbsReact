@@ -17,7 +17,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
     if (toggleHeader) {
       toggleHeader();
     }
-    navigate(`/products?${slug}`);
+    navigate(`/products?categories=${slug}`);
   };
   return (
     <>
