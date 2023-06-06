@@ -51,7 +51,8 @@ const ProductDetails = ({
         } else {
           toast.success(response.data.message);
           setCouponApplyed(true);
-          localStorage.setItem("coupon_data", JSON.stringify(response.data));
+          localStorage.setItem('coupon_amount', response.data.coupon_amount)
+          localStorage.setItem("coupon_data", JSON.stringify(response.data))
           setCheckoutData(response.data.cart_info.cart_total);
           setCoupon(response.data);
           localStorage.setItem(
@@ -207,6 +208,7 @@ const ProductDetails = ({
                 <ProductDeleteButton
                   product={product}
                   fetchCartData={fetchCartData}
+                  setCheckoutData={setCheckoutData}
                 />
               </li>
             ))
@@ -321,7 +323,7 @@ const ProductDetails = ({
     </>
   );
 };
-const ProductDeleteButton = ({ product, fetchCartData }) => {
+const ProductDeleteButton = ({ product, fetchCartData, setCheckoutData }) => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const removeCartHandler = (product) => {
@@ -333,6 +335,7 @@ const ProductDeleteButton = ({ product, fetchCartData }) => {
     }).then((response) => {
       if (response.data.error === 0) {
         toast.success(response.data.message);
+        setCheckoutData(response.data.cart_total);
         dispatch(removeCart(product));
         setTimeout(() => setLoading(false), 200);
         fetchCartData();

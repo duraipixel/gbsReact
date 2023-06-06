@@ -13,10 +13,10 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const authUser = useSelector((state) => state.auth);
   const address = useSelector((state) => state.cartAddress);
   const [shippingMethod, setShippingMethod] = useState(
-    checkoutData.has_pickup_store === false ? "Standard_Shipping" : ""
+    checkoutData?.has_pickup_store === false ? "Standard_Shipping" : ""
   );
   const [pickupFromStore, setPickupFromStore] = useState(
-    checkoutData.has_pickup_store
+    checkoutData?.has_pickup_store
   );
   // console.log(pickupFromStore);
   const [addressModalType, setAddressModalType] = useState(null);
