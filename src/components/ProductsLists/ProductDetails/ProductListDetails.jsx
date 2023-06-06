@@ -29,8 +29,8 @@ const ProductListDetails = ({
   };
   return (
     <Col
-      lg={9}
-      className="align-self-start py-md-5 py-3 px-md-3 bg-white-layer"
+      lg={10}
+      className="align-self-start py-md-5 py-3 px-md-3"
     >
       {products && (
         <Col className="list-details-side">

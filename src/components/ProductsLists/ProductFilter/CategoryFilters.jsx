@@ -19,7 +19,9 @@ function CategoryFilters({ setCurrentLocation }) {
       (response) => {
         setSubcategory(response.data.child_category);
       }
-    );
+    ).catch(() => {
+      setSubcategory([]);
+    });
   }, [searchParams.toString()]);
   return (
     <Nav className="justify-content-center bg-dark text-light">

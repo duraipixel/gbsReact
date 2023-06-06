@@ -44,7 +44,7 @@ function CheckBoxInput({ data, name }) {
         <div>
             <label className="cstm-chkbx" htmlFor={data.slug} >
                 {data.name}
-                <input type="checkbox" id={data.slug} value={data.slug} className={`${name}-product-check-input product-check-input`} onChange={handler} />
+                <input type="radio" id={data.slug} value={data.slug} name={name} className={`${name}-product-check-input product-check-input`} onChange={handler} />
                 <span className="checkmark"></span>
             </label>
         </div>

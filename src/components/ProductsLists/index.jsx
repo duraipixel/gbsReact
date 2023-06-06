@@ -21,7 +21,7 @@ const ProductLists = () => {
   const searchParams = new URLSearchParams(location.search);
   let filterData = searchParams.toString();
   useMemo(() => {
-    if(take === 5) {
+    if (take === 5) {
       setfetching(true);
     } else {
       setTackLoader(true)
@@ -36,9 +36,9 @@ const ProductLists = () => {
   return (
     <div>
       <CategoryFilters setCurrentLocation={setCurrentLocation} />
-      <section className="bg-primary-soft p-0 overflow-hidden">
+      <section className="p-0 bg-filters">
         <Container>
-          <Row>
+          <Row className="m-0  bg-white">
             <ProductFilter
               filterData={filterData}
               setCurrentLocation={setCurrentLocation}

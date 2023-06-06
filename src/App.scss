@@ -619,9 +619,11 @@ h5 {
   background-color: #fcd9e2;
   color: var(--primary-color) !important;
 }
-
+.bg-filters {
+  background: linear-gradient(90deg, #fff4f7 52%, rgba(255,255,255,1) 52%);
+}
 .bg-primary-soft {
-  background: #f7f0f0 !important;
+  background: #fff4f7 !important;
 }
 
 @keyframes spinner-border {
