@@ -37,19 +37,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
             <Placeholder xs={12} className="list-group-item px-3 p-4" />
-          </Placeholder>
-          <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item px-3 p-4" />
-          </Placeholder>
-          <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item px-3 p-4" />
-          </Placeholder>
-          <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item px-3 p-4" />
-          </Placeholder>
-          <Placeholder as="div" animation="glow" className="m-2">
-            <Placeholder xs={12} className="list-group-item px-3 p-4" />
-          </Placeholder>
+          </Placeholder> 
         </>
       )}
       {isSuccess && (

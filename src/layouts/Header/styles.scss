@@ -1778,7 +1778,7 @@ small {
       cursor: pointer;
 
       &:hover {
-        background-color: #f1000872 !important;
+        background-color: #ffc2c4 !important;
         color: black !important;
       }
 
@@ -1796,15 +1796,15 @@ small {
   }
 
   .dropdown-content {
+    min-width: 280px;
     background-color: white;
     display: none !important;
-    height: 100%;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    overflow-y: auto;
+    // overflow-y: auto;
   }
 
   .dropdown-content li {
@@ -1812,7 +1812,6 @@ small {
     text-decoration: none;
     display: block;
     cursor: pointer !important;
-
     &:hover {
       color: var(--primary-color);
     }
@@ -1825,10 +1824,6 @@ small {
   .menu-list {
     li:hover .dropdown-content {
       display: block !important;
-      min-height: 35vh;
-      padding-bottom: 10rem;
-      min-width: 280px;
-      background: white;
     }
   }
 }
