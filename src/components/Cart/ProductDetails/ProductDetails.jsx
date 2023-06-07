@@ -90,7 +90,8 @@ const ProductDetails = ({
           reset();
           setCouponApplyed(false);
           setCoupon(null);
-          localStorage.setItem("coupon_data", JSON.stringify(response.data));
+          localStorage.removeItem('coupon_amount')
+          localStorage.removeItem("coupon_data");
           setCheckoutData(response.data.cart_info.cart_total);
           localStorage.setItem(
             "checkout_data",

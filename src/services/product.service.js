@@ -1,5 +1,4 @@
 import axios from "axios";
-import { toast } from "react-hot-toast";
 import { AuthUser } from "utils";
 
 export const CheckProductAvailabilityApi = async (data) => {

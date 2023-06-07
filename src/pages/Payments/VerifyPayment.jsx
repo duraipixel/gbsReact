@@ -18,6 +18,7 @@ function VerifyPayment() {
                 })
                 dispatch(clearCart())
                 localStorage.removeItem('cart_list')
+                localStorage.removeItem('coupon_amount')
             }
             if (response.data.message === 'PAYMENT_FAILD') {
                 navigate('/payment-faild')

@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
-import useRazorpay from 'react-razorpay'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLayoutStatus } from 'redux/features/authLayoutSlice'
-import { checkoutApi, paymentVerifyApi } from 'services/product.service'
+import { checkoutApi } from 'services/product.service'
 
 function CheckoutButton({ className }) {
-    const Razorpay           = useRazorpay()
     const authUser           = useSelector((state) => state.auth)
     const dispatch           = useDispatch()
     const billing_address    = JSON.parse(localStorage.getItem('billing_address'))
