@@ -1,18 +1,11 @@
+import CompareButton from 'components/CompareButton'
 import NoDataComponent from 'components/NoDataComponent/NoDataComponent'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { resetSearch } from 'redux/features/searchSlice'
+import { useSelector } from 'react-redux'
 
 function SearchResult({ setMobileSearch, type }) {
-    const search     = useSelector((state) => state.search.value)
+    const search = useSelector((state) => state.search.value)
     const searchType = useSelector((state) => state.search.type)
-    const navigate   = useNavigate()
-    const dispatch   = useDispatch()
-    const searchResultHandler = (item) => {
-        navigate(`/products/${item.product_url}`)
-        dispatch(resetSearch())
-        setMobileSearch(false)
-    }
+ 
     if (search.status === 0 && searchType === type) {
         return (
             <div className="search-result rounded">
@@ -30,7 +23,7 @@ function SearchResult({ setMobileSearch, type }) {
                     <ul className="list-group rounded list-group-flush">
                         {
                             search.products.map((item, i) => (
-                                <li key={i} onClick={() => searchResultHandler(item)} className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
+                                <li key={i} className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
                                     <div className='d-md-flex'>
                                         <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                         <div className='ps-md-3'>
@@ -40,7 +33,16 @@ function SearchResult({ setMobileSearch, type }) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="badge badge-soft-primary btn-sm small ms-md-3"> {item.category_name} </div>
+                                    {
+                                        item?.category_name !== '' ?
+                                            <div className="badge badge-soft-primary btn-sm small ms-md-3"> {item.category_name} </div>
+                                            : ''
+                                    }
+                                    {
+                                        type === 'COMPARE' ?
+                                            <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 rounded-box-circle rounded-box-sm" product={item} />
+                                            : ''
+                                    }
                                 </li>
                             ))
                         }

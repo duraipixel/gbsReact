@@ -49,7 +49,7 @@ function AddCartButton({ className, product, type, setCartId }) {
   };
   if (product.stock_status === "out_of_stock" && type === "button") {
     return (
-      <button className="btn btn-primary text-white ms-md-3">out of stock</button>
+      <button disabled className="btn btn-outline-primary ms-md-3">out of stock</button>
     );
   }
   if (product.stock_status === "out_of_stock" && type === "checkbox") {
