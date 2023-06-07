@@ -7,7 +7,12 @@ function CompareProduct() {
     const products = useSelector((state) => state.compareProducts)
     const dispatch = useDispatch()
     const { pathname } = useLocation()
- 
+    const removeProductItem = (product_id) => {
+        dispatch(removeProduct({ status: true, value: product_id }))
+        if (products.value.length === 1) {
+            dispatch(clearProduct())
+        }
+    }
     if (products.status) {
         return (
             <div className={`compare-menu-bar animate__animated animate__slideInUp show`} >
@@ -25,7 +30,7 @@ function CompareProduct() {
                                             <img src={product.image} alt={product.product_name} />
                                             <p className="product-title">{product.product_name}</p>
                                             <b className="small">₹{" "}{product.price}</b>
-                                            <button onClick={() => dispatch(removeProduct({ status: true, value: product.id }))} className="float-end btn-sm btn btn-outline-primary">Remove</button>
+                                            <button onClick={() => removeProductItem(product.id)} className="float-end btn-sm btn btn-outline-primary">Remove</button>
                                         </div>
                                     ))
                                     : ""
@@ -39,8 +44,8 @@ function CompareProduct() {
                 </div>
             </div>
         )
-    } 
-    if(pathname !== "/compare" && products.value.length) {
+    }
+    if (pathname !== "/compare" && products.value.length) {
         return (
             <Link to="/compare" onClick={() => dispatch(setCompareStatus({ status: false }))} className="compare-menu-button">Compare ({products.value.length})</Link>
         )

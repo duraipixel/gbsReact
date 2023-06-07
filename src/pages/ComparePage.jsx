@@ -89,7 +89,7 @@ function ComparePage() {
                       ))
                     }
                     {
-                      compareList.products.length === 2 ?
+                      compareList.products.length > 0 ?
                         <td className="p-lg-5">
                           <AddCompareModal />
                         </td>
