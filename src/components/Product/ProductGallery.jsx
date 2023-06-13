@@ -41,23 +41,23 @@ export default function ProductGallery({ images }) {
         })
       );
   }
-  produtcCollection.push(
-    {
-      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-      thumbnail: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-      renderItem: renderVideo.bind(this),
-    },
-    {
-      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
-      renderItem: renderVideo.bind(this),
-    },
-    {
-      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
-      renderItem: renderVideo.bind(this),
-    }
-  )
+  // produtcCollection.push(
+  //   {
+  //     embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+  //     thumbnail: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+  //     renderItem: renderVideo.bind(this),
+  //   },
+  //   {
+  //     embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+  //     thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
+  //     renderItem: renderVideo.bind(this),
+  //   },
+  //   {
+  //     embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+  //     thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
+  //     renderItem: renderVideo.bind(this),
+  //   }
+  // )
  if(produtcCollection.length) return (
     <div className="mt-2 react-image-gallery-div">
       <ReactImageGallery
