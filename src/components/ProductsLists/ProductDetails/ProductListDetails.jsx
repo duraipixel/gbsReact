@@ -1,7 +1,8 @@
 import { Col } from "react-bootstrap";
-import ProductListComponent from "../ProductListComponent";
 import { Loader } from "utils";
 import { useLocation, useNavigate } from "react-router-dom";
+import ProductListComponent from "../ProductListComponent";
+import FilterChips from "../ProductFilter/FilterChips";
 
 const ProductListDetails = ({
   products,
@@ -12,29 +13,26 @@ const ProductListDetails = ({
   setClearFilter,
   tackLoader
 }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const location     = useLocation();
+  const navigate     = useNavigate();
   const searchParams = new URLSearchParams(location.search);
 
   const filterHandler = (e) => {
-    const searchParams = new URLSearchParams(location.search);
+    const searchParams = new URLSearchParams(location.search)
     if (e.target.value) {
-      searchParams.set("sort_by", e.target.value);
-      setCurrentLocation(`?${searchParams.toString()}`);
-      navigate(`/products?${searchParams.toString()}`);
-      setClearFilter(true);
+      searchParams.set("sort_by", e.target.value)
+      setCurrentLocation(`?${searchParams.toString()}`)
+      navigate(`/products?${searchParams.toString()}`)
+      setClearFilter(true)
     } else {
-      setClearFilter(false);
+      setClearFilter(false)
     }
   };
   return (
-    <Col
-      lg={10}
-      className="align-self-start py-md-5 py-3 px-md-3"
-    >
+    <Col lg={10} className="align-self-start px-md-3" >
       {products && (
-        <Col className="list-details-side">
-          <div className="d-sm-flex justify-content-between mb-md-5 mb-2 text-md-start text-center">
+        <div className="list-details-side">
+          <div className="d-sm-flex justify-content-between m-3 text-md-start text-center">
             <div className="primary-heads">
               <h1 className="h3">
                 Displaying {products.to} of {products.total_count} results
@@ -42,9 +40,9 @@ const ProductListDetails = ({
             </div>
             <div className="col-lg-3">
               <div className="input-group ">
-                <button className="btn btn-light border"> Sort by</button>
+                <button className="btn btn-sm btn-light border"> Sort by</button>
                 <select
-                  className="form-select"
+                  className="form-select form-select-sm"
                   id="enq"
                   name="enq"
                   onChange={filterHandler}
@@ -57,6 +55,7 @@ const ProductListDetails = ({
               </div>
             </div>
           </div>
+          <FilterChips />
           {fetching ? (
             <Loader />
           ) : (
@@ -77,13 +76,13 @@ const ProductListDetails = ({
                           Load more
                         </button>
                       </center>
-                    : ''
+                      : ''
                   }
                 </>
               )}
             </>
           )}
-        </Col>
+        </div>
       )}
     </Col>
   );

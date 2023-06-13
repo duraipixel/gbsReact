@@ -1,6 +1,21 @@
 import ReactImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 export default function ProductGallery({ images }) {
+
+  const renderVideo = (item) => {
+    return (
+      <div className="video-wrapper">
+        <iframe
+          width="500"
+          height="480px"
+          src={item.embedUrl}
+          frameBorder="0"
+          allowFullScreen
+          title="ex"
+        />
+      </div>
+    );
+  };
   const produtcCollection = [];
   if (!Array.isArray(images)) {
     produtcCollection.push({
@@ -26,6 +41,23 @@ export default function ProductGallery({ images }) {
         })
       );
   }
+  produtcCollection.push(
+    {
+      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+      thumbnail: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+      renderItem: renderVideo.bind(this),
+    },
+    {
+      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
+      renderItem: renderVideo.bind(this),
+    },
+    {
+      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
+      renderItem: renderVideo.bind(this),
+    }
+  )
  if(produtcCollection.length) return (
     <div className="mt-2 react-image-gallery-div">
       <ReactImageGallery
@@ -33,10 +65,12 @@ export default function ProductGallery({ images }) {
         thumbnailPosition={window.innerWidth > 769 ? "left" : "bottom"}
         items={produtcCollection}
         loading="lazy"
-        autoPlay={true}
-        showPlayButton={true}
+        // autoPlay={true}
+        showPlayButton={false}
         showNav={false}
-        showFullscreenButton={window.innerWidth > 400 ? true : false}
+        // showFullscreenButton={window.innerWidth > 400 ? true : false}
+        showFullscreenButton={false}
+        renderVideo={true}
       />
     </div>
   );
