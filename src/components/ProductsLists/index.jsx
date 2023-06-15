@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import ProductFilter from "./ProductFilter/ProductFilter";
 import ProductListDetails from "./ProductDetails/ProductListDetails";
 import { useState } from "react";
@@ -34,27 +34,25 @@ const ProductLists = () => {
   }, [take, currentLocation, filterData]);
   return (
     <div> 
-      <section className="p-0">
-        <Container>
-          <Row className="m-0  bg-white">
-            <ProductFilter
-              filterData={filterData}
-              setCurrentLocation={setCurrentLocation}
-              clearFilter={clearFilter}
-              setClearFilter={setClearFilter}
-            />
-            <ProductListDetails
-              setCurrentLocation={setCurrentLocation}
-              clearFilter={clearFilter}
-              setClearFilter={setClearFilter}
-              products={products}
-              fetching={fetching}
-              setTake={setTake}
-              take={take}
-              tackLoader={tackLoader}
-            />
-          </Row>
-        </Container>
+      <section className="p-0 px-lg-5 px-3">
+        <Row className="m-0  bg-white">
+          <ProductFilter
+            filterData={filterData}
+            setCurrentLocation={setCurrentLocation}
+            clearFilter={clearFilter}
+            setClearFilter={setClearFilter}
+          />
+          <ProductListDetails
+            setCurrentLocation={setCurrentLocation}
+            clearFilter={clearFilter}
+            setClearFilter={setClearFilter}
+            products={products}
+            fetching={fetching}
+            setTake={setTake}
+            take={take}
+            tackLoader={tackLoader}
+          />
+        </Row>
       </section>
     </div>
   );

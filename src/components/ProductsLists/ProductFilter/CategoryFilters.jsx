@@ -12,14 +12,13 @@ function CategoryFilters({ setCurrentLocation }) {
   const searchParams = new URLSearchParams(location.search);
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
-    console.log(event)
-    console.log(newValue)
+    // setCurrentLocation(`?${searchParams.toString()}`)
     setValue(newValue);
   };
   useEffect(() => {
     productListCategoryMenuApi(searchParams.toString().split("=")[1]).then(
       (response) => {
-        if(response.data.length) setSubcategory(response.data.child_category);
+        if(response.data.length === undefined) setSubcategory(response.data.child_category);
       }
     ).catch(() => {
       setSubcategory([]);
@@ -34,6 +33,7 @@ function CategoryFilters({ setCurrentLocation }) {
       },
     },
   });
+  console.log(subcategory,"subcategory")
   if (subcategory.length > 0) return (
     <ThemeProvider theme={outerTheme}>
       <Tabs

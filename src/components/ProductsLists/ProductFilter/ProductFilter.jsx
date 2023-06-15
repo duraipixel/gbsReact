@@ -68,7 +68,7 @@ const ProductFilter = ({
     });
   }, []);
   return (
-    <Col lg={2} className="align-self-start h-100 border-end ps-lg-0  pe-lg-4 pt-4" sticky="top">
+    <Col lg={2} className="align-self-start h-100 ps-lg-0  pe-lg-4 pt-4" sticky="top">
       <div className="filters-side">
         {
           window.innerWidth < 992 ?
@@ -89,7 +89,7 @@ const ProductFilter = ({
           <Link className="close-btn" onClick={() => setActive(!isActive)}>
             <IoMdClose />
           </Link>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <h6 className="filter-title py-2">SORT BY</h6>
             <select
               className="form-select form-select-sm"
@@ -101,15 +101,17 @@ const ProductFilter = ({
               <option value="price-high-to-low" >High to Low</option>
               <option value="price-low-to-high">Low to High</option>
             </select>
-          </div>
-          <h4 className="filter-title d-flex align-items-center justify-content-between">
-            FILTER BY
-            {filter ? 
-              <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>
+          </div> */}
+          {filter !== '' && filter !== '/products?' ?
+            <>
+              <h4 className="filter-title d-flex align-items-center justify-content-between">
+                FILTER BY
+                <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>
+              </h4>
+              <FilterChips />
+              <hr />
+            </>
             : ''}
-          </h4> 
-          <FilterChips />
-          <hr />
           {defaultActiveKey?.length > 0 ? (
             <Accordion
               defaultActiveKey={defaultActiveKey}

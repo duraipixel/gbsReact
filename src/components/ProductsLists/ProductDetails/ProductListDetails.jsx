@@ -19,7 +19,7 @@ const ProductListDetails = ({
       {products && (
         <div className="list-details-side">
           <div className="primary-heads p-3">
-            <h1 className="h3">
+            <h1 className="h3 m-0">
               Displaying {products.to} of {products.total_count} results
             </h1>
           </div>

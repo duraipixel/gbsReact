@@ -94,7 +94,7 @@ $theme-colors: (
 
 :root {
   --bs-primary-rgb: 240, 0, 8;
-  --bs-accordion-btn-icon-width : 12px;
+  --bs-accordion-btn-icon-width: 12px;
   --primary-color: rgb(240, 0, 8);
   --grey-color: gray;
   --white-color: white;
@@ -415,10 +415,9 @@ span.ofer-infs span {
   color: #ffffff;
 }
 
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1380px !important
-  }
+.css-2huucz-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #252525 !important;
+  font-weight: bold !important;
 }
 
 .cta-btn {
@@ -1088,10 +1087,12 @@ main {
   margin: 0 !important;
   color: #252525 !important;
 }
+
 .filter-text {
   font-size: 12px !important;
   text-transform: capitalize !important;
 }
+
 .accordion-button::after {
   width: 14px !important;
   height: 14px !important;

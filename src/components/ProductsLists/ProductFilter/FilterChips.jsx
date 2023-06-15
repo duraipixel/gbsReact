@@ -36,16 +36,18 @@ function FilterChips() {
 
     const removeFilter = (item) => {
         const input = document.getElementById(item)
-        input.checked = false
-        const searchParams = new URLSearchParams(search)
-        var array = []
-        var checkboxes = document.querySelectorAll(`.${input.name}-product-check-input:checked`)
-        for (var i = 0; i < checkboxes.length; i++) {
-            array.push(checkboxes[i].value)
+        if(input) {
+            input.checked = false
+            const searchParams = new URLSearchParams(search)
+            var array = []
+            var checkboxes = document.querySelectorAll(`.${input.name}-product-check-input:checked`)
+            for (var i = 0; i < checkboxes.length; i++) {
+                array.push(checkboxes[i].value)
+            }
+            array.length > 0 ? searchParams.set(input.name, array.join("_")) : searchParams.delete(input.name)
+            navigate(`/products?${searchParams.toString()}`);
+            dispatch(setfilter(`/products?${searchParams.toString()}`))
         }
-        array.length > 0 ? searchParams.set(input.name, array.join("_")) : searchParams.delete(input.name)
-        navigate(`/products?${searchParams.toString()}`);
-        dispatch(setfilter(`/products?${searchParams.toString()}`))
     }
     if (search) {
         return (
