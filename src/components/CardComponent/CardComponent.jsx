@@ -11,8 +11,8 @@ function CardComponent({ product, type, className }) {
   const navigate = useNavigate()
   if (type === 'list' && window.innerWidth > 450) return (
     <div className={className}>
-      <div className='product-card overflow-hidden border-bottom'>
-        <div className="arival-det row" >
+      <div className='product-card overflow-hidden border-bottom border-end' style={{ minHeight:300 }}>
+        <div className="arival-det row m-0 shadow-none" >
           <div className="ari-img cursor col-md-4" onClick={() => navigate(`/products/${product.product_url}`)}>
             <Image src={product.image} alt={product.product_name} />
             <div className="off-prc">

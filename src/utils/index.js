@@ -89,7 +89,7 @@ const HalfHeightLoader = () => {
 };
 
 const Image = (props) => {
-  return <LazyLoadImage placeholderSrc="https://media.croma.com/image/upload/f_auto,q_auto,d_Croma%20Assets:No_image.png/Croma%20Assets/UI%20Assets/lazyLoading.gif" effect="blur" {...props} />;
+  return <LazyLoadImage placeholderSrc={require('./../assets/Brand/card-placeholder.png')} effect="blur" {...props} />;
 };
 
 const AppScroller = ({ children }) => {

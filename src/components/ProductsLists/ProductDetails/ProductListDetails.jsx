@@ -36,9 +36,9 @@ const ProductListDetails = ({
                     products.total_count !== products.to ?
                       <center>
                         <button
-                          onClick={() => setTake(take + 5)}
+                          onClick={() => setTake(take + 20)}
                           loading={tackLoader.toString()}
-                          className="btn mt-4 btn-outline-info"
+                          className="btn my-4 btn-outline-info"
                         >
                           Load more
                         </button>

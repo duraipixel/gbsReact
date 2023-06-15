@@ -12,7 +12,7 @@ const ProductLists = () => {
   const [products, setProduct] = useState([]);
   const [fetching, setfetching] = useState(true);
   const [tackLoader, setTackLoader] = useState(false);
-  const [take, setTake] = useState(5);
+  const [take, setTake] = useState(20);
   const location = useLocation();
   const { search } = useLocation();
   const [clearFilter, setClearFilter] = useState(false);
@@ -20,7 +20,7 @@ const ProductLists = () => {
   const searchParams = new URLSearchParams(location.search);
   let filterData = searchParams.toString();
   useMemo(() => {
-    if (take === 5) {
+    if (take === 20) {
       setfetching(true);
     } else {
       setTackLoader(true)

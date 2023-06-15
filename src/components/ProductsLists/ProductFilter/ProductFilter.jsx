@@ -68,7 +68,7 @@ const ProductFilter = ({
     });
   }, []);
   return (
-    <Col lg={2} className="align-self-start h-100 border-end" sticky="top">
+    <Col lg={2} className="align-self-start h-100 border-end ps-lg-0  pe-lg-4 pt-4" sticky="top">
       <div className="filters-side">
         {
           window.innerWidth < 992 ?
