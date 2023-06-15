@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="myaccount-sidebar">
-      <h2>My Account</h2>
+      <h1>My Account</h1>
       <div>
         <NavLink to="/my-account/profile">My Profile</NavLink>
       </div>
