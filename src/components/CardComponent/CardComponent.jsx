@@ -11,12 +11,14 @@ function CardComponent({ product, type, className }) {
   const navigate = useNavigate()
   if (type === 'list' && window.innerWidth > 450) return (
     <div className={className}>
-      <div className='product-card overflow-hidden border-bottom border-start' style={{ minHeight:200 }}>
-        <div className="arival-det row m-0 shadow-none" >
-          <div className="ari-img cursor col-md-4" onClick={() => navigate(`/products/${product.product_url}`)}>
-            <Image src={product.image} alt={product.product_name} />
-            <div className="off-prc">
-              <h3> {product.discount_percentage}% <br /> <span>OFF</span></h3>
+      <div className='product-card overflow-hidden'>
+        <div className="row m-0" >
+          <div className="col-md-4 pt-3" onClick={() => navigate(`/products/${product.product_url}`)}>
+            <div className="position-relative">
+              <Image src={product.image} alt={product.product_name} className="product-list-image" />
+              <div className="off-prc">
+                <h3> {product.discount_percentage}% <br /> <span>OFF</span></h3>
+              </div>
             </div>
           </div>
           <div className="ari-cnt text-start w-100 bg-white col-md">
@@ -29,17 +31,17 @@ function CardComponent({ product, type, className }) {
                     : ''
                 }
               </div>
-              <h3 className='h4 product-name text-start'>{product.product_name.substr(0,80)}</h3>
+              <h3 className='h3 text-start'>{product.product_name.substr(0, 80)}</h3>
               <h4 className="h5">
-                <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
-                <span className="new-price">₹{product.price.replace('.00', '')}</span>
+                <i className='old-price'>₹{product.strike_price.replace('.00', '')}</i>
+                <span className="new-price text-success fw-bold">₹{product.price.replace('.00', '')}</span>
               </h4>
             </div>
-              <div className="d-flex align-items-center clk-optn">
-                <AddFavButton buttonType="icon" className="btn btn-outline-info rounded-box-circle rounded-box-sm" product={product} />
-                <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 rounded-box-circle rounded-box-sm" product={product} />
-                <AddCartButton type='button' className="btn btn-primary ms-3" product={product} />
-              </div>
+            <div className="d-flex align-items-center clk-optn">
+              <AddFavButton buttonType="icon" className="btn btn-outline-info rounded-box-circle rounded-box-sm" product={product} />
+              <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 rounded-box-circle rounded-box-sm" product={product} />
+              <AddCartButton type='button' className="btn btn-primary ms-3" product={product} />
+            </div>
           </div>
         </div>
       </div>

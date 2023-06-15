@@ -29,7 +29,7 @@ function CategoryFilters({ setCurrentLocation }) {
   const outerTheme = createTheme({
     palette: {
       primary: {
-        main: '#252525',
+        main: '#1f8755',
       },
     },
   });

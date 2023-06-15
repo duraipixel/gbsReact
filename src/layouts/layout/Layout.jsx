@@ -32,7 +32,7 @@ const Layout = () => {
           success: {
             duration: 3000,
             theme: {
-              primary: 'green',
+              primary: '#1f8755',
               secondary: 'black',
             },
           },
