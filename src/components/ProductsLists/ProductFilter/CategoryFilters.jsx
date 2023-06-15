@@ -19,7 +19,7 @@ function CategoryFilters({ setCurrentLocation }) {
   useEffect(() => {
     productListCategoryMenuApi(searchParams.toString().split("=")[1]).then(
       (response) => {
-        setSubcategory(response.data.child_category);
+        if(response.data.length) setSubcategory(response.data.child_category);
       }
     ).catch(() => {
       setSubcategory([]);
