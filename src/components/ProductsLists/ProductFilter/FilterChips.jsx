@@ -55,7 +55,7 @@ function FilterChips() {
                         currentFilters.length && currentFilters.map((item, index) => (
                             <Chip
                                 key={index}
-                                label={item.replace('-', ' ')}
+                                label={item?.replace('-', ' ')}
                                 size="small"
                                 color="warning"
                                 onDelete={(e) => removeFilter(item)}

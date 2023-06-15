@@ -44,7 +44,6 @@ function CategoryFilters({ setCurrentLocation }) {
         indicatorColor="primary"
         textColor="primary"
         selectionFollowsFocus={true}
-        centered={true}
         allowScrollButtonsMobile={true}
       >
         {
