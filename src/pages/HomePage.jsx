@@ -25,11 +25,9 @@ const HomePage = () => {
     scrollToTop();
   }, []);
 
+
   const dispatch = useDispatch();
-  const homePageData = sessionStorage.getItem("home_page_collection");
-  const [fetching, setFetching] = useState(
-    homePageData !== null ? false : true
-  );
+  const [fetching, setFetching] = useState(false);
   const GetPageData = () => {
     homePageApi().then((response) => {
       if (response) {

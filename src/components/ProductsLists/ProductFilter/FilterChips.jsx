@@ -1,5 +1,5 @@
 import { Chip, Stack } from "@mui/material";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setfilter } from "redux/features/filterSlice";
@@ -26,7 +26,7 @@ function FilterChips() {
         }
     }, [filter])
 
-    const removeFilter = (item) => {
+    const removeFilter = (item) => { 
         const name = item.split('=')[0]
         document.getElementById(item.split('=')[1]).checked = false
         const searchParams = new URLSearchParams(search)
