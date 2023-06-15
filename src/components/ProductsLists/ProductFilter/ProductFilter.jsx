@@ -7,6 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { setfilter } from "redux/features/filterSlice";
 import CheckBoxInput from "components/CheckBoxInput";
+import FilterChips from "./FilterChips";
 
 const ProductFilter = ({
   setCurrentLocation,
@@ -14,7 +15,7 @@ const ProductFilter = ({
   filterData,
 }) => {
   const filter = useSelector((state) => state.filter)
-  const [defaultActiveKey, setDefaultActiveKey] = useState([]);
+  const [defaultActiveKey, setDefaultActiveKey] = useState(['brands', 'categories', 'discounts']);
   const [isActive, setActive] = useState("false");
   const [Filters, setFilters] = useState(false);
   const location = useLocation();
@@ -48,6 +49,18 @@ const ProductFilter = ({
     }
   };
 
+
+  const filterHandler = (e) => {
+    const searchParams = new URLSearchParams(location.search)
+    if (e.target.value) {
+      searchParams.set("sort_by", e.target.value)
+      setCurrentLocation(`?${searchParams.toString()}`)
+      navigate(`/products?${searchParams.toString()}`)
+      setClearFilter(true)
+    } else {
+      setClearFilter(false)
+    }
+  };
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
       filterAccordionHandler(data);
@@ -55,23 +68,17 @@ const ProductFilter = ({
     });
   }, [filter]);
   return (
-    <Col lg={2} className="py-md-5 align-self-start pt-3 h-100 bg-primary-soft">
+    <Col lg={2} className="align-self-start h-100 border-end" sticky="top">
       <div className="filters-side">
-        <div className="d-flex justify-content-between align-items-center">
-          <div className="product-filter-btn" onClick={() => setActive(!isActive)}>
-            Filters
-          </div>
-          <div>
-            {
-              filter !== '' ?
-                <button onClick={clearAllFilters} className="btn btn-dark btn-sm">
-                  Clear
-                </button>
-                : ''
-            }
-
-          </div>
-        </div>
+        {
+          window.innerWidth < 992 ?
+            <div className="my-3">
+              <div className="product-filter-btn filter-title " onClick={() => setActive(!isActive)}>
+                Filter by
+              </div>
+            </div>
+            : ""
+        }
         <div
           className={
             isActive
@@ -82,6 +89,22 @@ const ProductFilter = ({
           <Link className="close-btn" onClick={() => setActive(!isActive)}>
             <IoMdClose />
           </Link>
+          <div className="mb-3">
+            <h6 className="filter-title py-2">SORT BY</h6>
+            <select
+              className="form-select form-select-sm"
+              id="enq"
+              name="enq"
+              onChange={filterHandler}
+              value={searchParams.get('sort_by') || ''}
+            >
+              <option value="price-high-to-low" >High to Low</option>
+              <option value="price-low-to-high">Low to High</option>
+            </select>
+          </div>
+          <h4 className="filter-title">FILTER BY</h4>
+          <FilterChips />
+          <hr />
           {defaultActiveKey?.length > 0 ? (
             <Accordion
               defaultActiveKey={defaultActiveKey}
@@ -90,8 +113,10 @@ const ProductFilter = ({
             >
               {Object.entries(Filters).map((filters, key) => (
                 <Accordion.Item eventKey={filters[0]} key={key}>
-                  <Accordion.Header>{Text(filters[0])} </Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Header className="py-2">
+                    <span className="filter-title">{Text(filters[0])}</span>
+                  </Accordion.Header>
+                  <Accordion.Body className="p-0">
                     <ul>
                       {filters[1].map((filter, index) => (
                         <li key={index}>

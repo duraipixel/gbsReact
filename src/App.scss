@@ -94,6 +94,7 @@ $theme-colors: (
 
 :root {
   --bs-primary-rgb: 240, 0, 8;
+  --bs-accordion-btn-icon-width : 12px;
   --primary-color: rgb(240, 0, 8);
   --grey-color: gray;
   --white-color: white;
@@ -619,9 +620,11 @@ h5 {
   background-color: #fcd9e2;
   color: var(--primary-color) !important;
 }
+
 .bg-filters {
-  background: linear-gradient(90deg, #fff4f7 52%, rgba(255,255,255,1) 52%);
+  background: linear-gradient(90deg, #fff4f7 52%, rgba(255, 255, 255, 1) 52%);
 }
+
 .bg-primary-soft {
   background: #fff4f7 !important;
 }
@@ -839,6 +842,10 @@ button[loading="true"] {
   display: flex !important;
 }
 
+.MuiChip-label {
+  text-transform: capitalize !important;
+}
+
 @media (min-width: 762px) {
   .search-result {
     background-color: white;
@@ -1036,6 +1043,7 @@ main {
     height: 60px !important;
     object-fit: contain;
   }
+
   .action-group {
     button {
       margin-bottom: 10px !important;
@@ -1046,23 +1054,45 @@ main {
 .thumbnails-swipe-horizontal {
   margin-top: 20px;
 }
+
 @media (max-width: 400px) {
   footer img {
-      margin: 20px 0;
-      width: 78px !important;
+    margin: 20px 0;
+    width: 78px !important;
   }
 }
+
 .lazy-load-image-background.blur.lazy-load-image-loaded {
   text-align: center !important;
 }
+
 .rotateIcon {
   animation: infiniteSpinning 5s infinite;
 }
+
 @keyframes infiniteSpinning {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.filter-title {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  line-height: 25px !important;
+  margin: 0 !important;
+}
+.filter-text {
+  font-size: 12px !important;
+  text-transform: capitalize !important;
+}
+.accordion-button::after {
+  width: 14px !important;
+  height: 14px !important;
+  background-size: 14px !important;
 }

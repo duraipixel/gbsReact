@@ -44,7 +44,6 @@
   display: block;
   position: relative;
   padding-left: 35px;
-  margin: 10px 0px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -67,7 +66,7 @@
   height: 20px;
   width: 20px;
   background-color: transparent;
-  border: 1px solid #f1000a;
+  border: 1px solid green;
 }
 
 /* On mouse-over, add a grey background color */
@@ -77,7 +76,7 @@
 }
 
 .cstm-chkbx input:checked ~ .checkmark {
-  background-color: #f1000a;
+  background-color: green;
 }
 
 .checkmark:after {
@@ -391,8 +390,7 @@ ul.config-uration li:last-child:before {
   .accordion-button {
     background: none !important;
     box-shadow: none !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
+    padding: 0 !important;
     font-weight: 500;
     font-size: 18px;
     line-height: 25px;
@@ -425,4 +423,8 @@ ul.config-uration li:last-child:before {
       z-index: -1;
     }
   }
+}
+
+.Mui-disabled {
+  opacity: .7 !important;
 }

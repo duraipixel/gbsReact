@@ -20,43 +20,52 @@ function FilterChips() {
             const tempFilter = search.split('&')
             var tempArray = []
             tempFilter.forEach(item => {
-                tempArray.push(item.replace('?', ''))
+                item = item.replace('?', '')
+                item = item.split('=')[1]
+                if (item.includes('_')) {
+                    const tempstr = item.split('_')
+                    console.log(...tempstr)
+                    tempArray.push(...tempstr)
+                } else {
+                    tempArray.push(item)
+                }
             })
             setCurrentFilters(tempArray)
         }
     }, [filter])
 
-    const removeFilter = (item) => { 
-        const name = item.split('=')[0]
-        document.getElementById(item.split('=')[1]).checked = false
+    const removeFilter = (item) => {
+        const input = document.getElementById(item)
+        input.checked = false
         const searchParams = new URLSearchParams(search)
         var array = []
-        var checkboxes = document.querySelectorAll(`.${name}-product-check-input:checked`)
+        var checkboxes = document.querySelectorAll(`.${input.name}-product-check-input:checked`)
         for (var i = 0; i < checkboxes.length; i++) {
             array.push(checkboxes[i].value)
         }
-        array.length > 0 ? searchParams.set(name, array.join("_")) : searchParams.delete(name)
+        array.length > 0 ? searchParams.set(input.name, array.join("_")) : searchParams.delete(input.name)
         navigate(`/products?${searchParams.toString()}`);
         dispatch(setfilter(`/products?${searchParams.toString()}`))
     }
-    if (search) return (
-        <div className="border-bottom border-top mx-lg-4 row p-3">
-            <Stack direction="row" className="flex-wrap" gap={1}>
-                <div className=" p-0 fw-bold">Filter by :</div>
-                {
-                    currentFilters.length && currentFilters.map((item, index) => (
-                        <Chip
-                            key={index}
-                            label={item.replace('=', ' : ').replace('_', ' ')}
-                            size="small"
-                            color="primary"
-                            onDelete={(e) => removeFilter(item)}
-                        />
-                    ))
-                }
-            </Stack>
-        </div>
-    )
+    if (search) {
+        return (
+            <div className="pt-2">
+                <Stack direction="row" className="flex-wrap" gap={1}>
+                    {
+                        currentFilters.length && currentFilters.map((item, index) => (
+                            <Chip
+                                key={index}
+                                label={item.replace('-', ' ')}
+                                size="small"
+                                color="warning"
+                                onDelete={(e) => removeFilter(item)}
+                            />
+                        ))
+                    }
+                </Stack>
+            </div>
+        )
+    }
 }
 
 export default FilterChips

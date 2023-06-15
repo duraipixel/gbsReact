@@ -4,7 +4,7 @@ import CardComponent from "components/CardComponent/CardComponent";
 function ProductListComponent({ products, action }) {
   if (products.length > 0) {
     return (
-      <div className="container px-md-2 px-0">
+      <div className="">
         <div className="row g-2">
           {products.map((product) => (
             <CardComponent

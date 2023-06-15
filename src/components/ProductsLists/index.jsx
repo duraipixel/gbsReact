@@ -6,8 +6,7 @@ import { useState } from "react";
 import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { productsApi } from "services/filters.service";
-import { SetAllCheckBoxes } from "utils";
-import CategoryFilters from "./ProductFilter/CategoryFilters";
+import { SetAllCheckBoxes } from "utils"; 
 
 const ProductLists = () => {
   const [products, setProduct] = useState([]);
@@ -34,9 +33,8 @@ const ProductLists = () => {
     });
   }, [take, currentLocation, filterData]);
   return (
-    <div>
-      <CategoryFilters setCurrentLocation={setCurrentLocation} />
-      <section className="p-0 bg-filters">
+    <div> 
+      <section className="p-0">
         <Container>
           <Row className="m-0  bg-white">
             <ProductFilter

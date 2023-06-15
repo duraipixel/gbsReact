@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import ProductBreadcrumb from "components/Product/ProductBreadcrumb"
 import ProductDetails from "components/Product/ProductDetails"
 import axios from "axios"
 import { Container } from "react-bootstrap"
