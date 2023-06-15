@@ -10,20 +10,23 @@
 .deals-imgs img {
   border-radius: 5px;
 }
-@media (max-width:992px) {
-  .deals-imgs{
+@media (max-width: 992px) {
+  .deals-imgs {
     position: relative;
     margin-bottom: 10px;
     display: block;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   }
 }
-.deals-imgs{
+.deals-imgs {
   position: relative;
- 
 }
 .btm-liner {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.08%, rgba(0, 0, 0, 0.8) 85.21%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 57.08%,
+    rgba(0, 0, 0, 0.8) 85.21%
+  );
   border-radius: 6px;
   position: absolute;
   height: 100%;
@@ -33,9 +36,14 @@
   left: 0;
 }
 
-.btm-liner h4{position: absolute;bottom:9px;font-weight: 600;
+.btm-liner h3 {
+  position: absolute;
+  bottom: 9px;
+  font-weight: 600;
   font-size: 23px;
-  line-height: 29px; 
-  text-align: center;width: 100%;text-align: center;
-  color: #FFFFFF;}
-
+  line-height: 29px;
+  text-align: center;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}

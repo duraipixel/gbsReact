@@ -52,7 +52,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
     return (
       <>
         <div className="card border-0 shadow-lg">
-          <h3 className="card-header bg-white fw-bold">Cart Details</h3>
+          <h2 className="h3 card-header bg-white fw-bold">Cart Details</h2>
           <div className="card-body">
             <table className="table table-borderless">
               <tbody>
@@ -91,7 +91,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
               <>
                 <div className="line-spacer"></div>
                 <div className="mb-3">
-                  <h5 className="text-primary">Select Shipping Method</h5>
+                  <h3 className="h5 text-primary">Select Shipping Method</h3>
                   <label htmlFor="ShippingMethod" className="d-block py-2">
                     <input
                       type="radio"
@@ -156,7 +156,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                   <PickupFromStoreAddress />
                 ) : (
                   <div>
-                    <h5 className="text-primary d-flex align-items-center justify-content-between">
+                    <h4 className="h5 text-primary d-flex align-items-center justify-content-between">
                       Shipping Address
                       <button
                         className="fs-14 btn btn-sm"
@@ -167,7 +167,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                       >
                         Change Address
                       </button>
-                    </h5>
+                    </h4>
                     {address.shipping_address ? (
                       <div>
                         {address.shipping_address?.name} <br />

@@ -7,14 +7,18 @@ footer img {
   margin-top: 50px;
 }
 
-footer h5 {
-  font-size: 17px;
-  font-weight: 700;
-  margin-top: 50px;
-  margin-bottom: 20px;
+footer h3,
+h4,
+h5,
+h6 {
+  color: white !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  margin-top: 50px !important;
+  margin-bottom: 20px !important;
 
-  @media (max-width:450px) {
-    margin: 10px 0;
+  @media (max-width: 450px) {
+    margin: 10px 0 !important;
   }
 }
 
@@ -111,7 +115,7 @@ footer .footer-bottom .footer-bottom-text1 a {
   footer .footer-links a {
     width: 50%;
   }
-  footer .list-group .list-group-item a  {
+  footer .list-group .list-group-item a {
     margin: 0px !important;
   }
   footer .footer-bottom .footer-bottom-text1 {

@@ -29,11 +29,11 @@ function CardComponent({ product, type, className }) {
                     : ''
                 }
               </div>
-              <h4 className='product-name text-start'>{product.product_name}</h4>
-              <h5>
+              <h3 className='h4 product-name text-start'>{product.product_name}</h3>
+              <h4 className="h5">
                 <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
                 <span className="new-price">₹{product.price.replace('.00', '')}</span>
-              </h5>
+              </h4>
             </div>
               <div className="d-flex align-items-center clk-optn">
                 <AddFavButton buttonType="icon" className="btn btn-outline-info rounded-box-circle rounded-box-sm" product={product} />
@@ -64,11 +64,11 @@ function CardComponent({ product, type, className }) {
                   : ''
               }
             </div>
-            <h4 className='product-name'>{product.product_name.substring(0, 25)}</h4>
-            <h5>
+            <h3 className='product-name h3'>{product.product_name.substring(0, 25)}</h3>
+            <h4 className='h4'>
               <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
               <span className="new-price">₹{product.price.replace('.00', '')}</span>
-            </h5>
+            </h4>
           </div>
           {/* <ul>
             <li>12th Gen Intel Core i5-1235U</li>
@@ -96,7 +96,7 @@ function CardComponent({ product, type, className }) {
         <AddFavButton buttonType="icon" className="btn-fav" product={product} />
         <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
         <div className="product-info">
-          <h4 className='product-name'>{product.product_name.substring(0, 25)}</h4>
+          <h3 className='product-name'>{product.product_name.substring(0, 25)}</h3>
           <div className="product-prices">
             <span className="new-price">₹{product.price.replace('.00', '')}</span>
             <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>

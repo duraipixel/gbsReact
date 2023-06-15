@@ -20,7 +20,7 @@
   margin: 30px 0px;
 }
 
-.award-container h4 {
+.award-container h3 {
   font-weight: 400;
   font-size: 22px;
   color: #fff;
@@ -407,7 +407,7 @@
     width: 100%;
   }
 
-  .award-container h4 {
+  .award-container h3 {
     font-size: 18px;
   }
 }
