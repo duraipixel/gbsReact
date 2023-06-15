@@ -13,7 +13,6 @@ function WaranttyPolicyPage() {
         <title>Warranty Policy - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Read our Warranty Policy" />
-
       </Helmet>
       <WarrantyPolicy />
     </div>

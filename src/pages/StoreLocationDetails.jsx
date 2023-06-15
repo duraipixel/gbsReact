@@ -41,7 +41,7 @@ const StoreLocationDetailsPage = () => {
   ) : (
     <div>
       <Helmet>
-        <title>{storeLocation?.meta?.title || "Store Location Details | GBS"}</title>
+        <title>{storeLocation?.meta?.title || "Store Location Details - GBS Systems"}</title>
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content={storeLocation?.meta?.description} />
         <meta name="keywords" content={storeLocation?.meta?.keywords} />
