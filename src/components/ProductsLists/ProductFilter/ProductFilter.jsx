@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Col, Accordion } from "react-bootstrap";
+import { Col, Accordion, Button } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { filterMenuApi } from "services/filters.service";
 import { Text } from "utils";
@@ -66,7 +66,7 @@ const ProductFilter = ({
       filterAccordionHandler(data);
       setFilters(data);
     });
-  }, [filter]);
+  }, []);
   return (
     <Col lg={2} className="align-self-start h-100 border-end" sticky="top">
       <div className="filters-side">
@@ -102,7 +102,12 @@ const ProductFilter = ({
               <option value="price-low-to-high">Low to High</option>
             </select>
           </div>
-          <h4 className="filter-title">FILTER BY</h4>
+          <h4 className="filter-title d-flex align-items-center justify-content-between">
+            FILTER BY
+            {filter ? 
+              <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>
+            : ''}
+          </h4> 
           <FilterChips />
           <hr />
           {defaultActiveKey?.length > 0 ? (
