@@ -58,7 +58,7 @@ const Footer = () => {
               </ListGroup>
             </Col>
             <Col xs={12} sm={12} md={6} lg={2} xl={2}>
-              <h5>Quick Links</h5>
+              <h3>Quick Links</h3>
               <div className="footer-links">
                 {quickLink.map((item) => (
                   <Link to={item.url} key={item.id}>
@@ -69,7 +69,7 @@ const Footer = () => {
             </Col>
 
             <Col xs={12} sm={12} md={6} lg={2} xl={2}>
-              <h5>Shop Brands</h5>
+              <h4>Shop Brands</h4>
               <div className="footer-links">
                 {brands &&
                   brands.map((brand) => (
@@ -81,7 +81,7 @@ const Footer = () => {
             </Col>
 
             {/* <Col xs={12} sm={12} md={6} lg={2} xl={2}>
-            <h5>PC Service</h5>
+            <h6>PC Service</h6>
             <div className="footer-links">
               <Link to="/">Chip Level Repair</Link>
               <Link to="/">Memory Upgrades</Link>
@@ -106,7 +106,7 @@ const Footer = () => {
               </div>
             </Col>
             <Col xs={12} sm={12} md={6} lg={3} xl={3}>
-              <h5>Contact Us</h5>
+              <h6>Contact Us</h6>
               <Row className="footer-text1">
                 <Col xs={1}>
                   <RiMapPinLine /> {"   "}

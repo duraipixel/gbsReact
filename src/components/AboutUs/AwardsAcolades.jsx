@@ -17,7 +17,7 @@ function AwardsAcolades() {
             <div className='row'>
               <div className='col-lg-12 col-md-12 col-sm-12'>
                 <div className='small-content text-center'>
-                  <h3 className='text-light'>Awards & Accolades</h3>
+                  <h2 className='h3 text-light'>Awards & Accolades</h2>
                 </div>
                 <div className='row'>
 
@@ -25,7 +25,7 @@ function AwardsAcolades() {
                     <div className='award-container'>
                       <img className='w-100' src={award1} alt="award-pic" />
                       <span>2017</span>
-                      <h4>Transform 2017 - Partner Meet</h4>
+                      <h3>Transform 2017 - Partner Meet</h3>
                     </div>
                   </div>
 
@@ -33,7 +33,7 @@ function AwardsAcolades() {
                     <div className='award-container'>
                       <img className='w-100' src={award2} alt="award-pic" />
                       <span>2017</span>
-                      <h4>Transform 2017 - Partner Meet</h4>
+                      <h3>Transform 2017 - Partner Meet</h3>
                     </div>
                   </div>
 
@@ -41,7 +41,7 @@ function AwardsAcolades() {
                     <div className='award-container'>
                       <img className='w-100' src={award3} alt="award-pic" />
                       <span>2017</span>
-                      <h4>Transform 2017 - Partner Meet</h4>
+                      <h3>Transform 2017 - Partner Meet</h3>
                     </div>
                   </div>
 
@@ -49,7 +49,7 @@ function AwardsAcolades() {
                     <div className='award-container'>
                       <img className='w-100' src={award4} alt="award-pic" />
                       <span>2017</span>
-                      <h4>Transform 2017 - Partner Meet</h4>
+                      <h3>Transform 2017 - Partner Meet</h3>
                     </div>
                   </div>
 
@@ -57,7 +57,7 @@ function AwardsAcolades() {
                     <div className='award-container'>
                       <img className='w-100' src={award5} alt="award-pic" />
                       <span>2017</span>
-                      <h4>Transform 2017 - Partner Meet</h4>
+                      <h3>Transform 2017 - Partner Meet</h3>
                     </div>
                   </div>
 
@@ -65,7 +65,7 @@ function AwardsAcolades() {
                     <div className='award-container'>
                       <img className='w-100' src={award6} alt="award-pic" />
                       <span>2017</span>
-                      <h4>Transform 2017 - Partner Meet</h4>
+                      <h3>Transform 2017 - Partner Meet</h3>
                     </div>
                   </div>
 
