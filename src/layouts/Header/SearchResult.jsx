@@ -1,10 +1,19 @@
 import CompareButton from 'components/CompareButton'
 import NoDataComponent from 'components/NoDataComponent/NoDataComponent'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { resetSearch } from 'redux/features/searchSlice'
 
 function SearchResult({ setMobileSearch, type }) {
-    const search = useSelector((state) => state.search.value)
+    const search     = useSelector((state) => state.search.value)
     const searchType = useSelector((state) => state.search.type)
+    const navigate   = useNavigate()
+    const dispatch   = useDispatch()
+    const searchResultHandler = (item) => {
+        navigate(`/products/${item.product_url}`)
+        dispatch(resetSearch())
+        setMobileSearch(false)
+    }
  
     if (search.status === 0 && searchType === type) {
         return (
@@ -23,7 +32,7 @@ function SearchResult({ setMobileSearch, type }) {
                     <ul className="list-group rounded list-group-flush">
                         {
                             search.products.map((item, i) => (
-                                <li key={i} className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
+                                 <li key={i}   onClick={() => searchResultHandler(item)} className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
                                     <div className='d-md-flex'>
                                         <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                         <div className='ps-md-3'>
