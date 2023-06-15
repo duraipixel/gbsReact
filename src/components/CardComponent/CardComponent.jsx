@@ -31,7 +31,7 @@ function CardComponent({ product, type, className }) {
                     : ''
                 }
               </div>
-              <h3 className='h3 text-start'>{product.product_name.substr(0, 80)}</h3>
+              <h3 className='h3 text-start'>{product.product_name}</h3>
               <h4 className="h5">
                 <i className='old-price'>₹{product.strike_price.replace('.00', '')}</i>
                 <span className="new-price text-success fw-bold">₹{product.price.replace('.00', '')}</span>
