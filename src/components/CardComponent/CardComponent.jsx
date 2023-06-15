@@ -11,7 +11,7 @@ function CardComponent({ product, type, className }) {
   const navigate = useNavigate()
   if (type === 'list' && window.innerWidth > 450) return (
     <div className={className}>
-      <div className='product-card overflow-hidden border-bottom border-start' style={{ minHeight:300 }}>
+      <div className='product-card overflow-hidden border-bottom border-start' style={{ minHeight:200 }}>
         <div className="arival-det row m-0 shadow-none" >
           <div className="ari-img cursor col-md-4" onClick={() => navigate(`/products/${product.product_url}`)}>
             <Image src={product.image} alt={product.product_name} />
@@ -29,7 +29,7 @@ function CardComponent({ product, type, className }) {
                     : ''
                 }
               </div>
-              <h3 className='h4 product-name text-start'>{product.product_name}</h3>
+              <h3 className='h4 product-name text-start'>{product.product_name.substr(0,80)}</h3>
               <h4 className="h5">
                 <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
                 <span className="new-price">₹{product.price.replace('.00', '')}</span>

@@ -419,7 +419,12 @@ span.ofer-infs span {
   color: #252525 !important;
   font-weight: bold !important;
 }
-
+.MuiChip-sizeSmall {
+  height: 20px !important;
+}
+.MuiChip-labelSmall {
+  font-size: 11px;
+}
 .cta-btn {
   font-size: 16px;
   padding: 12px 15px;

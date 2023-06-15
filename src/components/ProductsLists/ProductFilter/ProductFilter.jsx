@@ -50,23 +50,24 @@ const ProductFilter = ({
   };
 
 
-  const filterHandler = (e) => {
-    const searchParams = new URLSearchParams(location.search)
-    if (e.target.value) {
-      searchParams.set("sort_by", e.target.value)
-      setCurrentLocation(`?${searchParams.toString()}`)
-      navigate(`/products?${searchParams.toString()}`)
-      setClearFilter(true)
-    } else {
-      setClearFilter(false)
-    }
-  };
+  // const filterHandler = (e) => {
+  //   const searchParams = new URLSearchParams(location.search)
+  //   if (e.target.value) {
+  //     searchParams.set("sort_by", e.target.value)
+  //     setCurrentLocation(`?${searchParams.toString()}`)
+  //     navigate(`/products?${searchParams.toString()}`)
+  //     setClearFilter(true)
+  //   } else {
+  //     setClearFilter(false)
+  //   }
+  // };
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
       filterAccordionHandler(data);
       setFilters(data);
     });
   }, []);
+  console.log(filter,'REfilter')
   return (
     <Col lg={2} className="align-self-start h-100 ps-lg-0  pe-lg-4 pt-4" sticky="top">
       <div className="filters-side">
@@ -103,14 +104,13 @@ const ProductFilter = ({
             </select>
           </div> */}
           {filter !== '' && filter !== '/products?' ?
-            <>
+            <div className="mb-2">
               <h4 className="filter-title d-flex align-items-center justify-content-between">
                 FILTER BY
                 <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>
               </h4>
               <FilterChips />
-              <hr />
-            </>
+            </div>
             : ''}
           {defaultActiveKey?.length > 0 ? (
             <Accordion
