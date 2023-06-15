@@ -13,6 +13,7 @@ function SearchResult({ setMobileSearch, type }) {
         navigate(`/products/${item.product_url}`)
         dispatch(resetSearch())
         setMobileSearch(false)
+        document.querySelector('input[type="search"]').value = ''
     }
  
     if (search.status === 0 && searchType === type) {
