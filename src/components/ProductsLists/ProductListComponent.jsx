@@ -5,7 +5,7 @@ function ProductListComponent({ products, action }) {
   if (products.length > 0) {
     return (
       <div className="">
-        <div className="row g-0">
+        <div className="row g-2 g-lg-0">
           {products.map((product) => (
             <CardComponent
               product={product}
