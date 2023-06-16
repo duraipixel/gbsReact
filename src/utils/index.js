@@ -89,7 +89,7 @@ const HalfHeightLoader = () => {
 };
 
 const Image = (props) => {
-  return <LazyLoadImage placeholderSrc={require('./../assets/Brand/card-placeholder.png')} effect="blur" {...props} />;
+  return <LazyLoadImage placeholderSrc={require('./../assets/Brand/card-placeholder.gif')} effect="blur" {...props} />;
 };
 
 const AppScroller = ({ children }) => {
