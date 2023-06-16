@@ -34,7 +34,6 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   }, [checkoutData, shippingMethod]);
 
   const shippingMethodHandler = (value) => {
-    // console.log(value);
     setShippingMethod(value);
     localStorage.setItem("shipping_method", value.toUpperCase());
   };

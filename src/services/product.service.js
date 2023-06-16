@@ -66,11 +66,8 @@ export const paymentVerifyApi = async (token) => {
     });
 }
 
-export const checkoutApi = async (formData, setLoader) => {
-    return await axios.post(`${process.env.REACT_APP_BASE_URL}/proceed/ccav/checkout`, {
-        customer_id: AuthUser()?.id,
-        checkout_infomation: formData
-    });
+export const checkoutApi = async (formData) => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/proceed/ccav/checkout`, formData);
 }
 
 export const getOrdersListApi = async () => {

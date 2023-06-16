@@ -34,7 +34,7 @@ function CardComponent({ product, type, className }) {
               <h3 className='h3 text-start'>{product.product_name}</h3>
               <h4 className="h5">
                 <i className='old-price'>₹{product.strike_price.replace('.00', '')}</i>
-                <span className="new-price text-success fw-bold">₹{product.price.replace('.00', '')}</span>
+                <span className="new-price text-info fw-bold">₹{product.price.replace('.00', '')}</span>
               </h4>
             </div>
             <div className="d-flex align-items-center clk-optn">
