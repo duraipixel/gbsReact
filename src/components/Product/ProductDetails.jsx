@@ -13,45 +13,33 @@ function ProductDetails({ product }) {
   if (product) {
     return (
       <div>
-        <Container className="p-0">
-          <Row className="sticky-wrapper">
-            <Col xl={6} className="sticky-inner sticky-inner-pdp h-100 pt-lg-5">
-              <ProductBreadcrumb
-                slug={product.category_slug}
-                category={product.category_name}
-                title={product.product_name}
-              />
-              <div className="position-relative">
-                <span className="offer-badge">
-                  <div>
-                    {product.discount_percentage}% <span>OFF</span>
-                  </div>
-                </span>
-                <ProductGallery images={product.gallery || product.image} />
-              </div>
-            </Col>
-            <Col xl={6} className="pt-lg-5">
-              <ProductInformation product={product} />
-            </Col>
-          </Row>
-        </Container>
-        <ProductsFeaturesTabs product={product} />
-        {product.related_products[0] && (
-          <section className="new-arrivals">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between">
-                  <div className="comon-heads">
-                    <h2>Related Products</h2>
-                  </div>
+        <Row className=" h-100">
+          <Col xl={6} className="sticky-top h-100 pt-lg-5">
+            <ProductBreadcrumb
+              slug={product.category_slug}
+              category={product.category_name}
+              title={product.product_name}
+            />
+            <div className="position-relative ">
+              <span className="offer-badge">
+                <div>
+                  {product.discount_percentage}% <span>OFF</span>
                 </div>
-                <div className="arrival-slider">
-                  <ProductSlider products={product.related_products} />
-                </div>
-              </div>
+              </span>
+              <ProductGallery images={product.gallery || product.image} />
             </div>
-          </section>
-        )}
+          </Col>
+          <Col xl={6} className="pt-lg-5">
+            <ProductInformation product={product} />
+          </Col>
+        </Row>
+        <ProductsFeaturesTabs product={product} />
+        {product.related_products.length !== 0 ? (
+          <div className="py-5 related-slider">
+            <h5 className="text-center mb-4">Related Products</h5>
+            <ProductSlider products={product.related_products} />
+          </div>
+        ) : ''}
       </div>
     );
   }
