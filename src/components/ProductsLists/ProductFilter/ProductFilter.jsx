@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setfilter } from "redux/features/filterSlice";
 import CheckBoxInput from "components/CheckBoxInput";
 import FilterChips from "./FilterChips";
+import FiltersPlaceHolders from "./FiltersPlaceHolders";
 
 const ProductFilter = ({
   setCurrentLocation,
@@ -67,7 +68,7 @@ const ProductFilter = ({
       setFilters(data);
     });
   }, []);
-  console.log(filter,'REfilter')
+
   return (
     <Col lg={2} className="align-self-start h-100 ps-lg-0  pe-lg-4 pt-4" sticky="top">
       <div className="filters-side">
@@ -112,32 +113,33 @@ const ProductFilter = ({
               <FilterChips />
             </div>
             : ''}
-          {defaultActiveKey?.length > 0 ? (
-            <Accordion
-              defaultActiveKey={defaultActiveKey}
-              alwaysOpen
-              className="px-0 filters-accordion"
-            >
-              {Object.entries(Filters).map((filters, key) => (
-                <Accordion.Item eventKey={filters[0]} key={key}>
-                  <Accordion.Header className="py-2">
-                    <span className="filter-title">{Text(filters[0])}</span>
-                  </Accordion.Header>
-                  <Accordion.Body className="p-0">
-                    <ul>
-                      {filters[1].map((filter, index) => (
-                        <li key={index}>
-                          <CheckBoxInput data={filter} name={filters[0]} />
-                        </li>
-                      ))}
-                    </ul>
-                  </Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          ) : (
-            ""
-          )}
+          {
+            Filters === false ? <FiltersPlaceHolders /> :
+              defaultActiveKey?.length > 0 ? (
+                <Accordion
+                  defaultActiveKey={defaultActiveKey}
+                  alwaysOpen
+                  className="px-0 filters-accordion"
+                >
+                  {Object.entries(Filters).map((filters, key) => (
+                    <Accordion.Item eventKey={filters[0]} key={key}>
+                      <Accordion.Header className="py-2">
+                        <span className="filter-title">{Text(filters[0])}</span>
+                      </Accordion.Header>
+                      <Accordion.Body className="p-0">
+                        <ul>
+                          {filters[1].map((filter, index) => (
+                            <li key={index}>
+                              <CheckBoxInput data={filter} name={filters[0]} />
+                            </li>
+                          ))}
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  ))}
+                </Accordion>
+              ) : ""
+          }
         </div>
       </div>
     </Col>
