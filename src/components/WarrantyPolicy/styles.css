@@ -1,54 +1,71 @@
-
-
 .banner-liners h1 {
-    color: #fff;
-    margin: 0px 0px -2px;
-    font-weight: 600;
+  color: #fff;
+  margin: 0px 0px -2px;
+  font-weight: 600;
 }
 
 .common-content-area span {
-    font-weight: 600;
-    margin-bottom: 10px;
-    display: block;
-    color: #F1000A;
-    font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+  color: #f1000a;
+  font-size: 18px;
 }
 
 .common-content-area {
-    padding: 55px 0px;
+  padding: 55px 0px;
 }
 
 .warant-lists {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
-.waranty-lsts{padding: 15px; 
-    background: #FFFFFF;
-    box-shadow: 7px 7px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 6px;}
+.waranty-lsts {
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 7px 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
 
-    .clnt-cnt h4{font-weight: 600;
-        font-size: 26px;color: #000000;
-        line-height: 25px;}
+.clnt-cnt h2 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #000000;
+  line-height: 25px;
+}
 
-        .clnt-cnt ul li{width:100%;margin: 5px 0px;}
+.clnt-cnt ul li {
+  width: 100%;
+  margin: 5px 0px;
+}
 
-        .clnt-more a{border: 2px solid #F1000A;font-weight: 600;
-            font-size: 16px;color:#F1000A;
-            line-height: 20px;display: inline-block;
-            border-radius: 4px;padding:10px 26px;}
+.clnt-more a {
+  border: 2px solid #f1000a;
+  font-weight: 600;
+  font-size: 16px;
+  color: #f1000a;
+  line-height: 20px;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 10px 26px;
+}
 
-            .clnt-more a:hover{background-color:#F1000A;color:#fff;}
+.clnt-more a:hover {
+  background-color: #f1000a;
+  color: #fff;
+}
 
-            .waranty-lsts{margin-bottom: 30px;}
+.waranty-lsts {
+  margin-bottom: 30px;
+}
 
-            .clnt-img img{width:100%;}
+.clnt-img img {
+  width: 100%;
+}
 
-
-            @media (max-width:1000px) {
-
-                .clnt-img img {
-                    width: auto;margin-bottom: 15px;
-                  }
-
-            }           
+@media (max-width: 1000px) {
+  .clnt-img img {
+    width: auto;
+    margin-bottom: 15px;
+  }
+}

@@ -21,7 +21,7 @@ function ShippingDelivery() {
           <div className="row">
             <div className="col-lg-12">
               <p>We offer FREE Shipping on all order through www.gbssale.com</p>
-              <span>For Chennai Next Day Delivery Available</span>
+              <h2>For Chennai Next Day Delivery Available</h2>
               <p>
                 We make our best efforts to ship each item in your order within
                 2-4 working days in Tamilnadu. For other states we may take 4 –

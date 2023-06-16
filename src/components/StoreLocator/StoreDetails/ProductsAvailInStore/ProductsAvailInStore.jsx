@@ -41,7 +41,7 @@ const ProductsAvailInStore = () => {
                         className="img-fluid"
                       />
                       <div className="btm-liner">
-                        <h4>{item.name}</h4>
+                        <h3>{item.name}</h3>
                       </div>
                     </div>
                   </span>

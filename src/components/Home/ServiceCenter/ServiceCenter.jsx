@@ -10,7 +10,7 @@ const ServiceCenter = () => {
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div className="comon-heads">
-                <h5 className="h2">Your PC Ran into Trouble?</h5>
+                <h3 className="h2">Your PC Ran into Trouble?</h3>
               </div>
             </div>
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">

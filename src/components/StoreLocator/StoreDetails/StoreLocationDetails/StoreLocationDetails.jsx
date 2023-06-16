@@ -11,7 +11,7 @@ const StoreLocationDetails = ({ storeLocation }) => {
       <Container>
         <Row className="details-container">
           <Col lg={6}>
-            <h1 className="h2">{storeLocation.title}</h1>
+            <h2 className="h2">{storeLocation.title}</h2>
             <p>{storeLocation.description}</p>
             <div>
               {(storeLocation.email || storeLocation.contact_no) && (

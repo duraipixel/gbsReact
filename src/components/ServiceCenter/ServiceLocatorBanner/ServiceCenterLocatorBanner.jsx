@@ -16,7 +16,7 @@ const ServiceCenterLocatorBanner = ({
       <section className="banner py-3">
         <Container>
           <Col>
-            <h2 className="text-center">Service Center Locator</h2>
+            <h1 className="text-center">Service Center Locator</h1>
             <Row>
               <div className="m-2 flex-center flex-wrap">
                 <Col lg={4}>

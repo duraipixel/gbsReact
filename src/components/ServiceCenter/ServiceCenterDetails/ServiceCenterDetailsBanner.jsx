@@ -19,7 +19,7 @@ const ServiceCenterDetailsBanner = ({ serviceCenterData }) => {
           alt="overlay"
         />
         <div className="overlay-text">
-          <h3>{serviceCenterData.title}</h3>
+          <h1>{serviceCenterData.title}</h1>
           <div style={{ display: "flex", alignItems: "center" }}>
             <span>Home</span>
             <span className="px-2">

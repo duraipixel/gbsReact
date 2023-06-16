@@ -24,7 +24,7 @@
   line-height: 38px;
 }
 
-.common-content-area h4 {
+.common-content-area h2 {
   font-family: "Outfit";
   font-weight: 500;
   font-size: 26px;
@@ -58,3 +58,13 @@
 }
 
 .common-content-area strong{color: #777575;}
+
+.common-content-area .container .common-heads {
+  color: #f1000a;
+  font-family: Outfit;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 38px;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}

@@ -9,7 +9,7 @@ function TermsConditions() {
           <div className="row">
             <div className="col-lg-12">
               <div className="banner-liners">
-                <h1>Privacy Policy</h1>
+                <h1>Terms and Conditions</h1>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ function TermsConditions() {
                 </li>
               </ul>
 
-              <h4>Refund & Cancellation Policy</h4>
+              <h2 className="common-heads">Refund & Cancellation Policy</h2>
 
               <ul>
                 <li>
@@ -75,7 +75,7 @@ function TermsConditions() {
                 <li>Once dispatched the order cannot be cancelled.</li>
               </ul>
 
-              <h4>What are the available refund options?</h4>
+              <h3 className="common-heads">What are the available refund options?</h3>
 
               <p>
                 If <b>GBS SYSTEMS & SERVICES PVT LTD</b> is unable to deliver

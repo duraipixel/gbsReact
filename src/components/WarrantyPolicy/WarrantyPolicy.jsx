@@ -36,7 +36,7 @@ function WarrantyPolicy() {
 
                   <div className="col-lg-6">
                     <div className="clnt-cnt">
-                      <h4> Dell Support</h4>
+                      <h2> Dell Support</h2>
                       <ul>
                         <li>
                           <IoCallOutline /> 18004252073 / 18004252067 /
@@ -73,7 +73,7 @@ function WarrantyPolicy() {
 
                   <div className="col-lg-6">
                     <div className="clnt-cnt">
-                      <h4> HP Support</h4>
+                      <h2> HP Support</h2>
                       <ul>
                         <li>
                           <IoCallOutline /> 18002587170{" "}
@@ -106,7 +106,7 @@ function WarrantyPolicy() {
 
                   <div className="col-lg-6">
                     <div className="clnt-cnt">
-                      <h4> Lenovo Support</h4>
+                      <h2> Lenovo Support</h2>
                       <ul>
                         <li>
                           <IoCallOutline /> <b>Idea pad</b> : 180030005366{" "}
@@ -142,7 +142,7 @@ function WarrantyPolicy() {
 
                   <div className="col-lg-6">
                     <div className="clnt-cnt">
-                      <h4> Acer Support</h4>
+                      <h2> Acer Support</h2>
                       <ul>
                         <li>
                           <IoCallOutline /> 1800116677 / 180030002237{" "}
@@ -175,7 +175,7 @@ function WarrantyPolicy() {
 
                   <div className="col-lg-6">
                     <div className="clnt-cnt">
-                      <h4> Asus Support</h4>
+                      <h2> Asus Support</h2>
                       <ul>
                         <li>
                           <IoCallOutline /> 18002090365{" "}

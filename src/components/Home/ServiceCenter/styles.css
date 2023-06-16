@@ -4,7 +4,7 @@
   background-size: cover;
 }
 
-.ran-trouble h5 {
+.ran-trouble h3 {
   color: #fff;
   margin-bottom: 25px;
 }
@@ -79,7 +79,7 @@
   .details-locations li:before {
     right: -10px;
   }
-  .ran-trouble h5 {
+  .ran-trouble h3 {
     margin-bottom: 10px;
   }
   .details-locations h4 {

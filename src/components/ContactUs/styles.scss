@@ -233,7 +233,6 @@ textarea.form-control {
   border: none !important;
 }
 
-
 label.error {
   color: #fff;
   font-size: 13px;
@@ -321,7 +320,7 @@ label.error {
   text-align: left;
   width: 100%;
   color: #ffffff;
-  @media (max-width:450px) {
+  @media (max-width: 450px) {
     line-height: 18px !important;
   }
 }
@@ -344,4 +343,26 @@ label.error {
 }
 .btm-liner a:hover {
   background: #f1000a;
+}
+
+.contact-us-page .contact-us .contact-us-headings {
+  color: rgb(241, 0, 10);
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  font-weight: 700;
+  line-height: 28px;
+}
+.contact-us-page .contact-us .home-products.testimonials .para {
+  padding-right: 0px;
+  position: relative;
+  line-height: 24px;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  a {
+    color: rgb(0, 4, 58);
+    font-weight: 600;
+    transition: all 0.6s ease 0s;
+  }
 }

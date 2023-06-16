@@ -21,7 +21,7 @@ const LocationContent = ({ storeData, fetching }) => {
               <div className="flex-jc-btwn flex-wrap location-content-div">
                 <Col lg={9}>
                   <div className="location-content">
-                    <h1 className="h2">{item.title}</h1>
+                    <h2 className="h2">{item.title}</h2>
                     <div className="align-c gap-3">
                       {item.address && <RiMapPinLine />}
                       {item.address}

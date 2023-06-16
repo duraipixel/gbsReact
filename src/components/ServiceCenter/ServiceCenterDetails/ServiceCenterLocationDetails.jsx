@@ -9,7 +9,7 @@ const ServiceCenterLocationDetails = ({ serviceCenterData }) => {
       <Container>
         <Row className="details-container">
           <Col lg={6}>
-            <h1 className="h2">{serviceCenterData.title}</h1>
+            <h2 className="h2">{serviceCenterData.title}</h2>
             <p>{serviceCenterData.description}</p>
             <div>
               {(serviceCenterData.email || serviceCenterData.contact_no) && (

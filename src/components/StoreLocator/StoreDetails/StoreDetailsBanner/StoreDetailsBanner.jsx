@@ -18,7 +18,7 @@ const StoreDetailsBanner = ({ storeLocation }) => {
           alt="overlay"
         />
         <div className="overlay-text">
-          <h3>{storeLocation.title}</h3>
+          <h1>{storeLocation.title}</h1>
           <div>
             <span>Home</span>
             <span className="px-2">

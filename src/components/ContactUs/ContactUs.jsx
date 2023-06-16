@@ -38,25 +38,25 @@ function ContactUs() {
 
                 <div className="home-products testimonials">
                   <img src={location} alt="location-icon" />
-                  <h4>Location</h4>
-                  <h6>
+                  <h3 className="contact-us-headings">Location</h3>
+                  <h4 className="para h6">
                     1070A, Munusamy Salai,
                     <br />
                     KK Nagar, Chennai-600078.
-                  </h6>
+                  </h4>
                 </div>
 
                 <div className="home-products testimonials">
                   <img src={call} alt="call-icon" />
                   <h4>Call Us</h4>
-                  <h6>Sales : +91 91 96003 76222</h6>
+                  <h5 className="para">Sales : +91 91 96003 76222</h5>
                   <h6>Service : +91 98416 03332</h6>
                 </div>
 
                 <div className="home-products testimonials">
                   <img src={mail} alt="mail-icon" />
                   <h4>Mail Us</h4>
-                  <h6>
+                  <h5 className="para">
                     {" "}
                     <Link
                       rel="noopener noreferrer"
@@ -66,7 +66,7 @@ function ContactUs() {
                     >
                       {siteInfo.site_email}
                     </Link>
-                  </h6>
+                  </h5>
                 </div>
               </div>
 
