@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import CheckoutButton from "components/CheckoutButton";
 import { useSelector } from "react-redux";
 import {
@@ -10,6 +10,7 @@ import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDe
 import { Modal } from "react-bootstrap";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
 const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
+  console.log(checkoutData?.has_pickup_store)
   const authUser = useSelector((state) => state.auth);
   const address = useSelector((state) => state.cartAddress);
   const [shippingMethod, setShippingMethod] = useState(
@@ -18,11 +19,12 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const [pickupFromStore, setPickupFromStore] = useState(
     checkoutData?.has_pickup_store
   );
+  useMemo(() => setPickupFromStore(checkoutData?.has_pickup_store) ,[checkoutData?.has_pickup_store])
   // console.log(pickupFromStore);
   const [addressModalType, setAddressModalType] = useState(null);
   const [shippingTypes, setshippingTypes] = useState([]);
   const [show, setShow] = useState(false);
-
+   
   useEffect(() => {
     if (shippingMethod === "Standard_Shipping" && checkoutData) {
       shippingChargesApi(
@@ -40,7 +42,8 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const setShippingCharges = async (id) => {
     localStorage.setItem("shipping_charge_id", id);
     const response = await setShippingChargesApi(id);
-    // console.log(response.data.data.cart_total);
+    // console.log(response.data.data.cart_total); 
+
     setCheckoutData(response.data.data.cart_total);
     localStorage.setItem(
       "checkout_data",
@@ -152,7 +155,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                 </div>
                 <div className="line-spacer"></div>
                 {shippingMethod === "Pickup_From_Store" ? (
-                  <PickupFromStoreAddress />
+                  <PickupFromStoreAddress brandId={checkoutData?.brand_id}/>
                 ) : (
                   <div>
                     <h4 className="h5 text-primary d-flex align-items-center justify-content-between">
