@@ -41,6 +41,7 @@ const Header = () => {
       expand={`${expand}`}
       variant="dark"
       fixed="top"
+      id="gbs-navbar"
     >
       <Container>
         <Link to="/" className="brand">

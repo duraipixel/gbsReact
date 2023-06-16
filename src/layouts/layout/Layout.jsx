@@ -12,7 +12,7 @@ const Layout = () => {
   return (
     <AppScroller>
       <Header />
-      <main>
+      <main id="app-layout">
         <Outlet />
       </main>
       <Footer />
