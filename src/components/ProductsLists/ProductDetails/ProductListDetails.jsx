@@ -2,6 +2,7 @@ import { Col } from "react-bootstrap";
 import { Loader } from "utils";
 import ProductListComponent from "../ProductListComponent"; 
 import CategoryFilters from "../ProductFilter/CategoryFilters";
+import ProductListPreloader from "../ProductListPreloader";
 
 const ProductListDetails = ({
   products,
@@ -24,7 +25,7 @@ const ProductListDetails = ({
             </h1>
           </div>
           {fetching ? (
-            <Loader />
+            <ProductListPreloader />
           ) : (
             <>
               {products.length === 0 ? (
