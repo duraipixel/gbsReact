@@ -19,19 +19,19 @@ function CheckoutButton({ className }) {
             toast.error('Billing address is required!')
             return false
         }
-        if(data.shipping_address_id === undefined) {
-            toast.error('Shipping address is required!')
-            return false
-        }
         if(data.shipping_method.type === null) {
             toast.error('Select Shipping Method!')
             return false
         }
-        if(data.shipping_method.type === "STANDARD_SHIPPING" && data.shipping_method.id === null ) {
-            toast.error('Pleace select shipping type!')
+        if(data.shipping_method.type === "STANDARD_SHIPPING" && data.shipping_method.address_id === null ) {
+            toast.error('Shippping address is required!')
             return false
         }
-        if(data.shipping_method.type === "PICKUP_FROM_STORE" && data.shipping_method.id === undefined ) {
+        if(data.shipping_method.type === "STANDARD_SHIPPING" && data.shipping_method.charge_id === null ) {
+            toast.error('Select Shipping Method!')
+            return false
+        }
+        if(data.shipping_method.type === "PICKUP_FROM_STORE" && data.shipping_method.address_id === undefined ) {
             toast.error('Store address is required!')
             return false
         }
@@ -40,11 +40,11 @@ function CheckoutButton({ className }) {
     const checkoutHandler = () => {
         const checkData = {
             customer_id: AuthUser()?.id,
-            shipping_address_id : shipping_address?.customer_address_id,
             billing_address_id : billing_address?.customer_address_id,
             shipping_method : {
-                type: shipping_method,
-                id  : shipping_method === "PICKUP_FROM_STORE" ? store_address?.id : shipping_charge_id
+                type      : shipping_method,
+                address_id: shipping_method === "PICKUP_FROM_STORE" ? store_address?.id: shipping_address?.customer_address_id,
+                charge_id : shipping_method === "PICKUP_FROM_STORE" ? null             : shipping_charge_id
             } 
         }
         if(validateProcess(checkData)) {
