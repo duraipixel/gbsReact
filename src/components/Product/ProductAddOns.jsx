@@ -1,3 +1,4 @@
+import axios from 'axios'
 import AddCartButton from 'components/AddCartButton'
 import { useState } from 'react'
 import { Accordion } from 'react-bootstrap'
@@ -38,6 +39,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                                 {addon.items.map((item, key) => (
                                                     <AddOnInput product={product} addon={addon} cartId={cartId} setCartId={setCartId} item={item} key={key} index={i} secIndex={key} />
                                                 ))}
+                                                <RemoveAddOnInput addon={addon} product={product} cartId={cartId} />
                                             </div>
                                         </Accordion.Body>
                                     </Accordion.Item>
@@ -64,7 +66,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                                 <small >{item.product_name}</small>
                                                 <AddCartButton type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} />
                                             </div>
-                                            <div className="col"> 
+                                            <div className="col">
                                                 <span className='text-info fw-bold'>₹{item.price}</span>
                                             </div>
                                         </div>
@@ -113,6 +115,32 @@ const AddOnInput = ({ item, index, cartId, secIndex, addon, product, setCartId }
             <label className='btn-add-on m-0 border shadow-sm' htmlFor={`form_${secIndex}_add_on_${index}`}>
                 {loading ? <LoadingSpinner className="position-absolute" /> : ""}
                 {item.label}<span className="text-info">₹{" "}{item.amount}</span>
+            </label>
+        </div>
+    )
+}
+
+const RemoveAddOnInput = ({ addon, cartId, product }) => {
+    const [isChecked, setIsChecked] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const Handler = () => {
+        setLoading(true)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/delete/addon`, {
+            addon_id  : addon.id,
+            cart_id   : cartId,
+            product_id: product.id
+        }).then((response) => {
+            toast.success(response.data.message)
+            setLoading(false)
+            setIsChecked(true)
+        })
+    }
+    return (
+        <div>
+            <input type="radio" onClick={Handler} disabled={loading} checked={isChecked} className='addon' name={`add_on_${addon.id}`} id={`form_${addon.id}_remove_on${addon.id}`} />
+            <label className='btn-add-on m-0 border shadow-sm' htmlFor={`form_${addon.id}_remove_on${addon.id}`}>
+                {loading ? <LoadingSpinner className="position-absolute" /> : ""}
+                <span className="text-info">None</span>
             </label>
         </div>
     )
