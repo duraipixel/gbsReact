@@ -26,7 +26,7 @@ function ProductDetails({ product }) {
                   {product.discount_percentage}% <span>OFF</span>
                 </div>
               </span>
-              <ProductGallery images={product.gallery || product.image} />
+              <ProductGallery videos={product.video_link} images={product.gallery || product.image} />
             </div>
           </Col>
           <Col xl={6} className="pt-lg-5">

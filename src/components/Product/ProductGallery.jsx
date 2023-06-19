@@ -1,6 +1,6 @@
 import ReactImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-export default function ProductGallery({ images }) {
+export default function ProductGallery({ images, videos }) {
 
   const renderVideo = (item) => {
     return (
@@ -25,7 +25,7 @@ export default function ProductGallery({ images }) {
       loading: "lazy",
       thumbnailLoading: "lazy",
       thumbnailHeight: "76px",
-      thumbnailWidth : "76px",
+      thumbnailWidth: "76px",
     });
   } else {
     images &&
@@ -37,28 +37,23 @@ export default function ProductGallery({ images }) {
           loading: "lazy",
           thumbnailLoading: "lazy",
           thumbnailHeight: "76px",
-          thumbnailWidth : "76px",
+          thumbnailWidth: "76px",
         })
       );
   }
-  produtcCollection.push(
-    {
-      embedUrl: 'https://player.vimeo.com/video/822213540?title=0&portrait=0&byline=0&autoplay=1&loop=1&transparent=1',
-      thumbnail: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-      renderItem: renderVideo.bind(this),
-    },
-    {
-      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
-      renderItem: renderVideo.bind(this),
-    },
-    {
-      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
-      renderItem: renderVideo.bind(this),
-    }
-  )
- if(produtcCollection.length) return (
+  if (videos.length) {
+    console.log(videos)
+    videos.map(video => {
+      produtcCollection.push(
+        {
+          embedUrl: video.video_link,
+          thumbnail: video.thumbnail,
+          renderItem: renderVideo.bind(this),
+        } 
+      )
+    })
+  }
+  if (produtcCollection.length) return (
     <div className="mt-2 react-image-gallery-div">
       <ReactImageGallery
         slideInterval="4000"
