@@ -16,7 +16,7 @@ const ProductFilter = ({
   filterData,
 }) => {
   const filter = useSelector((state) => state.filter)
-  const [defaultActiveKey, setDefaultActiveKey] = useState(['brands', 'categories', 'discounts']);
+  const [defaultActiveKey, setDefaultActiveKey] = useState(['brands','exclusive','categories', 'discounts']);
   const [isActive, setActive] = useState("false");
   const [Filters, setFilters] = useState(false);
   const location = useLocation();

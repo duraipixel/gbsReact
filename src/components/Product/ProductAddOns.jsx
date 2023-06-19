@@ -34,7 +34,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                             </div>
                                         </Accordion.Header>
                                         <Accordion.Body>
-                                            <div className="d-md-inline-flex g-3">
+                                            <div className="d-md-inline-flex flex-wrap gap-1">
                                                 {addon.items.map((item, key) => (
                                                     <AddOnInput product={product} addon={addon} cartId={cartId} setCartId={setCartId} item={item} key={key} index={i} secIndex={key} />
                                                 ))}
@@ -108,13 +108,13 @@ const AddOnInput = ({ item, index, cartId, secIndex, addon, product, setCartId }
     }
     const [isChecked, setIsChecked] = useState(item.is_selected)
     return (
-        <>
+        <div>
             <input type="radio" disabled={loading} checked={isChecked} className='addon' name={`add_on_${addon.id}`} onClick={() => addonHandler(addon, item)} value={item.id} id={`form_${secIndex}_add_on_${index}`} />
-            <label className='btn-add-on border shadow-sm' htmlFor={`form_${secIndex}_add_on_${index}`}>
+            <label className='btn-add-on m-0 border shadow-sm' htmlFor={`form_${secIndex}_add_on_${index}`}>
                 {loading ? <LoadingSpinner className="position-absolute" /> : ""}
                 {item.label}<span className="text-info">₹{" "}{item.amount}</span>
             </label>
-        </>
+        </div>
     )
 }
 export default ProductAddOns
