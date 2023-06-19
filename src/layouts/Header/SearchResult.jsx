@@ -33,8 +33,8 @@ function SearchResult({ setMobileSearch, type }) {
                     <ul className="list-group rounded list-group-flush">
                         {
                             search.products.map((item, i) => (
-                                 <li key={i}   onClick={() => searchResultHandler(item)} className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
-                                    <div className='d-md-flex'>
+                                 <li key={i} className="d-md-flex align-items-center justify-content-between list-group-item list-group-item-action">
+                                    <div className='d-md-flex' onClick={() => searchResultHandler(item)}>
                                         <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                         <div className='ps-md-3'>
                                             <span className='fs-14 cursor'>{item.product_name}</span>
