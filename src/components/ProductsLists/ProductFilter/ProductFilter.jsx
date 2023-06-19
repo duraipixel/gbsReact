@@ -51,17 +51,17 @@ const ProductFilter = ({
   };
 
 
-  // const filterHandler = (e) => {
-  //   const searchParams = new URLSearchParams(location.search)
-  //   if (e.target.value) {
-  //     searchParams.set("sort_by", e.target.value)
-  //     setCurrentLocation(`?${searchParams.toString()}`)
-  //     navigate(`/products?${searchParams.toString()}`)
-  //     setClearFilter(true)
-  //   } else {
-  //     setClearFilter(false)
-  //   }
-  // };
+  const filterHandler = (e) => {
+    const searchParams = new URLSearchParams(location.search)
+    if (e.target.value) {
+      searchParams.set("sort_by", e.target.value)
+      setCurrentLocation(`?${searchParams.toString()}`)
+      navigate(`/products?${searchParams.toString()}`)
+      setClearFilter(true)
+    } else {
+      setClearFilter(false)
+    }
+  };
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
       filterAccordionHandler(data);
@@ -91,7 +91,7 @@ const ProductFilter = ({
           <Link className="close-btn" onClick={() => setActive(!isActive)}>
             <IoMdClose />
           </Link>
-          {/* <div className="mb-3">
+          <div className="mb-3">
             <h6 className="filter-title py-2">SORT BY</h6>
             <select
               className="form-select form-select-sm"
@@ -103,7 +103,7 @@ const ProductFilter = ({
               <option value="price-high-to-low" >High to Low</option>
               <option value="price-low-to-high">Low to High</option>
             </select>
-          </div> */}
+          </div>
           {filter !== '' && filter !== '/products?' ?
             <div className="mb-2">
               <h4 className="filter-title d-flex align-items-center justify-content-between">
