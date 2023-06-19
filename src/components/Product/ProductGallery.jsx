@@ -41,23 +41,23 @@ export default function ProductGallery({ images }) {
         })
       );
   }
-  // produtcCollection.push(
-  //   {
-  //     embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-  //     thumbnail: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-  //     renderItem: renderVideo.bind(this),
-  //   },
-  //   {
-  //     embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-  //     thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
-  //     renderItem: renderVideo.bind(this),
-  //   },
-  //   {
-  //     embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
-  //     thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
-  //     renderItem: renderVideo.bind(this),
-  //   }
-  // )
+  produtcCollection.push(
+    {
+      embedUrl: 'https://player.vimeo.com/video/822213540?title=0&portrait=0&byline=0&autoplay=1&loop=1&transparent=1',
+      thumbnail: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+      renderItem: renderVideo.bind(this),
+    },
+    {
+      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
+      renderItem: renderVideo.bind(this),
+    },
+    {
+      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0&rel=0',
+      thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4v.jpg',
+      renderItem: renderVideo.bind(this),
+    }
+  )
  if(produtcCollection.length) return (
     <div className="mt-2 react-image-gallery-div">
       <ReactImageGallery
@@ -65,10 +65,9 @@ export default function ProductGallery({ images }) {
         thumbnailPosition={window.innerWidth > 769 ? "left" : "bottom"}
         items={produtcCollection}
         loading="lazy"
-        // autoPlay={true}
+        lazyLoad={true}
         showPlayButton={false}
         showNav={false}
-        // showFullscreenButton={window.innerWidth > 400 ? true : false}
         showFullscreenButton={false}
         renderVideo={true}
       />

@@ -1121,3 +1121,6 @@ main {
   filter: blur(0) !important;
   transition: filter 1s;
 }
+.video-wrapper {
+  overflow: hidden !important;
+}

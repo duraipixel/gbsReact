@@ -66,7 +66,7 @@ const LocationContent = ({ storeData, fetching }) => {
                     <iframe
                       style={{ width: "80px", height: "80px", border: "0" }}
                       src={item.map_link}
-                      frameborder="0"
+                      frameBorder="0"
                       allowFullScreen=""
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"

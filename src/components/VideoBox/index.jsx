@@ -15,7 +15,7 @@ function VideoBox({ src, bgImage }) {
             <Modal onHide={() => setModalShow(false)} show={modalShow} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Body>
                     <button onClick={() => setModalShow(false)}> X </button>
-                    <iframe width="100%" height={450} src={src} frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height={450} src={src} frameBorder="0" allowfullscreen></iframe>
                 </Modal.Body>
             </Modal>
         </>
