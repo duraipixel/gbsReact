@@ -15,22 +15,23 @@ function CheckoutButton({ className }) {
     const store_address       = JSON.parse(localStorage.getItem('store_address'));
     const [loader, setLoader] = useState(false)
     const validateProcess = (data) => {
+        if(data.shipping_method.type === null) {
+            toast.error('Select Shipping Method!')
+            return false
+        } 
+        if(data.shipping_method.type === "STANDARD_SHIPPING" && data.shipping_method.charge_id === null ) {
+            toast.error('Select Shipping Charge type!')
+            return false
+        }
+        if(data.shipping_method.type === "STANDARD_SHIPPING" && shipping_address === null ) {
+            toast.error('Shippping address is required!')
+            return false
+        }
         if(data.billing_address_id === undefined) {
             toast.error('Billing address is required!')
             return false
         }
-        if(data.shipping_method.type === null) {
-            toast.error('Select Shipping Method!')
-            return false
-        }
-        if(data.shipping_method.type === "STANDARD_SHIPPING" && data.shipping_method.address_id === null ) {
-            toast.error('Shippping address is required!')
-            return false
-        }
-        if(data.shipping_method.type === "STANDARD_SHIPPING" && data.shipping_method.charge_id === null ) {
-            toast.error('Select Shipping Method!')
-            return false
-        }
+        
         if(data.shipping_method.type === "PICKUP_FROM_STORE" && data.shipping_method.address_id === undefined ) {
             toast.error('Store address is required!')
             return false
@@ -43,10 +44,11 @@ function CheckoutButton({ className }) {
             billing_address_id : billing_address?.customer_address_id,
             shipping_method : {
                 type      : shipping_method,
-                address_id: shipping_method === "PICKUP_FROM_STORE" ? store_address?.id: shipping_address?.customer_address_id,
-                charge_id : shipping_method === "PICKUP_FROM_STORE" ? null             : shipping_charge_id
+                address_id: shipping_method === "PICKUP_FROM_STORE" ? store_address?.id : shipping_address?.customer_address_id,
+                charge_id : shipping_method === "PICKUP_FROM_STORE" ? null : shipping_charge_id
             } 
         }
+        console.log(checkData)
         if(validateProcess(checkData)) {
             setLoader(true)
             checkoutApi(checkData).then(response => {

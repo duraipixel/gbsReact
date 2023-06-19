@@ -10,7 +10,6 @@ import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDe
 import { Modal } from "react-bootstrap";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
 const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
-  console.log(checkoutData?.has_pickup_store)
   const authUser = useSelector((state) => state.auth);
   const address = useSelector((state) => state.cartAddress);
   const [shippingMethod, setShippingMethod] = useState(
@@ -36,14 +35,14 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   }, [checkoutData, shippingMethod]);
 
   const shippingMethodHandler = (value) => {
-    setShippingMethod(value);
-    localStorage.setItem("shipping_method", value.toUpperCase());
+    if(value !== undefined ) {
+      setShippingMethod(value); 
+      localStorage.setItem("shipping_method", value?.toUpperCase());
+    }
   };
   const setShippingCharges = async (id) => {
     localStorage.setItem("shipping_charge_id", id);
     const response = await setShippingChargesApi(id);
-    // console.log(response.data.data.cart_total); 
-
     setCheckoutData(response.data.data.cart_total);
     localStorage.setItem(
       "checkout_data",
@@ -94,11 +93,10 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                 <div className="line-spacer"></div>
                 <div className="mb-3">
                   <h3 className="h5 text-primary">Select Shipping Method</h3>
-                  <label htmlFor="ShippingMethod" className="d-block py-2">
+                  <label htmlFor="ShippingMethod" className="d-block py-2"  onClick={(e) => shippingMethodHandler(e.target.value)}>
                     <input
                       type="radio"
-                      checked={shippingMethod === "Standard_Shipping"}
-                      onChange={(e) => shippingMethodHandler(e.target.value)}
+                      checked={shippingMethod === "Standard_Shipping"} 
                       value="Standard_Shipping"
                       name="ShippingMethod"
                       id="ShippingMethod"
@@ -113,6 +111,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                         <label
                           htmlFor={type.shipping_title}
                           key={index}
+                          onClick={() => setShippingCharges(type.id)}
                           className="list-group-item list-group-item-action d-flex justify-content-between"
                         >
                           <span>{type.shipping_title}</span>
@@ -125,8 +124,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                               )}
                             </b>
                             <input
-                              type="radio"
-                              onChange={() => setShippingCharges(type.id)}
+                              type="radio" 
                               name="shipping_type"
                               id={type.shipping_title}
                               className="ms-2"
