@@ -300,7 +300,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                   </g>
                 </svg>
                 <div className={`me-auto text-dark ms-2`}>
-                  Service Center Locator
+                Store locator for service
                 </div>
               </div>
             </li>

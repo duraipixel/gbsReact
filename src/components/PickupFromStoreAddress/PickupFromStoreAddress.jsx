@@ -64,7 +64,7 @@ function PickupFromStoreAddress({ type, brandId }) {
             >
                 <div className="bg-dark modal-header flex-column">
                     <button onClick={() => setShow(!show)} className="btn btn-close btn-close-white float-end"></button>
-                    <h3 className="text-primary fw-bold mb-3 text-uppercase">Service Center Locator</h3>
+                    <h3 className="text-primary fw-bold mb-3 text-uppercase">Store locator for service</h3>
                     <Filters stores={stores} filter={filter} setFilter={setFilter} brandId={brandId}/>
                 </div>
                 <Modal.Body style={{ minHeight: 450 }} className="p-0">
