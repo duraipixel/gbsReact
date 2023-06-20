@@ -20,7 +20,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
     if (toggleHeader) {
       toggleHeader();
     }
-    navigate(`/products?categories=${slug}`);
+    navigate(slug);
   };
   useMemo(() => {
     axios.get(`${process.env.REACT_APP_BASE_URL}/get/brands/top`).then(res => {
@@ -51,7 +51,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
       {isSuccess && (
         <div className="menu-list">
           <ul className="list-group list-group-flush">
-            <li className="list-group-item px-3" onClick={() => navigate("/products?exclusive=gbs")}>
+            <li className="list-group-item px-3" onClick={() => linkHandler(`products?exclusive=gbs`)}  >
               <div className="d-flex justify-content-between align-items-center">
                 <svg width="35px" height="35px" viewBox="0 0 35 35">
                   <title>Exclusive</title>
@@ -103,7 +103,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                 <div className={`me-auto text-dark ms-2`}>Exclusive at GBS</div>
               </div>
             </li>
-            <li className="list-group-item px-3" onClick={() => navigate(`/products?brands=${topBrand}`)}>
+            <li className="list-group-item px-3" onClick={() => linkHandler(`/products?brands=${topBrand}`)}>
               <div className="d-flex justify-content-between align-items-center">
                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
                   <path
@@ -308,7 +308,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             {data &&
               data.data.map((item) => (
                 <div className="dropdown" key={item.id}>
-                  <li className="list-group-item px-3" style={{ border: "0" }}>
+                  <li className="list-group-item px-3" style={{ border: "0" }} onClick={() => linkHandler(`/products?categories=${item.name.toLowerCase()}`)}>
                     <div className="d-flex justify-content-between align-items-center">
                       <span to="/" className={`me-auto text-dark dropbtn`}>
                         {item.name}
@@ -339,10 +339,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                           <li
                             key={data.id}
                             className="list-group-item px-3"
-                            onClick={() => {
-                              linkHandler(data.slug);
-                              console.log(data.slug);
-                            }}
+                            onClick={() => linkHandler(`/products?categories=${data.slug}`)}
                           >
                             {data.name}
                           </li>

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 export default function PaymentSuccess() {
   const { state } = useLocation();
-  console.log(state)
+  
   return (
     <div
       style={{
