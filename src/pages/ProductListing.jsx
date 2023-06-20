@@ -1,12 +1,7 @@
-import ProductLists from "components/ProductsLists";
-import { useEffect } from "react";
+import ProductLists from "components/ProductsLists"; 
 import { Helmet } from "react-helmet";
 
 const ProductListing = () => {
-  useEffect(() => {
-    document.getElementById('gbs-navbar').classList.remove('fixed-top')
-    console.log( document.getElementById('app-layout').style.paddingTop  = '0'   )
-  })
   return (
     <>
       <Helmet>

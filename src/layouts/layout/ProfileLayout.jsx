@@ -31,7 +31,7 @@ function ProfileLayout() {
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>
-      <Container>
+      <Container className="profile-layout">
         <Row>
           <Col lg={3} className="align-self-start">
             <Col className="container-card p-4">

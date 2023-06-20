@@ -24,8 +24,6 @@ const HomePage = () => {
     GetPageData();
     scrollToTop();
   }, []);
-
-
   const dispatch = useDispatch();
   const [fetching, setFetching] = useState(false);
   const GetPageData = () => {
