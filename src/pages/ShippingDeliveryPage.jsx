@@ -12,6 +12,7 @@ function ShippingDeliveryPage() {
       <Helmet>
         <title>Shipping & Delivery - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <meta name="description" content="We Shipping and Delivery Laptops all over India" />
       </Helmet>
       <ShippingDelivery />

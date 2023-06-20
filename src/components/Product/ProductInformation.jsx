@@ -13,8 +13,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RiMapPinLine } from "react-icons/ri";
 import { setStoreAddress } from "redux/features/cartAddressSlice";
 import { toast } from "react-hot-toast";
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 function ProductInformation({ product }) {
-  console.log(product)
   const address = useSelector((state) => state.cartAddress);
   const dispatch = useDispatch();
   const [checkAvailability, setAvailability] = useState(false);
@@ -81,6 +81,25 @@ function ProductInformation({ product }) {
         </div>
         <div className="text-info fs-6">You Save (₹ {product.save_price}) </div>
       </div>
+      <div className="d-md-flex align-items-end gap-1 mb-md-4 mb-2">
+        <b>Share via : </b>
+        <FacebookShareButton url={window.location.href} quote={product.product_name} >
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+        <TwitterShareButton url={window.location.href} title={product.product_name} >
+          <TwitterIcon size={32} round />
+        </TwitterShareButton>
+        <WhatsappShareButton url={window.location.href} title={product.product_name} separator=":: ">
+          <WhatsappIcon size={32} round />
+        </WhatsappShareButton>
+        <LinkedinShareButton url={window.location.href} >
+          <LinkedinIcon size={32} round />
+        </LinkedinShareButton>
+        <EmailShareButton url={window.location.href} subject={product.product_name} body="body" >
+          <EmailIcon size={32} round />
+        </EmailShareButton>
+      </div>
+
       <div className="action-group mb-lg-4">
         <BuyButton
           className="mb-md-0 mb-3 btn btn-primary px-5 fw-semibold"
@@ -117,9 +136,8 @@ function ProductInformation({ product }) {
           type="number"
           min={0}
           {...register("pin_code", { required: true })}
-          className={`form-control form-control-sm ${
-            errors.pin_code ? "border border-danger" : ""
-          }`}
+          className={`form-control form-control-sm ${errors.pin_code ? "border border-danger" : ""
+            }`}
           placeholder="Pincode"
         />
         <button
@@ -156,16 +174,16 @@ function ProductInformation({ product }) {
           />
         </div>
         <div className="fw-bold">Pickup From Store:</div>
-          <div>
-            {!product.has_pickup_store && "Un available for Pickup"} 
-          </div>
-          <div>
-            {!address.store_address?.address && "Available for Pickup"} 
-          </div>
+        <div>
+          {!product.has_pickup_store && "Un available for Pickup"}
+        </div>
+        <div>
+          {!address.store_address?.address && "Available for Pickup"}
+        </div>
         <div>
           {product.has_pickup_store && (
             <div>
-              <PickupFromStoreAddress type="button" brandId={product.brand_id}/>
+              <PickupFromStoreAddress type="button" brandId={product.brand_id} />
             </div>
           )}
         </div>

@@ -57,6 +57,7 @@ const StoreLocatorPage = () => {
       <Helmet>
         <title>Store Location - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <meta name="description" content="Store Location - GBS Systems" />
       </Helmet>
       <StoreLocatorBanner

@@ -17,6 +17,7 @@ function AboutPage() {
       <Helmet>
         <title>About GBS Systems Laptop Stores & Service Center in South India - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <meta name="description" content="GBS Systems is a leading provider of IT solutions and services for businesses. Learn more about our company's history, mission, and expertise. Visit now!" />
       </Helmet>
 

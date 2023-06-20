@@ -13,6 +13,7 @@ const CartPage = () => {
       <Helmet>
         <title>{page?.meta?.title || "Cart - GBS Systems"}</title>
         <link rel="canonical" href={window.location.href} />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>

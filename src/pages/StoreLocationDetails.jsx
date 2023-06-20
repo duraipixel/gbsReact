@@ -43,6 +43,7 @@ const StoreLocationDetailsPage = () => {
       <Helmet>
         <title>{storeLocation?.meta?.title || "Store Location Details - GBS Systems"}</title>
         <link rel="canonical" href={window.location.href} />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <meta name="description" content={storeLocation?.meta?.description} />
         <meta name="keywords" content={storeLocation?.meta?.keywords} />
       </Helmet>

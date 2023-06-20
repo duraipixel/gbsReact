@@ -21,7 +21,7 @@ function ProductPage() {
   }
   useMemo(() => {
     getProduct()
-  }, [slug]) 
+  }, [slug])
 
   return (
     <div className="dark-section">
@@ -39,8 +39,24 @@ function ProductPage() {
                     <Helmet>
                       <title>{product?.meta?.title || "Product Details - GBS Systems"}</title>
                       <link rel="canonical" href={window.location.href} />
+                      <link rel="shortcut icon" type="image/x-icon" href={product?.image} />
+
+                      <title>{product?.meta?.title || "Product Details - GBS Systems"}</title>
+                      <meta name="title" content={product?.meta?.title || "Product Details - GBS Systems"} />
                       <meta name="description" content={product?.meta?.description} />
-                      <meta name="keywords" content={product?.meta?.keywords} />
+
+                      <meta property="og:type" content="website" />
+                      <meta property="og:url" content="https://metatags.io" />
+                      <meta property="og:title" content={product?.meta?.title || "Product Details - GBS Systems"} />
+                      <meta property="og:description" content={product?.meta?.description} />
+                      <meta property="og:image" content={product?.image} />
+
+                      <meta property="twitter:card" content="summary_large_image" />
+                      <meta property="twitter:url" content="https://metatags.io" />
+                      <meta property="twitter:title" content={product?.meta?.title || "Product Details - GBS Systems"} />
+                      <meta property="twitter:description" content={product?.meta?.description} />
+                      <meta property="twitter:image" content={product?.image} />
+
                     </Helmet>
                     <ProductDetails product={product} />
                   </>

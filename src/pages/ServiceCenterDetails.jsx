@@ -41,6 +41,7 @@ const ServiceCenterDetails = () => {
       <Helmet>
         <title>{serviceCenterData?.meta?.title || "Service Center Details - GBS Systems"}</title>
         <link rel="canonical" href={window.location.href} />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <meta
           name="description"
           content={serviceCenterData?.meta?.description}

@@ -33,6 +33,7 @@ function ComparePage() {
         <Helmet>
           <title>{products?.meta?.title || "Compare Products - GBS Systems"}</title>
           <link rel="canonical" href={window.location.href} />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
           <meta name="description" content={products?.meta?.description} />
           <meta name="keywords" content={products?.meta?.keywords} />
         </Helmet>
