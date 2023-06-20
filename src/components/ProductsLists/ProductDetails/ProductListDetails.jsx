@@ -1,6 +1,6 @@
 import { Col } from "react-bootstrap";
 import { Loader } from "utils";
-import ProductListComponent from "../ProductListComponent"; 
+import ProductListComponent from "../ProductListComponent";
 import CategoryFilters from "../ProductFilter/CategoryFilters";
 import ProductListPreloader from "../ProductListPreloader";
 
@@ -13,9 +13,9 @@ const ProductListDetails = ({
   setClearFilter,
   tackLoader
 }) => {
-  
+
   return (
-    <Col lg={10} className="align-self-start p-0" >
+    <Col lg={10} className="align-self-start px-0 sticky-padding" >
       <CategoryFilters setCurrentLocation={setCurrentLocation} />
       {products && (
         <div className="list-details-side">
@@ -33,19 +33,22 @@ const ProductListDetails = ({
               ) : (
                 <>
                   <ProductListComponent products={products.products} />
-                  {
-                    products.total_count !== products.to ?
-                      <center>
-                        <button
-                          onClick={() => setTake(take + 20)}
-                          loading={tackLoader.toString()}
-                          className="btn my-4 btn-outline-info"
-                        >
-                          Load more
-                        </button>
-                      </center>
-                      : ''
-                  }
+                  <center>
+                    {
+                      products.total_count !== products.to ?
+                          <button
+                            onClick={() => setTake(take + 20)}
+                            loading={tackLoader.toString()}
+                            className="btn my-4 btn-info"
+                          >
+                            Load more
+                          </button>
+                        : ''
+                    }
+                    <button onClick={() => window.scroll(0,0)} className="mx-2 btn my-4 btn-outline-info">
+                      Scroll to top
+                    </button>
+                  </center>
                 </>
               )}
             </>

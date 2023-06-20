@@ -12,9 +12,9 @@ import ProductBreadcrumb from "./ProductBreadcrumb";
 function ProductDetails({ product }) {
   if (product) {
     return (
-      <div>
+      <div >
         <Row className=" h-100">
-          <Col xl={6} className="sticky-top h-100 pt-lg-5">
+          <Col xl={6} className="sticky-top h-100 sticky-padding-2">
             <ProductBreadcrumb
               slug={product.category_slug}
               category={product.category_name}
@@ -29,7 +29,7 @@ function ProductDetails({ product }) {
               <ProductGallery videos={product.video_link} images={product.gallery || product.image} />
             </div>
           </Col>
-          <Col xl={6} className="pt-lg-5">
+          <Col xl={6} className="sticky-padding-2">
             <ProductInformation product={product} />
           </Col>
         </Row>

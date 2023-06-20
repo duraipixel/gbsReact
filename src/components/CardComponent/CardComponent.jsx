@@ -35,6 +35,7 @@ function CardComponent({ product, type, className }) {
               <h4 className="h5">
                 <i className='old-price'>₹{product.strike_price.replace('.00', '')}</i>
                 <span className="new-price text-info fw-bold">₹{product.price.replace('.00', '')}</span>
+                <div className="text-info fs-6">You Save (₹ {product.save_price}) </div>
               </h4>
             </div>
             <div className="d-flex align-items-center clk-optn">
