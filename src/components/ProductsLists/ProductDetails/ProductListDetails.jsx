@@ -46,10 +46,7 @@ const ProductListDetails = ({
                           Load more
                         </button>
                         : ''
-                    }
-                    <button onClick={() => window.scroll(0, 0)} className="mx-2 btn my-4 btn-outline-info">
-                      Scroll to top
-                    </button>
+                    } 
                   </center>
                 </>
               )}

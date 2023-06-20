@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { productsApi } from "services/filters.service";
-import { SetAllCheckBoxes } from "utils"; 
+import { SetAllCheckBoxes } from "utils";
 
 const ProductLists = () => {
   const [products, setProduct] = useState([]);
@@ -33,7 +33,7 @@ const ProductLists = () => {
     });
   }, [take, currentLocation, filterData]);
   return (
-    <div> 
+    <div>
       <section className="p-0 px-lg-5 px-3">
         <Row className="m-0  bg-white" >
           <ProductFilter
@@ -53,6 +53,11 @@ const ProductLists = () => {
             tackLoader={tackLoader}
           />
         </Row>
+        <center>
+          <button onClick={() => window.scroll(0, 0)} className="mx-2 btn my-4 btn-outline-info">
+            Scroll to top
+          </button>
+        </center>
       </section>
     </div>
   );
