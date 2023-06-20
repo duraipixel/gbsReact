@@ -127,7 +127,7 @@ const ProductFilter = ({
                         <span className="filter-title">{Text(filters[0])}</span>
                       </Accordion.Header>
                       <Accordion.Body className="p-0">
-                        <ul>
+                        <ul style={{ maxHeight:195,overflow:'auto' }}>
                           {filters[1].map((filter, index) => (
                             <li key={index}>
                               <CheckBoxInput data={filter} name={filters[0]} />
