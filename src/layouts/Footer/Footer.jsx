@@ -99,7 +99,7 @@ const Footer = () => {
                 <Link to="/privacy-policy">Privacy Policy</Link>
                 <Link to="/warantty-policy">Warranty Policy</Link>
                 <Link to="/store-locator">Store locator for Sales</Link>
-                <Link to="/service-center-locator">Store locator for service</Link>
+                <Link to="/store-locator-for-service">Store locator for service</Link>
                 {/* <Link to="/">Support Center</Link> */}
                 {/* <Link to="/">Terms Of Use</Link> */}
                 {/* <Link to="/">Returns Policy</Link> */}

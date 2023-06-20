@@ -229,7 +229,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             </li>
             <li
               className="list-group-item px-3"
-              onClick={() => navigate("/service-center-locator")}
+              onClick={() => navigate("/store-locator-for-service")}
             >
               <div className="d-flex justify-content-between align-items-center">
                 <svg width="35px" height="35px" viewBox="0 0 35 35">

@@ -39,7 +39,7 @@ function ServiceOffers() {
                       Pvt Ltd. Having 23 Service Centers & 28 years of
                       experience with 100+ technicians.
                     </p>
-                    <Link to="/service-center-locator">
+                    <Link to="/store-locator-for-service">
                       Explore Laptop Service @GBS
                     </Link>
                   </div>

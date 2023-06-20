@@ -28,7 +28,7 @@ const ServiceCenter = () => {
                   <li>Coimbatore</li>
                   <li>Bangalore</li>
                 </ul>
-                <Link to="/service-center-locator">
+                <Link to="/store-locator-for-service">
                   Find Your Nearest GBS After Sales Service Center
                 </Link>
               </div>

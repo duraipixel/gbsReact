@@ -95,7 +95,7 @@ function ContactUs() {
                 <img src={locator1} alt="location-icon" className="img-fluid" />
                 <div className="btm-liner text-left">
                   <h4>Service Locator</h4>
-                  <Link to="/service-center-locator"> Locate Us</Link>
+                  <Link to="/store-locator-for-service"> Locate Us</Link>
                 </div>
               </div>
             </div>
