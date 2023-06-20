@@ -24,6 +24,7 @@ function CheckBoxInput({ data, name }) {
         array.length > 0 ? searchParams.set(name, array.join("_")) : searchParams.delete(name)
         navigate(`/products?${searchParams.toString()}`);
         dispatch(setfilter(`/products?${searchParams.toString()}`))
+        window.scroll(0,0)
     }
     useEffect(() => {
         const baseFilterUrl = search.toString().split("=")[1]
