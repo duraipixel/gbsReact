@@ -32,20 +32,22 @@ const ProductListDetails = ({
                 "No Data"
               ) : (
                 <>
-                  <ProductListComponent products={products.products} />
+                  <div style={{ minHeight: '100vh' }}>
+                    <ProductListComponent products={products.products} />
+                  </div>
                   <center>
                     {
                       products.total_count !== products.to ?
-                          <button
-                            onClick={() => setTake(take + 20)}
-                            loading={tackLoader.toString()}
-                            className="btn my-4 btn-info"
-                          >
-                            Load more
-                          </button>
+                        <button
+                          onClick={() => setTake(take + 20)}
+                          loading={tackLoader.toString()}
+                          className="btn my-4 btn-info"
+                        >
+                          Load more
+                        </button>
                         : ''
                     }
-                    <button onClick={() => window.scroll(0,0)} className="mx-2 btn my-4 btn-outline-info">
+                    <button onClick={() => window.scroll(0, 0)} className="mx-2 btn my-4 btn-outline-info">
                       Scroll to top
                     </button>
                   </center>

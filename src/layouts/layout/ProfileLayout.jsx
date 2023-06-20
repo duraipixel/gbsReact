@@ -24,14 +24,14 @@ function ProfileLayout() {
     dispatch(setAuthUser({ data: [], isLoggedIn: false }));
   };
   return (
-    <section className="bg-off-grey">
+    <section className="bg-off-grey py-4">
       <Helmet>
         <title>{page?.meta?.title || "My Account - GBS Systems"}</title>
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content={"page?.meta?.description"} />
         <meta name="keywords" content={"page?.meta?.keywords"} />
       </Helmet>
-      <Container className="profile-layout">
+      <Container>
         <Row>
           <Col lg={3} className="align-self-start">
             <Col className="container-card p-4">
