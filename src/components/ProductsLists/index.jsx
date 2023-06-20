@@ -35,7 +35,7 @@ const ProductLists = () => {
   return (
     <div> 
       <section className="p-0 px-lg-5 px-3">
-        <Row className="m-0  bg-white">
+        <Row className="m-0  bg-white" >
           <ProductFilter
             filterData={filterData}
             setCurrentLocation={setCurrentLocation}

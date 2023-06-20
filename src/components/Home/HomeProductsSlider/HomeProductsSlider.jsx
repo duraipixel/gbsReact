@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const HomeProductsSlider = () => {
   const banners = useSelector((state) => state.homePageCollection.banners);
-  // console.log(banners);
   if (banners)
     return (
       <BannerSlider>

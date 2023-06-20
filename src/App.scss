@@ -704,7 +704,9 @@ button[loading="true"] {
 .btn-outline-info:hover {
   color: #00043a !important;
 }
-
+.banner, .bg-banner-liner, .profile-layout {
+  margin-top: 88px !important;
+}
 .bg-banner-liner {
   padding: 50px 0px;
   background-color: #292929;
@@ -838,7 +840,9 @@ button[loading="true"] {
 .image-gallery-thumbnail:focus {
   border-color: var(--primary-color) !important;
 }
-
+.banner-slider {
+  padding-top: 88px !important;
+}
 @media (max-width: 600px) {
   .slick-dots {
     position: unset !important;
@@ -971,7 +975,14 @@ button[loading="true"] {
     margin-top: 20px;
   }
 }
-
+@media (min-width: 992px) {
+  .sticky-padding {
+    padding-top: 88px !important;
+  }
+  .sticky-padding-2 {
+    padding-top: 100px !important;
+  }
+}
 @media (max-width: 992px) {
   .nav-heading {
     color: wheat !important;
@@ -1017,11 +1028,7 @@ button[loading="true"] {
       font-weight: bold;
     }
   }
-}
-
-main {
-  padding-top: 88px;
-}
+} 
 
 // .dark-section {
 //   background-color: #191919 !important;
