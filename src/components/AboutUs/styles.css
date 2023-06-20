@@ -2,6 +2,20 @@
   background-color: #292929;
 }
 
+.about-text {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 6vw;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  color: #3f4448;
+  text-shadow: 0 0 3px white;
+}
+
 .awardspage-section {
   padding: 300px 0px 80px;
   margin-top: -240px;
@@ -537,7 +551,7 @@
   }
 }
 
-.ceo-msg h1{
+.ceo-msg h1 {
   font-family: Outfit;
   font-size: 30px;
   font-weight: 600;
