@@ -67,7 +67,7 @@ function ServiceOffers() {
 
             <div className="col-lg-5">
               <div className="journey-lay text-end">
-                <Link to="">View Gallery</Link>
+                <a href="https://gallery.gbssystems.com">View Gallery</a>
               </div>
             </div>
           </div>
