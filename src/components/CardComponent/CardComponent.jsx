@@ -14,8 +14,9 @@ function CardComponent({ product, type, className }) {
       <div className='product-card overflow-hidden'>
         <div className="row m-0" >
           <div className="col-md-4 pt-3" onClick={() => navigate(`/products/${product.product_url}`)}>
-            <div className="position-relative">
+            <div className="position-relative text-center pb-3">
               <Image src={product.image} alt={product.product_name} className="product-list-image" />
+              <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 border-secondary btn-sm" product={product} />
               <div className="off-prc">
                 <h3> {product.discount_percentage}% <br /> <span>OFF</span></h3>
               </div>
@@ -40,8 +41,7 @@ function CardComponent({ product, type, className }) {
             </div>
             <div className="d-flex align-items-center clk-optn">
               <AddFavButton buttonType="icon" className="btn btn-outline-info rounded-box-circle rounded-box-sm" product={product} />
-              <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 rounded-box-circle rounded-box-sm" product={product} />
-              <AddCartButton type='button' className="btn btn-primary ms-3" product={product} />
+              <AddCartButton type='button' className="btn btn-primary ms-2" product={product} />
             </div>
           </div>
         </div>

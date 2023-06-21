@@ -29,6 +29,7 @@ export default function PaymentSuccess() {
         <h2 className="mt-3 mb-2">Payment Successful</h2>
         <h1 className="fw-bold mb-3" style={{color: '#48914b' }}>₹{state?.amount}</h1>
         <p className="text-secondary">#Order ID : <Link to={`/my-account/myorders/${state?.order_no}`} className="text-dark mb-2"><u>{state?.order_no}</u></Link></p>
+        <p className="text-secondary">#Transaction  ID :  <u>{state?.payment_no}</u> </p>
         <hr />
         <Link to="/" className="text-secondary">
           <b>Continue Order</b> <i className="fa fa-arrow-right"></i>

@@ -53,6 +53,7 @@ function ProductListPreloader() {
                                 <Placeholder.Button size='sm' variant="secondary" style={{ width:35,height:35 }} className="me-2 rounded-pill" />
                                 <Placeholder.Button size='sm' variant="secondary" style={{ width:35,height:35 }} className="me-2 rounded-pill" />
                                 <Placeholder.Button size='sm' variant="primary" style={{ width:100,height:35 }} />
+                                <Placeholder.Button size='sm' variant="primary" style={{ width:100,height:35 }} />
                             </Placeholder>
                         </div>
                     </div>
