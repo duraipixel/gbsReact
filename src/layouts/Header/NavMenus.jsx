@@ -313,7 +313,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                       <span to="/" className={`me-auto text-dark dropbtn`}>
                         {item.name}
                       </span>
-                      {item.child.length > 0 && (
+                      {item.child && item.child.length > 0 && (
                         <div className="drop-arrow">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -333,7 +333,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                         </div>
                       )}
                     </div>
-                    {item.child.length > 0 && (
+                    {item.child && item.child.length > 0 && (
                       <ul className="dropdown-content" key={item.id}>
                         {item.child.map((data) => (
                           <li
