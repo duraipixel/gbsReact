@@ -146,9 +146,9 @@ $background-color_3: #00043a;
 .lazy-load-image-background.blur.lazy-load-image-loaded {
   transition: transform 0.5s ease !important;
 
-  &:hover {
-    transform: scale(1.05) !important;
-  }
+  // &:hover {
+  //   transform: scale(1.05) !important;
+  // }
 }
 
 .text-align-right {
