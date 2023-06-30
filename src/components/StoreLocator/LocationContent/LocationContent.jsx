@@ -7,9 +7,10 @@ import "./styles.scss";
 import { Link } from "react-router-dom";
 import { HalfHeightLoader, openInNewTab } from "utils";
 import NoDataComponent from "components/NoDataComponent/NoDataComponent";
+import { BsWhatsapp } from "react-icons/bs";
 
 const LocationContent = ({ storeData, fetching }) => {
-  // console.log(storeData && storeData.data);
+  console.log(storeData && storeData.data);
   return fetching ? (
     <HalfHeightLoader />
   ) : (
@@ -22,36 +23,56 @@ const LocationContent = ({ storeData, fetching }) => {
                 <Col lg={9}>
                   <div className="location-content">
                     <h2 className="h2">{item.title}</h2>
-                    <div className="align-c gap-3">
-                      {item.address && <RiMapPinLine />}
-                      {item.address}
-                    </div>
-                    <div className="align-c gap-3">
-                      {item.group_contacts && <FiPhone />}
-                      {item.group_contacts.split(",").map((num, i) => (
+                    {item.address && (
+                      <div className="align-c gap-3">
+                        <RiMapPinLine />
+                        {item.address}
+                      </div>
+                    )}
+                    {item.group_contacts && (
+                      <div className="align-c gap-3">
+                        <FiPhone />
+                        {item.group_contacts.split(",").map((num, i) => (
+                          <Link
+                            style={{ color: "black" }}
+                            key={i}
+                            rel="noopener noreferrer"
+                            onClick={() => openInNewTab(`tel:${num}`)}
+                          >
+                            {num}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                    {item.group_emails && (
+                      <div className="align-c gap-3">
+                        <TfiEmail />
+                        {item.group_emails.split(",").map((mail, i) => (
+                          <Link
+                            style={{ color: "black" }}
+                            key={i}
+                            rel="noopener noreferrer"
+                            onClick={() => openInNewTab(`mailto:${mail}`)}
+                          >
+                            {mail}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                    {item.whatsapp_no && (
+                      <div className="align-c gap-3">
+                        <BsWhatsapp />
                         <Link
                           style={{ color: "black" }}
-                          key={i}
                           rel="noopener noreferrer"
-                          onClick={() => openInNewTab(`tel:${num}`)}
+                          onClick={() =>
+                            openInNewTab(`https://wa.me/${item.whatsapp_no}`)
+                          }
                         >
-                          {num}
+                          {item.whatsapp_no}
                         </Link>
-                      ))}
-                    </div>
-                    <div className="align-c gap-3">
-                      {item.group_emails && <TfiEmail />}
-                      {item.group_emails.split(",").map((mail, i) => (
-                        <Link
-                          style={{ color: "black" }}
-                          key={i}
-                          rel="noopener noreferrer"
-                          onClick={() => openInNewTab(`mailto:${mail}`)}
-                        >
-                          {mail}
-                        </Link>
-                      ))}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </Col>
                 <Col className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
