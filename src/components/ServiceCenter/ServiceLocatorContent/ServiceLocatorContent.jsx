@@ -5,9 +5,10 @@ import { RiMapPinLine } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
 import "components/StoreLocator/LocationContent/styles.scss";
 import { Link } from "react-router-dom";
-import { HalfHeightLoader } from "utils";
+import { HalfHeightLoader, openInNewTab } from "utils";
 import { Paper } from "@mui/material";
 import NoDataComponent from "components/NoDataComponent/NoDataComponent";
+import { BsWhatsapp } from "react-icons/bs";
 
 const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
   console.log(serviceCenterFilteredData);
@@ -24,16 +25,56 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                   <Col lg={9}>
                     <div className="location-content">
                       <h2 className="h2">{item.title}</h2>
-                      <div className="align-c gap-3">
-                        {item.address && <RiMapPinLine />}
-                        {item.address}
-                      </div>
-                      <div className="align-c gap-3">
-                        {item.contact_no && <FiPhone />} {item.contact_no}
-                      </div>
-                      <div className="align-c gap-3">
-                        {item.email && <TfiEmail />} {item.email}
-                      </div>
+                      {item.address && (
+                        <div className="align-c gap-3">
+                          <RiMapPinLine />
+                          {item.address}
+                        </div>
+                      )}
+                      {item.group_contacts && (
+                        <div className="align-c gap-3">
+                          <FiPhone />
+                          {item.group_contacts.split(",").map((num, i) => (
+                            <Link
+                              style={{ color: "black" }}
+                              key={i}
+                              rel="noopener noreferrer"
+                              onClick={() => openInNewTab(`tel:${num}`)}
+                            >
+                              {num}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                      {item.group_emails && (
+                        <div className="align-c gap-3">
+                          <TfiEmail />
+                          {item.group_emails.split(",").map((mail, i) => (
+                            <Link
+                              style={{ color: "black" }}
+                              key={i}
+                              rel="noopener noreferrer"
+                              onClick={() => openInNewTab(`mailto:${mail}`)}
+                            >
+                              {mail}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                      {item.whatsapp_no && (
+                        <div className="align-c gap-3">
+                          <BsWhatsapp />
+                          <Link
+                            style={{ color: "black" }}
+                            rel="noopener noreferrer"
+                            onClick={() =>
+                              openInNewTab(`https://wa.me/${item.whatsapp_no}`)
+                            }
+                          >
+                            {item.whatsapp_no}
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </Col>
                   <Col className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
@@ -65,7 +106,6 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
             );
           })}
         {serviceCenterFilteredData.data.length === 0 && (
-          
           <NoDataComponent data={"No Data have been found..."} />
         )}
         {/* {serviceCenterFilteredData.data.length > 5 && (
