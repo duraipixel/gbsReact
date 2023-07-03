@@ -9,13 +9,11 @@ const PaymentDetails = ({ order }) => {
         <h4>Payment Details</h4>
         <Row>
           <Col>
-            <p>Payment Method</p>
             <p>Sub total</p>
             <p>Taxes</p>
             <p>Grand Total</p>
           </Col>
           <Col className="text-align-right">
-            <img src={require("assets/images/Cart/razorpay.png")} alt="razorpay-icon" />
             <p>₹{" "}{order.sub_total}</p>
             <p>₹{" "}{order.tax_amount}</p>
             <h5>₹{" "}{order.amount}</h5>

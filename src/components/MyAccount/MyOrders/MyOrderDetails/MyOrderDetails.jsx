@@ -39,9 +39,9 @@ const MyOrderDetails = () => {
                     {order.status === "cancel_requested" ? <b className="text-primary">Cancel Requested</b> : <CancelOrderRequested order_id={order.id} />}
                   </div>
                 </div>
-                <div className="pt-3">
+                {/* <div className="pt-3">
                   <p>Your order has been shipped and it’s out for delivery</p>
-                </div>
+                </div> */}
                 <div className="time-line-group my-5">
                   {
                     order.orderTracking.map((track, index) => (
