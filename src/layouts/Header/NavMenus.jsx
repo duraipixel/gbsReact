@@ -147,7 +147,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-                <div className={`me-auto text-dark ms-2`}>Top Brand</div>
+                <div className={`me-auto text-dark ms-2`}>Best Sellers</div>
               </div>
             </li>
             <li
