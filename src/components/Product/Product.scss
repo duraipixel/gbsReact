@@ -299,10 +299,8 @@ input.addon {
 //   }
 // }
 
-// @media only screen and (min-width: 1200px) {
-//   .sticky-wrapper .sticky-inner {
-//     position: -webkit-sticky;
-//     position: sticky;
-//     top: 16rem;
-//   }
-// }
+@media only screen and (max-width: 600px) {
+  .bg-xl-white {
+    background-color: white !important;
+  }
+}
