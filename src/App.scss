@@ -1176,3 +1176,10 @@ button[loading="true"] {
 .fixed-top {
   z-index: 9 !important;
 }
+.btn-scroll-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  z-index: 5;
+}

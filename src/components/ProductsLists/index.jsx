@@ -7,6 +7,8 @@ import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { productsApi } from "services/filters.service";
 import { SetAllCheckBoxes } from "utils";
+import { IoCaretUpCircle } from "react-icons/io5";
+import ScrollToTop from "react-scroll-to-top";
 
 const ProductLists = () => {
   const [products, setProduct] = useState([]);
@@ -53,11 +55,7 @@ const ProductLists = () => {
             tackLoader={tackLoader}
           />
         </Row>
-        <center>
-          <button onClick={() => window.scroll(0, 0)} className="mx-2 btn my-4 btn-outline-info">
-            Scroll to top
-          </button>
-        </center>
+        <ScrollToTop smooth />
       </section>
     </div>
   );
