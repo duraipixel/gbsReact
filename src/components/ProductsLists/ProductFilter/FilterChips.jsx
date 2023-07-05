@@ -14,6 +14,7 @@ function FilterChips() {
     tempFilter.forEach(item => {
         tempArray.push(item.split('=')[1])
     })
+
     const [currentFilters, setCurrentFilters] = useState(tempArray)
     useEffect(() => {
         if (search) {
@@ -24,7 +25,6 @@ function FilterChips() {
                 item = item.split('=')[1]
                 if (item.includes('_')) {
                     const tempstr = item.split('_')
-                    console.log(...tempstr)
                     tempArray.push(...tempstr)
                 } else {
                     tempArray.push(item)
@@ -36,9 +36,9 @@ function FilterChips() {
 
     const removeFilter = (item) => {
         const input = document.getElementById(item)
-        if(input) {
+        const searchParams = new URLSearchParams(search)
+        if (input) {
             input.checked = false
-            const searchParams = new URLSearchParams(search)
             var array = []
             var checkboxes = document.querySelectorAll(`.${input.name}-product-check-input:checked`)
             for (var i = 0; i < checkboxes.length; i++) {
@@ -47,6 +47,18 @@ function FilterChips() {
             array.length > 0 ? searchParams.set(input.name, array.join("_")) : searchParams.delete(input.name)
             navigate(`/products?${searchParams.toString()}`);
             dispatch(setfilter(`/products?${searchParams.toString()}`))
+        } else {
+            const params = Object.fromEntries(searchParams.entries());
+            var finalParams;
+            Object.entries(params).forEach(param => {
+                if (param[1] === item) {
+                    const newParams = new URLSearchParams(search)
+                    newParams.delete(param[0])
+                    finalParams = newParams
+                }
+            })
+            navigate(`/products?${finalParams.toString()}`);
+            dispatch(setfilter(`/products?${finalParams.toString()}`))
         }
     }
     if (search) {
