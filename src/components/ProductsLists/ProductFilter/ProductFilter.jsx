@@ -18,7 +18,7 @@ const ProductFilter = ({
 }) => {
   const filter = useSelector((state) => state.filter)
   const [defaultActiveKey, setDefaultActiveKey] = useState(['brands', 'exclusive', 'categories', 'discounts']);
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(window.innerWidth > 992 ? true : false);
   const [Filters, setFilters] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -73,7 +73,7 @@ const ProductFilter = ({
   }, []);
 
   return (
-    <Col lg={2} className={`align-self-start h-100 ps-lg-0 h-100 pe-lg-4 ${window.innerWidth > 992 ? 'sticky-top' : ''} sticky-padding `} >
+    <Col lg={2} className={`align-self-start h-100 ps-lg-0 h-100 pe-lg-4 ${window.innerWidth > 992 ? 'sticky-top' : ''} sticky-padding-2 `} >
       {window.innerWidth < 992 ?
         <div className="mb-2">
           <div className="filter-title ps-0 d-flex align-items-center justify-content-between">
@@ -102,9 +102,12 @@ const ProductFilter = ({
       <div className="filters-side">
         <div className={`${isActive ? "active" : ""} pt-0  product-filters filter-lists`}>
           <div className="sticky-top bg-white">
-            <button className="float-end btn btn-sm btn-light border py-1 mt-1 rounded-pill" onClick={() => setActive(!isActive)}>
-              <IoMdClose />
-            </button>
+            {
+              window.innerWidth < 992 ? <button className="float-end btn btn-sm btn-light border py-1 mt-1 rounded-pill" onClick={() => setActive(!isActive)}>
+                <IoMdClose />
+              </button> : null
+            }
+
             <div>
               <h6 className="filter-title py-2">SORT BY</h6>
               <select

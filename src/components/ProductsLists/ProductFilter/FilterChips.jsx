@@ -64,7 +64,7 @@ function FilterChips() {
     if (search) {
         return (
             <div className="pt-2">
-                <Stack direction="row" className="flex-wrap justify-content-center" gap={1}>
+                <Stack direction="row" className="flex-wrap" gap={1}>
                     {
                         currentFilters.length && currentFilters.map((item, index) => (
                             <Chip
