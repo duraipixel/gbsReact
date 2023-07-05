@@ -33,6 +33,7 @@ import {
   VerifyPayment,
   PaymentFaild
 } from "lazy"; 
+import PageComponent from "components/PageComponent";
 
 function App() {
   if (localStorage.getItem('guest_token') === null) {
@@ -62,9 +63,7 @@ function App() {
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
             <Route path="/store-locator" element={<StoreLocatorPage />} />
-            <Route path="/store-location-details/:store_slug" element={<StoreLocationDetailsPage />} />
             <Route path="/store-locator-for-service" element={<ServiceCenterLocator />} />
-            <Route path="/service-center-details/:service_center_slug" element={<ServiceCenterDetails />} />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="*" element={<NotFound />} />
@@ -73,6 +72,7 @@ function App() {
 
             <Route path="/verify-payment/:token" element={<VerifyPayment />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path=":page_slug" element={<PageComponent/>} />
           </Route>
           {/* <Route path="/stores" element={<StorePage />} /> */}
         </Routes>

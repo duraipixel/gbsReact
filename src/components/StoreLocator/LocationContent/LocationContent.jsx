@@ -77,7 +77,7 @@ const LocationContent = ({ storeData, fetching }) => {
                 </Col>
                 <Col className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
                   <Link
-                    to={`/store-location-details/${item.slug}`}
+                    to={`/${item.slug}`}
                     className="btn-red-outline"
                   >
                     More Details

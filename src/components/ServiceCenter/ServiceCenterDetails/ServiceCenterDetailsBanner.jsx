@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 const ServiceCenterDetailsBanner = ({ serviceCenterData }) => {
   // console.log(serviceCenterData);
@@ -39,7 +40,7 @@ const ServiceCenterDetailsBanner = ({ serviceCenterData }) => {
                 />
               </svg>
             </span>
-            <span>Store locator for Sales</span>
+            <Link to="/store-locator-for-service" className="text-white">Store locator for Sales</Link>
             <span className="px-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

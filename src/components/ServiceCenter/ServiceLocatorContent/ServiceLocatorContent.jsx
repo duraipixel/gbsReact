@@ -79,7 +79,7 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                   </Col>
                   <Col className="flex-d-clm-align-c flex-jc-s-a find-us-on-map gap-1">
                     <Link
-                      to={`/service-center-details/${item.slug}`}
+                      to={`/${item.slug}`}
                       className="btn-red-outline"
                     >
                       More Details
