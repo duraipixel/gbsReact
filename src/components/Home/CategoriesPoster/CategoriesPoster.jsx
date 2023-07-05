@@ -1,16 +1,11 @@
+import { FilterLink } from "helpers";
 import "./styles.css";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { Image } from "utils";
-
 const CategoriesPoster = () => {
-  const navigate = useNavigate();
   const subcategoryCollections = useSelector(
     (state) => state.homePageCollection.subcategoryCollections
-  );
-  const linkHandler = (slug) => {
-    navigate(`/products?categories=${slug}`);
-  };
+  ); 
   if (subcategoryCollections)
     return (
       <div className="section-wrapper bg-light">
@@ -24,10 +19,7 @@ const CategoriesPoster = () => {
                     key={item.id}
                     className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-6"
                   >
-                    <div
-                      onClick={() => linkHandler(item.slug)}
-                      className="deals-imgs cursor-clickable m-0"
-                    >
+                    <FilterLink to={`/products?categories=${item.slug}`}>
                       <Image
                         src={item.image}
                         alt={item.slug}
@@ -36,7 +28,7 @@ const CategoriesPoster = () => {
                       <div className="btm-liner">
                         <h3 className="fs-20">{item.name}</h3>
                       </div>
-                    </div>
+                    </FilterLink>
                   </div>
                 )
             )}

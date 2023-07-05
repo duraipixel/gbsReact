@@ -1,7 +1,7 @@
 import "./styles.css";
 import { useSelector } from "react-redux";
 import { Image } from "utils";
-import { Link } from "react-router-dom";
+import { FilterLink } from "helpers";
 
 const NarrowSearch = () => {
   const brands = useSelector(state => state.homePageCollection.brands)
@@ -14,9 +14,9 @@ const NarrowSearch = () => {
             {
               brands.map((item, i) => (
                 <div className="col-6 col-xl col-lg-3 col-md-4"  key={i}>
-                  <Link to={`products?brands=${item.slug}`}>
+                  <FilterLink to={`products?brands=${item.slug}`}>
                     <Image src={item.image} alt={item.title} className="w-100" />
-                  </Link>
+                  </FilterLink>
                 </div>
               ))
             }
