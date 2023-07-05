@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { productListCategoryMenuApi } from "services/filters.service";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { setfilter } from "redux/features/filterSlice";
+import { useDispatch } from "react-redux";
 
 function CategoryFilters({ setCurrentLocation }) {
   const [subcategory, setSubcategory] = useState([]);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const [value, setValue] = useState(0);
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
+
   const handleChange = (event, newValue) => {
-    // setCurrentLocation(`?${searchParams.toString()}`)
+    navigate(`/products?categories=${newValue}`)
+    dispatch(setfilter(`/products?categories=${newValue}`));
     setValue(newValue);
   };
   useEffect(() => {
     productListCategoryMenuApi(searchParams.toString().split("=")[1]).then(
       (response) => {
-        if(response.data.length === undefined) setSubcategory(response.data.child_category);
+        if (response.data.length === undefined) setSubcategory(response.data.child_category);
       }
     ).catch(() => {
       setSubcategory([]);
