@@ -34,7 +34,7 @@ const ProductLists = () => {
   }, [take, currentLocation, filterData]);
   return (
     <div>
-      <section className="p-0 px-lg-5 px-3">
+      <section className="p-0 px-lg-5 px-3 pt-4">
         <Row className="m-0  bg-white" >
           <ProductFilter
             filterData={filterData}

@@ -1172,3 +1172,6 @@ button[loading="true"] {
 .cursor-pointer {
   cursor: pointer !important;
 }
+.fixed-top {
+  z-index: 9 !important;
+}

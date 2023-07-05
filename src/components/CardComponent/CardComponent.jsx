@@ -13,7 +13,7 @@ function CardComponent({ product, type, className }) {
     <div className={className}>
       <div className='product-card overflow-hidden'>
         <div className="row m-0" >
-          <div className="col-md-4 pt-3" onClick={() => navigate(`/products/${product.product_url}`)}>
+          <div className="col-lg-4 pt-3" onClick={() => navigate(`/products/${product.product_url}`)}>
             <div className="position-relative text-center pb-3">
               <Image src={product.image} alt={product.product_name} className="product-list-image" />
               <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 border-secondary btn-sm" product={product} />
@@ -22,7 +22,7 @@ function CardComponent({ product, type, className }) {
               </div>
             </div>
           </div>
-          <div className="ari-cnt text-start w-100 bg-white col-md">
+          <div className="ari-cnt text-start w-100 bg-white col-lg">
             <div className="cursor" onClick={() => navigate(`/products/${product.product_url}`)}>
               <div className="d-flex justify-content-between" >
                 <h2 className='text-start'>{product.category_name}</h2>
@@ -67,7 +67,7 @@ function CardComponent({ product, type, className }) {
                   : ''
               }
             </div>
-            <h3 className='product-name h3'>{product.product_name.substring(0, 25)}</h3>
+            <h3 className='product-name h3'>{product.product_name.substring(0, 50)}</h3>
             <h4 className='h4'>
               <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
               <span className="new-price">₹{product.price.replace('.00', '')}</span>
@@ -99,7 +99,7 @@ function CardComponent({ product, type, className }) {
         <AddFavButton buttonType="icon" className="btn-fav" product={product} />
         <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
         <div className="product-info">
-          <h3 className='product-name'>{product.product_name.substring(0, 25)}</h3>
+          <h3 className='product-name'>{product.product_name.substring(0, 30)}...</h3>
           <div className="product-prices">
             <span className="new-price">₹{product.price.replace('.00', '')}</span>
             <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>

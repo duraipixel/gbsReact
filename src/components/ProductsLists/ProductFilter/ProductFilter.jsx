@@ -16,7 +16,7 @@ const ProductFilter = ({
   filterData,
 }) => {
   const filter = useSelector((state) => state.filter)
-  const [defaultActiveKey, setDefaultActiveKey] = useState(['brands','exclusive','categories', 'discounts']);
+  const [defaultActiveKey, setDefaultActiveKey] = useState(['brands', 'exclusive', 'categories', 'discounts']);
   const [isActive, setActive] = useState("false");
   const [Filters, setFilters] = useState(false);
   const location = useLocation();
@@ -71,16 +71,10 @@ const ProductFilter = ({
 
   return (
     <Col lg={2} className="align-self-start h-100 ps-lg-0 h-100 pe-lg-4 sticky-top sticky-padding" >
+      {
+        window.innerWidth < 992 ? <div className="btn-filter" onClick={() => setActive(!isActive)}>Filter by</div> : ""
+      }
       <div className="filters-side">
-        {
-          window.innerWidth < 992 ?
-            <div className="my-3">
-              <div className="product-filter-btn filter-title " onClick={() => setActive(!isActive)}>
-                Filter by
-              </div>
-            </div>
-            : ""
-        }
         <div
           className={
             isActive
@@ -127,7 +121,7 @@ const ProductFilter = ({
                         <span className="filter-title">{Text(filters[0])}</span>
                       </Accordion.Header>
                       <Accordion.Body className="p-0">
-                        <ul style={{ maxHeight:195,overflow:'auto' }}>
+                        <ul style={{ maxHeight: 195, overflow: 'auto' }}>
                           {filters[1].map((filter, index) => (
                             <li key={index}>
                               <CheckBoxInput data={filter} name={filters[0]} />
