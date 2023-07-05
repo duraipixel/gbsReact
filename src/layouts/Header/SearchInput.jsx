@@ -11,7 +11,7 @@ const SearchInput = ({ type }) => {
     const dispatch = useDispatch()
     const input = useRef()
     const searchHandler = e => {
-        console.log(type)
+        // console.log(type)
         dispatch(setSearchStatus({
             isSuccess: true,
             query: e.target.value,

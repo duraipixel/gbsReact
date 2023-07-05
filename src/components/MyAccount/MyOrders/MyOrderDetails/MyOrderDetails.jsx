@@ -14,7 +14,7 @@ const MyOrderDetails = () => {
   const [order, setOrder] = useState(false)
   useEffect(() => {
     getOrderDetailApi(order_id).then(({ data }) => {
-      console.log(data)
+      // console.log(data)
       setOrder(data)
       setFetching(false)
     })

@@ -10,7 +10,6 @@ function AddCartButton({ className, product, type, setCartId }) {
   const [isAddCart, setIsAddCart] = useState(checkCartBucket(product.id));
   const [loading, setLoading] = useState(false);
   const addOrRemoveCart = () => {
-    console.log(product.stock_status);
     setLoading(true);
     if (checkCartBucket(product.id)) {
       removeFromCartApi({

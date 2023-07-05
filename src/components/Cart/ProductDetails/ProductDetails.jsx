@@ -335,7 +335,7 @@ const ProductDeleteButton = ({ product, fetchCartData, setCheckoutData }) => {
       guest_token: localStorage.getItem("guest_token"),
     }).then((response) => {
       if (response.data.error === 0) {
-        console.log(response.data)
+        // console.log(response.data)
         toast.success(response.data.message);
         setCheckoutData(response.data.cart_total);
         dispatch(removeCart(product));

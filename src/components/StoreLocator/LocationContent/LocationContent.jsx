@@ -10,7 +10,7 @@ import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 import { BsWhatsapp } from "react-icons/bs";
 
 const LocationContent = ({ storeData, fetching }) => {
-  console.log(storeData && storeData.data);
+  // console.log(storeData && storeData.data);
   return fetching ? (
     <HalfHeightLoader />
   ) : (

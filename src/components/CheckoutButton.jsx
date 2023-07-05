@@ -48,7 +48,6 @@ function CheckoutButton({ className }) {
                 charge_id : shipping_method === "PICKUP_FROM_STORE" ? null : shipping_charge_id
             } 
         }
-        console.log(checkData)
         if(validateProcess(checkData)) {
             setLoader(true)
             checkoutApi(checkData).then(response => {

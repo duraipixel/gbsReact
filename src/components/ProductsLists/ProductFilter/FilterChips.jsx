@@ -54,11 +54,11 @@ function FilterChips() {
                 if (param[1] === item) {
                     const newParams = new URLSearchParams(search)
                     newParams.delete(param[0])
-                    finalParams = newParams
+                    finalParams = newParams.toString()
                 }
             })
-            navigate(`/products?${finalParams.toString()}`);
-            dispatch(setfilter(`/products?${finalParams.toString()}`))
+            navigate(`/products?${finalParams}`);
+            dispatch(setfilter(`/products?${finalParams}`))
         }
     }
     if (search) {

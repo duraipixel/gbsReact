@@ -19,7 +19,6 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
     checkoutData?.has_pickup_store
   );
   useMemo(() => setPickupFromStore(checkoutData?.has_pickup_store) ,[checkoutData?.has_pickup_store])
-  // console.log(pickupFromStore);
   const [addressModalType, setAddressModalType] = useState(null);
   const [shippingTypes, setshippingTypes] = useState([]);
   const [show, setShow] = useState(false);

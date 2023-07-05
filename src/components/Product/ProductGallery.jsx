@@ -45,7 +45,7 @@ export default function ProductGallery({ images, videos }) {
       );
   }
   if (videos.length) {
-    console.log(videos);
+    // console.log(videos);
     videos.map((video) => {
       produtcCollection.push({
         embedUrl: video.video_link,

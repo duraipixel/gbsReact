@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 export const getBannersAsync = createAsyncThunk('banners/fetchBanners', async () => {
     const response = await fetch('https://admin.anandlab.com/public/api/banners');
     const result = await response.json();
-    console.log(result.data)
+    // console.log(result.data)
     return {
         value: result.data,
         status: 'idle',

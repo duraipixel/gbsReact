@@ -13,7 +13,6 @@ const ContactForm = ({ setLoader }) => {
   } = useForm();
   const onSubmit = (data) => {
     setLoader(true);
-    console.log(data);
     var formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);

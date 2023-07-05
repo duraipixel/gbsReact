@@ -11,7 +11,7 @@ import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 import { BsWhatsapp } from "react-icons/bs";
 
 const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
-  console.log(serviceCenterFilteredData);
+  // console.log(serviceCenterFilteredData);
   return fetching ? (
     <HalfHeightLoader />
   ) : (

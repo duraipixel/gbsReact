@@ -31,7 +31,6 @@ function AddressForm() {
   const [pincodeMaster, setPincodeMaster] = useState([])
   const getMasters = async () => {
     const { data } = await customerAddressApi()
-    // console.log(data);
     if (data?.status === "success") {
       setAdressMaster(data.address_type)
       setStateMaster(data.state)

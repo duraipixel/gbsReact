@@ -23,7 +23,7 @@ function CategoryFilters({ setCurrentLocation }) {
     ).catch(() => {
       setSubcategory([]);
     });
-    console.log(location.search.replace('?categories=', ''))
+    // console.log(location.search.replace('?categories=', ''))
     setValue(location.search.replace('?categories=', ''))
   }, [searchParams.toString()]);
   const outerTheme = createTheme({
@@ -33,7 +33,7 @@ function CategoryFilters({ setCurrentLocation }) {
       },
     },
   });
-  console.log(subcategory,"subcategory")
+  // console.log(subcategory,"subcategory")
   if (subcategory.length > 0) return (
     <ThemeProvider theme={outerTheme}>
       <Tabs

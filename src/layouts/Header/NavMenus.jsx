@@ -3,6 +3,8 @@ import { Placeholder } from "react-bootstrap";
 import { useNavMenuQuery } from "redux/features/homePage/navMenuService";
 import { useMemo, useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setfilter } from "redux/features/filterSlice";
 
 export default function NavMenus({ toggleHeader }) {
   return (
@@ -16,17 +18,19 @@ export const NavMenuList = ({ className, toggleHeader }) => {
   const { data, isSuccess, isLoading } = useNavMenuQuery();
   const [topBrand, setTopBrand] = useState('acer')
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+
   const linkHandler = (slug) => {
-    if (toggleHeader) {
-      toggleHeader();
-    }
+    if (toggleHeader) toggleHeader();
     navigate(slug);
+    dispatch(setfilter(slug))
   };
+ 
   useMemo(() => {
     axios.get(`${process.env.REACT_APP_BASE_URL}/get/brands/top`).then(res => {
       setTopBrand(res.data.slug)
-    }) 
-  },[])
+    })
+  }, [])
   return (
     <>
       {isLoading && (
@@ -45,7 +49,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
           </Placeholder>
           <Placeholder as="div" animation="glow" className="m-2">
             <Placeholder xs={12} className="list-group-item px-3 p-4" />
-          </Placeholder> 
+          </Placeholder>
         </>
       )}
       {isSuccess && (
@@ -300,7 +304,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                   </g>
                 </svg>
                 <div className={`me-auto text-dark ms-2`}>
-                Store locator for service
+                  Store locator for service
                 </div>
               </div>
             </li>
@@ -308,9 +312,9 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             {data &&
               data.data.map((item) => (
                 <div className="dropdown" key={item.id}>
-                  <li className="list-group-item px-3" style={{ border: "0" }} onClick={() => linkHandler(`/products?categories=${item.name.toLowerCase()}`)}>
+                  <li className="list-group-item px-3" style={{ border: "0" }} >
                     <div className="d-flex justify-content-between align-items-center">
-                      <span to="/" className={`me-auto text-dark dropbtn`}>
+                      <span onClick={() => linkHandler(`/products?categories=${item.name.toLowerCase()}`)} className={`me-auto text-dark dropbtn`}>
                         {item.name}
                       </span>
                       {item.child && item.child.length > 0 && (
@@ -339,7 +343,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
                           <li
                             key={data.id}
                             className="list-group-item px-3"
-                            onClick={() => linkHandler(`/products?categories=${data.slug}`)}
+                            onClick={() => linkHandler(`/products?categories=${data.slug.toLowerCase()}`) }
                           >
                             {data.name}
                           </li>
