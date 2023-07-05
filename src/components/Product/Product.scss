@@ -304,3 +304,25 @@ input.addon {
     background-color: white !important;
   }
 }
+.product-mobile-image {
+  width: 100% !important;
+  height: 250px !important;
+  object-fit: contain;
+  background-color: #ebebeb !important;
+}
+.custom-paging-dots {
+  max-width: 100%;
+  display: flex !important;
+  overflow: auto;
+  gap: 5px;
+  justify-content: center;
+  background-color: white;
+  margin-bottom: 20px;
+  li {
+    border: 2px solid #ffffff00;
+  }
+
+  li.slick-active {
+    border: 2px solid var(--bs-primary);
+  }
+}

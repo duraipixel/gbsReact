@@ -10,7 +10,7 @@ function ProductListComponent({ products, action }) {
             product={product}
             key={product.id}
             type="list"
-            className='col-lg-12 border-bottom col-md-4'
+            className='col-6 col-lg-12 border-bottom col-md-4'
           />
         ))}
       </div>

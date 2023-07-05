@@ -1,5 +1,4 @@
 import { Col } from "react-bootstrap";
-import { Loader } from "utils";
 import ProductListComponent from "../ProductListComponent";
 import CategoryFilters from "../ProductFilter/CategoryFilters";
 import ProductListPreloader from "../ProductListPreloader";
@@ -13,10 +12,9 @@ const ProductListDetails = ({
   setClearFilter,
   tackLoader
 }) => {
-
   return (
     <Col lg={10} className="align-self-start px-0 sticky-padding" >
-      <CategoryFilters setCurrentLocation={setCurrentLocation} />
+      <CategoryFilters setCurrentLocation={setCurrentLocation} /> 
       {products && (
         <div className="list-details-side">
           <div className="primary-heads p-3">
@@ -46,7 +44,7 @@ const ProductListDetails = ({
                           Load more
                         </button>
                         : ''
-                    } 
+                    }
                   </center>
                 </>
               )}

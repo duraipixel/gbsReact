@@ -9,6 +9,7 @@ import { setfilter } from "redux/features/filterSlice";
 import CheckBoxInput from "components/CheckBoxInput";
 import FilterChips from "./FilterChips";
 import FiltersPlaceHolders from "./FiltersPlaceHolders";
+import { IoFilterSharp } from "react-icons/io5";
 
 const ProductFilter = ({
   setCurrentLocation,
@@ -57,6 +58,8 @@ const ProductFilter = ({
       searchParams.set("sort_by", e.target.value)
       setCurrentLocation(`?${searchParams.toString()}`)
       navigate(`/products?${searchParams.toString()}`)
+      dispatch(setfilter(`/products?${searchParams.toString()}`));
+
       setClearFilter(true)
     } else {
       setClearFilter(false)
@@ -70,36 +73,55 @@ const ProductFilter = ({
   }, []);
 
   return (
-    <Col lg={2} className="align-self-start h-100 ps-lg-0 h-100 pe-lg-4 sticky-top sticky-padding" >
-      {
-        window.innerWidth < 992 ? <div className="btn-filter" onClick={() => setActive(!isActive)}>Filter by</div> : ""
-      }
+    <Col lg={2} className={`align-self-start h-100 ps-lg-0 h-100 pe-lg-4 ${window.innerWidth > 992 ? 'sticky-top' : ''} sticky-padding `} >
+      {window.innerWidth < 992 ?
+        <div className="mb-2">
+          <div className="filter-title ps-0 d-flex align-items-center justify-content-between">
+            <div>
+              <button className="btn btn-sm btn-outline-primary rounded-pill px-2 me-3" onClick={() => setActive(!isActive)}>
+                <IoFilterSharp />
+              </button>
+              FILTER BY
+            </div>
+            {
+              filter !== '' && filter !== '/products?' ?
+                <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>
+                : ''
+            }
+          </div>
+          <div>
+            {
+              filter !== '' && filter !== '/products?' ?
+                <FilterChips />
+                : ''
+            }
+          </div>
+        </div>
+        : ''}
+
       <div className="filters-side">
-        <div
-          className={
-            isActive
-              ? "filter-lists product-filters"
-              : "active product-filters filter-lists"
-          }
-        >
-          <Link className="close-btn" onClick={() => setActive(!isActive)}>
-            <IoMdClose />
-          </Link>
-          <div className="mb-3">
-            <h6 className="filter-title py-2">SORT BY</h6>
-            <select
-              className="form-select form-select-sm"
-              id="enq"
-              name="enq"
-              onChange={filterHandler}
-              value={searchParams.get('sort_by') || ''}
-            >
-              <option value="price-high-to-low" >High to Low</option>
-              <option value="price-low-to-high">Low to High</option>
-            </select>
+        <div className={`${isActive ? "active" : ""} pt-0  product-filters filter-lists`}>
+          <div className="sticky-top bg-white">
+            <button className="float-end btn btn-sm btn-light border py-1 mt-1 rounded-pill" onClick={() => setActive(!isActive)}>
+              <IoMdClose />
+            </button>
+            <div>
+              <h6 className="filter-title py-2">SORT BY</h6>
+              <select
+                className="form-select form-select-sm"
+                id="enq"
+                name="enq"
+                onChange={filterHandler}
+                value={searchParams.get('sort_by') || ''}
+              >
+                <option value="" > -- sort by -- </option>
+                <option value="price-high-to-low" >High to Low</option>
+                <option value="price-low-to-high">Low to High</option>
+              </select>
+            </div>
           </div>
           {filter !== '' && filter !== '/products?' ?
-            <div className="mb-2">
+            <div className="my-2">
               <h4 className="filter-title d-flex align-items-center justify-content-between">
                 FILTER BY
                 <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>

@@ -861,9 +861,10 @@ button[loading="true"] {
 .image-gallery-thumbnail:focus {
   border-color: var(--primary-color) !important;
 }
-
-.banner-slider {
-  padding-top: 88px !important;
+@media (min-width: 900px) {
+  .banner-slider {
+    padding-top: 88px !important;
+  }
 }
 
 @media (max-width: 600px) {

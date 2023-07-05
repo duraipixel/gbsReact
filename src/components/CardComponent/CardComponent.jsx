@@ -94,12 +94,13 @@ function CardComponent({ product, type, className }) {
   )
   if (window.innerWidth < 450) return (
     <div className={className}>
-
       <div className="product-card-sm shadow" onClick={() => navigate(`/products/${product.product_url}`)}>
         <AddFavButton buttonType="icon" className="btn-fav" product={product} />
         <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
         <div className="product-info">
           <h3 className='product-name'>{product.product_name.substring(0, 30)}...</h3>
+          <hr className='my-1' />
+          <div className="small">You Save (₹ {product.save_price}) </div>
           <div className="product-prices">
             <span className="new-price">₹{product.price.replace('.00', '')}</span>
             <span className='old-price'>₹{product.strike_price.replace('.00', '')}</span>
