@@ -48,14 +48,14 @@ function MyOrder() {
                       <p>₹{" "}{order.amount}</p>
                     </div>
                   </div>
-                  <a href={order.invoice_file} download target="_blank" rel="noreferrer"  className="view-invoice-btn">
+                  <a href={order.status === 'delivered' ? order.delivery_document : order.invoice_file} download target="_blank" rel="noreferrer" className="view-invoice-btn">
                     <u>View Invoice</u>
                   </a>
                 </div>
                 <hr />
                 <div>
                   <div className="flex-jc-btwn flex-wrap gap-2 align-c pb-3">
-                    <h4 className="text-capitalize text-secondary">Order Status : <span className="text-dark">{order.status.replaceAll('_',' ')}</span></h4>
+                    <h4 className="text-capitalize text-secondary">Order Status : <span className="text-dark">{order.status.replaceAll('_', ' ')}</span></h4>
                     <Link
                       to={`/my-account/myorders/${order.order_no}`}
                       className="btn btn-info"
@@ -66,17 +66,13 @@ function MyOrder() {
                   <div className="flex-jc-btwn flex-wrap gap-2 align-c pb-2">
                     <div style={{ fontWeight: "400", fontSize: "18px" }}>
                       {order.items.length} items will be delivered soon
-                      {/* by */}
-                      {/* <span style={{ fontWeight: "500", fontSize: "18px" }}>
-                        13 March 2023
-                      </span> */}
                     </div>
-                    {order.status === "cancel_requested" ? <b className="text-primary">Cancel Requested</b> : <CancelOrderRequested order_id={order.id} />}
+                    <CancelOrderRequested  order={order} />
                   </div>
                   <div className="flex gap-4 align-c pt-1 pb-1">
                     {
                       order.items.map((item, i) => (
-                        <img key={i} src={item.image} height={50} width={50}  style={{ objectFit:'contain' }} alt="order" className="shadow-sm"/>
+                        <img key={i} src={item.image} height={50} width={50} style={{ objectFit: 'contain' }} alt="order" className="shadow-sm" />
                       ))
                     }
                   </div>

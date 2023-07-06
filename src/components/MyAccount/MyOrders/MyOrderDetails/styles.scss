@@ -128,11 +128,11 @@ p {
     height: 90%;
 
     @media (min-width:600px) {
-      top: 38%;
-      left: 0;
-      transform: translate(5%, -40%);
+      top: 30px;
+      left: 50%;
+      transform: translate(-50%);
       height: 2px;
-      width: 90%;
+      width: 84%;
     }
   }
 
@@ -157,12 +157,11 @@ p {
   .time-line-item {
     position: relative;
     z-index: 3;
-    text-align: center;
     display: flex;
     align-items: center;
     margin-bottom: 40px;
     @media (min-width:600px) {
-      justify-content: center;
+      text-align: center;
       flex-direction: column;
       margin-bottom: 0;
     }

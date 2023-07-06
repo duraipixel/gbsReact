@@ -41,7 +41,7 @@ const ServiceCenterLocatorBanner = ({
               ))}
           </select>
           <select className="form-select" ref={centerRef} onChange={(e) => { setCenterID(e.target.value); setFilterButton(true) }}>
-            <option value="">Select Service Center</option>
+            <option value=""> Select {pathname.replace('/', '').replaceAll('-', " ")}</option>
             {serviceCenterData.data.map((item) => (
               <option value={item.id} key={item.id}>
                 {item.title}

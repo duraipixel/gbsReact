@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "react-bootstrap/Modal";
 import {
@@ -13,8 +12,9 @@ import { toast } from "react-hot-toast";
 import { cancelOrderApi } from "services/product.service";
 import { AuthUser } from "utils";
 
-export const CancelOrderRequested = ({ order_id }) => {
+export const CancelOrderRequested = ({ order }) => {
   const [formLoader, setFormLoader] = useState(false);
+  const [status, setStatus] = useState(order.status);
   const [textFieldNotShow, setTextFieldNotShow] = useState(true);
   const [radioValue, setRadioValue] = useState(false);
   const [modal, setModal] = useState(false);
@@ -29,15 +29,15 @@ export const CancelOrderRequested = ({ order_id }) => {
     setRadioValue(e.target.value);
   };
   async function updateCancelOrder(formData) {
-    if(radioValue === false) {
+    if (radioValue === false) {
       toast.error('Reason is required !')
       return false
     }
-    if(radioValue !== false & radioValue !== 'other') {
+    if (radioValue !== false & radioValue !== 'other') {
       formData.cancelReason = radioValue
-    } 
+    }
     setFormLoader(true);
-    formData.order_id = order_id;
+    formData.order_id = order.id;
     formData.customer_id = AuthUser().id;
     cancelOrderApi(formData).then((res) => {
       setFormLoader(false);
@@ -45,6 +45,7 @@ export const CancelOrderRequested = ({ order_id }) => {
         toast.error(res.data.message);
         reset();
       } else {
+        setStatus('cancel_requested')
         toast.success(res.data.message);
         setModal(!modal);
       }
@@ -57,7 +58,8 @@ export const CancelOrderRequested = ({ order_id }) => {
     "Cheaper alternative available for lesser price.",
     "Bad review from friends/relatives after ordering the product",
   ]
-  return (
+  if (status === 'cancel_requested') return <b className="text-primary">Cancel Requested</b>
+  if (status !== 'cancelled') return (
     <>
       <button className="btn btn-outline-primary" onClick={() => setModal(true)}>Cancel Order</button>
       <Modal

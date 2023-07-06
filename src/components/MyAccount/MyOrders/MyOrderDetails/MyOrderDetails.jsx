@@ -12,9 +12,9 @@ const MyOrderDetails = () => {
   const { order_id } = useParams()
   const [fetching, setFetching] = useState(true)
   const [order, setOrder] = useState(false)
+  const orderTracking = (order.status === 'cancelled' || order.status === 'delivered') ? order.tracking : order.orderTracking
   useEffect(() => {
     getOrderDetailApi(order_id).then(({ data }) => {
-      // console.log(data)
       setOrder(data)
       setFetching(false)
     })
@@ -35,23 +35,21 @@ const MyOrderDetails = () => {
                     #{order.order_no}
                   </h2>
                   <div>
-                    <a href={order.invoice_file} download target="_blank" rel="noreferrer" className="btn btn-info mx-2">Download Invoice</a>
-                    {order.status === "cancel_requested" ? <b className="text-primary">Cancel Requested</b> : <CancelOrderRequested order_id={order.id} />}
+                    <a href={order.status === 'delivered' ? order.delivery_document : order.invoice_file} download target="_blank" rel="noreferrer" className="btn btn-info mx-2">Download Invoice</a>
+                    <CancelOrderRequested  order={order} /> 
                   </div>
                 </div>
-                {/* <div className="pt-3">
-                  <p>Your order has been shipped and it’s out for delivery</p>
-                </div> */}
                 <div className="time-line-group my-5">
-                  {
-                    order.orderTracking.map((track, index) => (
-                      <div className="time-line-item" key={index}>
-                        <div className={`time-line-icon  ${track.has_tracking ? 'bg-info' : 'bg-secondary'}`}><FaCheckCircle /></div>
+                  {orderTracking.map((track, index) => (
+                    <div className="time-line-item" key={index} style={{ minHeight: 100 }}>
+                      <div className={`time-line-icon  ${track.has_tracking ? 'bg-info' : 'bg-secondary'}`}><FaCheckCircle /></div>
+                      <div >
                         <div className="time-line-text">{track.status_name}</div>
+                        <div className="time-line-text small text-success">{track?.tracking_info?.description}</div>
                         <div className="time-line-text small text-muted">{track?.tracking_info?.created_at}</div>
                       </div>
-                    ))
-                  }
+                    </div>
+                  ))}
                 </div>
                 <div>
                   <div className="flex-jc-btwn align-c t-head-title">
