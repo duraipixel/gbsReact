@@ -104,13 +104,11 @@ const MobileImageGallery = ({ images }) => {
   return (
     <>
       <Slider {...settings}>
-        {
-          images.map((item, index) => (
-            <div key={index} onClick={() => { setPhotoIndex(index); setIsOpen(!isOpen) }}>
-              <Image src={item} width="100%" className="product-mobile-image" />
-            </div>
-          ))
-        }
+        {images.map((item, index) => (
+          <div key={index} onClick={() => { setPhotoIndex(index); setIsOpen(!isOpen) }}>
+            <Image src={item} width="100%" className="product-mobile-image" />
+          </div>
+        ))}
       </Slider>
       <LightBoxVew photoIndex={photoIndex} isOpen={isOpen} setPhotoIndex={setPhotoIndex} setIsOpen={setIsOpen} images={images} />
     </>

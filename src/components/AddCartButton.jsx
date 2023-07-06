@@ -91,7 +91,7 @@ function AddCartButton({ className, product, type, setCartId }) {
             className="form-check-input me-2 rounded-0 border border-primary"
           />
         )}
-        Selected
+       {isAddCart === true ? 'Selected' : 'Select'} 
       </label>
     );
   }
