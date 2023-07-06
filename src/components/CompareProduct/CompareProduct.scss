@@ -1,8 +1,6 @@
 .compare-menu-button {
-    position: fixed;
-    left: 1rem;
-    bottom: 80px;
-    background-color: rgb(0 0 0 / 59%);
+    position: fixed; 
+    background-color: rgba(0, 0, 0, 0.848);
     border: 1px solid #fff;
     border-radius: 3rem;
     color: #fff;
@@ -13,9 +11,13 @@
     &:hover {
         background-color: black;
     }
+    right: 81px;
+    bottom: 19px;
+    
     @media (min-width:600px) {
         padding: 1rem 3rem;
-
+        right: 140px;
+        bottom: 10px;
     }
 }
 

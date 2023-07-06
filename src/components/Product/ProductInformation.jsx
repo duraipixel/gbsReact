@@ -114,11 +114,7 @@ function ProductInformation({ product }) {
         <AddFavButton
           className="ms-md-3 mb-md-0 mb-3 btn btn-outline-info rounded-box-circle"
           product={product}
-        />
-        <CompareButton
-          className="mb-md-0 mb-3 btn btn-outline-info rounded-box-circle ms-md-3"
-          product={product}
-        />
+        /> 
       </div>
       <h3 className="sub-product-title my-3">
         Check availability for Delivery

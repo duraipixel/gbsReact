@@ -47,7 +47,9 @@ function ProductSlider({ products, children, slidesToShow }) {
     return (
       <Slider {...settings}>
         {products.map((product, key) => (
-          <CardComponent product={product} key={key} />
+          <div className="p-2">
+            <CardComponent product={product} key={key} />
+          </div>
         ))}
       </Slider>
     );

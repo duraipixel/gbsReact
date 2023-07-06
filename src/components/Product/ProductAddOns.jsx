@@ -49,7 +49,7 @@ function ProductAddOns({ product, cartId, setCartId }) {
                     </>
                     : ''
             }
-            <hr className='d-none d-md-block' />
+            <hr/>
             {
                 product.frequently_purchased.length !== 0 ?
                     <>
@@ -59,14 +59,14 @@ function ProductAddOns({ product, cartId, setCartId }) {
                                 product.frequently_purchased.map((item, key) => (
                                     <li key={key} className="list-group-item list-group-item-action">
                                         <div className="row align-items-center">
-                                            <div className="col">
+                                            <div className="col-md">
                                                 <img src={item.image} alt="product-thumnail" className='product-thumnail' />
                                             </div>
-                                            <div className="col-8">
+                                            <div className="col-md-8">
                                                 <small >{item.product_name}</small>
                                                 <AddCartButton type='checkbox' className="mb-md-0 mb-3 btn btn-outline-primary px-5 fw-semibold" product={item} />
                                             </div>
-                                            <div className="col">
+                                            <div className="col-md">
                                                 <span className='text-info fw-bold'>₹{item.price}</span>
                                             </div>
                                         </div>

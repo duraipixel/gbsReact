@@ -41,30 +41,32 @@ function CategoryFilters({ setCurrentLocation }) {
   });
   // console.log(subcategory,"subcategory")
   if (subcategory.length > 0) return (
-    <ThemeProvider theme={outerTheme}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        variant="scrollable"
-        scrollButtons="auto"
-        indicatorColor="primary"
-        textColor="primary"
-        selectionFollowsFocus={true}
-        allowScrollButtonsMobile={true}
-      >
-        {
-          subcategory.map((item, i) => (
-            <Tab
-              value={item.slug}
-              key={i}
-              component={Link}
-              to={`/products?categories=${item.slug}`}
-              label={item.name}
-            />
-          ))
-        }
-      </Tabs>
-    </ThemeProvider>
+    <div className="mb-3 mb-md-0">
+      <ThemeProvider theme={outerTheme}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          indicatorColor="primary"
+          textColor="primary"
+          selectionFollowsFocus={true}
+          allowScrollButtonsMobile={true}
+        >
+          {
+            subcategory.map((item, i) => (
+              <Tab
+                value={item.slug}
+                key={i}
+                component={Link}
+                to={`/products?categories=${item.slug}`}
+                label={item.name}
+              />
+            ))
+          }
+        </Tabs>
+      </ThemeProvider>
+    </div>
   )
 }
 

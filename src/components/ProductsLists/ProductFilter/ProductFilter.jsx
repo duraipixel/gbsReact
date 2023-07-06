@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Col, Accordion, Button } from "react-bootstrap";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Col, Accordion } from "react-bootstrap";
+import { useLocation, useNavigate } from "react-router-dom";
 import { filterMenuApi } from "services/filters.service";
 import { Text } from "utils";
 import { IoMdClose } from "react-icons/io";
@@ -98,69 +98,72 @@ const ProductFilter = ({
           </div>
         </div>
         : ''}
+      {
+        isActive ?
+          <div className="filters-side px-3 pb-4">
+            <div className={`${isActive ? "active" : ""} pt-0  product-filters filter-lists`}>
+              <div className="sticky-top bg-white">
+                {
+                  window.innerWidth < 992 ? <button className="float-end btn btn-sm btn-light border py-1 mt-1 rounded-pill" onClick={() => setActive(!isActive)}>
+                    <IoMdClose />
+                  </button> : null
+                }
 
-      <div className="filters-side px-3 pb-4">
-        <div className={`${isActive ? "active" : ""} pt-0  product-filters filter-lists`}>
-          <div className="sticky-top bg-white">
-            {
-              window.innerWidth < 992 ? <button className="float-end btn btn-sm btn-light border py-1 mt-1 rounded-pill" onClick={() => setActive(!isActive)}>
-                <IoMdClose />
-              </button> : null
-            }
-
-            <div>
-              <h6 className="filter-title py-2">SORT BY</h6>
-              <select
-                className="form-select form-select-sm"
-                id="enq"
-                name="enq"
-                onChange={filterHandler}
-                value={searchParams.get('sort_by') || ''}
-              >
-                <option value="" > -- sort by -- </option>
-                <option value="price-high-to-low" >High to Low</option>
-                <option value="price-low-to-high">Low to High</option>
-              </select>
+                <div>
+                  <h6 className="filter-title py-2">SORT BY</h6>
+                  <select
+                    className="form-select form-select-sm"
+                    id="enq"
+                    name="enq"
+                    onChange={filterHandler}
+                    value={searchParams.get('sort_by') || ''}
+                  >
+                    <option value="" > -- sort by -- </option>
+                    <option value="price-high-to-low" >High to Low</option>
+                    <option value="price-low-to-high">Low to High</option>
+                  </select>
+                </div>
+              </div>
+              {filter !== '' && filter !== '/products?' ?
+                <div className="my-2">
+                  <h4 className="filter-title d-flex align-items-center justify-content-between">
+                    FILTER BY
+                    <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>
+                  </h4>
+                  <FilterChips />
+                </div>
+                : ''}
+              {
+                Filters === false ? <FiltersPlaceHolders /> :
+                  defaultActiveKey?.length > 0 ? (
+                    <Accordion
+                      defaultActiveKey={defaultActiveKey}
+                      alwaysOpen
+                      className="px-0 filters-accordion"
+                    >
+                      {Object.entries(Filters).map((filters, key) => (
+                        <Accordion.Item eventKey={filters[0]} key={key}>
+                          <Accordion.Header className="py-2">
+                            <span className="filter-title">{Text(filters[0])}</span>
+                          </Accordion.Header>
+                          <Accordion.Body className="p-0">
+                            <ul style={{ maxHeight: 195, overflow: 'auto' }}>
+                              {filters[1].map((filter, index) => (
+                                <li key={index}>
+                                  <CheckBoxInput data={filter} name={filters[0]} />
+                                </li>
+                              ))}
+                            </ul>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      ))}
+                    </Accordion>
+                  ) : ""
+              }
             </div>
           </div>
-          {filter !== '' && filter !== '/products?' ?
-            <div className="my-2">
-              <h4 className="filter-title d-flex align-items-center justify-content-between">
-                FILTER BY
-                <span className="small text-danger" onClick={clearAllFilters} > <i className="fa fa-times"></i> clear all</span>
-              </h4>
-              <FilterChips />
-            </div>
-            : ''}
-          {
-            Filters === false ? <FiltersPlaceHolders /> :
-              defaultActiveKey?.length > 0 ? (
-                <Accordion
-                  defaultActiveKey={defaultActiveKey}
-                  alwaysOpen
-                  className="px-0 filters-accordion"
-                >
-                  {Object.entries(Filters).map((filters, key) => (
-                    <Accordion.Item eventKey={filters[0]} key={key}>
-                      <Accordion.Header className="py-2">
-                        <span className="filter-title">{Text(filters[0])}</span>
-                      </Accordion.Header>
-                      <Accordion.Body className="p-0">
-                        <ul style={{ maxHeight: 195, overflow: 'auto' }}>
-                          {filters[1].map((filter, index) => (
-                            <li key={index}>
-                              <CheckBoxInput data={filter} name={filters[0]} />
-                            </li>
-                          ))}
-                        </ul>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  ))}
-                </Accordion>
-              ) : ""
-          }
-        </div>
-      </div>
+          : ''
+      }
     </Col>
   );
 };

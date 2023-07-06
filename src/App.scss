@@ -1202,13 +1202,19 @@ button[loading="true"] {
   svg {
     fill: white !important;
   }
+
+  @media (max-width:600px) {
+    right: 22px !important;
+    bottom: 75px !important;
+  }
 }
 
 @media (max-width:600px) {
   .primary-heads .h3 {
     font-size: 16px !important;
   }
-} 
+}
+
 .offcanvas.offcanvas-end {
   width: 90% !important;
 }

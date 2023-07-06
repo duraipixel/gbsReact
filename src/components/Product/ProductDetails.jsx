@@ -8,13 +8,14 @@ import ProductSlider from "components/ProductSlider/ProductSlider";
 import "components/Home/HomeProductsSlider/styles.scss";
 import "components/Home/NewArrivals/styles.css";
 import ProductBreadcrumb from "./ProductBreadcrumb";
+import CompareButton from "components/CompareButton";
 
 function ProductDetails({ product }) {
   if (product) {
     return (
       <div >
         <Row className=" h-100">
-          <Col xl={6} className={`${window.innerWidth > 992 ? 'sticky-top' : ''} h-100 sticky-padding-2 bg-xl-white`}> 
+          <Col xl={6} className={`${window.innerWidth > 992 ? 'sticky-top' : ''} h-100 sticky-padding-2 bg-xl-white`}>
             <ProductBreadcrumb
               slug={product.category_slug}
               category={product.category_name}
@@ -28,6 +29,9 @@ function ProductDetails({ product }) {
               </span>
               <ProductGallery videos={product.video_link} images={product.gallery || product.image} />
             </div>
+            <div className="text-center pb-3">
+              <CompareButton className="btn btn-outline-info" product={product} />
+            </div>
           </Col>
           <Col xl={6} className="sticky-padding-2">
             <ProductInformation product={product} />
@@ -37,7 +41,7 @@ function ProductDetails({ product }) {
         {product.related_products.length !== 0 ? (
           <div className="py-5 related-slider">
             <h5 className="text-center mb-4">Related Products</h5>
-            <ProductSlider products={product.related_products} slidesToShow={3}/>
+            <ProductSlider products={product.related_products} />
           </div>
         ) : ''}
       </div>
