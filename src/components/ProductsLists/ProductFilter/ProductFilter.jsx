@@ -73,7 +73,7 @@ const ProductFilter = ({
   }, []);
 
   return (
-    <Col lg={2} className={`align-self-start h-100 ps-lg-0 h-100 pe-lg-4 ${window.innerWidth > 992 ? 'sticky-top' : ''} sticky-padding-2 `} >
+    <Col lg={2} className={`p-0 ${window.innerWidth > 992 ? 'sticky-top' : ''} sticky-padding`} >
       {window.innerWidth < 992 ?
         <div className="mb-2">
           <div className="filter-title ps-0 d-flex align-items-center justify-content-between">
@@ -99,7 +99,7 @@ const ProductFilter = ({
         </div>
         : ''}
 
-      <div className="filters-side">
+      <div className="filters-side px-3 pb-4">
         <div className={`${isActive ? "active" : ""} pt-0  product-filters filter-lists`}>
           <div className="sticky-top bg-white">
             {
