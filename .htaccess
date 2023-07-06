@@ -2,10 +2,77 @@
   RewriteEngine On
   RewriteBase /
   RewriteCond %{SERVER_PORT} 80
-  RewriteRule ^(.*)$ https://beta.gbssystems.com/$1 [R,L]
+  RewriteRule ^(.*)$ https://gbssystems.com/$1 [R,L]
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
 </IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+# Redirect 301 /laptop-service-center-in-adyar-chennai/	 /service-center-details/gbs-systems-services-adyar-chennai
+# Redirect 301 /laptop-service-center-in-anna-nagar-chennai/	 /service-center-details/gbs-systems-services-anna-nagar-chennai
+# Redirect 301 /laptop-service-center-in-chromepet-chennai/	 /service-center-details/gbs-systems-services-chrompet-chennai
+# Redirect 301 /laptop-service-center-in-guduvanchery-chennai/	 /service-center-details/gbs-systems-services-guduvanchery-chennai
+# Redirect 301 /laptop-service-center-in-iit-madras/	 /service-center-details/gbs-systems-services-iit-madras-chennai
+# Redirect 301 /laptop-service-center-in-kk-nagar-chennai/	 /service-center-details/gbs-systems-services-kk-nagar-chennai
+# Redirect 301 /laptop-service-center-in-madipakkam-chennai/	 /service-center-details/gbs-systems-services-madipakkam-chennai
+# Redirect 301 /laptop-service-center-in-omr-chennai/	 /service-center-details/gbs-systems-services-omr-chennai
+# Redirect 301 /laptop-service-center-in-thoraipakkam-chennai/	 /service-center-details/gbs-systems-services-omr-thoraipakkam-chennai
+# Redirect 301 /laptop-service-center-in-porur-chennai/	 /service-center-details/gbs-systems-services-porur-chennai
+# Redirect 301 /laptop-service-center-in-sembakkam-chennai/	 /service-center-details/gbs-systems-services-sembakkam-chennai
+# Redirect 301 /laptop-service-center-in-tambaram-chennai/	 /service-center-details/gbs-systems-services-tambaram-chennai
+# Redirect 301 /laptop-service-center-in-t-nagar-chennai/	 /service-center-details/gbs-systems-services-t-nagar-chennai
+# Redirect 301 /laptop-service-center-in-velachery-chennai/	 /service-center-details/gbs-systems-services-velachery-chennai
+	
+# Redirect 301 /laptop-service-center-in-electronic-city-bangalore/	 /service-center-details/gbs-systems-services-electronic-city-bangalore
+# Redirect 301 /laptop-service-center-in-koramangala-bangalore/	 /service-center-details/gbs-systems-services-koramangala-bangalore
+# Redirect 301 /laptop-service-center-in-malleswaram-bangalore/	 /service-center-details/gbs-systems-services-malleswaram-bangalore
+	
+# Redirect 301 /laptop-service-center-in-simmakkal-madurai/	 /service-center-details/gbs-systems-services-simmakkal-madurai
+# Redirect 301 /laptop-service-center-in-kalavasal-madurai/	 /service-center-details/gbs-systems-services-kalavasal-madurai
+	
+# Redirect 301 /laptop-service-center-in-peelamedu-coimbatore/	 /service-center-details/gbs-systems-services-peelamedu-coimbatore
+# Redirect 301 /laptop-service-center-in-rs-puram-coimbatore/	 /service-center-details/gbs-systems-services-rs-puram-coimbatore
+	
+# Redirect 301 /laptop-service-center-in-trichy/	 /service-center-details/gbs-systems-services-trichy
+# Redirect 301 /lenovo-exclusive-store-in-kk-nagar/	 /store-location-details/lenovo-exclusive-store-kk-nagar
+# Redirect 301 /lenovo-exclusive-store-in-mogappair/	 /store-location-details/lenovo-exclusive-store-mogappair
+# Redirect 301 /lenovo-exclusive-store-in-omr/	 /store-location-details/lenovo-exclusive-store-omr
+# Redirect 301 /lenovo-exclusive-store-in-guduvanchery/	 /store-location-details/lenovo-exclusive-store-guduvanchery
+# Redirect 301 /lenovo-exclusive-store-in-velachery/	 /store-location-details/lenovo-exclusive-store-velachery
+# Redirect 301 /lenovo-exclusive-store-in-porur/	 /store-location-details/lenovo-exclusive-store-porur
+# Redirect 301 /lenovo-exclusive-store-in-sembakkam/	 /store-location-details/lenovo-exclusive-store-sembakkam
+# Redirect 301 /lenovo-exclusive-store-in-tambaram/	 /store-location-details/lenovo-exclusive-store-tambaram
+# Redirect 301 /lenovo-exclusive-store-madurai/	 /store-location-details/lenovo-exclusive-store-madurai
+	
+# Redirect 301 /dell-exclusive-store-in-anna-nagar/	 /store-location-details/dell-exclusive-store-anna-nagar
+# Redirect 301 /dell-exclusive-store-in-kk-nagar/	 /store-location-details/dell-exclusive-store-kk-nagar
+# Redirect 301 /dell-exclusive-store-in-medavakkam/	 /store-location-details/dell-exclusive-store-medavakkam
+# Redirect 301 /dell-exclusive-store-in-omr/	 /store-location-details/dell-exclusive-store-thoraipakkam
+# Redirect 301 /dell-exclusive-store-in-tambaram/	 /store-location-details/dell-exclusive-store-tambaram
+# Redirect 301 /dell-exclusive-store-in-vadapalani/	 /store-location-details/dell-exclusive-store-vadapalani
+# Redirect 301 /dell-exclusive-store-in-velachery/	 /store-location-details/dell-exclusive-store-velachery
+	
+# Redirect 301 /hp-exclusive-store-in-omr/	 /store-location-details/hp-exclusive-store-omr
+# Redirect 301 /hp-exclusive-store-in-porur/	 /store-location-details/hp-exclusive-store-porur
+# Redirect 301 /hp-exclusive-store-in-tambaram/	 /store-location-details/hp-exclusive-store-tambaram
+	
+# Redirect 301 /acer-exclusive-store-in-adyar/	 /store-location-details/acer-exclusive-store-adyar
+# Redirect 301 /acer-exclusive-store-in-tambaram/	 /store-location-details/acer-exclusive-store-tambaram
+# Redirect 301 /acer-exclusive-store-in-vadapalani/	 /store-location-details/acer-exclusive-store-vadapalani
+	
+# Redirect 301 /asus-exclusive-store-in-omr/	 /store-location-details/asus-exclusive-store-omr
+# Redirect 301 /asus-exclusive-store-in-ashok-nagar/	 /store-location-details/asus-exclusive-store-ashok-nagar
+
+# Redirect 301 /laptop-service-center-in-chennai/	 /store-locator-for-service
+# Redirect 301 /laptop-service-center-in-bangalore/	 /store-locator-for-service
+# Redirect 301 /laptop-service-center-in-coimbatore/	 /store-locator-for-service
+# Redirect 301 /laptop-service-center-in-madurai/	 /store-locator-for-service

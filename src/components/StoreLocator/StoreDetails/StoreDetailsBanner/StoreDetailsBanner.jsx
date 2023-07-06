@@ -39,7 +39,7 @@ const StoreDetailsBanner = ({ storeLocation }) => {
                 />
               </svg>
             </span>{" "}
-            <Link to="/store-locator" className="text-white">Store locator for Sales</Link>
+            <Link to="/store-locator-for-sales" className="text-white">Store locator for sales</Link>
             <span className="px-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

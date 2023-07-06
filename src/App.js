@@ -62,7 +62,7 @@ function App() {
               <Route path="myorders/:order_id" element={<MyOrdersDetails />} />
               <Route path="wishlist" element={<MyWishlist />} />
             </Route>
-            <Route path="/store-locator" element={<StoreLocatorPage />} />
+            <Route path="/store-locator-for-sales" element={<StoreLocatorPage />} />
             <Route path="/store-locator-for-service" element={<ServiceCenterLocator />} />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />

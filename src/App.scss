@@ -1183,3 +1183,6 @@ button[loading="true"] {
   margin: 20px;
   z-index: 5;
 }
+.lazy-load-image-background.blur.lazy-load-image-loaded > img {
+  object-fit: fill !important;
+}

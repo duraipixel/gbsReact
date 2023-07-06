@@ -22,7 +22,7 @@ function ServiceOffers() {
                       in Chennai & Madurai. And, we are planning to expand our
                       business to other regions with other brands.
                     </p>
-                    <Link to="/store-locator">Explore GBS Stores</Link>
+                    <Link to="/store-locator-for-sales">Explore GBS Stores</Link>
                   </div>
                 </div>
               </div>

@@ -306,7 +306,7 @@ input.addon {
 }
 .product-mobile-image {
   width: 100% !important;
-  height: 250px !important;
+  min-height: 250px !important;
   object-fit: contain;
   background-color: #ebebeb !important;
 }

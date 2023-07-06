@@ -15,6 +15,7 @@ const HomeProductsSlider = () => {
               alt={item.title}
               className="w-100"
               src={window.innerWidth < 768 ? item.mobile_banner : item.image}
+              style={{ minHeight: window.innerWidth < 768 ? 370 : 'auto'}}
             />
           </div>
         ))}
