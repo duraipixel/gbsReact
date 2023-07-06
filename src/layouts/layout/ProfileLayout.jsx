@@ -24,7 +24,7 @@ function ProfileLayout() {
     dispatch(setAuthUser({ data: [], isLoggedIn: false }));
   };
   return (
-    <section className="bg-off-grey py-4">
+    <section className="bg-off-grey py-md-4">
       <Helmet>
         <title>{page?.meta?.title || "My Account - GBS Systems"}</title>
         <link rel="canonical" href={window.location.href} />

@@ -178,8 +178,6 @@ function ProductInformation({ product }) {
           {product.has_pickup_store ? "Available for Pickup": "Un available for Pickup"}
         </div>
         <div>
-        <PickupFromStoreAddress type="button" brandId={product.brand_id} />
-
           {product.has_pickup_store && (
             <div>
               <PickupFromStoreAddress type="button" brandId={product.brand_id} />

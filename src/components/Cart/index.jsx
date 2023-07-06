@@ -38,7 +38,7 @@ const CartProduct = () => {
   if (fetching) return <Loader />
   if (cartProduct.length) {
     return (
-      <section className="bg-off-grey py-4">
+      <section className="bg-off-grey py-md-4">
         <Container>
           <Row>
             <Col lg={8} className="align-self-start">

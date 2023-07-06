@@ -1168,7 +1168,9 @@ button[loading="true"] {
 }
 
 .bg-off-grey .container {
-  padding-top: 88px;
+  @media (min-width:992px) {
+    padding-top: 88px;
+  }
 }
 
 .poster-img-div {
@@ -1193,12 +1195,9 @@ button[loading="true"] {
   z-index: 5;
 }
 
-.lazy-load-image-background.blur.lazy-load-image-loaded>img {
-  object-fit: contain !important;
-}
-
 .scroll-to-top {
   background-color: var(--primary-color) !important;
+  bottom: 80px !important;
 
   svg {
     fill: white !important;

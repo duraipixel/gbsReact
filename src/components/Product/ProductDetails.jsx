@@ -37,7 +37,7 @@ function ProductDetails({ product }) {
         {product.related_products.length !== 0 ? (
           <div className="py-5 related-slider">
             <h5 className="text-center mb-4">Related Products</h5>
-            <ProductSlider products={product.related_products} />
+            <ProductSlider products={product.related_products} slidesToShow={3}/>
           </div>
         ) : ''}
       </div>

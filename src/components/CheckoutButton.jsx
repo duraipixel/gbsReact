@@ -53,6 +53,8 @@ function CheckoutButton({ className }) {
             checkoutApi(checkData).then(response => {
                 if(response.data.error === 0) {
                     window.location.href = response.data.redirect_url
+                } else {
+                    toast.error(response?.data?.message)
                 }
                 setLoader(false)
             })

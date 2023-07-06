@@ -109,6 +109,7 @@
   opacity: 1 !important;
   margin: 0 auto;
   transition: all 0.3s ease;
+  border: 1px solid gray !important;
 }
 
 .slick-dots li button:before {
@@ -119,6 +120,7 @@
   width: 35px !important;
   background: var(--white-color) !important;
   transition: all 0.3s ease;
+  border: 1px;
 }
 
 .search-result li {
