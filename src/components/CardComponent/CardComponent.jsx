@@ -13,9 +13,11 @@ function CardComponent({ product, type, className }) {
     <div className={className}>
       <div className='product-card overflow-hidden'>
         <div className="row m-0" >
-          <div className="col-lg-4 pt-3" onClick={() => navigate(`/products/${product.product_url}`)}>
+          <div className="col-lg-4 pt-3" >
             <div className="position-relative text-center pb-3">
-              <Image src={product.image} alt={product.product_name} className="product-list-image" />
+              <span onClick={() => navigate(`/products/${product.product_url}`)}>
+              <Image src={product.image}  alt={product.product_name} className="product-list-image" />
+              </span>
               <CompareButton buttonType="icon" className="btn btn-outline-info ms-2 border-secondary btn-sm" product={product} />
               <div className="off-prc">
                 <h3> {product.discount_percentage}% <br /> <span>OFF</span></h3>
@@ -73,12 +75,6 @@ function CardComponent({ product, type, className }) {
               <span className="new-price">₹{product.price.replace('.00', '')}</span>
             </h4>
           </div>
-          {/* <ul>
-            <li>12th Gen Intel Core i5-1235U</li>
-            <li>8GB, DDR4, 2666 MHz</li>
-            <li>512GB SSD Storage</li>
-            <li>Intel Integrated Graphics</li>
-          </ul> */}
           <div className="d-flex justify-content-between">
             <div className="d-flex justify-content-center clk-optn">
               <AddFavButton buttonType="icon" className="btn btn-outline-info me-1 rounded-box-circle rounded-box-sm" product={product} />
@@ -97,7 +93,7 @@ function CardComponent({ product, type, className }) {
       <div className="product-card-sm shadow" onClick={() => navigate(`/products/${product.product_url}`)}>
         <AddFavButton buttonType="icon" className="btn-fav" product={product} />
         <Image src={product.image} alt={product.product_name} className="product-card-image-sm" />
-        <div className="product-info">
+        <div className="product-info" >
           <h3 className='product-name'>{product.product_name.substring(0, 30)}...</h3>
           <hr className='my-1' />
           <div className="small">You Save (₹ {product.save_price}) </div>
