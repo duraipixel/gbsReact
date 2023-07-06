@@ -16,11 +16,11 @@ const ServiceCenterLocationDetails = ({ serviceCenterData }) => {
                 <h3>Reach Us</h3>
               )}
               <p>
-                {serviceCenterData.contact_no && <FiPhone />}{" "}
+                {serviceCenterData.contact_no && <FiPhone />}
                 {serviceCenterData.contact_no}
               </p>
               <p>
-                {serviceCenterData.email && <TfiEmail />}{" "}
+                {serviceCenterData.email && <TfiEmail />}
                 {serviceCenterData.email}
               </p>
             </div>

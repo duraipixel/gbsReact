@@ -60,7 +60,7 @@ function ServiceOffers() {
                 <p>
                   Take a look at the best moments captured during our key
                   milestones <br /> such as product launches to opening our new
-                  showroom.{" "}
+                  showroom.
                 </p>
               </div>
             </div>

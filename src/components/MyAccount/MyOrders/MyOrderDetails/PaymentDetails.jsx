@@ -14,9 +14,9 @@ const PaymentDetails = ({ order }) => {
             <p>Grand Total</p>
           </Col>
           <Col className="text-align-right">
-            <p>₹{" "}{order.sub_total}</p>
-            <p>₹{" "}{order.tax_amount}</p>
-            <h5>₹{" "}{order.amount}</h5>
+            <p>₹{order.sub_total}</p>
+            <p>₹{order.tax_amount}</p>
+            <h5>₹{order.amount}</h5>
           </Col>
         </Row>
       </Col>

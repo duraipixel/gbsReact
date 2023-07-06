@@ -40,10 +40,10 @@ function WarrantyPolicy() {
                       <ul>
                         <li>
                           <IoCallOutline /> 18004252073 / 18004252067 /
-                          18004250088{" "}
+                          18004250088
                         </li>
                         <li>
-                          <IoLogoWhatsapp /> 18004250088{" "}
+                          <IoLogoWhatsapp /> 18004250088
                         </li>
                       </ul>
                     </div>
@@ -76,7 +76,7 @@ function WarrantyPolicy() {
                       <h2> HP Support</h2>
                       <ul>
                         <li>
-                          <IoCallOutline /> 18002587170{" "}
+                          <IoCallOutline /> 18002587170
                         </li>
                       </ul>
                     </div>
@@ -109,10 +109,10 @@ function WarrantyPolicy() {
                       <h2> Lenovo Support</h2>
                       <ul>
                         <li>
-                          <IoCallOutline /> <b>Idea pad</b> : 180030005366{" "}
+                          <IoCallOutline /> <b>Idea pad</b> : 180030005366
                         </li>
                         <li>
-                          <IoCallOutline /> <b>ThinkPad</b> : 180030008465{" "}
+                          <IoCallOutline /> <b>ThinkPad</b> : 180030008465
                         </li>
                       </ul>
                     </div>
@@ -145,7 +145,7 @@ function WarrantyPolicy() {
                       <h2> Acer Support</h2>
                       <ul>
                         <li>
-                          <IoCallOutline /> 1800116677 / 180030002237{" "}
+                          <IoCallOutline /> 1800116677 / 180030002237
                         </li>
                       </ul>
                     </div>
@@ -178,7 +178,7 @@ function WarrantyPolicy() {
                       <h2> Asus Support</h2>
                       <ul>
                         <li>
-                          <IoCallOutline /> 18002090365{" "}
+                          <IoCallOutline /> 18002090365
                         </li>
                       </ul>
                     </div>

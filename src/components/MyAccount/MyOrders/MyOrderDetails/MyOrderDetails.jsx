@@ -70,7 +70,7 @@ const MyOrderDetails = () => {
                           </div>
                           <div className="flex-jc-btwn t-head-gap align-c">
                             <p>{item.quantity}</p>
-                            <p>₹{" "}{item.price}</p>
+                            <p>₹{item.price}</p>
                           </div>
                         </div>
                         <hr />

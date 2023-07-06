@@ -109,27 +109,17 @@ const Footer = () => {
               <h6>Contact Us</h6>
               <Row className="footer-text1">
                 <Col xs={1}>
-                  <RiMapPinLine /> {"   "}
+                  <RiMapPinLine /> 
                 </Col>
                 <Col>
-                  {address &&
-                    address.map((item, index) => (
-                      <span key={index}>
-                        {index !== address.length - 1 ? (
-                          <>
-                            {`${item},`}
-                            <br />
-                          </>
-                        ) : (
-                          <>{`${item}.`}</>
-                        )}
-                      </span>
+                  {address && address.map((item, index) => (
+                      <span key={index}>{item}</span>
                     ))}
                 </Col>
               </Row>
               <Row className="footer-text1">
                 <Col xs={1}>
-                  <TfiEmail />{" "}
+                  <TfiEmail />
                 </Col>
                 <Col>
                   <Link
@@ -144,7 +134,7 @@ const Footer = () => {
               </Row>
               <Row className="footer-text1">
                 <Col xs={1}>
-                  <FiPhone />{" "}
+                  <FiPhone />
                 </Col>
                 <Col>
                   {mobNum &&
@@ -158,7 +148,6 @@ const Footer = () => {
                           {i !== mobNum.length - 1 ? (
                             <>
                               {`${num},`}
-                              <br />
                             </>
                           ) : (
                             `${num}.`

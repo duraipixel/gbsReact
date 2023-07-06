@@ -18,11 +18,11 @@ const StoreLocationDetails = ({ storeLocation }) => {
                 <h3>Reach Us</h3>
               )}
               <p>
-                {storeLocation.group_contacts && <FiPhone />}{" "}
+                {storeLocation.group_contacts && <FiPhone />}
                 {storeLocation.group_contacts}
               </p>
               <p>
-                {storeLocation.group_emails && <TfiEmail />}{" "}
+                {storeLocation.group_emails && <TfiEmail />}
                 {storeLocation.group_emails}
               </p>
             </div>

@@ -1208,11 +1208,7 @@ button[loading="true"] {
   .primary-heads .h3 {
     font-size: 16px !important;
   }
-}
-
-@media (min-width:992px) {
-  .filters-side {
-    max-height: 90vh;
-    overflow-y: auto;
-  }
+} 
+.offcanvas.offcanvas-end {
+  width: 90% !important;
 }

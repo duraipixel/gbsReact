@@ -54,7 +54,7 @@ const Tablets = () => {
                     />
                     <div className="off-prc">
                       <h3>
-                        {" "}
+                        
                         30% <span>OFF</span>
                       </h3>
                     </div>
@@ -69,12 +69,12 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹{" "}83,127</span> ₹{" "}57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
                         <Link to="">
-                          <FiHeart />{" "}
+                          <FiHeart />
                         </Link>
                         <Link to="">
                           <BiGitCompare />
@@ -98,7 +98,7 @@ const Tablets = () => {
                     />
                     <div className="off-prc">
                       <h3>
-                        {" "}
+                        
                         30% <span>OFF</span>
                       </h3>
                     </div>
@@ -113,13 +113,13 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹{" "}83,127</span> ₹{" "}57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
                         <Link to="">
-                          <FiHeart />{" "}
+                          <FiHeart />
                         </Link>
                         <Link to="">
                           <BiGitCompare />
@@ -152,13 +152,13 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹{" "}83,127</span> ₹{" "}57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
                         <Link to="">
-                          <FiHeart />{" "}
+                          <FiHeart />
                         </Link>
                         <Link to="">
                           <BiGitCompare />
@@ -182,7 +182,7 @@ const Tablets = () => {
                     />
                     <div className="off-prc">
                       <h3>
-                        {" "}
+                        
                         30% <span>OFF</span>
                       </h3>
                     </div>
@@ -197,13 +197,13 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹{" "}83,127</span> ₹{" "}57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
                         <Link to="">
-                          <FiHeart />{" "}
+                          <FiHeart />
                         </Link>
                         <Link to="">
                           <BiGitCompare />
@@ -227,7 +227,7 @@ const Tablets = () => {
                     />
                     <div className="off-prc">
                       <h3>
-                        {" "}
+                        
                         30% <span>OFF</span>
                       </h3>
                     </div>
@@ -242,13 +242,13 @@ const Tablets = () => {
                     </div>
                     <h4>Dell Vostro 3420 -Carbon Black</h4>
                     <h5>
-                      <span>₹{" "}83,127</span> ₹{" "}57,990
+                      <span>₹83,127</span> ₹57,990
                     </h5>
 
                     <div className="d-flex justify-content-between">
                       <div className="clk-optn">
                         <Link to="">
-                          <FiHeart />{" "}
+                          <FiHeart />
                         </Link>
                         <Link to="">
                           <BiGitCompare />

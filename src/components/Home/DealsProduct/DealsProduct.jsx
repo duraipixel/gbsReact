@@ -12,8 +12,8 @@ const DealsProduct = () => {
       <div className="section-wrapper">
         <div className="container">
           <div className="section-title">
-            Best Deals of the Day{" "}
-            <h1 className="h5 mt-2">Get Today's Best Discounts</h1>{" "}
+            Best Deals of the Day
+            <h1 className="h5 mt-2">Get Today's Best Discounts</h1>
           </div>
           <div className="row g-3">
             {discountCollections.map((item) => (

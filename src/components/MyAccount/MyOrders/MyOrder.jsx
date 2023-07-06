@@ -45,7 +45,7 @@ function MyOrder() {
                     </div>
                     <div>
                       <p>Order Total </p>
-                      <p>₹{" "}{order.amount}</p>
+                      <p>₹{order.amount}</p>
                     </div>
                   </div>
                   <a href={order.status === 'delivered' ? order.delivery_document : order.invoice_file} download target="_blank" rel="noreferrer" className="view-invoice-btn">

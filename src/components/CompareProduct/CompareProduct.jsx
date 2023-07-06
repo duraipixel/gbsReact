@@ -29,7 +29,7 @@ function CompareProduct() {
                                         <div className="compare-card" key={product.id}>
                                             <img src={product.image} alt={product.product_name} />
                                             <p className="product-title">{product.product_name}</p>
-                                            <b className="small">₹{" "}{product.price}</b>
+                                            <b className="small">₹{product.price}</b>
                                             <button onClick={() => removeProductItem(product.id)} className="float-end btn-sm btn btn-outline-primary">Remove</button>
                                         </div>
                                     ))

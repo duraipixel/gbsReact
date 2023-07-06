@@ -134,7 +134,7 @@ const AddressBookDetails = ({ selectType, modalType }) => {
                     )}
                   </div>
                   <p>
-                    {address?.address_line1} ,{address.city} -{" "}
+                    {address?.address_line1} ,{address.city} -
                     {address.post_code},{address.state}, {address.country}
                   </p>
                   <span>Phone: {address.mobile_no}</span>

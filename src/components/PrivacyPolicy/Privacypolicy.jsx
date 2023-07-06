@@ -31,7 +31,7 @@ function Privacypolicy() {
               <p>
                 We use Your Personal data to provide and improve the Service. By
                 using the Service, You agree to the collection and use of
-                information in accordance with this Privacy Policy.{" "}
+                information in accordance with this Privacy Policy.
               </p>
               <h2 id="h2_heading">Interpretation and Definitions</h2>
               <h3 id="h3_heading">Interpretation</h3>

@@ -38,7 +38,7 @@ const StoreDetailsBanner = ({ storeLocation }) => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </span>{" "}
+            </span>
             <Link to="/store-locator-for-sales" className="text-white">Store locator for sales</Link>
             <span className="px-2">
               <svg
@@ -56,7 +56,7 @@ const StoreDetailsBanner = ({ storeLocation }) => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </span>{" "}
+            </span>
             {storeLocation.title}
           </div>
         </div>

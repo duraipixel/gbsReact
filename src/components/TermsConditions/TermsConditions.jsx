@@ -24,7 +24,7 @@ function TermsConditions() {
                 Welcome to our <b>GBS SYSTEMS & SERVICES PVT LTD</b> If you
                 continue to browse and use this website you are agreeing to
                 comply with and be bound by the following terms and conditions
-                of use, which together with our privacy policy govern{" "}
+                of use, which together with our privacy policy govern
                 <b>GBS SYSTEMS & SERVICES PVT LTD</b> relationship with you in
                 relation to this website.
               </p>

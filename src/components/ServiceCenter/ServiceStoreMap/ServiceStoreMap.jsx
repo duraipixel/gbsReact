@@ -32,7 +32,7 @@ const ServiceStoreMap = ({ serviceCenterData }) => {
               {serviceCenterData.contact_no}
             </p>
             <p>
-              {serviceCenterData.email && <TfiEmail />}{" "}
+              {serviceCenterData.email && <TfiEmail />}
               {serviceCenterData.email}
             </p>
           </div>
