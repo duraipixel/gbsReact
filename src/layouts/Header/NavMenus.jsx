@@ -313,8 +313,8 @@ export const NavMenuList = ({ className, toggleHeader }) => {
               data.data.map((item) => (
                 <div className="dropdown" key={item.id}>
                   <li className="list-group-item px-3" style={{ border: "0" }} >
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span onClick={() => linkHandler(`/products?categories=${item.name.toLowerCase()}`)} className={`me-auto text-dark dropbtn`}>
+                    <div className="d-flex justify-content-between align-items-center" onClick={() => linkHandler(`/products?categories=${item.slug}`)}>
+                      <span  className={`me-auto text-dark dropbtn`}>
                         {item.name}
                       </span>
                       {item.child && item.child.length > 0 && (

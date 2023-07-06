@@ -73,9 +73,9 @@ function AwardsAcolades() {
 
                 <div className='col-lg-12 text-center'>
                   <div className='bordered-button'>
-                    <Link to="/" className="">
+                    <a href="https://gallery.gbssystems.com/" target='_blank' rel="noreferrer" >
                       View More
-                    </Link>
+                    </a>
                   </div>
                 </div>
 

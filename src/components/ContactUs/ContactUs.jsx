@@ -60,6 +60,7 @@ function ContactUs() {
                     
                     <Link
                       rel="noopener noreferrer"
+                      style={{ textTransform:'lowercase' }}
                       onClick={() =>
                         openInNewTab(`mailto:${siteInfo.site_email}`)
                       }
