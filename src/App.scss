@@ -861,6 +861,7 @@ button[loading="true"] {
 .image-gallery-thumbnail:focus {
   border-color: var(--primary-color) !important;
 }
+
 @media (min-width: 900px) {
   .banner-slider {
     padding-top: 88px !important;
@@ -1065,6 +1066,13 @@ button[loading="true"] {
   object-fit: contain;
 }
 
+@media (max-width: 600px) {
+
+  main {
+    padding-top: 70px !important;
+  }
+}
+
 @media (max-width: 400px) {
   .product-title {
     font-size: 14px !important;
@@ -1074,9 +1082,6 @@ button[loading="true"] {
     overflow: hidden;
   }
 
-  main {
-    padding-top: 70px !important;
-  }
 
   .image-gallery-thumbnails-wrapper {
     transform: scale(0.7);
@@ -1165,17 +1170,21 @@ button[loading="true"] {
 .bg-off-grey .container {
   padding-top: 88px;
 }
+
 .poster-img-div {
   a {
     display: block !important;
   }
 }
+
 .cursor-pointer {
   cursor: pointer !important;
 }
+
 .fixed-top {
   z-index: 9 !important;
 }
+
 .btn-scroll-top {
   position: fixed;
   bottom: 0;
@@ -1183,6 +1192,7 @@ button[loading="true"] {
   margin: 20px;
   z-index: 5;
 }
-.lazy-load-image-background.blur.lazy-load-image-loaded > img {
+
+.lazy-load-image-background.blur.lazy-load-image-loaded>img {
   object-fit: fill !important;
 }

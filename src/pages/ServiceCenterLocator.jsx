@@ -1,7 +1,7 @@
 import axios from "axios";
 import ServiceCenterLocatorBanner from "components/ServiceCenter/ServiceLocatorBanner/ServiceCenterLocatorBanner";
 import ServiceLocatorContent from "components/ServiceCenter/ServiceLocatorContent/ServiceLocatorContent";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Loader, scrollToTop } from "utils";
 
@@ -15,6 +15,8 @@ const ServiceCenterLocator = () => {
   const [brandId, setBrandId] = useState("");
   const [postCode, setPostCode] = useState("");
 
+  const [filterButton , setFilterButton] = useState(false);
+
   useEffect(() => {
     scrollToTop();
     getData();
@@ -22,7 +24,7 @@ const ServiceCenterLocator = () => {
 
   useEffect(() => {
     getFilterData();
-  }, [centerID, brandId, postCode]);
+  }, [centerID, brandId, postCode, filterButton]);
 
   const getData = () => {
     return axios
@@ -44,7 +46,7 @@ const ServiceCenterLocator = () => {
       })
       .then((res) => {
         setServiceCenterFilteredData(res.data);
-        setFilterFetching(false);
+        setFilterFetching(false); 
       })
       .catch((err) => console.error(err));
   };
@@ -68,6 +70,8 @@ const ServiceCenterLocator = () => {
         setCenterID={setCenterID}
         setBrandId={setBrandId}
         setPostCode={setPostCode}
+        filterButton={filterButton}
+        setFilterButton={setFilterButton}
       />
       <ServiceLocatorContent
         fetching={filterFetching}

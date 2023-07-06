@@ -59,7 +59,7 @@ function CategoryFilters({ setCurrentLocation }) {
               key={i}
               component={Link}
               to={`/products?categories=${item.slug}`}
-              label={item.name === "LAPTOP" ? "All Laptops" : item.name}
+              label={item.name}
             />
           ))
         }
