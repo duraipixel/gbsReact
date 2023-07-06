@@ -12,6 +12,7 @@ function ProductPage() {
   const [product, setProduct] = useState([])
   const [fetching, setfetching] = useState(true)
   const getProduct = async () => {
+    setfetching(true)
     const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/get/products/by/slug`, {
       customer_id: AuthUser()?.id,
       product_url: slug
