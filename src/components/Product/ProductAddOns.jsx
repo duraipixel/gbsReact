@@ -126,11 +126,15 @@ const RemoveAddOnInput = ({ addon, cartId, product }) => {
     const Handler = () => {
         setLoading(true)
         axios.post(`${process.env.REACT_APP_BASE_URL}/delete/addon`, {
-            addon_id  : addon.id,
-            cart_id   : cartId,
+            addon_id: addon.id,
+            cart_id: cartId,
             product_id: product.id
         }).then((response) => {
-            toast.success(response.data.message)
+            if(response.data.error) {
+                toast.error(response.data.message)
+            } else {
+                toast.success(response.data.message)
+            }
             setLoading(false)
             setIsChecked(true)
         })

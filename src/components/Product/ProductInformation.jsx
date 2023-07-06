@@ -175,12 +175,11 @@ function ProductInformation({ product }) {
         </div>
         <div className="fw-bold">Pickup From Store:</div>
         <div>
-          {!product.has_pickup_store && "Un available for Pickup"}
+          {product.has_pickup_store ? "Available for Pickup": "Un available for Pickup"}
         </div>
         <div>
-          {!address.store_address?.address && "Available for Pickup"}
-        </div>
-        <div>
+        <PickupFromStoreAddress type="button" brandId={product.brand_id} />
+
           {product.has_pickup_store && (
             <div>
               <PickupFromStoreAddress type="button" brandId={product.brand_id} />

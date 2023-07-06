@@ -7,35 +7,39 @@ import { Link } from "react-router-dom";
 import { HalfHeightLoader, openInNewTab } from "utils";
 import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 import { BsWhatsapp } from "react-icons/bs";
+import { FaRegHandPointRight } from "react-icons/fa";
 
 const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
   return fetching ? (
     <HalfHeightLoader />
   ) : (
-    <Container>
+    <Container className="col-md-8">
       <div className="py-3">
         <ListGroup>
           {serviceCenterFilteredData &&
             serviceCenterFilteredData.data.map((item, index) => (
-              <ListGroup.Item key={index} action as={Link} to={`/${item.slug}`}>
+              <ListGroup.Item key={index} action >
                 <div className="row">
                   <div className="col-md-8">
-                    <h4>{item.title}</h4>
+                    <h6 className="fw-bold">{item.title}</h6>
                     {item.address && (
-                      <address className="m-0">  <RiMapPinLine />  <span className="ms-2">{item.address}</span>  </address>
+                      <address className="m-0 d-flex align-items-centyer">
+                        <div><RiMapPinLine /> </div>
+                        <span className="ms-2">{item.address}</span>
+                      </address>
                     )}
                     {item.group_contacts && (
-                      <div>
+                      <div className="text-info my-2">
                         <FiPhone />
                         {item.group_contacts.split(",").map((num, i) => (
-                          <Link className="text-dark ms-2" key={i} rel="noopener noreferrer" onClick={() => openInNewTab(`tel:${num}`)} >
-                            {num}
+                          <Link className="text-info ms-2" key={i} rel="noopener noreferrer" onClick={() => openInNewTab(`tel:${num}`)} >
+                            <u>{num}</u>
                           </Link>
                         ))}
                       </div>
                     )}
                     {item.group_emails && (
-                      <div className="d-flex align-items-center">
+                      <div className="d-flex align-items-center mb-2">
                         <TfiEmail />
                         <div className="d-flex flex-wrap  ms-2">
                           {item.group_emails.split(",").map((mail, i) => (
@@ -46,21 +50,24 @@ const ServiceLocatorContent = ({ fetching, serviceCenterFilteredData }) => {
                         </div>
                       </div>
                     )}
-                    {item.whatsapp_no && (
-                      <div>
-                        <BsWhatsapp />
-                        <Link className="text-dark ms-2" rel="noopener noreferrer" onClick={() => openInNewTab(`https://wa.me/${item.whatsapp_no}`)} >
-                          {item.whatsapp_no}
-                        </Link>
-                      </div>
-                    )}
-                    <Link to={`/${item.slug}`} className="btn btn-outline-danger mt-3">
-                      More Details
-                    </Link>
+                    <div className="d-flex flex-column flex-md-row">
+                      {item.whatsapp_no && (
+                        <div className="mt-2">
+                          <FaRegHandPointRight className="me-2" />
+                          <div onClick={() => openInNewTab(`https://wa.me/${item.whatsapp_no}`)} className="btn btn-success me-2">
+                            <BsWhatsapp />
+                            <b className="ms-2">{item.whatsapp_no}</b>
+                          </div>
+                        </div>
+                      )}
+                      <Link to={`/${item.slug}`} className="btn btn-outline-danger mt-2">
+                        More details ...
+                      </Link>
+                    </div>
                   </div>
                   <div className="col-md-4 text-center">
                     <div className="py-2"><b>Find us on</b></div>
-                    <iframe width={'100%'} src={item.map_link} title={item.title} loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Contact Map"></iframe>
+                    <iframe className="rounded border shadow-sm bg-secondary" width={'100%'} src={item.map_link} title={item.title} loading="lazy" referrerPolicy="no-referrer-when-downgrade" ></iframe>
                   </div>
                 </div>
               </ListGroup.Item>

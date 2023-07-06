@@ -12,6 +12,7 @@ function PickupFromStoreAddress({ type, brandId }) {
     const address = useSelector((state) => state.cartAddress)
     const dispatch = useDispatch()
     const [stores, setStores] = useState([])
+    const [storesOptions, setStoresOptions] = useState([])
     const [show, setShow] = useState(false)
     const [filter, setFilter] = useState({
         brand_id: brandId ? brandId : null,
@@ -26,6 +27,9 @@ function PickupFromStoreAddress({ type, brandId }) {
     const getStoreLocator = async () => {
         const { data } = await getStoreLocatorApi(filter)
         setStores(data.data)
+        if(storesOptions.length === 0) {
+            setStoresOptions(data.data)
+        }
     }
     useEffect(() => {
         getStoreLocator()
@@ -65,7 +69,7 @@ function PickupFromStoreAddress({ type, brandId }) {
                 <div className="bg-dark modal-header flex-column">
                     <button onClick={() => setShow(!show)} className="btn btn-close btn-close-white float-end"></button>
                     <h3 className="text-primary fw-bold mb-3 text-uppercase">Store locator for service</h3>
-                    <Filters stores={stores} filter={filter} setFilter={setFilter} brandId={brandId}/>
+                    <Filters stores={storesOptions} filter={filter} setFilter={setFilter} brandId={brandId}/>
                 </div>
                 <Modal.Body style={{ minHeight: 450 }} className="p-0">
                     <StoreLocation stores={stores} selectStoreHander={selectStoreHander} />
