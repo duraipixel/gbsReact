@@ -17,7 +17,7 @@ const ProductListDetails = ({
       <CategoryFilters setCurrentLocation={setCurrentLocation} /> 
       {products && (
         <div className="list-details-side">
-          <div className="primary-heads p-3">
+          <div className="primary-heads p-md-3 mb-3 mb-md-0">
             <h1 className="h3 m-0">
               Displaying {products.to} of {products.total_count} results
             </h1>
