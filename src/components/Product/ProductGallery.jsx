@@ -89,7 +89,7 @@ const MobileImageGallery = ({ images }) => {
     customPaging: function (i) {
       return (
         <div>
-          <Image src={images[i]} width="30" height="30" />
+          <Image src={images[i]} width="35" height="35" />
         </div>
       );
     },
