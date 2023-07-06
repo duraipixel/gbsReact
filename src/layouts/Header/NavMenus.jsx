@@ -156,7 +156,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             </li>
             <li
               className="list-group-item px-3"
-              onClick={() => navigate("/store-locator-for-sales")}
+              onClick={() => linkHandler(`/store-locator-for-sales`)} 
             >
               <div className="d-flex justify-content-between align-items-center">
                 <svg width="35px" height="35px" viewBox="0 0 35 35">
@@ -233,7 +233,7 @@ export const NavMenuList = ({ className, toggleHeader }) => {
             </li>
             <li
               className="list-group-item px-3"
-              onClick={() => navigate("/store-locator-for-service")}
+              onClick={() => linkHandler(`/store-locator-for-service`)} 
             >
               <div className="d-flex justify-content-between align-items-center">
                 <svg width="35px" height="35px" viewBox="0 0 35 35">
