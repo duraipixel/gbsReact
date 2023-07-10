@@ -158,7 +158,7 @@ const ProductFilter = ({
                     <small>₹{priceRange[1]}</small>
                   </div>
                 </div>
-                <RangeSlider step={5000} max={200000} min={5000} defaultValue={[35000, 75000]} onChange={(e) => { setPriceRange(e); setFilterParams("prices", e.join('-')) }} />
+                <RangeSlider step={5000} max={200000} min={5000} defaultValue={priceRange} onChange={(e) => { setPriceRange(e); setFilterParams("prices", e.join('-')) }} />
                 <div className="d-flex text-secondary align-items-center justify-content-between pt-2">
                   <small><i>₹5000</i></small>
                   <small><i>₹200000</i></small>
