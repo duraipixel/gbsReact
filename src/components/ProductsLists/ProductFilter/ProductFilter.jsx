@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Col, Accordion } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { filterMenuApi } from "services/filters.service";
@@ -22,6 +22,7 @@ const ProductFilter = ({
   const [defaultActiveKey, setDefaultActiveKey] = useState(['brands', 'exclusive', 'categories', 'discounts']);
   const [isActive, setActive] = useState(window.innerWidth > 992 ? true : false);
   const [Filters, setFilters] = useState(false);
+  const [priceRange, setPriceRange] = useState([25000, 75000]);
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -55,18 +56,29 @@ const ProductFilter = ({
 
 
   const filterHandler = (e) => {
-    const searchParams = new URLSearchParams(location.search)
     if (e.target.value) {
-      searchParams.set("sort_by", e.target.value)
-      setCurrentLocation(`?${searchParams.toString()}`)
-      navigate(`/products?${searchParams.toString()}`)
-      dispatch(setfilter(`/products?${searchParams.toString()}`));
-
+      setFilterParams("sort_by", e.target.value)
       setClearFilter(true)
     } else {
       setClearFilter(false)
     }
   };
+  const setFilterParams = (name, value) => {
+    const searchParams = new URLSearchParams(location.search)
+    searchParams.set(name, value)
+    setCurrentLocation(`?${searchParams.toString()}`)
+    navigate(`/products?${searchParams.toString()}`)
+    dispatch(setfilter(`/products?${searchParams.toString()}`));
+  }
+  useMemo(() => {
+    try {
+      const currentfilter = filter.split('?')[1].split('=')
+      if (currentfilter[0] === 'prices') {
+        setPriceRange(currentfilter[1].split('-'))
+      }
+    } catch (error) {
+    }
+  }, [filter])
   useEffect(() => {
     filterMenuApi().then(({ data }) => {
       filterAccordionHandler(data);
@@ -123,7 +135,6 @@ const ProductFilter = ({
                     <option value="a-to-z" >A to Z</option>
                     <option value="z-to-a" >Z to A</option>
                     <option value="price-high-to-low" >High to Low</option>
-
                     <option value="price-low-to-high">Low to High</option>
                   </select>
                 </div>
@@ -138,10 +149,21 @@ const ProductFilter = ({
                   <FilterChips />
                 </div>
                 : ''}
-              {/* <div>
-                <h6 className="filter-title py-2">PRICE</h6>
-                <RangeSlider max={200000} min={100} defaultValue={[10, 50]} />
-              </div> */}
+              <div className="my-2">
+                <div className="d-flex align-items-center justify-content-between">
+                  <h6 className="filter-title py-2">PRICE</h6>
+                  <div >
+                    <small>₹{priceRange[0]}</small>
+                    <small> to </small>
+                    <small>₹{priceRange[1]}</small>
+                  </div>
+                </div>
+                <RangeSlider step={5000} max={200000} min={5000} defaultValue={[35000, 75000]} onChange={(e) => { setPriceRange(e); setFilterParams("prices", e.join('-')) }} />
+                <div className="d-flex text-secondary align-items-center justify-content-between pt-2">
+                  <small><i>₹5000</i></small>
+                  <small><i>₹200000</i></small>
+                </div>
+              </div>
               {
                 Filters === false ? <FiltersPlaceHolders /> :
                   defaultActiveKey?.length > 0 ? (
