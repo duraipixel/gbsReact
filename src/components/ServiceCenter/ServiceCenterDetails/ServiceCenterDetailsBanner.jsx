@@ -1,6 +1,9 @@
 import React from "react";
 import "./styles.scss";
 import { Link } from "react-router-dom";
+import { openInNewTab } from "utils";
+import { FaRegHandPointRight } from "react-icons/fa";
+import { BsWhatsapp } from "react-icons/bs";
 
 const ServiceCenterDetailsBanner = ({ serviceCenterData }) => {
   // console.log(serviceCenterData);
@@ -59,6 +62,17 @@ const ServiceCenterDetailsBanner = ({ serviceCenterData }) => {
               </svg>
             </span>
             <span>{serviceCenterData.title} </span>
+          </div>
+          <div>
+            {serviceCenterData.whatsapp_no && (
+              <div className="mt-3">
+                <FaRegHandPointRight className="me-2" />
+                <div onClick={() => openInNewTab(`https://wa.me/${serviceCenterData.whatsapp_no}`)} className="btn btn-success me-2">
+                  <BsWhatsapp />
+                  <b className="ms-2">{serviceCenterData.whatsapp_no}</b>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
