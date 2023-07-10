@@ -47,10 +47,7 @@ const Footer = () => {
               <ListGroup>
                 {siteInfo.links.map((i, index) => (
                   <ListGroup.Item key={index}>
-                    <Link
-                      rel="noopener noreferrer"
-                      onClick={() => openInNewTab(i.link_url)}
-                    >
+                    <Link  to={i.link_url} target="_blank">
                       <i className={`fa-brands fa-${i.link_name}`}></i>
                     </Link>
                   </ListGroup.Item>
@@ -122,12 +119,7 @@ const Footer = () => {
                   <TfiEmail />
                 </Col>
                 <Col>
-                  <Link
-                    rel="noopener noreferrer"
-                    onClick={() =>
-                      openInNewTab(`mailto:${siteInfo.site_email}`)
-                    }
-                  >
+                  <Link to={`mailto:${siteInfo.site_email}`}>
                     {siteInfo.site_email}
                   </Link>
                 </Col>
@@ -139,11 +131,7 @@ const Footer = () => {
                 <Col>
                   {mobNum &&
                     mobNum.map((num, i) => (
-                      <Link
-                        key={i}
-                        rel="noopener noreferrer"
-                        onClick={() => openInNewTab(`tel:${num}`)}
-                      >
+                      <Link key={i} to={`tel:${num}`}  >
                         <>
                           {i !== mobNum.length - 1 ? (
                             <>

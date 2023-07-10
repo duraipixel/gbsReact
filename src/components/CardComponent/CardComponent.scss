@@ -187,6 +187,7 @@
   }
 
   .product-card {
+   
     img {
       width: 100px !important;
     }
@@ -211,9 +212,7 @@
     color: #164d16;
   }
 
-  .ari-cnt {
-    padding: 10px;
-  }
+
 
   button {
     padding: 5px !important;
@@ -292,4 +291,17 @@
   height: 212px;
   width: 212px;
   object-fit: contain;
+}
+.clk-optn {
+  align-items: center;
+}
+.ari-cnt {
+  padding: 10px;
+  @media (min-width:992px) {
+    min-height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

@@ -61,10 +61,7 @@ export default function ServicesListingComponent() {
                 <title>{pathname.replace('/', '').replaceAll('-', " ")} - GBS Systems</title>
                 <link rel="canonical" href={window.location.href} />
                 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-                <meta
-                    name="description"
-                    content="Check out GBS Systems Laptop Service Center near your location."
-                />
+                <meta name="description" content={`Check out GBS Systems Laptop ${pathname.replace('/', '').replaceAll('-', " ")} near your location.`} />
             </Helmet>
             <ServiceCenterLocatorBanner
                 pathname={pathname}

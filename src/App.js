@@ -38,7 +38,7 @@ import ServicesListingComponent from "components/ServicesListingComponent";
 
 function App() {
   if (localStorage.getItem('guest_token') === null) {
-    localStorage.setItem('guest_token', strRandom(100))
+    localStorage.setItem('guest_token', strRandom())
   }
   return (
     <BrowserRouter>
@@ -46,7 +46,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="/about-us" element={<AboutPage />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/products" element={<ProductLists />} />

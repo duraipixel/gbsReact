@@ -130,12 +130,13 @@ function strRandom(length) {
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
   const charactersLength = characters.length;
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < 5; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
-  return result;
+  const now = new Date();
+  const randomString = `${result}_${now.toString().replaceAll(' ', '_')}_${result}`
+  return randomString.toUpperCase()
 }
-
 function useQuery() {
   const { search } = useLocation();
   return useMemo(() => new URLSearchParams(search), [search]);

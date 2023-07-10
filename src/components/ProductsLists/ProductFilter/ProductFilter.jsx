@@ -10,6 +10,8 @@ import CheckBoxInput from "components/CheckBoxInput";
 import FilterChips from "./FilterChips";
 import FiltersPlaceHolders from "./FiltersPlaceHolders";
 import { IoFilterSharp } from "react-icons/io5";
+import { RangeSlider } from "rsuite";
+import 'rsuite/dist/rsuite.min.css';
 
 const ProductFilter = ({
   setCurrentLocation,
@@ -108,7 +110,6 @@ const ProductFilter = ({
                     <IoMdClose />
                   </button> : null
                 }
-
                 <div>
                   <h6 className="filter-title py-2">SORT BY</h6>
                   <select
@@ -119,11 +120,15 @@ const ProductFilter = ({
                     value={searchParams.get('sort_by') || ''}
                   >
                     <option value="" > -- sort by -- </option>
+                    <option value="a-to-z" >A to Z</option>
+                    <option value="z-to-a" >Z to A</option>
                     <option value="price-high-to-low" >High to Low</option>
+
                     <option value="price-low-to-high">Low to High</option>
                   </select>
                 </div>
               </div>
+
               {filter !== '' && filter !== '/products?' ?
                 <div className="my-2">
                   <h4 className="filter-title d-flex align-items-center justify-content-between">
@@ -133,6 +138,10 @@ const ProductFilter = ({
                   <FilterChips />
                 </div>
                 : ''}
+              {/* <div>
+                <h6 className="filter-title py-2">PRICE</h6>
+                <RangeSlider max={200000} min={100} defaultValue={[10, 50]} />
+              </div> */}
               {
                 Filters === false ? <FiltersPlaceHolders /> :
                   defaultActiveKey?.length > 0 ? (
