@@ -6,6 +6,7 @@ import { setAuthUser } from "redux/features/authSlice";
 import { toast } from "react-hot-toast";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
+import { clearCart } from "redux/features/cartSlice";
 
 function ProfileLayout() {
   const [page, setPage] = useState([]);
@@ -22,6 +23,7 @@ function ProfileLayout() {
     toast.success("Logout Success!");
     navigate("/");
     dispatch(setAuthUser({ data: [], isLoggedIn: false }));
+    dispatch(clearCart());
   };
   return (
     <section className="bg-off-grey py-md-4">

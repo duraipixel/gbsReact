@@ -41,17 +41,16 @@ const HomePage = () => {
       <Helmet>
         <title>Laptop Stores & Service Center in South India - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <meta name="description" content="GBS Systems is one of the leading laptop sale & service center in South India, Having branches in Chennai, Madurai, Trichy, Coimbatore & Bangalore." />
       </Helmet>
       <HomeProductsSlider />
       <DealsProduct />
       <CategoriesPoster />
       <BrowseByCollection />
+	   <NarrowSearch />
       <ProductCollection />
       <ServiceCenter />
-      <NarrowSearch />
-      <PrefferedProcessor />
+     <PrefferedProcessor />
       <MustHaves />
       <PackageSupport />
     </div>

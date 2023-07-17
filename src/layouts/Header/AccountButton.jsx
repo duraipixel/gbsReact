@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setLayoutStatus } from "redux/features/authLayoutSlice";
 import { setAuthUser } from "redux/features/authSlice";
+import { clearCart } from "redux/features/cartSlice";
 
 function AccountButton({ text, size, className }) {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function AccountButton({ text, size, className }) {
     toast.success("Logout Success!");
     navigate("/");
     dispatch(setAuthUser({ data: [], isLoggedIn: false }));
+    dispatch(clearCart());
   };
   return (
     <Dropdown align="end" className="m-0">

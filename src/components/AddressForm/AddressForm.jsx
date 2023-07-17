@@ -22,7 +22,7 @@ function AddressForm() {
     var payload = { ...formData, customer_id: AuthUser()?.id, id: address?.edit_value?.customer_address_id }
     const { data } = await updateOrCreateAddressApi(payload)
     toast.success(data.message)
-    dispatch(addAddress({ status: false, value: data.addresses }))
+    dispatch(setAdressForm({ status: false, type: address.type }))
     reset()
   };
   const [addressMaster, setAdressMaster] = useState([])

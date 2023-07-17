@@ -8,7 +8,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 
 export default function ProductGallery({ images, videos }) {
-
   const renderVideo = (item) => {
     return (
       <div className="video-wrapper">
@@ -63,21 +62,19 @@ export default function ProductGallery({ images, videos }) {
   }
   if (produtcCollection.length && window.innerWidth > 992) {
     return (
-      <>
-        <div className="mt-2 react-image-gallery-div">
-          <ReactImageGallery
-            slideInterval="4000"
-            thumbnailPosition={window.innerWidth > 769 ? "left" : "bottom"}
-            items={produtcCollection}
-            loading="lazy"
-            lazyLoad={true}
-            showPlayButton={false}
-            showNav={false}
-            showFullscreenButton={false}
-            renderVideo={true}
-          />
-        </div>
-      </>
+      <div className="mt-2 react-image-gallery-div">
+        <ReactImageGallery
+          slideInterval="4000"
+          thumbnailPosition={window.innerWidth > 769 ? "left" : "bottom"}
+          items={produtcCollection}
+          loading="lazy"
+          lazyLoad={true}
+          showPlayButton={false}
+          showNav={true}
+          showFullscreenButton={true}
+          renderVideo={true}
+        />
+      </div>
     );
   }
   return <MobileImageGallery images={images} />

@@ -4,7 +4,8 @@ import "./styles.scss";
 import call from "assets/images/call.png";
 import location from "assets/images/location.png";
 import mail from "assets/images/mail.png";
-import locator1 from "assets/images/locator-1.jpg";
+import service from "assets/images/for-service.jpg";
+import sales from "assets/images/for-sales.jpg";
 import { useSelector } from "react-redux";
 import { Loader, openInNewTab } from "utils";
 import ContactForm from "./ContactForm";
@@ -49,7 +50,7 @@ function ContactUs() {
                 <div className="home-products testimonials">
                   <img src={call} alt="call-icon" />
                   <h4>Call Us</h4>
-                  <h5 className="para">Sales : +91 91 96003 76222</h5>
+                  <h5 className="para">Sales : +91 96003 76222</h5>
                   <h6>Service : +91 98416 03332</h6>
                 </div>
 
@@ -83,7 +84,7 @@ function ContactUs() {
           <div className="row mt-5">
             <div className="col-lg-6">
               <div className="deals-imgs stre-lctr">
-                <img src={locator1} alt="location-icon" className="img-fluid" />
+                <img src={sales} alt="location-icon" className="img-fluid" />
                 <div className="btm-liner text-left">
                   <h4>Store locator for Sales</h4>
                   <Link to="/store-locator-for-sales"> Locate Us</Link>
@@ -93,7 +94,7 @@ function ContactUs() {
 
             <div className="col-lg-6">
               <div className="deals-imgs stre-lctr">
-                <img src={locator1} alt="location-icon" className="img-fluid" />
+                <img src={service} alt="location-icon" className="img-fluid" />
                 <div className="btm-liner text-left">
                   <h4>Service Locator</h4>
                   <Link to="/store-locator-for-service"> Locate Us</Link>
