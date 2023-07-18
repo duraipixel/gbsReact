@@ -39,9 +39,9 @@ function PickupFromStoreAddress({ type, brandId }) {
         <div className="border rounded py-1 p-3">
             {
                 type !== 'button' ?
-                        <p className="m-0 text-primary d-flex align-items-center justify-content-between">
+                        <p className="m-0 text-info d-flex align-items-center justify-content-between">
                             <span><i className="fa fa-map-marker"></i> Preferred Store Address</span>
-                            <button className="fs-14 btn btn-sm" onClick={() => setShow(!show)}>
+                            <button className="fs-14 btn btn-sm text-blue" onClick={() => setShow(!show)}>
                                 {
                                     address.store_address == null ? <>  <i className="fa fa-map-signs me-1"></i> Select </> : <>  <i className="fa fa-edit me-1"></i> Change</>
                                 }

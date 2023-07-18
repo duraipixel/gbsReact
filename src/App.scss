@@ -1142,6 +1142,13 @@ button[loading="true"] {
   margin: 0 !important;
   color: #252525 !important;
 }
+.text-blue{
+  color: cornflowerblue !important;
+}
+.form-check-input:checked {
+  background-color: #212363 !important;
+  border-color: #212363 !important;
+}
 
 .filter-text {
   font-size: 12px !important;

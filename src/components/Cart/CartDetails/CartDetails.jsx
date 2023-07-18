@@ -56,7 +56,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
       <>
         <div className="card border-0 shadow-lg">
           <div className="card-body">
-            <div className="mb-3 "><b className="fw-500"> Cart Details</b></div>
+            <div className="mb-3 text-primary"><b className="fw-500"> Cart Details</b></div>
             <ul className="list-group mb-3">
               <li class="list-group-item d-flex align-items-center justify-content-between">
                 <span>Sub Total</span>
@@ -78,7 +78,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
             {authUser.isLoggedIn ? (
               <>
                 <div>
-                  <div className="mb-2"><b className="fw-500">Shipping Method</b></div>
+                  <div className="mb-2"><b className="fw-500 text-primary">Shipping Method</b></div>
                   <TabContext value={shippingMethod} >
                     <div className="bg-light border rounded overflow-hidden mb-2">
                       <TabList onChange={shippingMethodHandler} >
@@ -94,7 +94,14 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                               <label htmlFor={type.shipping_title} key={index} onChange={() => setShippingCharges(type.id)}
                                 className="list-group-item list-group-item-action d-flex justify-content-between"
                               >
-                                <span>{type.shipping_title}</span>
+                                <span>
+                                  <input
+                                    type="radio"
+                                    name="shipping_type"
+                                    id={type.shipping_title}
+                                    className="me-2 form-check-input"
+                                  />
+                                  {type.shipping_title}</span>
                                 <div>
                                   <b>
                                     {type.charges === "0.00" ? (
@@ -103,12 +110,6 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                                       type.charges
                                     )}
                                   </b>
-                                  <input
-                                    type="radio"
-                                    name="shipping_type"
-                                    id={type.shipping_title}
-                                    className="ms-2"
-                                  />
                                 </div>
                               </label>
                             ))
@@ -116,10 +117,10 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                         }
                       </ul>
                       <div className="border rounded py-1 p-3">
-                        <p className="m-0 text-primary d-flex align-items-center justify-content-between">
+                        <p className="m-0 text-info d-flex align-items-center justify-content-between">
                           <span><i className="fa fa-map-marker"></i> Shipping Address</span>
                           <button
-                            className="fs-14 btn btn-sm"
+                            className="fs-14 btn btn-sm text-blue"
                             onClick={() => {
                               setAddressModalType("SHIPPING_ADDRESS");
                               setShow(!show);
@@ -129,8 +130,8 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                           </button>
                         </p>
                         {address.shipping_address ? (
-                          <div>
-                            <b className="text-secondary">{address.shipping_address?.name}</b> <br />
+                          <div className="text-dark">
+                            <b className="text-secondary fw-400">{address.shipping_address?.name}</b> <br />
                             <p className="address-details">
                               {address.shipping_address?.address_line1} ,
                               {address.shipping_address?.city} -
@@ -148,10 +149,10 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                   </TabContext>
                 </div>
                 <div className="border rounded py-1 p-3">
-                  <p className="m-0 text-primary d-flex align-items-center justify-content-between">
+                  <p className="m-0 text-info d-flex align-items-center justify-content-between">
                     <span><i className="fa fa-map-marker"></i> Billing Address</span>
                     <button
-                      className="fs-14 btn btn-sm"
+                      className="fs-14 btn btn-sm text-blue"
                       onClick={() => {
                         setAddressModalType("BILLING_ADDRESS");
                         setShow(!show);
@@ -161,8 +162,8 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                     </button>
                   </p>
                   {address.billing_address !== null ? (
-                    <div>
-                      <b className="text-secondary">{address.billing_address?.name}</b> <br />
+                    <div className="text-dark">
+                      <b className="text-secondary fw-400">{address.billing_address?.name}</b> <br />
                       <p className="address-details">
                         {address.billing_address?.address_line1} ,
                         {address.billing_address?.city} -
@@ -175,18 +176,12 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                 </div>
               </>
             ) : null}
-            <table className="table table-borderless end-point m-0">
-              <tbody>
-                <tr>
-                  <td style={{ paddingLeft: "0", textAlign: "left" }}>
-                    Grand Total
-                  </td>
-                  <td style={{ paddingRight: "0", textAlign: "right" }}>
-                    ₹ {checkoutData.total}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <ul className="list-group mt-3">
+              <li class="text-primary list-group-item d-flex align-items-center justify-content-between">
+                <span className="lead">Grand Total</span>
+                <span className="lead fw-bold">₹ {checkoutData.total}</span>
+              </li>
+            </ul>
             <div>
               <CheckoutButton
                 className="btn btn-dark w-100 mt-3"
