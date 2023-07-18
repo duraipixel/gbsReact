@@ -20,7 +20,7 @@ import {
 } from "redux/features/cartAddressSlice";
 import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 import { HalfHeightLoader } from "utils";
-const AddressBookDetails = ({ selectType, modalType }) => {
+const AddressBookDetails = ({ selectType, modalType, setShow }) => {
   const [modalShow, setModalShow] = useState(false);
   const address = useSelector((state) => state.address.value);
   const cartAddress = useSelector((state) => state.cartAddress);
@@ -62,6 +62,7 @@ const AddressBookDetails = ({ selectType, modalType }) => {
     if (modalType === "BILLING_ADDRESS") {
       dispatch(setBillingAddress(address));
     }
+    setShow(false)
   };
   useEffect(() => {
     fetchData();

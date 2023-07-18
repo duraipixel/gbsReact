@@ -54,7 +54,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   if (checkoutData)
     return (
       <>
-        <div >
+        {authUser.isLoggedIn ?
           <TabContext value={shippingMethod} >
             <div className="mb-2"><b className="fw-500 text-primary">Select Shipping Method</b></div>
             <div className=" mb-3">
@@ -156,7 +156,8 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
               </div>
             </div>
           </TabContext>
-        </div>
+          : null
+        }
         <div className="mb-2"><b className="fw-500 text-primary">Cart details</b></div>
         <div>
           <ul className="list-group">
@@ -206,6 +207,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
               <AddressBookDetails
                 selectType="checkbox"
                 modalType={addressModalType}
+                setShow={setShow}
               />
             </Modal.Body>
           </Modal>

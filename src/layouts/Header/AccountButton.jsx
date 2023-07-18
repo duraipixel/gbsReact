@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { setLayoutStatus } from "redux/features/authLayoutSlice";
 import { setAuthUser } from "redux/features/authSlice";
 import { clearCart } from "redux/features/cartSlice";
+import { strRandom } from "utils";
 
 function AccountButton({ text, size, className }) {
   const dispatch = useDispatch();
@@ -18,6 +19,9 @@ function AccountButton({ text, size, className }) {
     navigate("/");
     dispatch(setAuthUser({ data: [], isLoggedIn: false }));
     dispatch(clearCart());
+    if (localStorage.getItem('guest_token') === null) {
+      localStorage.setItem('guest_token', strRandom())
+    }
   };
   return (
     <Dropdown align="end" className="m-0">

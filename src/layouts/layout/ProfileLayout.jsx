@@ -5,11 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAuthUser } from "redux/features/authSlice";
 import { toast } from "react-hot-toast";
 import { Helmet } from "react-helmet";
-import { useState } from "react";
 import { clearCart } from "redux/features/cartSlice";
+import { strRandom } from "utils";
 
 function ProfileLayout() {
-  const [page, setPage] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const outlet = useOutlet();
@@ -24,15 +23,17 @@ function ProfileLayout() {
     navigate("/");
     dispatch(setAuthUser({ data: [], isLoggedIn: false }));
     dispatch(clearCart());
+    if (localStorage.getItem('guest_token') === null) {
+      localStorage.setItem('guest_token', strRandom())
+    }
   };
   return (
     <section className="bg-off-grey py-md-4">
       <Helmet>
-        <title>{page?.meta?.title || "My Account - GBS Systems"}</title>
+        <title>My Account - GBS Systems</title>
         <link rel="canonical" href={window.location.href} />
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-        <meta name="description" content={page?.meta?.description} />
-        <meta name="keywords" content={page?.meta?.keywords} />
+        <meta name="description" content="My Account - GBS Systems" />
+        <meta name="keywords" content="My Account - GBS Systems" />
       </Helmet>
       <Container>
         <Row>
