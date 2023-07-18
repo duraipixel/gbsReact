@@ -32,8 +32,22 @@ function FilterChips() {
             })
             setCurrentFilters(tempArray)
         }
-    }, [filter])
+    }, [filter]);
 
+    const setFilterUrl = (item, searchParams) => {
+        const params = Object.fromEntries(searchParams.entries());
+        const newParams = new URLSearchParams(search)
+        var finalParams;
+        var result =  Object.entries(params).filter(param => param[1] === item)
+        if(result.length) { 
+            newParams.delete(result[0][0])
+            finalParams = newParams.toString()
+        } else {
+            finalParams = newParams.toString().replace(item,'').replace('_','')
+        }
+        navigate(`/products?${finalParams}`);
+        dispatch(setfilter(`/products?${finalParams}`))
+    }
     const removeFilter = (item) => {
         const input = document.getElementById(item)
         const searchParams = new URLSearchParams(search)
@@ -41,24 +55,18 @@ function FilterChips() {
             input.checked = false
             var array = []
             var checkboxes = document.querySelectorAll(`.${input.name}-product-check-input:checked`)
-            for (var i = 0; i < checkboxes.length; i++) {
-                array.push(checkboxes[i].value)
-            }
-            array.length > 0 ? searchParams.set(input.name, array.join("_")) : searchParams.delete(input.name)
-            navigate(`/products?${searchParams.toString()}`);
-            dispatch(setfilter(`/products?${searchParams.toString()}`))
-        } else {
-            const params = Object.fromEntries(searchParams.entries());
-            var finalParams;
-            Object.entries(params).forEach(param => {
-                if (param[1] === item) {
-                    const newParams = new URLSearchParams(search)
-                    newParams.delete(param[0])
-                    finalParams = newParams.toString()
+            if (checkboxes.length === 0) {
+                setFilterUrl(item, searchParams)
+            } else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    array.push(checkboxes[i].value)
                 }
-            })
-            navigate(`/products?${finalParams}`);
-            dispatch(setfilter(`/products?${finalParams}`))
+                array.length > 0 ? searchParams.set(input.name, array.join("_")) : searchParams.delete(input.name)
+                navigate(`/products?${searchParams.toString()}`);
+                dispatch(setfilter(`/products?${searchParams.toString()}`))
+            }
+        } else {
+            setFilterUrl(item, searchParams)
         }
     }
     if (search) {
