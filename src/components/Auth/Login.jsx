@@ -8,6 +8,7 @@ import * as Yup from 'yup'
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { setAuthUser } from "redux/features/authSlice";
+import { setCartCount } from "redux/features/cartSlice";
 
 function Login() {
   const dispatch = useDispatch()
@@ -33,7 +34,7 @@ function Login() {
         data: response.data.customer_data,
         isLoggedIn: true
       }))
-      
+      dispatch(setCartCount(response.data.cart_count))
       dispatch(setLayoutStatus({
         status: false,
         type: 'login'
