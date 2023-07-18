@@ -55,7 +55,7 @@ const CartProduct = () => {
     return (
       <Container className="mt-5 mb-5">
         <div className="container-fluid  mt-100">
-          <div className="row">
+          <section className="row">
             <div className="col-md-12">
               <div className="py-4">
                 <div className="col-sm-12 empty-cart-cls text-center">
@@ -117,7 +117,7 @@ const CartProduct = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </Container>
     )
