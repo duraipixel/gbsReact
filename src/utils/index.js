@@ -196,6 +196,16 @@ const ContactResponse = () => {
     allowOutsideClick: false,
   });
 };
+const toPriceString = text => {
+  try {
+    if (text.includes('&')) {
+      return text.split('&')[0]++
+    }
+    return text
+  } catch (error) {
+    return text
+  }
+}
 export {
   ContactResponse,
   SetAllCheckBoxes,
@@ -215,4 +225,5 @@ export {
   strRandom,
   HalfHeightLoader,
   Text,
+  toPriceString
 };

@@ -47,10 +47,10 @@ const HomePage = () => {
       <DealsProduct />
       <CategoriesPoster />
       <BrowseByCollection />
-	   <NarrowSearch />
+      <NarrowSearch />
       <ProductCollection />
       <ServiceCenter />
-     <PrefferedProcessor />
+      <PrefferedProcessor />
       <MustHaves />
       <PackageSupport />
     </div>

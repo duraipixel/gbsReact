@@ -19,7 +19,7 @@ const DealsProduct = () => {
             {discountCollections.map((item) => (
               <div key={item.id} className="col-lg-3 col-md-3 col-6 col-xs-12">
                 <FilterLink to={`/products?discount_collection=${item.slug}`}>
-                  <Image src={item.image} alt={item.slug} className="w-100 d-block rounded shadow" />
+                  <Image src={item.image} alt={item.slug} className="w-100 d-block rounded shadow " />
                 </FilterLink>
               </div>
             ))}

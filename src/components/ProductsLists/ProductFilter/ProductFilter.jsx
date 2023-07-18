@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Col, Accordion } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { filterMenuApi } from "services/filters.service";
-import { Text } from "utils";
+import { Text, toPriceString } from "utils";
 import { IoMdClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { setfilter } from "redux/features/filterSlice";
@@ -155,7 +155,7 @@ const ProductFilter = ({
                   <div >
                     <small>₹{priceRange[0]}</small>
                     <small> to </small>
-                    <small>₹{priceRange[1]}</small>
+                    <small>₹{toPriceString(priceRange[1])}</small>
                   </div>
                 </div>
                 <RangeSlider step={5000} max={200000} min={5000} defaultValue={priceRange} onChange={(e) => { setPriceRange(e); setFilterParams("prices", e.join('-')) }} />

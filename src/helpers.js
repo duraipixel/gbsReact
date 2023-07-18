@@ -9,6 +9,6 @@ const FilterLink = ({ children, to }) => {
         navigate(to);
         dispatch(setfilter(to));
     };
-    return <div className="cursor-pointer position-relative" onClick={linkHandler}>{children}</div>
+    return <div className="scale-hover cursor-pointer position-relative" onClick={linkHandler}>{children}</div>
 }
 export { FilterLink }

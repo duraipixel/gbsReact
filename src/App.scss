@@ -1218,4 +1218,10 @@ button[loading="true"] {
 .offcanvas.offcanvas-end {
   width: 90% !important;
 }
- 
+.scale-hover {
+  transition: all 1s;
+}
+.scale-hover:hover {
+  transform: scale(.9) !important;
+  transition: all .5s;
+}
