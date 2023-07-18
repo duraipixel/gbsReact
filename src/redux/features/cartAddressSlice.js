@@ -47,9 +47,23 @@ export const cartAddressSlice = createSlice(
             setStoreAddress: (state, action) => {
                 localStorage.setItem("store_address", JSON.stringify(action.payload))
                 return state = {
-                    billing_address : JSON.parse(localStorage.getItem("billing_address")),
+                    billing_address: JSON.parse(localStorage.getItem("billing_address")),
                     shipping_address: JSON.parse(localStorage.getItem("shipping_address")),
-                    store_address   : action.payload
+                    store_address: action.payload
+                }
+            },
+            clearShippingAddress: (state, action) => {
+                return state = {
+                    shipping_address: null,
+                    billing_address: JSON.parse(localStorage.getItem("billing_address")),
+                    store_address: JSON.parse(localStorage.getItem("store_address"))
+                }
+            },
+            clearBillingAddress: (state, action) => {
+                return state = {
+                    billing_address: null,
+                    shipping_address: JSON.parse(localStorage.getItem("shipping_address")),
+                    store_address: JSON.parse(localStorage.getItem("store_address"))
                 }
             },
         }
@@ -59,6 +73,8 @@ export const cartAddressSlice = createSlice(
 export const {
     setShippingAddress,
     setBillingAddress,
-    setStoreAddress
+    setStoreAddress,
+    clearBillingAddress,
+    clearShippingAddress
 } = cartAddressSlice.actions;
 export default cartAddressSlice.reducer;

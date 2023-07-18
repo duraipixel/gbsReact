@@ -13,6 +13,8 @@ import SweetAlert from "react-bootstrap-sweetalert";
 import { toast } from "react-hot-toast";
 import { useEffect } from "react";
 import {
+  clearBillingAddress,
+  clearShippingAddress,
   setBillingAddress,
   setShippingAddress,
 } from "redux/features/cartAddressSlice";
@@ -21,6 +23,8 @@ import { HalfHeightLoader } from "utils";
 const AddressBookDetails = ({ selectType, modalType }) => {
   const [modalShow, setModalShow] = useState(false);
   const address = useSelector((state) => state.address.value);
+  const cartAddress = useSelector((state) => state.cartAddress);
+
   const dispatch = useDispatch();
   const [addresses, setAddress] = useState([]);
   const [addressesId, setAddressId] = useState(null);
@@ -34,6 +38,15 @@ const AddressBookDetails = ({ selectType, modalType }) => {
   };
 
   const deleteAddress = async () => {
+    let selectedAddress = cartAddress[modalType === 'SHIPPING_ADDRESS' ? 'shipping_address' : 'billing_address']['customer_address_id']
+    if (selectedAddress === addressesId) {
+      if (modalType === "SHIPPING_ADDRESS") {
+        dispatch(clearShippingAddress());
+      }
+      if (modalType === "BILLING_ADDRESS") {
+        dispatch(clearBillingAddress());
+      }
+    }
     const { data } = await deleteAddressApi(addressesId);
     toast.success(data?.message);
     setDeleteAlert(false);
