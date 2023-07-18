@@ -9,11 +9,12 @@ import {
 import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDetails";
 import { Modal } from "react-bootstrap";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
+import { toast } from "react-hot-toast";
 const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const authUser = useSelector((state) => state.auth);
   const address = useSelector((state) => state.cartAddress);
   const [shippingMethod, setShippingMethod] = useState(
-    checkoutData?.has_pickup_store === false ? "Standard_Shipping" : ""
+    checkoutData?.has_pickup_store === false ? "Standard_Shipping" : "Standard_Shipping"
   );
   const [pickupFromStore, setPickupFromStore] = useState(
     checkoutData?.has_pickup_store
@@ -47,14 +48,15 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
       "checkout_data",
       JSON.stringify(response.data.data.cart_total)
     );
+    toast.success(response.data.message)
   };
   if (checkoutData)
     return (
       <>
         <div className="card border-0 shadow-lg">
-          <h2 className="h3 card-header bg-white fw-bold">Cart Details</h2>
+          <h2 className="h4 text-dark card-header bg-white fw-bold">Cart Details</h2>
           <div className="card-body">
-            <table className="table table-borderless">
+            <table className="table table-sm ">
               <tbody>
                 <tr>
                   <td style={{ paddingLeft: "0", textAlign: "left" }}>
@@ -89,20 +91,40 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
             </table>
             {authUser.isLoggedIn ? (
               <>
-                <div className="line-spacer"></div>
-                <div className="mb-3">
+                <div>
                   <h3 className="h5 text-primary">Select Shipping Method</h3>
-                  <label htmlFor="ShippingMethod" className="d-block py-2" onClick={(e) => shippingMethodHandler(e.target.value)}>
-                    <input
-                      type="radio"
-                      checked={shippingMethod === "Standard_Shipping"}
-                      value="Standard_Shipping"
-                      name="ShippingMethod"
-                      id="ShippingMethod"
-                      className="form-check-input me-2"
-                    />
-                    Standard Shipping
-                  </label>
+                  <div className="btn-group border mb-2 w-100">
+                    <label htmlFor="ShippingMethod" className={`d-flex flex-md-row flex-column align-items-center border-end d-block btn ${shippingMethod === "Standard_Shipping" ? 'bg-light' : ''}`} onClick={(e) => shippingMethodHandler(e.target.value)}>
+                      <input
+                        type="radio"
+                        checked={shippingMethod === "Standard_Shipping"}
+                        value="Standard_Shipping"
+                        name="ShippingMethod"
+                        id="ShippingMethod"
+                        className="form-check-input me-2"
+                      />
+                      Standard Shipping
+                    </label>
+                    {
+                      pickupFromStore ?
+                        <label htmlFor="PickupFromStore" className={`d-flex flex-md-row flex-column align-items-center border-start d-block btn ${shippingMethod === "Pickup_From_Store" ? 'bg-light' : ''}`}>
+                          <input
+                            type="radio"
+                            checked={shippingMethod === "Pickup_From_Store"}
+                            onChange={(e) => shippingMethodHandler(e.target.value)}
+                            value="Pickup_From_Store"
+                            name="ShippingMethod"
+                            id="PickupFromStore"
+                            className="form-check-input me-2"
+                          />
+                          Pickup From Store
+                        </label>
+                        : <label htmlFor="PickupFromStore" className="d-flex flex-md-row flex-column align-items-center d-block  text-secondary">
+                          <input type="radio" disabled className="form-check-input me-2" />
+                          Pickup from store not available
+                        </label>
+                    }
+                  </div>
                   {shippingTypes.length > 0 &&
                     shippingMethod === "Standard_Shipping" ? (
                     <ul className="list-group">
@@ -110,7 +132,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                         <label
                           htmlFor={type.shipping_title}
                           key={index}
-                          onClick={() => setShippingCharges(type.id)}
+                          onChange={() => setShippingCharges(type.id)}
                           className="list-group-item list-group-item-action d-flex justify-content-between"
                         >
                           <span>{type.shipping_title}</span>
@@ -134,26 +156,10 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                     </ul>
                   ) : (
                     ""
-                  )} 
-                  <label htmlFor="PickupFromStore" className="d-block py-2">
-                    <input
-                      disabled={!pickupFromStore}
-                      type="radio"
-                      checked={shippingMethod === "Pickup_From_Store"}
-                      onChange={(e) => shippingMethodHandler(e.target.value)}
-                      value="Pickup_From_Store"
-                      name="ShippingMethod"
-                      id="PickupFromStore"
-                      className="form-check-input me-2"
-                    />
-                   {pickupFromStore ? "Pickup From Store" : 'Pickup From Store not available'} 
-                  </label>
+                  )}
                 </div>
-                <div className="line-spacer"></div>
-                {shippingMethod === "Pickup_From_Store" ? (
-                  <PickupFromStoreAddress brandId={checkoutData?.brand_id} />
-                ) : (
-                  <div>
+                {shippingMethod === "Standard_Shipping" ? (
+                  <div className="pt-3">
                     <h4 className="h5 text-primary d-flex align-items-center justify-content-between">
                       Shipping Address
                       <button
@@ -168,7 +174,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                     </h4>
                     {address.shipping_address ? (
                       <div>
-                        {address.shipping_address?.name} <br />
+                        <b className="text-secondary">{address.shipping_address?.name}</b> <br />
                         <p className="address-details">
                           {address.shipping_address?.address_line1} ,
                           {address.shipping_address?.city} -
@@ -179,21 +185,11 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                       </div>
                     ) : null}
                   </div>
-                )}
-                <div className="line-spacer"></div>
-                <div>
+                ) : <PickupFromStoreAddress brandId={checkoutData?.brand_id} />}
+                <div className="border-top border-bottom pt-3">
                   <h5 className="text-primary d-flex align-items-center justify-content-between">
                     Billing Address
-                    {/* {
-                      typeof (myAddress) === 'object' && myAddress.length === 0 ?
-                        <button className="fs-14 btn btn-sm" onClick={() => { addAddresHandler('BILLING_ADDRESS') }}>
-                          Add Address
-                        </button>
-                        :
-                        <button className="fs-14 btn btn-sm" onClick={() => { setAddressModalType('BILLING_ADDRESS'); setShow(!show) }}>
-                          Change Address
-                        </button>
-                    } */}
+
                     <button
                       className="fs-14 btn btn-sm"
                       onClick={() => {
@@ -206,7 +202,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                   </h5>
                   {address.billing_address !== null ? (
                     <div>
-                      {address.billing_address?.name} <br />
+                      <b className="text-secondary">{address.billing_address?.name}</b> <br />
                       <p className="address-details">
                         {address.billing_address?.address_line1} ,
                         {address.billing_address?.city} -
@@ -217,11 +213,8 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                     </div>
                   ) : null}
                 </div>
-                <div className="line-spacer"></div>
               </>
-            ) : (
-              <div className="line-spacer"></div>
-            )}
+            ) : null}
             <table className="table table-borderless end-point m-0">
               <tbody>
                 <tr>

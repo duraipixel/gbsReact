@@ -1,42 +1,37 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import useApiFetch from "hooks/useApiFetch";
 
 const ServiceCenter = () => {
+  const { data, isSuccess } = useApiFetch('/get/home/service/places')
   return (
-    <>
-      <section className="ran-trouble text-center">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div className="comon-heads">
-                <h3 className="h2">Your PC Ran into Trouble?</h3>
-              </div>
+    <section className="ran-trouble text-center">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div className="comon-heads">
+              <h3 className="h2">Your PC Ran into Trouble?</h3>
             </div>
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div className="details-locations">
-                <span>
-                  Don't worry, the experts at GBS Services can help you fix
-                  issues <br />
-                  with your PC in no time
-                </span>
-                <h4>23 Service Centers Across South India</h4>
-                <ul>
-                  <li>Chennai</li>
-                  <li>Madurai</li>
-                  <li>Trichy</li>
-                  <li>Coimbatore</li>
-                  <li>Bangalore</li>
-                </ul>
-                <Link to="/store-locator-for-service">
-                  Find Your Nearest GBS After Sales Service Center
-                </Link>
-              </div>
+          </div>
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div className="details-locations">
+              <span>
+                Don't worry, the experts at GBS Services can help you fix
+                issues <br />
+                with your PC in no time
+              </span>
+              <h4>23 Service Centers Across South India</h4>
+              <ul>
+                {isSuccess ? data.map(item => (<Link to={`/${item.slug}`} className="text-capitalize bg-none btn-link btn-sm px-3" key={item.name}>{item.name}</Link>)) : null}
+              </ul>
+              <Link to="/store-locator-for-service">
+                Find Your Nearest GBS After Sales Service Center
+              </Link>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

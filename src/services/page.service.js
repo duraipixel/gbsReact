@@ -48,7 +48,9 @@ export const getStoreLocatorApi = async (data) => {
     data
   );
 };
-
+export const getServiceCenter = async () => {
+  return await axios.get(`${process.env.REACT_APP_BASE_URL}/get/home/service/places`);
+};
 export const globalSearchApi = async (data, tack) => {
   return await axios.post(
     `${process.env.REACT_APP_BASE_URL}/get/global/search`,

@@ -39,14 +39,14 @@ function PickupFromStoreAddress({ type, brandId }) {
         <div>
             {
                 type !== 'button' ?
-                    <h5 className="text-primary d-flex align-items-center justify-content-between">
+                    <h5 className="text-primary  pt-3 mt-2 border-top d-flex align-items-center justify-content-between">
                         Preferred Store for Pickup
                         <button className="fs-14 btn btn-sm" onClick={() => setShow(!show)}>
                             Change Address
                         </button>
                     </h5>
                     :
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center ">
                         <div><div className="vr ms-3 d-none d-lg-block"></div></div>
                         <button className="text-primary btn-link btn" onClick={() => setShow(!show)}><TbCurrentLocation className='me-1' /> Find Stores</button>
                     </div>
