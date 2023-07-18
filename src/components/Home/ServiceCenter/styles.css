@@ -55,7 +55,7 @@
   display: none;
 }
 
-.details-locations a {
+.details-locations .btn-action {
   font-weight: 500;
   font-size: 18px;
   line-height: 18px;
@@ -68,7 +68,7 @@
   color: #ffffff;
 }
 
-.details-locations a:hover {
+.details-locations .btn-action:hover {
   background-color: #000;
 }
 @media (max-width:450px) {
@@ -92,7 +92,7 @@
   .details-locations ul {
     margin-bottom: 20px;
   }
-  .details-locations a {
+  .details-locations .btn-action {
     font-size: 12px;
   }
 }

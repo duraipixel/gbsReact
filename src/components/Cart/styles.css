@@ -70,7 +70,10 @@ a.change-address:hover {
 .finalcart-list .table-bordered td a {
   color: #000;
 }
-
+.MuiButtonBase-root {
+  text-transform: capitalize !important;
+  font-family: "Outfit" !important;
+}
 .finalcart-list .table-bordered td input {
   height: 45px;
   background: #ebebeb;

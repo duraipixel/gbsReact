@@ -27,7 +27,7 @@ function PickupFromStoreAddress({ type, brandId }) {
     const getStoreLocator = async () => {
         const { data } = await getStoreLocatorApi(filter)
         setStores(data.data)
-        if(storesOptions.length === 0) {
+        if (storesOptions.length === 0) {
             setStoresOptions(data.data)
         }
     }
@@ -36,15 +36,17 @@ function PickupFromStoreAddress({ type, brandId }) {
     }, [show, filter])
 
     return (
-        <div>
+        <div className="border rounded py-1 p-3">
             {
                 type !== 'button' ?
-                    <h5 className="text-primary  pt-3 mt-2 border-top d-flex align-items-center justify-content-between">
-                        Preferred Store for Pickup
-                        <button className="fs-14 btn btn-sm" onClick={() => setShow(!show)}>
-                            Change Address
-                        </button>
-                    </h5>
+                        <p className="m-0 text-primary d-flex align-items-center justify-content-between">
+                            <span><i className="fa fa-map-marker"></i> Preferred Store Address</span>
+                            <button className="fs-14 btn btn-sm" onClick={() => setShow(!show)}>
+                                {
+                                    address.store_address == null ? <>  <i className="fa fa-map-signs me-1"></i> Select </> : <>  <i className="fa fa-edit me-1"></i> Change</>
+                                }
+                            </button>
+                        </p>
                     :
                     <div className="d-flex align-items-center ">
                         <div><div className="vr ms-3 d-none d-lg-block"></div></div>
@@ -69,7 +71,7 @@ function PickupFromStoreAddress({ type, brandId }) {
                 <div className="bg-dark modal-header flex-column">
                     <button onClick={() => setShow(!show)} className="btn btn-close btn-close-white float-end"></button>
                     <h3 className="text-primary fw-bold mb-3 text-uppercase">Store locator for service</h3>
-                    <Filters stores={storesOptions} filter={filter} setFilter={setFilter} brandId={brandId}/>
+                    <Filters stores={storesOptions} filter={filter} setFilter={setFilter} brandId={brandId} />
                 </div>
                 <Modal.Body style={{ minHeight: 450 }} className="p-0">
                     <StoreLocation stores={stores} selectStoreHander={selectStoreHander} />

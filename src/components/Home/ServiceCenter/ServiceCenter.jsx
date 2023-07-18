@@ -22,9 +22,13 @@ const ServiceCenter = () => {
               </span>
               <h4>23 Service Centers Across South India</h4>
               <ul>
-                {isSuccess ? data.map(item => (<Link to={`/${item.slug}`} className="text-capitalize bg-none btn-link btn-sm px-3" key={item.name}>{item.name}</Link>)) : null}
+                {isSuccess ? data.map(item => (
+                  <li className="text-capitalize" key={item.slug}>
+                    <Link to={`/${item.slug}`} className="text-light">{item.name}</Link>
+                  </li>
+                )) : null}
               </ul>
-              <Link to="/store-locator-for-service">
+              <Link to="/store-locator-for-service" className="btn-action">
                 Find Your Nearest GBS After Sales Service Center
               </Link>
             </div>
