@@ -36,7 +36,7 @@ function PickupFromStoreAddress({ type, brandId }) {
     }, [show, filter])
 
     return (
-        <div className="border rounded py-1 p-3">
+        <div className="border bg-white rounded py-1 p-3">
             {
                 type !== 'button' ?
                         <p className="m-0 text-info d-flex align-items-center justify-content-between">
