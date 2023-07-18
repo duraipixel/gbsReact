@@ -18,11 +18,11 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const [pickupFromStore, setPickupFromStore] = useState(
     checkoutData?.has_pickup_store
   );
-  useMemo(() => setPickupFromStore(checkoutData?.has_pickup_store) ,[checkoutData?.has_pickup_store])
+  useMemo(() => setPickupFromStore(checkoutData?.has_pickup_store), [checkoutData?.has_pickup_store])
   const [addressModalType, setAddressModalType] = useState(null);
   const [shippingTypes, setshippingTypes] = useState([]);
   const [show, setShow] = useState(false);
-   
+
   useEffect(() => {
     if (shippingMethod === "Standard_Shipping" && checkoutData) {
       shippingChargesApi(
@@ -34,8 +34,8 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   }, [checkoutData, shippingMethod]);
 
   const shippingMethodHandler = (value) => {
-    if(value !== undefined ) {
-      setShippingMethod(value); 
+    if (value !== undefined) {
+      setShippingMethod(value);
       localStorage.setItem("shipping_method", value?.toUpperCase());
     }
   };
@@ -92,10 +92,10 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                 <div className="line-spacer"></div>
                 <div className="mb-3">
                   <h3 className="h5 text-primary">Select Shipping Method</h3>
-                  <label htmlFor="ShippingMethod" className="d-block py-2"  onClick={(e) => shippingMethodHandler(e.target.value)}>
+                  <label htmlFor="ShippingMethod" className="d-block py-2" onClick={(e) => shippingMethodHandler(e.target.value)}>
                     <input
                       type="radio"
-                      checked={shippingMethod === "Standard_Shipping"} 
+                      checked={shippingMethod === "Standard_Shipping"}
                       value="Standard_Shipping"
                       name="ShippingMethod"
                       id="ShippingMethod"
@@ -104,7 +104,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                     Standard Shipping
                   </label>
                   {shippingTypes.length > 0 &&
-                  shippingMethod === "Standard_Shipping" ? (
+                    shippingMethod === "Standard_Shipping" ? (
                     <ul className="list-group">
                       {shippingTypes.map((type, index) => (
                         <label
@@ -123,7 +123,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                               )}
                             </b>
                             <input
-                              type="radio" 
+                              type="radio"
                               name="shipping_type"
                               id={type.shipping_title}
                               className="ms-2"
@@ -134,25 +134,24 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                     </ul>
                   ) : (
                     ""
-                  )}
-                  {pickupFromStore && (
-                    <label htmlFor="PickupFromStore" className="d-block py-2">
-                      <input
-                        type="radio"
-                        checked={shippingMethod === "Pickup_From_Store"}
-                        onChange={(e) => shippingMethodHandler(e.target.value)}
-                        value="Pickup_From_Store"
-                        name="ShippingMethod"
-                        id="PickupFromStore"
-                        className="form-check-input me-2"
-                      />
-                      Pickup From Store
-                    </label>
-                  )}
+                  )} 
+                  <label htmlFor="PickupFromStore" className="d-block py-2">
+                    <input
+                      disabled={!pickupFromStore}
+                      type="radio"
+                      checked={shippingMethod === "Pickup_From_Store"}
+                      onChange={(e) => shippingMethodHandler(e.target.value)}
+                      value="Pickup_From_Store"
+                      name="ShippingMethod"
+                      id="PickupFromStore"
+                      className="form-check-input me-2"
+                    />
+                   {pickupFromStore ? "Pickup From Store" : 'Pickup From Store not available'} 
+                  </label>
                 </div>
                 <div className="line-spacer"></div>
                 {shippingMethod === "Pickup_From_Store" ? (
-                  <PickupFromStoreAddress brandId={checkoutData?.brand_id}/>
+                  <PickupFromStoreAddress brandId={checkoutData?.brand_id} />
                 ) : (
                   <div>
                     <h4 className="h5 text-primary d-flex align-items-center justify-content-between">
@@ -182,7 +181,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                   </div>
                 )}
                 <div className="line-spacer"></div>
-                <div> 
+                <div>
                   <h5 className="text-primary d-flex align-items-center justify-content-between">
                     Billing Address
                     {/* {

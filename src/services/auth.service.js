@@ -10,7 +10,8 @@ export const LoginApi = async (credentials) => {
 }
 
 export const Logout = () => {
-    localStorage.removeItem("user");
+    localStorage.clear();
+    sessionStorage.clear(); 
 };
 
 export const RegisterApi = async (credentials) => {
