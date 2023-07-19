@@ -161,21 +161,21 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
         <div className="mb-2"><b className="fw-500 text-primary">Cart details</b></div>
         <div>
           <ul className="list-group">
-            <li class="list-group-item d-flex align-items-center justify-content-between">
+            <li className="list-group-item d-flex align-items-center justify-content-between">
               <span>Sub Total</span>
               <div>₹ {checkoutData.product_tax_exclusive_total}</div>
             </li>
-            <li class="list-group-item d-flex align-items-center justify-content-between">
+            <li className="list-group-item d-flex align-items-center justify-content-between">
               <span>Taxes</span>
               <div>₹ {checkoutData.tax_total}</div>
             </li>
             {coupon ?
-              <li class="list-group-item d-flex align-items-center justify-content-between">
+              <li className="list-group-item d-flex align-items-center justify-content-between">
                 <span>Coupon</span>
                 <div className="text-success"> - ₹ {coupon.coupon_amount}</div>
               </li>
               : null}
-            <li class="text-primary list-group-item d-flex align-items-center justify-content-between">
+            <li className="text-primary list-group-item d-flex align-items-center justify-content-between">
               <span className="lead">Grand Total</span>
               <span className="lead fw-bold">₹ {checkoutData.total}</span>
             </li>

@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import { SlLocationPin } from "react-icons/sl";
-import AddNewAddressModal from "../FormModal/AddNewAddressModal";
 import {
   customerAddressApi,
   deleteAddressApi,
   setDefaultAddressApi,
 } from "services/customer.service";
 import { useDispatch, useSelector } from "react-redux";
-import { setAdressForm } from "../../../redux/features/addressSlice";
+import { setAddress, setAdressForm } from "../../../redux/features/addressSlice";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { toast } from "react-hot-toast";
 import { useEffect } from "react";
@@ -21,22 +20,20 @@ import {
 import NoDataComponent from "components/NoDataComponent/NoDataComponent";
 import { HalfHeightLoader } from "utils";
 const AddressBookDetails = ({ selectType, modalType, setShow }) => {
-  const [modalShow, setModalShow] = useState(false);
-  const address = useSelector((state) => state.address.value);
+  const addresses = useSelector((state) => state.address.value);
   const cartAddress = useSelector((state) => state.cartAddress);
 
   const dispatch = useDispatch();
-  const [addresses, setAddress] = useState([]);
   const [addressesId, setAddressId] = useState(null);
   const [deleteAlert, setDeleteAlert] = useState(false);
   const [isFetching, setIsFetching] = useState(true);
-  const fetchData = async () => {
+  const fetchData = () => {
     setIsFetching(true);
-    const response = await customerAddressApi();
-    setAddress(response.data.addresses);
-    setIsFetching(false);
+    customerAddressApi().then(response => {
+      dispatch(setAddress(response.data.addresses))
+      setIsFetching(false);
+    });
   };
-
   const deleteAddress = async () => {
     let selectedAddress = cartAddress[modalType === 'SHIPPING_ADDRESS' ? 'shipping_address' : 'billing_address']['customer_address_id']
     if (selectedAddress === addressesId) {
@@ -47,11 +44,14 @@ const AddressBookDetails = ({ selectType, modalType, setShow }) => {
         dispatch(clearBillingAddress());
       }
     }
-    const { data } = await deleteAddressApi(addressesId);
-    toast.success(data?.message);
-    setDeleteAlert(false);
-    setAddressId(null);
-    setAddress(data.addresses);
+    if (addressesId !== null) {
+      deleteAddressApi(addressesId).then(response => {
+        toast.success(response.data?.message);
+        setDeleteAlert(false);
+        setAddressId(null); 
+        dispatch(setAddress(response.data.addresses))
+      })
+    }
   };
   const setDefaultAddressHanlder = async (id, address) => {
     const { data } = await setDefaultAddressApi(id);
@@ -66,7 +66,7 @@ const AddressBookDetails = ({ selectType, modalType, setShow }) => {
   };
   useEffect(() => {
     fetchData();
-  }, [address]);
+  }, []);
   const checkIsAddress = (type, id) => {
     if (type === "SHIPPING_ADDRESS") {
       const shipping_address = JSON.parse(
@@ -102,7 +102,7 @@ const AddressBookDetails = ({ selectType, modalType, setShow }) => {
           Add New Address
         </button>
       </div>
-      {addresses?.length ? (
+      {addresses.length > 0 ? (
         <ul className="list-group">
           {addresses.map((address, i) => (
             <label
@@ -196,12 +196,10 @@ const AddressBookDetails = ({ selectType, modalType, setShow }) => {
             </label>
           ))}
         </ul>
-      ) : (
-        ""
-      )}
+      ) : null}
       {isFetching && <HalfHeightLoader />}
       {addresses.length === 0 && isFetching === false && <NoDataComponent />}
-      <AddNewAddressModal show={modalShow} onHide={() => setModalShow(false)} />
+      {/* <AddNewAddressModal show={modalShow} onHide={() => setModalShow(false)} /> */}
       <SweetAlert
         warning
         showCancel

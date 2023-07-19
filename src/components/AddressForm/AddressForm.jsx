@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Modal, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { addAddress, setAdressForm } from "redux/features/addressSlice";
+import { addAddress, setAddress, setAdressForm } from "redux/features/addressSlice";
 import { MdOutlineClose } from "react-icons/md";
 import { AuthUser } from 'utils';
 import { customerAddressApi, updateOrCreateAddressApi } from 'services/customer.service';
@@ -18,12 +18,13 @@ function AddressForm() {
     setValue,
     reset,
   } = useForm();
-  const onSubmit = async (formData) => {
+  const onSubmit = (formData) => {
     var payload = { ...formData, customer_id: AuthUser()?.id, id: address?.edit_value?.customer_address_id }
-    const { data } = await updateOrCreateAddressApi(payload)
-    toast.success(data.message)
-    dispatch(setAdressForm({ status: false, type: address.type }))
-    reset()
+    updateOrCreateAddressApi(payload).then(response => {
+      toast.success(response.data.message)
+      dispatch(addAddress({ status: false, type: address.type, value: response.data.addresses }))
+      reset()
+    })
   };
   const [addressMaster, setAdressMaster] = useState([])
   const [countryMaster, setCountryMaster] = useState([])

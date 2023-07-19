@@ -206,7 +206,7 @@ function ProductInformation({ product }) {
                   fill="currentColor"
                   stroke-width="0"
                   viewBox="0 0 448 512"
-                  class="trash-btn"
+                  className="trash-btn"
                   height="15"
                   width="15"
                   xmlns="http://www.w3.org/2000/svg"
