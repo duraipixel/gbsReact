@@ -36,9 +36,10 @@ function PickupFromStoreAddress({ type, brandId }) {
     }, [show, filter])
 
     return (
-        <div className="border bg-white rounded py-1 p-3">
+        <div >
             {
                 type !== 'button' ?
+                    <div className="border bg-white rounded py-1 p-3">
                         <p className="m-0 text-info d-flex align-items-center justify-content-between">
                             <span><i className="fa fa-map-marker"></i> Preferred Store Address</span>
                             <button className="fs-14 btn btn-sm text-blue" onClick={() => setShow(!show)}>
@@ -47,19 +48,17 @@ function PickupFromStoreAddress({ type, brandId }) {
                                 }
                             </button>
                         </p>
+                        <div>
+                            {address.store_address?.address} <br />
+                        </div>
+                    </div>
                     :
                     <div className="d-flex align-items-center ">
                         <div><div className="vr ms-3 d-none d-lg-block"></div></div>
                         <button className="text-primary btn-link btn" onClick={() => setShow(!show)}><TbCurrentLocation className='me-1' /> Find Stores</button>
                     </div>
             }
-            {
-                address.store_address && type !== 'button' ?
-                    <div className="mb-3">
-                        {address.store_address?.address} <br />
-                    </div>
-                    : null
-            }
+
             <Modal
                 show={show}
                 size="xl"

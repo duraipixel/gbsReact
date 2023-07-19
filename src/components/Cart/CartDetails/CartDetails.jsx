@@ -10,18 +10,13 @@ import AddressBookDetails from "components/MyAccount/MyAddressBook/AddressBookDe
 import { Modal } from "react-bootstrap";
 import PickupFromStoreAddress from "components/PickupFromStoreAddress/PickupFromStoreAddress";
 import { toast } from "react-hot-toast";
-import { Box, Tab, Tabs } from "@mui/material";
+import { Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@material-ui/lab";
 const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const authUser = useSelector((state) => state.auth);
   const address = useSelector((state) => state.cartAddress);
-  const [shippingMethod, setShippingMethod] = useState(
-    checkoutData?.has_pickup_store === false ? "Standard_Shipping" : "Standard_Shipping"
-  );
-  const [pickupFromStore, setPickupFromStore] = useState(
-    checkoutData?.has_pickup_store
-  );
-  useMemo(() => setPickupFromStore(checkoutData?.has_pickup_store), [checkoutData?.has_pickup_store])
+  const [shippingMethod, setShippingMethod] = useState(checkoutData?.has_pickup_store === false ? "Standard_Shipping" : "Pickup_From_Store");
+
   const [addressModalType, setAddressModalType] = useState(null);
   const [shippingTypes, setshippingTypes] = useState([]);
   const [show, setShow] = useState(false);
@@ -61,7 +56,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
               <div className="card-header p-0">
                 <TabList onChange={shippingMethodHandler} className="bg-white rounded border">
                   <Tab label="Standard" value="Standard_Shipping" />
-                  <Tab label="Pickup From Store" value="Pickup_From_Store" />
+                  <Tab disabled={!checkoutData?.has_pickup_store} label="Pickup From Store" value="Pickup_From_Store" />  
                 </TabList>
               </div>
               <div >
@@ -122,9 +117,13 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                     ) : null}
                   </div>
                 </TabPanel>
-                <TabPanel value="Pickup_From_Store" className="px-0 py-2">
-                  <PickupFromStoreAddress brandId={checkoutData?.brand_id} />
-                </TabPanel>
+                {
+                  checkoutData?.has_pickup_store === true ?
+                    <TabPanel value="Pickup_From_Store" className="px-0 py-2">
+                      <PickupFromStoreAddress brandId={checkoutData?.brand_id} />
+                    </TabPanel>
+                    : null
+                }
                 {authUser.isLoggedIn ? (
                   <div className="border rounded bg-white py-1 p-3">
                     <p className="m-0 text-info d-flex align-items-center justify-content-between">
