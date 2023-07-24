@@ -172,7 +172,6 @@ const ProductDetails = ({
                             <div className="d-flex">
                               {item?.addon_item_label}
                               <span className="fw-bold ms-1">
-
                                 ₹{item?.amount}
                               </span>
                               <span
@@ -185,7 +184,6 @@ const ProductDetails = ({
                                 }
                                 className="btn btn-sm text-primary py-0 ms-2"
                               >
-
                                 <BsX /> remove
                               </span>
                             </div>
@@ -198,24 +196,26 @@ const ProductDetails = ({
                   )}
                 </div>
               </div>
-              <ProductQuantityInput
-                product={product}
-                setCheckoutData={setCheckoutData}
-              />
-              <ProductDeleteButton
-                product={product}
-                fetchCartData={fetchCartData}
-                setCheckoutData={setCheckoutData}
-              />
+              <div className="d-flex d-md-inline-block justify-content-between">
+                <ProductQuantityInput
+                  product={product}
+                  setCheckoutData={setCheckoutData}
+                />
+                <ProductDeleteButton
+                  product={product}
+                  fetchCartData={fetchCartData}
+                  setCheckoutData={setCheckoutData}
+                />
+              </div>
             </li>
           ))
           : ""}
       </ul>
       {
         authUser.isLoggedIn ?
-          <div className="bg-white  border rounded">
+          <div className="bg-white  border rounded mb-3">
             <div className="row m-0 align-items-center">
-              <div className="col-md-11">
+              <div className="col-md border-bottom">
                 <form
                   className="d-inline-flex align-items-center my-3"
                   onSubmit={handleSubmit(CouponHandler)}
@@ -254,11 +254,12 @@ const ProductDetails = ({
                   </div>
                 </form>
               </div>
-              <div className="col-md-1 text-end">
+              <div className="col-md-1 col-lg-2 text-end py-2 ">
                 <button
-                  className="btn-light btn-sm btn"
+                  className="btn-light btn-sm btn border"
                   onClick={() => setDeleteAlert(true)}
                 >
+                  <span className="pe-2">Clear cart</span>
                   <svg
                     width="22"
                     height="22"
@@ -343,7 +344,7 @@ const ProductDeleteButton = ({ product, fetchCartData, setCheckoutData }) => {
     });
   };
   return (
-    <div>
+    <div className="text-center mt-0 mt-md-3">
       <button
         loading={`${loading}`}
         className="custom-btn border shadow-sm mx-3 rounded-pill btn btn-outline-primary btn-sm border-0"
@@ -375,24 +376,21 @@ const ProductQuantityInput = ({ product, setCheckoutData }) => {
     setLoading(false);
   };
   return (
-    <div className="d-inline-flex">
+    <div className="btn-group ">
       <button
-        disabled={loading}
+        disabled={count <= Number(product.quantity) || loading}
         onClick={() => updateCart("DECREASE")}
-        className="btn btn-sm btn-outline-light text-secondary border-0 mx-2"
+        className="btn btn-sm btn-light"
       >
         <BsDash />
       </button>
-      <button
-        loading={`${loading}`}
-        className="btn btn-sm btn-light fw-bold border shadow-sm rounded"
-      >
+      <button style={{ zIndex:1 }} loading={`${loading}`} className="btn btn-sm btn-light fw-bold bg-white border" >
         {count}
       </button>
       <button
-        disabled={count >= Number(product.max_quantity)}
+        disabled={count >= Number(product.max_quantity) || loading}
         onClick={() => updateCart("INCREASE")}
-        className="btn btn-sm btn-outline-light text-secondary border-0 mx-2"
+        className="btn btn-sm btn-light"
       >
         <BsPlus />
       </button>
