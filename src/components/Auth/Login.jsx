@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { setAuthUser } from "redux/features/authSlice";
 import { setCartCount } from "redux/features/cartSlice";
+import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 function Login() {
   const dispatch = useDispatch()
@@ -21,6 +22,7 @@ function Login() {
   const { errors } = formState
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [eye, setEye] = useState(true)
 
   const LoginHandler = async (data) => {
     setLoading(true)
@@ -55,7 +57,12 @@ function Login() {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control {...register("password")} className={`${errors.password ? 'border-danger' : ''}`} type="password" placeholder="Enter Your Password" />
+          <div className="input-group">
+            <Form.Control {...register("password")} className={`${errors.password ? 'border-danger' : ''}`} type={eye ? 'password' : 'text'} placeholder="Enter Your Password" />
+            <button type="button" onClick={() => setEye((prev) => !prev)} className="btn btn-light border">
+              {eye ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+            </button>
+          </div>
         </Form.Group>
         <p className="text-secondary fs-14">
           Forgot your password?

@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import { RegisterApi } from "services/auth.service";
 import { useState } from "react"; 
 import { toast } from "react-hot-toast";
+import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 function Register() {
   const dispatch = useDispatch()
@@ -23,6 +24,7 @@ function Register() {
   const { errors } = formState
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [eye, setEye] = useState(true)
 
   const RegisterHandler = async (data) => {
     setLoading(true)
@@ -60,10 +62,15 @@ function Register() {
           <Form.Label className="small">Mobile Number</Form.Label>
           <Form.Control {...register("mobile")} className={`${errors.mobile ? 'border-danger' : ''}`} size="sm" type="number" placeholder="Enter Your Mobile Number" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="Password">
-          <Form.Label className="small">Password</Form.Label>
-          <Form.Control {...register("password")} className={`${errors.password ? 'border-danger' : ''}`} size="sm" type="password" placeholder="Enter Your Password" />
-        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <div className="input-group">
+            <Form.Control {...register("password")} className={`${errors.password ? 'border-danger' : ''}`} size="sm" type={eye ? 'password' : 'text'} placeholder="Enter Your Password" />
+            <button type="button" onClick={() => setEye((prev) => !prev)} className="btn-sm btn btn-light border">
+              {eye ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+            </button>
+          </div>
+        </Form.Group> 
         <Form.Group className="mb-3" controlId="ConfirmPassword">
           <Form.Label className="small">Confirm Password</Form.Label>
           <Form.Control {...register("confirm_password")} className={`${errors.confirm_password ? 'border-danger' : ''}`} size="sm" type="password" placeholder="Confirm Your Password" />
@@ -93,7 +100,7 @@ function Register() {
             <button onClick={() => dispatch(setLayoutStatus({
               status: true,
               type: 'login'
-            }))} className="btn-link btn btn-sm text-info px-0 border-0">Click here to register</button>
+            }))} className="btn-link btn btn-sm text-info px-0 border-0">Click here to Login</button>
           </div>
         </div>
       </Form>
