@@ -37,17 +37,10 @@ function ProfileLayout() {
       </Helmet>
       <Container>
         <Row>
-          <Col lg={3} className="align-self-start">
-            <Col className="container-card p-4">
-              <Sidebar />
-            </Col>
-            <div className="p-4 ms-1">
-              <Button className="p-2 px-4" onClick={Logout}>
-                Logout
-              </Button>
-            </div>
+          <Col lg={3}>
+            <Sidebar Logout={Logout} />
           </Col>
-          <Col lg={9} className="align-self-start">
+          <Col lg={9}>
             <Outlet />
           </Col>
         </Row>

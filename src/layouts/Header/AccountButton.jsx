@@ -41,7 +41,7 @@ function AccountButton({ text, size, className }) {
             >
               Profile
             </Dropdown.Item>
-            <Dropdown.Item className="text-dark" as={"button"} onClick={Logout}>
+            <Dropdown.Item className="text-dark px-3" as={"button"} onClick={Logout}>
               Logout
             </Dropdown.Item>
           </>

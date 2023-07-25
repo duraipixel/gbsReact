@@ -69,7 +69,7 @@ function MyOrder() {
                       </div>
                       <CancelOrderRequested order={order} />
                     </div>
-                    <div className="flex gap-4 align-c pt-1 pb-1">
+                    <div className="flex gap-4 align-c pt-1 pb-1 flex-wrap">
                       {
                         order.items.map((item, i) => (
                           <img key={i} src={item.image} height={50} width={50} style={{ objectFit: 'contain' }} alt="order" className="shadow-sm" />

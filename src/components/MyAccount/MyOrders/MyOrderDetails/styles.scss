@@ -28,6 +28,9 @@ p {
   font-size: 28px;
   line-height: 35px;
   color: #212363;
+  @media (max-width:662px) {
+    font-size: 18px;
+  }
 }
 
 .t-head-title {
@@ -122,10 +125,10 @@ p {
     background-color: #212363;
     position: absolute;
     z-index: 1;
-    top: 0;
+    top: 20px;
     left: 18px;
     width: 2px;
-    height: 90%;
+    height: 80%;
 
     @media (min-width:600px) {
       top: 30px;
@@ -136,33 +139,18 @@ p {
     }
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    border: 4px dashed white;
-    bottom: 0;
-    left: 18px;
-    width: 2px;
-    height: 30%;
-    @media (min-width:600px) {
-      height: 2px;
-      width: 20%;
-      top: 37%;
-      right: 5%;
-      left: unset;
-    }
-  }
-
   .time-line-item {
     position: relative;
     z-index: 3;
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    min-height: 50px;
+
     @media (min-width:600px) {
       text-align: center;
       flex-direction: column;
+      min-height: 100px;
       margin-bottom: 0;
     }
 

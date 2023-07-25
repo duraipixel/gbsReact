@@ -31,7 +31,7 @@ const MyProfile = () => {
     setLoading(false)
   };
   return (
-    <Col className="container-card card p-4">
+    <Col className="bg-white p-3 rounded shadow-sm border">
       <div className="myaccount-personal-details">
         <Form onSubmit={handleSubmit(editProfileHandler)} onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault() }}>
           <SectionHeader
