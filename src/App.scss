@@ -728,6 +728,12 @@ button[loading="true"] {
   margin-top: 88px !important;
 }
 
+@media (max-width:662px) {
+  .bg-banner-liner {
+    margin-top: 0 !important;
+  }
+}
+
 .bg-banner-liner {
   padding: 50px 0px;
   background-color: #292929;
@@ -1142,9 +1148,11 @@ button[loading="true"] {
   margin: 0 !important;
   color: #252525 !important;
 }
-.text-blue{
+
+.text-blue {
   color: cornflowerblue !important;
 }
+
 .form-check-input:checked {
   background-color: #212363 !important;
   border-color: #212363 !important;
@@ -1225,9 +1233,11 @@ button[loading="true"] {
 .offcanvas.offcanvas-end {
   width: 90% !important;
 }
+
 .scale-hover {
   transition: all 1s;
 }
+
 .scale-hover:hover {
   transform: scale(.9) !important;
   transition: all .5s;

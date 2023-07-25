@@ -25,7 +25,8 @@ function Register() {
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
   const [eye, setEye] = useState(true)
-
+  const [eyeConfirm, setConfirmEye] = useState(true)
+  
   const RegisterHandler = async (data) => {
     setLoading(true)
     const response = await RegisterApi(data)
@@ -63,7 +64,7 @@ function Register() {
           <Form.Control {...register("mobile")} className={`${errors.mobile ? 'border-danger' : ''}`} size="sm" type="number" placeholder="Enter Your Mobile Number" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className="small">Password</Form.Label>
           <div className="input-group">
             <Form.Control {...register("password")} className={`${errors.password ? 'border-danger' : ''}`} size="sm" type={eye ? 'password' : 'text'} placeholder="Enter Your Password" />
             <button type="button" onClick={() => setEye((prev) => !prev)} className="btn-sm btn btn-light border">
@@ -73,7 +74,12 @@ function Register() {
         </Form.Group> 
         <Form.Group className="mb-3" controlId="ConfirmPassword">
           <Form.Label className="small">Confirm Password</Form.Label>
-          <Form.Control {...register("confirm_password")} className={`${errors.confirm_password ? 'border-danger' : ''}`} size="sm" type="password" placeholder="Confirm Your Password" />
+          <div className="input-group">
+            <Form.Control {...register("confirm_password")} className={`${errors.confirm_password ? 'border-danger' : ''}`} size="sm" type={eyeConfirm ? 'password' : 'text'} placeholder="Confirm Your Password" />
+            <button type="button" onClick={() => setConfirmEye((prev) => !prev)} className="btn-sm btn btn-light border">
+              {eyeConfirm ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+            </button>
+          </div>
         </Form.Group>
         <Form.Text className="text-muted d-flex">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" className="me-2">
