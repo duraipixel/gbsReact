@@ -69,10 +69,13 @@ export const paymentVerifyApi = async (token) => {
 export const checkoutApi = async (formData) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/proceed/ccav/checkout`, formData);
 }
-
-export const getOrdersListApi = async () => {
+export const getOrdersStstusListApi = async () => {
+    return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/orders-status/${AuthUser()?.id}`);
+}
+export const getOrdersListApi = async (status) => {
     return await axios.post(`${process.env.REACT_APP_BASE_URL}/get/orders`, {
         customer_id: AuthUser()?.id,
+        status:status
     });
 }
 export const getOrderDetailApi = async (order_no) => {

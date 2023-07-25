@@ -11,7 +11,7 @@ function NoDataComponent({ data }) {
             />
           </div>
           <div className="empty-state__message">
-            {data ? <>{data}</> : "No products have been found yet"}
+            {data ? <>{data}</> : "No data have been found yet"}
           </div>
         </div>
       </div>

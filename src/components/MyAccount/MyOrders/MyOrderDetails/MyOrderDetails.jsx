@@ -41,9 +41,9 @@ const MyOrderDetails = () => {
                 </div>
                 <div className="time-line-group my-5">
                   {orderTracking.map((track, index) => (
-                    <div className="time-line-item" key={index} style={{ minHeight: 100 }}>
-                      <div className={`time-line-icon  ${track.has_tracking ? 'bg-info' : 'bg-secondary'}`}><FaCheckCircle /></div>
-                      <div >
+                    <div className="time-line-item"  key={index} style={{ minHeight: 100 }}>
+                      <div className={`time-line-icon ${track.status_name === "Order Delivered" ? 'bg-success' : ''}  ${track.has_tracking ? 'bg-info' : 'bg-secondary'}`}><FaCheckCircle /></div>
+                      <div > 
                         <div className="time-line-text">{track.status_name}</div>
                         <div className="time-line-text small text-success">{track?.tracking_info?.description}</div>
                         <div className="time-line-text small text-muted">{track?.tracking_info?.created_at}</div>
