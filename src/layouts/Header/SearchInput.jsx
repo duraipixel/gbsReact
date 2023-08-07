@@ -10,8 +10,8 @@ const SearchInput = ({ type }) => {
     const search = useSelector((state) => state.search)
     const dispatch = useDispatch()
     const input = useRef()
+
     const searchHandler = e => {
-        // console.log(type)
         dispatch(setSearchStatus({
             isSuccess: true,
             query: e.target.value,
@@ -30,10 +30,17 @@ const SearchInput = ({ type }) => {
         dispatch(resetSearch())
         input.current.value = ''
     }
+    const _handleKeyDown = e => {
+        if (e.key === 'Enter') {
+            window.location.href = `/products?search=${e.target.value}`
+        }
+    }
+
     return (
         <>
             <Form.Control
                 onChange={searchHandler}
+                onKeyDown={_handleKeyDown}
                 ref={input}
                 size="sm"
                 type="search"
