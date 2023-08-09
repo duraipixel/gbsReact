@@ -12,7 +12,7 @@ const StoreLocationDetails = ({ storeLocation }) => {
         <Row className="details-container">
           <Col lg={6}>
             <h2 className="h2">{storeLocation.title}</h2>
-            <p>{storeLocation.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: storeLocation.description}}></p>
             <div>
               {(storeLocation.email || storeLocation.contact_no) && (
                 <h3>Reach Us</h3>
