@@ -109,7 +109,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                         <p className="address-details">
                           {address.shipping_address?.address_line1} ,
                           {address.shipping_address?.city} -
-                          {address.shipping_address?.post_code},
+                          {address.shipping_address?.post_code_number},
                           {address.shipping_address?.state},
                           {address.shipping_address?.country}
                         </p>
@@ -144,7 +144,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                         <p className="address-details">
                           {address.billing_address?.address_line1} ,
                           {address.billing_address?.city} -
-                          {address.billing_address?.post_code},
+                          {address.billing_address?.post_code_number},
                           {address.billing_address?.state},
                           {address.billing_address?.country}
                         </p>
