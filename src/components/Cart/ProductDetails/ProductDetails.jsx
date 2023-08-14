@@ -227,7 +227,7 @@ const ProductDetails = ({
                     placeholder="Enter Coupon code here"
                     id="coupon"
                     name="coupon"
-                    maxLength="6"
+                    maxLength="12"
                     className={`form-control ms-2 w-lg-50 ${errors.coupon_code ? "border-danger" : ""
                       }`}
                     {...register("coupon_code", { required: true })}

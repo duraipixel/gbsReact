@@ -14,16 +14,9 @@ import { useDispatch } from "react-redux";
 import { Loader, scrollToTop } from "utils";
 import ProductCollection from "components/Home/ProductCollection/ProductCollection";
 import { Helmet } from "react-helmet";
-// import PerfectStudents from "components/Home/PerfectStudents/PerfectStudents";
-// import GamersLaptop from "components/Home/GamersLaptop/GamersLaptop";
-// import Tablets from "components/Home/Tablets/Tablets";
-// import Combos from "components/Home/Combos/Combos";
+import { setLayoutStatus } from "redux/features/authLayoutSlice";
 
 const HomePage = () => {
-  useEffect(() => {
-    GetPageData();
-    scrollToTop();
-  }, []);
   const dispatch = useDispatch();
   const [fetching, setFetching] = useState(false);
   const GetPageData = () => {
@@ -34,7 +27,19 @@ const HomePage = () => {
       }
     });
   };
-
+  useEffect(() => { 
+    GetPageData();
+    scrollToTop();
+    if(window.location.hash === '#login') {
+      dispatch(setLayoutStatus({ status: true, type: 'login' }))
+    }
+    if(window.location.hash === '#register') {
+      dispatch(setLayoutStatus({ status: true, type: 'register' }))
+    }
+    if(window.location.hash === '#forgot-password') {
+      dispatch(setLayoutStatus({ status: true, type: 'forgot_password' }))
+    }
+  }, []);
   if (fetching) return <Loader />;
   return (
     <div>
