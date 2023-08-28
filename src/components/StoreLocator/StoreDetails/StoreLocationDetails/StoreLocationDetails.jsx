@@ -1,4 +1,3 @@
-import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";

@@ -5,7 +5,7 @@ import { setLayoutStatus } from 'redux/features/authLayoutSlice'
 import { checkoutApi } from 'services/product.service'
 import { AuthUser } from 'utils'
 
-function CheckoutButton({ className }) {
+function CheckoutButton({ className, shippingMethod }) {
     const authUser            = useSelector((state) => state.auth)
     const dispatch            = useDispatch()
     const billing_address     = JSON.parse(localStorage.getItem('billing_address'))
@@ -36,18 +36,21 @@ function CheckoutButton({ className }) {
             toast.error('Store address is required!')
             return false
         }
-        return true
+       
+        return true;
     }
-    const checkoutHandler = () => {
+    const checkoutHandler = () => { 
+
         const checkData = {
             customer_id: AuthUser()?.id,
             billing_address_id : billing_address?.customer_address_id,
             shipping_method : {
-                type      : shipping_method,
+                type      : shippingMethod.toUpperCase(),
                 address_id: shipping_method === "PICKUP_FROM_STORE" ? store_address?.id : shipping_address?.customer_address_id,
                 charge_id : shipping_method === "PICKUP_FROM_STORE" ? null : shipping_charge_id
             } 
         }
+        console.log(checkData)
         if(validateProcess(checkData)) {
             setLoader(true)
             checkoutApi(checkData).then(response => {

@@ -16,11 +16,11 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
   const authUser = useSelector((state) => state.auth);
   const address = useSelector((state) => state.cartAddress);
   const [shippingMethod, setShippingMethod] = useState(checkoutData?.has_pickup_store === false ? "Standard_Shipping" : "Pickup_From_Store");
-
+  const shipping_charge_id  = localStorage.getItem('shipping_charge_id')
   const [addressModalType, setAddressModalType] = useState(null);
   const [shippingTypes, setshippingTypes] = useState([]);
   const [show, setShow] = useState(false);
-
+ 
   useEffect(() => {
     if (shippingMethod === "Standard_Shipping" && checkoutData) {
       shippingChargesApi(
@@ -74,8 +74,9 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
                                 name="shipping_type"
                                 id={type.shipping_title}
                                 className="me-2 form-check-input"
+                                checked={shipping_charge_id == type.id}
                               />
-                              {type.shipping_title}</span>
+                              {type.shipping_title} {type.id}</span>
                             <div>
                               <b>
                                 {type.charges === "0.00" ? (
@@ -182,7 +183,7 @@ const CartDetails = ({ checkoutData, setCheckoutData, coupon }) => {
           <div>
             <CheckoutButton
               className="btn btn-dark w-100 mt-3"
-              checkoutData={checkoutData}
+              shippingMethod={shippingMethod}
             />
           </div>
         </div>
