@@ -56,6 +56,7 @@ function TermsConditions() {
                 <li>The delivery branch address will change depending on the product availability.</li>
                 <li>Only one order has to be placed from one mail ID.</li>
                 <li>Delivery is not available for this offer.</li>
+				 <li>Product delivery is only eligible depending upon the registration period we announced weekly. Example – (Monday to Friday mentioned dates)</li>
               </ul>
             </div>
           </div>
