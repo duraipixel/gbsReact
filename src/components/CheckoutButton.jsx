@@ -31,8 +31,7 @@ function CheckoutButton({ className, shippingMethod }) {
             toast.error('Billing address is required!')
             return false
         }
-        
-        if(data.shipping_method.type === "PICKUP_FROM_STORE" && data.shipping_method.address_id === undefined ) {
+        if(data.shipping_method.type === "PICKUP_FROM_STORE" && store_address === null ) {
             toast.error('Store address is required!')
             return false
         }
@@ -50,7 +49,6 @@ function CheckoutButton({ className, shippingMethod }) {
                 charge_id : shipping_method === "PICKUP_FROM_STORE" ? null : shipping_charge_id
             } 
         }
-        console.log(checkData)
         if(validateProcess(checkData)) {
             setLoader(true)
             checkoutApi(checkData).then(response => {
