@@ -10,7 +10,6 @@ function CheckoutButton({ className, shippingMethod }) {
     const dispatch            = useDispatch()
     const billing_address     = JSON.parse(localStorage.getItem('billing_address'))
     const shipping_address    = JSON.parse(localStorage.getItem('shipping_address'))
-    const shipping_method     = localStorage.getItem('shipping_method')
     const shipping_charge_id  = localStorage.getItem('shipping_charge_id')
     const store_address       = JSON.parse(localStorage.getItem('store_address'));
     const [loader, setLoader] = useState(false)
@@ -45,8 +44,8 @@ function CheckoutButton({ className, shippingMethod }) {
             billing_address_id : billing_address?.customer_address_id,
             shipping_method : {
                 type      : shippingMethod.toUpperCase(),
-                address_id: shipping_method === "PICKUP_FROM_STORE" ? store_address?.id : shipping_address?.customer_address_id,
-                charge_id : shipping_method === "PICKUP_FROM_STORE" ? null : shipping_charge_id
+                address_id: shippingMethod.toUpperCase() === "PICKUP_FROM_STORE" ? store_address?.id : shipping_address?.customer_address_id,
+                charge_id : shippingMethod.toUpperCase() === "PICKUP_FROM_STORE" ? null : shipping_charge_id
             } 
         }
         if(validateProcess(checkData)) {
