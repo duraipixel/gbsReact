@@ -12,7 +12,9 @@ function FilterChips() {
     const navigate = useNavigate()
     var tempArray = []
     tempFilter.forEach(item => {
-        tempArray.push(item.split('=')[1])
+        if (item.split('=')[0] !== "fbclid") {
+            tempArray.push(item.split('=')[1])
+        }
     })
 
     const [currentFilters, setCurrentFilters] = useState(tempArray)
@@ -21,13 +23,15 @@ function FilterChips() {
             const tempFilter = search.split('&')
             var tempArray = []
             tempFilter.forEach(item => {
-                item = item.replace('?', '')
-                item = item.split('=')[1]
-                if (item.includes('_')) {
-                    const tempstr = item.split('_')
-                    tempArray.push(...tempstr)
-                } else {
-                    tempArray.push(item)
+                if (item.split('=')[0] !== "fbclid") {
+                    item = item.replace('?', '')
+                    item = item.split('=')[1]
+                    if (item.includes('_')) {
+                        const tempstr = item.split('_')
+                        tempArray.push(...tempstr)
+                    } else {
+                        tempArray.push(item)
+                    }
                 }
             })
             setCurrentFilters(tempArray)
@@ -38,12 +42,12 @@ function FilterChips() {
         const params = Object.fromEntries(searchParams.entries());
         const newParams = new URLSearchParams(search)
         var finalParams;
-        var result =  Object.entries(params).filter(param => param[1] === item)
-        if(result.length) { 
+        var result = Object.entries(params).filter(param => param[1] === item)
+        if (result.length) {
             newParams.delete(result[0][0])
             finalParams = newParams.toString()
         } else {
-            finalParams = newParams.toString().replace(item,'').replace('_','')
+            finalParams = newParams.toString().replace(item, '').replace('_', '')
         }
         navigate(`/products?${finalParams}`);
         dispatch(setfilter(`/products?${finalParams}`))
