@@ -11,12 +11,12 @@ function Counters() {
                 <ul>
                   <li>
                     <h4>
-                      28<span>+</span>
+                      30<span>+</span>
                     </h4>
                     <h5>Years of Experience</h5>
                   </li>
                   <li>
-                    <h4>24</h4>
+                    <h4>26</h4>
                     <h5>Exclusive Stores</h5>
                   </li>
                   <li>
@@ -26,7 +26,7 @@ function Counters() {
                     <h5>Happy Customers</h5>
                   </li>
                   <li>
-                    <h4>23</h4>
+                    <h4>20</h4>
                     <h5>Service Centers</h5>
                   </li>
                 </ul>

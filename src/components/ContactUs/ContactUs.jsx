@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import {Link} from "react-router-dom";
 import "./styles.scss";
 import call from "assets/images/call.png";
 import location from "assets/images/location.png";
 import mail from "assets/images/mail.png";
-import service from "assets/images/for-service.jpg";
-import sales from "assets/images/for-sales.jpg";
-import { useSelector } from "react-redux";
-import { Loader, openInNewTab } from "utils";
+import service from "assets/images/service.jpg";
+import sales from "assets/images/sales.jpg";
+import {useSelector} from "react-redux";
+import {Loader, openInNewTab} from "utils";
 import ContactForm from "./ContactForm";
 
 function ContactUs() {
@@ -50,7 +50,7 @@ function ContactUs() {
                 <div className="home-products testimonials">
                   <img src={call} alt="call-icon" />
                   <h4>Call Us</h4>
-                  <h5 className="para">Sales : +91 96003 76222</h5>
+                  <h5 className="para">Sales : +91 96003 75222</h5>
                   <h6>Service : +91 98416 03332</h6>
                 </div>
 
@@ -58,10 +58,9 @@ function ContactUs() {
                   <img src={mail} alt="mail-icon" />
                   <h4>Mail Us</h4>
                   <h5 className="para">
-                    
                     <Link
                       rel="noopener noreferrer"
-                      style={{ textTransform:'lowercase' }}
+                      style={{textTransform: "lowercase"}}
                       onClick={() =>
                         openInNewTab(`mailto:${siteInfo.site_email}`)
                       }
